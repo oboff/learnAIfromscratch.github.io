@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-16 Sun 20:07 -->
+<!-- 2021-05-21 Fri 11:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -273,7 +273,7 @@
 <ul>
 <li><a href="#2.2%20Probability">2.2 Probability</a></li>
 <li><a href="#2.3%20Calculus">2.3 Calculus</a></li>
-<li><a href="#2.5%20Linear%20Algebra">2.5 Linear Algebra</a></li>
+<li><a href="#2.4%20Vectors%20and%20Matrices">2.4 Vectors and Matrices</a></li>
 </ul>
 </li>
 </ul>
@@ -314,7 +314,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="orgef0924a">
+<pre class="example" id="org1c36662">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -521,7 +521,7 @@ Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lectu
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision stumps already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a>. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass though you won't need to this is a simple assignment. 
 </p>
 
-<pre class="example" id="org0117b5a">
+<pre class="example" id="orgdc7cc9c">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -635,28 +635,56 @@ Use some online derivatives calculator with (free) steps again, enter 3x^2(sin(z
 </div>
 </div>
 
-<div id="outline-container-2.5%20Linear%20Algebra" class="outline-4">
-<h4 id="2.5%20Linear%20Algebra">2.5 Linear Algebra</h4>
-<div class="outline-text-4" id="text-2.5%20Linear%20Algebra">
+<div id="outline-container-2.4%20Vectors%20and%20Matrices" class="outline-4">
+<h4 id="2.4%20Vectors%20and%20Matrices">2.4 Vectors and Matrices</h4>
+<div class="outline-text-4" id="text-2.4%20Vectors%20and%20Matrices">
 <p>
-todo
+We will finish this assignment with a <a href="https://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf">crash course</a> in linear algebra for intro ML/data science. Even Ian Goodfellow the author of <i>Deep Learning</i> used the same <a href="https://twitter.com/goodfellow_ian/status/969306960263749632?lang=en">notes</a>. You can also take <a href="https://learnaifromscratch.github.io/linear.html">this</a> ongoing workshop which is the 'modernized' version of MIT's 18.06 where we learn the SVD and other numerical algebra techniques that will definitely be needed here later. There is also a set of lectures for the notes <a href="https://www.cs.cmu.edu/~zkolter/course/linalg/outline.html">here</a> but you will have to manually disable 'firefox has blocked parts of this page for your protection' or any chrome 'unsafe scripts' protection. Finally Wildberger's linear algebra <a href="https://www.youtube.com/playlist?list=PL01A21B9E302D50C1">playlist</a> is a geometric approach, using just parallel lines at first to showcase the concepts of linear algebra. 
 </p>
 
+<p>
+I'll go through a few of the lectures but you can just read the notes if you want. Let's begin the <a href="https://youtu.be/_gqI7OZEPVs">outline</a>. Nothing much here just a setup of the review. Moving on to <a href="https://youtu.be/PxcK7pz1eGc">Linear Equations</a>. If you have no idea what a vector is, watch <a href="https://youtu.be/yAb12PWrhV0">this</a> lecture on multiples of a vector, adding vectors, what a basis vector is and how to change basis, finally he will show the same 'solve two linear equations of two variables' as the Zico Kolter lecture except he will then show the general 1-dimensional case, then the 2-dimensional case. 
+</p>
 
+<p>
+<a href="https://youtu.be/AZfgCOKZsYY">Basic Notation</a> for matrices and column vectors. Transpose is covered, and writing matrix in terms of it's columns or rows. Next is <a href="https://youtu.be/q5_b5MpMXEI">Basic Operations I</a> which is addition and multiplication. <b>Question 4</b> on the 10-301 is answered by this lecture. The number of columns in A must equal the number of rows in B for AB to make sense. The <a href="https://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf">notes</a> will show you how the new matrices are created from multiplying two together if the lecture notation is unclear. Associativity example makes sense since a nxn matrix multiplied by a nxp matrix will result in a nxp result, which is compatible with his pxq example for (AB)C or A(BC). If you're interested Wildberger proves this <a href="https://youtu.be/qBOy-jCeFL8">here</a>.
+</p>
 
+<p>
+Now we can do <b>question 3</b> on the homework for 10-301.
+</p>
 
+<p>
+u = \(\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\)  v = \(\begin{bmatrix} 0 & 7 \\ 4 & 5 \\ -1 & 0 \end{bmatrix}\)
+</p>
 
+<p>
+First option of question 3: can we multiply \(u^{T}v\)? The dimensions of u transpose is 1x3 and v is 3x2. As per video we just saw, the inner dimensions are the same so this is a valid operation. What about \(v^{T}u\)? Here v is 2x3 and u is 3x1. Again the amount of columns in the first structure matches the amount of rows in the second structure. What about uv? u is 3x1 and v is 3x2, this is not compatible so non-valid operation. vv is also non-valid operation.
+</p>
 
+<p>
+y = \(\begin{bmatrix} 2 \\ 1 \end{bmatrix}\)  X = \(\begin{bmatrix} 1 & 4 \\ 2 & 6 \end{bmatrix}\)
+</p>
 
+<p>
+<b>Question 2</b> from the 10-301 homework, what is the product of Xy? Using his formula from the lecture algebra review 'Basic Operations I' lecture, this is the sum of \(A_{ik}B_{kj}\) or each i-row in A multiplied by each j-column in B. We know the matrix we are producing will be of size A rows by B columns, or in Xy case 2x1.
+</p>
 
+<p>
+Multiplying Xy this is: \(\begin{bmatrix} (2*1 + 4*1) \\ (2*2 + 1*6) \end{bmatrix}\) or the second answer, 6 and 10.
+</p>
 
+<p>
+<b>Question 1</b> is answered in the next review video <a href="https://youtu.be/QWswOY-yZhw">Basic Operations II</a>. Transpose y and multiply it by z summing to get a 'scalar value' or in other words a single number. (2*2 + 3*1) or 7. <b>Question 5</b> is answered by <a href="https://youtu.be/noRdRlvFUtM">Inverses</a>. Is there some kind of vector we can multiply each row of the matrix A in question 4 so that it ends up all zeros besides the zero vector? Otherwise Wildberger's lecture on inverting 3x3 matrices <a href="https://youtu.be/anBKWgH_2eM">here</a> which is A inverse (if A is a matrix) = 1/det(A) times the adjoint of A which is a bunch of minor determinants and a huge pain to calculate by hand. Instead we can <a href="https://www.wolframalpha.com/input/?i=%7B%282%2C+1%2C+4%29%2C+%28-3%2C+2%2C+0%29%2C+%281%2C+3%2C+-2%29%7D">answer</a> question 5 with Wolfram Alpha or any other math software and yes, an inverse exists.
+</p>
 
+<p>
+<b>Question 6</b> where if x transpose a 1x3 row vector is multiplied by y a 3x1 column vector then we get z = 1x1 output or single number. The partial derivative \(dz/dy_2\) is \(x_2\) and explained <a href="https://youtu.be/iWxY7VdcSH8">here</a> recall that a partial derivative you treat everything else as a constant, and when you take the derivative of a constant it's always 0 since a constant c is really \(cx^0\), and using the \(x^n\) derivative formula that becomes 0cx so everything disappears except for \(x_2y_2\). Because we don't consider \(y_2\) a constant it is \(y_2^1\) and taking the derivative \(nx^{n-1}\) is \(1x_2y_2^{1-1}\) or \(x_2\).
+</p>
 
-
-
-
-
-
+<p>
+<b>Question 7</b> TODO
+</p>
 
 
 
