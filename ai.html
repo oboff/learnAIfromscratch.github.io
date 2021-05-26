@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-21 Fri 11:45 -->
+<!-- 2021-05-25 Tue 19:05 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -274,10 +274,13 @@
 <li><a href="#2.2%20Probability">2.2 Probability</a></li>
 <li><a href="#2.3%20Calculus">2.3 Calculus</a></li>
 <li><a href="#2.4%20Vectors%20and%20Matrices">2.4 Vectors and Matrices</a></li>
+<li><a href="#2.5%20Geometry">2.5 Geometry</a></li>
+<li><a href="#2.6%20CS%20Foundations">2.6 CS Foundations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#Lectures%203">Lectures 3</a></li>
 </ul>
 </div>
 </nav>
@@ -314,7 +317,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="org1c36662">
+<pre class="example" id="orgeb5eab2">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -521,7 +524,7 @@ Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lectu
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision stumps already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a>. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass though you won't need to this is a simple assignment. 
 </p>
 
-<pre class="example" id="orgdc7cc9c">
+<pre class="example" id="org5ddd4a5">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -675,25 +678,138 @@ Multiplying Xy this is: \(\begin{bmatrix} (2*1 + 4*1) \\ (2*2 + 1*6) \end{bmatri
 </p>
 
 <p>
-<b>Question 1</b> is answered in the next review video <a href="https://youtu.be/QWswOY-yZhw">Basic Operations II</a>. Transpose y and multiply it by z summing to get a 'scalar value' or in other words a single number. (2*2 + 3*1) or 7. <b>Question 5</b> is answered by <a href="https://youtu.be/noRdRlvFUtM">Inverses</a>. Is there some kind of vector we can multiply each row of the matrix A in question 4 so that it ends up all zeros besides the zero vector? Otherwise Wildberger's lecture on inverting 3x3 matrices <a href="https://youtu.be/anBKWgH_2eM">here</a> which is A inverse (if A is a matrix) = 1/det(A) times the adjoint of A which is a bunch of minor determinants and a huge pain to calculate by hand. Instead we can <a href="https://www.wolframalpha.com/input/?i=%7B%282%2C+1%2C+4%29%2C+%28-3%2C+2%2C+0%29%2C+%281%2C+3%2C+-2%29%7D">answer</a> question 5 with Wolfram Alpha or any other math software and yes, an inverse exists.
+<b>Question 1</b> is answered in the next review video <a href="https://youtu.be/QWswOY-yZhw">Basic Operations II</a>. Transpose y and multiply it by z summing to get a 'scalar value' or in other words a single number. (2*2 + 3*1) or 7. <b>Question 5</b> a square matrix nxn has an inverse if it's determinant is not zero. You can calculate this by <a href="https://youtu.be/anBKWgH_2eM">hand</a> aei - ahf + bfg - bdi + cdh - ceg or <a href="https://www.wolframalpha.com/input/?i=%7B%282%2C+1%2C+4%29%2C+%28-3%2C+2%2C+0%29%2C+%281%2C+3%2C+-2%29%7D">answer</a> question 5 with any math software.
 </p>
 
 <p>
-<b>Question 6</b> where if x transpose a 1x3 row vector is multiplied by y a 3x1 column vector then we get z = 1x1 output or single number. The partial derivative \(dz/dy_2\) is \(x_2\) and explained <a href="https://youtu.be/iWxY7VdcSH8">here</a> recall that a partial derivative you treat everything else as a constant, and when you take the derivative of a constant it's always 0 since a constant c is really \(cx^0\), and using the \(x^n\) derivative formula that becomes 0cx so everything disappears except for \(x_2y_2\). Because we don't consider \(y_2\) a constant it is \(y_2^1\) and taking the derivative \(nx^{n-1}\) is \(1x_2y_2^{1-1}\) or \(x_2\).
+<b>Question 6</b> if x transpose a 1x3 row vector is multiplied by y a 3x1 column vector then we get z = 1x1 output or single number. The partial derivative \(dz/dy_2\) is \(x_2\) and explained <a href="https://youtu.be/iWxY7VdcSH8">here</a> recall that a partial derivative you treat everything else as a constant, and when you take the derivative of a constant it's always 0 since a constant c is really \(cx^0\), and using the \(x^n\) derivative formula that becomes 0c so everything disappears except for \(x_2y_2\). Because we don't consider \(y_2\) a constant it is \(y_2^1\) and taking the derivative \(nx^{n-1}\) is \(1x_2y_2^{1-1}\) or \(x_2\).
 </p>
 
 <p>
-<b>Question 7</b> TODO
+<b>Question 7</b> from the Zico Kolter notes, lambda is an eigenvalue of A if Ax = (lambda)x or in other words, a matrix times a vector if it equals a scalar multiplied by the same vector that scalar is an eigenvalue and that vector x is an eigenvector. Multiplying the assignment matrix by the vector (-6, 1, 1)^T results in (-12, 2, 2)^T which looks like a scalar value of 2. The full way to do this without knowing the x in Ax is <a href="https://youtu.be/PFDu9oVAE-g">here</a> and <a href="https://youtu.be/Y2sHg11wgE8">here</a>. <b>Question 8</b> if you watched the above Wildbeger <a href="https://youtu.be/Y2sHg11wgE8?t=1944">lecture</a> on eigenvalues, which starts around 32:20 (though the whole lecture is worth watching to see reflexive, transitive and symmetric properties of matrices) he as usual sets up the specific case of Ax = (lambda)x, where lambda is just a scalar or single number, then shows the generalized eigenvector and eigenvalue case. We see there can be multiple eigenvectors and eigenvalues. We see that they are not <a href="https://youtu.be/132amJvoLpU?t=1617">linearly dependent</a> since they are not multiples of each other ie: his example of lambda = 4 and -1 on two seperate eigenvectors for the same matrix. The last option of question 8 'eigenvectors should be linearly dependent' is still wrong and illustrated by the above 3Blue1Brown <a href="https://youtu.be/PFDu9oVAE-g">visualization</a> of multiple eigenvectors.
+</p>
+</div>
+</div>
+
+<div id="outline-container-2.5%20Geometry" class="outline-4">
+<h4 id="2.5%20Geometry">2.5 Geometry</h4>
+<div class="outline-text-4" id="text-2.5%20Geometry">
+<p>
+This section is covered by the <i>Mathematics for Machine Learning</i> <a href="https://mml-book.github.io/">book</a> in chapter 3 <i>Analytic Geometry</i>.
 </p>
 
+<p>
+<b>Question 1</b> if you went through Wildberger's dot product <a href="https://youtu.be/iUSbqBeaXpk">lectures</a>, the dot product of two vectors equal to zero means they are orthogonal or perpendicular. <b>Question 2</b> the inner product will be 0 if it's orthogonal and <b>Question 3</b> is also from the Wildberger <a href="https://youtu.be/iDIYUw1QcDk">lectures</a> on <i>Applications of the dot product to planar geometry</i> and searching around for 'find the distance of ax + by + c = 0 line to the origin' you will discover the answer is |c|/sqrt(a^2 + b^2) where c in the form y = mx + b is the b since ax + by = c. The vector w holds to coefficients A and B of Ax + By where x and y are the second vector x, and both are a dot product, so the answer is |b|/||w||
+</p>
+
+<p>
+This actually took an unusual amount of time to figure out, probably because I haven't done basic analytical geometry in over a decade.
+</p>
+</div>
+</div>
+
+<div id="outline-container-2.6%20CS%20Foundations" class="outline-4">
+<h4 id="2.6%20CS%20Foundations">2.6 CS Foundations</h4>
+<div class="outline-text-4" id="text-2.6%20CS%20Foundations">
+<p>
+<b>Question 1</b> and <b>Question 2</b> Big-O doesn't care about constants, and the difference between the natural log base and log base 3 is a constant factor so it's just log(n) or answer f(n) is in O(g(n)) and vice versa. Question 2 10^n will not be contained in n^10 a simple example is n = 11. 10^11 is bigger than 11^10.
+</p>
+
+<p>
+<b>Question 3</b> Depth First Search if you did CS19 in the other software workshop, it's strategy is check the root, then start at the left-most branch and start counting there, so the answer is 12. <b>Question 4</b> is basic as well the BFS search node-visit order is root, highest left node to highest right node, descend to leafs.
+</p>
+
+<p>
+<b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
+</p>
+
+<pre class="example" id="org790393a">
+data BT:
+  | leaf
+  | node(v :: String, l :: BT, r :: BT)
+end
+
+# Test tree:
+#     p
+#    / \
+#   q   c
+#  / \
+# a   b
+
+tree = node("p", 
+  node("q", node("a", leaf, leaf), node("b", leaf, leaf)), 
+  node("c", leaf, leaf))
+
+fun is-in(e :: String, s :: BT)-&gt; BT:
+  doc: "Recursive DFS for a Binary Tree"
+  cases (BT) s:
+    | leaf =&gt; leaf
+    | node(v, l, r) =&gt;
+      block:
+        print(v) # print results to confirm DFS
+        if e == v:
+          node(v, l, r)  
+        else:
+          found-node = is-in(e, l)
+          if found-node == leaf:
+            is-in(e, r)
+          else:
+            found-node
+          end
+        end
+      end
+  end
+end
+
+
+"should be p, q, a, b, c"
+is-in("c", tree)
+"should be p, q, a, b"
+is-in("b", tree)
+</pre>
+
+<p>
+<b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
+</p>
+
+<pre class="example" id="orgb9b06e1">
+fun lucas(n :: Number)-&gt; Number:
+  doc: "Lucas numbers recursive"
+  if n == 0:
+    2
+  else if n == 1:
+    1
+  else:
+    lucas(n - 1) + lucas(n - 2)
+  end
+where:
+  lucas(0) is 2
+  lucas(1) is 1
+  lucas(3) is lucas(2) + lucas(1)
+  lucas(32) is 4870847
+end
+</pre>
+
+<p>
+<b>Question 7, 8</b> are typical memoization questions. The first function recurrence is exponential the second one stores results for later use so runs in O(n) which is the time it takes to search that dictionary for the key. I ignored the 'tighest upper bound' part and just gave a good enough upper bound since I have no idea Python's runtime complexity I assume searching a dict for a key is O(n). 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Lectures%203" class="outline-2">
+<h2 id="Lectures%203">Lectures 3</h2>
+<div class="outline-text-2" id="text-Lectures%203">
+<p>
+TODO
+</p>
 
 
 <hr>
 <p>
 <a href="./index.html">Home</a>
 </p>
-</div>
-</div>
 </div>
 </div>
 </div>
