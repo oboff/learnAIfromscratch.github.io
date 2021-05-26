@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-25 Tue 19:23 -->
+<!-- 2021-05-25 Tue 19:48 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -317,7 +317,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="orgf5e4838">
+<pre class="example" id="orga2b1b90">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -528,7 +528,7 @@ The point of this algorithm as per the student who asks the question "why are we
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision stumps already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a>. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass though you won't need to this is a simple assignment. 
 </p>
 
-<pre class="example" id="org87a28c9">
+<pre class="example" id="org6778cef">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -674,11 +674,15 @@ y = \(\begin{bmatrix} 2 \\ 1 \end{bmatrix}\)  X = \(\begin{bmatrix} 1 & 4 \\ 2 &
 </p>
 
 <p>
-<b>Question 2</b> from the 10-301 homework, what is the product of Xy? Using his formula from the lecture algebra review 'Basic Operations I' lecture, this is the sum of \(A_{ik}B_{kj}\) or each i-row in A multiplied by each j-column in B. We know the matrix we are producing will be of size A rows by B columns, or in Xy case 2x1.
+<b>Question 2</b> from the 10-301 homework, what is the product of Xy? Using his formula from the lecture algebra review 'Basic Operations I' lecture, this is the sum of \(A_{ik}B_{kj}\) or each i-row in A multiplied by each j-column in B. We know the matrix we are producing will be of size A rows by B columns, or in Xy case 2x1. Multiplying Xy this is:
 </p>
 
 <p>
-Multiplying Xy this is: \(\begin{bmatrix} (2*1 + 4*1) \\ (2*2 + 1*6) \end{bmatrix}\) or the second answer, 6 and 10.
+\(\begin{bmatrix} 1 & 4 \\ 2 & 6 \end{bmatrix}\) \(\begin{bmatrix} 2 \\ 1 \end{bmatrix}\) = \(\begin{bmatrix} (2*1 + 4*1) \\ (2*2 + 6*1) \end{bmatrix}\) or the second answer, 6 and 10.
+</p>
+
+<p>
+Wildberger covers 2x2 matrix multiplication <a href="https://youtu.be/euoDroq6UMI">here</a>.
 </p>
 
 <p>
@@ -731,7 +735,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org98f827e">
+<pre class="example" id="org2487723">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -780,7 +784,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org058ec07">
+<pre class="example" id="orgc8c9350">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
