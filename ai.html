@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-25 Tue 19:05 -->
+<!-- 2021-05-25 Tue 19:23 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -317,7 +317,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="orgeb5eab2">
+<pre class="example" id="orgf5e4838">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -512,7 +512,11 @@ The prof teaching this is the head of CMU's systems bio group and maintains an i
 <h3 id="CS4780%20Lecture%202%20KNN">CS4780 Lecture 2 KNN</h3>
 <div class="outline-text-3" id="text-CS4780%20Lecture%202%20KNN">
 <p>
-Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">lecture</a> k-nearest neighbors, which is only the last 15 minutes of the lecture the rest is practical advice how you should organize your learning, validation and testing data, like seperating temporal (data with a sense of time) data so your learning algorithm 'can't look at future data' to avoid overfitting meaning your model no longer generalizes, you're just fitting it for the test data. He talks about why you can't have a single algorithm to do everything, this is worth watching and not very technical. The distance equation is in the notes, fill in some values to see what they are rational exponents are defined in Tao's <i>Analysis I</i> book Definition 5.6.7 \(x^\frac{a}{b}\) is \((x^\frac{1}{b})^a\) or if \((thing) = x^\frac{1}{n}\) then \((thing)^n = x\), it's just the square root. You can look up Euclidean distance though you've probably already seen it, personally I've never seen Manhattan distance instead I learned it as Hamming distance which is the same thing. The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. 
+Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">lecture</a> k-nearest neighbors, which is only the last 15 minutes of the lecture the rest is practical advice how you should organize your learning, validation and testing data, like seperating temporal (data with a sense of time) data so your learning algorithm 'can't look at future data' to avoid overfitting meaning your model no longer generalizes, you're just fitting it for the test data. He talks about why you can't have a single algorithm to do everything, this is worth watching and not very technical. The distance equation is in the notes, fill in some values to see what they are rational exponents are defined in Tao's <i>Analysis I</i> book Definition 5.6.7 \(x^\frac{a}{b}\) is \((x^\frac{1}{b})^a\) or if \((thing) = x^\frac{1}{n}\) then \((thing)^n = x\), it's just the square root. In the book <i>Mathematics for Machine Learning</i> at the top of this page, in the chapter on <i>Analytical Geometry</i> the first paragraph you will see the difference between manhattan distance and euclidean distance.
+</p>
+
+<p>
+The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. 
 </p>
 </div>
 </div>
@@ -524,7 +528,7 @@ Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lectu
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision stumps already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a>. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass though you won't need to this is a simple assignment. 
 </p>
 
-<pre class="example" id="org5ddd4a5">
+<pre class="example" id="org87a28c9">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -686,7 +690,11 @@ Multiplying Xy this is: \(\begin{bmatrix} (2*1 + 4*1) \\ (2*2 + 1*6) \end{bmatri
 </p>
 
 <p>
-<b>Question 7</b> from the Zico Kolter notes, lambda is an eigenvalue of A if Ax = (lambda)x or in other words, a matrix times a vector if it equals a scalar multiplied by the same vector that scalar is an eigenvalue and that vector x is an eigenvector. Multiplying the assignment matrix by the vector (-6, 1, 1)^T results in (-12, 2, 2)^T which looks like a scalar value of 2. The full way to do this without knowing the x in Ax is <a href="https://youtu.be/PFDu9oVAE-g">here</a> and <a href="https://youtu.be/Y2sHg11wgE8">here</a>. <b>Question 8</b> if you watched the above Wildbeger <a href="https://youtu.be/Y2sHg11wgE8?t=1944">lecture</a> on eigenvalues, which starts around 32:20 (though the whole lecture is worth watching to see reflexive, transitive and symmetric properties of matrices) he as usual sets up the specific case of Ax = (lambda)x, where lambda is just a scalar or single number, then shows the generalized eigenvector and eigenvalue case. We see there can be multiple eigenvectors and eigenvalues. We see that they are not <a href="https://youtu.be/132amJvoLpU?t=1617">linearly dependent</a> since they are not multiples of each other ie: his example of lambda = 4 and -1 on two seperate eigenvectors for the same matrix. The last option of question 8 'eigenvectors should be linearly dependent' is still wrong and illustrated by the above 3Blue1Brown <a href="https://youtu.be/PFDu9oVAE-g">visualization</a> of multiple eigenvectors.
+<b>Question 7</b> from the Zico Kolter notes, lambda is an eigenvalue of A if Ax = (lambda)x or in other words, a matrix times a vector if it equals a scalar multiplied by the same vector that scalar is an eigenvalue and that vector x is an eigenvector. Multiplying the assignment matrix by the vector (-6, 1, 1)^T results in (-12, 2, 2)^T which looks like a scalar value of 2. The full way to do this without knowing the x in Ax is <a href="https://youtu.be/PFDu9oVAE-g">here</a> and <a href="https://youtu.be/Y2sHg11wgE8">here</a>.
+</p>
+
+<p>
+<b>Question 8</b> if you watched the above Wildbeger <a href="https://youtu.be/Y2sHg11wgE8?t=1944">lecture</a> on eigenvalues, which starts around 32:20 (though the whole lecture is worth watching to see basis changing, reflexive, transitive and symmetric properties of matrices) he as usual sets up the specific case of Ax = (lambda)x, where lambda is just a scalar or single number, then shows the generalized eigenvector and eigenvalue case. We see there can be multiple eigenvectors and eigenvalues. We see that they are not <a href="https://youtu.be/132amJvoLpU?t=1617">linearly dependent</a> since they are not multiples of each other ie: his example of lambda = 4 and -1 on two seperate eigenvectors for the same matrix. The last option of question 8 'eigenvectors should be linearly dependent' is wrong and illustrated by the 3Blue1Brown <a href="https://youtu.be/PFDu9oVAE-g">visualization</a> of multiple eigenvectors. 
 </p>
 </div>
 </div>
@@ -699,7 +707,7 @@ This section is covered by the <i>Mathematics for Machine Learning</i> <a href="
 </p>
 
 <p>
-<b>Question 1</b> if you went through Wildberger's dot product <a href="https://youtu.be/iUSbqBeaXpk">lectures</a>, the dot product of two vectors equal to zero means they are orthogonal or perpendicular. <b>Question 2</b> the inner product will be 0 if it's orthogonal and <b>Question 3</b> is also from the Wildberger <a href="https://youtu.be/iDIYUw1QcDk">lectures</a> on <i>Applications of the dot product to planar geometry</i> and searching around for 'find the distance of ax + by + c = 0 line to the origin' you will discover the answer is |c|/sqrt(a^2 + b^2) where c in the form y = mx + b is the b since ax + by = c. The vector w holds to coefficients A and B of Ax + By where x and y are the second vector x, and both are a dot product, so the answer is |b|/||w||
+<b>Question 1</b> if you went through Wildberger's dot product <a href="https://youtu.be/iUSbqBeaXpk">lectures</a>, the dot product of two vectors equal to zero means they are orthogonal or perpendicular. <b>Question 2</b> the inner product will be 0 if it's orthogonal and <b>Question 3</b> is also from the Wildberger <a href="https://youtu.be/iDIYUw1QcDk">lectures</a> on <i>Applications of the dot product to planar geometry</i> and searching around for 'find the distance of ax + by + c = 0 line to the origin' you will discover the answer is |c|/sqrt(a^2 + b^2) where c in the form y = mx + b is the b since ax + by = c. The vector w holds the coefficients A and B of Ax + By where x and y are the second vector x, and Wildberger shows their dot product as a typical cartesian ax + by, so the answer is |b|/||w||
 </p>
 
 <p>
@@ -723,7 +731,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org790393a">
+<pre class="example" id="org98f827e">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -772,7 +780,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="orgb9b06e1">
+<pre class="example" id="org058ec07">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
