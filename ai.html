@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-28 Fri 19:18 -->
+<!-- 2021-05-28 Fri 19:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -321,7 +321,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="orge8e0051">
+<pre class="example" id="orgcce35d9">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -532,7 +532,7 @@ The point of this algorithm as per the student who asks the question "why are we
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision stumps already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a>. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass though you won't need to this is a simple assignment. 
 </p>
 
-<pre class="example" id="org40aa23e">
+<pre class="example" id="orgec7fd87">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -739,7 +739,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org4a554b2">
+<pre class="example" id="org22a371c">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -788,7 +788,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="orgeeb53b4">
+<pre class="example" id="org6fc49a8">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -846,32 +846,8 @@ Finally we get the true definition of machine learning: take data you have, assu
 </p>
 
 <p>
-Really good high level talk about k-nearest neighbors to select a label. If it's not obvious it means 1-nearest neighbor, 2-nearest neighbors. He demonstrates increasing k. Very end of the lecture we discover KNN is an approximation of the Bayes rule. Why does this work? Here we get into Terence Tao tier metric space <a href="https://en.wikipedia.org/wiki/Ball_(mathematics)">topology</a> of a ball and he gives a good illustration. The ball is m-dimensional meaning the number of features, meaning the number of rows in the data vector. If you vector has 5 rows then this is a 5 dimensional ball. This will all be in the reading but shows how good 10-701 is because none of this was covered in the other courses, the fact that KNN is really Bayes estimation just shrinking the global probability to a local one.
+Really good high level talk about k-nearest neighbors to select a label. If it's not obvious it means 1-nearest neighbor, 2-nearest neighbors. He demonstrates increasing k. Very end of the lecture we discover KNN is an approximation of the Bayes rule. Why does this work? Here we get into Terence Tao tier metric space <a href="https://en.wikipedia.org/wiki/Ball_(mathematics)">topology</a> of a ball and he gives a good illustration. The ball is m-dimensional meaning the number of rows in the data vector (columns are features, rows are data samples). This will all be in the reading but shows how good 10-701 is because none of this was covered in the other courses, the fact that KNN is really Bayes estimation just shrinking the global probability to a local one.
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>
-*Reading Mitchell chapter 8, Bishop 1.5
-</p>
-
-
 
 <hr>
 <p>
