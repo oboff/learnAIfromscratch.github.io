@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-28 Fri 19:28 -->
+<!-- 2021-05-30 Sun 17:49 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -268,7 +268,7 @@
 <ul>
 <li><a href="#10-601%20Decision%20Trees%20Part%201">10-601 Decision Trees Part 1</a></li>
 <li><a href="#10-701%20Probability%2C%20MLE%20and%20MAP">10-701 Probability, MLE and MAP</a></li>
-<li><a href="#CS4780%20Lecture%202%20KNN">CS4780 Lecture 2 KNN</a></li>
+<li><a href="#CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">CS4780 Lecture 2 Supervised Learning Setup II</a></li>
 <li><a href="#Assignment%201">Assignment 1</a>
 <ul>
 <li><a href="#2.2%20Probability">2.2 Probability</a></li>
@@ -283,6 +283,9 @@
 <li><a href="#Lectures%203">Lectures 3</a>
 <ul>
 <li><a href="#10-701%20Classification">10-701 Classification</a></li>
+<li><a href="#10-301%20Decision%20Trees%202">10-301 Decision Trees 2</a></li>
+<li><a href="#CS4780%20K-nearest%20neighbours">CS4780 K-nearest neighbours</a></li>
+<li><a href="#Lectures%203--Reading">Reading</a></li>
 </ul>
 </li>
 </ul>
@@ -321,7 +324,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="orgcce35d9">
+<pre class="example" id="org4d28747">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -512,15 +515,112 @@ The prof teaching this is the head of CMU's systems bio group and maintains an i
 </div>
 </div>
 
-<div id="outline-container-CS4780%20Lecture%202%20KNN" class="outline-3">
-<h3 id="CS4780%20Lecture%202%20KNN">CS4780 Lecture 2 KNN</h3>
-<div class="outline-text-3" id="text-CS4780%20Lecture%202%20KNN">
+<div id="outline-container-CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II" class="outline-3">
+<h3 id="CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">CS4780 Lecture 2 Supervised Learning Setup II</h3>
+<div class="outline-text-3" id="text-CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">
 <p>
-Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">lecture</a> k-nearest neighbors, which is only the last 15 minutes of the lecture the rest is practical advice how you should organize your learning, validation and testing data, like seperating temporal (data with a sense of time) data so your learning algorithm 'can't look at future data' to avoid overfitting meaning your model no longer generalizes, you're just fitting it for the test data. He talks about why you can't have a single algorithm to do everything, this is worth watching and not very technical. The distance equation is in the notes, fill in some values to see what they are rational exponents are defined in Tao's <i>Analysis I</i> book Definition 5.6.7 \(x^\frac{a}{b}\) is \((x^\frac{1}{b})^a\) or if \((thing) = x^\frac{1}{n}\) then \((thing)^n = x\), it's just the square root. In the book <i>Mathematics for Machine Learning</i> at the top of this page, in the chapter on <i>Analytical Geometry</i> the first paragraph you will see the difference between manhattan distance and euclidean distance.
+I screwed up earlier and watched lecture 3 before watching <a href="https://youtu.be/zj-5nkNKAow">this one</a>. 
 </p>
 
 <p>
-The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. 
+This lecture is probably the best at explaining what a vector representation is and an overall explanation of what ML is. Generate vectors from the data (data space), generate labels (label space). Then choose h() a program in the hypothesis class to learn the labels from the data and this 'class' contains programs for a decision tree, a linear classifier, a neural net etc. He uses the loss function(s) as examples of how to choose h(), which we learned from the Murphy AI book already, but he walks through the notation better than the book. 
+</p>
+
+<p>
+In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
+</p>
+
+<pre class="example" id="org633e910">
+# Hypothesis Functions
+
+fun hypothesis(n :: Number)-&gt; String:
+  doc: "Purposely incorrect h(x) learning function"
+  if n &lt; 8: 
+    "yes"
+  else:
+    "no"
+  end
+end
+
+fun hypothesis2(n :: Number)-&gt; String:
+  doc: "Bad learning function that is supposed to be &lt;= 8.1"
+  if n &lt; 8.1:
+    "yes"
+  else:
+    "no"
+  end
+end
+
+fun hypothesis3(n :: Number)-&gt; Number:
+  doc: "Bad h(x) function that is supposed to be n &lt;= 8"
+  if n &lt; 8: 
+    n + n
+  else:
+    n
+  end
+end
+
+# Main Learning Function
+
+fun learn&lt;A,B&gt;(x-input :: List&lt;A&gt;, h :: (A -&gt; B)) -&gt; List&lt;B&gt;:
+  doc: "Toy representation of his ML box, consumes data and h(x)"
+  map(h, x-input)
+end
+
+# Loss Functions
+
+fun delta(s1 :: String, s2 :: String) -&gt; Number:
+  doc: "Equality comparison of two labels"
+  if not(s1 == s2):
+    1
+  else:
+    0
+  end
+end
+
+fun zero-one-loss(l :: List&lt;String&gt;, y :: List&lt;String&gt;)-&gt; Number:
+  doc: "1/n(sum(delta(x)) where n is number of samples"
+  num-of-samples = l.length()
+  (map2(delta, l, y).foldl(lam(x, acc): x + acc end, 0)) / num-of-samples 
+end
+
+fun square-loss(l :: List&lt;Number&gt;, y :: List&lt;Number&gt;)-&gt; Number:
+  doc:"1/n(sum(num-sqr(h(x_i) - y_i)))"
+  num-of-samples = l.length()
+  (map2(lam(a, b): num-sqr(a - b) end, l, y)
+      .foldl(lam(x, acc): x + acc end, 0)) / num-of-samples
+end
+
+fun abs-loss(l :: List&lt;Number&gt;, y :: List&lt;Number&gt;)-&gt; Number:
+  doc: "1/n(sum(num-abs(hx_i - y_i)))"
+  num-of-samples = l.length()
+  (map2(lam(a, b): num-abs(a - b) end, l, y)
+      .foldl(lam(x, acc): x + acc end, 0)) / num-of-samples
+end
+
+check:
+  # training data w/string labels
+  x-data = [list: 8, 3, 8.1, 0.1]
+  y-labels = [list: "yes", "yes", "yes", "yes"]
+
+  training-test = learn(x-data, hypothesis)
+  zero-one-loss(training-test, y-labels) is 1/2
+
+  training-test2 = learn(x-data, hypothesis2)
+  zero-one-loss(training-test2, y-labels) is 1/4  
+
+  # training data w/number labels
+  x-data2 =   [list: 2, 4, 6, 8] 
+  y-labels2 = [list: 4, 8, 12, 16]
+
+  training-test3 = learn(x-data2, hypothesis3)
+  square-loss(training-test3, y-labels2) is 64/4
+  abs-loss(training-test3, y-labels2) is 8/4
+end
+</pre>
+
+<p>
+The end of this lecture covers generalization. In practice he says you partition a small amount of the data you are using for training input for use as a test set because it's from the same distribution. Your learning algorithm should then have similar results on the test set as the training set and an expectation function is used on the training h(x) results, to later match against the test data run through h(x) their expected value should be the same.     
 </p>
 </div>
 </div>
@@ -529,10 +629,10 @@ The point of this algorithm as per the student who asks the question "why are we
 <h3 id="Assignment%201">Assignment 1</h3>
 <div class="outline-text-3" id="text-Assignment%201">
 <p>
-Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision stumps already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a>. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass though you won't need to this is a simple assignment. 
+Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="orgec7fd87">
+<pre class="example" id="orge09f158">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -674,10 +774,6 @@ First option of question 3: can we multiply \(u^{T}v\)? The dimensions of u tran
 </p>
 
 <p>
-y = \(\begin{bmatrix} 2 \\ 1 \end{bmatrix}\)  X = \(\begin{bmatrix} 1 & 4 \\ 2 & 6 \end{bmatrix}\)
-</p>
-
-<p>
 <b>Question 2</b> from the 10-301 homework, what is the product of Xy? Using his formula from the lecture algebra review 'Basic Operations I' lecture, this is the sum of \(A_{ik}B_{kj}\) or each i-row in A multiplied by each j-column in B. We know the matrix we are producing will be of size A rows by B columns, or in Xy case 2x1. Multiplying Xy this is:
 </p>
 
@@ -739,7 +835,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org22a371c">
+<pre class="example" id="org9607236">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -788,7 +884,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org6fc49a8">
+<pre class="example" id="orga15e4c2">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -846,9 +942,73 @@ Finally we get the true definition of machine learning: take data you have, assu
 </p>
 
 <p>
-Really good high level talk about k-nearest neighbors to select a label. If it's not obvious it means 1-nearest neighbor, 2-nearest neighbors. He demonstrates increasing k. Very end of the lecture we discover KNN is an approximation of the Bayes rule. Why does this work? Here we get into Terence Tao tier metric space <a href="https://en.wikipedia.org/wiki/Ball_(mathematics)">topology</a> of a ball and he gives a good illustration. The ball is m-dimensional meaning the number of rows in the data vector (columns are features, rows are data samples). This will all be in the reading but shows how good 10-701 is because none of this was covered in the other courses, the fact that KNN is really Bayes estimation just shrinking the global probability to a local one.
+Really good high level talk about k-nearest neighbors to select a label. If it's not obvious it means 1-nearest neighbor, 2-nearest neighbors. He demonstrates increasing k. Very end of the lecture we discover KNN is an approximation of the Bayes rule. Why does this work? Here we get into Terence Tao tier metric space <a href="https://en.wikipedia.org/wiki/Ball_(mathematics)">topology</a> of a ball and he gives a good illustration. This will all be in the reading but shows how good 10-701 is because none of this was covered in the other courses, the fact that KNN is really Bayes estimation just shrinking the global probability to a local one.
+</p>
+</div>
+</div>
+
+<div id="outline-container-10-301%20Decision%20Trees%202" class="outline-3">
+<h3 id="10-301%20Decision%20Trees%202">10-301 Decision Trees 2</h3>
+<div class="outline-text-3" id="text-10-301%20Decision%20Trees%202">
+<p>
+Second <a href="https://youtu.be/MqiC3w7KYF4">lecture</a> on decision trees that predict a single class by a majority vote at the leaf. Reminder again that all these algorithms already <a href="https://github.com/topics/decision-tree">exist</a> we are practicing building them to better understand how the magic works.
 </p>
 
+<dl class="org-dl">
+<dt>fun h(x</dt><dd>Vector) -&gt; Probability:
+<ul class="org-ul">
+<li>doc "Hypothesis function using decision tree"</li>
+<li>cases x:</li>
+<li>internal node? compare x.attribute and branch</li>
+<li>leaf? return p(y|x)</li>
+</ul></dd>
+
+<dt>fun train(d</dt><dd>TrainingSet) -&gt; Tree:
+<ul class="org-ul">
+<li>doc "Create decision tree"</li>
+<li>root = create Node(data = d)</li>
+<li>train-tree(root)</li>
+</ul></dd>
+
+<dt>fun train-tree(node</dt><dd>Tree) -&gt; Tree:
+<ul class="org-ul">
+<li>choose best attribute to split node that maximizes splitting criteria</li>
+<li>create child nodes for split attributes</li>
+<li>train-tree(child-node) for each attribute</li>
+<li>leaf label = majority-vote(child-node) meaning all plus, or all minus (zero error rate)</li>
+</ul></dd>
+</dl>
+
+
+<p>
+The rest of the lecture is about what 'maximizes splitting criteria' means which will be in the reading.
+</p>
+</div>
+</div>
+
+<div id="outline-container-CS4780%20K-nearest%20neighbours" class="outline-3">
+<h3 id="CS4780%20K-nearest%20neighbours">CS4780 K-nearest neighbours</h3>
+<div class="outline-text-3" id="text-CS4780%20K-nearest%20neighbours">
+<p>
+There is open assignments and solutions for this class <a href="https://www.dropbox.com/s/tbxnjzk5w67u0sp/Homeworks.zip?dl=0">here</a>. Click the dropdox download icon and you get all the semesters homework. Reminder nothing has really changed, even our most recent 10-701 lectures use the same recommended reading material as this older class.
+</p>
+
+<p>
+Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">lecture</a> k-nearest neighbors, which is only the last 15 minutes of the lecture the rest is practical advice how you should organize your learning, validation and testing data, like seperating temporal (data with a sense of time) data so your learning algorithm 'can't look at future data' to avoid overfitting meaning your model no longer generalizes, you're just fitting it for the test data. He talks about why you can't have a single algorithm to do everything, this is worth watching and not very technical. The distance equation is in the notes, fill in some values to see what they are rational exponents are defined in Tao's <i>Analysis I</i> book Definition 5.6.7 \(x^\frac{a}{b}\) is \((x^\frac{1}{b})^a\) or if \((thing) = x^\frac{1}{n}\) then \((thing)^n = x\), it's just the square root (if n = 2). In the book <i>Mathematics for Machine Learning</i> at the top of this page, in the chapter on <i>Analytical Geometry</i> the first paragraph you will see the difference between manhattan distance and euclidean distance. You can if you want make another model algorithm of the Minkowski distance to understand the notation.
+</p>
+
+<p>
+The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. The <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">notes</a> for this lecture are good, 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Lectures%203--Reading" class="outline-3">
+<h3 id="Lectures%203--Reading">Reading</h3>
+<div class="outline-text-3" id="text-Lectures%203--Reading">
+<p>
+TODO
+</p>
 <hr>
 <p>
 <a href="./index.html">Home</a>
