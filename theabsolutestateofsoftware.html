@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-04-29 Thu 02:04 -->
+<!-- 2021-05-31 Mon 21:48 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software Security</title>
@@ -229,9 +229,11 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#Intro">Intro</a></li>
-<li><a href="#CSCU%202951U%20Topics%20in%20Software%20Security">CSCU 2951U Topics in Software Security</a>
+<li><a href="#CSCI%202951U%20Topics%20in%20Software%20Security">CSCI 2951U Topics in Software Security</a></li>
+<li><a href="#Lecture%201">Lecture 1</a>
 <ul>
-<li><a href="#Lecture%201">Lecture 1</a></li>
+<li><a href="#Pwn2Own">Pwn2Own</a></li>
+<li><a href="#C%20crash%20course">C crash course</a></li>
 </ul>
 </li>
 </ul>
@@ -247,9 +249,9 @@ What's the current 'state of the art' as way as software security only because I
 </div>
 </div>
 
-<div id="outline-container-CSCU%202951U%20Topics%20in%20Software%20Security" class="outline-2">
-<h2 id="CSCU%202951U%20Topics%20in%20Software%20Security">CSCU 2951U Topics in Software Security</h2>
-<div class="outline-text-2" id="text-CSCU%202951U%20Topics%20in%20Software%20Security">
+<div id="outline-container-CSCI%202951U%20Topics%20in%20Software%20Security" class="outline-2">
+<h2 id="CSCI%202951U%20Topics%20in%20Software%20Security">CSCI 2951U Topics in Software Security</h2>
+<div class="outline-text-2" id="text-CSCI%202951U%20Topics%20in%20Software%20Security">
 <p>
 From the <a href="https://cs.brown.edu/courses/csci2951-u/">overview</a>:
 </p>
@@ -266,16 +268,42 @@ How the course works:
 "Every week we will be discussing (a set of) research papers. Students are expected to read the assigned papers and write a short review (critique) before each class&#x2026;..(Your paper review) should discuss the pros and cons of the proposed idea, protection mechanism, or bypass technique"
 </p>
 </div>
+</div>
 
-<div id="outline-container-Lecture%201" class="outline-3">
-<h3 id="Lecture%201">Lecture 1</h3>
-<div class="outline-text-3" id="text-Lecture%201">
+<div id="outline-container-Lecture%201" class="outline-2">
+<h2 id="Lecture%201">Lecture 1</h2>
+<div class="outline-text-2" id="text-Lecture%201">
 <p>
-The only lecture with <a href="https://cs.brown.edu/courses/csci2951-u/slides/l01.pdf">slides</a>. There's prereqs but they're going to review the most important concepts anyway, great. The first paper they want us to read is <a href="https://ieeexplore.ieee.org/document/6547101">this</a> <i>SoK: Eternal War in Memory</i>. Get the DOI number from that page and paste it into <a href="https://en.wikipedia.org/wiki/Sci-Hub">Sci-Hub</a> if you want a pdf.
+The only lecture with <a href="https://cs.brown.edu/courses/csci2951-u/slides/l01.pdf">slides</a>. There's prereqs but they're going to review the most important concepts anyway, great. The first paper they want us to read is <a href="https://ieeexplore.ieee.org/document/6547101">this</a> <i>SoK: Eternal War in Memory</i>. Get the DOI number from that page and paste it into <a href="https://en.wikipedia.org/wiki/Sci-Hub">Sci-Hub</a> or click on PDF.
 </p>
 
 <p>
-Reading the abstract they setup a general model for memory corruption attacks, pointing out performance is a problem for better memory policies so nobody uses them. We read this with the course advice in mind to 'discuss the pros and cons of the proposed idea, protection mechanism, or bypass technique'.
+Reading the abstract they setup a general model for memory corruption attacks, pointing out performance is a problem for better memory policies so nobody uses them. We read this with the course advice in mind to 'discuss the pros and cons of the proposed idea, protection mechanism, or bypass technique'. Let's read the paper.
+</p>
+</div>
+
+<div id="outline-container-Pwn2Own" class="outline-3">
+<h3 id="Pwn2Own">Pwn2Own</h3>
+<div class="outline-text-3" id="text-Pwn2Own">
+<p>
+This paper talks about <a href="https://www.zerodayinitiative.com/blog/2021/4/2/pwn2own-2021-schedule-and-live-results">pwn2own</a> which you can watch day 1 <a href="https://youtu.be/dA3aIMgRFY8">here</a> and around the 6hr mark there's a good interview with an Egyptian hacker who says it takes 3 months to understand how a thing works, then not very long after to find a vuln using IDA Pro to reverse engineer said thing. He says in the beginning he knew nothing and was just persistent to get to his level. There is a moment of cringe when the interviewer implies that web hacking is somehow not as 'hardcore' as blowing up junk VMs or reversing some junk proprietary binary. Egyptian hacker guy seems unimpressed with this question and repeats that you just have to put in the work to understand whatever it is you're trying to exploit. He ends with saying the biggest problem is nobody is looking at solutions which is something Egor Homakov another security researcher has written about many times: actual investment into real security is a waste of time to most software companies when the current market for software is like a slot machine you add as little investment as possible and pull that handle until you cash out meaning somebody bigger buys your software then security is their problem. I'm also amazed anybody wastes their time with these competitions, if you look at their 2021 live results, some team chained together 6 bugs to execute code but because a single bug was declared to be already known (and of course not yet patched) they were screwed and received nothing for their work. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-C%20crash%20course" class="outline-3">
+<h3 id="C%20crash%20course">C crash course</h3>
+<div class="outline-text-3" id="text-C%20crash%20course">
+<p>
+Watch the second <a href="https://youtu.be/SIHjTvIM1EQ">lecture</a> from CMU's 15-213 <a href="https://www.youtube.com/playlist?list=PL4YtNpAhVHFJVlaD203_8JkUOUT8RYUhY">playlist</a> to understand what a bit is, what a byte is, what two's complement is, TMax and Tmin, hexadecimal encoding, basic shift operations, you don't have to watch the whole lecture where it later goes into type casting.
+</p>
+
+<p>
+Next these <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">notes</a> to learn the C memory model. They are a great resource, getting right to the point and explaining just what we need aimed at a reader who has functional programming experience in Racket, and I assume you've done CS19 in the other <a href="https://learnaifromscratch.github.io/software.html">workshop</a> and Pyret was originally built from Racket so they are similar languages.
+</p>
+
+<p>
+Start <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">reading</a> at 2.1 <i>Basics</i> look at the C memory model diagram. Each row is 32bits (one word) which the author notes that 32bits is used for the purposes of making it easier to read this guide and it's similar to how a 64bit model works. He goes through a sample C program, these are all sequentially executed statements that return nothing (void) they produce side effects and the return statement is an exit back to whatever program called it and the numbers indicate error codes. Moving on to 2.2 and 2.3 you can see an example of prototypes or external global variables <a href="https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/defs.h">here</a> in MIT's implementation of xv6 which is a V6 unix clone they use to teach their operating systems class. Some of the header files have external globals some don't. At the end of 2.3 there's questions: what happens if we exclude x file? The compiler can't link, if gcd-driver.c forgets to include gcd.h then the global variable being used in gcd-driver will fail, the compiler will also give warnings no prototypes when it compiles gcd-driver.c and doesn't know the types of the parameters of the gcd function inside gcd-func. This will all be covered when we do linking.
 </p>
 </div>
 </div>
