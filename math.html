@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-05 Wed 19:16 -->
+<!-- 2021-06-01 Tue 19:56 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Math Foundations from Scratch</title>
@@ -376,15 +376,25 @@
 <li><a href="#7.3%20Sums%20of%20non-negative%20numbers">7.3 Sums of non-negative numbers</a></li>
 </ul>
 </li>
-<li><a href="#Math%20circle">Math circle</a>
+<li><a href="#Math%20circle">Math circle</a></li>
+<li><a href="#Discrete%20math%20lecture%201">Discrete math lecture 1</a>
 <ul>
-<li><a href="#Combinatorics%20lecture%201">Combinatorics lecture 1</a></li>
 <li><a href="#Algebra%20chapter%201">Algebra chapter 1</a></li>
+</ul>
+</li>
+<li><a href="#Discrete%20Math%20Lecture%202">Discrete Math Lecture 2</a>
+<ul>
+<li><a href="#Algebra%20chapter%202%20TODO">Algebra chapter 2 TODO</a></li>
 </ul>
 </li>
 <li><a href="#CMU%20Putnam%20Seminar">CMU Putnam Seminar</a>
 <ul>
 <li><a href="#Introduction">Introduction</a></li>
+<li><a href="#Putnam%20Seminar%20Polynomials">Putnam Seminar Polynomials</a>
+<ul>
+<li><a href="#Antiderivatives">Antiderivatives</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -726,7 +736,7 @@ Now we will redo what we just learned rigorously in Terence Tao's <i>Analysis I<
 <h3 id="Nature%20of%20mathematical%20logic">Nature of mathematical logic</h3>
 <div class="outline-text-3" id="text-Nature%20of%20mathematical%20logic">
 
-<figure id="orgebfcb86">
+<figure id="org5d2f57d">
 <img src="./proofs.png" alt="proofs.png">
 
 <figcaption><span class="figure-number">Figure 1: </span>What is a proof from <a href="http://www.cs.cmu.edu/~arielpro/15251f15/schedule.html">15-251</a></figcaption>
@@ -1077,7 +1087,7 @@ Another way to think about order of the natural numbers, is because they are ind
 Try a few yourself, write a convincing argument to yourself like how Tao writes proofs. Click on details button to see my scratchwork you do not have to do all the exercises.
 </p>
 
-<details id="org83b0dfa">
+<details id="org0eb44ff">
 <p>
 
 </p>
@@ -1285,7 +1295,7 @@ Remark 2.3.8 the contradiction is that ac = bc by corollary 2.3.7 when fed into 
 Scratchwork and notes
 </p>
 
-<details id="org1a15608">
+<details id="org5ed7709">
 <p>
 
 </p>
@@ -1532,7 +1542,7 @@ Try Tao's <a href="http://scherk.pbworks.com/w/page/14864241/Quiz%3A%20Sets">qui
 You can skip these, even in the preface of this book Tao advocates to just read this chapter so I've only done a few. 
 </p>
 
-<details id="org4e2f4bb">
+<details id="org14693f9">
 <p>
 
 </p>
@@ -1642,7 +1652,7 @@ Another multiple choice <a href="http://scherk.pbworks.com/w/page/14864227/Quiz%
 All optional, do you get what a bijective/surjective/injective function is? Then you're good we will do all these definitions again in a calculus course.
 </p>
 
-<details id="orgac3b035">
+<details id="org54bc610">
 <p>
 All of these proofs have a youtube tutorial or stackexchange answer, these are common proofs first year students do.
 </p>
@@ -1743,7 +1753,7 @@ Chapter 4 of <i>Analysis I</i> by Tao. Definition 4.1.1 is exactly the definitio
 You don't have to do the exercises, though proving equality as per A.7 for every object he creates is worth trying. This is the poor scratchwork I did
 </p>
 
-<details id="org712d289">
+<details id="orge4de6b2">
 <p>
 4.1.1 Proving A.7 Equality again. From Def 4.1.1 equality is defined as: a&#x2013;b = c&#x2013;d iff a + d = c + b and the variables are natural numbers. Does a&#x2013;b = a&#x2013;b? In this defition: a + b = a + b so yes, since we already proved natural numbers obey the reflexive axiom. Does x&#x2013;y = y&#x2013;x or x + x = y + y and yes, x and y are natural number objects. If a&#x2013;b = c&#x2013;d, and c&#x2013;d = x&#x2013;y, does a&#x2013;b = x&#x2013;y? Converting everything to their respective natural number definition, and arranging on each side: a + d + c + y + a + y = c + b + x + d + x + b cancel and you're left with 2a + 2y = 2b + 2x, divide each by 2: a + y = x + b, converting this back into an integer this is a&#x2013;b = x&#x2013;y similar to Tao's proof in 4.1.1 of transitivity. 
 </p>
@@ -1845,7 +1855,7 @@ To recap we defined the natural number object, embedded them in the integers (a 
 These are pretty easy, try them. 4.2.6 in my copy must be a mistake 'show that if x, y, z are real numbers&#x2026;' that must be 'rational numbers' and sure enough checking Tao's errata page it is a mistake. There's a mistake in exercise 4.2.1 as well depending which version you're using. 
 </p>
 
-<details id="org0914213">
+<details id="org9e4defc">
 <p>
 
 </p>
@@ -2389,10 +2399,11 @@ Let's start with <a href="https://www.math.cmu.edu/~ploh/cmu.shtml">Poh-Shen Loh
 </ul></li>
 </ul>
 </div>
+</div>
 
-<div id="outline-container-Combinatorics%20lecture%201" class="outline-3">
-<h3 id="Combinatorics%20lecture%201">Combinatorics lecture 1</h3>
-<div class="outline-text-3" id="text-Combinatorics%20lecture%201">
+<div id="outline-container-Discrete%20math%20lecture%201" class="outline-2">
+<h2 id="Discrete%20math%20lecture%201">Discrete math lecture 1</h2>
+<div class="outline-text-2" id="text-Discrete%20math%20lecture%201">
 <p>
 The <a href="https://youtu.be/0K540qqyJJU">first</a> lecture begins ~14:30 mins. We start here so you can see how to investigate problems in math. He's breaking down some elementary combinatorics problems to show the logic of solving them. @37:40 why does the last digit have to be even? Because it's supposed to be an even 4-digit number so ending in 0, 2, 4, 5, 8. The general form is crazy but he did it by writing down a table of one digit numbers, two digits .. n + 1 digits to find the general pattern.
 </p>
@@ -2418,66 +2429,20 @@ Let's try the <a href="https://www.math.cmu.edu/~ploh/docs/math/2021-228/hw1.pdf
 </p>
 
 <p>
-3.) This is solved by Wildberger <a href="https://youtu.be/h0Woqc_5qUE">here</a> where he shows how to count the number of paths on a grid, it's Pascal's array or n choose k as detailed in his <a href="https://youtu.be/V2mk24udsMw">Famous Math Problems 5</a> lecture. There is also a writeup <a href="https://researchideas.ca/wmt/c6b3.html">here</a> how to avoid paths on a grid. First we can <a href="https://www.desmos.com/calculator/fbaikxgmyr">visualize</a> this with free online graphing software, either plotting y = 59 streets and x = 8 avenues or reduce the scope, since we're only interested in the (59 - 34) and (8 - 5) avenues. Zoom to see all the streets. If King Kong goes (59 - 34) streets and (8 - 5) avenues he has 25 streets + 3 avenues or 28 total moves in any direct path to the Empire state building then we have to figure out how to subtract the paths that involve 42nd and 7th ave. 
+3.) This is exampled by Wildberger <a href="https://youtu.be/h0Woqc_5qUE">here</a> where he shows how to count the number of paths on a grid, it's Pascal's array or n choose k as detailed in his <a href="https://youtu.be/V2mk24udsMw">Famous Math Problems 5</a> lecture. There is also a writeup <a href="https://researchideas.ca/wmt/c6b3.html">here</a> how to avoid paths on a grid and is the answer to this problem. First we can <a href="https://www.desmos.com/calculator/fbaikxgmyr">visualize</a> this with free online graphing software, either plotting y = 59 streets and x = 8 avenues or reduce the scope, since we're only interested in the (59 - 34) and (8 - 5) avenues. Zoom to see all the streets. If King Kong goes (59 - 34) streets and (8 - 5) avenues he has 25 streets + 3 avenues or 28 total moves in any direct path to the Empire state building then we have to figure out how to subtract the paths that involve 42nd and 7th ave.  
 </p>
 </div>
-</div>
-
-
 
 <div id="outline-container-Algebra%20chapter%201" class="outline-3">
 <h3 id="Algebra%20chapter%201">Algebra chapter 1</h3>
 <div class="outline-text-3" id="text-Algebra%20chapter%201">
 <p>
-Reading <i>Mathematics via problems</i> book by Skopenkov. The contents of this book are similar to undergrad courses like <a href="https://cs.uwaterloo.ca/~cbruni/pdfs/Math135Notes/M135Notes_S2018.pdf">Math 135: Algebra for Honours Mathematics</a> and if you search for the course description they removed the <i>sage on the stage</i> approach of lecturing and students solely do problems together in class, like a math circle. In the preface of Skopenkov's book we are informed that you don't read this book linearly, you take sections that interest you solving the level 1 to 2 problems, then going back later and trying the level 3 and 4 problems as you will be 'at a new level'. Prof K in the software workshop recommends the same method that you iterate over material you've already done multiple times each time returning to it at a higher level so you can see how concepts there transfer over to concepts you're currently learning. 
+Reading <i>Mathematics via problems</i> <a href="http://libgen.is/book/index.php?md5=B45D7552DC5CDC4E1EC1A323039B9AF9">book</a> by Skopenkov. The contents of this book are similar to undergrad courses like <a href="https://cs.uwaterloo.ca/~cbruni/pdfs/Math135Notes/M135Notes_S2018.pdf">Math 135: Algebra for Honours Mathematics</a> and if you search for the course description they removed the <i>sage on the stage</i> approach of lecturing and students solely do problems together in class, like a math circle. In the preface of Skopenkov's book we are informed that you don't read this book linearly, you take sections that interest you solving the level 1 to 2 problems, then going back later and trying the level 3 and 4 problems as you will be 'at a new level'. Prof K in the software workshop recommends the same method that you iterate over material you've already done multiple times each time returning to it at a higher level so you can see how concepts there transfer over to concepts you're currently learning. The preface also says we are doing this to learn both how a mathematician reasons their way through problems, and because 'the lack of skill (manipulating algebraic expressions) amoung olypians often leads to ridiculous and annoying mistakes'.
 </p>
 
 <p>
 1.1.1(a) What are the rules of divisibility by 2, 4, 5, 10, 3, 9 and 11. This is an example of a great problem you could figure out yourself during spare time using just a phone calculator. Investigate first seeing if you can discover the rule, then look at author's proofs.
 </p>
-
-<details id="orgb74d3d4">
-<ul class="org-ul">
-<li>Divisible by 2:
-<ul class="org-ul">
-<li>Examples: 2, 4, 6, 8, 100, 1204</li>
-<li>Rule: last digit must be even, or end in 0 if &gt; 1 digit</li>
-</ul></li>
-<li>Divisible by 4:
-<ul class="org-ul">
-<li>Examples: 4, 8, 14*2, 16, 116, 11116</li>
-<li>Rule: any number where the last 2 digits are divisible by 4</li>
-<li>any even number x 2 is also divisible by 4</li>
-</ul></li>
-<li>Divisible by 5:</li>
-<li>5, 10, 70, 75, 100, 1115
-<ul class="org-ul">
-<li>Last digit ends in 5 or if &gt; 1 digit ends in 0</li>
-</ul></li>
-<li>Divisible by 10:
-<ul class="org-ul">
-<li>Rule: ends in 0</li>
-</ul></li>
-<li>Divisible by 3:
-<ul class="org-ul">
-<li>1 digit: 3, 6, 9</li>
-<li>2 digit: 12, 15, 18, 51</li>
-<li>n digit: 102, 1131, 1221, 13335</li>
-<li>Rule: Digits must sum to 3, 6, 9 etc if number is divisible by 3</li>
-<li>Test: Random number who's digits sum to 18, divide by 3 ie: 44442</li>
-</ul></li>
-<li>Divisible by 9:
-<ul class="org-ul">
-<li>You probably already know this from elementary school</li>
-</ul></li>
-<li>Divisible by 11:</li>
-<li>Examples: 11, 22, 143, 275, 726, 737
-<ul class="org-ul">
-<li>1-1 = 0, 2-2 - 0.. 143 add 1 and 3 then 4 - 4</li>
-<li>726: add 6 and 7, subtract 2 = 11</li>
-<li>Rule: sum even/odd digits, subtract from each other, if result is divisible by 11 or result is 0 then the original number is divisible by 11</li>
-</ul></li>
-</ul>
 
 <p>
 Page 2 are the proofs, he's using generalized hindu-arabic notation we already learned. First proof, subtract from n the last digit, ie: 112 - 2 = 110. What does he mean by 'divides each term of the sum' he means in hindu-arabic notation form, so 112 = 100 + 10 + 2 or 336 = 300 + 30 + 6 and 2 divides each term and the sum. The proof of divisibility by 4, any number n if you subtract the 10's and the last digit, it will be divisible by 4 like 177 is 177 - 70 - 7 or 100. The 4|n notation is in the preface, it means 4 divides n.
@@ -2492,7 +2457,6 @@ Page 2 are the proofs, he's using generalized hindu-arabic notation we already l
 <p>
 The rest of the proofs put in concrete values if you don't understand them like the proof of divisibility by 3: 234 is (200 - 2) + (30 - 3) + (4 - 4) or 225 which is divisible by 3. 1224 is (1000 - 1) + (200 - 2) + (20 - 2) + (4 - 4) or 1215 which is also divisible by 3, and by 9. He inserts a function f(n) to represent the algorithm of summing even/odd indexes of numbers divisible by 11. 
 </p>
-</details>
 
 <p>
 1.1.1(b) Trying some examples, 111,111|(10<sup>6m</sup> - 1). It will also divide repeating number of 1's that are 10<sup>6m</sup> digits long, so it's digit sum needs to be divisible by 6 ie 10<sup>12</sup>, 10<sup>18</sup> etc. A huge number consisting of all 1's who's digits sum to 1993 (a prime number, so sum of digits not divisible by anything except itself) is not divisible by 111,111. 
@@ -2503,19 +2467,38 @@ The rest of the proofs put in concrete values if you don't understand them like 
 </p>
 
 <p>
-Finish the rest of chapter 1, so 1.1.3, 1.1.4 and 1.1.5.
+Finish the rest of chapter 1, so 1.1.3, 1.1.4 and 1.1.5. We will return again later to the same concepts over and over so you don't have to memorize anything.
 </p>
 
 <ul class="org-ul">
 <li>1.1.3(a): 2|(a<sup>2</sup> - a) input small examples, like 3<sup>2</sup> - 3 is 6, whatever you substitute for a ends up even and is divisible by 2. A lot of Tao's rules are here, like not being able to cancel each side if the cancelled number is 0.</li>
 <li>1.1.3(f) if a = kb then ac = k(bc) which is still in the definition of division form: (thing) = k(thing).</li>
 <li>1.1.4 if a is divisible by 2 and 3, then a is obviously even, and since it is divisible by 3 as well, 3 x (even) will be divisible by 6. He uses an interesting proof for these but if 17|a and 19|a then 17x19 = 323 and 323|a because 17|323 and 19|323 is how I read it.</li>
-<li>1.1.5(a) k = 7 is not divisible by 2, 3 or 5 and 240|(7<sup>4</sup> - 1), also if k = 11, or k = 17. TODO</li>
 </ul>
+
+<p>
+A good first chapter covering division which Wildberger in his beginning math foundations lecture claims is the one thing most students don't understand. Poh-Shen Loh also claims students usually don't understand ratios/fractions/division, that's why we are doing this. 
+</p>
 </div>
 </div>
 </div>
 
+<div id="outline-container-Discrete%20Math%20Lecture%202" class="outline-2">
+<h2 id="Discrete%20Math%20Lecture%202">Discrete Math Lecture 2</h2>
+<div class="outline-text-2" id="text-Discrete%20Math%20Lecture%202">
+<p>
+CMU Discrete Mathematics <a href="https://youtu.be/8N5xIdzCsU8">lecture</a> 2/3. This class covers some linear algebra, which I do in the first assignment of 10-301 in the <a href="./ai.html">AI workshop</a> and also <a href="./linear.html">here</a> which also covers Eigenvalues/vectors. You can also watch Wildberger's lectures on linear algebra to see how a 2x2 matrix is <a href="https://www.youtube.com/playlist?list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">multiplied</a>. Around 43m if you're curious how to invert a matrix you can either type it into wolfram alpha and see instant results or watch this other Wildberger <a href="https://youtu.be/anBKWgH_2eM">lecture</a> you take the determinant, factor it out and multiply it by the 'adjoint' which is a matrix where every entry is it's determinant. Since this is all 1's we simply invert the minus/plus signs. This was a crazy lecture.
+</p>
+
+<p>
+Last 10 minutes are about paths, which is the first homework we already did. Around 53mins notice LRRLLRRL no matter how you permute those instructions, you get to the destination. If you did LLLLRRRR you walk the edges of the square. If you did RRRLLLLR you end up in destination again. End of lecture is the homework, total amount of paths minus top path multiplied by bottom path. We figured this out ourselves.
+</p>
+</div>
+
+<div id="outline-container-Algebra%20chapter%202%20TODO" class="outline-3">
+<h3 id="Algebra%20chapter%202%20TODO">Algebra chapter 2 TODO</h3>
+</div>
+</div>
 
 <div id="outline-container-CMU%20Putnam%20Seminar" class="outline-2">
 <h2 id="CMU%20Putnam%20Seminar">CMU Putnam Seminar</h2>
@@ -2564,6 +2547,33 @@ He cleared the fractions by multiplying the polynomial by c<sup>n</sup> which yo
 <p>
 His other site Expii Solve has similar kinds of <a href="https://www.expii.com/solve/70/1">challenges</a> they start easy and get harder with links at the bottom of each question where to find background material, you may want to try those too they help you learn all kinds of topics such as spherical geometry, probability and even calculus. It's a community written site so kind of like math overflow where anybody can write a tutorial for a subject and these are upvoted if other people find them useful, which could be good or bad, a well written Tao-like fundamentals post would likely not be upvoted compared to some bag of tricks with a clickbait youtube embed. 
 </p>
+</div>
+</div>
+
+<div id="outline-container-Putnam%20Seminar%20Polynomials" class="outline-3">
+<h3 id="Putnam%20Seminar%20Polynomials">Putnam Seminar Polynomials</h3>
+<div class="outline-text-3" id="text-Putnam%20Seminar%20Polynomials">
+<p>
+I didn't do the course homework, they are designed for groups and we will work through the Putnam book instead because it has worked out solutions for everything and this is ridiculously advanced math problem solving (but remember, the contest is designed for freshmen with little experience). We will go back at a new level when we are done and try the homework yourself after.
+</p>
+
+<p>
+The only prereq for this lecture is Wildberger's crash course in calculus <a href="https://www.youtube.com/watch?v=zfHEkt-1sqo">here</a>.
+</p>
+
+<p>
+Watching the second <a href="https://youtu.be/y59fzI4UrRo">lecture</a> on Polynomials. My first thought to solve problem 1 was the same as the student as it looked suspiciously like the x<sup>n</sup> integral which you can watch in Wildberger's famous math problems 10 <a href="https://youtu.be/vo-ItaB28f8">series</a> and IIRC in part 2 he covers every dimension from x<sup>0</sup>, to x<sup>1</sup>, etc.
+</p>
+</div>
+
+<div id="outline-container-Antiderivatives" class="outline-4">
+<h4 id="Antiderivatives">Antiderivatives</h4>
+<div class="outline-text-4" id="text-Antiderivatives">
+<p>
+What is an 'antiderivative'? Let's find <a href="https://ocw.mit.edu/courses/mathematics/18-01-single-variable-calculus-fall-2006/video-lectures/lecture-15-antiderivatives/">out</a>. As a bonus we get an introduction to integrals which really just means a sum. Right away we get dy = f'(x)(dx) and of course if you divide each side by dx you get dy/dx = f'(x). All of this is in Wildberger lectures on his youtube channels if you're interested especially infinitesimals. "Britain fell behind 100 or 200 years because of notation". Did you follow the examples how (64.1)<sup>1/3</sup> becomes 1/3(64.1)<sup>-2/3</sup>) because of the derivative formula D(x) = nx<sup>n - 1</sup> so 1/3 - 1 is -2/3. Also recall from Tao's book on rational exponents that 1/2 is a square root, so rational exponent 1/3 is the cubed root. Why is dx only 1/10 because again Wildberger's previous lectures in this workshop on decimals .1 is 1/10. We get a review of linear approximation which is also great. TODO, actually this lecture is quite simple if you've made it this far.
+</p>
+
+
 
 
 
@@ -2571,6 +2581,7 @@ His other site Expii Solve has similar kinds of <a href="https://www.expii.com/s
 <p>
 <a href="./index.html">Home</a>
 </p>
+</div>
 </div>
 </div>
 </div>
