@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-05-30 Sun 17:49 -->
+<!-- 2021-06-19 Sat 15:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -288,6 +288,11 @@
 <li><a href="#Lectures%203--Reading">Reading</a></li>
 </ul>
 </li>
+<li><a href="#Lectures%204">Lectures 4</a>
+<ul>
+<li><a href="#10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -296,7 +301,7 @@
 <h2 id="Courses">Courses</h2>
 <div class="outline-text-2" id="text-Courses">
 <p>
-Let's start with machine learning. I'm going to do these 3 courses but you don't have to, they all cover the same thing (supervised learning) so if something doesn't make sense in one lecture, you can watch it presented differently in another course. Wildberger's <a href="https://www.youtube.com/playlist?list=PLIljB45xT85AMigTyprOuf__daeklnLse">playlist</a> of probability &amp; stats is a geometric explanation and all you need to start, watch it concurrently with the ML lectures. We will pick up all the prereqs as we do the assignments.
+Let's start with machine learning. I'm going to do these 3 courses but you don't have to, they all cover the same thing (supervised learning) so if something doesn't make sense in one lecture, you can watch it presented differently in another course. Wildberger's <a href="https://www.youtube.com/playlist?list=PLIljB45xT85AMigTyprOuf__daeklnLse">playlist</a> of probability &amp; stats is a geometric explanation and all you need to start, watch it concurrently with the ML lectures. We will pick up all the prereqs as we do the assignments. There is also <a href="https://seeing-theory.brown.edu/basic-probability/index.html">seeing theory</a> from Brown university with interactive examples of basic probability. 
 </p>
 
 <ul class="org-ul">
@@ -324,7 +329,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="org4d28747">
+<pre class="example" id="org3999e3e">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -337,7 +342,7 @@ magnet:?xt=urn:btih:2e1005d058b5f4c357d7338c85937aabdd91dcdc&amp;dn=10601
 <h3 id="Books">Books</h3>
 <div class="outline-text-3" id="text-Books">
 <p>
-The courses do not follow a single book and recommend the following, many are free or try <a href="https://en.wikipedia.org/wiki/Library_Genesis">libgen</a>:
+The courses do not follow a single book and recommend the following as supplementary, many are free or try <a href="https://en.wikipedia.org/wiki/Library_Genesis">libgen</a>:
 </p>
 
 <ul class="org-ul">
@@ -530,7 +535,7 @@ This lecture is probably the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="org633e910">
+<pre class="example" id="org34dac82">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -632,7 +637,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="orge09f158">
+<pre class="example" id="org7917516">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -835,7 +840,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org9607236">
+<pre class="example" id="orga8993c8">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -884,7 +889,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="orga15e4c2">
+<pre class="example" id="orgf0c38c5">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -990,7 +995,7 @@ The rest of the lecture is about what 'maximizes splitting criteria' means which
 <h3 id="CS4780%20K-nearest%20neighbours">CS4780 K-nearest neighbours</h3>
 <div class="outline-text-3" id="text-CS4780%20K-nearest%20neighbours">
 <p>
-There is open assignments and solutions for this class <a href="https://www.dropbox.com/s/tbxnjzk5w67u0sp/Homeworks.zip?dl=0">here</a>. Click the dropdox download icon and you get all the semesters homework. Reminder nothing has really changed, even our most recent 10-701 lectures use the same recommended reading material as this older class.
+There is open assignments and solutions for this class <a href="https://www.dropbox.com/s/tbxnjzk5w67u0sp/Homeworks.zip?dl=0">here</a>. Click the dropdox download icon and you get all the semesters homework. Nothing has really changed, even our most recent 10-701 lectures use the same recommended reading material as this older class.
 </p>
 
 <p>
@@ -1007,8 +1012,65 @@ The point of this algorithm as per the student who asks the question "why are we
 <h3 id="Lectures%203--Reading">Reading</h3>
 <div class="outline-text-3" id="text-Lectures%203--Reading">
 <p>
-TODO
+Looking at the lecture <a href="https://www.cs.cmu.edu/~aarti/Class/10701_Spring21/lecs.html">schedule</a> for latest 10-701 they want us to read Murphy 1.1-1.3 which we already did, <a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">Bishop</a> 2.1 - 2.3.6, 1.5 and Mitchell <a href="http://www.cs.cmu.edu/~tom/mlbook/Joint_MLE_MAP.pdf">chapter 2</a> covering MLE/MAP. Looking at these books, the Mitchell book clearly simplifies equations in steps and defines exactly how the maximum likelihood estimation algorithm works which is simply: a1/a1+a2 so if D is a record of coin flips H or T: D = {1,0,1,0} is 2/2+2 or MLE = 1/2. Comparing to the Bishop book which is just piles of definitions I would recommend skimming Mitchell chapter 2 and using Bishop as a later reference, or using the <i>Mathematics for Machine Learning</i> book chapter on probability. 
 </p>
+
+<p>
+Reminder there is also <a href="https://seeing-theory.brown.edu/index.html">Seeing Theory</a> from Brown university but the way to understand all these definitions is to actually use them in the assignments later, we can always pick up a 'one thousand exercises in probability and stats' book after these courses to shore up our skills.  
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Lectures%204" class="outline-2">
+<h2 id="Lectures%204">Lectures 4</h2>
+<div class="outline-text-2" id="text-Lectures%204">
+</div>
+<div id="outline-container-10-701%20KNN%20Continued%20and%20Naive%20Bayes" class="outline-3">
+<h3 id="10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</h3>
+<div class="outline-text-3" id="text-10-701%20KNN%20Continued%20and%20Naive%20Bayes">
+<p>
+In this lecture we begin to learn the most critical 'machine learning engineer' skills which is feature engineering, take very noisy data, know which information to encode as a feature or to ignore.  
+</p>
+
+<p>
+Supervised methods and their classifiers. Watching <a href="https://youtu.be/X9eiUitrzXY">this</a> lecture. @5:44 substitute in all those definitions, you get (K1)/(N1)V * (N1)/N which is (K1)(N1)/(N1)VN or (K1)/VN, then divide by p(z) or p(x) which is K/NV and recall from math workshop Wildberger lectures for rules of division this is (K1)/VN * NV/K and of course both NV and VN cancel and we are left with (K1)/K. He says KNN has numerous downsides like taking forever if you have a large number of samples, which is pretty much every ML problem and the approximation techniques for KNN have no guarantee of accuracy since they are by definition approximations but can be used if you've chosen to classify using KNN with a distance function.
+</p>
+
+<p>
+There are three major types of classifiers:
+</p>
+<ul class="org-ul">
+<li>instance based
+<ul class="org-ul">
+<li>no models, use observation direction (KNN)</li>
+</ul></li>
+<li>generative
+<ul class="org-ul">
+<li>building a statistical model (bayesian networks)</li>
+</ul></li>
+<li>discriminative
+<ul class="org-ul">
+<li>directly estimate a boundary (decision tree)</li>
+</ul></li>
+</ul>
+
+<p>
+The dataset around 14:50 reminder in p(X|y) X is a vector representing a row in that dataset, y is the label which in this case is a binary class label 'rich or poor'. If my intuition of the naive bayes classifier is correct, he's saying the idea is to assume all columns (our features) are independent even if they obviously are not, since if your age is 10 you are likely not holding a degree, but we can ignore this anyway to come up with a classification rule based on each feature. p(X|y) = product of p(feature|y) is how I read that equation. You determine probability for each column entry given a label, then multiply them all together to get the overall probability of that row vector being class poor or rich. Finally we feed all this into a conditional likelihood function which helps us learn new parameters that we can then go back and use on the original data as a classifier. Seems like an insane amount of work considering how big these datasets are with gigantic amounts of features.
+</p>
+
+<p>
+@30:00 is basically what we really need to know, how to encode data as a feature. He's using bag of words encoding which we already know from CS19 in the software workshop, it was the first assignment. In that assignment we played with toy input vectors and here he is telling us that a real bag of words vector has 10k entries. TODO   
+</p>
+
+
+
+
+
+
+
+
+
 <hr>
 <p>
 <a href="./index.html">Home</a>
