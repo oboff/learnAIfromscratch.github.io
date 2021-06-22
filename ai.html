@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-21 Mon 19:42 -->
+<!-- 2021-06-22 Tue 15:32 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -291,6 +291,7 @@
 <li><a href="#Lecture%204">Lecture 4</a>
 <ul>
 <li><a href="#10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</a></li>
+<li><a href="#10-301%20Overfitting%20%2B%20KNN">10-301 Overfitting + KNN</a></li>
 </ul>
 </li>
 </ul>
@@ -329,7 +330,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="org6730257">
+<pre class="example" id="org51bfdc1">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -535,7 +536,7 @@ This lecture is probably the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="orgbaef2fa">
+<pre class="example" id="org6b343cb">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -637,7 +638,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="org576e907">
+<pre class="example" id="org78149d4">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -840,7 +841,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="orga16e91a">
+<pre class="example" id="orgcfe9682">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -889,7 +890,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org740c1a3">
+<pre class="example" id="org3c4b265">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -1116,7 +1117,7 @@ The answer is it will change both KNN and NB labels because you've broken the co
 </p>
 
 <p>
-K-nearest neighbors from what I tell so far, is something you actually plot in a graph and then run a distance function on. Take the petal length of samples, graph them all, take new sample with new petal length, draw/determine an n-sized 'ball' around it and take majority vote of the 3 or 5 or k-nearest neighbors, that determines the label. In other words you have 1000 flower samples and manually label each one. Graph them by feature, say petal length. Take new sample and add it to the graph. Count the nearest plotted neighbors and take majority vote, that's the new sample's label. This can all be accomplished with algorithms/distance functions too of course instead of staring at a visual plot and you can see how highly abstract this method can become, using it to encode numerous different learning classification problems if you're dealing with numbers for feature selection. 
+K-nearest neighbors from what I tell so far, for the purposes of intuition, is something you can actually plot in a graph and then run a distance function on. Take the petal length of samples, graph them all, take new sample with new petal length, draw/determine an n-sized 'ball' around it and take majority vote of the 3 or 5 or k-nearest neighbors, that determines the label. In other words you have 1000 flower samples and manually label each one. Graph them by feature, say petal length. Take new sample and add it to the graph. Count the nearest plotted neighbors and take majority vote, that's the new sample's label. This can all be accomplished with algorithms/distance functions too of course instead of staring at a visual plot and you can see how highly abstract this method can become, casting it around dimensions to measure distances on the real line. 
 </p>
 
 <p>
@@ -1128,7 +1129,7 @@ Anecdote: notice as he goes through the poll results, many students are adding i
 </p>
 
 <p>
-The N(mean, covariance) notation at 1:00:19 is covered in the last Wildberger probability lecture on <a href="https://youtu.be/80Lt--lex_M">normal distribution</a> (I assume you've watched them all). Reminder these are all established libraries in many programming languages you don't have to manually do it. A covariance matrix is defined <a href="https://youtu.be/WBlnwvjfMtQ">here</a> and you can skim that lecture to get an idea how it exists to generalize the notion of variance to multiple dimensions. Multiple dimensions meaning our gigantic input vectors that have like 50+ rows of 'features', this is a 50+ dimensional space so we can't use typical variance calculation we want to generalize to many dimensions and again this is some existing library plug and play and we will cover it in the assignments when they come up to manually unravel it's definition. The prof is an expert in genetic machine learning so he gives us an example of classifying gene expression data and how you can use NB classifers.
+This will be in the 2021 Murphy book we do for reading after, which has supplementary notes as programming notebooks we can run in our browser and see exactly what a covariance matrix is or multivariable probability. 
 </p>
 
 <p>
@@ -1144,9 +1145,12 @@ The end of the lecture is problems with this classifier:
 <li>Solution is to add one to everything (pseudocount) to avoid a zero getting in there and nulling out the entire row</li>
 </ul></li>
 </ul>
+</div>
+</div>
 
-
-
+<div id="outline-container-10-301%20Overfitting%20%2B%20KNN" class="outline-3">
+<h3 id="10-301%20Overfitting%20%2B%20KNN">10-301 Overfitting + KNN</h3>
+<div class="outline-text-3" id="text-10-301%20Overfitting%20%2B%20KNN">
 <hr>
 <p>
 <a href="./index.html">Home</a>
