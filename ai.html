@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-21 Mon 19:24 -->
+<!-- 2021-06-21 Mon 19:42 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -329,7 +329,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="org7a34bb4">
+<pre class="example" id="org6730257">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -535,7 +535,7 @@ This lecture is probably the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="org226aa4f">
+<pre class="example" id="orgbaef2fa">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -637,7 +637,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="orge9655e2">
+<pre class="example" id="org576e907">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -840,7 +840,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org2441f7a">
+<pre class="example" id="orga16e91a">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -889,7 +889,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org84b1811">
+<pre class="example" id="org740c1a3">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -1034,7 +1034,7 @@ This lecture after you watch it go back to the beginning with all the math notat
 </p>
 
 <p>
-@5:44 substitute in all those definitions, you get (K1)/(N1)V * (N1)/N which is (K1)(N1)/(N1)VN or (K1)/VN, then divide by p(z) or p(x) which is K/NV and recall from math workshop Wildberger lectures for rules of division this is (K1)/VN * NV/K and of course both NV and VN cancel and we are left with (K1)/K. He says KNN has numerous downsides like taking forever if you have a large number of samples, which is pretty much every ML problem and the approximation techniques for KNN have no guarantee of accuracy since they are by definition approximations but can be used if you've chosen to classify using KNN with a distance function.
+@5:44 substitute in all those definitions, you get (K1)/(N1)V * (N1)/N which is (K1)(N1)/(N1)VN or (K1)/VN, then divide by p(z) or p(x) which is K/NV and recall from math workshop Wildberger lectures for rules of division this is (K1)/VN * NV/K and of course both NV and VN cancel and we are left with (K1)/K. He says KNN has numerous downsides like taking forever if you have a large number of samples, which is pretty much every ML problem and the approximation techniques for KNN have no guarantee of accuracy since they are by definition approximations.
 </p>
 
 <p>
@@ -1051,7 +1051,7 @@ There are three major types of classifiers:
 </ul></li>
 <li>discriminative
 <ul class="org-ul">
-<li>manually estimate a boundary (decision tree)</li>
+<li>manually estimate a boundary (decision trees)</li>
 </ul></li>
 </ul>
 
@@ -1066,11 +1066,11 @@ The dataset around 14:50 reminder in p(X|y) X is a vector representing a row in 
 
 <p>
 <b>Naive Bayes classification summary</b>
-Let's say you have 1000 sample articles and wish to use Naive Bayes classification to learn the parameters needed to classify new articles. This is your training sample, you manually go through 70-80% of the samples (remember the Cornell lecture, always keep some of your training data to use later as tests) and each one label it either 'Election' or 'Sports'. You then manually calculate the probability of one of these articles being either class E which is: (number of E articles/total articles) and the probability of class S is (1 - p(E)). You would then select some features, say 5 words you've chosen and go back over the training samples again. If 100 of the documents in the election class have your selected feature 'football', you calculate (100/num election class articles) = p('Football'|Election). You do this for every feature in the training set. This works because we can assume conditional independence of each feature. 
+Let's say you have 1000 sample articles and wish to use Naive Bayes classification to learn the parameters needed to classify new articles. This is your training sample, you manually go through 70-80% of the samples (remember the Cornell lecture, always keep some of your training data to use later as tests) and each one label it either 'Election' or 'Sports'. You then manually calculate the probability of one of these articles, ie: class E (number of E articles/total articles) and the probability of class S is (1 - p(E)). You would then select some features, say 5 words you've chosen and go back over the training samples again. If 100 of the documents in the election class have your selected feature 'football', you calculate (100/num election class articles) = p('Football'|Election). You do this for every feature in the training set. This works because we can assume conditional independence of each feature. 
 </p>
 
 <p>
-Now you learn the classification by determining p(feature=yes|class=E) for all 5 features. Input training sample, multiply each row entry by the probabilities you've already figured out, if feature=no or if using bag of words model and it's entry is a 0: subtract (1 - p(feature=yes|class=E)). Finally you multiply all these values by the probability of it being an E document, so 6 multiplications for 5 features. You then do it all over again for p(feature=yes|class=S). Now we have 12 multiplications in total for a single sample. Your algorithm then selects the arg max or which one has the greatest probability and labels that sample E or S. Repeat until out of training samples. Now run same classification algorithm on the unseen test data you kept aside from the training samples, and input results to a loss function. Congrats you just wrote a learning algorithm.  
+Now you learn the classification by determining p(feature=yes|class=E) for all 5 features. Input training sample, multiply each row entry by the probabilities you've already figured out, if feature=no or if using bag of words model and it's entry is a 0: subtract (1 - p(feature=yes|class=E)). Finally you multiply all these values by the probability of it being an E document, so 6 multiplications for 5 features. You then do it all over again for p(feature=yes|class=S). Now we have 12 multiplications in total for a single sample. Your algorithm then selects the arg-max or which one has the greatest probability and labels that sample E or S. Repeat until out of training samples. Now run same classification algorithm on the unseen test data you kept aside from the training samples, and input results to a loss function. Congrats you just wrote a learning algorithm.  
 </p>
 
 <p>
@@ -1083,7 +1083,7 @@ The in class poll questions are hard to see I had to change the quality to 1080p
 </ul>
 
 <p>
-The answer was in the slides for classifying E or S, @41:00 or so. I assume he means each input vector is a single sample, so if the input vector has 10 values it has 10 features. Each row entry must be multiplied by the feature conditioned on the label so since there are 3 labels, they all have to get multiplied 10 times by 3 labels so 30 parameters needed. In addition we already have calculated probabilites or any document being E or S class, so these are 2 more parameters because the 3rd label is (1 - p(E + S)) to get the probability of it being a Health label. Think about how many parameters this is, for just 10 features and 3 classes you need 32 things minimum to distinguish any single sample into 3 labels using Naive Bayes classifer.
+The answer was in the slides for classifying E or S, @41:00 or so. I assume he means each input vector is a single sample, so if the input vector has 10 values it has 10 features. Each row entry must be multiplied by the feature conditioned on the label so since there are 3 labels, they all have to get multiplied 10 times by 3 labels so 30 parameters needed. In addition we already have calculated probabilites or any article being E or S class, so these are 2 more parameters because the 3rd label is (1 - p(E + S)) to get the probability of it being a Health label. Think about how many parameters this is, for just 10 features and 3 classes you need 32 things minimum to distinguish any single sample into 3 labels using Naive Bayes classifer.
 </p>
 
 <p>
@@ -1112,7 +1112,7 @@ The answer was in the slides for classifying E or S, @41:00 or so. I assume he m
 </ul>
 
 <p>
-The answer is it will of course change both KNN and NB labels because you've broken the 'conditional independence' of NB by duplicating a feature, we can now no longer assume the features are independent because obviously one is 100% dependent on the other. KNN he explains this duplication changes the weight of that feature which for some samples will screw up the labelling.
+The answer is it will change both KNN and NB labels because you've broken the conditional independence of NB by duplicating a feature, we can now no longer assume the features are independent because obviously one is 100% dependent on the other. KNN he explains this duplication changes the weight of that feature which for some samples will screw up the labelling.
 </p>
 
 <p>
@@ -1128,7 +1128,7 @@ Anecdote: notice as he goes through the poll results, many students are adding i
 </p>
 
 <p>
-The N(mean, covariance) notation at 1:00:19 is covered in the last Wildberger probability lecture on <a href="https://youtu.be/80Lt--lex_M">normal distribution</a> (I assume you've watched them all). Reminder these are all established libraries in many programming languages you don't have to manually do it. A covariance matrix is defined <a href="https://youtu.be/WBlnwvjfMtQ">here</a> and you can skim that lecture to get an idea how it exists to generalize the notion of variance to multiple dimensions. Multiple dimensions meaning our gigantic input vectors that have like 30+ rows of 'features', this is a 30+ dimensional space so we can't use typical variance calculation we want to generalize to many dimensions. of course this is some existing library plug and play and we will cover it in the assignments when they come up to manually unravel it's definition. The prof is an expert in genetic machine learning so he gives us an example of classifying gene expression data and how you can use naive bayes classifers.
+The N(mean, covariance) notation at 1:00:19 is covered in the last Wildberger probability lecture on <a href="https://youtu.be/80Lt--lex_M">normal distribution</a> (I assume you've watched them all). Reminder these are all established libraries in many programming languages you don't have to manually do it. A covariance matrix is defined <a href="https://youtu.be/WBlnwvjfMtQ">here</a> and you can skim that lecture to get an idea how it exists to generalize the notion of variance to multiple dimensions. Multiple dimensions meaning our gigantic input vectors that have like 50+ rows of 'features', this is a 50+ dimensional space so we can't use typical variance calculation we want to generalize to many dimensions and again this is some existing library plug and play and we will cover it in the assignments when they come up to manually unravel it's definition. The prof is an expert in genetic machine learning so he gives us an example of classifying gene expression data and how you can use NB classifers.
 </p>
 
 <p>
