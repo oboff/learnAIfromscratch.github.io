@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-06-23 Wed 20:26 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn (Modern) Calculus from Scratch in X Days</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="jbh">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  body {
+  max-width: 40rem;
+  padding: 1rem;
+  margin: auto;
+  }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style> body {background-color: #fafad2} </style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Learn (Modern) Calculus from Scratch in X Days</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#Intro">Intro</a>
+<ul>
+<li><a href="#Who%20needs%20this%3A">Who needs this:</a></li>
+<li><a href="#What%20background%20is%20needed">What background is needed</a></li>
+<li><a href="#How%20long%20will%20this%20take">How long will this take</a></li>
+<li><a href="#Why%20is%20this%20%27modern%27%20calculus">Why is this 'modern' calculus</a></li>
+<li><a href="#I%20lose%20interest%20after%20Y%20days%20and%20give%20up">I lose interest after Y days and give up</a></li>
+<li><a href="#Who%20are%20you%3F">Who are you?</a></li>
+</ul>
+</li>
+<li><a href="#Materials%20we%20will%20use">Materials we will use</a>
+<ul>
+<li><a href="#Books%20everybody%20else%20shills">Books everybody else shills</a></li>
+</ul>
+</li>
+<li><a href="#Let%27s%20do%20it%3A%20Basic%20review">Let's do it: Basic review</a>
+<ul>
+<li><a href="#Laws%20of%20Arithmetic">Laws of Arithmetic</a></li>
+<li><a href="#Summation%20%26%20Sequences">Summation &amp; Sequences</a></li>
+<li><a href="#Trigonometry%20review">Trigonometry review</a></li>
+</ul>
+</li>
+<li><a href="#How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">How the US olympiad coach teaches problem solving</a>
+<ul>
+<li><a href="#How%20to%20get%20peer%20help">How to get peer help</a></li>
+</ul>
+</li>
+<li><a href="#Calculus%20crash%20course">Calculus crash course</a></li>
+<li><a href="#Day%201">Day 1</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-Intro" class="outline-2">
+<h2 id="Intro">Intro</h2>
+<div class="outline-text-2" id="text-Intro">
+<p>
+Regardless of math background, if you want to learn the following, you came to right place:
+</p>
+
+<ul class="org-ul">
+<li>taking any data and building a model for it</li>
+<li>single and multivariable functions</li>
+<li>trig functionss</li>
+<li>exp and log functions</li>
+<li>parameters to Euler's e constant</li>
+<li>vector calculus</li>
+<li>optimization of the above</li>
+<li>approximations of the above</li>
+<li>differential eq, partial derivatives</li>
+<li>fundamental theorem(s) of calculus</li>
+</ul>
+</div>
+
+<div id="outline-container-Who%20needs%20this%3A" class="outline-3">
+<h3 id="Who%20needs%20this%3A">Who needs this:</h3>
+<div class="outline-text-3" id="text-Who%20needs%20this%3A">
+<p>
+Anybody interested in some kind of applied science so biology, finance, sociology, any trade that involves measurement and estimation, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, or write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or vehicle software, anybody interested in statistics or really any student going to university who wants an applied introduction to the standard Calc I, II and III sequence because maybe you can get advanced placement.
+</p>
+</div>
+</div>
+
+<div id="outline-container-What%20background%20is%20needed" class="outline-3">
+<h3 id="What%20background%20is%20needed">What background is needed</h3>
+<div class="outline-text-3" id="text-What%20background%20is%20needed">
+<p>
+None, no actually none. We are doing this from scratch and everything you forgot will get filled in when we do the problem sets. This is why all universities force students into the Calc I, II, III sequence because it's a uniform way to reteach them math from scratch but they can't guarantee their highschool covered the basics.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-How%20long%20will%20this%20take" class="outline-3">
+<h3 id="How%20long%20will%20this%20take">How long will this take</h3>
+<div class="outline-text-3" id="text-How%20long%20will%20this%20take">
+<p>
+No idea but I will do it ~1hr per day and see how long it takes, then the title of this page will change when I finish. I'm doing it with you. I already do this in intervals for 3 other <a href="https://learnaifromscratch.github.io/">workshops</a>, a hacking <a href="https://learnaifromscratch.github.io/theabsolutestateofsoftware.html">workshop</a>, a linear algebra <a href="https://learnaifromscratch.github.io/linear.html">workshop</a>. No problem. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Why%20is%20this%20%27modern%27%20calculus" class="outline-3">
+<h3 id="Why%20is%20this%20%27modern%27%20calculus">Why is this 'modern' calculus</h3>
+<div class="outline-text-3" id="text-Why%20is%20this%20%27modern%27%20calculus">
+<p>
+Basically for clickbait title reasons, We do the work by hand and the rest using the R programming language which the book will teach you, consider it an advanced calculator we aren't doing any programming though if you wanted to learn programming, do <a href="https://learnaifromscratch.github.io/software.html">this</a> at the same time.
+</p>
+</div>
+</div>
+
+<div id="outline-container-I%20lose%20interest%20after%20Y%20days%20and%20give%20up" class="outline-3">
+<h3 id="I%20lose%20interest%20after%20Y%20days%20and%20give%20up">I lose interest after Y days and give up</h3>
+<div class="outline-text-3" id="text-I%20lose%20interest%20after%20Y%20days%20and%20give%20up">
+<p>
+I have a math workshop <a href="https://learnaifromscratch.github.io/math.html">here</a> with olympiad/putnam style challenges instead of going through books in a linear way and forcing yourself to finish them which will eventually cover the same thing but it's a different style: you get up and look at (often very difficult) problem, write a list of possible solution strategies on paper, research for a few minutes then go about your day annoyed you can't solve this problem with it in the back of your mind until you get home later and either look at the solution or have figured out the solution. Can you get up 1hr before your normal time and drink a coffee while screwing around with some calculus modeling problems or during lunch over a bowl of noodles instead of mindlessly clicking <a href="http://www.aaronsw.com/weblog/hatethenews">propaganda</a> can you consider a few problems in continuous mathematics to better your own future? Then you'll do fine. You could even stretch this out to only working on the weekends and do fine. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Who%20are%20you%3F" class="outline-3">
+<h3 id="Who%20are%20you%3F">Who are you?</h3>
+<div class="outline-text-3" id="text-Who%20are%20you%3F">
+<p>
+This is my current sched:
+</p>
+
+<ul class="org-ul">
+<li>wake up 5 hrs before I have to do a labor job and remotely program <a href="https://youtu.be/ZiO2dq78mZI">often frightning drone software</a>, because a recruiter found my other git account where I did the assignments from <a href="https://symbolaris.com/course/lfcps.html">this</a> course</li>
+<li>do all the meme learnaifromscratch meme curriculum workshops at my leisure after</li>
+<li>teach prisoners the exact same material we are doing, if you want to help somebody buy a physical copy of any of these books and pirate the digital copy if the publisher doesn't give you a pdf, send the book to a prisoner and work through the material with them you will find they often jump way ahead of where you are because of their high motivation to get the hell out of there and it will motivate you to catch up. Try it.</li>
+</ul>
+
+<p>
+In the other workshops I will <a href="https://youtu.be/iM_DokBt0rk">infiltrate</a> many famous employers in my spare time for fun and of course profit studying their hiring process, and how can you manipulate some famous SV companies who hire in your city to just move around internally, to teach other anons how they can get past those whiteboard interviews (if you've done the software workshop, you're in). I already have income and don't care at all what happens and actually have a history of <a href="http://www.infiltration.org/zine.html">doing this</a> since I was a kid, it's easier than you think to <a href="https://youtu.be/GTtzB17SKwQ">assimilate</a>. Not that I would ever promote something cringe like malice/theft or anything but manipulating internal structures to level up is a fun hobby. You can do it too, whoever is reading this right now. 
+</p>
+
+<p>
+For example the terrible webdev <a href="https://functionalcs.github.io/curriculum/#org0ecde6f">curriculum</a> I applied and was hired to numerous famous dev meat grinder freelance sites (I can't name them, you've heard of them though) because I too recall what it was like to have no money and needed to get paid, but unfortunately what I found out about these sites is they record your every movement and are so evil I could not recommend them to other anons even as a place to infiltrate for fun. Many of these outfits start with 'top' or 'biers' or 'clever' you can fill in the blanks. I was surprised how much <a href="https://youtu.be/yzGJ-0jLTpI">they watch you</a>. That's kind of why I abandoned it and started the AI <a href="https://learnaifromscratch.github.io/ai.html">curriculum</a> because I think anons should have the same skills as these outfits who are trying to gather your data. We should gather data about them, and manipulate their processes not vice versa.     
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Materials%20we%20will%20use" class="outline-2">
+<h2 id="Materials%20we%20will%20use">Materials we will use</h2>
+<div class="outline-text-2" id="text-Materials%20we%20will%20use">
+<p>
+Every book you can think of is free from <a href="https://en.wikipedia.org/wiki/Library_Genesis">library genesis</a> including the book we are doing but I recommend to buy the books if you can to keep as future reference since technology tends to vanish after a few years while a book remains a book hundreds of years later.
+</p>
+
+<p>
+We will do:
+</p>
+
+<ul class="org-ul">
+<li>The <a href="http://libgen.rs/book/index.php?md5=8286655274707DE0FD09DCD636C258D3">book</a> <i>Mathematical Modeling and Applied Calculus</i> by Kilty &amp; McAllister
+<ul class="org-ul">
+<li>Read the review <a href="https://www.maa.org/press/maa-reviews/mathematical-modeling-and-applied-calculus">here</a></li>
+<li>This <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">playlist</a> that visualizes concepts in the book</li>
+</ul></li>
+</ul>
+
+<p>
+Also some practice solving/proving inequalities, which is 99% of all optimization work and we will see a few olympiad tier problem solving seminars so we can learn how to actually solve problems while modeling continuous mathematics. 
+</p>
+</div>
+
+<div id="outline-container-Books%20everybody%20else%20shills" class="outline-3">
+<h3 id="Books%20everybody%20else%20shills">Books everybody else shills</h3>
+<div class="outline-text-3" id="text-Books%20everybody%20else%20shills">
+<p>
+Like you, I too once had to google 'How to learn calculus' and received the worst possible advice. There are countless MOOCs, books, MIT Open Courseware with full lectures and assignments, and often confusing math stack exchange and blog posts that cover exactly what we are doing but most people including myself give up either as soon as the run into a wall and can't figure out something that is poorly explained, or from lack of interest. Ergo I am slightly gamifying this material by days I do it, sort of a 'this guy did it so anybody can' kind of manipulative strategy.
+</p>
+
+<p>
+Here are the books you will find when googling 'I need to learn Calculus':   
+</p>
+
+<p>
+Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimdean property and other axioms. Before you read this book, a professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
+</p>
+
+<p>
+Apostol <i>Calculus I &amp; II</i> I own this book, the international version from Abe Books is only $25 and I credit this book for helping me finally 'get' math by slogging through all the tedious end of chapter problems that seem to be filled with random trig identities because if Apostol doesn't have anything meaningful to add to the chapter, he will drill you on the identities for whatever reason. This is written in a similar style to all uppergrad style books meaning defintion/theorem/proof style and because it was originally published in a time where highschool was even worse than now, Apostol will build up everything from scratch like defining a linear space before introducing linear algebra basics, teaching you trig, teaching all notation etc. However it is a significant amount of work, if you have a shaky background like me it will take about a year to finish the first volume by yourself. This is something you can do <i>after</i> doing an intro calc course sequence like this workshop, if you don't have previous exposure to this kind of math you can spend an entire week or longer on a single page. Many of his proofs I couldn't understand either and had to use Terence Tao's <i>Analysis I</i> book to understand them as they were too abstract. That said if you're going to buy a calculus book, you may want to buy these two books.
+</p>
+
+<p>
+Stewart <i>Calculus Early Transcendentals</i> is probably what your university/college is going to use because there's a new edition every single year where they rearrange the problems, and add more junk inflating the page count, then make countless students buy a copy for $200+. If you want a problem book, do Shaum's <i>Outline of Calculus</i> instead which is $10 or free from library genesis. and avoid this book at all cost. Everything in this book is magically perfect inputs and cherry picked examples. It will not teach you how to actually use calculus which consists of gnarly inequalities that need solving. 
+</p>
+
+<p>
+Strang <i>Calculus</i> which is free <a href="https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/">here</a> from MIT (terrible copy, buy a 3rd edition copy from his <a href="http://www.wellesleycambridge.com/">publisher</a>) is one of the most useful applied calculus books, written by an applied mathematician. I didn't include it because the digital copies are all trash and it assumes a readership background, but if you don't mind them this is the most efficient calc book out there he explains what calculus is in the first page then the rest of the book is more or less applications and he has a YouTube series 'highlights of calculus'. tl;dr I like this book, the digital copies are all awful and I found the math modelling w/applied calc book better for later learning probability and statistics anyway so went with that.
+</p>
+
+<p>
+Thomas <i>Calculus</i> stopped being good after the 4th edition. I own the 3rd edition from the 1960s and it's completely different compared to the terribad garbage rewrites that happened after George Thomas died and the publisher cashed out with a hundred versions all watered down many of them directly published for certain university semesters. The 8th edition off library genesis is OK but you may as well just do Simmon's calc book if you want a long analytical geometry style text. Don Knuth used Thomas' classic edition which you can buy <a href="https://www.abebooks.com/products/isbn/9780201077797">here</a> and he credits doing all the supplementary problems in the back of the text with helping him learn math, he claims from this practice he could coast the rest of his college career in many interviews but he was forced to do this out of fear of failing calculus at his university. We have no such motivations so probably you will just abandon the book like most self-studying students.
+</p>
+
+<p>
+MIT's Open Courseware calculus courses <a href="https://ocw.mit.edu/courses/mathematics/">here</a> is often suggested because all the lectures are included and the assignments/recitations. These are great if you already have an excellent math background because you wouldn't get into MIT otherwise. We may do a few of them, I've watched the single variable lectures and prof often will do algebra manipulations assuming the audience knows what he's doing (because they do, they got into MIT) which brings us to the next section, basic review of fundamentals.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-Let%27s%20do%20it%3A%20Basic%20review" class="outline-2">
+<h2 id="Let%27s%20do%20it%3A%20Basic%20review">Let's do it: Basic review</h2>
+<div class="outline-text-2" id="text-Let%27s%20do%20it%3A%20Basic%20review">
+<p>
+Even if you remember highschool this is worth watching.   
+</p>
+</div>
+
+<div id="outline-container-Laws%20of%20Arithmetic" class="outline-3">
+<h3 id="Laws%20of%20Arithmetic">Laws of Arithmetic</h3>
+<div class="outline-text-3" id="text-Laws%20of%20Arithmetic">
+<p>
+NJ Wildberger has unique geometric focused lectures
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/-96tlu_sShM">Arithmetic w/Numbers</a> by Prof Wildberger (10 mins)</li>
+<li><a href="https://youtu.be/ScTJRrg8ZfU">Laws of Arithmetic</a> (9.3 mins)
+<ul class="org-ul">
+<li>Why the associative, commutative and distributive laws are true</li>
+</ul></li>
+
+<li><a href="https://youtu.be/mVd202X-2uM">Subtraction &amp; Division</a> (10 mins)
+<ul class="org-ul">
+<li>Write down the laws of division somewhere you will see it repeatedly in later courses</li>
+</ul></li>
+
+<li><a href="https://youtu.be/wbz4Af_TngM">Hindu-Arabic Number System</a> (8 mins)
+<ul class="org-ul">
+<li>The origins of our encoded number system</li>
+</ul></li>
+
+<li><a href="https://youtu.be/JA2XBgg_iB8">Arithmetic w/the Hindu-Arabic System</a> (10 mins)
+<ul class="org-ul">
+<li>How arithmetic by hand works in our base 10 system</li>
+</ul></li>
+
+<li><a href="https://youtu.be/WiYKyjQNUm0">Division</a> (10 mins)
+<ul class="org-ul">
+<li>How long division works is included</li>
+</ul></li>
+
+<li><a href="https://youtu.be/50-GsMX7pjQ">Fractions</a> (6 mins)</li>
+<li><a href="https://youtu.be/5PxUNiHaOLA">Arithmetic w/Fractions</a> (9 mins)
+<ul class="org-ul">
+<li>We see what a proof is in this video. The prime or tick ' notation like (b'd') means a different variable from (bd).</li>
+</ul></li>
+
+<li><a href="https://youtu.be/uADs1yepIIA">Laws of Arithmetic w/Fractions</a> (6 mins)
+<ul class="org-ul">
+<li>He proves the distributive law for fractions why p(q+r) = pq + pr</li>
+</ul></li>
+
+<li><a href="https://youtu.be/YDBLXCFrihc">Integers</a> (9 mins)
+<ul class="org-ul">
+<li>A new number object constructed from the naturals</li>
+</ul></li>
+
+<li><a href="https://youtu.be/MDMG9Ljb8l0">Rational Numbers</a> (9 mins)</li>
+<li><a href="https://youtu.be/83ZjYvkdzYI">Visualizing the Rationals</a> (9 mins)
+<ul class="org-ul">
+<li>A new number object constructed from integers. The first part of the second video shows you visually why 6/4 = 9/6 = -3/-2 because they are all on the same line.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-Summation%20%26%20Sequences" class="outline-3">
+<h3 id="Summation%20%26%20Sequences">Summation &amp; Sequences</h3>
+<div class="outline-text-3" id="text-Summation%20%26%20Sequences">
+<p>
+Summation notation of arithmetic and geometric series   
+</p>
+
+<ul class="org-ul">
+<li>(YouTube) <a href="https://youtu.be/rQzfHbkltkY">Summation &amp; Sums of Powers</a></li>
+</ul>
+
+<p>
+Note use of brackets:
+</p>
+<ul class="org-ul">
+<li>\(\sum_{i=1}^n\) i + 1 = (1 + 2 + 3..) +1</li>
+<li>\(\sum_{i=1}^n\) (i + 1) = (2 + 3 + 4..)</li>
+</ul>
+
+<p>
+The summation rules ~@10:30, expand the sum/remove the sigma notation and the rules make sense
+</p>
+
+<ul class="org-ul">
+<li>\(\sum_{i=1}^{3}ca_i\) = c1 + c2 + c3</li>
+<li>c\(\sum_{i=1}^{3}a_i\) = c1 + c2 + c3</li>
+<li>c(1 + 2 + 3) = c1 + c2 + c3</li>
+</ul>
+
+<p>
+Write your own examples for the constant difference rule of an arithmetic sequence:
+</p>
+
+<ul class="org-ul">
+<li>Sequence a<sub>3</sub> = 10<sub>1</sub>, 20<sub>2</sub>, 30<sub>3</sub></li>
+<li>Example index a<sub>1</sub> = 10, a<sub>2</sub> = 20 ..</li>
+<li>d = (20 - 10) = (30 - 20) or d = 10</li>
+<li>To find a<sub>4</sub>:
+<ul class="org-ul">
+<li>a<sub>4</sub> = a<sub>1</sub> + d(k - 1)</li>
+<li>a<sub>4</sub> = 10 + 10(4 - 1)</li>
+<li>a<sub>4</sub> = 40</li>
+</ul></li>
+</ul>
+
+<p>
+Do the same for arithmetic series: 
+</p>
+
+<ul class="org-ul">
+<li>\(\sum_{k = 1}^n (a_1 + d(k - 1))\)</li>
+<li>n = 4: (a<sub>1</sub> + d(0)) + (a<sub>1</sub> + d(1)) + (a<sub>1</sub> + d(2)) + (a<sub>1</sub> + d(3))</li>
+<li>n = 4: 4a<sub>1</sub> + d(0 + 1 + 2 + 3)</li>
+<li>n = 5: 5a<sub>1</sub> + 10d</li>
+<li>n = 6: 6a<sub>1</sub> + 15d</li>
+<li>n = 7: 7a<sub>1</sub> + 21d</li>
+<li>na<sub>1</sub> + d(n<sup>2</sup> - n)/2
+<ul class="org-ul">
+<li>5a<sub>1</sub> + d(20/2) = 5a<sub>1</sub> + 10d</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-Trigonometry%20review" class="outline-3">
+<h3 id="Trigonometry%20review">Trigonometry review</h3>
+<div class="outline-text-3" id="text-Trigonometry%20review">
+<p>
+Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail. 
+</p>
+
+<p>
+<b>Vector bootcamp</b>
+</p>
+
+<p>
+Same prof has a vector <a href="http://www.math.brown.edu/dkatz/vectorbootcamp/">bootcamp</a> for anybody who needs to take multivariable calc which we will do when we get to those chapters. 
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving" class="outline-2">
+<h2 id="How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">How the US olympiad coach teaches problem solving</h2>
+<div class="outline-text-2" id="text-How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">
+<p>
+Let's watch an example of how the current US Olympiad coach Poh-Shen Loh figures out a problem: click <a href="https://youtu.be/vGQZjITDft4?t=1890">here</a> and skip to 31:30 to start CMU's Putnam competition seminar. We're starting with question 3: The polynomial p(x) has all integral (meaning an integer) coefficients. The leading coefficient, the constant term, and p(1) are all odd. Show that p(x) has no rational roots. A root means it has a zero, or you can take the whole polynomial, move everything to the left side, and equate it to zero and solve. We learn this in the <a href="https://learnaifromscratch.github.io/math.html#Algebra%202%20Polynomials">math</a> workshop using a Russian olympiad book. 
+</p>
+
+<p>
+A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or at a more abstract level, it's many monomials like \(x^n\) grouped together with addition/subtraction/multiplication/division in other words algebra, and a constant like 5 or 1 is also a monomial too since 5x<sup>0</sup> or 1x<sup>0</sup>, the zero exponent by rules of exponents is substituted for 1, so really this is 5(1) or 6(1) because no matter what you substitute for x, it will be 1 anyway since the exponent is zero. Why do they exist? Because they are a convenient abstraction. Where did I learn the laws of exponents? Google or read Terence Tao's chapter on them <a href="https://learnaifromscratch.github.io/math.html#4.3%20Absolute%20value%20and%20exponentiation">here</a>. 
+</p>
+
+<p>
+@32:00 notice he asks for tiny, tiny ideas. You are a detective trying to figure something out, and just throwing out ideas and writing them down. Reminder the 'coefficient' in 5x is 5. @35:00 or so he comes up with a possible strategy: eliminate the odds, eliminate the evens, now you've removed any possible of being an integer ergo it's not rational because of the above Wildberger lectures where a rational number is constructed from integers.
+</p>
+
+<p>
+@37:00 he uses the term 'implies'. What does this mean? This is mathematical logic you can read <a href="https://ncatlab.org/nlab/files/MartinLofOnTheMeaning96.pdf">here</a> a very good paper by Swiss logician and type theorist Per-Martin Lof on the justifications of all these terms like implies, conjuction, disjunction, what a proposition is etc. It's probably the best paper around that explains this logic to a general audience but is advanced enough you will come away from it able to write a proof and verify what you wrote is correct using logical judgements. This is also the only paper I've ever read which spells out exactly what a proof is and helped me to understand the Agda proof-assistant <a href="https://cs.uwaterloo.ca/~plragde/747/notes/index.html">book</a>. Conjuction is a product, disjunction is a sum.
+</p>
+
+<p>
+Watch the rest of this seminar, this is how you do problems. It's an investigation and playing around until the answer reveals itself. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused. 
+</p>
+</div>
+
+<div id="outline-container-How%20to%20get%20peer%20help" class="outline-3">
+<h3 id="How%20to%20get%20peer%20help">How to get peer help</h3>
+<div class="outline-text-3" id="text-How%20to%20get%20peer%20help">
+<p>
+Write a question to math <a href="https://math.stackexchange.com/">stack exchange</a>. They will require you to carefully word and format your question with LaTeX/MathJax notation and you may find after you write your question you already know the answer. Make sure you search first to prevent some mod coming around and closing your question. Make sure you know what you are asking for too, the community will want a specific question not a general 'i don't get it' kind of lazy spoon feeding or homework solutions. Think about exactly what you don't know and take the time to write out exactly what that is.
+</p>
+
+<p>
+Years ago when I went through Apostol's Calculus and could not for the life of me figure out one of his proofs by the time I broke down my question into a more precise pile of MathJax notation I ended up figuring it out. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Calculus%20crash%20course" class="outline-2">
+<h2 id="Calculus%20crash%20course">Calculus crash course</h2>
+<div class="outline-text-2" id="text-Calculus%20crash%20course">
+<p>
+The <a href="https://www.youtube.com/watch?v=zfHEkt-1sqo">language of calculus</a> is a 30m crash course with Mandarin subtitles written for foreign students in the Australian university system. Wildberger goes through the physics interpretation like velocity, acceleration, etc. He shows how one function can tell you how another is changing by taking it's derivative or integral. It really is all you need to know and then can grind out some Shaum's <i>Outline of Calculus</i> problems if all you need to do is attend a school where they will reteach you this at a slower pace.
+</p>
+
+<p>
+We will learn limits and everything in this video soon. They are yet another convenient abstraction and now you are probably seeing the pattern, we have something we want to model, we build an abstraction for it that can be proved, we start using that abstraction for absolutely everything and many highschool students are totally confused because they didn't watch those introductory Wildberger lectures where he begins to build all this from scratch. That's all we are doing, manipulating somebody's abstraction because it fits the model for lack of a better term.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Day%201" class="outline-2">
+<h2 id="Day%201">Day 1</h2>
+<div class="outline-text-2" id="text-Day%201">
+<p>
+TODO.. let's begin this book and crush it. 
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
