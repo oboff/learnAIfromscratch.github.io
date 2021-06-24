@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-23 Wed 21:37 -->
+<!-- 2021-06-24 Thu 07:16 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -253,11 +253,9 @@
 <li><a href="#Intro">Intro</a>
 <ul>
 <li><a href="#Who%20needs%20this%3A">Who needs this:</a></li>
-<li><a href="#What%20background%20is%20needed">What background is needed</a></li>
 <li><a href="#How%20long%20will%20this%20take">How long will this take</a></li>
 <li><a href="#Why%20is%20this%20%27modern%27%20calculus">Why is this 'modern' calculus</a></li>
 <li><a href="#I%20lose%20interest%20after%20Y%20days%20and%20give%20up">I lose interest after Y days and give up</a></li>
-<li><a href="#Who%20are%20you%3F">Who are you?</a></li>
 </ul>
 </li>
 <li><a href="#Materials%20we%20will%20use">Materials we will use</a>
@@ -278,7 +276,11 @@
 </ul>
 </li>
 <li><a href="#Calculus%20crash%20course">Calculus crash course</a></li>
-<li><a href="#Day%201%20TODO">Day 1 TODO</a></li>
+<li><a href="#Day%201">Day 1</a>
+<ul>
+<li><a href="#1.1%20Functions">1.1 Functions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -308,25 +310,17 @@ Regardless of math background, if you want to learn the following, you came to r
 <h3 id="Who%20needs%20this%3A">Who needs this:</h3>
 <div class="outline-text-3" id="text-Who%20needs%20this%3A">
 <p>
-Anybody interested in some kind of applied science so biology, finance, sociology, any trade that involves measurement and estimation, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, or write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or vehicle software, anybody interested in statistics or really any student going to university who wants an applied introduction to the standard Calc I, II and III sequence because maybe you can get advanced placement.
+Anybody interested in some kind of applied science so biology, finance, sociology, any trade that involves measurement and estimation, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or autonomous vehicle software, anybody interested in statistics or really any student going to university who wants to get advanced placement.
 </p>
 </div>
 </div>
 
-<div id="outline-container-What%20background%20is%20needed" class="outline-3">
-<h3 id="What%20background%20is%20needed">What background is needed</h3>
-<div class="outline-text-3" id="text-What%20background%20is%20needed">
-<p>
-None, no actually none. We are doing this from scratch and everything you forgot will get filled in when we do the problem sets. This is why all universities force students into the Calc I, II, III sequence because it's a uniform way to reteach them math from scratch because they can't guarantee their highschool covered the basics so the strategy is dump them all into calculus.  
-</p>
-</div>
-</div>
 
 <div id="outline-container-How%20long%20will%20this%20take" class="outline-3">
 <h3 id="How%20long%20will%20this%20take">How long will this take</h3>
 <div class="outline-text-3" id="text-How%20long%20will%20this%20take">
 <p>
-No idea but I will do it ~1hr per day and see how long it takes, then the title of this page will change when I finish. I'm doing it with you. I already do this in intervals for 3 other <a href="https://learnaifromscratch.github.io/">workshops</a>, a hacking <a href="https://learnaifromscratch.github.io/theabsolutestateofsoftware.html">workshop</a>, a linear algebra <a href="https://learnaifromscratch.github.io/linear.html">workshop</a>. No problem, but this workshop is a little more live than the others as they are drafts which req me to take materials and throw them away and this isn't a draft.  
+No idea but I will do it ~1hr per day and see how long it takes, then the title of this page will change when I finish. 
 </p>
 </div>
 </div>
@@ -344,30 +338,7 @@ Basically for clickbait title reasons, We do the work by hand and the rest using
 <h3 id="I%20lose%20interest%20after%20Y%20days%20and%20give%20up">I lose interest after Y days and give up</h3>
 <div class="outline-text-3" id="text-I%20lose%20interest%20after%20Y%20days%20and%20give%20up">
 <p>
-I have a math workshop <a href="https://learnaifromscratch.github.io/math.html">here</a> with olympiad/putnam style challenges instead of going through books in a linear way and forcing yourself to finish them which will eventually cover the same thing but it's a different style: you get up and look at (often very difficult) problem, write a list of possible solution strategies on paper, research for a few minutes then go about your day annoyed you can't solve this problem with it in the back of your mind until you get home later and either look at the solution or have figured out the solution. Can you get up 1hr before your normal time and drink a coffee while screwing around with some calculus modeling problems or during lunch over a bowl of noodles instead of mindlessly clicking <a href="http://www.aaronsw.com/weblog/hatethenews">propaganda</a> can you consider a few problems in continuous mathematics to better your own future? Then you'll do fine. You could even stretch this out to only working on the weekend. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Who%20are%20you%3F" class="outline-3">
-<h3 id="Who%20are%20you%3F">Who are you?</h3>
-<div class="outline-text-3" id="text-Who%20are%20you%3F">
-<p>
-This is my current sched:
-</p>
-
-<ul class="org-ul">
-<li>wake up 5 hrs before I have to do a labor job and remotely program <a href="https://youtu.be/ZiO2dq78mZI">often frightning drone software</a>, because a recruiter found my other git account where I did the assignments from <a href="https://symbolaris.com/course/lfcps.html">this</a> course which will make sense to you when you're done this one</li>
-<li>do all the <a href="https://learnaifromscratch.github.io/">learnaifromscratch</a> meme curriculum workshops at my leisure after</li>
-<li>teach prisoners the exact same material we are doing, if you want to help somebody buy a physical copy of any of these books and pirate the digital copy if the publisher doesn't give you a pdf, send the book to a prisoner and work through the material with them you will find they often jump way ahead of where you are because of their high motivation to get the hell out of there and it will motivate you to catch up. Try it.</li>
-</ul>
-
-<p>
-In the other workshops I will <a href="https://youtu.be/iM_DokBt0rk">infiltrate</a> many famous employers in my spare time for fun and of course profit studying their hiring process, and how can you manipulate some famous SV companies who hire in your city to just move around internally, to teach other anons how they can get past those whiteboard interviews (if you've done the software workshop, you're in). I already have income and don't care at all what happens and have a history of <a href="http://www.infiltration.org/zine.html">doing this</a> since I was a kid, it's easier than you think to <a href="https://youtu.be/GTtzB17SKwQ">assimilate</a>. Not that I would ever promote something cringe like malice/theft or anything but manipulating internal structures to level up is a fun hobby, gaming the internal system. You can do it too, whoever is reading this right now. 
-</p>
-
-<p>
-For example the terrible webdev <a href="https://functionalcs.github.io/curriculum/#org0ecde6f">curriculum</a> I applied and was hired to numerous famous dev meat grinder 'top developers' freelance sites (I can't name them, you've heard of them though) because I too recall what it was like to have no money and needed to get paid, but unfortunately what I found out about these sites is they record your every movement and are so evil I could not recommend them to other anons even as a place to infiltrate for fun. I was honestly surprised how much <a href="https://youtu.be/yzGJ-0jLTpI">they watch you</a>. That's kind of why I abandoned it and started the AI <a href="https://learnaifromscratch.github.io/ai.html">curriculum</a> because I think anons should have the same skills as these outfits who are trying to gather your data. We should gather data about them, and manipulate their processes. Unleash your learning algorithms on their recruiters and blog posts, turn the tables. 
+I have a math workshop <a href="https://learnaifromscratch.github.io/math.html">here</a> with olympiad/putnam style challenges instead of going through books in a linear way and forcing yourself to finish them which will eventually cover the same thing but it's a different style: you get up and look at (often very difficult) problem, write a list of possible solution strategies on paper, research for a few minutes then go about your day annoyed you can't solve this problem with it in the back of your mind until you get home later and either look at the solution or have figured out the solution. 
 </p>
 </div>
 </div>
@@ -408,6 +379,7 @@ Like you, I too once had to google 'How to learn calculus' and received the wors
 Here are the books you will find when googling 'I need to learn Calculus':   
 </p>
 
+<details id="orgbca675b">
 <p>
 Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimedean property and other axioms. A professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
 </p>
@@ -431,6 +403,7 @@ Thomas <i>Calculus</i> stopped being good after the 4th edition. I own the 3rd e
 <p>
 MIT's Open Courseware calculus courses <a href="https://ocw.mit.edu/courses/mathematics/">here</a> is often suggested because all the lectures are included and the assignments/recitations. These are great if you already have an excellent math background because you wouldn't get into MIT otherwise. We may do a few of them, I've watched the single variable lectures and prof often will do algebra manipulations assuming the audience knows what he's doing (because they do, they got into MIT) which brings us to the next section, basic review of fundamentals.
 </p>
+</details>
 </div>
 </div>
 </div>
@@ -571,15 +544,11 @@ Do the same for arithmetic series:
 <h3 id="Trigonometry%20review">Trigonometry review</h3>
 <div class="outline-text-3" id="text-Trigonometry%20review">
 <p>
-Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail. 
+Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail.
 </p>
 
 <p>
-<b>Vector bootcamp</b>
-</p>
-
-<p>
-Same prof has a vector <a href="http://www.math.brown.edu/dkatz/vectorbootcamp/">bootcamp</a> for anybody who needs to take multivariable calc which we will do when we get to those chapters. 
+There are many tutorials about pi appearing in geometric series <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMVQcT3414TcPMeEYf_VtPM">here</a> if you're curious. You may also want to work through <a href="https://youtu.be/yBw67Fb31Cs">Trig fundamentals</a> he explains and graphs many common functions. 
 </p>
 </div>
 </div>
@@ -628,20 +597,31 @@ Years ago when I went through Apostol's Calculus and could not for the life of m
 <h2 id="Calculus%20crash%20course">Calculus crash course</h2>
 <div class="outline-text-2" id="text-Calculus%20crash%20course">
 <p>
-The <a href="https://www.youtube.com/watch?v=zfHEkt-1sqo">language of calculus</a> is a 30m crash course with Mandarin subtitles written for foreign students in the Australian university system. Wildberger goes through the physics interpretation like velocity, acceleration, etc. He shows how one function can tell you how another is changing by taking it's derivative or integral. It really is all you need to know and then can grind out some Shaum's <i>Outline of Calculus</i> problems if all you need to do is attend a school where they will reteach you this at a slower pace.
+The <a href="https://www.youtube.com/watch?v=zfHEkt-1sqo">language of calculus</a> is a 30m overview of calculus with Mandarin subtitles written for foreign students in the Australian university system. Wildberger goes through the physics interpretation like velocity, acceleration, etc. He shows how one function can tell you how another is changing by taking it's derivative or integral.
 </p>
 
 <p>
-We will learn limits and everything in this video soon. They are yet another convenient abstraction and now you are probably seeing the pattern, we have something we want to model, we build an abstraction for it that can be proved, we start using that abstraction for absolutely everything and many highschool students are totally confused because they didn't watch those introductory Wildberger lectures where he begins to build all this from scratch. That's all we are doing, manipulating somebody's abstraction because it fits the model for lack of a better term.
+The <a href="https://youtu.be/WUvTyaaNkzM">essence of calculus</a> is a 17m overview but with visualizations of derivatives and the integral. 
 </p>
 </div>
 </div>
 
-<div id="outline-container-Day%201%20TODO" class="outline-2">
-<h2 id="Day%201%20TODO">Day 1 TODO</h2>
-<div class="outline-text-2" id="text-Day%201%20TODO">
+
+<div id="outline-container-Day%201" class="outline-2">
+<h2 id="Day%201">Day 1</h2>
+<div class="outline-text-2" id="text-Day%201">
+</div>
+<div id="outline-container-1.1%20Functions" class="outline-3">
+<h3 id="1.1%20Functions">1.1 Functions</h3>
+<div class="outline-text-3" id="text-1.1%20Functions">
 <p>
-This is a live workshop, let's see how fast we can complete this material while at the same time understanding it. TODO</p>
+Reading Chapter 1 of <i>Mathematical Modeling and Applied Calculus</i>. Nice non-standard introduction to inputs and outputs. In case you forgot highschool and the <a href="https://youtu.be/a6Pk-kbzhxA">Cartesian plane</a>, the inputs are the horizontal line and outputs are the points on the veritcal axis. All this does is conveniently represent an input/output relationship with a visualization of displacements but unfortunately in highschool you fear this graph because they make you take all kinds of awful very primitive analytical geometry involving manual calculations that get tossed out when you learn calculus.
+</p>
+
+<p>
+We are also introduced to our first math <a href="https://youtu.be/zrt0EKuGr5Q">data structure</a>, a tuple or an ordered pair of values enclosed in brackets like (1, 2). This is similar to the idea of a list in programming, somebody needed a way to represent values in math in which their order matters, so invented a tuple structure. TODO
+</p>
+</div>
 </div>
 </div>
 </div>
