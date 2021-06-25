@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-24 Thu 07:16 -->
+<!-- 2021-06-24 Thu 19:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -279,6 +279,8 @@
 <li><a href="#Day%201">Day 1</a>
 <ul>
 <li><a href="#1.1%20Functions">1.1 Functions</a></li>
+<li><a href="#R%20Studio">R Studio</a></li>
+<li><a href="#Exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -295,7 +297,7 @@ Regardless of math background, if you want to learn the following, you came to r
 <ul class="org-ul">
 <li>taking data and building a model for it</li>
 <li>single and multivariable functions</li>
-<li>trig functionss</li>
+<li>trig functions</li>
 <li>exp and log functions</li>
 <li>parameters to Euler's e constant</li>
 <li>vector calculus</li>
@@ -310,7 +312,7 @@ Regardless of math background, if you want to learn the following, you came to r
 <h3 id="Who%20needs%20this%3A">Who needs this:</h3>
 <div class="outline-text-3" id="text-Who%20needs%20this%3A">
 <p>
-Anybody interested in some kind of applied science so biology, finance, sociology, any trade that involves measurement and estimation, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or autonomous vehicle software, anybody interested in statistics or really any student going to university who wants to get advanced placement.
+Everybody really since modeling and software is eating the world: biology, finance, sociology, land surveying, lab techs, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or autonomous vehicle software, anybody interested in statistics or any student going to university who wants to get advanced placement.
 </p>
 </div>
 </div>
@@ -329,7 +331,7 @@ No idea but I will do it ~1hr per day and see how long it takes, then the title 
 <h3 id="Why%20is%20this%20%27modern%27%20calculus">Why is this 'modern' calculus</h3>
 <div class="outline-text-3" id="text-Why%20is%20this%20%27modern%27%20calculus">
 <p>
-Basically for clickbait title reasons, We do the work by hand and the rest using the R programming language which the book will teach you, consider it an advanced calculator we aren't doing any programming though if you wanted to learn programming, do <a href="https://learnaifromscratch.github.io/software.html">this</a> at the same time.
+Basically for clickbait title reasons, We do the work by hand and the rest using the R programming language which the book will teach you, consider it an advanced calculator we aren't doing any programming though if you wanted to learn programming, do <a href="https://learnaifromscratch.github.io/software.html">this</a> at the same time. If you learn programming then this will be easy, multivariable functions and higher-order functions are taught there which will frequently come up in calculus: take derivative of a function, get another function returned. 
 </p>
 </div>
 </div>
@@ -364,7 +366,7 @@ We will do:
 </ul>
 
 <p>
-Also some practice solving/proving inequalities, which is 99% of all optimization work and we will see a few olympiad tier problem solving seminars so we can learn how to actually solve problems while modeling continuous mathematics. 
+I will include optional links to as we go to YouTube lectures you don't have to watch, the book is the main source. 
 </p>
 </div>
 
@@ -372,14 +374,14 @@ Also some practice solving/proving inequalities, which is 99% of all optimizatio
 <h3 id="Books%20everybody%20else%20shills">Books everybody else shills</h3>
 <div class="outline-text-3" id="text-Books%20everybody%20else%20shills">
 <p>
-Like you, I too once had to google 'How to learn calculus' and received the worst possible advice. There are countless MOOCs, books, MIT Open CourseWare with full lectures and assignments, and often confusing math stack exchange and blog posts that cover exactly what we are doing but most people including myself give up either as soon as the run into a difficult wall and can't figure out something that is poorly explained, or from lack of interest. Ergo I am slightly gamifying this material by days I do it, sort of a 'this guy did it so anybody can' kind of manipulative strategy. Not chapters but days completed.  
+I too once had to google 'How to learn calculus' and received the worst possible advice. There are countless MOOCs, books, MIT Open CourseWare with full lectures and assignments, and often confusing math stack exchange and blog posts that cover exactly what we are doing but most people including myself give up either as soon as the run into a difficult wall and can't figure out something that is poorly explained, or from lack of interest. Ergo I am slightly gamifying this material by days I do it, sort of a 'this guy did it so anybody can' kind of manipulative strategy. Not chapters but days completed.  
 </p>
 
 <p>
 Here are the books you will find when googling 'I need to learn Calculus':   
 </p>
 
-<details id="orgbca675b">
+<details id="org78124e1">
 <p>
 Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimedean property and other axioms. A professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
 </p>
@@ -583,11 +585,7 @@ Watch the rest of this seminar, this is how you do problems. It's an investigati
 <h3 id="How%20to%20get%20peer%20help">How to get peer help</h3>
 <div class="outline-text-3" id="text-How%20to%20get%20peer%20help">
 <p>
-Write a question to math <a href="https://math.stackexchange.com/">stack exchange</a>. They will require you to carefully word and format your question with LaTeX/MathJax notation and you may find after you write your question you already know the answer. Make sure you search first to prevent some mod coming around and closing your question. Make sure you know what you are asking for too, the community will want a specific question not a general 'i don't get it' kind of lazy spoon feeding or homework solutions. Think about exactly what you don't know and take the time to write out exactly what that is.
-</p>
-
-<p>
-Years ago when I went through Apostol's Calculus and could not for the life of me figure out one of his proofs by the time I broke down my question into a more precise pile of MathJax notation I ended up figuring it out. 
+Write a question to math <a href="https://math.stackexchange.com/">stack exchange</a>. They will require you to carefully word and format your question with LaTeX/MathJax notation and you may find after you write your question you already know the answer. Think about exactly what you don't know and take the time to write out exactly what that is. Often by doing this you will end up figuring it out yourself because the process of posting requires you to break down questions writing in precise notation. 
 </p>
 </div>
 </div>
@@ -615,11 +613,111 @@ The <a href="https://youtu.be/WUvTyaaNkzM">essence of calculus</a> is a 17m over
 <h3 id="1.1%20Functions">1.1 Functions</h3>
 <div class="outline-text-3" id="text-1.1%20Functions">
 <p>
-Reading Chapter 1 of <i>Mathematical Modeling and Applied Calculus</i>. Nice non-standard introduction to inputs and outputs. In case you forgot highschool and the <a href="https://youtu.be/a6Pk-kbzhxA">Cartesian plane</a>, the inputs are the horizontal line and outputs are the points on the veritcal axis. All this does is conveniently represent an input/output relationship with a visualization of displacements but unfortunately in highschool you fear this graph because they make you take all kinds of awful very primitive analytical geometry involving manual calculations that get tossed out when you learn calculus.
+Reading Chapter 1 of <i>Mathematical Modeling and Applied Calculus</i>. Skim this chapter it probably contains things you don't remember. You can always jump to the end of chapter exercises and try enough of them to justify skipping this chapter but this is a different book than most math texts and often has important things to point out that we will come across in later chapters.
 </p>
 
 <p>
-We are also introduced to our first math <a href="https://youtu.be/zrt0EKuGr5Q">data structure</a>, a tuple or an ordered pair of values enclosed in brackets like (1, 2). This is similar to the idea of a list in programming, somebody needed a way to represent values in math in which their order matters, so invented a tuple structure. TODO
+In case you forgot highschool and the <a href="https://youtu.be/a6Pk-kbzhxA">Cartesian plane</a>, the inputs are the horizontal line and outputs are the points on the veritcal axis. All this does is conveniently represent an input/output relationship with a visualization of displacements.
+</p>
+
+<p>
+We are also introduced to our first math <a href="https://youtu.be/zrt0EKuGr5Q">data structure</a>, a tuple or an ordered pair of values enclosed in brackets like (1, 2). This is similar to the idea of a list in programming, somebody needed a way to represent values in math in which the order matters and duplicates could be possible like (3, 3), so invented a tuple structure.
+</p>
+
+<p>
+Page 8: Question 2: obviously (c) and (b) have numerous y outputs for a single x input. The definition on the same page claims 'every function in this book is contained in the real numbers' which you can read about in the math workshop if you're interested. Rationals, integers and natural numbers are all contained in the real numbers but <a href="https://youtu.be/XoTeTHSQSMU">complex numbers</a> or whatever other <a href="https://en.wikipedia.org/wiki/List_of_types_of_numbers#Non-standard_numbers">number object</a> abstractions aren't.
+</p>
+
+<p>
+Example 4(c), they throw in set theory notation (union) without defining it. If you're interested <a href="https://youtu.be/59WX2V7Vjgg">watch</a> a lecture on sets and functions. They also use interval notation without defining it which you can search for on YouTube yourself.
+</p>
+
+<p>
+Question 4: Identify the domain of each function. (a) clearly can be anything, (b) can be any negative number, since 4 - (-4) is 8, and 0, 1, 2, 3 to avoid being a negative square root, so (-inf, 4) if we are using interval bracket notation to exclude 4. (c) every single input maps to the same output, so it's domain is the entire 'real numbers'.
+</p>
+
+<p>
+Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now you know exactly what to do, take the square root of x and multiply it by 3 and subtract 5. Anytime you see math notation jumbled together like this it means multiplication but brackets are never included for some reason.
+</p>
+</div>
+</div>
+
+<div id="outline-container-R%20Studio" class="outline-3">
+<h3 id="R%20Studio">R Studio</h3>
+<div class="outline-text-3" id="text-R%20Studio">
+<p>
+Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
+</p>
+
+<pre class="example" id="org40d8816">
+install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
+</pre>
+
+<p>
+The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
+</p>
+
+<pre class="example" id="org4f31651">
+require(MMAC)
+require(mosaic)
+require(mosaicCalc)
+require(manipulate)
+</pre>
+
+<p>
+Then you have to paste in those require() statements to let the program know where to look to use those built-in functions like 'mosaic'. These libraries 'MMAC..mosaic.. mosaicCalc' etc are all data sets the book uses in later chapters we will import and then model. 
+</p>
+
+<p>
+I rewrote <i>Example 7(d)</i> to make it more clear:
+</p>
+
+<pre class="example" id="org94928a1">
+abs( (2^3 / 4^5) - (9^8 / 6^7) )
+</pre>
+
+<p>
+I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but whatever, either works. I also rewrote the aside on page 13 from f=makeFun(8*x+4~x) to the following to make it more clear:
+</p>
+
+<pre class="example" id="orge756107">
+&gt; f = makeFun( ((8 * x) + 4) ~x)
+&gt; f(3)
+[1] 28
+</pre>
+
+<p>
+And I rewrote the plotFun example:
+</p>
+
+<pre class="example" id="orgddccd27">
+plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
+</pre>
+
+<p>
+Which gives you a nice graph on the right hand side of Rstudio.
+</p>
+
+<p>
+<b>Question 9</b> Graph a line with a specific domain in RStudio:
+</p>
+
+<pre class="example" id="orge55f0bb">
+&gt; line = makeFun(((-3.546 * x) - 9.128)~x)
+&gt; plotFun(line(x)~x, xlim=range(-15,15))
+
+Try experimenting with syntax, this seemed to work too because we already declared line a function with (x) input:
+
+&gt; plotFun(line, xlim=range(-15,15))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-Exercises" class="outline-3">
+<h3 id="Exercises">Exercises</h3>
+<div class="outline-text-3" id="text-Exercises">
+<p>
+TODO, though this chapter was pretty easy, my 1hr is up for today. 
 </p>
 </div>
 </div>
