@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-24 Thu 19:15 -->
+<!-- 2021-06-25 Fri 16:38 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -263,7 +263,7 @@
 <li><a href="#Books%20everybody%20else%20shills">Books everybody else shills</a></li>
 </ul>
 </li>
-<li><a href="#Let%27s%20do%20it%3A%20Basic%20review">Let's do it: Basic review</a>
+<li><a href="#Let%27s%20do%20it%3A%20Basic%20arithmetic">Let's do it: Basic arithmetic</a>
 <ul>
 <li><a href="#Laws%20of%20Arithmetic">Laws of Arithmetic</a></li>
 <li><a href="#Summation%20%26%20Sequences">Summation &amp; Sequences</a></li>
@@ -280,7 +280,11 @@
 <ul>
 <li><a href="#1.1%20Functions">1.1 Functions</a></li>
 <li><a href="#R%20Studio">R Studio</a></li>
-<li><a href="#Exercises">Exercises</a></li>
+</ul>
+</li>
+<li><a href="#Day%202">Day 2</a>
+<ul>
+<li><a href="#Exercises%20Chapter%201">Exercises Chapter 1</a></li>
 </ul>
 </li>
 </ul>
@@ -295,6 +299,7 @@ Regardless of math background, if you want to learn the following, you came to r
 </p>
 
 <ul class="org-ul">
+<li>basic algebra</li>
 <li>taking data and building a model for it</li>
 <li>single and multivariable functions</li>
 <li>trig functions</li>
@@ -312,7 +317,7 @@ Regardless of math background, if you want to learn the following, you came to r
 <h3 id="Who%20needs%20this%3A">Who needs this:</h3>
 <div class="outline-text-3" id="text-Who%20needs%20this%3A">
 <p>
-Everybody really since modeling and software is eating the world: biology, finance, sociology, land surveying, lab techs, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or autonomous vehicle software, anybody interested in statistics or any student going to university who wants to get advanced placement.
+Everybody really since mathematical modeling and software is eating the world: biology, finance, sociology, land surveying, lab techs, any developer that wants to analyze their programs or write a <a href="https://www.youtube.com/playlist?list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E">game</a>/animations, write <a href="https://symbolaris.com/course/lfcps.html">drone</a> or autonomous vehicle software, anybody interested in statistics or any student going to university who wants to get advanced placement.
 </p>
 </div>
 </div>
@@ -381,7 +386,7 @@ I too once had to google 'How to learn calculus' and received the worst possible
 Here are the books you will find when googling 'I need to learn Calculus':   
 </p>
 
-<details id="org78124e1">
+<details id="orgb68218b">
 <p>
 Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimedean property and other axioms. A professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
 </p>
@@ -411,11 +416,11 @@ MIT's Open Courseware calculus courses <a href="https://ocw.mit.edu/courses/math
 </div>
 
 
-<div id="outline-container-Let%27s%20do%20it%3A%20Basic%20review" class="outline-2">
-<h2 id="Let%27s%20do%20it%3A%20Basic%20review">Let's do it: Basic review</h2>
-<div class="outline-text-2" id="text-Let%27s%20do%20it%3A%20Basic%20review">
+<div id="outline-container-Let%27s%20do%20it%3A%20Basic%20arithmetic" class="outline-2">
+<h2 id="Let%27s%20do%20it%3A%20Basic%20arithmetic">Let's do it: Basic arithmetic</h2>
+<div class="outline-text-2" id="text-Let%27s%20do%20it%3A%20Basic%20arithmetic">
 <p>
-Even if you remember highschool this is worth watching.   
+Even if you remember highschool this is worth watching because he writes proofs for all these objects and their arithmetic   
 </p>
 </div>
 
@@ -649,7 +654,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org40d8816">
+<pre class="example" id="orga8575ef">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -657,7 +662,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org4f31651">
+<pre class="example" id="org47a55cd">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -672,7 +677,7 @@ Then you have to paste in those require() statements to let the program know whe
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org94928a1">
+<pre class="example" id="org9dee0a7">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -680,7 +685,7 @@ abs( (2^3 / 4^5) - (9^8 / 6^7) )
 I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but whatever, either works. I also rewrote the aside on page 13 from f=makeFun(8*x+4~x) to the following to make it more clear:
 </p>
 
-<pre class="example" id="orge756107">
+<pre class="example" id="org32b3bc3">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -690,7 +695,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example:
 </p>
 
-<pre class="example" id="orgddccd27">
+<pre class="example" id="orgd8a4302">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -702,7 +707,7 @@ Which gives you a nice graph on the right hand side of Rstudio.
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orge55f0bb">
+<pre class="example" id="orgb3ba775">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -712,12 +717,37 @@ Try experimenting with syntax, this seemed to work too because we already declar
 </pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-Exercises" class="outline-3">
-<h3 id="Exercises">Exercises</h3>
-<div class="outline-text-3" id="text-Exercises">
+<div id="outline-container-Day%202" class="outline-2">
+<h2 id="Day%202">Day 2</h2>
+<div class="outline-text-2" id="text-Day%202">
+</div>
+<div id="outline-container-Exercises%20Chapter%201" class="outline-3">
+<h3 id="Exercises%20Chapter%201">Exercises Chapter 1</h3>
+<div class="outline-text-3" id="text-Exercises%20Chapter%201">
 <p>
-TODO, though this chapter was pretty easy, my 1hr is up for today. 
+You learn basic algebra by doing the exercises, so try some. There is 100 exercises(!). The only non-functions I see in Ex 7-14 are 10, 13 and 14 because the same input has different outputs (3.14 is not the same object that pi is). All of these you can answer in your head in a couple of seconds. 
+</p>
+
+<p>
+Ex 34 recall is \(\sqrt{x}\) + \((4\cdot\sqrt{1 + x})\). We can't have a negative square root so you have take into account \(\sqrt{x}\) meaning the domain is the entire positive real numbers and zero. You can rewrite this to x<sup>1/2</sup> + 4(x + 1)<sup>1/2</sup> because of rational <a href="https://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html">exponent rules</a>, x<sup>m/n</sup> = \(n \cdot \sqrt{x^m}\)
+</p>
+
+<p>
+Try changing all these exercises to an equivalent form from the Wildberger basic arithmetic lectures in the beginning of this workshop. For example Ex 37 can be rewritten \(\frac{\pi}{x^2 - 9} \cdot \frac{x}{x}\) and now it's obvious you can cancel one of the x's to simplify this problem to a domain that avoids x<sup>2</sup> - 9 being negative.
+</p>
+
+<p>
+Ex 35 we only care that the denominator is not 0, since a/b + c/d = ad/bd + cb/bd then the denominator is 4x<sup>2</sup> + 20x or 4x(x + 5) and x can't be -5, or else we get 4x(0) which is 0 or -20(-5 + 5) which is 100 - 100 or 0.
+</p>
+
+<p>
+Every other exercise is straight forward plug-in and solve, but I like exercises 91 to 100 where you have to in your own words explain all the topics the chapter presented. This is known as the <a href="https://www.calnewport.com/blog/2015/11/25/the-feynman-notebook-method/">Feynman method</a> where you attempt to explain concepts to an invisible audience in the most simplest terms anybody can understand, and if you find yourself stumbling or failing to remember then you go back and reread those concepts until you can effortlessly explain 91 through 100. I easily passed them all except the 'modeling cycle' which tripped me up and I had to go back and re-read it again. When you explain it, remove any words like 'conjecture' or even 'data'. Imagine somebody is sitting in front of you asking you to define every word you use, and wants to know exactly what 'data' means (tip: they do this in those annoying software developer interviews)
+</p>
+
+<p>
+It took me about an hour to do 100 exercises for Chapter 1 so congrats, you're done for today
 </p>
 </div>
 </div>
