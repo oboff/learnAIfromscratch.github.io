@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-25 Fri 16:38 -->
+<!-- 2021-06-25 Fri 16:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -386,7 +386,7 @@ I too once had to google 'How to learn calculus' and received the worst possible
 Here are the books you will find when googling 'I need to learn Calculus':   
 </p>
 
-<details id="orgb68218b">
+<details id="orgc78bafc">
 <p>
 Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimedean property and other axioms. A professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
 </p>
@@ -654,7 +654,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orga8575ef">
+<pre class="example" id="orgb264ef5">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -662,7 +662,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org47a55cd">
+<pre class="example" id="org32bc7ea">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -670,48 +670,47 @@ require(manipulate)
 </pre>
 
 <p>
-Then you have to paste in those require() statements to let the program know where to look to use those built-in functions like 'mosaic'. These libraries 'MMAC..mosaic.. mosaicCalc' etc are all data sets the book uses in later chapters we will import and then model. 
+Which means if you're using the console, where you type in something and it evaluates each line, then you have to paste in those require() statements to let the program know where to look to use those built-in functions like 'mosaic'. These libraries 'MMAC, mosaic' etc are mainly data sets the book uses in later chapters we will import and then model. 
 </p>
 
 <p>
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org9dee0a7">
+<pre class="example" id="org51c1d9b">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
 <p>
-I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but whatever, either works. I also rewrote the aside on page 13 from f=makeFun(8*x+4~x) to the following to make it more clear:
+I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but whatever, either works. This command is actually abs(thing) where thing = ((2<sup>3</sup> / 4<sup>5</sup>) - (9<sup>8</sup> / 6<sup>7</sup>)) and now you are getting the gist of programming. I also rewrote the aside on page 13 from f=makeFun(8*x+4~x) to the following to make it more clear, translated this means make f a function, where the body is 8*x+4 and the parameter for f is x. 
 </p>
 
-<pre class="example" id="org32b3bc3">
+
+<pre class="example" id="org6a7cc6d">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
 </pre>
 
 <p>
-And I rewrote the plotFun example:
+And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="orgd8a4302">
+<pre class="example" id="orgde4c918">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
-
-<p>
-Which gives you a nice graph on the right hand side of Rstudio.
-</p>
 
 <p>
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgb3ba775">
+<pre class="example" id="orgc6b19ee">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
-Try experimenting with syntax, this seemed to work too because we already declared line a function with (x) input:
+Try experimenting with syntax
+This works too because we already declared line a function with (x) input
+Translated: plotFun(function, display-options)
 
 &gt; plotFun(line, xlim=range(-15,15))
 </pre>
@@ -747,7 +746,7 @@ Every other exercise is straight forward plug-in and solve, but I like exercises
 </p>
 
 <p>
-It took me about an hour to do 100 exercises for Chapter 1 so congrats, you're done for today
+It took me about an hour to do 100 exercises for Chapter 1 so congrats, you're done for today. 
 </p>
 </div>
 </div>
