@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-25 Fri 18:03 -->
+<!-- 2021-06-25 Fri 21:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -386,7 +386,7 @@ I too once had to google 'How to learn calculus' and received the worst possible
 Here are the books you will find when googling 'I need to learn Calculus':   
 </p>
 
-<details id="org264abd5">
+<details id="org6fb704e">
 <p>
 Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimedean property and other axioms. A professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
 </p>
@@ -566,7 +566,7 @@ There are many tutorials about pi appearing in geometric series <a href="https:/
 <h2 id="How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">How the US olympiad coach teaches problem solving</h2>
 <div class="outline-text-2" id="text-How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">
 <p>
-Let's watch an example of how the current US Olympiad coach Poh-Shen Loh figures out a problem: click <a href="https://youtu.be/vGQZjITDft4?t=1890">here</a> and skip to 31:30 to start CMU's Putnam competition seminar. We're starting with question 3: The polynomial p(x) has all integral (meaning an integer) coefficients. The leading coefficient, the constant term, and p(1) are all odd. Show that p(x) has no rational roots. A root means it has a zero, or you can take the whole polynomial, move everything to the left side, and equate it to zero and solve. We learn this in the <a href="https://learnaifromscratch.github.io/math.html#Algebra%202%20Polynomials">math</a> workshop using a Russian olympiad book. 
+Let's watch an example of how the current US Olympiad coach Poh-Shen Loh figures out a problem: click <a href="https://youtu.be/vGQZjITDft4?t=1890">here</a> and skip to 31:30 to start CMU's Putnam competition seminar. We're starting with question 3: The polynomial p(x) has all integral (meaning an integer) coefficients. The leading coefficient, the constant term, and p(1) are all odd. Show that p(x) has no rational roots. A root means some input x for p(x) = 0, move everything to the left side, equate it to zero and solve. Many never have a root, so we use a trick called complex numbers to find a root. We learn this in the <a href="https://learnaifromscratch.github.io/math.html#Algebra%202%20Polynomials">math</a> workshop using a Russian olympiad book. 
 </p>
 
 <p>
@@ -578,11 +578,11 @@ A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or
 </p>
 
 <p>
-@37:00 he uses the term 'implies'. What does this mean? This is mathematical logic you can read <a href="https://ncatlab.org/nlab/files/MartinLofOnTheMeaning96.pdf">here</a> a very good paper by Swiss logician and type theorist Per-Martin Lof on the justifications of all these terms like implies, conjuction, disjunction, what a proposition is etc. It's probably the best paper around that explains this logic to a general audience but is advanced enough you will come away from it able to write a proof and verify what you wrote is correct using logical judgements. This is also the only paper I've ever read which spells out exactly what a proof is and helped me to understand the Agda proof-assistant <a href="https://cs.uwaterloo.ca/~plragde/747/notes/index.html">book</a>. Conjuction is a product, disjunction is a sum.
+@37:00 he uses the term 'implies'. What does this mean? This is mathematical logic you can read <a href="https://ncatlab.org/nlab/files/MartinLofOnTheMeaning96.pdf">here</a> a very good paper by Swiss logician and type theorist Per-Martin Lof on the justifications of all these terms like implies, conjuction, disjunction, what a proposition is etc.
 </p>
 
 <p>
-Watch the rest of this seminar, this is how you do problems. It's an investigation and playing around until the answer reveals itself. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused. 
+Watch the rest of this seminar, this is how you do problems. It's an investigation and playing around until the answer reveals itself. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused. The point of watching this was to move away from highschool math which is just bestowed upon you and into university math which is investigated. 
 </p>
 </div>
 
@@ -654,7 +654,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org2334f65">
+<pre class="example" id="orgae6333e">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -662,7 +662,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="orgbe7a70a">
+<pre class="example" id="org42319ea">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -677,7 +677,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org8c726a4">
+<pre class="example" id="org1120fa0">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -686,7 +686,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="orgaf29062">
+<pre class="example" id="orgf2a1901">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -696,7 +696,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org3e5fd68">
+<pre class="example" id="org239e61a">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -704,7 +704,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgcb6fd51">
+<pre class="example" id="org19f35db">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
