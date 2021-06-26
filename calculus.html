@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-25 Fri 21:11 -->
+<!-- 2021-06-25 Fri 22:05 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -386,7 +386,7 @@ I too once had to google 'How to learn calculus' and received the worst possible
 Here are the books you will find when googling 'I need to learn Calculus':   
 </p>
 
-<details id="org6fb704e">
+<details id="orgd9f6817">
 <p>
 Spivak <i>Calculus</i> is an introduction to analysis written for highly motivated highschool students who have never had a pure math course. Real analysis is taking tiny measurements of the real line and writing slightly suspicious proofs about them with the Archimedean property and other axioms. A professor writes about why he doesn't exclusively teach from Spivak in the interesting foreward <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.475.4296&amp;rep=rep1&amp;type=pdf">here</a> because many blanks needed to be filled in and his office hours were overflowing with help requests. He recommends it for anybody with a recent and solid highschool background who are self-studying on their own out of curiousity and want to learn only single variable analysis. If this is you then disregard my advice and read Spivak and come back when you need to learn how to model and use the tools of multivariable/differential calculus. 
 </p>
@@ -654,7 +654,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orgae6333e">
+<pre class="example" id="orgbb2d0be">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -662,7 +662,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org42319ea">
+<pre class="example" id="org9112e4b">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -677,7 +677,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org1120fa0">
+<pre class="example" id="orga7c6cb4">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -686,7 +686,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="orgf2a1901">
+<pre class="example" id="org9ecc11d">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -696,7 +696,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org239e61a">
+<pre class="example" id="orga5430e6">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -704,7 +704,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="org19f35db">
+<pre class="example" id="org09646b3">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -730,7 +730,7 @@ You learn basic algebra by doing the exercises, so try some. There is 100 exerci
 </p>
 
 <p>
-Ex 34 recall is \(\sqrt{x}\) + \(4\cdot(\sqrt{1 + x})\). We can't have a negative square root so you have take into account \(\sqrt{x}\) meaning the domain is the entire positive real numbers and zero. You can rewrite this to x<sup>1/2</sup> + 4(x + 1)<sup>1/2</sup> because of rational <a href="https://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html">exponent rules</a>, x<sup>m/n</sup> = \(n \cdot \sqrt{x^m}\)
+Ex 34 recall is \(\sqrt{x}\) + \(4\cdot(\sqrt{1 + x})\). We can't have a negative square root so you have take into account \(\sqrt{x}\) meaning the domain is the entire positive real numbers and zero. You can rewrite this to x<sup>1/2</sup> + (x + 1)<sup>1/4</sup> because of rational <a href="https://www.mesacc.edu/~scotz47781/mat120/notes/exponents/rational/rational_exponents.html">exponent rules</a>, x<sup>m/n</sup> = \(n \cdot \sqrt{x^m}\)
 </p>
 
 <p>
