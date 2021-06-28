@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-27 Sun 21:50 -->
+<!-- 2021-06-27 Sun 22:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -292,7 +292,7 @@
 </li>
 <li><a href="#Day%204">Day 4</a>
 <ul>
-<li><a href="#1.4%20Exponential%20Functions%20TODO">1.4 Exponential Functions TODO</a></li>
+<li><a href="#1.4%20Exponential%20Functions">1.4 Exponential Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -620,7 +620,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org4d36671">
+<pre class="example" id="org3a16ee1">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -628,7 +628,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org07a08f5">
+<pre class="example" id="org47592f9">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -643,7 +643,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org0a9bac4">
+<pre class="example" id="org728e081">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -652,7 +652,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="orgbf09e78">
+<pre class="example" id="orgf338e3e">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -662,7 +662,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org168b3d5">
+<pre class="example" id="org01d44be">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -670,7 +670,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orga868462">
+<pre class="example" id="org7233d8b">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -775,8 +775,18 @@ In 3 days working roughly 1hr, we already finished 52 pages, we are on track to 
 </p>
 </div>
 
-<div id="outline-container-1.4%20Exponential%20Functions%20TODO" class="outline-3">
-<h3 id="1.4%20Exponential%20Functions%20TODO">1.4 Exponential Functions TODO</h3>
+<div id="outline-container-1.4%20Exponential%20Functions" class="outline-3">
+<h3 id="1.4%20Exponential%20Functions">1.4 Exponential Functions</h3>
+<div class="outline-text-3" id="text-1.4%20Exponential%20Functions">
+<p>
+Before you read this chapter watch <a href="https://youtu.be/m2MIpDrF7Es">this</a> tutorial about the constant e why it's often used to model something who's growth is itself, especially the end of the video where he shows how since all a<sup>k</sup> functions behave the same as e with some paramter. We haven't learned the chain rule or derivatives really yet except the beginning crash course vids so you can skip those if you want and still be able to understand most of the tutorial.
+</p>
+
+
+<p>
+TODO
+</p>
+</div>
 </div>
 </div>
 </div>
