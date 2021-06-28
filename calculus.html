@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-27 Sun 21:27 -->
+<!-- 2021-06-27 Sun 21:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -620,7 +620,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orgbfd70a7">
+<pre class="example" id="org4d36671">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -628,7 +628,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org1d65a30">
+<pre class="example" id="org07a08f5">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -643,7 +643,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="orgc24fb9e">
+<pre class="example" id="org0a9bac4">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -652,7 +652,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org6db620c">
+<pre class="example" id="orgbf09e78">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -662,7 +662,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org59ba064">
+<pre class="example" id="org168b3d5">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -670,7 +670,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgfbf3dd0">
+<pre class="example" id="orga868462">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -722,7 +722,7 @@ Every other exercise is straight forward plug-in and solve, but I like exercises
 <h3 id="1.2%20Multivariable%20Functions">1.2 Multivariable Functions</h3>
 <div class="outline-text-3" id="text-1.2%20Multivariable%20Functions">
 <p>
-There are vizualisations for this chapter:
+There are visualizations for this chapter:
 </p>
 <ul class="org-ul">
 <li><a href="https://youtu.be/TrcCbdWwCBc">Multivariable functions</a> (6m)</li>
@@ -757,7 +757,11 @@ Nothing here that wasn't already covered in the contour plot video, like Ex 57-6
 <h3 id="1.3%20Linear%20Functions">1.3 Linear Functions</h3>
 <div class="outline-text-3" id="text-1.3%20Linear%20Functions">
 <p>
-A quick review of linear models, <i>Parameters of Linear Functions</i> is interesting showing shifts and the section on Monotonicity which will come up again. I didn't do any exercises here because software exists to manipulate linear models and we will solve systems of linear equations much easier later with linear algebra when it comes up in the book.
+This chapter is a review of <a href="https://youtu.be/BtcKotD6Ni8">linear</a> functions you probably already know from highschool, <i>Parameters of Linear Functions</i> is interesting showing shifts and the section on Monotonicity which will come up again. Their definition of monotonicity has no concrete examples, but if (a, b) is an interval, then c and d are two numbers within that interval, and if c &lt; d then f(c) &lt; f(d) means the function is increasing. ie interval (1, 10) for f(x) = x + 1 and f(5) &lt; f(6) ergo this is an increasing function. 
+</p>
+
+<p>
+I didn't do any exercises here except explain the chapter summary out loud to an invisible audience because software exists to manipulate linear models and we will solve systems of linear equations much easier later with linear algebra when it comes up in the book. If you're unsure of anything try a few exercises to see how a linear function behaves. Linear models are easier to work with so we will always try and fit a linear model. 
 </p>
 </div>
 </div>
