@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-27 Sun 22:50 -->
+<!-- 2021-06-28 Mon 17:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -293,6 +293,12 @@
 <li><a href="#Day%204">Day 4</a>
 <ul>
 <li><a href="#1.4%20Exponential%20Functions">1.4 Exponential Functions</a></li>
+<li><a href="#1.5%20Inverse%20Functions%20%2F%20Logarithms">1.5 Inverse Functions / Logarithms</a></li>
+</ul>
+</li>
+<li><a href="#Day%205">Day 5</a>
+<ul>
+<li><a href="#Logarithm%20Fundamentals">Logarithm Fundamentals</a></li>
 </ul>
 </li>
 </ul>
@@ -309,7 +315,8 @@ Regardless of math background, if you want to learn the following, you came to r
 <ul class="org-ul">
 <li>basic algebra</li>
 <li>building a model</li>
-<li>single and multivariable functions</li>
+<li>ability to understand parameters to common functions</li>
+<li>single and multivariable calculus</li>
 <li>trig functions</li>
 <li>e<sup>x</sup> parameters and log() functions</li>
 <li>vector calculus/linear algebra</li>
@@ -620,7 +627,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org3a16ee1">
+<pre class="example" id="orgf1fc985">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -628,7 +635,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org47592f9">
+<pre class="example" id="org8323ebe">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -643,7 +650,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org728e081">
+<pre class="example" id="org446de59">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -652,7 +659,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="orgf338e3e">
+<pre class="example" id="org70b7359">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -662,7 +669,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org01d44be">
+<pre class="example" id="org555ece4">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -670,7 +677,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="org7233d8b">
+<pre class="example" id="org2451f31">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -692,7 +699,7 @@ Translated: plotFun(function, display-options)
 <h3 id="Exercises%20Chapter%201.1">Exercises Chapter 1.1</h3>
 <div class="outline-text-3" id="text-Exercises%20Chapter%201.1">
 <p>
-You learn basic algebra by doing the exercises, so try some. There is 100 exercises(!). The only non-functions I see in Ex 7-14 are 10, 13 and 14 because the same input has different outputs (3.14 is not the same object that pi is). All of these you can answer in your head in a couple of seconds. 
+You learn basic algebra by doing the exercises, so try some there is 100 exercises to sample. The only non-functions I see in Ex 7-14 are 10, 13 and 14 because the same input has different outputs (3.14 is not the same object that pi is). All of these you can answer in your head in a couple of seconds. 
 </p>
 
 <p>
@@ -708,7 +715,7 @@ Ex 35 we only care that the denominator is not 0, since a/b + c/d = ad/bd + cb/b
 </p>
 
 <p>
-Every other exercise is straight forward plug-in and solve, but I like exercises 91 to 100 where you have to in your own words explain all the topics the chapter presented. This is known as the <a href="https://www.calnewport.com/blog/2015/11/25/the-feynman-notebook-method/">Feynman method</a> where you attempt to explain concepts to an invisible audience in the most simplest terms anybody can understand, and if you find yourself stumbling then you go back and reread those concepts, or practice some exercises until you can effortlessly explain 91 through 100. When you explain to yourself, remove any words like conjecture or even data. Imagine somebody is sitting in front of you asking you to define every word you use, and wants to know exactly what data means (tip: they often will do this in those annoying software developer interviews). It took me about an hour to do a random sampling of the 100 exercises for Chapter 1 so congrats, you're done for today. 
+I like exercises 91 to 100 where you have to in your own words explain all the topics the chapter presented. This is known as the <a href="https://www.calnewport.com/blog/2015/11/25/the-feynman-notebook-method/">Feynman method</a> where you attempt to explain concepts to an invisible audience in the most simplest terms anybody can understand, and if you find yourself stumbling then you go back and reread those concepts, or practice some exercises until you can effortlessly explain 91 through 100. When you explain to yourself, remove any words like conjecture or even data. Imagine somebody is sitting in front of you asking you to define every word you use, and wants to know exactly what data means (tip: they often will do this in those annoying software developer interviews). It took me about an hour to do a random sampling of the 100 exercises for Chapter 1 so congrats, you're done for today. 
 </p>
 </div>
 </div>
@@ -761,8 +768,12 @@ This chapter is a review of <a href="https://youtu.be/BtcKotD6Ni8">linear</a> fu
 </p>
 
 <p>
-I didn't do any exercises here except explain the chapter summary out loud to an invisible audience because software exists to manipulate linear models and we will solve systems of linear equations much easier later with linear algebra when it comes up in the book. If you're unsure of anything try a few exercises to see how a linear function behaves. Linear models are easier to work with so we will always try and fit a linear model. 
+Summary: the parameters m and b in y = mx + b
 </p>
+<ul class="org-ul">
+<li>b is a shift on the y axis up or down</li>
+<li>m is the slope of the line either positive or negative</li>
+</ul>
 </div>
 </div>
 </div>
@@ -770,21 +781,57 @@ I didn't do any exercises here except explain the chapter summary out loud to an
 <div id="outline-container-Day%204" class="outline-2">
 <h2 id="Day%204">Day 4</h2>
 <div class="outline-text-2" id="text-Day%204">
-<p>
-In 3 days working roughly 1hr, we already finished 52 pages, we are on track to complete this book in 36 more days.   
-</p>
 </div>
-
 <div id="outline-container-1.4%20Exponential%20Functions" class="outline-3">
 <h3 id="1.4%20Exponential%20Functions">1.4 Exponential Functions</h3>
 <div class="outline-text-3" id="text-1.4%20Exponential%20Functions">
 <p>
-Before you read this chapter watch <a href="https://youtu.be/m2MIpDrF7Es">this</a> tutorial about the constant e why it's often used to model something who's growth is itself, especially the end of the video where he shows how since all a<sup>k</sup> functions behave the same as e with some paramter. We haven't learned the chain rule or derivatives really yet except the beginning crash course vids so you can skip those if you want and still be able to understand most of the tutorial.
+Before you read this chapter watch <a href="https://youtu.be/m2MIpDrF7Es">this</a> tutorial about the constant e why it's often used to model something who's growth is itself, especially the end of the video where he shows how since all a<sup>k</sup> functions behave the same as e, we just end up modeling with e and some parameter(s). We haven't learned the chain rule or derivatives really yet except the beginning crash course vids so you can skip those if you want and still be able to understand most of the tutorial.
 </p>
 
+<p>
+Let's read the chapter
+</p>
+
+<ul class="org-ul">
+<li>y = Ca<sup>kx</sup> the C parameter is the y intercept</li>
+<li>This function never crosses the x-axis as y is never equal to zero</li>
+<li>The k parameter, bigger the value the more steep the curve</li>
+</ul>
 
 <p>
-TODO
+There must be errata for Example 6, Figure 12. If f(1) = e<sup>k1</sup> if k is negative you get y = 0.367 which clearly is graph(b) going down towards x-axis, because e<sup>-kx</sup> results in y = 1/e<sup>kx</sup> meaning y gets smaller and smaller. If you input x = -1, with negative k you get graph(b) again. Skim rest of chapter, like the exponent rules if you forgot them. You don't have to memorize the formulas for halving or doubling time since you can always come back here later and look them up.
+</p>
+
+<p>
+Exercises are optional again, do you get what the parameters to C and k do to Ce<sup>kx</sup> then you're good. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-1.5%20Inverse%20Functions%20%2F%20Logarithms" class="outline-3">
+<h3 id="1.5%20Inverse%20Functions%20%2F%20Logarithms">1.5 Inverse Functions / Logarithms</h3>
+<div class="outline-text-3" id="text-1.5%20Inverse%20Functions%20%2F%20Logarithms">
+<p>
+This is the setup for understanding log(). Can quickly skim this chapter: horizontal line test, montononic functions have inverses, find the inverse by inputting the y output and getting original x input, etc. I don't really get what the chapter refers to as 'book keeping convention of change of variables', example 9 if you want an inverse function to y = 4x - 7 then x = 0.25y + 1.75 is what you want instead of y = 0.25x + 1.75 because then you are solving for x all over again if 2 = 0.25x + 1.75 instead of x = 0.25(2) + 1.75, and the whole point was to reverse y and get the original f(x) inputs. Maybe this is explained in future chapters.
+</p>
+
+<p>
+Exercises 81 - 94 you can also type into desmos.com for example <a href="https://www.desmos.com/calculator/hbyyi4bzhy">Ex 90</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Day%205" class="outline-2">
+<h2 id="Day%205">Day 5</h2>
+<div class="outline-text-2" id="text-Day%205">
+</div>
+<div id="outline-container-Logarithm%20Fundamentals" class="outline-3">
+<h3 id="Logarithm%20Fundamentals">Logarithm Fundamentals</h3>
+<div class="outline-text-3" id="text-Logarithm%20Fundamentals">
+<p>
+To make the reading of chapter 1.6 faster there is a great workshop <a href="https://www.youtube.com/watch?v=cEvgcoyZvB4">here</a> that starts ~14m in, as you watch it and he asks questions pause and input your own examples. The workshop isn't the full 1:32:55 you can skip the time waiting for students to answer quizzes or the Q&amp;A. Since this is an hour or so of work you're done for today.
 </p>
 </div>
 </div>
