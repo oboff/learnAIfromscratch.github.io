@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-30 Wed 17:54 -->
+<!-- 2021-07-01 Thu 11:18 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -306,7 +306,17 @@
 <li><a href="#1.6%20Logarithmic%20functions">1.6 Logarithmic functions</a></li>
 </ul>
 </li>
-<li><a href="#Day%207">Day 7</a></li>
+<li><a href="#Day%207">Day 7</a>
+<ul>
+<li><a href="#Trig%20fundamentals%20%26%20chapter%201.7">Trig fundamentals &amp; chapter 1.7</a></li>
+<li><a href="#Ancient%20astronomy">Ancient astronomy</a></li>
+</ul>
+</li>
+<li><a href="#Day%208">Day 8</a>
+<ul>
+<li><a href="#Lockdown%20math%3A%20Complex%20numbers">Lockdown math: Complex numbers</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -634,7 +644,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org6bd55cd">
+<pre class="example" id="org893ea6b">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -642,7 +652,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="orgdf9f54e">
+<pre class="example" id="orgff00996">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -657,7 +667,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org3687c70">
+<pre class="example" id="org2062045">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -666,7 +676,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org1b703ba">
+<pre class="example" id="org3eb3fa9">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -676,7 +686,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="orgf7d0dff">
+<pre class="example" id="org279056a">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -684,7 +694,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="org4da4e7c">
+<pre class="example" id="org3cff5e3">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -909,17 +919,57 @@ Main takeaway from this chapter is that ln/log(x) are highly useful for modeling
 <div id="outline-container-Day%207" class="outline-2">
 <h2 id="Day%207">Day 7</h2>
 <div class="outline-text-2" id="text-Day%207">
+</div>
+<div id="outline-container-Trig%20fundamentals%20%26%20chapter%201.7" class="outline-3">
+<h3 id="Trig%20fundamentals%20%26%20chapter%201.7">Trig fundamentals &amp; chapter 1.7</h3>
+<div class="outline-text-3" id="text-Trig%20fundamentals%20%26%20chapter%201.7">
 <p>
-This day is a total wash. I was going to recommend watching <a href="https://youtu.be/yBw67Fb31Cs">Trigonometry fundamentals</a> from Lockdown math episode 2, however after spending an hour or so watching it I believe it provides nothing we haven't learned from the Brown U bootcamp in the beginning of this workshop so in other words that Brown U bootcamp is superior in every way. There is an interesting visualization at @59:30 in Trig Fundamentals you may be interested in that show how cotan and tan are represented geometrically, but otherwise I basically wasted my time watching this and recommend you don't bother.
+Let's watch <a href="https://youtu.be/yBw67Fb31Cs">Trigonometry fundamentals</a> from Lockdown math episode 2, every question he asks refer to chapter 1.7 <i>Trig Functions</i> which is a short chapter. All the workshop quizzes are in the text, like cos(pi/3) = 1/2.
 </p>
 
 <p>
-Instead if you want to spend an hour learning some crazy sort of trig related math, try <a href="https://youtu.be/QB6vm6rHFMY">this</a> especially towards the end of the lecture where he details how ancient astronomy worked, where we get spherical trigonometry. The same prof has an entire lecture series on <a href="https://www.youtube.com/playlist?list=PL3C58498718451C47">rational trigonometry</a> which is completely different, and a book you can get from libgen filled with proofs similar to a Sheldon Axler type math text. If your job is to know everything there is about modern trig you should try these lectures because in each one he fully explains the modern version at a mathematician's perspective then models it in rational math, you really end up learning both because building a model of anything helps you understand (thing) you're trying to understand.
+There's errata in the book chapter, Example 3 is filled with errors, should be 3pi/4 = 135deg not 5pi/4 which is 225deg. It then mixes up the signs for 5pi/4 with 3pi/4 but looking at Figure 5 you can figure out what the correct example should be.
 </p>
 
 <p>
-For anybody also doing the software workshop, you can write your own rational trig libraries and they are <a href="http://grondilu.github.io/cube.html">trivial</a> to do so, meaning you can go through his whole lecture series and book, writing your own library in any language. Rotations and other webGL implementations no problem.
+Algebra reminder:
 </p>
+<ul class="org-ul">
+<li>\(\frac{1}{\frac{\sqrt2}{2}}\) =  \(\frac{1}{1} \cdot \frac{2}{\sqrt 2}\) = \(\frac{\sqrt 2 \cdot \sqrt 2}{\sqrt 2}\) = \(\sqrt 2\)</li>
+<li>2 is \((\sqrt 2)^2\) or \(\sqrt 2 \cdot \sqrt 2\) since \(\sqrt 4\) = 2</li>
+</ul>
+
+<p>
+The book provides trig identities that we learned in the Brown bootcamp, and really that's it, the exercises primarily are plug and play or graphing functions on desmos or in R to see how the identities work, which for the most part the lockdown math lecture already provided for us. 
+</p>
+
+<p>
+There is an interesting visualization at @59:30 that show how cot() and tan() are represented geometrically. This is a two-part video with a promise that studying complex numbers in the next video will better explain trigonometry.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Ancient%20astronomy" class="outline-3">
+<h3 id="Ancient%20astronomy">Ancient astronomy</h3>
+<div class="outline-text-3" id="text-Ancient%20astronomy">
+<p>
+If you're interested in learning some crazy sort of trig related math, try <a href="https://youtu.be/QB6vm6rHFMY">this</a>, towards the end of the lecture he details how ancient astronomy worked which gives you an idea where spherical trigonometry comes from. The same prof has an entire lecture series on <a href="https://www.youtube.com/playlist?list=PL3C58498718451C47">rational trigonometry</a> which is completely different, and a book you can get from libgen filled with proofs similar to a Sheldon Axler type math text. If your job is to know everything there is about trigonometry you should try these lectures because in each one he fully explains the established version at a mathematician's perspective then models it in rational math, you really end up learning both because building a model of anything helps you understand (thing) you're trying to understand. You can write your own rational trig  <a href="http://grondilu.github.io/cube.html">libraries</a> as you go and run them with WebGL in your browser.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Day%208" class="outline-2">
+<h2 id="Day%208">Day 8</h2>
+<div class="outline-text-2" id="text-Day%208">
+</div>
+<div id="outline-container-Lockdown%20math%3A%20Complex%20numbers" class="outline-3">
+<h3 id="Lockdown%20math%3A%20Complex%20numbers">Lockdown math: Complex numbers</h3>
+<div class="outline-text-3" id="text-Lockdown%20math%3A%20Complex%20numbers">
+<p>
+This <a href="https://youtu.be/5PcpBw5Hbwo">workshop</a> is part 2 of trig fundamentals and is optional, we finished the first section of the book which is 105 pages in 8 days and are now on to section 2 <i>Mathematical Modeling</i>. 
+</p>
+</div>
 </div>
 </div>
 </div>
