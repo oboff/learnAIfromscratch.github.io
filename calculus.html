@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-01 Thu 11:18 -->
+<!-- 2021-07-01 Thu 18:19 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -315,6 +315,11 @@
 <li><a href="#Day%208">Day 8</a>
 <ul>
 <li><a href="#Lockdown%20math%3A%20Complex%20numbers">Lockdown math: Complex numbers</a></li>
+</ul>
+</li>
+<li><a href="#Day%209">Day 9</a>
+<ul>
+<li><a href="#Lockdown%20math%3A%20exp%28i%CE%B8%29%20function">Lockdown math: exp(iθ) function</a></li>
 </ul>
 </li>
 </ul>
@@ -644,7 +649,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org893ea6b">
+<pre class="example" id="orgeedb896">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -652,7 +657,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="orgff00996">
+<pre class="example" id="org43b67af">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -667,7 +672,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org2062045">
+<pre class="example" id="org6c3b189">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -676,7 +681,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org3eb3fa9">
+<pre class="example" id="org0bd8814">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -686,7 +691,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org279056a">
+<pre class="example" id="org21b8e0c">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -694,7 +699,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="org3cff5e3">
+<pre class="example" id="orgdec68a1">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -967,7 +972,26 @@ If you're interested in learning some crazy sort of trig related math, try <a hr
 <h3 id="Lockdown%20math%3A%20Complex%20numbers">Lockdown math: Complex numbers</h3>
 <div class="outline-text-3" id="text-Lockdown%20math%3A%20Complex%20numbers">
 <p>
-This <a href="https://youtu.be/5PcpBw5Hbwo">workshop</a> is part 2 of trig fundamentals and is optional, we finished the first section of the book which is 105 pages in 8 days and are now on to section 2 <i>Mathematical Modeling</i>. 
+This <a href="https://youtu.be/5PcpBw5Hbwo">workshop</a> is part 2 of trig fundamentals and is optional, we finished the first section of the book which is 105 pages in 7 days and are now on to section 2 <i>Mathematical Modeling</i> but this workshop will further explain trig identities. The Wildberger rational trigonometry lectures also contain <a href="https://www.youtube.com/watch?v=S7NDSPtoVP0">complex numbers</a> defined as dilations (stretch) and rotations. His later <a href="https://youtu.be/XoTeTHSQSMU">complex number</a> lectures make the concept of i<sup>2</sup> = -1 trivial, he defines i as a 2x2 matrix that when multiplied by itself produces -1.   
+</p>
+
+<p>
+If you're confused watching the lockdown math lecture, the Geogebra visualization at around 30:55 emphasizes how everything stretches and rotates. The quiz @45:53 is a trig identity, cos(pi/6 + pi/4) or cos(α + β) = cos(α)cos(β) – sin(α)sin(β) all the inputs are in figure 5 on page 111 and he derives it complex number multiplication. @1:09:09 the quiz solution is obvious if you again look at figure 5 on page 111. 
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-Day%209" class="outline-2">
+<h2 id="Day%209">Day 9</h2>
+<div class="outline-text-2" id="text-Day%209">
+</div>
+<div id="outline-container-Lockdown%20math%3A%20exp%28i%CE%B8%29%20function" class="outline-3">
+<h3 id="Lockdown%20math%3A%20exp%28i%CE%B8%29%20function">Lockdown math: exp(iθ) function</h3>
+<div class="outline-text-3" id="text-Lockdown%20math%3A%20exp%28i%CE%B8%29%20function">
+<p>
+Since we are going to rapidly do the math modeling section of the book, we have some extra time, so may as well watch the next lockdown math lecture about e<sup>ix</sup> since it provides a model of sin/cos functions as a weighted sum of the exponential function and teaches the properties of exp() we will have to learn in calculus anyway.   
 </p>
 </div>
 </div>
