@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-03 Sat 17:49 -->
+<!-- 2021-07-03 Sat 17:57 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -649,7 +649,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orgf940c71">
+<pre class="example" id="org3e90cd6">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -657,7 +657,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org6795291">
+<pre class="example" id="org8e24779">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -672,7 +672,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="orgfdde5c4">
+<pre class="example" id="org37d3e51">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -681,7 +681,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org2f6ba8d">
+<pre class="example" id="orgbb47caf">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -691,7 +691,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="orgbfa622a">
+<pre class="example" id="orgb5881eb">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -699,7 +699,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="org2df1238">
+<pre class="example" id="orgb3a8301">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -995,7 +995,7 @@ Since we are going to rapidly do the math modeling section of the book, we have 
 </p>
 
 <p>
-Watching lockdown math <a href="https://youtu.be/ZxYOEwM6Wbk">workshop 4</a> <i>What is Euler's formula actually saying?</i>. We learn Ce<sup>kx</sup> is really exp(x) and all the parameters still apply we read about like C(exp(kx)). @16:24 the first quiz, reminder that if f(a+b) = f(a)f(b) then we have the rules of exponents, since 2<sup>3</sup> \(\cdot\) 2<sup>4</sup> = 2<sup>7</sup> and 2<sup>7</sup> = 2<sup>3+4</sup>, so every option in the quiz is true though he has a moment of confusion that ends up being 1/e * e which is 1 and still satisfies exp(-1 + 1) = exp(0) = 1 and exp(-1) if you plug that into the infinite polynomial ends up being 1/e or e<sup>-1</sup>.
+Watching lockdown math <a href="https://youtu.be/ZxYOEwM6Wbk">workshop 4</a> <i>What is Euler's formula actually saying?</i>. We learn Ce<sup>kx</sup> is really exp(x) and all the parameters still apply we read about like C(exp(kx)). @16:24 the first quiz, reminder that if f(a+b) = f(a)f(b) then we have the rules of exponents, since 2<sup>3</sup> \(\cdot\) 2<sup>4</sup> = 2<sup>7</sup> and 2<sup>7</sup> = 2<sup>3+4</sup>, so every option in the quiz is true though he has a moment of confusion that ends up being 1/e * e which is 1 and still satisfies exp(-1 + 1) = exp(0) = 1.
 </p>
 
 <p>
@@ -1053,7 +1053,8 @@ And if you FOIL that out you get roughly the same as multiplying exp(1)exp(2) tr
 </p>
 
 <p>
-Homework 2 requires remembering the binomial theorem or <a href="https://youtu.be/V2mk24udsMw">n choose k</a>, and #3 is to compare both results to convince yourself that exp(x + y) is roughly exp(x)exp(y) because exp(x) ~ e<sup>x</sup> so exp() should act like an exponent with the same laws. Homework 4 req watching his linear algebra playlist, and everywhere exists <a href="https://secure.math.ubc.ca/~feldman/m267/complex.pdf">notes</a> or youtube tutorials on the complex exponental, and the taylor series expansion would be exp(iy) = 1 + iy + (iy)<sup>2</sup>/2! where all the positive terms become cos() and negative terms become i(sin()) since i<sup>2</sup> = -1 and i<sup>3</sup> = -i etc. Basically you end up proving the thumbnail in this lecture if you try it. </p>
+Homework 2 requires remembering the binomial theorem or <a href="https://youtu.be/V2mk24udsMw">n choose k</a>, and #3 is to compare both results to convince yourself that exp(x + y) is roughly exp(x)exp(y) because exp(x) ~ e<sup>x</sup> so exp() should act like an exponent with the same laws. Homework 4 req watching his linear algebra playlist, and everywhere exists <a href="https://secure.math.ubc.ca/~feldman/m267/complex.pdf">notes</a> or youtube tutorials on the complex exponental, and the taylor series expansion would be exp(iy) = 1 + iy + (iy)<sup>2</sup>/2! where all the positive terms become cos() and negative terms become i(sin()) since i<sup>2</sup> = -1 and i<sup>3</sup> = -i etc. Basically you end up proving the thumbnail in this lecture if you try it. 
+</p>
 </div>
 </div>
 </div>
