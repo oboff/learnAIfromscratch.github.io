@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-05 Mon 07:25 -->
+<!-- 2021-07-05 Mon 15:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -654,7 +654,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org53cebb5">
+<pre class="example" id="orgc4c4373">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -662,7 +662,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org534fd72">
+<pre class="example" id="org98807a8">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -677,7 +677,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org653b2bb">
+<pre class="example" id="orgaf82e4d">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -686,7 +686,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org417baba">
+<pre class="example" id="orgb6336ef">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -696,7 +696,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org87937a4">
+<pre class="example" id="org6166119">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -704,7 +704,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgdc289cc">
+<pre class="example" id="orgc3c6c6a">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -1025,7 +1025,7 @@ When he shows the visualization of exp(i(theta)): i moves up, i<sup>2</sup> is -
 </p>
 
 <p>
-<b>Homework 1</b>: expand exp(x)exp(y) or e<sup>x</sup>e<sup>y</sup> or e<sup>x + y</sup> to some arbitrary value of x and show every term has a form of \(\frac{x^{k}y^{m}}{k!m!}\)
+<b>Homework 1</b>: expand exp(x)exp(y) or e<sup>x</sup>e<sup>y</sup> or e<sup>x + y</sup> and show every term has a form of \(\frac{x^{k}y^{m}}{k!m!}\)
 </p>
 
 <p>
@@ -1037,12 +1037,12 @@ The formula for exp() is:
 </p>
 
 <p>
-Recall the lecture on <a href="#Summation%20%26%20sequences">Summation &amp; sequences</a>. So what is exp(1)exp(2), since this is ee<sup>2</sup> it should be e<sup>1+2</sup> we will cut off at k=3 though in practice you would never do this as you need numerous entries in the series for precision:
+Recall the lecture on <a href="#Summation%20%26%20sequences">Summation &amp; sequences</a>. So what is exp(1)exp(2), since this is ee<sup>2</sup> it should be e<sup>1+2</sup> we will cut off at 2 though in practice you would never do this as you need numerous entries in the series for precision:
 </p>
 
 <p>
-\[exp(1) = \sum_{k=3}^{\infty} \frac{1^k}{k!} = \frac{1^0}{0!} + \frac{1^1}{1!} + \frac{1^2}{2!} + \frac{1^3}{3!}\]
-\[exp(2) = \sum_{k=3}^{\infty} \frac{2^k}{k!} = \frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!} + \frac{2^3}{3!}\]
+\[exp(1) = \sum_{k=3}^{2} \frac{1^k}{k!} = \frac{1^0}{0!} + \frac{1^1}{1!} + \frac{1^2}{2!}\]
+\[exp(2) = \sum_{k=3}^{2} \frac{2^k}{k!} = \frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!}\]
 </p>
 
 <p>
@@ -1050,15 +1050,15 @@ Now show every term is actually \(\frac{x^{k}y^{m}}{k!m!}\) for exp(1) \(\cdot\)
 </p>
 
 <p>
-\[(\frac{1^0}{0!} + \frac{1^1}{1!} + \frac{1^2}{2!} + \frac{1^3}{3!})(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!} + \frac{2^3}{3!})\]
+\[(\frac{1^0}{0!} + \frac{1^1}{1!} + \frac{1^2}{2!})(\frac{2^0}{0!} + \frac{2^1}{1!} + \frac{2^2}{2!})\]
 </p>
 
 <p>
-And if you FOIL that out you get roughly the same as multiplying exp(1)exp(2) truncated at k=3
+You're done, this shows each term as \(\frac{x^{k}y^{m}}{k!m!}\)
 </p>
 
 <p>
-Homework 2 requires remembering the binomial theorem or <a href="https://youtu.be/V2mk24udsMw">n choose k</a>, and #3 is to compare both results to convince yourself that exp(x + y) is roughly exp(x)exp(y) because exp(x) ~ e<sup>x</sup> so exp() should act like an exponent with the same laws. Homework 4 req watching his linear algebra playlist, and everywhere exists <a href="https://secure.math.ubc.ca/~feldman/m267/complex.pdf">notes</a> or youtube tutorials on the complex exponental, and the taylor series expansion would be exp(iy) = 1 + iy + (iy)<sup>2</sup>/2! where all the positive terms become cos() and negative terms become i(sin()) since i<sup>2</sup> = -1 and i<sup>3</sup> = -i etc. Basically you end up proving the thumbnail in this lecture if you try it.
+Homework 2 requires remembering the binomial theorem or <a href="https://youtu.be/V2mk24udsMw">n choose k</a>, and #3 is to compare both results to convince yourself that exp(x + y) is roughly exp(x)exp(y) because exp(x) ~ e<sup>x</sup> so exp() should act like an exponent with the same laws. Homework 4 req watching his linear algebra playlist, and everywhere exists <a href="https://secure.math.ubc.ca/~feldman/m267/complex.pdf">notes</a> or youtube tutorials on the complex exponental: exp(iy) = 1 + iy + (iy)<sup>2</sup>/2!&#x2026; where all the positive terms become cos() and negative terms become i(sin()) since i<sup>2</sup> = -1 and i<sup>3</sup> = -i etc. Basically you end up proving the thumbnail in this lecture if you try it.
 </p>
 </div>
 </div>
