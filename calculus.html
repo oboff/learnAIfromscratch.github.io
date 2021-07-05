@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-05 Mon 15:12 -->
+<!-- 2021-07-05 Mon 15:27 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -262,8 +262,12 @@
 <li><a href="#Basic%20arithmetic">Basic arithmetic</a>
 <ul>
 <li><a href="#Laws%20of%20arithmetic">Laws of arithmetic</a></li>
-<li><a href="#Summation%20%26%20sequences">Summation &amp; sequences</a></li>
-<li><a href="#Trigonometry">Trigonometry</a></li>
+<li><a href="#Summation%2Fseries%20notation">Summation/series notation</a></li>
+<li><a href="#Trigonometry">Trigonometry</a>
+<ul>
+<li><a href="#Pi">Pi</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">How the US olympiad coach teaches problem solving</a>
@@ -487,9 +491,9 @@ NJ Wildberger has unique geometric focused lectures
 </div>
 
 
-<div id="outline-container-Summation%20%26%20sequences" class="outline-3">
-<h3 id="Summation%20%26%20sequences">Summation &amp; sequences</h3>
-<div class="outline-text-3" id="text-Summation%20%26%20sequences">
+<div id="outline-container-Summation%2Fseries%20notation" class="outline-3">
+<h3 id="Summation%2Fseries%20notation">Summation/series notation</h3>
+<div class="outline-text-3" id="text-Summation%2Fseries%20notation">
 <p>
 Discrete summation notation and arithmetic/geometric series, this is optional you can watch it later when summation comes up. There are slightly different properties for 'infinite convergent series' we'll learn those later too.
 </p>
@@ -555,8 +559,17 @@ Do the same for arithmetic series:
 <h3 id="Trigonometry">Trigonometry</h3>
 <div class="outline-text-3" id="text-Trigonometry">
 <p>
-Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail. There are many tutorials about pi appearing in geometric series <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMVQcT3414TcPMeEYf_VtPM">here</a> or if you want a mind blowing lecture watch <a href="https://youtu.be/lcIbCZR0HbU">this</a> if you're curious.  
+Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail.
 </p>
+</div>
+
+<div id="outline-container-Pi" class="outline-4">
+<h4 id="Pi">Pi</h4>
+<div class="outline-text-4" id="text-Pi">
+<p>
+There are many tutorials about pi appearing in geometric series <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMVQcT3414TcPMeEYf_VtPM">here</a> or if you want a interesting pi lecture where Wildberger made his own recursive formula for pi/16 to generate successive digits watch <a href="https://youtu.be/lcIbCZR0HbU">this</a> if you're curious.  
+</p>
+</div>
 </div>
 </div>
 </div>
@@ -654,7 +667,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orgc4c4373">
+<pre class="example" id="org5d6fb48">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -662,7 +675,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org98807a8">
+<pre class="example" id="org6a6fdc1">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -677,7 +690,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="orgaf82e4d">
+<pre class="example" id="org7c4853c">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -686,7 +699,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="orgb6336ef">
+<pre class="example" id="orgdd40213">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -696,7 +709,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org6166119">
+<pre class="example" id="orga38820e">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -704,7 +717,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgc3c6c6a">
+<pre class="example" id="orgc5ecc5a">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -1037,7 +1050,7 @@ The formula for exp() is:
 </p>
 
 <p>
-Recall the lecture on <a href="#Summation%20%26%20sequences">Summation &amp; sequences</a>. So what is exp(1)exp(2), since this is ee<sup>2</sup> it should be e<sup>1+2</sup> we will cut off at 2 though in practice you would never do this as you need numerous entries in the series for precision:
+Recall the lecture on <a href="#Summation%2Fseries%20notation">Summation/series notation</a>. So what is exp(1)exp(2), since this is ee<sup>2</sup> it should be e<sup>1+2</sup> we will cut off at 2 though in practice you would never do this as you need numerous entries in the series for precision:
 </p>
 
 <p>
