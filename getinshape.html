@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-07-13 Tue 23:59 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A (mostly) Marketing and Ideology-Free guide to Fitness &amp; Nutrition in 2021</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="jbh">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  body {
+  max-width: 40rem;
+  padding: 1rem;
+  margin: auto;
+  }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">A (mostly) Marketing and Ideology-Free guide to Fitness &amp; Nutrition in 2021</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#State%20of%20the%20Art">State of the Art</a></li>
+<li><a href="#Nutrition">Nutrition</a>
+<ul>
+<li><a href="#Cheapest%20Nutrition">Cheapest Nutrition</a></li>
+<li><a href="#Heavy%20metals%2C%20pesticides%20and%20microplastics%20in%20food">Heavy metals, pesticides and microplastics in food</a>
+<ul>
+<li><a href="#Microplastics">Microplastics</a></li>
+</ul>
+</li>
+<li><a href="#Intermittent%20fasting">Intermittent fasting</a></li>
+<li><a href="#Periodic%20fasting">Periodic fasting</a></li>
+<li><a href="#Longevity%20diet">Longevity diet</a></li>
+<li><a href="#The%20real%20Mediterranean%20diet">The real Mediterranean diet</a></li>
+<li><a href="#Personalized%20nutrition">Personalized nutrition</a></li>
+</ul>
+</li>
+<li><a href="#Survey%20of%20weight%20loss%20anecdotes">Survey of weight loss anecdotes</a>
+<ul>
+<li><a href="#Matt%20Might">Matt Might</a></li>
+<li><a href="#David%20Goggins">David Goggins</a></li>
+<li><a href="#Tyson%20Fury">Tyson Fury</a></li>
+<li><a href="#Peter%20Jackson">Peter Jackson</a></li>
+<li><a href="#Will%20Sasso">Will Sasso</a></li>
+<li><a href="#Kevin%20Smith%20%26%20Penn%20Jillette">Kevin Smith &amp; Penn Jillette</a></li>
+<li><a href="#Weight%20maintenance">Weight maintenance</a></li>
+</ul>
+</li>
+<li><a href="#Mathematical%20model%20for%20weight%20loss%20forecasting">Mathematical model for weight loss forecasting</a></li>
+<li><a href="#HIIT%20vs%20SIT%20vs%20MICT">HIIT vs SIT vs MICT</a>
+<ul>
+<li><a href="#HIIT">HIIT</a></li>
+<li><a href="#SIT">SIT</a></li>
+</ul>
+</li>
+<li><a href="#Building%20strength">Building strength</a>
+<ul>
+<li><a href="#Weight%20lifting">Weight lifting</a></li>
+</ul>
+</li>
+<li><a href="#The%20Strategy">The Strategy</a>
+<ul>
+<li><a href="#Plan%20your%20food">Plan your food</a></li>
+<li><a href="#Plan%20your%20warmup%20and%20movement">Plan your warmup and movement</a></li>
+<li><a href="#Cardio%20%26%20Strength%20conditioning">Cardio &amp; Strength conditioning</a></li>
+<li><a href="#Stretching">Stretching</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-State%20of%20the%20Art" class="outline-2">
+<h2 id="State%20of%20the%20Art">State of the Art</h2>
+<div class="outline-text-2" id="text-State%20of%20the%20Art">
+<p>
+What's the 'state of the art' in current weight loss/fitness research? I'm an everyday pleb who wanted to return to being in shape after a covid break of gaining weight, so I will go through a very casual tour of some fitness and obesity research, mix in some anecdotes, all content that I've found with the help of a basic decision tree algorithm filtering a massive scrape 2021/20 data to seperate the signal from the noise, then take the average of whatever I find to avoid all the marketing hype and ideology in nutrition and fitness. At the end I will put together a program and try it, see what happens. Consider this merely a Medium-tier poor quality blog post but with 90% less filler and advertising, and I sometimes point to a single study then in the paragraph discredit single studies so take with grain of salt. Spelling mistakes and poor grammar will be prevalent because I had 1.5 weeks to write this up in my spare which is <a href="https://learnaifromscratch.github.io/">not so</a> spare.     
+</p>
+</div>
+</div>
+
+<div id="outline-container-Nutrition" class="outline-2">
+<h2 id="Nutrition">Nutrition</h2>
+<div class="outline-text-2" id="text-Nutrition">
+<p>
+What should we be eating?
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/TYeZVfPxwKM">The Scientific Landscape of Healthy Eating</a> - Dr. Mike Israetel who is the chief scientist of <a href="https://renaissanceperiodization.com/">Renaissance Periodization</a> which claims to be the official dieticians of <a href="https://www.usapowerlifting.com/">USA powerlifting</a></li>
+</ul>
+
+<p>
+Watching this lecture:
+</p>
+
+<ul class="org-ul">
+<li>75% of calorie sources
+<ul class="org-ul">
+<li>Fruits</li>
+<li>Veggies</li>
+<li>Whole grains</li>
+<li>Lean proteins</li>
+<li>'Healthy fats' (defined as olive oil/avocado, nuts)</li>
+<li>"You already know what healthy food is intuitively"</li>
+</ul></li>
+<li>25% of calories sources
+<ul class="org-ul">
+<li>whatever else you want</li>
+</ul></li>
+
+<li>Nutrient 'timing' ie: intermittent fasting
+<ul class="org-ul">
+<li>no evidence this does anything outside of animal models</li>
+<li>eat whenever you are hungry</li>
+</ul></li>
+
+<li>Hydration
+<ul class="org-ul">
+<li>Self regulated, drink when you're thirsty unless heavily sweating</li>
+</ul></li>
+
+<li>Supplements
+<ul class="org-ul">
+<li>Likely worthless, maybe occasional fish oil or multivitamin</li>
+<li>Protein supplement fine but probably not needed</li>
+</ul></li>
+</ul>
+
+<p>
+Summary: Avoid ideology or moralizing of food choices, eat when hungry, drink when thirsty unless heavily sweating, eat whatever you want as long as you meet minimum daily macronutrients (10% protein, 10% carbs, 10% fats), control your calorie intake and avoid supplement marketing or cherry picked nutritional studies instead take the average of all these studies (which is what I did for this article). 
+</p>
+</div>
+
+<div id="outline-container-Cheapest%20Nutrition" class="outline-3">
+<h3 id="Cheapest%20Nutrition">Cheapest Nutrition</h3>
+<div class="outline-text-3" id="text-Cheapest%20Nutrition">
+<p>
+<a href="https://www.youtube.com/user/scooby1961">Scooby1961</a> is a retired engineer and hilariously cheap, refusing to ever spend money so makes 50 cent meals and even eating a <a href="https://youtu.be/sg0-6vsmhfs">can of refried beans</a>) for lunch if you watch his nutrition vids. His philosophy being that eating doesn't have to be social, you consume nutrients in 10 minutes and go on with your day. He has a free web app for <a href="http://custommealplanner.com/">meal planning</a> and will teach you <a href="https://youtu.be/XODNNiMi_x4">everything cheap</a> about meal planning.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Heavy%20metals%2C%20pesticides%20and%20microplastics%20in%20food" class="outline-3">
+<h3 id="Heavy%20metals%2C%20pesticides%20and%20microplastics%20in%20food">Heavy metals, pesticides and microplastics in food</h3>
+<div class="outline-text-3" id="text-Heavy%20metals%2C%20pesticides%20and%20microplastics%20in%20food">
+<p>
+There is light and heavy levels of arsenic, lead, mercury, cadmium and of course pesticides in spinach, carrots, all fruit, basically anything you eat has some kind of heavy metals in it and if it's a plant likely pesticides too. Taking the average of all recent papers, any leafy greens in particular spinach had one of the highest levels of arsenic, cadmium and lead. Fish that consume other fish had the highest levels of heavy metals where sardines had less heavy metals due to them being on the lower end of the ocean food chain. A few 2021 and older studies found that washing leafy green vegetables with basified water with sodium bicarbonate (baking soda) removed almost all of the pesticides and significantly decreased the metals leading them to conjecture that heavy metals contamination was mainly 'foliar deposition' which was not defined, but I assume means aerosol surface contamination of the leaves ie: you can wash it off. As a contradiction microbiome researchers advocate to wash food less so you get increased beneficial bacteria in your gut.
+</p>
+
+<p>
+If you want to see something disturbing search for pet food heavy metals contamination in dry pelleted food either plant or meat based, many countries have no specific legislation guaranteeing the content.  
+</p>
+</div>
+
+<div id="outline-container-Microplastics" class="outline-4">
+<h4 id="Microplastics">Microplastics</h4>
+<div class="outline-text-4" id="text-Microplastics">
+<p>
+Since <a href="https://youtu.be/cZKLBD_LHYw">eating a can of sardines</a>, or whatever other small cooked fish where the bones are not removed and soft enough to eat, is a great source of calcium, vitamin D and essential fish oils I limited my decision tree algorithm on microplastics to only sardine and mackerel studies. Vitamin D is a <a href="https://www.devaboone.com/post/vitamin-d-part-1-back-to-basics">hormone</a> that helps absorb calcium which is easy to overdose on if you take supplements when you don't need to if you're wondering. Because the ocean is filled with <a href="https://youtu.be/gWTyxFcyKOY">plastic trash</a>, let's take a tour of some of the microplastics studies of small fish like sardines and take the average of what we find. 
+</p>
+
+<p>
+An August 2020 microplastics in sardines <a href="https://www.uq.edu.au/news/article/2020/08/research-reveals-microplastic-content-levels-seafood">study</a> by a Queensland U researcher who in their methods describes going to a local Australian market and buying fresh seafood, claimed sardines have the highest concentrations of micro plastics. However a month earlier, a Western Australia U <a href="https://www.frontiersin.org/articles/10.3389/fmars.2020.00526/full">study</a> that only analyzed local sardine populations found they contained relatively low concentrations of plastic so completely contradictory. Turns out Australia is a <a href="https://www.agriculture.gov.au/fisheries/aus-seafood-trade">net importer</a> of 70% of their edible fresh seafood, primarily from the South China Sea, and if you go through that site reading about their seafood trade all the locally caught sardines are exported for purposes other than human consumption, and the consumed sardines are all <a href="https://www.abc.net.au/news/rural/2020-10-15/austop-fisheries-sardine-business-bringing-taste-of-italy-to-nt/12733062">imported</a>, that last article lamenting Australia's reliance on sardine imports from Asia being the only option in local fish markets and grocery stores. So the average of 'very bad' to 'hardly any' is maybe there's a threat level of microplastics and fine for me, I'll just keep eating Atlantic ocean sardines moderately every 3 days or so to get essential fatty oils and calcium.
+</p>
+
+<p>
+On average microplastics have been found everywhere including freshwater samples in the highest elevation lake in North America the conjecture being that microplastic dust exists in our atmosphere and contaminates everything but this was described as 'potentially a problem', where microplastics in seafood had an effect on their health it is still inconclusive it's effect on humans who pass them when consumed however the primary conjecture of the problems with microplastics is the fact they pick up nasty toxic things in our environment that cling to them like PCBs, and this is the primary problem not the content of the microplastics. There only exists a single 2020 study I could find of estimates of global microplastic consumption, which turned out to be on average humans may ingest 0.1–5g of microplastics weekly (a huge variation, 0.1 vs 5g) through various exposure pathways like drinking water, breathing the air, food, if you want to read it paste the DOI into <a href="https://sci-hub.se/https://doi.org/10.1016/j.jhazmat.2020.124004">sci-hub</a> (domain changes all the time as governments and publisher lawyers go after sci-hub) but keep in mind, they took averages of previous papers but did not do systematic review on their methods, and we will see soon that systematic review often discredits entire fields of research as a waste of paper (the studies on SIT cardio) because their methods are filled with bias and even sometimes rely on unmonitored compliance or self-surveys. For example the 'microplastics in honey' study that spawned dozens of media articles and appears to be used by this global estimate study, is <a href="https://www.researchgate.net/publication/318068276_Lack_of_evidence_for_microplastic_contamination_in_honey">discredited</a> by another study but since this whole guide is to merely take the average, it's probably safe to assume a dust of microplastics covers everything.
+</p>
+
+
+<p>
+Conclusion: If you are worried about microplastics you can buy tap filters that claim to '99% remove all microplastics' (obviously verify this marketing), and you could stop using plastic containers like bottled water. If you are worried about microplastic dust, heavy metals and pesticides on food you can mix baking soda into the water you use wash them, if you are are worried about injesting microplastics by eating fish/seafood then don't eat it, buy fish oil supplements instead but how do you know the supplement itself isn't <a href="http://www.tsachsmd.com/why-i-no-longer-recommend-taking-fish-oil/">filled with microplastics</a> and heavy metals? My personal decision will be to just continue eating Atlantic ocean caught sardines moderately since there's nothing I can do about it.
+</p>
+
+<p>
+Question: later after you read the longevity diet book below, think to yourself did your ancestors even eat fish? Mine didn't very often if at all. Do we even need it? Does it come across to you as suspicious that your lineage has survived eons yet there's this single ingredient of essential fatty fish oil that we supposedly must have in regular doses that defies evolution? For example in Egypt, Ethiopia, Eritrea, Somalia, Kenya, and northern Tanzania there are pastoralists who have ideological taboos against eating fish so never do, and they're still alive, and live to old age. Is it bullshit?
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-Intermittent%20fasting" class="outline-3">
+<h3 id="Intermittent%20fasting">Intermittent fasting</h3>
+<div class="outline-text-3" id="text-Intermittent%20fasting">
+<p>
+Intermittent fasting or IF is a catch all term for numerous different fasting protocols such as alternate day fasting, feeding time windows like only consume food during a 8-12hr period in 24hrs, only eat during sunlight (circadian rhythm diet) or 5:2 diet, 5 days feeding and 2 days fasting type schemes. In animal models there is many touted benefits but does this translate to humans?
+</p>
+
+<p>
+<a href="https://www.scielo.br/j/aem/a/kvhdD6gGvQsMCBB3QbVry5r/?lang=en&amp;format=html">These guys</a> analyzed all non-animal model time restricted eating studies from 2000 until 2019. Result: inconclusive, and with the highest dropout rates of participants. "Intermittent fasting has gained much attention as a popular weight-loss strategy over the last few years. Controlled studies demonstrated that IF (which can have very different protocols) is a safe alternative to daily caloric restriction, with similar weight loss results. <i>Nonetheless, its effects on weight are directly related to caloric restriction and not the metabolic effects of fasting</i>". In other words, under the calories in/calories out model of weight gain, IF may help with eating less calories since you can't graze on food all day and have to observe a window of eating time but all it's beneficial effects in animals do not manifest in humans. Taking the average of all 2021 papers on IF, there is no effect either positive or negative to adhering to IF, so it's essentially pointless.      
+</p>
+
+<p>
+However one interesting <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2021.642999/full">paper</a> is a large Ramadan study in Pakistan and China, how IF promoted beneficial gut bacteria by giving your microbiome a few hours break in work so they could propogate themselves.    
+</p>
+
+<p>
+Conclusion: no IF scheme benefits translates to humans, though periodic IF like Ramadan may be beneficial to our gut microbiome. I found many warnings too about long IF intervals and excessive calorie restriction that can result in gallstones and other problems in all the survey papers, so doing IF everyday or some kind of 5:2 fast may be harmful. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Periodic%20fasting" class="outline-3">
+<h3 id="Periodic%20fasting">Periodic fasting</h3>
+<div class="outline-text-3" id="text-Periodic%20fasting">
+<p>
+This is defined as temporary but recurring fasting, specifically 5 days of fasting repeated every month or every 3mos+. You cannot do this if diabetic and with other certain conditions you will drop dead unless consulting a doctor. The methods used are either Buchinger method (250 or less calories of soups) or the fasting mimicking diet method (FMD) restricting calories to under 750 for at least 4 days and 1100 for the first day. The FMD diet is detailed in this <a href="https://libgen.fun/book/index.php?md5=963C4EFDC26D6FCFD2D0EBE1D51A8B28">book</a> and in the papers released by the USC <a href="https://gero.usc.edu/2020/04/22/fasting-mimicking-diet-immune-system-function/">longevity institute</a>.
+</p>
+
+<p>
+In brief summary (read the book/papers) it purports in human trials to reduce visceral abdominal fat, promote muscle growth, and in animal tests works just as well as chemotherapy to destroy cancer cells by promoting body maintenance which then goes around killing off 'bad cells' while under periodic fasting. 
+</p>
+
+<p>
+The average of other studies I found concluded that periodic fasting increases Christensenella and other beneficial gut bacteria, so again just like the IF Ramadan study giving your stomach a break from breaking down food at periodic times is probably worth doing. All the other claims of periodic fasting benefits were only in animal models that I could find except the FMD has proven results for weight loss, muscle growth and for people undergoing chemotherapy it was highly beneficial.
+</p>
+
+<p>
+Conclusion: worth trying the periodic 5 day fasting mimicking diet though you don't have to pay $300 to ProLon (the company started by the author of the FMD) you can read all the studies yourself and make your own fasting mimicking diet. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-Longevity%20diet" class="outline-3">
+<h3 id="Longevity%20diet">Longevity diet</h3>
+<div class="outline-text-3" id="text-Longevity%20diet">
+<p>
+The Longevity diet for adults is another offspring of the USC <a href="https://gero.usc.edu/2020/04/22/fasting-mimicking-diet-immune-system-function/">longevity institute</a> who gave us the FMD periodic fast. It's detailed in the department director's <a href="https://libgen.fun/book/index.php?md5=963C4EFDC26D6FCFD2D0EBE1D51A8B28">book</a> (unfortunately also an autobiography) and <a href="https://www.valterlongo.com/">website</a> (unfortunately filled with marketing). It is similar to a Pescatarian diet and a Mediteranean diet with the following changes:
+</p>
+
+<p>
+Macros:
+</p>
+<ul class="org-ul">
+<li>55-60% daily calories from complex-carbohydrates (veggies, grains, pasta and some bread)</li>
+<li>30-35% calories from unsaturated fats (3 Tbsp olive oil, nuts, oily fish)</li>
+<li>10-11% of calories from proteins (fish/plant protein) of max 0.36g protein per pound of your weight</li>
+</ul>
+
+<p>
+Unfortunately it is filled with what I could consider anecdotes, pointing to a single study for much of it's claims (except the fasting diet, which should be removed from this book and put into a standalone book to not poison it's results with the longevity diet ideology). There is questionable nutrient timing advice of 'must never eat 3-4 hours before sleeping' and other nutrient window type schemes that we already saw don't do anything outside of animal models and the origins of this advice are of course, <a href="https://www.fondazionevalterlongo.org/late-diners-may-lead-to-weight-gain/?lang=en">a single study</a>. He argues you should eat whatever your family bloodline ate, so if you aren't from Peru don't eat stuff like Quinoa or if they never ate Tumeric, then don't eat Tumeric as these ingredients may cause intolerances/inflammation so stick to similar grains or whatever ingredients that your ancestors all ate. The appendix has a fully detailed 2 week diet plan of 1800 calories per day you can adjust to your height/weight, which is almost exclusively dishes from the author's community in Genoa Italy so heavy on pasta and even breakfast cereal, honey, bread etc. The low protein advice comes from <a href="https://pressroom.usc.edu/meat-and-cheese-may-be-as-bad-for-you-as-smoking/">this study</a> that middle aged diets with excessive protein consumption makes you 3-4x more likely to die from cancer as protein controls the growth hormone IGF-1 which fuels cancer cells, while after age 65 IGF-1 drops off and you can add more protein to your diet. <i>“Almost everyone is going to have a cancer cell or pre-cancer cell in them at some point. The question is: Does it progress?” Longo said. “Turns out one of the major factors in determining if it does is is protein intake.”</i>
+</p>
+
+<p>
+The total abolishment of animal protein and dairy is based on a single study where they claimed animal based protein, even within their recommended limits of daily protein for people under 65, still increased growth hormone whereas plant protein did not, yet here's a study <a href="https://link.springer.com/article/10.1007/s00394-021-02518-y">from March 2021</a> specifically citing his study, that showed that there is no difference between plant or animal protein in both large scale population studies and their own test group of middle aged diabetics: <i>Recent large population-based cohort studies extensively correcting for confounding did not find differences in mortality between vegetarians and non-vegetarians</i> and <i>We conclude that animal and plant protein similarly increase IGF-1 bioavailability while improving metabolic parameters and may be regarded as equivalent in this regard</i>. The no meat or dairy recommendation is also partially based on his personal anecdotes which he describes in the book of everyday people not knowing what moderation means and eating too much protein and saturated fats during the da, the blueprint for obesity. There is very cringe moment in the book where he claims 'because people eat everyday they think they are experts on food' and tells this tale about putting some woman in her place by telling her she wouldn't trust a structure not designed and built by structural engineers so why would she not trust his expertise in nutrition and aging. Of course the woman should have replied that engineers don't build structures based on anecdotal surveys, nor do they write pompous autobiographies, nor do structural engineers force their ideology on the population like involving themselves in lobbyist groups that come into your workplace and change your catered lunch to <a href="https://www.fondazionevalterlongo.org/corporate-welfare-programs/?lang=en">birdfood</a>.   
+</p>
+
+<p>
+The diet recommends taking a fish oil and multivitamin every 3 days as a safety since the author himself is unsure if his plant based diet will result in vitamin and mineral deficiencies when us regular plebs attempt it. However geneticist Tim Spector in his book <i>The Diet Myth</i> has an entire chapter on how useless store bought vitamin supplements are after he had numerous blood tests finding store bought vitamins of all brands were never absorbed by the body, and that if he wanted to continue his vegetarian diet he either had to get an injection from a doctor on a regular basis to maintain those vitamins or 'eat a steak once a month'. There is no comment about this in the longevity diet book, it's just assumed vitamin supplements work as advertised.
+</p>
+
+<p>
+Many of the other recommendations of this diet comes from taking surveys of long-life communities, which seems to originate from the book <i>The Blue Zones</i> which studies 5 of these communities, one which turned out to not be long lived like Okinawa and has no more longevity than the rest of Japan on average. It seems strange the longevity diet author did not know this already as he promotes Okinawa in his book as one of these long-lived communities. This Blue Zone book spawned Blue Zones Project LLC which is a heavily marketed, ideological (operated and owned by a vegetarian religious sect (adventists)) kind of lobbyist group. Going through their marketing this is another forced diet, getting it's way into hospitals they run and nursing homes, school cafeterias and large corporations.   
+</p>
+
+<p>
+Conclusion: the fasting (FMD) chapters of this book are great and should have been removed to their own book, the longevity advice to not eat excessive protein or max 0.31-36 protein grams per your bodyweight in pounds if under the age of 65 to avoid fueling cancer growth hormones seems sound and is not based on a single study. Eating healthy fats instead of excessive saturated fats seems logical whereas the rest of the claims are purely due to the author's <a href="https://www.fondazionevalterlongo.org/the-plant-diet-to-save-the-planet/?lang=en">ideology</a> that he is saving the planet but I'm just a pleb though, you should read this book yourself it contains great information on exercise, and the second appendix contains a list of common foods and their nutrients. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-The%20real%20Mediterranean%20diet" class="outline-3">
+<h3 id="The%20real%20Mediterranean%20diet">The real Mediterranean diet</h3>
+<div class="outline-text-3" id="text-The%20real%20Mediterranean%20diet">
+<p>
+We can do our own anecdotal surveys of elderly diets and take the average. Here is a an old man in Lebanon claiming to be <a href="https://thearabweekly.com/lebanons-oldest-man-shares-secrets-healthy-life">117 years old</a> (Lebanon did not keep official documentation until 1972, so take with grain of salt&#x2026; but he's clearly old as dirt so probably no very far off from 117) and is still having kids, his youngest is 5 and oldest is 75, walks anywhere between 10 and 40km per day, still doing hard farm labor and chopping wood, and he chain smokes tobacco. This guy <a href="https://youtu.be/68jWeiLdLIQ">is a beast</a>. Here he is @0:38 <a href="https://youtu.be/UsOGvILo7Yc">power walking</a> up an incline while smoking. His longevity advice:
+</p>
+
+<blockquote>
+<p>
+“The secret is in the type and quality of food and eating discipline. I eat as much as I need, don’t go near food that contains ingredients that I don’t know and stay away from manufactured oils sold on the market. Pure olive oil, honey and goat ghee are an elixir for good health and long life and should be at the heart of all meals. Beef meat is harmful but cow milk and yogurt are a cure to all ills, whereas goat milk and yogurt are an effective medicine while sheep’s meat is good but their milk is bad. This is the rule that I follow”
+</p>
+</blockquote>
+
+<p>
+It should be noted his family probably doesn't cook with olive oil, they cook with the ghee which is basically clarified butter to become a pure fat they call <a href="https://palestineinadish.com/recipes/clarified-butter/">Samneh</a> and pastries in the north are often made with sheep tail fat. You dip stuff into olive oil and pour it on everything. A popular breakfast dish there is <a href="https://zaatarandzaytoun.com/lahm-bi-ajeen/">meat in dough</a> a meat pie dipped in yogurt. This diet of tons of dairy products, animal fats and meat consumed daily is very different from the other Mediterranean diet being touted.
+</p>
+
+<p>
+Some more anecdotes for our survey: 
+</p>
+
+<ul class="org-ul">
+<li>Here is a supposed <a href="https://youtu.be/IKiYIfu8xRg">145 year old</a> Indonesian smoker who's family said he's never had special diet requests</li>
+<li>Here is a <a href="https://youtu.be/BXyfCGDnuWs">109 year old</a> American that eats high sodium canned soups, drinks whiskey and smokes cigars</li>
+<li>Here is a <a href="https://youtu.be/AV_Nd0SOBBU">121 year old</a> Dagestani 'I eat only what I raise myself, I drink milk and eat milk products, hard work is good for you'</li>
+<li>Here is a <a href="https://youtu.be/gXG8gRzXPDI">111 year old</a> British man with no special diet. 'Everybdoy wants to know the secret, it's genetics and take things as they come'.</li>
+</ul>
+
+<p>
+Conclusion: interviewing centenarians what they eat is just anecdotal, unless you want to cherry pick from them to prop up your own nutrition ideology and write a book.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Personalized%20nutrition" class="outline-3">
+<h3 id="Personalized%20nutrition">Personalized nutrition</h3>
+<div class="outline-text-3" id="text-Personalized%20nutrition">
+<p>
+If you live in the continental US except for RI/NY/NJ, you can get your self poop testing kit and blood analyzed by a <a href="https://joinzoe.com/why-zoe">gut bacteria</a> startup to see what foods cause inflammation and other problems. Any nutritionist/dietitian or doctor can give you a blood test as well to see if you have hormone/vitamin or mineral deficiencies but only in certain regions do these titles carry any kind of protected title meaning you have to prove competency.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Survey%20of%20weight%20loss%20anecdotes" class="outline-2">
+<h2 id="Survey%20of%20weight%20loss%20anecdotes">Survey of weight loss anecdotes</h2>
+<div class="outline-text-2" id="text-Survey%20of%20weight%20loss%20anecdotes">
+<p>
+Here I review a few memes/strategies that often appear whenever you google 'how I lost weight'
+</p>
+</div>
+
+<div id="outline-container-Matt%20Might" class="outline-3">
+<h3 id="Matt%20Might">Matt Might</h3>
+<div class="outline-text-3" id="text-Matt%20Might">
+<p>
+Matt Might is a compsci professor and author of <a href="https://matt.might.net/articles/least-resistance-weight-loss/">Least resistance weight loss</a>. The summary is precisely calculate your daily caloric limits, estimate your caloric intake, and then at the end of the day, ride a stationary exercise bike to burn off whatever excess calories so you lose weight. This is known as the EBT model or energy balance theory meaning calories in are less than calories out and you should lose weight. He promotes doing strength training while you lose weight to avoid losing muscle. 
+</p>
+
+<p>
+Conclusion: Do strength training if running a caloric deficit, ignore diets and just exercise off the excess calories the extra work will force you to make better food choices.
+</p>
+</div>
+</div>
+
+<div id="outline-container-David%20Goggins" class="outline-3">
+<h3 id="David%20Goggins">David Goggins</h3>
+<div class="outline-text-3" id="text-David%20Goggins">
+<p>
+Famously lost 106lbs in 3 months to qualify for the SEAL requirements. There's a lot of misinformation floating around how he did this. <b>You don't want to do this</b> if you watch his Rogan interview he ended up badly injuring himself because of too rapid weight loss which is why he had to do <a href="https://youtu.be/0qGse7ExL9g">BUDS class</a> 3x.
+</p>
+
+<p>
+Anyway I've read Goggins book so you don't have to, here's what he really did: he made sure he was constantly moving at all times doing his studying on a stationary bike for 2 hours intervals twice a day (steady state cardio), and going out to swim/run/lift very light weights but in hundreds of reps. He claims the countless low weight reps he lifted prevented loose skin while losing 100 lbs that fast. He did this every single day for 3 months basically starving himself the whole time, eating only 1 banana for breakfast, and 'a sauteed piece of chicken, vegetables and a thimble of rice' for dinner. He claimed this extreme way of life helps him mentally overcome whatever problems he had because everyday he woke up feeling terrible but he transformed this terrible feeling into something positive as he claimed his life now had purpose and he was on a mission, no longer just drifting.
+</p>
+
+<p>
+He was too fat to run or do pull ups so started out on a stationary bike doing steady cardio (no interval training) until he lost enough weight he could run and do push-ups/pull ups, plus swimming progressing in daily increments to reach the SEAL prereqs which you can look up yourself if you want to try assuming you have access to a pool and learn the <a href="https://gfycat.com/reasonableimmenseanemoneshrimp">combat swimmer stroke</a> they use for long distance swimming.
+</p>
+
+<p>
+He recently came 2nd place in the MOAB 240 and is a total beast but Kerry Ward is 53 years old and placed <a href="https://ultrasignup.com/m_results_participant.aspx?fname=Kerry&amp;lname=Ward">12th</a> in the MOAB 240 and he <a href="https://youtu.be/50bp4ydFNsQ">films all his runs</a>. He doesn't do any extreme lifestyle decision if you watch his YouTube channel he just consistently trains.
+</p>
+
+<p>
+Conclusion: this is way too dangerous and articles about him always leave out the injuries he gave himself doing this extreme weight loss. It also requires 3 months of F/T self-torture 16 hours per day which I assume you don't have time for being you need to work. Maybe there is something philosophical to say about his opinion on excelling via personal suffering though, that it motivated him to reach a goal.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Tyson%20Fury" class="outline-3">
+<h3 id="Tyson%20Fury">Tyson Fury</h3>
+<div class="outline-text-3" id="text-Tyson%20Fury">
+<p>
+A professional boxer who lost 100+lbs. He ate what he calls a 'dirty keto diet' of hamburgers without buns, sausages, cheese and eggs for 3 months while running up a mountain in Spain on a regular basis and training boxing. He claimed his weight gain was from drinking 12 pints a day and eating takeout.
+</p>
+
+<p>
+Conclusion: Reduce carb macros but going full saturated fat keto is unsustainable and also risky according to the studies in the <i>Longevity Diet</i> book, where many participants dropped dead with undiagnosed heart disease that spiked when they went on and off keto diets. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-Peter%20Jackson" class="outline-3">
+<h3 id="Peter%20Jackson">Peter Jackson</h3>
+<div class="outline-text-3" id="text-Peter%20Jackson">
+<p>
+The director lost 80 lbs claiming he simply swapped the food trays on set that were filled with pastries and cakes with healthy food. He did no exercise and was working every moment he was awake grazing on the food trays whenever he was hungry. 
+</p>
+
+<p>
+Conclusion: Replace all the snacks around us so when there's a time crunch and we need to quickly grab something to snack, it's not junk. This was also a Matt Might recommendation. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Will%20Sasso" class="outline-3">
+<h3 id="Will%20Sasso">Will Sasso</h3>
+<div class="outline-text-3" id="text-Will%20Sasso">
+<p>
+The <a href="https://youtu.be/if27InJBtEI">comedian</a> lost 200 lbs eating steamed broccoli and chicken while doing an insane amount of exercise, which was way too fast and required surgery to fix his loose skin. Here is <a href="https://youtu.be/6VU1r-XEL2Q">another guy</a> who lost a bunch of weight eating chicken and broccoli. Another <a href="https://youtu.be/lZuPOXWjWB4">guy on a keto diet</a> lost 400lbs in 24 months. Scraping for loose skin studies due to rapid weight loss, I find that on average, if you do a controlled weight loss you won't have loose skin. If you do a meme diet and dump huge amounts of water in under a week, you're screwed.
+</p>
+
+<p>
+Conclusion: Do a controlled weight loss unless you can afford skin surgery.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Kevin%20Smith%20%26%20Penn%20Jillette" class="outline-3">
+<h3 id="Kevin%20Smith%20%26%20Penn%20Jillette">Kevin Smith &amp; Penn Jillette</h3>
+<div class="outline-text-3" id="text-Kevin%20Smith%20%26%20Penn%20Jillette">
+<p>
+Both used a monodiet choosing the <a href="https://youtu.be/NelIXCuuSZ0">potato diet</a> from the book <i>The Potato Hack</i> which claims you should go on a course of all potatoes with nothing else for a week or two periodically to lose weight. The idea is you don't have set meal times you instead eat a baked/boiled potato whole whenever hungry and as many as you want since you'll always run a caloric deficit. Why they didn't add olive oil to get some kind of healthy fats for energy who knows but they claim it worked. Kevin Smith also joined a weight watchers meal delivery service and that primarily should be accredited to his weight loss and maintenance not the meme potato diet. He claims he was drinking huge amounts of milk per day, and the Bodi tribe in Ethiopia who has a hilarious annual <a href="https://youtu.be/CkHt8MPhSi8">fat man competition</a> that's also how they gain weight, drinking excess milk. 
+</p>
+
+<p>
+Conclusion: This will work but your muscles are going to disappear too without protein, whatever we select should respect daily macros, and again do a controlled weight loss not a meme weight loss.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Weight%20maintenance" class="outline-3">
+<h3 id="Weight%20maintenance">Weight maintenance</h3>
+<div class="outline-text-3" id="text-Weight%20maintenance">
+<p>
+We're on a roll with anecdotes so <a href="https://youtu.be/MgXeNPYFJYM">here</a> is the everyday weight maintenance diet of a pro fighter. The macros are heavy on carbs and fruit, nut butter/or healthy fats meaning mono and polyunsaturated fats, dairy and light on meat. It's not a very high protein diet, he looks like he's only eating 0.36 per his body weight or so: 2 eggs, a little chicken slices, some feta, some nut butter/rice/bread protein then a protein shake at the end of the day but he's a pro athelete not sedentary. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Mathematical%20model%20for%20weight%20loss%20forecasting" class="outline-2">
+<h2 id="Mathematical%20model%20for%20weight%20loss%20forecasting">Mathematical model for weight loss forecasting</h2>
+<div class="outline-text-2" id="text-Mathematical%20model%20for%20weight%20loss%20forecasting">
+<p>
+The high fat diet anecdotes above still worked for losing weight, yet they break the energy balance theory (EBT) model, the traditional calories in/calories out model for weight loss. Eating piles of cheese and sausages like Tyson Fury did shouldn't have worked according to the EBT model so something that fell through my decision tree was <a href="https://www.medrxiv.org/content/10.1101/2020.10.27.20220202v4">this</a> paper where they claim a mass balance model has superior forecasting and can explain all the above outlier diets. The paper is short, most of it is citations and consists of solving a differential system like you would any other math model. "The food property that has the capacity to increase body weight is its macronutrient mass and not its potential nutritional energy (calories)". The establish a baseline for 140 days then run a simulation on a 2000 calorie per day model using macros of low carbs, and it show weight loss. Keeping the exact same energy intake (2k calories) they exchange the macros increasing the carbs and run a simulation which shows weight gain, yet the EBT model claims this can't happen.  
+</p>
+
+<p>
+Summary: "Implicit in the EBT discourse is that body fat accumulates only if fat intake exceeds fat oxidation, even under dietary energy restriction, which explains why this theory argues in favor of low-fat-diets as the optimal fat loss dietary treatment". 
+</p>
+
+<p>
+Conclusion: Adjust macros to reduce carbs, do not rely on exact EBT calorie counting models.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-HIIT%20vs%20SIT%20vs%20MICT" class="outline-2">
+<h2 id="HIIT%20vs%20SIT%20vs%20MICT">HIIT vs SIT vs MICT</h2>
+<div class="outline-text-2" id="text-HIIT%20vs%20SIT%20vs%20MICT">
+</div>
+<div id="outline-container-HIIT" class="outline-3">
+<h3 id="HIIT">HIIT</h3>
+<div class="outline-text-3" id="text-HIIT">
+<p>
+Defined as high-intensity interval training, with no universal standard on session duration it consists of steady state cardio mixed with intervals of repeated short to long bouts of intensity followed by rest periods. Going through the 2021 papers, a systematic review of previous research found that HIIT resulted in a significant boost in testosterone and cortisol levels immediately after a single 30m session, which disappeared after 24 hours back to baseline levels meaning you should only ever do it in moderation unless you want your immune system to stop working and die from a heart attack due to stress (cortisone) being flooded into your bloodstream. 60m sessions produced a greater increase in cortisol. The same review states there wasn't enough controlled studies in the papers they reviewed and had limited data so a real controlled study of HIIT on the body's hormone system needs to be done in the future.
+</p>
+
+<p>
+The average I found was HIIT done for 15-30m for as little as 6 weeks, done 3 days a week, preserves VO2 peak for up to 4 years in inactive older adults, meaning even if you stop you retain your peak oxygen uptake. It also was shown to improve 8 indicators of cardiometabolic health compared to 3 for steady state cardio such as blood pressure and total cholesterol. The average also says your typical moderately intense, or steady state cardio burns visceral fat and helps you lean out just the same as HIIT it's inconclusive whether HIIT is any better for fat burning as you get one study that claims it's great, and another that says there's no difference, and it repeats like this. It was also found on average to have reduced impulsivity, and improve short-term memory in a bunch of HIIT psychology studies I found this year.
+</p>
+
+<p>
+There's some entertaining papers of surveying young men who <a href="https://youtu.be/nEqhOfG1lwg">drink beer</a> if it affected their HIIT benefits, which turned out to be no, alcohol is fine to consume and receive the benefits of HIIT.
+</p>
+
+<p>
+Conclusion: HIIT has a ton of benefits over moderately intensive continuous training (MICT) aka steady state cardio, but none of them are fat loss as it's inconclusive if one is any better than the other for reducing visceral/body fat. It should be done in moderation or else you may get flooded with cortisol stress hormones too much which suppresses your immune system and other nasty effects. Researchers did 3 times a week, 15-30 minutes and a few were longer like 60 minutes. Stress levels return to normal after 24 hours (they only looked at 30m sessions) and there doesn't seem to be any benefit of doing more than 30 minutes of HIIT. You can do MICT as much as you want and will still remove visceral/body fat though it does not preserve your VO2 peak if you stop working out like HIIT does, or give you some of the other benefits touted.
+</p>
+</div>
+</div>
+
+<div id="outline-container-SIT" class="outline-3">
+<h3 id="SIT">SIT</h3>
+<div class="outline-text-3" id="text-SIT">
+<p>
+Here is a <a href="https://youtu.be/SHN-4ve81TY">2015 documentary</a> about sprint interval training. In a survey of 2021 papers on SIT the methods were (on a bike) 2 min warmup at normal pace, 3 x 20 second (sometimes 30 second) 'all out' intensity intervals interspersed with 2 mins of recovery normal pace cycling, then a 3 min cool down at normal pace. In total 12.5m or so of cardio done in 28 sessions over 12 weeks resulted in 21% increase in V02 peak oxygen uptake and 6% increase in peak cardio output. 'All out intensity' is defined as pedaling or running like your life depends on it.
+</p>
+
+<p>
+If you read the 2021 papers, SIT also reduced EGF or epidermal growth factor in older men to the same levels as the younger men in the study, lower EGF is associated with longevity and healthy aging. However, in a systematic <a href="https://www.sciencedirect.com/science/article/pii/S2095254621000302">review</a> of all previous studies to date (2021), they found all the SIT studies except for 2 were so low quality they weren't even worth the paper they were printed on. If you're wondering how they review, they use the Cochrane <a href="https://training.cochrane.org/handbook/current">handbook</a>. As an anecdote SE asian fighting clubs have long used sprint interval training to boost the cardio of their fighters, you go out in the parking lot or alley and sprint from one side to the other in intervals which takes about 20 seconds. 
+</p>
+
+<p>
+Conclusion: it's inconclusive if SIT is superior to HIIT or even MICT because many of the previous studies were junk tier quality but since I own an exercise bike anyway, and it only takes 12.5 minutes, I may as well do it 3 days a week and be my own test subject. 
+</p>
+
+
+<p>
+<b>O2 Trainer product marketing</b>
+</p>
+
+<p>
+Bas Rutten has a product on the market called the <a href="https://www.o2trainer.com/">O2 Lung Trainer</a> which he designed after growing up with severe asthma. In interviews he says he would pet an animal and couldn't breathe properly for a week straight, like he was sucking air through a pinched hose. When the attack was over he noticed he had enormous lung capacity after. He claims it cured him of asthma attacks and that COPD doctors use it for their patients to help them breathe normally, and by training his chest muscles like this it helped him go the distance in his professional fights. His amateur study of his own condition also helped him to gas out his opponents, as when he would clinch with them he's squeeze their chest preventing them from expanding and breathing detailed <a href="https://youtu.be/864rQZhvMag?t=3201">here</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Building%20strength" class="outline-2">
+<h2 id="Building%20strength">Building strength</h2>
+<div class="outline-text-2" id="text-Building%20strength">
+<p>
+How do prisoners get swole when they don't have access to weights? The answer is they are using weights: makeshift weights made out of books or magazines in laundry bags or water in plastic bags, and they do these exercises with an intensity designed to <a href="https://youtu.be/SrygJCc90Uc">split somebody's wig</a>. 'You're doing 1hr of dips, whatever amount of pullups you can do and pushups, nobody counts reps, do it to exhaustion every day like your life depends on it because it does'. This hilarious <a href="https://youtu.be/8CQk5iWoN-A">turbo intense</a> ex-con has a similar opinion that injecting intensity into workouts is how they get jacked in there.
+</p>
+
+<p>
+Tristar coach Firhas Zahabi recommends <a href="https://youtu.be/_fbCcWyYthQ">consistency</a> over intensity, because exercises like push-ups are technical and you only get better at them through daily practice instead of burning yourself out and taking too much recovery time. Intensity should be periodic. Start at your max reps, divide by two, then everyday build back up to your max reps so you aren't too sore to do it everyday. Most of this advice comes from the book <i>Becoming a Supple Leopard</i> which you can get on library genesis filled with movement advice like how to do a proper pull-up without blowing out your shoulders. Flipping through that book some of it seems anecdotal but the strength building strategy I will put together for myself will incorporate some movement recommendations like daily increments instead of risking injuries.  
+</p>
+
+<p>
+Conclusion: injecting periodic intensity into a workout has benefits but consistency leads to more improvements with less injuries over time for sports training and bodyweight technical exercises. 
+</p>
+</div>
+
+<div id="outline-container-Weight%20lifting" class="outline-3">
+<h3 id="Weight%20lifting">Weight lifting</h3>
+<div class="outline-text-3" id="text-Weight%20lifting">
+<p>
+Youtube is filled with ex-con <a href="https://youtu.be/AgEQWaN6qWU">tutorials</a> how to make your own weights which is probably better to start than buying a gym membership and never going.
+</p>
+
+<p>
+In this interview of <a href="https://youtu.be/2hFe1WOKOgQ">Dorian Yates</a> he points out people don't take advantage of negatives to totally max out their reps (if the goal is body building and not technical exercises), and that he carefully planned out every single workout and kept a journal to analyze daily and make improvements. The rest of that interview he talks about all the permanent injuries he developed doing this, such as not being able to do any bench press anymore, and that weighted squats were too dangerous for your spine he had to come up with alternative exercises. 
+</p>
+
+<p>
+Conclusion: get a notebook and plan workouts like a professional would approach planning a business project, it should be a daily schedule prepared in advance so you just take it and execute then analyze later to find improvements, use it to forecast weekly goals. Without a plan you don't get consistent improvements.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-The%20Strategy" class="outline-2">
+<h2 id="The%20Strategy">The Strategy</h2>
+<div class="outline-text-2" id="text-The%20Strategy">
+<p>
+We took a tour of fitness memes and papers. We learned that the EBT model of calories in/calories out is flawed and adjusting macros work better for forecasting weight loss. We learned that reducing saturated fat and excess protein will help us avoid early death. We learned HIIT done for 15 to 30m 2-3 days a week, or possibly SIT done 12.5 minutes 3 days a week, gives you the same cardio benefits of doing 1hr of moderately intensive cardio done at a persistent pace. We learned we should do strength training consistently and mix in periodic intensity. Finally we learned we should plan out every workout, analyzing the results to constantly adjust our plan and make it better.
+</p>
+</div>
+
+
+<div id="outline-container-Plan%20your%20food" class="outline-3">
+<h3 id="Plan%20your%20food">Plan your food</h3>
+<div class="outline-text-3" id="text-Plan%20your%20food">
+<p>
+Get out a piece of paper and plan your fuel intake for tomorrow, based on the longevity diet macros but adjust them if you need to maintain, gain or lose weight so since I need to lose weight, I will increase healthy fats and lower but not eliminate complex carbs. Calculate 0.31-36 protein grams per your bodyweight in pounds to be consumed tomorrow if under the age of 65 and schedule the bulk of this protein to be consumed 1-2 hours after your strength workout if you're doing one. Back in the weight loss anecdotes section we saw that UFC fighter's <a href="https://youtu.be/MgXeNPYFJYM">weight maintenance diet</a> was simple and portion controlled and he ate every couple of hours so wasn't hungry. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Plan%20your%20warmup%20and%20movement" class="outline-3">
+<h3 id="Plan%20your%20warmup%20and%20movement">Plan your warmup and movement</h3>
+<div class="outline-text-3" id="text-Plan%20your%20warmup%20and%20movement">
+<p>
+This is a sample of traditional bodyweight exercises covering multiple muscle groups to build basic core strength and enable <a href="https://youtu.be/4_gMOVNlrHk">movement</a> for HIIT/SIT and later shadow boxing so we don't pull every muscle. Do these before any cardio to warm up they both stretch and build strength. Trust me, if you whip out too fast jabs and crosses while doing shadow box cardio later with no warmup you're going to pull your abs and chest/back muscles you never thought existed and be in pain for at least 3 days if you're not used to that kind of exercise.
+</p>
+
+<ul class="org-ul">
+<li>The <a href="https://youtu.be/Pznl6wbPM28">Dand aka Hindu Push-up</a> 
+<ul class="org-ul">
+<li>See this Burmese fighter @2:05 <a href="https://vimeo.com/97781817">doing them on stands</a></li>
+<li>This <a href="https://vimeo.com/91117934">wrestling coach</a> at @4:54 is on beast mode using high blocks</li>
+<li>Also used in Muay Lao/Laos boxing <a href="https://youtu.be/rjIvKzqtbzE">conditioning</a> @2:11</li>
+<li>All the variations to <a href="https://youtu.be/372jrShGgTA">increase difficulty</a> like dive-bombers</li>
+</ul></li>
+<li>The <a href="https://youtu.be/25ROc2YhsVg">Baithak aka Hindu Squat</a>
+<ul class="org-ul">
+<li>A squat but done on the ball of your feet that fighters use</li>
+<li>All the variations to progress in <a href="https://youtu.be/6wXzJcsTvbo">difficulty</a></li>
+</ul></li>
+<li>BJJ hip escape <a href="https://youtu.be/k1RDHvXDzVE">drills</a>
+<ul class="org-ul">
+<li>Used to get somebody <a href="https://youtu.be/5S39-NZsmWk">off of you</a></li>
+<li>There are hundreds of examples the full drills search for them</li>
+<li>Works abs, glutes (bridges), hip movement</li>
+</ul></li>
+<li>An old school boxing <a href="https://youtu.be/KS7UeI_bOLI">neck</a> exercise to make it harder to get KO'd
+<ul class="org-ul">
+<li>Some of this figher's <a href="https://youtu.be/YZeNRvD8Bgw?t=496">neck conditioning</a> @8:16</li>
+</ul></li>
+<li>A mobility <a href="https://youtu.be/D_ju6zQdFEg">routine</a> to prevent injuries</li>
+</ul>
+
+<p>
+Take out a another piece of paper and plan out the routine you will do tomorrow. For the first day, choose all or some exercises you want to try and plan to do them until exhaustion to get a base line if they are bodyweight exercises. If you can't even do one full movement then time how long you can hold the form until exhaustion or how many negative reps, lowering yourself but resetting and going back to starting form.
+</p>
+
+<p>
+Whenever you recover, plan the next workout by dividing the reps in half so you can do this everyday. If you could only do one properly executed hindu pushup on the first day, the next workout do it as controlled and slow as possible, which will be harder. Then add in more reps incrementally.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-Cardio%20%26%20Strength%20conditioning" class="outline-3">
+<h3 id="Cardio%20%26%20Strength%20conditioning">Cardio &amp; Strength conditioning</h3>
+<div class="outline-text-3" id="text-Cardio%20%26%20Strength%20conditioning">
+<p>
+I'm going to try Firhas Zahabi's advice of <a href="https://youtu.be/0TRqqfpr98M">teach yourself self-defense</a> while building cardio through shadow boxing, this seems more interesting and motivating than running laps everyday. There is no special equipment needed but eventually you should get a heavy bag to condition your shins, elbows and hands (wearing gloves) if you ever plan on using this in the street. I picked Muay Boran which is 'old style Muay Thai' meaning street fighting before it became a sport, but you can pick from dozens of <a href="https://youtu.be/D8DouKeOkfI">boxing</a> styles to shadow practice and mix with <a href="https://youtu.be/egwz6f7VM4Y">Filipino dirty boxing</a>, <a href="https://youtu.be/2pWlmlBogVc">stick fighting</a>, <a href="https://youtu.be/Tnxdd0JAEAI">Jeet Kune Do</a> whatever personally interests you so you have motivation to practice it.
+</p>
+
+<p>
+Watch these to plan your first shadow routine:
+</p>
+
+<ul class="org-ul">
+<li><b>Start here</b>: <a href="https://youtu.be/Ltl4PW5H2VY">Northern Thai Boxing</a> (26m) basic body weight technique
+<ul class="org-ul">
+<li>Basic <a href="https://youtu.be/WpWYB-dR96w">footwork</a> and <a href="https://youtu.be/1jJfksO6cCE">triangle</a> movement</li>
+<li>Brief breakdown of Muay Boran <a href="https://youtu.be/_e5S2P5HCBI">elbow</a></li>
+<li>More <a href="https://youtu.be/5RdCOtZ5lmU">basic elbow</a> strikes</li>
+<li><a href="https://youtu.be/KRIKBxCq-ao">All elbows and blocks</a> combined</li>
+<li>Move like they are, move forward throw strike slowly at first, block/move, throw strike, repeat
+<ul class="org-ul">
+<li>If you go full power or speed you'll pull something this early</li>
+<li>The elbow <a href="https://youtu.be/ER8s4cDMTGc">spear</a> block is also used to block a haymaker on the street</li>
+</ul></li>
+<li>Drop down in intervals and try any of <a href="https://youtu.be/7ZtWQFFnWl8">these</a> but not full intensity</li>
+<li>Go back to controlled shadow boxing</li>
+<li>Repeat</li>
+</ul></li>
+</ul>
+
+<p>
+Focus on form, and build up to speed slowly over time which gives you more than enough cardio to begin, <b>never throw full force</b> you will whip elbows and pull muscles, screw up your form, save that for the heavy bag later, shadow boxing builds speed, cardio conditioning if you move around fast enough and form accuracy.
+</p>
+
+<p>
+This is a MICT 'moderately intensive cardio training' routine meaning you have your heart rate going 70% of max (assuming you worked up to moderate speed) and aren't doing any crazy intense intervals. If you wanted to plan a true HIIT workout it would look like <a href="https://youtu.be/4P8zp4QoE1g">this</a> or the entire <a href="https://youtu.be/7ZtWQFFnWl8">Tiger Muay Thai conditioning</a> (almost all ab workouts) notice the style of both, 30 to 60s of extreme intensity, rest and do nothing, repeat. That Muay Thai conditioning workout they do 10 exercises, 15 seconds rest after each one, when finished round 1 wait 2 minutes and repeat again for a total of 3 rounds. However you can drop down and do moderately intensive push ups or ab crunches for 30s during your shadow boxing to boost cardio if you're not yet throwing at high speed and it's still not HIIT, there is no worry of flooding your body with cortisol for 24 hours.
+</p>
+
+<p>
+<b>Plan tomorrow's workout</b>
+</p>
+
+<p>
+Write down how long you did today's workout for, plan how you will improve this the next day or reduce it so you don't kill yourself and can do it on a regular basis with steady improvements. You could throw in some kind of HIIT you designed 2-3 days a week, like sprinting in place as hard as possible for 40 seconds in between shadow movements. Try a new form to shadow like Muay Boran <a href="https://youtu.be/5LQ7MFWjdTs">punch shadow</a>. 
+</p>
+
+<p>
+<b>More techniques</b>
+</p>
+
+<p>
+A sample of more techniques to try in your shadow cardio, make bareknuckle adjustments for the street: 
+</p>
+
+<ul class="org-ul">
+<li>How to not break your hand
+<ul class="org-ul">
+<li>How to <a href="https://youtu.be/dQgPcSnSrbs">make a fist</a></li>
+<li>Use <a href="https://youtu.be/ggWCsRiKGZ4">vertical fist</a> or <a href="https://youtu.be/l01_tRhl9yA">diagonal</a></li>
+<li>A safer street hook (for your hand) is the <a href="https://youtu.be/Gm0SyEqc7ns">clothesline</a></li>
+</ul></li>
+<li>Punching
+<ul class="org-ul">
+<li>Muay boran punching <a href="https://youtu.be/5LQ7MFWjdTs">shadow form</a></li>
+<li>Sport Muay Thai <a href="https://youtu.be/MD-T8Y381ok">basics</a></li>
+</ul></li>
+<li>Targets
+<ul class="org-ul">
+<li>Visualize aiming for the <a href="https://youtu.be/EEcPb3mLXP4">centerline</a> and <a href="https://youtu.be/Ymt7nzYx3A8">this region</a></li>
+</ul></li>
+<li>Blocking/Defense
+<ul class="org-ul">
+<li>Muay Boran defense <a href="https://youtu.be/-czj9DyuynQ">shadow form</a></li>
+<li>Adjust sport fighting for the street with <a href="https://youtu.be/vWp6zaB-Hvw">Muay Boran blocks</a></li>
+</ul></li>
+<li>Guard
+<ul class="org-ul">
+<li>Adjust sport style guard to <a href="https://youtu.be/vR2WJUR_CE4">street guard</a></li>
+<li><a href="https://youtu.be/rcxt4WCpQ48">Muay Boran guard</a> is already a street guard</li>
+</ul></li>
+<li>Knee
+<ul class="org-ul">
+<li><a href="https://youtu.be/GphOyBXwDTg">Spear</a> knee and <a href="https://youtu.be/BBkEu7dNXis">cut</a> knee</li>
+<li>More <a href="https://youtu.be/AlzsOiDAbTM">knees</a> to shadow</li>
+<li>The <a href="https://youtu.be/fO1mPAOdxwo">Lerdrit knee</a> for the street</li>
+</ul></li>
+<li>Kicks
+<ul class="org-ul">
+<li>How to <a href="https://youtu.be/H1CLFyTI97o">teep</a> (push kick)</li>
+<li>Muay Thain kick <a href="https://youtu.be/ybdWclDx1tM">shadow form</a></li>
+<li>Complete breakdown of old style Muay round detailed <a href="https://youtu.be/oI7L473CI4s">here</a></li>
+<li>The <a href="https://youtu.be/-V22TimPtBw">push kick</a> adjusted for the street</li>
+</ul></li>
+<li>Headbutt
+<ul class="org-ul">
+<li>Basic Lethwei <a href="https://youtu.be/jnlQH2Hzu4Y">headbutt</a></li>
+</ul></li>
+</ul>
+
+<p>
+Reminder this is only for keeping cardio interesting by building up a skill, and hardly any of these moves are safe to use in a street fight without heavy bag conditioning all your limbs. You can use the vertical bareknuckle punch, push kick below the waist, Ledrit knee, headbutt and clothesline/back of the ear palm strike, maybe some of the elbows if you must in the street.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Stretching" class="outline-3">
+<h3 id="Stretching">Stretching</h3>
+<div class="outline-text-3" id="text-Stretching">
+<p>
+Yoga stretching is included with the Hindu squats and push ups, and practicing the hip escape drill. You can easily build your own <a href="https://youtu.be/NsslSF7_m0c">stretch routine</a> for post-training with the ample amount of advice on YouTube. I stretch everyday and for me it's worth doing end of day you can watch something like a lecture and stretch out at the same time.   
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
