@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-22 Thu 20:23 -->
+<!-- 2021-07-22 Thu 22:06 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software Security</title>
@@ -313,7 +313,7 @@ Start <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_
 <p>
 Of course you can translate all the Racket programs in this book to Pyret (if you've done <a href="https://learnaifromscratch.github.io/software.html">this</a>)
 </p>
-<pre class="example" id="org8897c23">
+<pre class="example" id="org90ff446">
 fun sum1(n :: Number) -&gt; Number:
   doc: "Structural Recursion, if structure is a natural number n++ then disassemble by n--"
   if n == 0:
@@ -352,7 +352,7 @@ In general you prefer a while loop when the range isn't known like user input pr
 </p>
 
 <p>
-We have to detour into assembly language to learn exactly what stack frames/pointers are in the C level abstraction of memory. Luckily for us there are great lectures for this in CMU's 15-213 course, then we will come back to this text. Skipping through these lectures is much faster than reading the book for the 15-213 course which contains details of x86-64 architecture we can learn later as we come across it. For now let's just understand what a stack frame is.
+We have to detour into assembly language to learn exactly what stack frames/pointers are in the C level abstraction of memory. Luckily for us there are great lectures for this in CMU's 15-213 course, then we will come back to this text. We're just skipping through the lectures, you can get the CS:APP book the course uses later and learn every detail of x86-64 architecture later if you want as we come across it. For now this is just an introduction
 </p>
 
 <p>
@@ -360,39 +360,23 @@ We have to detour into assembly language to learn exactly what stack frames/poin
 </p>
 
 <p>
-Let's begin <a href="https://youtu.be/-UbRr4gDnyE">here</a> <i>Machine Level Programming| Basics</i>. This course covers x86-64. There is some really good info on history, how to generate object code w/gcc, but the lecture for assembly code starts at @47:54 talking about registers which at a high level is just a storage location in the CPU it can access very quickly. 'Memory' is any hardware outside the CPU like your <a href="https://en.wikipedia.org/wiki/Random-access_memory">RAM</a>. Interesting @ 55:15 you can't in x86 assembly copy from memory to memory, it has to go through a register for the benefit of the companies designing these things. 
+Let's begin <a href="https://youtu.be/-UbRr4gDnyE">here</a> <i>Machine Level Programming| Basics</i>. There is some really good info on history, how to generate object code w/gcc, but the lecture for assembly code starts at @47:54 talking about registers which at a high level is just a storage location in the CPU it can access very quickly. 'Memory' for the purposes of this quick introduction is any storage that's not a CPU register, so cache memories or <a href="https://en.wikipedia.org/wiki/Random-access_memory">RAM</a>. Interesting @ 55:15 in x86 assembly you can't copy from memory to memory, it has to go through a register for the benefit of the companies designing these things he claims. 
 </p>
 
 <p>
-'Dereferencing' a pointer, using the * syntax, means retrieve the value stored at that memory address. 'Referencing' or the &amp; syntax means return the memory address, and usually set it to this pointer variable so we can directly access the value later. In the lecture he goes through Swap() completely to understand this. 
+'Dereferencing' a pointer in C, using the * syntax, means retrieve the value stored at that memory address. 'Referencing' or the &amp; syntax means return the memory address, and usually set it to this pointer variable so we can directly access the value later. In the lecture he goes through Swap() completely to understand this. 
 </p>
 
 <ul class="org-ul">
 <li>movq (%rdi), %rax
 <ul class="org-ul">
-<li>The brackets in a movq instruction mean the <i>memory address</i> that %rdi points to, move that address to %rax whereas movq %rdi, %rax means move the <i>value</i> in %rdi to %rax. Think of a huge data structure why you'd just want to move it's memory address and not copy it around.</li>
+<li>The brackets in a movq instruction mean the <i>memory address</i> that %rdi points to, move that address to %rax whereas movq %rdi, %rax means move the <i>value</i> in %rdi to %rax.</li>
 </ul></li>
 </ul>
 
 <p>
-The rest of this lecture is things you don't have to know yet, there's no reason to memorize x86 assembly instructions we will come across them many more times later. 
+The rest of this lecture is things you don't have to know yet, there's no reason to memorize x86 assembly instructions we will come across them many more times later. Let's move on to the next one TODO
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <hr>
 <p>
