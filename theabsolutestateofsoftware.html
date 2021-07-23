@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-16 Fri 20:22 -->
+<!-- 2021-07-22 Thu 20:23 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software Security</title>
@@ -304,6 +304,99 @@ Next these <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introductio
 
 <p>
 Start <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">reading</a> at 2.1 <i>Basics</i> look at the C memory model diagram. Each row is 32bits (one word) which the author notes that 32bits is used for the purposes of making it easier to read this guide and it's similar to how a 64bit model works. He goes through a sample C program, these are all sequentially executed statements that return nothing (void) they produce side effects and the return statement is an exit back to whatever program called it and the numbers indicate error codes. Moving on to 2.2 and 2.3 you can see an example of prototypes or external global variables <a href="https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/defs.h">here</a> in MIT's implementation of xv6 which is a V6 unix clone they use to teach their operating systems class. Some of the header files have external globals some don't. At the end of 2.3 there's questions: what happens if we exclude x file? The compiler can't link, if gcd-driver.c forgets to include gcd.h then the global variable being used in gcd-driver will fail, the compiler will also give warnings no prototypes when it compiles gcd-driver.c and doesn't know the types of the parameters of the gcd function inside gcd-func. This will all be covered when we do linking.
+</p>
+
+<p>
+2.4 <i>Iteration</i> if you've taken CS19 in the compsci/software workshop then you already know what structural recursion is, it means taking apart the structure as it's built whereas accumulative recursion means you have some kind of variable that holds a value which accumulates and then you return it. 
+</p>
+
+<p>
+Of course you can translate all the Racket programs in this book to Pyret (if you've done <a href="https://learnaifromscratch.github.io/software.html">this</a>)
+</p>
+<pre class="example" id="org8897c23">
+fun sum1(n :: Number) -&gt; Number:
+  doc: "Structural Recursion, if structure is a natural number n++ then disassemble by n--"
+  if n == 0:
+    0
+  else: n + sum1(n - 1)
+  end
+where:
+  sum1(5) is 5 + 4 + 3 + 2 + 1
+end
+
+fun sum2(n :: Number) -&gt; Number:
+  doc: "Accumulator recursion, keeps a running tally and returns it"
+  fun sum2-helper(counter, acc):
+    if counter == 0:
+      acc
+    else:
+      sum2-helper((counter - 1), acc + counter)
+    end
+  end
+  sum2-helper(n, 0)
+where:
+  sum2(5) is 5 + 4 + 3 + 2 + 1
+end
+</pre>
+
+<p>
+In general you prefer a while loop when the range isn't known like user input prompts, and a for loop is preferred where the range is already known. There's a comment that Haskell performed this computation at the same speed as C with far shorter/declarative syntax. 
+</p>
+
+<p>
+2.5 <i>Computational Model</i> 'FICS' is not ready yet and is a work in progress if you're wondering, it's a functional intro to cs he's still writing but we already took one in the compsci workshop doing CS19 which is equivalent. Here we learn read-only memory, stack and heap. If not clear, #include &lt;stdio.h&gt; means open the namespace of this library filled with standard input/output programs so you can call them by name and they're all in scope.
+</p>
+
+<p>
+<b>15-213 CMU</b>
+</p>
+
+<p>
+We have to detour into assembly language to learn exactly what stack frames/pointers are in the C level abstraction of memory. Luckily for us there are great lectures for this in CMU's 15-213 course, then we will come back to this text. Skipping through these lectures is much faster than reading the book for the 15-213 course which contains details of x86-64 architecture we can learn later as we come across it. For now let's just understand what a stack frame is.
+</p>
+
+<p>
+<b>Lecture 1</b>
+</p>
+
+<p>
+Let's begin <a href="https://youtu.be/-UbRr4gDnyE">here</a> <i>Machine Level Programming| Basics</i>. This course covers x86-64. There is some really good info on history, how to generate object code w/gcc, but the lecture for assembly code starts at @47:54 talking about registers which at a high level is just a storage location in the CPU it can access very quickly. 'Memory' is any hardware outside the CPU like your <a href="https://en.wikipedia.org/wiki/Random-access_memory">RAM</a>. Interesting @ 55:15 you can't in x86 assembly copy from memory to memory, it has to go through a register for the benefit of the companies designing these things. 
+</p>
+
+<p>
+'Dereferencing' a pointer, using the * syntax, means retrieve the value stored at that memory address. 'Referencing' or the &amp; syntax means return the memory address, and usually set it to this pointer variable so we can directly access the value later. In the lecture he goes through Swap() completely to understand this. 
+</p>
+
+<ul class="org-ul">
+<li>movq (%rdi), %rax
+<ul class="org-ul">
+<li>The brackets in a movq instruction mean the <i>memory address</i> that %rdi points to, move that address to %rax whereas movq %rdi, %rax means move the <i>value</i> in %rdi to %rax. Think of a huge data structure why you'd just want to move it's memory address and not copy it around.</li>
+</ul></li>
+</ul>
+
+<p>
+The rest of this lecture is things you don't have to know yet, there's no reason to memorize x86 assembly instructions we will come across them many more times later. 
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<p>
+<a href="./index.html">Home</a>
 </p>
 </div>
 </div>
