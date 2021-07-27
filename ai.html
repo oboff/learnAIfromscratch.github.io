@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-06-22 Tue 15:32 -->
+<!-- 2021-07-26 Mon 20:18 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -292,6 +292,8 @@
 <ul>
 <li><a href="#10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</a></li>
 <li><a href="#10-301%20Overfitting%20%2B%20KNN">10-301 Overfitting + KNN</a></li>
+<li><a href="#CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">CS4780 Curse of Dimensionality / Perception</a></li>
+<li><a href="#Reading%20%26%20hw">Reading &amp; hw</a></li>
 </ul>
 </li>
 </ul>
@@ -330,7 +332,7 @@ The courses use C++ Python Java Octave but I'm using Julia simply because there 
 <p>
 Some backups  
 </p>
-<pre class="example" id="org51bfdc1">
+<pre class="example" id="orgcb1aa66">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -351,6 +353,7 @@ The courses do not follow a single book and recommend the following as supplemen
 <ul class="org-ul">
 <li>2021 <a href="https://probml.github.io/pml-book/book1.html">draft</a> is free &amp; includes Jupyter <a href="https://github.com/probml/pyprobml/tree/master/book1">notebooks</a> for each chapter</li>
 </ul></li>
+<li><i>A Course in Machine Learning</i> by Hal Daume which is <a href="http://ciml.info/dl/v0_99/ciml-v0_99-all.pdf">free</a></li>
 <li><i>Pattern Recognition and Machine Learning</i> by Bishop is free <a href="https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/">here</a></li>
 <li><i>Machine Learning</i> by Tom Mitchell w/ <a href="http://www.cs.cmu.edu/%7Etom/NewChapters.html">new</a> chapters</li>
 <li><i>The Elements of Statistical Learning</i> is <a href="https://web.stanford.edu/~hastie/ElemStatLearn/">free</a></li>
@@ -536,7 +539,7 @@ This lecture is probably the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="org6b343cb">
+<pre class="example" id="orgd3c1070">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -638,7 +641,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="org78149d4">
+<pre class="example" id="orgec63eb1">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -841,7 +844,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="orgcfe9682">
+<pre class="example" id="org1f56094">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -890,7 +893,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org3c4b265">
+<pre class="example" id="org3804f7b">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -1004,7 +1007,7 @@ Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lectu
 </p>
 
 <p>
-The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. The <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">notes</a> for this lecture are good, 
+The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. 
 </p>
 </div>
 </div>
@@ -1026,7 +1029,11 @@ Reminder there is also <a href="https://seeing-theory.brown.edu/index.html">Seei
 <div id="outline-container-Lecture%204" class="outline-2">
 <h2 id="Lecture%204">Lecture 4</h2>
 <div class="outline-text-2" id="text-Lecture%204">
+<p>
+Some of the 701 subjects will introduce subjects much earlier than 301 or 4780 because they leave theory to the end of the course. This is great because we go back to these subjects at a new level and see them again which will not only help us remember these things but fill in blanks from the first time around. For example Naive Bayes is lecture 18 in 301 but it's the topic of what we're about to watch now in 701.   
+</p>
 </div>
+
 <div id="outline-container-10-701%20KNN%20Continued%20and%20Naive%20Bayes" class="outline-3">
 <h3 id="10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</h3>
 <div class="outline-text-3" id="text-10-701%20KNN%20Continued%20and%20Naive%20Bayes">
@@ -1151,6 +1158,40 @@ The end of the lecture is problems with this classifier:
 <div id="outline-container-10-301%20Overfitting%20%2B%20KNN" class="outline-3">
 <h3 id="10-301%20Overfitting%20%2B%20KNN">10-301 Overfitting + KNN</h3>
 <div class="outline-text-3" id="text-10-301%20Overfitting%20%2B%20KNN">
+<p>
+Watching <a href="https://youtu.be/amtyGWEMzV8">lecture 4</a>.    
+</p>
+
+<p>
+He reminds us you can do all the 10-301 homework on google colab and the tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a>. TODO 
+</p>
+</div>
+</div>
+
+<div id="outline-container-CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception" class="outline-3">
+<h3 id="CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">CS4780 Curse of Dimensionality / Perception</h3>
+<div class="outline-text-3" id="text-CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">
+<p>
+Here we learn how KNN, so computing distances, does not work for higher dimensional spaces, so methods are used like principal component analysis to estimate if your data is in a subspace of a larger space. The notes for this class is <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">here</a>. The perceptron algorithm for high dimensional spaces, using binary data (only 2 labels) is introduced. He explains the notation fully by the end of the lecture. Vector w is the angle of the hyperplane, and b shifts the plane up or down the y-axis (however he eliminates b and it's now fixed). The parameters of y = mx + b is in the <a href="file:///home/jbh/cmu/ai_tripos/calculus.html#1.3%20Linear%20functions">calculus</a> workshop.
+</p>
+
+<p>
+Overall a good lecture if you've never seen manifolds before and want a geometric overview of how data can exist in subspaces of larger dimensions. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Reading%20%26%20hw" class="outline-3">
+<h3 id="Reading%20%26%20hw">Reading &amp; hw</h3>
+<div class="outline-text-3" id="text-Reading%20%26%20hw">
+<p>
+We have to skim through CIML <a href="http://ciml.info/dl/v0_99/ciml-v0_99-all.pdf">pdf</a> the first 3 chapters, this is easy reading and the book that 10-301 uses. We have to read a chapter and work through it from Kevin Murphy's 2021 book which will be much harder on multivariable probability while at the same time finishing 10-701 homework, for which we have all the solutions for. 
+</p>
+
+
+
+
+
 <hr>
 <p>
 <a href="./index.html">Home</a>
