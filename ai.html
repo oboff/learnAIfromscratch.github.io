@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-26 Mon 20:18 -->
+<!-- 2021-07-27 Tue 19:16 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -291,7 +291,7 @@
 <li><a href="#Lecture%204">Lecture 4</a>
 <ul>
 <li><a href="#10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</a></li>
-<li><a href="#10-301%20Overfitting%20%2B%20KNN">10-301 Overfitting + KNN</a></li>
+<li><a href="#10-301%20Decision%20Trees%203">10-301 Decision Trees 3</a></li>
 <li><a href="#CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">CS4780 Curse of Dimensionality / Perception</a></li>
 <li><a href="#Reading%20%26%20hw">Reading &amp; hw</a></li>
 </ul>
@@ -310,29 +310,18 @@ Let's start with machine learning. I'm going to do these 3 courses but you don't
 <ul class="org-ul">
 <li>10-701 (Fa 2020) <a href="https://www.cs.cmu.edu/~epxing/Class/10701-20/schedule.html">Intro to Machine Learning</a> w/<a href="https://www.youtube.com/playlist?list=PLsWN0V-b507g7dbQTUvFkKZEqdHR5Fh4P">lectures</a></li>
 <li>10-301/601 (Sp 2020) <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">Intro to Machine Learning</a> w/<a href="https://www.youtube.com/playlist?list=PLpqQKYIU-snAPM89YPPwyQ9xdaiAdoouk">lectures</a></li>
-<li>CS4780 (2018) <a href="https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS">ML for Intelligent Systems</a> w/<a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/">lectures</a></li>
+<li>CS4780 (2018) <a href="https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS">ML for Intelligent Systems lectures</a> w/<a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/">notes</a></li>
 </ul>
 
 <p>
-The courses use C++ Python Java Octave but I'm using Julia simply because there exists excellent resources
+The courses use C++ Python Java Octave, and for 10-301 you can do all the homework in your browser with google colab using Python. A tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a>. Most of the homework for 10-701 is written.  
 </p>
-
-<ul class="org-ul">
-<li>MIT's <i>Introduction to Computational Thinking</i> <a href="https://computationalthinking.mit.edu/Spring21/">18.S191</a> (Sp 2020)
-<ul class="org-ul">
-<li>Amazing set of lectures that explain programming probabilities, the SVD (linear algebra)</li>
-<li>ML w/Julia <a href="https://juliaacademy.com/p/introduction-to-machine-learning">tutorial</a> for using the AI libraries
-<ul class="org-ul">
-<li>Same prof has a <a href="https://mitmath.github.io/18337/">course</a> w/YouTube lectures on AI performance engineering</li>
-</ul></li>
-</ul></li>
-</ul>
 
 
 <p>
 Some backups  
 </p>
-<pre class="example" id="orgcb1aa66">
+<pre class="example" id="orgc5afd15">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -539,7 +528,7 @@ This lecture is probably the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="orgd3c1070">
+<pre class="example" id="org9c7bb5c">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -641,7 +630,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="orgec63eb1">
+<pre class="example" id="orga9e0d65">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -844,7 +833,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org1f56094">
+<pre class="example" id="orge25e236">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -893,7 +882,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org3804f7b">
+<pre class="example" id="org7e6f020">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -1155,15 +1144,32 @@ The end of the lecture is problems with this classifier:
 </div>
 </div>
 
-<div id="outline-container-10-301%20Overfitting%20%2B%20KNN" class="outline-3">
-<h3 id="10-301%20Overfitting%20%2B%20KNN">10-301 Overfitting + KNN</h3>
-<div class="outline-text-3" id="text-10-301%20Overfitting%20%2B%20KNN">
+<div id="outline-container-10-301%20Decision%20Trees%203" class="outline-3">
+<h3 id="10-301%20Decision%20Trees%203">10-301 Decision Trees 3</h3>
+<div class="outline-text-3" id="text-10-301%20Decision%20Trees%203">
 <p>
-Watching <a href="https://youtu.be/amtyGWEMzV8">lecture 4</a>.    
+Watching <a href="https://youtu.be/amtyGWEMzV8">lecture 4</a>. The YouTube title has nothing to do with the lecture content, this is actually about splitting criteria of decision trees, brief intro to information theory, greedy search, and the last 10 minutes are KNN.    
 </p>
 
 <p>
-He reminds us you can do all the 10-301 homework on google colab and the tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a>. TODO 
+He reminds us you can do all the 10-301 homework on google colab and the tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a>.
+</p>
+
+<p>
+@9:23, splitting criteria GINI gain example, obviously P(A=1) = 8/8 or 1, and P(A=0) = 0, @15:11 he corrects this. 
+</p>
+
+<p>
+The mutual information slide @ 24:00, everything here is in the Kevin Murphy book in the <i>Information Theory</i> chapter and explained better there.
+</p>
+<ul class="org-ul">
+<li>H(X) entropy function on random variable X exists to measure the random variable's information content, more information means lack of predictability or increased uncertainty</li>
+<li>H(Y|X) conditional entropy function is the uncertainty we have in Y after looking at X, averaged over possible values for X. This translates to: conditioning on data on average does not increase uncertainty.</li>
+<li>I(X;Y) mutual information function, basically the intersection of X and Y. The uncertainty of Y is lower once you look at X, and by symmetry, the uncertainty of X is lower once you look at Y.</li>
+</ul>
+
+<p>
+There's an algorithm review on greedy search to set up decision tree learning where you maximize splitting criterea at each step of the decision tree. The last 10 minutes or so we already know, KNN to select labels.
 </p>
 </div>
 </div>
@@ -1185,12 +1191,8 @@ Overall a good lecture if you've never seen manifolds before and want a geometri
 <h3 id="Reading%20%26%20hw">Reading &amp; hw</h3>
 <div class="outline-text-3" id="text-Reading%20%26%20hw">
 <p>
-We have to skim through CIML <a href="http://ciml.info/dl/v0_99/ciml-v0_99-all.pdf">pdf</a> the first 3 chapters, this is easy reading and the book that 10-301 uses. We have to read a chapter and work through it from Kevin Murphy's 2021 book which will be much harder on multivariable probability while at the same time finishing 10-701 homework, for which we have all the solutions for. 
+TODO
 </p>
-
-
-
-
 
 <hr>
 <p>
