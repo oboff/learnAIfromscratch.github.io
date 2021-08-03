@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-27 Tue 19:16 -->
+<!-- 2021-08-01 Sun 17:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -293,7 +293,8 @@
 <li><a href="#10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</a></li>
 <li><a href="#10-301%20Decision%20Trees%203">10-301 Decision Trees 3</a></li>
 <li><a href="#CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">CS4780 Curse of Dimensionality / Perception</a></li>
-<li><a href="#Reading%20%26%20hw">Reading &amp; hw</a></li>
+<li><a href="#Recitation%201">Recitation 1</a></li>
+<li><a href="#Recitation%202">Recitation 2</a></li>
 </ul>
 </li>
 </ul>
@@ -321,7 +322,7 @@ The courses use C++ Python Java Octave, and for 10-301 you can do all the homewo
 <p>
 Some backups  
 </p>
-<pre class="example" id="orgc5afd15">
+<pre class="example" id="orgd752eaf">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -364,7 +365,7 @@ Mathematics reference
 </p>
 <ul class="org-ul">
 <li><i>Mathematics for Machine Learning</i> by Deisenroth/Faisal/Ong is <a href="https://mml-book.github.io/">free</a></li>
-<li>Goodfellow's <i>Deep Learning</i> <a href="https://www.deeplearningbook.org/contents/prob.html">book</a> chapter on Probability &amp; Information Theory</li>
+<li>Goodfellow's <i>Deep Learning</i> <a href="https://www.deeplearningbook.org/contents/prob.html">book</a> chapters on linear algebra and probability</li>
 </ul>
 </div>
 </div>
@@ -528,7 +529,7 @@ This lecture is probably the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="org9c7bb5c">
+<pre class="example" id="orga5cf2b3">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -630,7 +631,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">homework</a>, it has an autograder for some languages but you don't need it. All these classifier functions like decision trees already exist in highly optimized <a href="https://github.com/bensadeghi/DecisionTree.jl/blob/master/README.md">libraries</a> so I implemented the assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is understand how a decision stump works. You can import the testing and training data as google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="orga9e0d65">
+<pre class="example" id="orgf0cc0e7">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -833,7 +834,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="orge25e236">
+<pre class="example" id="org85d8060">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -882,7 +883,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a> if you didn't take the software workshop:
 </p>
 
-<pre class="example" id="org7e6f020">
+<pre class="example" id="orgacf5060">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -1187,11 +1188,169 @@ Overall a good lecture if you've never seen manifolds before and want a geometri
 </div>
 </div>
 
-<div id="outline-container-Reading%20%26%20hw" class="outline-3">
-<h3 id="Reading%20%26%20hw">Reading &amp; hw</h3>
-<div class="outline-text-3" id="text-Reading%20%26%20hw">
+<div id="outline-container-Recitation%201" class="outline-3">
+<h3 id="Recitation%201">Recitation 1</h3>
+<div class="outline-text-3" id="text-Recitation%201">
 <p>
-TODO
+I completely forgot we have access to the 10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">recitations</a> and the solutions. Let's try the first 2 to catch up to the course. 
+</p>
+
+<p>
+Recitation 1: <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/handouts/rec1Sol.pdf">Background</a>. The solutions are already in the pdf, to understand them we have Goodfellow's <i>Deep Learning</i> book linked in the beginning of this workshop chapter on linear algebra and probability. 
+</p>
+
+<p>
+To ensure we know this let's explain to ourselves the concept of random variables. You have a sample space set of all possible outcomes usually denoted Omega. Any function from that sample space to a real number value is a random variable. The function itself is the random variable. You can of course take a function of the function, and get more random variables. Random variables (functions) have their own subset of the larger sample space, for example a sample space of all possible states of rolling 2 dice, and your function is only concerned with rolling states that add up to 10, now that distribution is solely those dice states. From that subset you can take another function, the states of all dice that add up to 5, further reducing the distribution. 
+</p>
+
+<p>
+<b>Probability &amp; Stats</b>
+</p>
+
+<p>
+<b>Question 1</b>
+What is \(p(a_{1},b_{2}\))? In the recitation these two random variables were declared disjoint/mutually exclusive. As per this <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a> since two mutually exclusive events cannot occur at the same time, their intersection is 0. 
+</p>
+
+<p>
+What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we can construct a joint probability table since we know there are only 4 possible states and are told the probability of \(a_1\) is 0.5, and the total probability of \(b_2\) is 0.5 as per recitation definition of \(p(a_{i})\). You can construct these as per the above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a>:
+</p>
+
+<pre class="example" id="org86dfcdd">
+|          | a_1 | a_2 | Marginal |
+|----------+-----+-----+----------|
+| b_1      |   x | x   | ?        |
+| b_2      |   0 | x   | 0.5      |
+|----------+-----+-----+----------|
+| Marginal | 0.5 | ?   |          |
+</pre>
+
+<p>
+If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and since \(b_2\) sums to 0.5, \(b_2|a_2\) must also be 0.5:
+</p>
+<pre class="example" id="org1627f21">
+|          | a_1 | a_2 | Marginal |
+|----------+-----+-----+----------|
+| b_1      | 0.5 | x   | ?        |
+| b_2      |   0 | 0.5 | 0.5      |
+|----------+-----+-----+----------|
+| Marginal | 0.5 | ?   |          |
+</pre>
+
+<p>
+As the margins must sum to 1, fill in the rest
+</p>
+<pre class="example" id="orga4391cc">
+|          | a_1 | a_2 | Marginal |
+|----------+-----+-----+----------|
+| b_1      | 0.5 |   0 |      0.5 |
+| b_2      |   0 | 0.5 |      0.5 |
+|----------+-----+-----+----------|
+| Marginal | 0.5 | 0.5 |        1 |
+</pre>
+
+<p>
+Because the recitation states the variables are not independent, from the same above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a> we have P(A and B) = P(A) * P(B|A). Now insert the definition of P(B|A) from the recitation and we have:
+</p>
+<ul class="org-ul">
+<li>\(p(a_{1}) *(p(b_{1}|a_{1})/p(a_{1}))\) which is 0.5 * (0.5/0.5)</li>
+</ul>
+
+
+<p>
+<b>Question 2</b>
+Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is defined as P(A and B) or P(A)P(B) and as we were given both values in the writeup: 0.5 * 0.5 = 0.25. We can construct another table:
+</p>
+<pre class="example" id="orgbce1d00">
+|          |  a_1 | a_2 | Marginal |
+|----------+------+-----+----------|
+| b_1      |    x | x   |      0.5 |
+| b_2      | 0.25 | x   |      0.5 |
+|----------+------+-----+----------|
+| Marginal |  0.5 | 0.5 |        1 |
+</pre>
+
+<p>
+Deduce the rest since margins must add up to 1:
+</p>
+<pre class="example" id="org44b51c5">
+|          |  a_1 |  a_2 | Marginal |
+|----------+------+------+----------|
+| b_1      | 0.25 | 0.25 |      0.5 |
+| b_2      | 0.25 | 0.25 |      0.5 |
+|----------+------+------+----------|
+| Marginal |  0.5 |  0.5 |        1 |
+</pre>
+<p>
+\(p(a_{1}|b_{2})\) = 0.25/0.50 = 0.5
+</p>
+
+<p>
+<b>Question 3</b>
+Again construct a join distribution table:
+</p>
+
+<pre class="example" id="org9c2d8ba">
+|                | Goodsleep = Yes | Goodsleep = No | Marginal |
+|----------------+-----------------+----------------+----------|
+| Exercise = Yes |             0.3 |            0.2 |      0.5 |
+|----------------+-----------------+----------------+----------|
+| Exercise = No  |             0.4 |            0.1 |      0.5 |
+|----------------+-----------------+----------------+----------|
+| Marginal       |             0.7 |            0.3 |        1 |
+</pre>
+
+<p>
+P(Goodsleep=Yes|Exercise=Yes) = 0.3/P(Total Exercise=Yes) = 0.3/0.5 = 0.6
+</p>
+
+<p>
+The last question asks us what is p(a b,c)?  In Goodfellow's <i>Deep Learning</i> page 60:
+</p>
+
+<ul class="org-ul">
+<li>P(a,b,c) = P(a|b,c)P(b,c)</li>
+<li>Eatwell = a, Goodsleep = b, and Exercise = c
+<ul class="org-ul">
+<li>P(a|b,c) was given to us: 0.25</li>
+<li>P(b,c) was also given to us 0.3</li>
+<li>0.25*0.3 = 0.075</li>
+</ul></li>
+</ul>
+
+<p>
+You can try the equivalent definitions too and arrive at same value:
+</p>
+<ul class="org-ul">
+<li>P(a|b,c)P(b|c)P(c) = 0.25*0.6*0.5 = 0.075</li>
+</ul>
+
+<p>
+<b>Question 4</b>
+We already know this from the Wildberger lectures on expectation and variance, such as the last question where Var[X + a] is Var[X] since if you scale it doesn't change the variance. 
+</p>
+
+<p>
+<b>Calculus</b>
+Work through all of these using a <a href="https://www.symbolab.com/solver/derivative-calculator/%5Cfrac%7B%5Cpartial%7D%7B%5Cpartial%20x%7D%5Cleft(y%5Ccdot%20ln%5Cleft(1-x%5Cright)%5Cright)">symbolic calculator</a>. They use chain rule, exponent rule, <a href="https://youtu.be/AXqhWeUEtQU">partial derivatives</a>, where you hold y constant but have to do chain rule for ln(1-x) explained in the symbolic calculator link. Question 4 is written up <a href="https://www.cs.huji.ac.il/~csip/tirgul3_derivatives.pdf">here</a>. To understand what a Jacobian matrix is, see <a href="https://youtu.be/VmfTXVG9S0U">this</a> preliminary of transforming the basis if you don't know already, how you retain <a href="https://youtu.be/Vnga_psnCAo">local linearity</a>, and the <a href="https://youtu.be/bohL918kXQk">Jacobian matrix</a> lecture. In our recitation you are taking the dot product of a row vector and a column vector \(x_{i}w_{i}\) and want to take the partial derivative of \(w_j\) in w or \(x_{j}D(w_{j})\). Since w is a column vector filled with real number values, not a function you have: \(x_{j}\cdot(1w_{j}^{0})\) or \(x_{j}\) is how I understand it.
+</p>
+
+
+<p>
+<b>Vectors, Matrices, and Geometry</b>
+</p>
+
+<p>
+'Inner product' aka Dot Product, what is it's <a href="https://youtu.be/LyGKycYT2v0">geometric interpretation</a>? Everything else is in the Goodfellow chapter on linear algebra, things we've already done or you can take a linear algebra <a href="./linear.html">course</a>. I skipped the CS content since we've already done it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Recitation%202" class="outline-3">
+<h3 id="Recitation%202">Recitation 2</h3>
+<div class="outline-text-3" id="text-Recitation%202">
+<p>
+A recitation on decision trees w/<a href="http://www.cs.cmu.edu/~mgormley/courses/10601/handouts/rec2Sol.pdf">solutions</a>. todo
 </p>
 
 <hr>
