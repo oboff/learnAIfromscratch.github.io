@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-03 Tue 21:13 -->
+<!-- 2021-08-03 Tue 21:59 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modern Applied Linear Algebra</title>
@@ -303,7 +303,7 @@ The most efficient path to accomplish this I could find is:
 If you are using a laptop/desktop or have Termux installed on your phone you can clone the repo for a local backup to do offline:
 </p>
 
-<pre class="example" id="org1f95907">
+<pre class="example" id="orgf78c24a">
 git clone https://github.com/mitmath/1806.git
 </pre>
 </div>
@@ -408,11 +408,17 @@ Watch <a href="https://youtu.be/k7RM-ot2NWY">linear combinations</a> and what sp
 </p>
 
 <p>
-Reading Tao's notes starting at end of page 19 where we left off, the 'flat plane' he talks about is what you saw in the 3blue1brown visualization of a plane slicing the 3D space and going through the origin (0,0,0). His examples of R<sup>3</sup> subspaces, why is the vector (x,y,z) in the line subspace x + 2y + 3z = 0 a vector subspace? Try vector addition and scalar multiplication. 0(x,y,z) = 0x + 02y + 03z = 0. Use a symbolic calculator to <a href="https://www.symbolab.com/solver/linear-equation-calculator/x%20%2B%202y%20%2B%203z%20%3D%200">solve</a> x + 2y + 3z = 0 and the answer is x = -2y -3z. Using vector addition: (x,y,z) + (a,b,c) = x + a + 2y + 2b + 3z + 3c = 0. This is x + a = -2y -2b -3z -3c and addition is also closed.
+Reading Tao's notes starting at end of page 19 where we left off, the 'flat plane' he talks about is what you saw in the 3blue1brown visualization of a plane slicing the 3D space and going through the origin (0,0,0). His examples of R<sup>3</sup> subspaces, why is the vector (x,y,z) in the line subspace x + 2y + 3z = 0 a vector subspace? Try vector addition and scalar multiplication. 0(x,y,z) = 0x + 02y + 03z = 0. Use a symbolic calculator to <a href="https://www.symbolab.com/solver/linear-equation-calculator/x%20%2B%202y%20%2B%203z%20%3D%200">solve</a> for whatever variable you want, ie: x = -2y -3z. Using vector addition: (x,y,z) + (a,b,c) = x + a + 2y + 2b + 3z + 3c = 0. This is x + a = -2y -2b -3z -3c or (-2y -2b -3z -3c) + 2y + 2b + 3z + 3c = 0 and closed under addition.
 </p>
 
 <p>
-Page 22, the intersection of two subspaces producing another subspace, at this stage all we can do is reason about a scalar being applied to both the n x n diagonal matrix, and the n x n tr(A) = 0 matrix and you still end up with both a diagonal matrix, and the tr(A) = 0 matrix since scaling the diagonal, if it sums to zero won't change it from summing to zero. We can also reason about the intersection operator (AND), if a vector is in their intersection, then it had to have been in both subspaces to begin with so their intersection creates a new subspace with all the standard rules of including a zero vector, being closed under scalers/addition. Union (OR) if a vector is in the union of two subspaces, we can't assume it was in both so there's no logical guarantee that the union of two vector spaces creates a new vector subspace. I'm sure there will be a proof assignment for this later.
+Page 22, the intersection of two subspaces producing another subspace, at this stage all we can do is reason about a scalar being applied to both the n x n diagonal matrix, and the n x n tr(A) = 0 matrix and you still end up with both a diagonal matrix, and the tr(A) = 0 matrix since scaling the diagonal, if it sums to zero won't change it from summing to zero. We can also reason about the intersection operator (AND), if a vector is in the intersection of two subspaces, then it had to have been in both subspaces to begin with so their intersection creates a new subspace with all the standard rules of including a zero vector, being closed under scalers/addition. Union (OR) if a vector is in the union of two subspaces, we can't assume it was in both so there's no logical guarantee that a vector closed in one subspace is now closed in the union with another. I'm sure there will be a proof assignment for this later. TODO
+</p>
+
+
+<hr>
+<p>
+<a href="./index.html">Home</a>
 </p>
 </div>
 </div>
