@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-03 Tue 22:00 -->
+<!-- 2021-08-03 Tue 22:16 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -263,11 +263,7 @@
 <ul>
 <li><a href="#Laws%20of%20arithmetic">Laws of arithmetic</a></li>
 <li><a href="#Summation%2Fseries%20notation">Summation/series notation</a></li>
-<li><a href="#Trigonometry">Trigonometry</a>
-<ul>
-<li><a href="#Pi">Pi</a></li>
-</ul>
-</li>
+<li><a href="#Trigonometry">Trigonometry</a></li>
 </ul>
 </li>
 <li><a href="#How%20the%20US%20olympiad%20coach%20teaches%20problem%20solving">How the US olympiad coach teaches problem solving</a>
@@ -314,7 +310,7 @@
 <li><a href="#2.7%20Dimensional%20Analysis">2.7 Dimensional Analysis</a></li>
 </ul>
 </li>
-<li><a href="#Day%203%20Method%20of%20least%20squares">Day 3 Method of least squares</a></li>
+<li><a href="#Day%2012%20Method%20of%20least%20squares">Day 12 Method of least squares</a></li>
 </ul>
 </div>
 </nav>
@@ -364,10 +360,6 @@ No idea but I will do it ~1hr per day and see how long it takes, then the title 
 <div class="outline-text-3" id="text-Why%20is%20this%20%27modern%27%20calculus">
 <p>
 Basically for clickbait title reasons, the book we use was written in 2018 and focuses on parameters to calculus functions and modeling with them instead of your typical calc course.
-</p>
-
-<p>
-We do some of the work by hand and the rest using the R programming language which the book will teach you, consider it an advanced calculator we aren't doing any programming though if you wanted to learn programming, do <a href="https://learnaifromscratch.github.io/software.html">this</a> at the same time. If you learn programming then this will be easy, multivariable functions and higher-order functions are taught there which will frequently come up in calculus: take derivative of a function and get another function.
 </p>
 </div>
 </div>
@@ -545,15 +537,11 @@ Do the same for arithmetic series:
 <p>
 Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail.
 </p>
-</div>
 
-<div id="outline-container-Pi" class="outline-4">
-<h4 id="Pi">Pi</h4>
-<div class="outline-text-4" id="text-Pi">
 <p>
+<b>Pi</b>
 There are many tutorials about pi appearing in geometric series <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMVQcT3414TcPMeEYf_VtPM">here</a> or if you want a interesting pi lecture where Wildberger made his own recursive formula for pi/16 to generate successive digits watch <a href="https://youtu.be/lcIbCZR0HbU">this</a> if you're curious.  
 </p>
-</div>
 </div>
 </div>
 </div>
@@ -567,7 +555,7 @@ Let's watch an example of how the current US IMO coach Poh-Shen Loh figures out 
 </p>
 
 <p>
-A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or at a more abstract level, it's many monomials like \(x^n\) grouped together with addition/subtraction/multiplication/division in other words algebra, and a constant like 5 or 1 is also a monomial too since 5x<sup>0</sup> or 1x<sup>0</sup>, the zero exponent by rules of exponents is substituted for 1, so really this is 5(1) or 6(1) because no matter what you substitute for x, it will be 1 anyway since the exponent is zero. Google modeling with polynomials to see why they exist in chemistry, physics, engineering or encoding with polynomials as a way to encode information about some other object. Wildberger has a two part <i>History of Mathematics</i> lecture series <a href="https://youtu.be/v8UfrpQ6NGk">here</a> worth viewing if you want to know the origins of this math or how ancient Greeks solved square roots using a compass and a ruler. 
+A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or at a more abstract level, it's many monomials like \(x^n\) grouped together with addition/subtraction/multiplication/division in other words algebra, and a constant like 5 or 1 is also a monomial too since 5x<sup>0</sup> or 1x<sup>0</sup>, the zero exponent by rules of exponents is substituted for 1, so really this is 5(1) or 1(1) because no matter what you substitute for x, it will be 1 anyway since the exponent is zero. Google modeling with polynomials to see why they exist in chemistry, physics, engineering or encoding with polynomials as a way to encode information about some other object. Wildberger has a two part <i>History of Mathematics</i> lecture series <a href="https://youtu.be/v8UfrpQ6NGk">here</a> worth viewing if you want to know the origins of this math or how ancient Greeks solved square roots using a compass and a ruler. 
 </p>
 
 <p>
@@ -646,7 +634,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orge118581">
+<pre class="example" id="orgca822e2">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -654,7 +642,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org167c834">
+<pre class="example" id="org2d52a3a">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -669,7 +657,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="orga640e2b">
+<pre class="example" id="org50f0a62">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -678,7 +666,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org9cc0a43">
+<pre class="example" id="orgbbe7623">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -688,7 +676,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org8e5fcd4">
+<pre class="example" id="org165065f">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -696,7 +684,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgee45e54">
+<pre class="example" id="org489da3f">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -1163,9 +1151,9 @@ Skim the rest of the chapter noting you may have to come back here later if ever
 </div>
 </div>
 
-<div id="outline-container-Day%203%20Method%20of%20least%20squares" class="outline-2">
-<h2 id="Day%203%20Method%20of%20least%20squares">Day 3 Method of least squares</h2>
-<div class="outline-text-2" id="text-Day%203%20Method%20of%20least%20squares">
+<div id="outline-container-Day%2012%20Method%20of%20least%20squares" class="outline-2">
+<h2 id="Day%2012%20Method%20of%20least%20squares">Day 12 Method of least squares</h2>
+<div class="outline-text-2" id="text-Day%2012%20Method%20of%20least%20squares">
 <p>
 This is an unusual calc book where we jump to 'calc 2' before even learning derivatives or limits. Go through some of the linear algebra <a href="./linear.html">workshop</a> such as the 3blue1brown <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">videos</a> on vectors and matrices before reading this chapter. TODO
 </p>
