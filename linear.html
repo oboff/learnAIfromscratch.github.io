@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-03 Tue 22:19 -->
+<!-- 2021-08-04 Wed 17:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modern Applied Linear Algebra</title>
@@ -263,8 +263,11 @@
 <li><a href="#Vectors">Vectors</a>
 <ul>
 <li><a href="#Vector%20visualization">Vector visualization</a></li>
+<li><a href="#Linear%20Algebraic%20Geometry%201">Linear Algebraic Geometry 1</a></li>
 <li><a href="#Vector%20space%20construction">Vector space construction</a></li>
 <li><a href="#Linear%20combinations%20visualization">Linear combinations visualization</a></li>
+<li><a href="#Linear%20Algebraic%20Geometry%202">Linear Algebraic Geometry 2</a></li>
+<li><a href="#Linear%20combinations%20and%20their%20definitions">Linear combinations and their definitions</a></li>
 </ul>
 </li>
 </ul>
@@ -285,6 +288,10 @@ Here we learn:
 <li><a href="https://youtu.be/oGZK3yGF-6k">Matrix calculus</a></li>
 <li>Precise constructions of all these concepts and some of their proofs</li>
 </ul>
+
+<p>
+and later if you stick around, we will learn some totally crazy linalg venturing into matrices who's entries are vectors (a 'vatrix'), Chebyshev polynomials, special relativity/linear transformations of spacetime to make time tick slower, combinatorics vectors, subalgebras and the most abstract of abstract vector spaces such as combining Euclidean space with two relativistic geometries in 4D space. 
+</p>
 </div>
 
 <div id="outline-container-Materials" class="outline-3">
@@ -300,10 +307,14 @@ The most efficient path to accomplish this I could find is:
 </ul>
 
 <p>
+I'm also doing a totally optional <a href="https://www.youtube.com/playlist?list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">playlist</a> <i>Linear Algebraic Geometry</i> you don't have to do but I will do. You'll see later that really all these abstract vector concepts are just parallel lines existing in some abstract subspace and thinking in this way will be beneficial to go on to more advanced linear algebra. He sets everything up as 'this is the special case, how can we make it the general case' in almost every lecture. Then you get linear algebra from 3 different observations: applied everyday linear algebra using software, Terence Tao complete construction of all objects and the <a href="https://www.theguardian.com/science/2021/aug/05/australian-mathematician-discovers-applied-geometry-engraved-on-3700-year-old-tablet">Wildberger</a> more abstract linear algebra that compliments the other two perspectives. 
+</p>
+
+<p>
 If you are using a laptop/desktop or have Termux installed on your phone you can clone the repo for a local backup to do offline:
 </p>
 
-<pre class="example" id="org10f8d6b">
+<pre class="example" id="org35c99d8">
 git clone https://github.com/mitmath/1806.git
 </pre>
 </div>
@@ -321,7 +332,6 @@ I'll mix some of these in but you don't have to do them
 <li>The transformations, autodiff, SVD/PCA <a href="https://computationalthinking.mit.edu/Spring21/">lectures</a> from MIT's <i>Intro to Computational Thinking</i></li>
 <li>Titu Andreescu's <i>Essential Linear Algebra with Applications</i> <a href="https://www.maa.org/press/maa-reviews/essential-linear-algebra-with-applications">book</a> which focuses on linear maps between vector spaces as prep to go on to more advanced linear algebra. It's set up like an olympiad problem practice book.</li>
 <li>Brown University's CS053 <a href="http://cs.brown.edu/courses/cs053/current/lectures.htm">course</a> <i>Coding the Matrix</i> has open to the public lectures, most of the assignments are done in Python.</li>
-<li>Wildberger has a <a href="https://www.youtube.com/playlist?list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">playlist</a> of unique lectures focused on geometry done entirely in the affine plane so all the complexity is reduced (no origin, no distance measurements, no angles) with homework writing proofs and I personally find these the best lectures out there but they are lengthy, so if you have time I recommend watching them anyway.</li>
 </ul>
 </div>
 </div>
@@ -363,6 +373,31 @@ Watch what a <a href="https://youtu.be/fNk_zzaMoSs">vector</a> is (10m length) c
 </div>
 </div>
 
+<div id="outline-container-Linear%20Algebraic%20Geometry%201" class="outline-3">
+<h3 id="Linear%20Algebraic%20Geometry%201">Linear Algebraic Geometry 1</h3>
+<div class="outline-text-3" id="text-Linear%20Algebraic%20Geometry%201">
+<p>
+This playlist is <b>optional</b> but highly recommended. This video you learn linear combinations and change of basis vectors to suit different perspectives. These will be the best linear algebra lectures you'll ever watch, if you have the time. 
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/yAb12PWrhV0">Introduction</a> - Wild Linear Algebra A 1 (43m)</li>
+</ul>
+
+<p>
+He constructs the affine plane from scratch. The vector (8/3, 10,3) you need to full screen to better see exactly where they are. From B, you move right 2 lines, and 2/3 so \(2 + \frac{2}{3}\) which is 8/3. From there you move up 1/3, and 3 so \(3 + \frac{1}{3}\) which is 10/3. Reasons for using the affine plane is this is what a vector space actually looks like, you don't have to impose anything on it artificially like the origin (0,0) in the Cartesian plane or any kind of x, y or z axis. The change of basis explanation here is superior to anything I've seen before. If you forgot highschool, end of this lecture @~30m will teach you how to solve two linear equations with 2 different variables by subtracting and substitution.
+</p>
+
+<p>
+@34:01 he shows the general 1-dimensional case, then the general 2-dimensional case where you end up getting the determinant, something we will learn soon. Essentially this is the determinant from scratch and you may want to come back to this lecture later when we learn it to see how it's constructed. The exercises if you don't know what a determinant of 0 means in 3D space, there is <a href="https://math.stackexchange.com/questions/355644/what-does-it-mean-to-have-a-determinant-equal-to-zero">solutions</a>, and of course we will learn all this shortly. 
+</p>
+
+<p>
+In this related <a href="https://youtu.be/Nu-YPJSNFpE">lecture</a> he shows how ancient people made a ruler using just parallel line geometry, which leads to what he claims is modeling the rational continuum.   
+</p>
+</div>
+</div>
+
 <div id="outline-container-Vector%20space%20construction" class="outline-3">
 <h3 id="Vector%20space%20construction">Vector space construction</h3>
 <div class="outline-text-3" id="text-Vector%20space%20construction">
@@ -395,7 +430,7 @@ Did you get the proof on page 19 that W is a subspace of V because it will be cl
 </p>
 
 <p>
-Stop reading at page 19 since the remainder is covered in the next 3Blue1Brown lecture (what a plane is, linear combinations, basis vectors).
+Stop reading at page 19 since the remainder is covered in the next 3Blue1Brown lecture (what a plane is, linear combinations, basis vectors). 
 </p>
 </div>
 </div>
@@ -403,16 +438,44 @@ Stop reading at page 19 since the remainder is covered in the next 3Blue1Brown l
 <div id="outline-container-Linear%20combinations%20visualization" class="outline-3">
 <h3 id="Linear%20combinations%20visualization">Linear combinations visualization</h3>
 <div class="outline-text-3" id="text-Linear%20combinations%20visualization">
+<ul class="org-ul">
+<li>Watch <a href="https://youtu.be/k7RM-ot2NWY">linear combinations</a> and what span, linear combination, linear independence and basis is (10m).</li>
+
+<li>Watch <a href="https://youtu.be/TgKwz5Ikpc8">abstract vector spaces</a> (15m) starting at 1:50. This is the very last 3blue1brown lecture but we're already at that point in Tao's book reasoning about abstract vector subspaces like polynomials. He talks about how the space is really just parallel lines (addition and scaling) and this is another reason why you should watch those Wildberger <a href="https://www.youtube.com/playlist?list=PL01A21B9E302D50C1">videos</a> explaining all these concepts using only the affine parallel plane. @8:47 in this 3blue1brown video, he is demonstrating exactly what Wildberger uses for polynomial encoding which he calls <a href="https://youtu.be/-Ad6pYjCAmg">polynumbers</a>. The end of this video covers the vector subspace axioms we already read.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-Linear%20Algebraic%20Geometry%202" class="outline-3">
+<h3 id="Linear%20Algebraic%20Geometry%202">Linear Algebraic Geometry 2</h3>
+<div class="outline-text-3" id="text-Linear%20Algebraic%20Geometry%202">
 <p>
-Watch <a href="https://youtu.be/k7RM-ot2NWY">linear combinations</a> and what span, linear combination, linear independence and basis is (10m). 
+Reminder these are optional.
 </p>
 
+<ul class="org-ul">
+<li><a href="https://youtu.be/132amJvoLpU">Geometry w/Vectors</a> - Wild Linear Algebra A 2 (44m)</li>
+</ul>
+
+<p>
+All the laws of vector arithmetic, more on basis vectors. He actually shows tying the geometry to the algebra, something else I've never seen. TODO
+</p>
+</div>
+</div>
+
+<div id="outline-container-Linear%20combinations%20and%20their%20definitions" class="outline-3">
+<h3 id="Linear%20combinations%20and%20their%20definitions">Linear combinations and their definitions</h3>
+<div class="outline-text-3" id="text-Linear%20combinations%20and%20their%20definitions">
 <p>
 Reading Tao's notes starting at end of page 19 where we left off, the 'flat plane' he talks about is what you saw in the 3blue1brown visualization of a plane slicing the 3D space and going through the origin (0,0,0). His examples of R<sup>3</sup> subspaces, why is the vector (x,y,z) in the line subspace x + 2y + 3z = 0 a vector subspace? Try vector addition and scalar multiplication. 0(x,y,z) = 0x + 02y + 03z = 0. Use a symbolic calculator to <a href="https://www.symbolab.com/solver/linear-equation-calculator/x%20%2B%202y%20%2B%203z%20%3D%200">solve</a> for whatever variable you want, ie: x = -2y -3z. Using vector addition: (x,y,z) + (a,b,c) = x + a + 2y + 2b + 3z + 3c = 0. This is x + a = -2y -2b -3z -3c or substituting x + a back into our original vector addition: (-2y -2b -3z -3c) + 2y + 2b + 3z + 3c = 0 and closed under addition.
 </p>
 
 <p>
-Page 22, the intersection of two subspaces producing another subspace, at this stage all we can do is reason about a scalar being applied to both the n x n diagonal matrix, and the n x n tr(A) = 0 matrix and you still end up with both a diagonal matrix, and the tr(A) = 0 matrix since scaling the diagonal, if it sums to zero won't change it from summing to zero. We can also reason about the intersection operator (AND) if a vector is in the intersection of two subspaces, then it had to have been in both subspaces to begin with, meaning it was closed in both before and now their combined subspace will also be closed. Union (OR) if a vector is in the union of two subspaces, we can't assume it was in both as the definition of union is combine everything, so there's no logical guarantee that a vector closed in one subspace is now closed in the union with another subspace. I'm sure there will be a proof assignment for this later. TODO
+Page 22, the intersection of two subspaces producing another subspace, at this stage all we can do is reason about a scalar being applied to both the n x n diagonal matrix, and the n x n tr(A) = 0 matrix and you still end up with both a diagonal matrix, and the tr(A) = 0 matrix since scaling the diagonal, if it sums to zero won't change it from summing to zero. We can also reason about the intersection operator (AND) if a vector is in the intersection of two subspaces, then it had to have been in both subspaces to begin with, meaning it was closed in both before and now their combined subspace will also be closed. Union (OR) if a vector is in the union of two subspaces, we can't assume it was in both as the definition of union is combine everything, so there's no logical guarantee that a vector closed in one subspace is now closed in the union with another subspace. I'm sure there will be a proof assignment for this later.
+</p>
+
+<p>
+Starting at 1:50, watch <a href="https://youtu.be/TgKwz5Ikpc8">this</a> (15m). 
 </p>
 
 
