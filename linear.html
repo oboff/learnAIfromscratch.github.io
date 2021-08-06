@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-04 Wed 22:12 -->
+<!-- 2021-08-05 Thu 21:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modern Applied Linear Algebra</title>
@@ -262,12 +262,18 @@
 </li>
 <li><a href="#Vectors">Vectors</a>
 <ul>
-<li><a href="#Vector%20visualization">Vector visualization</a></li>
+<li><a href="#Vector%20visualization">Vector visualization</a>
+<ul>
 <li><a href="#Linear%20Algebraic%20Geometry%201">Linear Algebraic Geometry 1</a></li>
-<li><a href="#Vector%20space%20construction">Vector space construction</a></li>
-<li><a href="#Linear%20combinations%20visualization">Linear combinations visualization</a></li>
+</ul>
+</li>
+<li><a href="#Tao%20vector%20spaces">Tao vector spaces</a></li>
+<li><a href="#Linear%20combinations%20visualization">Linear combinations visualization</a>
+<ul>
 <li><a href="#Linear%20Algebraic%20Geometry%202">Linear Algebraic Geometry 2</a></li>
-<li><a href="#Linear%20combinations%20and%20their%20definitions">Linear combinations and their definitions</a></li>
+</ul>
+</li>
+<li><a href="#Tao%20linear%20combinations">Tao linear combinations</a></li>
 </ul>
 </li>
 </ul>
@@ -290,7 +296,7 @@ Here we learn:
 </ul>
 
 <p>
-and later if you stick around, we will learn some totally crazy linalg venturing into matrices who's entries are vectors (a 'vatrix'), Chebyshev polynomials, special relativity/linear transformations of spacetime to make time tick slower, combinatorics vectors, subalgebras and the most abstract of abstract vector spaces such as combining Euclidean space with two relativistic geometries in 4D space. 
+Once you learn vector spaces and linear transformations, a lot of programming problems become simple linear algebra solutions. 
 </p>
 </div>
 
@@ -314,7 +320,7 @@ I'm also doing a totally optional <a href="https://www.youtube.com/playlist?list
 If you are using a laptop/desktop or have Termux installed on your phone you can clone the repo for a local backup to do offline:
 </p>
 
-<pre class="example" id="org53b1033">
+<pre class="example" id="orgf55bdd6">
 git clone https://github.com/mitmath/1806.git
 </pre>
 </div>
@@ -371,11 +377,10 @@ The MIT class immediately jumps into matrices since it's MIT and can assume that
 Watch what a <a href="https://youtu.be/fNk_zzaMoSs">vector</a> is (10m length) covering addition and scalars.
 </p>
 </div>
-</div>
 
-<div id="outline-container-Linear%20Algebraic%20Geometry%201" class="outline-3">
-<h3 id="Linear%20Algebraic%20Geometry%201">Linear Algebraic Geometry 1</h3>
-<div class="outline-text-3" id="text-Linear%20Algebraic%20Geometry%201">
+<div id="outline-container-Linear%20Algebraic%20Geometry%201" class="outline-4">
+<h4 id="Linear%20Algebraic%20Geometry%201">Linear Algebraic Geometry 1</h4>
+<div class="outline-text-4" id="text-Linear%20Algebraic%20Geometry%201">
 <p>
 This playlist is <b>optional</b> but highly recommended. This video you learn linear combinations and change of basis vectors to suit different perspectives. These will be the best linear algebra lectures you'll ever watch, if you have the time. 
 </p>
@@ -397,10 +402,11 @@ In this related <a href="https://youtu.be/Nu-YPJSNFpE">lecture</a> he shows how 
 </p>
 </div>
 </div>
+</div>
 
-<div id="outline-container-Vector%20space%20construction" class="outline-3">
-<h3 id="Vector%20space%20construction">Vector space construction</h3>
-<div class="outline-text-3" id="text-Vector%20space%20construction">
+<div id="outline-container-Tao%20vector%20spaces" class="outline-3">
+<h3 id="Tao%20vector%20spaces">Tao vector spaces</h3>
+<div class="outline-text-3" id="text-Tao%20vector%20spaces">
 <p>
 Terence Tao's <a href="https://terrytao.files.wordpress.com/2016/12/linear-algebra-notes.pdf">notes</a> reading page 1-19, there's a great intro precisely explaining what linear means, why it's useful to approximate non-linear things with linear transformations, the idea that a scalar can be a vector not a single number, that things like trace and eigenvectors are statistics associated with a matrix, then on page 6 vector definitions begin.
 </p>
@@ -441,16 +447,15 @@ Stop reading at page 19 since the remainder is covered in the next 3Blue1Brown l
 <ul class="org-ul">
 <li>Watch <a href="https://youtu.be/k7RM-ot2NWY">linear combinations</a> and what span, linear combination, linear independence and basis is (10m).</li>
 
-<li>Watch <a href="https://youtu.be/TgKwz5Ikpc8">abstract vector spaces</a> (15m) starting at 1:50. This is the very last 3blue1brown lecture but we're already at that point in Tao's book reasoning about abstract vector subspaces like polynomials. He talks about how the space is really just parallel lines (addition and scaling) and this is another reason why you should watch those Wildberger <a href="https://www.youtube.com/playlist?list=PL01A21B9E302D50C1">videos</a> explaining all these concepts using only the affine parallel plane. @8:47 in this 3blue1brown video, he is demonstrating exactly what Wildberger uses for polynomial encoding which he calls <a href="https://youtu.be/-Ad6pYjCAmg">polynumbers</a>. The end of this video covers the vector subspace axioms we already read.</li>
+<li>Watch <a href="https://youtu.be/TgKwz5Ikpc8">abstract vector spaces</a> (15m) starting at 1:50. This is the very last 3blue1brown lecture but we're already at that point in Tao's book reasoning about abstract vector subspaces like polynomials. He talks about how <i>the space is really just parallel lines</i> (addition and scaling) and this is another reason why you should watch those Wildberger <a href="https://www.youtube.com/playlist?list=PL01A21B9E302D50C1">videos</a> explaining all these concepts using only the affine parallel plane. @8:47 in this 3blue1brown video, he is demonstrating exactly what Wildberger uses for polynomial encoding which he calls <a href="https://youtu.be/-Ad6pYjCAmg">polynumbers</a>. The end of this video covers the vector subspace axioms we already read.</li>
 </ul>
 </div>
-</div>
 
-<div id="outline-container-Linear%20Algebraic%20Geometry%202" class="outline-3">
-<h3 id="Linear%20Algebraic%20Geometry%202">Linear Algebraic Geometry 2</h3>
-<div class="outline-text-3" id="text-Linear%20Algebraic%20Geometry%202">
+<div id="outline-container-Linear%20Algebraic%20Geometry%202" class="outline-4">
+<h4 id="Linear%20Algebraic%20Geometry%202">Linear Algebraic Geometry 2</h4>
+<div class="outline-text-4" id="text-Linear%20Algebraic%20Geometry%202">
 <p>
-Reminder these are optional.
+Reminder these lectures are optional.
 </p>
 
 <ul class="org-ul">
@@ -458,14 +463,26 @@ Reminder these are optional.
 </ul>
 
 <p>
-All the laws of vector arithmetic, more on basis vectors. He actually shows tying the geometry to the algebra, something else I've never seen. TODO
+All the laws of vector arithmetic: negative vectors (any vector that goes from the head of one to another vector's head), associative/commutative vectors, distributive law, 0 vector. Linear dependence/independence is also demonstrated. He actually shows tying the geometry to the algebra demonstrating some geometry theorems.
 </p>
+
+<p>
+@32:48 if lambda = mu:
+</p>
+<ul class="org-ul">
+<li>lambda = 1 - mu</li>
+<li>mu(lambda) = 1</li>
+<li>2lambda = 1 (since mu = lambda)</li>
+<li>lambda = mu = 1/2</li>
+</ul>
+</div>
 </div>
 </div>
 
-<div id="outline-container-Linear%20combinations%20and%20their%20definitions" class="outline-3">
-<h3 id="Linear%20combinations%20and%20their%20definitions">Linear combinations and their definitions</h3>
-<div class="outline-text-3" id="text-Linear%20combinations%20and%20their%20definitions">
+
+<div id="outline-container-Tao%20linear%20combinations" class="outline-3">
+<h3 id="Tao%20linear%20combinations">Tao linear combinations</h3>
+<div class="outline-text-3" id="text-Tao%20linear%20combinations">
 <p>
 Reading Tao's notes starting at end of page 19 where we left off, the 'flat plane' he talks about is what you saw in the 3blue1brown visualization of a plane slicing the 3D space and going through the origin (0,0,0). His examples of R<sup>3</sup> subspaces, why is the vector (x,y,z) in the line subspace x + 2y + 3z = 0 a vector subspace? Try vector addition and scalar multiplication. 0(x,y,z) = 0x + 02y + 03z = 0. Use a symbolic calculator to <a href="https://www.symbolab.com/solver/linear-equation-calculator/x%20%2B%202y%20%2B%203z%20%3D%200">solve</a> for whatever variable you want, ie: x = -2y -3z. Using vector addition: (x,y,z) + (a,b,c) = x + a + 2y + 2b + 3z + 3c = 0. This is x + a = -2y -2b -3z -3c or substituting x + a back into our original vector addition: (-2y -2b -3z -3c) + 2y + 2b + 3z + 3c = 0 and closed under addition.
 </p>
@@ -475,7 +492,9 @@ Page 22, the intersection of two subspaces producing another subspace, at this s
 </p>
 
 
-
+<p>
+TODO
+</p>
 <hr>
 <p>
 <a href="./index.html">Home</a>
