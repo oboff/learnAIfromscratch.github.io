@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-05 Thu 21:53 -->
+<!-- 2021-08-05 Thu 21:58 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modern Applied Linear Algebra</title>
@@ -267,13 +267,13 @@
 <li><a href="#Linear%20Algebraic%20Geometry%201">Linear Algebraic Geometry 1</a></li>
 </ul>
 </li>
-<li><a href="#Tao%20vector%20spaces">Tao vector spaces</a></li>
+<li><a href="#Tao%20Vector%20spaces">Tao Vector spaces</a></li>
 <li><a href="#Linear%20combinations%20visualization">Linear combinations visualization</a>
 <ul>
 <li><a href="#Linear%20Algebraic%20Geometry%202">Linear Algebraic Geometry 2</a></li>
 </ul>
 </li>
-<li><a href="#Tao%20linear%20combinations">Tao linear combinations</a></li>
+<li><a href="#Tao%20Linear%20combinations">Tao Linear combinations</a></li>
 </ul>
 </li>
 </ul>
@@ -320,7 +320,7 @@ I'm also doing a totally optional <a href="https://www.youtube.com/playlist?list
 If you are using a laptop/desktop or have Termux installed on your phone you can clone the repo for a local backup to do offline:
 </p>
 
-<pre class="example" id="orgf55bdd6">
+<pre class="example" id="org0520224">
 git clone https://github.com/mitmath/1806.git
 </pre>
 </div>
@@ -404,9 +404,9 @@ In this related <a href="https://youtu.be/Nu-YPJSNFpE">lecture</a> he shows how 
 </div>
 </div>
 
-<div id="outline-container-Tao%20vector%20spaces" class="outline-3">
-<h3 id="Tao%20vector%20spaces">Tao vector spaces</h3>
-<div class="outline-text-3" id="text-Tao%20vector%20spaces">
+<div id="outline-container-Tao%20Vector%20spaces" class="outline-3">
+<h3 id="Tao%20Vector%20spaces">Tao Vector spaces</h3>
+<div class="outline-text-3" id="text-Tao%20Vector%20spaces">
 <p>
 Terence Tao's <a href="https://terrytao.files.wordpress.com/2016/12/linear-algebra-notes.pdf">notes</a> reading page 1-19, there's a great intro precisely explaining what linear means, why it's useful to approximate non-linear things with linear transformations, the idea that a scalar can be a vector not a single number, that things like trace and eigenvectors are statistics associated with a matrix, then on page 6 vector definitions begin.
 </p>
@@ -471,18 +471,18 @@ All the laws of vector arithmetic: negative vectors (any vector that goes from t
 </p>
 <ul class="org-ul">
 <li>lambda = 1 - mu</li>
-<li>mu(lambda) = 1</li>
+<li>mu + lambda = 1</li>
 <li>2lambda = 1 (since mu = lambda)</li>
-<li>lambda = mu = 1/2</li>
+<li>lambda = 1/2</li>
 </ul>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-Tao%20linear%20combinations" class="outline-3">
-<h3 id="Tao%20linear%20combinations">Tao linear combinations</h3>
-<div class="outline-text-3" id="text-Tao%20linear%20combinations">
+<div id="outline-container-Tao%20Linear%20combinations" class="outline-3">
+<h3 id="Tao%20Linear%20combinations">Tao Linear combinations</h3>
+<div class="outline-text-3" id="text-Tao%20Linear%20combinations">
 <p>
 Reading Tao's notes starting at end of page 19 where we left off, the 'flat plane' he talks about is what you saw in the 3blue1brown visualization of a plane slicing the 3D space and going through the origin (0,0,0). His examples of R<sup>3</sup> subspaces, why is the vector (x,y,z) in the line subspace x + 2y + 3z = 0 a vector subspace? Try vector addition and scalar multiplication. 0(x,y,z) = 0x + 02y + 03z = 0. Use a symbolic calculator to <a href="https://www.symbolab.com/solver/linear-equation-calculator/x%20%2B%202y%20%2B%203z%20%3D%200">solve</a> for whatever variable you want, ie: x = -2y -3z. Using vector addition: (x,y,z) + (a,b,c) = x + a + 2y + 2b + 3z + 3c = 0. This is x + a = -2y -2b -3z -3c or substituting x + a back into our original vector addition: (-2y -2b -3z -3c) + 2y + 2b + 3z + 3c = 0 and closed under addition.
 </p>
