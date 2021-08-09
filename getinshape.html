@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-03 Tue 21:51 -->
+<!-- 2021-08-09 Mon 00:04 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A (mostly) Marketing and Ideology-Free Guide to Fitness &amp; Nutrition in 2021</title>
@@ -228,6 +228,15 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#State%20of%20the%20Art">State of the Art</a></li>
+<li><a href="#A%20new%20model%20for%20weight%20gain%2Floss%2Fmanagement%20forecasting">A new model for weight gain/loss/management forecasting</a></li>
+<li><a href="#Maximal%20fat%20oxidation%20%28FAT_%7Bmax%7D%29">Maximal fat oxidation (FAT<sub>max</sub>)</a></li>
+<li><a href="#HIIT%20vs%20SIT%20vs%20MICT">HIIT vs SIT vs MICT</a>
+<ul>
+<li><a href="#HIIT">HIIT</a></li>
+<li><a href="#SIT">SIT</a></li>
+<li><a href="#How%20many%20hours%20per%20week%20of%20exercise">How many hours per week of exercise</a></li>
+</ul>
+</li>
 <li><a href="#Nutrition%20overview">Nutrition overview</a>
 <ul>
 <li><a href="#Cheapest%20Nutrition">Cheapest Nutrition</a></li>
@@ -239,7 +248,6 @@
 <li><a href="#The%20real%20Mediterranean%20diet">The real Mediterranean diet</a>
 <ul>
 <li><a href="#Counterfeit%20food%2Foil">Counterfeit food/oil</a></li>
-<li><a href="#Eat%20your%20ancestors%20cooking%20oil">Eat your ancestors cooking oil</a></li>
 </ul>
 </li>
 <li><a href="#Micronutrients%3A%20vitamin%20supplements">Micronutrients: vitamin supplements</a></li>
@@ -249,7 +257,6 @@
 <li><a href="#Most%20dangerous%20fat">Most dangerous fat</a></li>
 </ul>
 </li>
-<li><a href="#Personalized%20nutrition">Personalized nutrition</a></li>
 </ul>
 </li>
 <li><a href="#Survey%20of%20weight%20loss%20anecdotes">Survey of weight loss anecdotes</a>
@@ -265,14 +272,6 @@
 <li><a href="#Anecdotes%20of%20weight%20maintenance%20diets">Anecdotes of weight maintenance diets</a>
 <ul>
 <li><a href="#How%20to%20select%20fruit">How to select fruit</a></li>
-</ul>
-</li>
-<li><a href="#Mathematical%20model%20for%20weight%20loss%20forecasting">Mathematical model for weight loss forecasting</a></li>
-<li><a href="#HIIT%20vs%20SIT%20vs%20MICT">HIIT vs SIT vs MICT</a>
-<ul>
-<li><a href="#HIIT">HIIT</a></li>
-<li><a href="#SIT">SIT</a></li>
-<li><a href="#How%20many%20hours%20per%20week%20of%20exercise">How many hours per week of exercise</a></li>
 </ul>
 </li>
 <li><a href="#Building%20strength">Building strength</a>
@@ -314,14 +313,121 @@ What's the 'state of the art' in weight loss/fitness? I'm an everyday pleb who w
 </p>
 
 <p>
-Note because sci-hub is not uploading 2021 papers temporarily, you have to message the nexus search bot on Telegram. I also filtered all studies that used animal models and flagged anything that had 'survey' in the methods to manually review and discard. The titles of these studies I ran a simple parser on to collect anything with 'systematic review' which are audits of previous studies, analyzing their methods and testing they conform to randomness, and other quality control. As you will many reviews found the prior research to be so low quality it's not even worth printing, which is why it's nice to collect all these critical reviews ourself so we are no longer at the mercy of being bamboozled by fitness and nutrition marketing.
+Note because sci-hub is not uploading 2021 papers temporarily, you have to message the nexus search bot on Telegram. I also filtered all studies that used animal models and discarded them. The titles of these studies I ran a simple parser on to collect anything with 'systematic review' which are audits of previous studies, analyzing their methods and testing they conform to randomness, and other quality control. As you will see many reviews found the prior research to be so low quality it's not even worth printing, which is why it's nice to collect all these critical reviews ourself so we are no longer at the mercy of being bamboozled by fitness and nutrition marketing.
 </p>
 
 <p>
-Consider this merely a Medium-tier poor quality blog post but with 90% less filler and advertising, don't take this too seriously it's just a stroll through the information that is available in relevant journals and Google scholar. Spelling mistakes and poor grammar/editing will be prevalent because I had 1.5 weeks to write this up in my spare time which is <a href="https://learnaifromscratch.github.io/">not so</a> spare.     
+Consider this merely a Medium-tier poor quality blog post but with 90% less filler and advertising, don't take this too seriously it's just a stroll through the information that is available in relevant journals and Google scholar.
 </p>
 </div>
 </div>
+
+<div id="outline-container-A%20new%20model%20for%20weight%20gain%2Floss%2Fmanagement%20forecasting" class="outline-2">
+<h2 id="A%20new%20model%20for%20weight%20gain%2Floss%2Fmanagement%20forecasting">A new model for weight gain/loss/management forecasting</h2>
+<div class="outline-text-2" id="text-A%20new%20model%20for%20weight%20gain%2Floss%2Fmanagement%20forecasting">
+<p>
+If you search for weight stability, or weight loss you will primarily find advice derived from the energy-balance theory (EBT) that if energy intake exceeds energy expenditure (calories in vs calories burned/out) then you will store fat. What if you could accurately forecast weight loss while totally ignoring energy balance meaning not care at all how many calories you consume? 
+</p>
+
+<p>
+Something that fell through my decision tree was <a href="https://www.medrxiv.org/content/10.1101/2020.10.27.20220202v4">this</a> paper, which shows the energy-balance theory is logically flawed. They come up with a new model, the mass balance model (MBM) and show that their model accurately forecasts all the outlier diets in previous studies that showed weight loss (or weight gain for type-1 diabetics), but could not be forecasted by EBT. The MBM is a typical dynamic system model found in engineering and physics.  
+</p>
+
+<p>
+To understand their model they point to another paper <i>Serious analytical inconsistencies challenge the validity of the energy balance theory</i> by Francisco Arencibia-Albite which you can <a href="https://sci-hub.se/https://doi.org/10.1016/j.heliyon.2020.e04204">read</a> on sci-hub by pasting in the DOI. Reading through that paper, it examples the First Law of Thermodynamics to show how energy imbalance can still result in the system's mass remaining constant. This paper contains all the axioms needed to forecast your own weight loss including accounting for reduced salt mass as your body will reduce water intake and thus it's overall mass. Macros of 60% Fats, 30% Carbs, and 10% Protein reduces mass injestion by 96g per day, resulting in 35kg of body mass removal in a year.
+</p>
+
+<p>
+Summary: Ignore calories, adjust macros to increase fats over carbs and reduce mass injestion not energy injestion. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-Maximal%20fat%20oxidation%20%28FAT_%7Bmax%7D%29" class="outline-2">
+<h2 id="Maximal%20fat%20oxidation%20%28FAT_%7Bmax%7D%29">Maximal fat oxidation (FAT<sub>max</sub>)</h2>
+<div class="outline-text-2" id="text-Maximal%20fat%20oxidation%20%28FAT_%7Bmax%7D%29">
+<p>
+A good background paper is <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-018-0207-1">here</a> describing FAT<sub>max</sub> which is supposedly an interval somewhere between resting and maximal oxygen consumption (VO<sub>2max</sub>) intensity exercise where the body begins to burn the most amount of stored fat. This FAT<sub>max</sub> interval changes depending on many factors, in a systematic <a href="https://www.mdpi.com/1660-4601/17/21/7888/htm">review</a> of 11 previous studies this FAT<sub>max</sub> interval ranges from 30-65% of VO<sub>2max</sub> and concluded "Eight to twenty weeks of FMT (or FAT<sub>max</sub> intensity training), with 120–360 min per week of training volume, reduces body weight, body fat, and improves cardiovascular fitness in low physical activity individuals with obesity. The molecular mechanisms that explain these changes are mostly unknown."
+</p>
+
+<p>
+My algorithm found many papers touting the benefits of increased muscle mass for fat oxidation but no systematic review of those results.
+</p>
+
+<p>
+Summary: Without a lab measuring your breathing you'll never know what your FAT<sub>max</sub> intensity level is for exercise but it was described as 'somewhere between low and medium intensity' so anywhere between walking to jogging, not high intensity running/sprinting. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-HIIT%20vs%20SIT%20vs%20MICT" class="outline-2">
+<h2 id="HIIT%20vs%20SIT%20vs%20MICT">HIIT vs SIT vs MICT</h2>
+<div class="outline-text-2" id="text-HIIT%20vs%20SIT%20vs%20MICT">
+</div>
+<div id="outline-container-HIIT" class="outline-3">
+<h3 id="HIIT">HIIT</h3>
+<div class="outline-text-3" id="text-HIIT">
+<p>
+Defined as high-intensity interval training, with no universal standard on session duration it consists of moderately intensive continuous training (MICT) mixed with intervals of repeated short to long bouts of high intensity followed by rest periods. Going through the 2021 papers, a systematic review of previous research found that HIIT resulted in a significant boost in testosterone and cortisol levels immediately after a single 30m session, which disappeared after 24 hours back to baseline levels meaning you should only ever do it in moderation unless you want your immune system to stop working and die from a heart attack due to stress being flooded into your bloodstream. 60m sessions produced a greater increase in cortisol. The same review states there wasn't enough controlled studies in the papers they reviewed and had limited data so a real controlled study of HIIT on the body's hormone system needs to be done in the future.
+</p>
+
+<p>
+Scraping for other papers that tout HIIT benefits, the average I found was HIIT done for 15-30m for as little as 6 weeks, done 3 days a week, preserves VO2 peak for up to 4 years in inactive older adults, meaning even if you stop you retain your peak oxygen uptake. It also was shown to improve 8 indicators of cardiometabolic health compared to 3 for steady state cardio such as blood pressure and total cholesterol. For fat loss on average MICT burns visceral fat and helps you lean out just the same as HIIT does, it's inconclusive whether HIIT is any better for fat burning as you get one study that claims it's great, and another that says there's no difference, and it repeats like this. HIIT 3x a week was also found on average to have reduced impulsivity, and improve short-term memory in a bunch of HIIT psychology studies I found.
+</p>
+
+<p>
+There's some entertaining papers of surveying typical young men who <a href="https://youtu.be/nEqhOfG1lwg">binge drink beer</a> if it affected their HIIT benefits, which turned out to be no, alcohol is fine to consume and receive the benefits of HIIT.
+</p>
+
+<p>
+Conclusion: HIIT has many benefits over MICT but none of them are fat loss as it's inconclusive if one is any better than the other for reducing visceral/body fat using the standard EBT model of calories in/calories out weight loss. It should be done in moderation or else you may get flooded with stress hormones which take 24 hours to leave your body after a single session. There doesn't seem to be any benefit of doing more than 30 minutes of HIIT per session. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-SIT" class="outline-3">
+<h3 id="SIT">SIT</h3>
+<div class="outline-text-3" id="text-SIT">
+<p>
+Here is a <a href="https://youtu.be/SHN-4ve81TY">2015 documentary</a> about sprint interval training. In a survey of 2021 papers on SIT the methods were (on a bike) 2 min warmup at normal pace, 3 x 20 second (sometimes 30 second) 'all out' intensity intervals interspersed with 2 mins of recovery normal pace cycling, then a 3 min cool down at normal pace. In total 12.5m or so of cardio done in 28 sessions over 12 weeks resulted in 21% increase in V02 peak oxygen uptake and 6% increase in peak cardio output. 'All out intensity' is defined as pedaling or sprinting like your life depends on it.
+</p>
+
+<p>
+If you read the 2021 papers, SIT also reduced EGF or epidermal growth factor in older men to the same levels as the younger men in the study, lower EGF is associated with longevity and healthy aging. However, in a systematic <a href="https://www.sciencedirect.com/science/article/pii/S2095254621000302">review</a> of all previous studies to date (2021), they found all the SIT studies except for 2 were so low quality they weren't even worth the paper they were printed on. If you're wondering how they review, they use the Cochrane <a href="https://training.cochrane.org/handbook/current">handbook</a>. As an anecdote SE asian fighting clubs have long used sprint interval training to boost the cardio of their fighters, you go out in the parking lot or alley and sprint from one side to the other in intervals which takes about 20 seconds. 
+</p>
+
+<p>
+Conclusion: it's inconclusive if SIT is superior to HIIT or MICT because many of the previous studies were junk tier quality but since I own an exercise bike anyway, and it only takes 12.5 minutes, I may as well do it 3 days a week and be my own test subject. 
+</p>
+
+
+<p>
+<b>O2 Trainer product marketing</b>
+</p>
+
+<p>
+Bas Rutten has a product on the market called the <a href="https://www.o2trainer.com/">O2 Lung Trainer</a> which he designed after growing up with severe asthma. In interviews he says he would pet an animal and couldn't breathe properly for a week straight, like he was sucking air through a pinched hose. When the attack was over he noticed he had enormous lung capacity after. He claims it cured him of asthma attacks and that COPD doctors use it for their patients to help them breathe normally, and by training his chest muscles like this it helped him go the distance in his professional fights. His amateur study of his own condition also helped him to gas out his opponents, when he would clinch with them he'd squeeze their chest preventing them from expanding and breathing detailed <a href="https://youtu.be/864rQZhvMag?t=3201">here</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-How%20many%20hours%20per%20week%20of%20exercise" class="outline-3">
+<h3 id="How%20many%20hours%20per%20week%20of%20exercise">How many hours per week of exercise</h3>
+<div class="outline-text-3" id="text-How%20many%20hours%20per%20week%20of%20exercise">
+<p>
+The USC longevity institute director <a href="https://www.valterlongo.com/exercise-and-longevity/">recommends</a>:
+</p>
+
+<blockquote>
+<p>
+Do moderate (cardiovascular, ie: brisk walking pace) exercise for 2.5 to 5 hours a week, with some of it in the vigorous range. Most of the beneficial effects appear to be caused by the first 2.5 hours of exercise, making the additional exercise optional.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
 
 <div id="outline-container-Nutrition%20overview" class="outline-2">
 <h2 id="Nutrition%20overview">Nutrition overview</h2>
@@ -549,29 +655,11 @@ Conclusion: interviewing centenarians what they eat is great if you want to cher
 <h4 id="Counterfeit%20food%2Foil">Counterfeit food/oil</h4>
 <div class="outline-text-4" id="text-Counterfeit%20food%2Foil">
 <p>
-That old man in Lebanon was right not to trust manufactured oil because much of it is <a href="https://www.sciencedirect.com/science/article/pii/S0956713521000402">counterfeit</a>. You can often find small batch direct from farm exports if you <a href="https://www.ameliaoil.com/about-our-oil/">search around</a> of tourists who befriended farmers or go yourself, take a vacation to Italy, Lebanon, Jordan, Iran, Greece, Tunisia, Israel, anywhere in that region and offer to pay them to ship you regular olive oil shipments many of them already do it anyway. When I was in highschool working at an airport P/T there was tons of personal shipments of family olive oil coming in from all over the middle east to students who were temporarily here studying and refused to trust corporate oil.
-</p>
-
-<p>
-There is also an olive oil competition every year and many sites will <a href="https://bestoliveoils.org/">sell</a> them, but I still wouldn't trust them personally, it's easy to make a site and claim your concoction of soy and vegetable oils with artificial flavoring won the best review, and sell it for $100/bottle. 
-</p>
-
-<p>
-Any kind of expensive food product like olive oil is going to counterfeited, like truffle oil, shrimp caught in a polluted Chinese bay and then restamped in Indonesia for import to the west, imported cheese, if a lot of money is involved then a lot of organized global crime is involved. If you can avoid imports unless you personally know who sent it to ie: you went there yourself as written above. Brand labels and supposed 'security seals' guaranteeing authenticity can easily be faked, I can make one up trivially and so can you to flood say NYC restaurants with counterfeit oil.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Eat%20your%20ancestors%20cooking%20oil" class="outline-4">
-<h4 id="Eat%20your%20ancestors%20cooking%20oil">Eat your ancestors cooking oil</h4>
-<div class="outline-text-4" id="text-Eat%20your%20ancestors%20cooking%20oil">
-<p>
-Remember the longevity diet book advice to eat from the table of your ancestors? Since mine are rural Northern Germans they used primarily rapeseed oil. Sometimes confused with <a href="https://nutrifix.co/healthy-eating-blog/is-rapeseed-oil-healthy/">canola oil</a> rapeseed oil is very low in saturates and my family history has zero history of consuming olive oil which would have been (and still is) very expensive to them. Eat whatever your family did. As a personal, offtopic anecdote I didn't use any kind of dna company to determine my ancestry, everybody in my family already knows where they come from and so do yours. Trust that before any FBI database oops I mean ancestry database of your genes because simply finding out your genetics trace back to wherever doesn't mean that's what your ancestors ate. If your Mongolian family lived in Portugal for 200 years they ate a Portuguese diet so don't go eating whatever they eat in rural Mongolia eat what your actual bloodline ate not some data projection of your heritage. 
+That old man in Lebanon was right not to trust manufactured oil because much of it is <a href="https://www.sciencedirect.com/science/article/pii/S0956713521000402">counterfeit</a>. 
 </p>
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-Micronutrients%3A%20vitamin%20supplements" class="outline-3">
 <h3 id="Micronutrients%3A%20vitamin%20supplements">Micronutrients: vitamin supplements</h3>
@@ -591,11 +679,7 @@ In many cases, there is some experimental evidence these chemicals in supplement
 </blockquote>
 
 <p>
-In the appendix of the <i>Longevity Diet</i> book is a long list of foods and their micronutrient content, mix and match those as per <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/imj.13976">this study</a> "There is no case for vitamin supplementation in normal, healthy, non-pregant or lactating adults who are receiving the recommended daily intake of nutrients".
-</p>
-
-<p>
-Vitamin D there is no benefit to <a href="https://www.devaboone.com/post/vitamin-d-part-3-the-evidence?postId=5f4e8bf673d853002ded6cd3">supplementation</a> since you can just go outside for 10 minutes in sunlight, or eat salmon sushi, a can of sardines, or chestnut mushrooms sold in every grocery store and receive 100%+ your DV.
+In the appendix of the <i>Longevity Diet</i> book is a long list of foods and their micronutrient content, mix and match those as per <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/imj.13976">this study</a> "There is no case for vitamin supplementation in normal, healthy, non-pregant or lactating adults who are receiving the recommended daily intake of nutrients". Vitamin D <a href="https://www.devaboone.com/post/vitamin-d-part-3-the-evidence?postId=5f4e8bf673d853002ded6cd3">supplementation</a> if you aren't actually deficient is risky.
 </p>
 </div>
 </div>
@@ -612,7 +696,7 @@ This is defined as fats that at body temperature, do not turn solid. Well accord
 <h4 id="Omega-3%20cognitive%20benefits">Omega-3 cognitive benefits</h4>
 <div class="outline-text-4" id="text-Omega-3%20cognitive%20benefits">
 <p>
-Taking the average in my decision tree algorithm, while there is evidence of decreased <a href="https://www.sciencedirect.com/science/article/abs/pii/S019566631500152X">cognitive 'flexibility'</a> eating saturated fats, there is <a href="https://www.sciencedirect.com/science/article/pii/S1568163721000477">no confidence</a> that omega-3 fats helps cognitive functions. When I changed my parameters to search the vector for insufficient or inconclusive I ended up with more studies than I did with my first broad parameter, in other words nobody knows if eating oily fish and downing fish oil supplements does anything to help your brain.  
+Taking the average in my decision tree algorithm, while there is evidence of decreased <a href="https://www.sciencedirect.com/science/article/abs/pii/S019566631500152X">cognitive 'flexibility'</a> eating saturated fats, there is <a href="https://www.sciencedirect.com/science/article/pii/S1568163721000477">no confidence</a> that omega-3 fats helps cognitive functions. When I changed my parameters to search the vector for insufficient or inconclusive I ended up with more studies than I did with my first broad parameter, in other words nobody knows if eating oily fish and downing fish oil supplements does anything to help your brain but they recommend you moderately take it anyway.  
 </p>
 </div>
 </div>
@@ -621,23 +705,13 @@ Taking the average in my decision tree algorithm, while there is evidence of dec
 <h4 id="Most%20dangerous%20fat">Most dangerous fat</h4>
 <div class="outline-text-4" id="text-Most%20dangerous%20fat">
 <p>
-Vegetable oil manufactured into solid form aka trans fat is literally death. You'll find it in microwave popcorn, many ice cream brands, frozen pizza, shortening, refrigerated dough, frosting on store bought baked goods, cheap fried foods, non-dairy coffee creamer, many forms of margerine, it's a nearly endless list of manufactured foods.
+Vegetable oil manufactured into solid form aka Trans fat is literally death. You'll find it in microwave popcorn, many ice cream brands, frozen pizza, shortening, refrigerated dough, frosting on store bought baked goods, cheap fried foods, non-dairy coffee creamer, many forms of margerine, it's a nearly endless list of manufactured foods.
 </p>
 
 <p>
 Natural trans fats exist in dairy made ice cream but I guarantee you the ice cream you buy from some store is not using natural trans fats, it's partially hydrogenated oil. How do you avoid this? Take advice from that ancient Lebanese man where he never ate things who's ingredients he didn't know. If it's in a package and shrink wrapped from some multinational food corp it's almost certainly bad for you so don't eat it.      
 </p>
 </div>
-</div>
-</div>
-
-
-<div id="outline-container-Personalized%20nutrition" class="outline-3">
-<h3 id="Personalized%20nutrition">Personalized nutrition</h3>
-<div class="outline-text-3" id="text-Personalized%20nutrition">
-<p>
-If you live in the continental US except for RI/NY/NJ, you can get your self poop testing kit and blood analyzed by a <a href="https://joinzoe.com/why-zoe">gut bacteria</a> startup to see what foods cause inflammation and other problems. Any nutritionist/dietitian or doctor can give you a blood test as well to see if you have hormone/vitamin or mineral deficiencies but only in certain regions do these titles carry any kind of protected title meaning you have to prove competency.
-</p>
 </div>
 </div>
 </div>
@@ -761,96 +835,11 @@ Here's how you <a href="https://youtu.be/tF07GUakC3M">choose fruit</a> in a groc
 </div>
 
 
-<div id="outline-container-Mathematical%20model%20for%20weight%20loss%20forecasting" class="outline-2">
-<h2 id="Mathematical%20model%20for%20weight%20loss%20forecasting">Mathematical model for weight loss forecasting</h2>
-<div class="outline-text-2" id="text-Mathematical%20model%20for%20weight%20loss%20forecasting">
-<p>
-The high fat diet anecdotes above still worked for losing weight, yet they break the energy balance theory (EBT) model, the traditional calories in/calories out model for weight loss. Eating piles of cheese and sausages like Tyson Fury did shouldn't have worked according to the EBT model so something that fell through my decision tree was <a href="https://www.medrxiv.org/content/10.1101/2020.10.27.20220202v4">this</a> paper where they claim a mass balance model has superior forecasting and can explain all the above outlier diets. The paper is short, most of it is citations and consists of solving a differential system like you would any other math model. "The food property that has the capacity to increase body weight is its macronutrient mass and not its potential nutritional energy (calories)". They establish a baseline for 140 days then run a simulation on a 2000 calorie per day model using macros of low carbs, and it shows weight loss. Keeping the exact same energy intake (2k calories) they exchange the macros increasing the carbs and run a simulation which shows weight gain, yet the EBT model claims this can't happen because it only models energy.  
-</p>
-
-<p>
-Summary: "Implicit in the EBT discourse is that body fat accumulates only if fat intake exceeds fat oxidation, even under dietary energy restriction, which explains why this theory argues in favor of low-fat-diets as the optimal fat loss dietary treatment". 
-</p>
-
-<p>
-Conclusion: Adjust macros to gain or lose weight, ignore the energy balance model.
-</p>
-</div>
-</div>
-
-<div id="outline-container-HIIT%20vs%20SIT%20vs%20MICT" class="outline-2">
-<h2 id="HIIT%20vs%20SIT%20vs%20MICT">HIIT vs SIT vs MICT</h2>
-<div class="outline-text-2" id="text-HIIT%20vs%20SIT%20vs%20MICT">
-</div>
-<div id="outline-container-HIIT" class="outline-3">
-<h3 id="HIIT">HIIT</h3>
-<div class="outline-text-3" id="text-HIIT">
-<p>
-Defined as high-intensity interval training, with no universal standard on session duration it consists of moderately intensive continuous training (MICT) mixed with intervals of repeated short to long bouts of intensity followed by rest periods. Going through the 2021 papers, a systematic review of previous research found that HIIT resulted in a significant boost in testosterone and cortisol levels immediately after a single 30m session, which disappeared after 24 hours back to baseline levels meaning you should only ever do it in moderation unless you want your immune system to stop working and die from a heart attack due to stress being flooded into your bloodstream. 60m sessions produced a greater increase in cortisol. The same review states there wasn't enough controlled studies in the papers they reviewed and had limited data so a real controlled study of HIIT on the body's hormone system needs to be done in the future.
-</p>
-
-<p>
-Scraping for other papers that tout HIIT benefits, the average I found was HIIT done for 15-30m for as little as 6 weeks, done 3 days a week, preserves VO2 peak for up to 4 years in inactive older adults, meaning even if you stop you retain your peak oxygen uptake. It also was shown to improve 8 indicators of cardiometabolic health compared to 3 for steady state cardio such as blood pressure and total cholesterol. For fat loss on average MICT burns visceral fat and helps you lean out just the same as HIIT does, it's inconclusive whether HIIT is any better for fat burning as you get one study that claims it's great, and another that says there's no difference, and it repeats like this. HIIT 3x a week was also found on average to have reduced impulsivity, and improve short-term memory in a bunch of HIIT psychology studies I found.
-</p>
-
-<p>
-There's some entertaining papers of surveying typical young men who <a href="https://youtu.be/nEqhOfG1lwg">binge drink beer</a> if it affected their HIIT benefits, which turned out to be no, alcohol is fine to consume and receive the benefits of HIIT.
-</p>
-
-<p>
-Conclusion: HIIT has many benefits over MICT but none of them are fat loss as it's inconclusive if one is any better than the other for reducing visceral/body fat using the EBT model of calories in/calories out weight loss. It should be done in moderation or else you may get flooded with stress hormones which take 24 hours to leave your body after a single session. There doesn't seem to be any benefit of doing more than 30 minutes of HIIT per session. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-SIT" class="outline-3">
-<h3 id="SIT">SIT</h3>
-<div class="outline-text-3" id="text-SIT">
-<p>
-Here is a <a href="https://youtu.be/SHN-4ve81TY">2015 documentary</a> about sprint interval training. In a survey of 2021 papers on SIT the methods were (on a bike) 2 min warmup at normal pace, 3 x 20 second (sometimes 30 second) 'all out' intensity intervals interspersed with 2 mins of recovery normal pace cycling, then a 3 min cool down at normal pace. In total 12.5m or so of cardio done in 28 sessions over 12 weeks resulted in 21% increase in V02 peak oxygen uptake and 6% increase in peak cardio output. 'All out intensity' is defined as pedaling or running like your life depends on it.
-</p>
-
-<p>
-If you read the 2021 papers, SIT also reduced EGF or epidermal growth factor in older men to the same levels as the younger men in the study, lower EGF is associated with longevity and healthy aging. However, in a systematic <a href="https://www.sciencedirect.com/science/article/pii/S2095254621000302">review</a> of all previous studies to date (2021), they found all the SIT studies except for 2 were so low quality they weren't even worth the paper they were printed on. If you're wondering how they review, they use the Cochrane <a href="https://training.cochrane.org/handbook/current">handbook</a>. As an anecdote SE asian fighting clubs have long used sprint interval training to boost the cardio of their fighters, you go out in the parking lot or alley and sprint from one side to the other in intervals which takes about 20 seconds. 
-</p>
-
-<p>
-Conclusion: it's inconclusive if SIT is superior to HIIT or MICT because many of the previous studies were junk tier quality but since I own an exercise bike anyway, and it only takes 12.5 minutes, I may as well do it 3 days a week and be my own test subject. 
-</p>
-
-
-<p>
-<b>O2 Trainer product marketing</b>
-</p>
-
-<p>
-Bas Rutten has a product on the market called the <a href="https://www.o2trainer.com/">O2 Lung Trainer</a> which he designed after growing up with severe asthma. In interviews he says he would pet an animal and couldn't breathe properly for a week straight, like he was sucking air through a pinched hose. When the attack was over he noticed he had enormous lung capacity after. He claims it cured him of asthma attacks and that COPD doctors use it for their patients to help them breathe normally, and by training his chest muscles like this it helped him go the distance in his professional fights. His amateur study of his own condition also helped him to gas out his opponents, when he would clinch with them he'd squeeze their chest preventing them from expanding and breathing detailed <a href="https://youtu.be/864rQZhvMag?t=3201">here</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-How%20many%20hours%20per%20week%20of%20exercise" class="outline-3">
-<h3 id="How%20many%20hours%20per%20week%20of%20exercise">How many hours per week of exercise</h3>
-<div class="outline-text-3" id="text-How%20many%20hours%20per%20week%20of%20exercise">
-<p>
-The USC longevity institute director <a href="https://www.valterlongo.com/exercise-and-longevity/">recommends</a>:
-</p>
-
-<blockquote>
-<p>
-Do moderate (cardiovascular, ie: brisk walking pace) exercise for 2.5 to 5 hours a week, with some of it in the vigorous range. Most of the beneficial effects appear to be caused by the first 2.5 hours of exercise, making the additional exercise optional.
-</p>
-</blockquote>
-</div>
-</div>
-</div>
-
-
 <div id="outline-container-Building%20strength" class="outline-2">
 <h2 id="Building%20strength">Building strength</h2>
 <div class="outline-text-2" id="text-Building%20strength">
 <p>
-How do prisoners get swole when they don't have access to weights? The answer is they are using weights: makeshift weights made out of books or magazines in laundry bags or water in plastic bags, and they do these exercises with an intensity designed to <a href="https://youtu.be/SrygJCc90Uc">split somebody's wig</a>. 'You're doing 1hr of dips, whatever amount of pullups you can do and pushups, nobody counts reps, do it to exhaustion every day like your life depends on it because it does'. This hilarious <a href="https://youtu.be/8CQk5iWoN-A">turbo intense</a> ex-con has a similar opinion that injecting intensity into workouts is how they get jacked in there.
+How do prisoners get swole when they don't have access to weights? The answer is they are using weights Youtube is filled with ex-con <a href="https://youtu.be/AgEQWaN6qWU">tutorials</a> how to make your own weights like a bag of water in a pillow case, which is probably better to start than buying a gym membership and never going. They do these exercises with an intensity designed to <a href="https://youtu.be/SrygJCc90Uc">split somebody's wig</a>. 'You're doing 1hr of dips, whatever amount of pullups you can do and pushups, nobody counts reps, do it to exhaustion every day like your life depends on it because it does'. This hilarious <a href="https://youtu.be/8CQk5iWoN-A">turbo intense</a> ex-con has a similar opinion that injecting intensity into workouts is how they get jacked in there, also the extremely unhealthy levels of sodium in prison food he suggests is why they look puffed up so much. 
 </p>
 
 <p>
@@ -866,19 +855,7 @@ Conclusion: injecting periodic intensity into a workout has benefits but consist
 <h3 id="Weight%20lifting">Weight lifting</h3>
 <div class="outline-text-3" id="text-Weight%20lifting">
 <p>
-Youtube is filled with ex-con <a href="https://youtu.be/AgEQWaN6qWU">tutorials</a> how to make your own weights like a bag of water in a pillow case, which is probably better to start than buying a gym membership and never going.
-</p>
-
-<p>
-In this interview of <a href="https://youtu.be/2hFe1WOKOgQ">Dorian Yates</a> on how to build muscle for body building competitions, he points out people don't take advantage of negatives to totally max out their reps (if the goal is body building and not technical exercises), and that he carefully planned out every single workout and kept a journal to analyze daily and make improvements. The rest of that interview he talks about all the permanent injuries he developed doing this, such as not being able to do any bench press anymore, and that super heavy weighted squats were <a href="https://youtu.be/5RIeioh-KgQ">too dangerous with no benefit</a>. If you do decide to try weight lifting pay for a trainer in the beginning, they aren't that expensive and can watch you while you lift to make sure you have proper form and put together your routine.
-</p>
-
-<p>
-<b>Strongman associations</b>
-</p>
-
-<p>
-If you want to weight train your entire body, every major city has a <a href="https://youtu.be/wBYYUkW4uFA">strongman</a> group or gym you can join as a non-competitor, female or male who flip <a href="https://youtu.be/wFbPbhNXEAg">giant tires</a> and other insane full body feats of strength. Look up some of their training videos seems like a much better community focused on competition and camaraderie than the vanity in corporate gyms. Strength contests date back to 6000 B.C. when ancient Chinese competitors lifted heavy cauldrons and stones. To find out if they accept anybody I went down to the local strongman gym which was basically a junkyard, and they told me anybody can join of <a href="https://barbend.com/strongman-training-over-40/">any age</a>, ie: here's a guy who was the winner of the Master's World Ultimate Strongman Championship in 2019 and he's <a href="https://www.kcrg.com/content/sports/Cedar-Rapids-resident-wins--511108171.html">over 40</a>. The one's I met here, many of them were in their late 40s (I saw a guy in his 60s picking up an atlas stone multiple times) with active competitors averaging in their early 30s all the way to a guy who was 46 and still competing and 4th place in national competitions. Who knows what their TRT levels are but they are grinding away there everyday at a junkyard even into their 60s so maybe you want to try it yourself and join your local strongman community instead of handing over money to some corporate gym.    
+In this interview of <a href="https://youtu.be/2hFe1WOKOgQ">Dorian Yates</a> on how to build muscle for body building competitions, he points out people don't take advantage of negatives to totally max out their reps (if the goal is body building and not technical exercises), and that he carefully planned out every single workout and kept a journal to analyze daily and make improvements. The rest of that interview he talks about all the permanent injuries he developed doing this, such as not being able to do any bench press anymore, and that super heavy weighted squats were <a href="https://youtu.be/5RIeioh-KgQ">too dangerous with no benefit</a>. If you do decide to try weight lifting pay for a trainer in the beginning, they aren't that expensive and can watch you while you lift to make sure you have proper form and put together your routine. Imagine lifting heavy weights improperly for months on end the damage it will do to you. 
 </p>
 
 <p>
@@ -892,7 +869,7 @@ Conclusion: get a notebook and plan workouts like a professional would approach 
 <h2 id="The%20Strategy">The Strategy</h2>
 <div class="outline-text-2" id="text-The%20Strategy">
 <p>
-We took a tour of fitness memes and papers. We learned that the EBT model of calories in/calories out is flawed and adjusting macros work better for forecasting weight loss. We learned that reducing saturated fat and excess protein will help us avoid early death, and at least 30g protein should be consumed after exercise. We learned HIIT done for 15 to 30 minutes, 2-3 days a week, or possibly SIT done 12.5 minutes, 3 days a week, gives you the same cardio benefits of doing 1hr sessions of moderately intensive cardio done at a persistent pace. We learned we should do strength training consistently and mix in periodic intensity. We learned we should do 2.5-5hrs weekly of cardio but it was noted all the benefits are in the first 2.5 hours you do during the week, with the rest optional.
+We took a tour of fitness memes and papers. We learned that the EBT model of calories in/calories out is flawed and adjusting macros to increase (healthy) fats and reduce carbs but not eliminate them forecasts weight loss under the mass balance model of weight management. We learned that reducing saturated/trans fat and excess protein will help us avoid early death, and at least 30g protein should be consumed after exercise. We learned HIIT done for 15 to 30 minutes, 2-3 days a week, or <i>possibly</i> SIT done 12.5 minutes, 3 days a week, gives you the same cardio benefits of doing 1hr sessions of moderately intensive cardio done at a persistent pace. We learned we should do strength training consistently and mix in periodic intensity. We learned we should do 2.5-5hrs weekly of cardio but it was noted all the benefits are in the first 2.5 hours you do during the week, with the rest optional.
 </p>
 
 <p>
@@ -922,7 +899,7 @@ Get out a piece of paper and plan your fuel intake for tomorrow, or the whole we
 <h4 id="Adjust%20nutrition">Adjust nutrition</h4>
 <div class="outline-text-4" id="text-Adjust%20nutrition">
 <p>
-This ex-professional Sambo competitor has some advice <a href="https://youtu.be/J9n7tDp03GU">here</a> about how food allergies will manifest themselves when you start doing heavy cardio and feel like there is a ball of lead in your stomach or have no energy. If you plan nutrition you automatically have a food journal you can audit for problems when they come up. He personally had to cut out all dairy and switch his breakfast to an omelette and vegetables, or complex carbs to have energy to train later. 
+Vasylchuk has some advice <a href="https://youtu.be/J9n7tDp03GU">here</a> about how food allergies will manifest themselves when you start doing heavy cardio and feel like there is a ball of lead in your stomach or have no energy. If you plan nutrition you automatically have a food journal you can audit for problems when they come up. He personally had to cut out all dairy and switch his breakfast to an omelette and vegetables, or complex carbs to have energy to train later. 
 </p>
 </div>
 </div>
@@ -991,7 +968,7 @@ I picked Muay Thai mixed with 'old style Muay Thai' for the simple reason that i
 </p>
 
 <p>
-Go SLOW without power, focus on technique you will build up your speed over time so you don't pull every back and ab muscle in the beginning. The following is what I used to cherry pick the first routine, customize your own routine to your preferred style: 
+When you start, go slow without power, focus on technique you will build up your speed over time so you don't pull every back and ab muscle in the beginning. The following is what I used to cherry pick the first routine, customize your own routine to your preferred style: 
 </p>
 
 <ul class="org-ul">
@@ -1018,15 +995,15 @@ You can download these youtube tutorials, and splice them together in any free e
 <h3 id="Example%20routine">Example routine</h3>
 <div class="outline-text-3" id="text-Example%20routine">
 <p>
-(HIIT) Monday, Wednesday, Friday at 7pm I copy <a href="https://youtu.be/Q8XdWYXdtuo">this routine</a> aka <a href="https://youtu.be/PXE_Wg_yg9s">assault bike</a> conditioning. I don't own an Airdyne/assault bike or a VersaClimber which burns out both arms and legs so I use a cheap exercise bike and I increase the resistance as they do in the video since the faster you go on an assault bike the more resistance. I do 1-2 minutes of resistance cardio, then 1-2 of any of the bodyweight exercises they are doing, as much as I can until failure then I shadow box the remaining interval time because I'm not a pro athlete who can do 2 mins of nonstop sprawl drills like these guys. To make it a HIIT, I pedal all out for 20 seconds during some of the bike intervals. I began with 6 bike intervals and 6 bodyweight/shadow box intervals with the goal to slowly advance to 10 bike intervals and 10 bodyweight intervals and be able to complete all bodyweight intervals without pause, adding in some of the <a href="https://youtu.be/7ZtWQFFnWl8">Tiger Muay Thai</a> bodyweight exercises, water bag curls, explosive push-ups, anything. If you don't have access to a bike reminder you only need 20 seconds of 'full intensity' per interval, so sprint in place like they do in the Tiger Muay Thai HIIT routine.    
+(HIIT) Monday, Wednesday, Friday at 7pm I copy <a href="https://youtu.be/Q8XdWYXdtuo">this routine</a> aka <a href="https://youtu.be/PXE_Wg_yg9s">assault bike</a> conditioning. I don't own an Airdyne/assault bike or a VersaClimber which burns out both arms and legs so I use a cheap exercise bike and I increase the resistance as they do in the video since the faster you go on an assault bike the more resistance. I do 1-2 minutes of resistance cardio, then 1-2 of any of the bodyweight exercises they are doing, as much as I can until failure then I shadow box the remaining interval time because I'm not a pro athlete who can do 2 mins of nonstop sprawl drills like these guys. To make it a HIIT, I pedal all out during some of the bike intervals. I began with 6 bike intervals and 6 bodyweight/shadow box intervals with the goal to slowly advance to 10 bike intervals and 10 bodyweight intervals and be able to complete all bodyweight intervals without pause, adding in some of the <a href="https://youtu.be/7ZtWQFFnWl8">Tiger Muay Thai</a> bodyweight exercises, water bag curls, explosive push-ups, anything. If you don't have access to a bike reminder you only need 20 seconds of 'full intensity' per interval, so sprint in place like they do in the Tiger Muay Thai HIIT routine.    
 </p>
 
 <p>
-Reminder we only need 2.5 hours per week of exercise, so ignore the following if you're briskly walking a lot or doing other moderately intensive exercise. (MICT) Tuesday, Thursday, Saturday I warm up then try some <a href="https://youtu.be/qnafsISXBw4">drills</a> time index 0:39-5:00 and <a href="https://youtu.be/lLtj0oKGzz8">here</a> 0:34-2:32. I only do them until close to failure and no more so I can exercise daily and not be too sore. You can build up to repeating the routine like they do with time and consistency. After I shadow box focusing on form until tired of doing it slowly building up speed and footwork. If my cardio needs to be boosted I do some of <a href="https://youtu.be/yH1_6VlzHUc">these</a>, jumping jacks or a bodyweight exercise but it's not maximum intensity that is saved for the HIIT sessions.   
+(MICT) Tuesday, Thursday, Saturday I warm up then try some <a href="https://youtu.be/qnafsISXBw4">drills</a> time index 0:39-5:00 and <a href="https://youtu.be/lLtj0oKGzz8">here</a> 0:34-2:32. I only do them until close to failure and no more so I can exercise daily and not be too sore. After I shadow box focusing on form until tired of doing it slowly building up speed and footwork. If my cardio needs to be boosted I do some of <a href="https://youtu.be/yH1_6VlzHUc">these</a>, jumping jacks or a bodyweight exercise but it's not maximum intensity that is saved for the HIIT sessions.   
 </p>
 
 <p>
-To afford a Rogue Echo assault bike, or Airdyne, or VersaClimber, which are about $900 new or $300-400 used if you can find them, I pay in $20 per HIIT routine, or $60/week, or $240/mth. In 3 months if I'm still doing this then it's worth it to buy one. Most of the gyms where I live are still closed or limited in capacity and who knows how long the pandemic goes on for.
+Edit: I shadowbox 1hr everyday now, including days when I do the HIIT conditioning. 
 </p>
 
 
@@ -1181,6 +1158,8 @@ Besides excessive walking, I didn't do many routines these 2 weeks to make time 
 <p>
 Now that I can do more bodyweight exercises compared to my feeble beginning in week 1, the shadow boxing routines are much more cardio heavy meaning heart rate stays high the entire time. Everday energy also increased, I probably accomplish 1.5x the amount of work I normally do from not being tired/sluggish. TODO
 </p>
+
+
 
 <hr>
 <p>
