@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-09 Mon 00:01 -->
+<!-- 2021-08-09 Mon 16:16 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learning Algorithms Via Competitive Programming</title>
@@ -243,7 +243,15 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-Here we learn the analysis and design of algorithms by primarily working through the <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> while practicing all the concepts with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> so producing working code for hundreds of problems and submitting them for tests of correctness and time complexity to a free online judge.
+Here we learn the analysis, design and optimization of algorithms by primarily working through the <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first 4 chapters) while practicing what we learned with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> so producing working code for hundreds of problems and submitting them for tests of correctness and time complexity to a free online judge. The book is $20 and worth buying, or you can get a previous version from library genesis and just follow along as we investigate algorithms.
+</p>
+
+<p>
+The goal here is not just to pass some technical interview at bigtech (you will anyway) but also be able to attempt to solve some of the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems, many which require creative thinking like doing a complete search of the problem domain just to understand what it's asking, manipulating data through multiple modified standard library data structures like manipulating some of the built in libraries to do what they weren't intended to do in order to produce a result for a level 8 difficulty problem in 6 seconds CPU time limit.
+</p>
+
+<p>
+We'll do a little bit of everything here like investigating the mathematical properties of trees, complexity theory, computational geometry lectures, and some real life optimization of algorithms for hardware not just abstract models they teach you in intro algorithms books. The source of truth will be of course the solutions you submit to the Kattis online judge but we are going well beyond book 1 with advanced <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">algorithms</a> and <a href="https://courses.csail.mit.edu/6.851/spring21/">data structures</a>. 
 </p>
 </div>
 
@@ -251,7 +259,7 @@ Here we learn the analysis and design of algorithms by primarily working through
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. 
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. The longer you solve problems and gain expertise with manipulating the abstract concept known as computation, the more you realize the language doesn't matter so pick whatever you personally like from the list of Kattis supported languages.  
 </p>
 
 <p>
@@ -264,7 +272,7 @@ If you're using a phone, there are some offline interpreters/compilers you can i
 <h3 id="Real%20contests">Real contests</h3>
 <div class="outline-text-3" id="text-Real%20contests">
 <p>
-We can enter live regional ICPC practice on Kattis, CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> most of which we have no hope of winning of course but it's practice to pick up more advanced <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">algorithms</a> and <a href="https://courses.csail.mit.edu/6.851/spring21/">data structures</a>.  
+We can enter live regional ICPC practice on Kattis, CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> type challenges, most of which we have no hope of winning of course but it's practice to pick up more experience. Apply for a job and the interview is another live contest, you win a signing bonus and salary. If you lose who cares find another one.
 </p>
 </div>
 </div>
@@ -274,7 +282,11 @@ We can enter live regional ICPC practice on Kattis, CodeForces, <a href="https:/
 <h2 id="Begin">Begin</h2>
 <div class="outline-text-2" id="text-Begin">
 <p>
-I'll start with reading up to chapter 3 of <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/index.html">Functional Data Structures</a> for a review of computational models and algorithm analysis because the competitive programming book assumes we know this already. TODO 
+I'll start with reading chapter 1-2 of <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/index.html">Functional Data Structures</a> because it has the best definition of analyzing computational models and their complexity, and the competitive programming book assumes we know this already. When we say 'This algorithm's runtime is O(n)' we are talking about a model of computation and we are analyzing that model which can range from a pointer machine in Erik Demaine lectures to being a completely vague model.
+</p>
+
+<p>
+TODO
 </p>
 
 <hr>
