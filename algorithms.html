@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-12 Thu 23:23 -->
+<!-- 2021-08-12 Thu 23:32 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learning Algorithms Via Competitive Programming</title>
@@ -322,7 +322,7 @@ In <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.
 </p>
 
 <p>
-In case you don't understand the formal definition plug in examples where c = 4 and 'n nought' or n<sub>0</sub> is 3. 'N nought' I've never seen a definition, I've always assumed it's notation for a constant derived from the input, often used when you want to talk about some cutoff point and assign that value to n<sub>0</sub>. We can also rewrite the formal definition for this specific example, if g(n) = n<sup>2</sup> then f(n) = 1 + 2n + 3(g(n)) \(\le\) c(g(n)) for all inputs n greater than a previous input N.  
+In case you don't understand the formal definition plug in examples where c = 4 and 'n nought' or n<sub>0</sub> is 3. 'N nought' I've never seen a definition, I've always assumed it's notation for a constant derived from the input, often used when you want to talk about some cutoff point and assign that value to n<sub>0</sub>. We can also rewrite the formal definition for this specific example, if g(n) = n<sup>2</sup> then f(n) = 1 + 2n + 3(g(n)) \(\le\) c(g(n)) for all inputs n greater than a previous input n<sub>0</sub> :  
 </p>
 
 <ul class="org-ul">
@@ -331,7 +331,7 @@ In case you don't understand the formal definition plug in examples where c = 4 
 <li>1 + 2(3) + 3(9) \(\le\) 4(9)</li>
 <li>34 \(\le\) 36
 <ul class="org-ul">
-<li>any other value for n you plug in higher than n<sub>0</sub>, f(n) will always be less than or equal to g(n) if c=4 meaning f(n) is bounded by 4(g(n)) or just f(n) is in O(n) since we don't care about constants in worst case analysis.</li>
+<li>any other value for n you plug in higher than n<sub>0</sub>, f(n) will always be less than or equal to g(n) if c=4 meaning f(n) is bounded by 4(g(n)) or just f(n) is in O(n<sup>2</sup>) since we don't care about constants in worst case analysis.</li>
 </ul></li>
 </ul>
 
