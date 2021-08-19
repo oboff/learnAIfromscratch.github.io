@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-18 Wed 20:57 -->
+<!-- 2021-08-18 Wed 21:01 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -340,7 +340,7 @@ I'll do these but you don't have to:
 <p>
 Some backups  
 </p>
-<pre class="example" id="org5036e84">
+<pre class="example" id="org17b6b51">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -565,7 +565,7 @@ Probably this lecture is the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="org82950b0">
+<pre class="example" id="orgcf0ef39">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -667,7 +667,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">first homework</a> or from <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">here</a> or <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">here</a>. All these classifier functions like decision trees already exist in highly optimized libraries so I implemented the decision stump assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is to understand how a decision stump works. You can import the testing and training data as Google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="org5821815">
+<pre class="example" id="orgce9b4a1">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -870,7 +870,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org73a4a35">
+<pre class="example" id="org800d00b">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -919,7 +919,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a>.
 </p>
 
-<pre class="example" id="org94a7ff1">
+<pre class="example" id="org3109041">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -1252,7 +1252,7 @@ What is \(p(a_{1},b_{2}\))? In the recitation these two random variables were de
 What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we can construct a joint probability table since we know there are only 4 possible states and are told the probability of \(a_1\) is 0.5, and the total probability of \(b_2\) is 0.5 as per recitation definition of \(p(a_{i})\). You can construct these as per the above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a>:
 </p>
 
-<pre class="example" id="org4d47c4a">
+<pre class="example" id="orgc234428">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      |   x | x   | ?        |
@@ -1264,7 +1264,7 @@ What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we 
 <p>
 If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and since \(b_2\) sums to 0.5, \(b_2|a_2\) must also be 0.5:
 </p>
-<pre class="example" id="org5917aed">
+<pre class="example" id="org4f249ba">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      | 0.5 | x   | ?        |
@@ -1276,7 +1276,7 @@ If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and sinc
 <p>
 As the margins must sum to 1, fill in the rest
 </p>
-<pre class="example" id="orgdd9d9ef">
+<pre class="example" id="org5d65131">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      | 0.5 |   0 |      0.5 |
@@ -1297,7 +1297,7 @@ Because the recitation states the variables are not independent, from the same a
 <b>Question 2</b>
 Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is defined as P(A and B) or P(A)P(B) and as we were given both values in the writeup: 0.5 * 0.5 = 0.25. We can construct another table:
 </p>
-<pre class="example" id="orgce60379">
+<pre class="example" id="orgdf34419">
 |          |  a_1 | a_2 | Marginal |
 |----------+------+-----+----------|
 | b_1      |    x | x   |      0.5 |
@@ -1309,7 +1309,7 @@ Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is define
 <p>
 Deduce the rest since margins must add up to 1:
 </p>
-<pre class="example" id="orgd712fb3">
+<pre class="example" id="orgca7b938">
 |          |  a_1 |  a_2 | Marginal |
 |----------+------+------+----------|
 | b_1      | 0.25 | 0.25 |      0.5 |
@@ -1326,7 +1326,7 @@ Deduce the rest since margins must add up to 1:
 Again construct a join distribution table:
 </p>
 
-<pre class="example" id="orgc83f7f0">
+<pre class="example" id="org558fc9a">
 |                | Goodsleep = Yes | Goodsleep = No | Marginal |
 |----------------+-----------------+----------------+----------|
 | Exercise = Yes |             0.3 |            0.2 |      0.5 |
@@ -1398,11 +1398,11 @@ There is some Python code here using class syntax. If you've never seen it befor
 </p>
 
 <p>
-The reasons for why there's a negative log_2 (we're returning an answer in bits) is answered in this <a href="https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy/87210">post</a>, all the answers are worth reading particularily Kraft's inequality answer for the reasons there's a negative log. One of the answers recommends to read Cozma Shalizi's <a href="http://bactra.org/notebooks/information-theory.html">information theory</a> notes. To hand calculate this look up the usual logarithm rules, or type into google search -0.5(log_2(1/2)) which is 0.5, and the first recitation exercise is 0.5 + 0.5 = 1. 
+The reasons for why there's a negative \(log_2\) (we're returning an answer in bits) is answered in this <a href="https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy/87210">post</a>, all the answers are worth reading particularily Kraft's inequality answer for the reasons there's a negative log. One of the answers recommends to read Cozma Shalizi's <a href="http://bactra.org/notebooks/information-theory.html">information theory</a> notes. To hand calculate this look up the usual logarithm rules: -0.5(\(log_{2}\)(0.5)) which is 0.5, and the first recitation exercise is 0.5 + 0.5 = 1. 
 </p>
 
 <p>
-Page 5, make sure you can do these yourself, use <a href="https://www.desmos.com/calculator/jeqonqibik">Desmos</a> for a calculator if you want in your browser. The more of these do the more you will understand the entropy/mutual information notation, in lecture it was noted gini gain was similar to mutal information in terms of deciding which attributes to split on for a decision tree. 
+Page 5, make sure you can do these yourself, use <a href="https://www.desmos.com/calculator/jeqonqibik">Desmos</a> for a calculator if you want in your browser. The more of these you do the more you will understand the entropy/mutual information notation, in lecture it was noted gini gain was similar to mutal information in terms of deciding which attributes to split on for a decision tree. 
 </p>
 </div>
 </div>
