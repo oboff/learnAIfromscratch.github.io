@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-11 Wed 17:20 -->
+<!-- 2021-08-25 Wed 16:09 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -294,7 +294,12 @@
 <li><a href="#Day%206%20Logarithmic%20functions">Day 6 Logarithmic functions</a></li>
 <li><a href="#Day%207%20Trig%20fundamentals">Day 7 Trig fundamentals</a>
 <ul>
-<li><a href="#Ancient%20astronomy">Ancient astronomy</a></li>
+<li><a href="#Land%20Surveying">Land Surveying</a>
+<ul>
+<li><a href="#Ancient%20Mesopotamia%20surveying">Ancient Mesopotamia surveying</a></li>
+<li><a href="#Spherical%20trigonometry">Spherical trigonometry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#Day%208%20Complex%20numbers%20%28Trig%20part%20II%29">Day 8 Complex numbers (Trig part II)</a></li>
@@ -324,21 +329,8 @@
 <h2 id="Intro">Intro</h2>
 <div class="outline-text-2" id="text-Intro">
 <p>
-Regardless of math background, if you want to learn the following, you came to right place:
+Here we learn some single/multivariable calculus from the perspective of modeling with it.  
 </p>
-
-<ul class="org-ul">
-<li>basic algebra</li>
-<li>building a model</li>
-<li>ability to understand parameters to common functions</li>
-<li>single and multivariable calculus</li>
-<li>trig functions</li>
-<li>e<sup>x</sup> parameters and log() functions</li>
-<li>vector calculus/linear algebra</li>
-<li>optimization of the above</li>
-<li>differential eq, partial derivatives</li>
-<li>fundamental theorem(s) of calculus</li>
-</ul>
 </div>
 
 <div id="outline-container-Who%20needs%20this%3A" class="outline-3">
@@ -364,7 +356,7 @@ No idea but I will do it ~1hr per day and see how long it takes, then the title 
 <h3 id="Why%20is%20this%20%27modern%27%20calculus">Why is this 'modern' calculus</h3>
 <div class="outline-text-3" id="text-Why%20is%20this%20%27modern%27%20calculus">
 <p>
-Basically for clickbait title reasons, the book we use was written in 2018 and focuses on parameters to calculus functions and modeling with them instead of your typical calc course.
+Basically for clickbait title reasons, the book we use was written in 2018 and focuses on parameters to calculus functions and modeling with them instead of your typical symbolic calc course.
 </p>
 </div>
 </div>
@@ -540,7 +532,7 @@ Do the same for arithmetic series:
 <h3 id="Trigonometry">Trigonometry</h3>
 <div class="outline-text-3" id="text-Trigonometry">
 <p>
-Take the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail.
+Try the Brown University trig <a href="http://www.math.brown.edu/dkatz/trigbootcamp/">bootcamp</a> in summary there are 3 triangles who's measurements you should know, you scale them down to the unit circle size, and then use them to figure out points on the unit circle ie: trigonometry. The same page includes a full solution video to the psets. I've already done this <a href="https://learnaifromscratch.github.io/math.html#Trigonometry%20crash%20course">here</a> in detail.
 </p>
 
 <p>
@@ -560,19 +552,19 @@ Let's watch an example of how the current US IMO coach Poh-Shen Loh figures out 
 </p>
 
 <p>
-A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or at a more abstract level, it's many monomials like \(x^n\) grouped together with addition/subtraction/multiplication/division in other words algebra, and a constant like 5 or 1 is also a monomial too since 5x<sup>0</sup> or 1x<sup>0</sup>, the zero exponent by rules of exponents is substituted for 1, so really this is 5(1) or 1(1) because no matter what you substitute for x, it will be 1 anyway since the exponent is zero. Google modeling with polynomials to see why they exist in chemistry, physics, engineering or encoding with polynomials as a way to encode information about some other object. Wildberger has a two part <i>History of Mathematics</i> lecture series <a href="https://youtu.be/v8UfrpQ6NGk">here</a> worth viewing if you want to know the origins of this math or how ancient Greeks solved square roots using a compass and a ruler. 
+A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or you can think of it as many monomials like \(x^n\) grouped together with addition/subtraction/multiplication/division in other words algebra, and a constant like 5 or 1 is also a monomial too since 5x<sup>0</sup> or 1x<sup>0</sup>, the zero exponent by rules of exponents is substituted for 1, so really this is 5(1) or 1(1) because no matter what you substitute for x, it will be 1 anyway since the exponent is zero. Google modeling with polynomials to see why they exist in chemistry, physics, engineering or encoding with polynomials as a way to encode information about some other object. Wildberger has a two part <i>History of Mathematics</i> lecture series <a href="https://youtu.be/v8UfrpQ6NGk">here</a> worth viewing if you want to know the origins of this math or how ancient Greeks solved square roots using a compass and a ruler. 
 </p>
 
 <p>
-@32:00 he asks for tiny, tiny ideas. You are a detective trying to figure something out, and just throwing out ideas and writing them down. Reminder the 'coefficient' in 5x is 5. @35:00 or so he comes up with a possible strategy: eliminate the odds, eliminate the evens, now you've removed any possible of being an integer ergo it's not rational because of the above Wildberger lectures where a rational number is constructed from integers.
+@32:00 he asks for tiny, tiny ideas. You are a detective trying to figure something out, and just throwing out ideas and writing them down. Reminder the coefficient in 5x is 5. @35:00 or so he comes up with a possible strategy: eliminate the odds, eliminate the evens, now you've removed any possible of being an integer ergo it's not rational because of the above Wildberger lectures where a rational number is constructed from integers.
 </p>
 
 <p>
-@37:00 he uses the term 'implies'. What does this mean? This is mathematical logic you can read <a href="https://ncatlab.org/nlab/files/MartinLofOnTheMeaning96.pdf">here</a> a very good paper by Swiss logician and type theorist Per-Martin Lof on the justifications of all these terms like implies, conjuction, disjunction, what a proposition is etc.
+@37:00 he uses the term 'implies'. What does this mean? This is mathematical logic you can read <a href="https://ncatlab.org/nlab/files/MartinLofOnTheMeaning96.pdf">here</a> written by Swiss logician and type theorist Per-Martin Lof on the justifications of all these logical terms like implies, conjuction, disjunction, what a proposition is etc. This is the logic you use to deduce math.
 </p>
 
 <p>
-Casually watch the rest of this seminar, this is how you do problems. It's an investigation and playing around until the answer reveals itself. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused. 
+Casually watch the rest of this seminar, this is how you do problems. It's an investigation throwing out very tiny ideas and playing around with these ideas until you know more about the problem and possibly solve it. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused as he flies through that part in the lecture. 
 </p>
 </div>
 
@@ -580,7 +572,7 @@ Casually watch the rest of this seminar, this is how you do problems. It's an in
 <h3 id="How%20to%20get%20peer%20help">How to get peer help</h3>
 <div class="outline-text-3" id="text-How%20to%20get%20peer%20help">
 <p>
-Write a question to math <a href="https://math.stackexchange.com/">stack exchange</a>. Think about exactly what you don't know and take the time to write out exactly what that is. Often by doing this you will end up figuring it out yourself because the process of posting requires you to precisely write down your problem. The term for this is inquiry-based <a href="https://infinitedescent.xyz/20180214-exercises-ibl/">learning</a>.
+Write a question to math <a href="https://math.stackexchange.com/">stack exchange</a>. Often you will end up figuring it out yourself because the process of posting requires you to precisely write down your problem or they will delete it for being too vague. This style of learning has a name: inquiry-based <a href="https://infinitedescent.xyz/20180214-exercises-ibl/">learning</a>.
 </p>
 </div>
 </div>
@@ -639,7 +631,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="orga4742ab">
+<pre class="example" id="org6e3d9be">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -647,7 +639,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org2342055">
+<pre class="example" id="org231ad89">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -662,7 +654,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="orge381a81">
+<pre class="example" id="org6e8a781">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -671,7 +663,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="orgd7cf481">
+<pre class="example" id="org78bc365">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -681,7 +673,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="org324281e">
+<pre class="example" id="orge9375d6">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -689,7 +681,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="org1f109e0">
+<pre class="example" id="orgab9273c">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -936,12 +928,30 @@ There is an interesting visualization at @59:30 that show how cot() and tan() ar
 </p>
 </div>
 
-<div id="outline-container-Ancient%20astronomy" class="outline-3">
-<h3 id="Ancient%20astronomy">Ancient astronomy</h3>
-<div class="outline-text-3" id="text-Ancient%20astronomy">
+<div id="outline-container-Land%20Surveying" class="outline-3">
+<h3 id="Land%20Surveying">Land Surveying</h3>
+<div class="outline-text-3" id="text-Land%20Surveying">
+</div>
+<div id="outline-container-Ancient%20Mesopotamia%20surveying" class="outline-4">
+<h4 id="Ancient%20Mesopotamia%20surveying">Ancient Mesopotamia surveying</h4>
+<div class="outline-text-4" id="text-Ancient%20Mesopotamia%20surveying">
 <p>
-If you're interested in learning some crazy sort of trig related math, try <a href="https://youtu.be/QB6vm6rHFMY">this</a>, towards the end of the lecture he details how ancient astronomy worked which gives you an idea where spherical trigonometry comes from. The same prof has an entire lecture series on <a href="https://www.youtube.com/playlist?list=PL3C58498718451C47">rational trigonometry</a> which is completely different, and a book you can get from libgen filled with proofs similar to a Sheldon Axler type math text. If your job is to know everything there is about trigonometry you should try these lectures because in each one he fully explains the established version at a mathematician's perspective then models it in rational math, you really end up learning both because building a model of anything helps you understand (thing) you're trying to understand. You can write your own rational trig  <a href="http://grondilu.github.io/cube.html">libraries</a> as you go and run them with WebGL in your browser.
+Wildberger has an ancient trig lecture <a href="https://youtu.be/Eijwgi8rCRg">here</a> (22m) on 4000 year old Babylonian surveying, apparently trig originates from taxation and ownership disputes even before they wanted to build pyramids and ziggurats, long before astronomy. The ruler at the time wanted a way to quantify land in order to extract money from it in taxes.
 </p>
+</div>
+</div>
+
+<div id="outline-container-Spherical%20trigonometry" class="outline-4">
+<h4 id="Spherical%20trigonometry">Spherical trigonometry</h4>
+<div class="outline-text-4" id="text-Spherical%20trigonometry">
+<p>
+Another excellent Wildberger lecture <a href="https://youtu.be/hcXbLRPq5vc">here</a> to explain the spherical trig we currently use, with a review of modern trig. Spherical cosine laws included, haversines, Napier's Analogies, the rest of the lecture series he reinvents hyperbolic geometry using all rational numbers which is amazing but if you need to learn spherical trig, this is the probably the best lecture you'll find.
+</p>
+
+<p>
+There is a book <i>Math for the Surveyor</i> <a href="https://gogeomatics.ca/math-for-the-surveyor-free-book">here</a> which is free. 
+</p>
+</div>
 </div>
 </div>
 </div>
