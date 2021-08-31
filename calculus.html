@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-25 Wed 16:09 -->
+<!-- 2021-08-30 Mon 20:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -329,7 +329,7 @@
 <h2 id="Intro">Intro</h2>
 <div class="outline-text-2" id="text-Intro">
 <p>
-Here we learn some single/multivariable calculus from the perspective of modeling with it.  
+Here we learn some single/multivariable calculus, from the perspective of modeling with it.  
 </p>
 </div>
 
@@ -341,7 +341,6 @@ Everybody really since mathematical modeling and software is eating the world: b
 </p>
 </div>
 </div>
-
 
 <div id="outline-container-How%20long%20will%20this%20take" class="outline-3">
 <h3 id="How%20long%20will%20this%20take">How long will this take</h3>
@@ -631,7 +630,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org6e3d9be">
+<pre class="example" id="org413d88f">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -639,7 +638,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org231ad89">
+<pre class="example" id="org61a5d7f">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -654,7 +653,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="org6e8a781">
+<pre class="example" id="orge9762ec">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -663,7 +662,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org78bc365">
+<pre class="example" id="org127a994">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -673,7 +672,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="orge9375d6">
+<pre class="example" id="orgc39d791">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -681,7 +680,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orgab9273c">
+<pre class="example" id="orge184666">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -931,12 +930,16 @@ There is an interesting visualization at @59:30 that show how cot() and tan() ar
 <div id="outline-container-Land%20Surveying" class="outline-3">
 <h3 id="Land%20Surveying">Land Surveying</h3>
 <div class="outline-text-3" id="text-Land%20Surveying">
+<p>
+Some optional extra trig material for practical use in astronomy or land surveying   
+</p>
 </div>
+
 <div id="outline-container-Ancient%20Mesopotamia%20surveying" class="outline-4">
 <h4 id="Ancient%20Mesopotamia%20surveying">Ancient Mesopotamia surveying</h4>
 <div class="outline-text-4" id="text-Ancient%20Mesopotamia%20surveying">
 <p>
-Wildberger has an ancient trig lecture <a href="https://youtu.be/Eijwgi8rCRg">here</a> (22m) on 4000 year old Babylonian surveying, apparently trig originates from taxation and ownership disputes even before they wanted to build pyramids and ziggurats, long before astronomy. The ruler at the time wanted a way to quantify land in order to extract money from it in taxes.
+Wildberger has an ancient trig lecture <a href="https://youtu.be/Eijwgi8rCRg">here</a> (22m) on 4000 year old Babylonian surveying, apparently trig originates from land taxation and ownership disputes even before they wanted to start building pyramids and ziggurats and was an offshoot of ancient people who wanted to <a href="https://youtu.be/yFMcNXC-dW0">map stars</a> and predict eclipses.
 </p>
 </div>
 </div>
@@ -945,11 +948,7 @@ Wildberger has an ancient trig lecture <a href="https://youtu.be/Eijwgi8rCRg">he
 <h4 id="Spherical%20trigonometry">Spherical trigonometry</h4>
 <div class="outline-text-4" id="text-Spherical%20trigonometry">
 <p>
-Another excellent Wildberger lecture <a href="https://youtu.be/hcXbLRPq5vc">here</a> to explain the spherical trig we currently use, with a review of modern trig. Spherical cosine laws included, haversines, Napier's Analogies, the rest of the lecture series he reinvents hyperbolic geometry using all rational numbers which is amazing but if you need to learn spherical trig, this is the probably the best lecture you'll find.
-</p>
-
-<p>
-There is a book <i>Math for the Surveyor</i> <a href="https://gogeomatics.ca/math-for-the-surveyor-free-book">here</a> which is free. 
+Wildberger explains <a href="https://youtu.be/hcXbLRPq5vc">here</a> the spherical trig of astronomy that influenced planar trig. If you are wondering why sine/cosine is a rotation around a unit circle, why we have tan(x) function, this explains it. 
 </p>
 </div>
 </div>
@@ -1138,7 +1137,7 @@ Try it out in <a href="https://www.desmos.com/calculator/s1crt5i2cw">desmos</a> 
 <h3 id="2.5%20Sigmoidal%20function%20modeling">2.5 Sigmoidal function modeling</h3>
 <div class="outline-text-3" id="text-2.5%20Sigmoidal%20function%20modeling">
 <p>
-To understand the parameters use <a href="https://www.desmos.com/calculator/akvlc9kwv4">desmos</a> again and adjust them.
+To understand the parameters use <a href="https://www.desmos.com/calculator/akvlc9kwv4">desmos</a> again and adjust them. These kinds of functions come up everywhere, for example a <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic function</a> where the S curve on the y-axis is between 0 and 1, and now any real number you input the output is a probability since a probability space adds up to 1. 
 </p>
 </div>
 </div>
@@ -1196,12 +1195,68 @@ If the data is not linear, make a linear approximation y = mx + b. Good chapter 
 <h2 id="Day%2013%20Derivatives">Day 13 Derivatives</h2>
 <div class="outline-text-2" id="text-Day%2013%20Derivatives">
 <p>
-I put in easily 2 weeks to understand basic linear algebra when I first started so 'Day 13' could also mean day 33 depending on your linear algebra background to get through chapter 3.
+We finally can learn calculus.
 </p>
+
+<ul class="org-ul">
+<li>A <a href="https://youtu.be/9vKqVkMQHKk">visualization</a> (17m) to explain average and instantaneous rate of change.</li>
+</ul>
+
+<p>
+@ 2:03 s(t) distance function is a sigmoidal function, v(t) velocity function changes based on how s(t) changes, and v(t) looks a lot like a probability <a href="https://www.statisticshowto.com/probability-and-statistics/normal-distributions/">normal distribution</a>. Skimming through chapter 4.1 <i>Rates of Change</i> from the math modeling book, example 3 to find the instantaneous rate of change, you are shrinking that ds/dt triangle in the 3Blue1Brown videos to almost a point instead of an interval, and approximating the value to 5. Tangents are explained as a limiting of secant lines that are drawn with smaller and smalle intervals.
+</p>
+
+<p>
+The RStudio examples, on page 357 I rewrote the syntax they've been using to more generic R syntax:
+</p>
+
+<pre class="example" id="org061191d">
+f &lt;- function(x) {
+  (6 * x^3) - (3 * x^2)
+}
+
+AROC &lt;- function(a, b) {
+  ((f(b) - f(a)) / (b - a))
+}
+
+AROC(2,3)
+&gt;&gt; 99
+</pre>
+
+<p>
+If you are using rstudio cloud, Ctrl-Alt-r runs all your code, and in the bottom console you can enter AROC(2,3). 
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/S0_qX4VJhMQ">Derivative formulas visualized</a> (19m) the derivatives x<sup>n</sup> and sin(x) shown geometrically using area.</li>
+</ul>
+
+<p>
+The corresponding chapter is 4.3 <i>Derivatives of Modeling Functions</i>.
+</p>
+
+<ul class="org-ul">
+<li>linear differentiation: f(x) = mx + b
+<ul class="org-ul">
+<li>f'(x) = m</li>
+<li>the derivative of a line, is it's slope, think of the small triangle 3Blue1Brown drew to represent a 'slight nudge' and a straight linear line is going to have the same 'triangle' or slope</li>
+</ul></li>
+</ul>
+
+<p>
+This chapter provides, without proofs the rest of the modeling functions derivatives like how the derivative of e<sup>x</sup> is e<sup>x</sup>. If you expand the geometric series of e<sup>x</sup> and do a power rule derivative, you end up with e<sup>x</sup> however there were many other functions not covered, which we will cover in depth. I skimmed this chapter and didn't do any exercises, you'll see why soon, when we prove all these things.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/YG15m2VwSjA">Chain and Product Rule</a> visualized (17m) again using area.</li>
+</ul>
 
 <p>
 TODO
 </p>
+
+
+
 
 
 
