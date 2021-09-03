@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-12 Thu 23:32 -->
+<!-- 2021-09-02 Thu 21:08 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learning Algorithms Via Competitive Programming</title>
@@ -219,28 +219,6 @@
     /*]]>*///-->
 // @license-end
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -255,9 +233,16 @@
 <li><a href="#Prereqs">Prereqs</a></li>
 <li><a href="#Languages">Languages</a></li>
 <li><a href="#Real%20contests">Real contests</a></li>
+<li><a href="#Example%20class">Example class</a></li>
 </ul>
 </li>
-<li><a href="#Begin">Begin</a></li>
+<li><a href="#Begin">Begin</a>
+<ul>
+<li><a href="#Preface%20-%20How%20many%20problems">Preface - How many problems</a></li>
+<li><a href="#Chapter%201">Chapter 1</a></li>
+<li><a href="#Input%2FOutput">Input/Output</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -266,19 +251,54 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-Here we learn the analysis, design and optimization of algorithms by primarily working through the <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first 4 chapters) while practicing what we learned with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> so producing working code for hundreds of problems and submitting them for tests of correctness and time complexity to a free online judge. The book is $20 and worth buying, or you can get a previous version from library genesis and just follow along as we investigate algorithms.
+An attempt to game our way past technical interviews without any formal background or experience by playing around in competitive programming, though even if you're not interested in wage slaving you will build skills and confidence to write your own software/startup.   
 </p>
 
 <p>
-The goal here is not just to pass some technical interview at bigtech (you will anyway) but also be able to attempt to solve some of the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems, many which require creative thinking like doing a complete search of the problem domain just to understand what it's asking then manipulating data through multiple modified standard library data structures and writing our own.
+We are going to do:
 </p>
+<ul class="org-ul">
+<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first volume, 4 chapters), which is around 260 pages and was written both for passing those silly FAANG job interviews, and for anybody interested in beginning competitive programming as the author is the coach of Singapore's national ICPC team. Everything we learn we practice with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges like UVa or Codeforces, so producing working code for hundreds of problems and submitting them for tests of correctness and running time constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. The book teaches problem solving techniques like complete/greedy search, divide and conquer, backtracking, and dynamic programming and all the costs of built-in data structures. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://visualgo.net/en">VisuAlgo</a> to show us visualizations of the algorithms in the book</li>
+<li>YouTube <a href="https://www.youtube.com/playlist?list=PLM_KIlU0WoXmkV4QB1Dg8PtJaHTdWHwRS">videos</a> from Joe Gibbs Politz's <a href="https://ucsd-cse100-s20.github.io/">Advanced Data Structures</a> course at UCSD to see how to do informal analysis. There's a free online <a href="https://stepik.org/course/579">book</a> for it too.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>The computational geometry lectures from CMU's 15-451 <i>Algorithms</i> undergrad <a href="https://www.cs.cmu.edu/~15451-f20/schedule.html">course</a> (a mix of sp20 and f20) because we have access to the fall 2020 recitations and some spring 2020 lectures.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Relevant chapters from <i>The Art of Computer Programming</i> series by DEK. This is casual reading, if you like the book buy it and work through the whole thing on your own time after you get hired somewhere.</li>
+</ul>
+
+<p>
+<b>Optional</b>
+I highly recommend a stroll through <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/index.html">Functional Data Structures</a> by <a href="https://cs.uwaterloo.ca/~plragde/">Prof Ragde</a> to see how analysis of modern algorithms is done, like how you should read the Akra-Bazzi paper instead of the 'master theorem' junk that most books peddle. It's short enough to do in a single month and if anything comes up in the CP4 book I'll point to a relevant page from it.
+</p>
+
+<p>
+A torrent backup of the 15-451 content, we won't do it all
+</p>
+<pre class="example" id="orga413116">
+15-451 5gig backup
+- some recorded sp20 lectures (lec 16-23)
+  all recorded fa20 recitations and solutions
+  
+magnet:?xt=urn:btih:VCMKEFO57H5F4K5PH4LA5IXJZRARFCQE&amp;dn=15451&amp;tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce
+</pre>
 </div>
 
 <div id="outline-container-Prereqs" class="outline-3">
 <h3 id="Prereqs">Prereqs</h3>
 <div class="outline-text-3" id="text-Prereqs">
 <p>
-I assume you did some of CS19 <a href="./software.html">here</a> because that's where we learn what dynamic programming is, what a grpah is, what insertion sort is, etc. I assume you at least did the predicting growth chapters of PAPL from that workshop and lectures on insertion sort/big-O notation, solving recurrences, etc.  
+If you are doing CS19 <a href="./software.html">here</a> at the same time then this will be easy, because that's where we learn what property-based testing is, dynamic programming, graphs, trees, and how to write examples to figure out a problem. The often difficult assignments in that course teach you how to solve these IOI/ICPC style problems.   
 </p>
 </div>
 </div>
@@ -287,15 +307,11 @@ I assume you did some of CS19 <a href="./software.html">here</a> because that's 
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. Pick whatever you personally like from the list of Kattis supported languages, there is no reason to only use C++ because we are doing this primarily to learn and practice algorithm design. If you get judged TLE (time limit exceeded) that's then a challenge to hack the libraries of the language you chose and find a more efficient way, and all of them can be manipulated like Python with it's ref counter memory management.  
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains built-in data structures in the standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages/compiler versions. Pick whatever you personally like from the list of Kattis supported languages though if you're doing this to pass some interview, choose a language hackerrank/codility or coderpad supports as screeners and interviewers tend to use those. The author(s) of CP4 expect you to know multiple languages to solve any problem as Python makes string manpulation tasks simple, and Java has gigantic number manipulation or gregorian calender libraries. I will use C++ since the book recommends you learn that language, for both interviews and competitions. There are recommendations how to program C++ <a href="https://wiki.sei.cmu.edu/confluence/display/cplusplus">safely</a> once you're done doing hacks in competitive programming, where it is typical to do unsafe things like not bothering to free anything because that adds unnecessary costs to a competition or backtracking with excessive bit manipulation. 
 </p>
 
 <p>
 If you're using a phone, there are some offline interpreters/compilers you can install from whatever app store you use or try free version of <a href="https://replit.com/">repl.it</a>. You submit to Kattis for judging by pasting in the code through a web editor, uploading a source file(s) or write a script to automate this using their API. You get unlimited judging submissions.
-</p>
-
-<p>
-The language I will use is OCaml simply because it allows us to combine CS19 knowledge and memory mutation, plus the book supports that language. 
 </p>
 </div>
 </div>
@@ -304,7 +320,16 @@ The language I will use is OCaml simply because it allows us to combine CS19 kno
 <h3 id="Real%20contests">Real contests</h3>
 <div class="outline-text-3" id="text-Real%20contests">
 <p>
-We can enter live regional ICPC practice on Kattis, CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> type challenges, most of which we have no hope of winning of course but it's practice to pick up more experience. Apply for a job and the interview is another live contest, you win a signing bonus and salary. If you lose who cares find another interview.
+We can compete on CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> type challenges, most of which we have no hope of winning of course but it's practice to pick up more experience. Apply for a job and the interview is another live contest, you win a signing bonus and salary. If you lose who cares find another interview.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Example%20class" class="outline-3">
+<h3 id="Example%20class">Example class</h3>
+<div class="outline-text-3" id="text-Example%20class">
+<p>
+There's a good writeup <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">here</a> of an exchange student from Canada who took the CS 3233 in Singapore and how the author of the book organizes those classes. It's a 4 month course. The takeaway here is learn to modify existing algorithms instead of using fancy structures. 
 </p>
 </div>
 </div>
@@ -314,99 +339,78 @@ We can enter live regional ICPC practice on Kattis, CodeForces, <a href="https:/
 <h2 id="Begin">Begin</h2>
 <div class="outline-text-2" id="text-Begin">
 <p>
-I'll start with reading chapter 1-2 of <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/index.html">Functional Data Structures</a>, it carefully explains big-O notation and is filled with other real world analysis advice not found elsewhere. 
+The strategy here is learn through doing, the more problems you do per day, the more you will understand the concept of computation, the greater your confidence grows. Kattis problem difficulty past around 6 or 7 often means you are writing multiple algorithms or altering many data structures, and many problems labelled 'hard' on sites like leetcode (the free version of leetcode anyway) are really just a level 3 difficulty in the competitive programming problem archive universe so some of these may take a lot of time to solve, ie: thinking about the solution all day or all weekend. Try to figure it out yourself before looking at the solution it's the only way you level up and the only way you remember what you did to recall it months later.
 </p>
 
 <p>
-In <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">Tools and Techniques</a> he uses CS19 notation of O([n -&gt; n<sup>2</sup>]) we already learned in the <a href="./software.html">software</a> workshop. There is cautious definitions here of what n actually is as big-O notation is more abstract than only regarding the input as n, it's saying that the growth rate of this function is bounded by O(n<sup>2</sup>). The formal definition in 2.1.2 notes how the meaning of n has now changed to notational convenience indicating both functions have 1 variable. Finally we learn the running time statement is a function of the number of items (inputs), and the use of order notation is giving us that running time in terms of another function that squares it's arguments. The notation n<sup>2</sup> is a function, it's the function that squares it's input so if f(n) is a function and the input is f(n<sup>2</sup>) then we have a function who's input is another function. 
+I assume you either downloaded the book <i>Competitive Programming 3</i> from library genesis or bought the 4th edition for $20, it's handbook sized and worth the money as it has a ton of solved exercises just in the book itself let alone the hundreds+ of UVa/Kattis problems it recommends doing. The book has several languages as well, Bulgarian and Spanish for the 4th edition and I believe Korean and Spanish for the 3rd edition.
 </p>
 
 <p>
-In case you don't understand the formal definition plug in examples where c = 4 and 'n nought' or n<sub>0</sub> is 3. 'N nought' I've never seen a definition, I've always assumed it's notation for a constant derived from the input, often used when you want to talk about some cutoff point and assign that value to n<sub>0</sub>. We can also rewrite the formal definition for this specific example, if g(n) = n<sup>2</sup> then f(n) = 1 + 2n + 3(g(n)) \(\le\) c(g(n)) for all inputs n greater than a previous input n<sub>0</sub> :  
+This book is designed to be read several times, you work through it once then go back and solve the exercises in the book, as they won't make sense the first time around. The author(s) are very blunt in saying if you want to compete, you should know everything in this book and be able to solve any of the problems in under 30 minutes, if very competitive under 10 minutes.  
 </p>
+</div>
 
-<ul class="org-ul">
-<li>Example: c=4, n<sub>0</sub> = 3</li>
-<li>1 + 2n + 3n<sup>2</sup> \(\le\) c \(\cdot\) n<sup>2</sup></li>
-<li>1 + 2(3) + 3(9) \(\le\) 4(9)</li>
-<li>34 \(\le\) 36
-<ul class="org-ul">
-<li>any other value for n you plug in higher than n<sub>0</sub>, f(n) will always be less than or equal to g(n) if c=4 meaning f(n) is bounded by 4(g(n)) or just f(n) is in O(n<sup>2</sup>) since we don't care about constants in worst case analysis.</li>
-</ul></li>
-</ul>
-
+<div id="outline-container-Preface%20-%20How%20many%20problems" class="outline-3">
+<h3 id="Preface%20-%20How%20many%20problems">Preface - How many problems</h3>
+<div class="outline-text-3" id="text-Preface%20-%20How%20many%20problems">
 <p>
-He tells the reader that there will be no inequality manipulation teaching in this text, because it's not relevant to algorithm analysis despite every other intro book insisting on manipulating inequalities. 'We rarely count exactly then make things more imprecise". 
+Each chapter topic will have 7 starred 'must try' problems, and all of them are on the site <a href="https://cpbook.net/methodstosolve">methods to solve</a> and that site is more up to date than the book. It contains a mix of onlinejudge.com (formely called UVa) and Kattis problem sets, the bold problem titles are the recommended problems. Hints how to solve them are on the right-hand side if you haven't figured it out but the book explains that's how the authors solved them, but there could be other ways. The book we are reading (vol I) satisfies the majority of the 2020 IOI syllabus (and also 2021 syllabus since 2020 was virtual and ICPC cancelled until March 2022). 
 </p>
 
 <p>
-Section 2.1.3 is all from the course we already did and PAPL has a chapter <i>Combining Big-O without Woe</i> <a href="https://papl.cs.brown.edu/2020/predicting-growth.html#%28part._big-oh-closure%29">here</a> to and the 'small stuff theorem' is saying that if f(n)/g(n) has a limit of 0 when n goes to infinity, then g(n) the denominator must be bigger than f(n) so if h(n) is bounded by O(f(n) + g(n)) then it's bounded by O(g(n)) the function with larger growth.
+The main changes between this book and CP3 is rearranging some chapters for the new harder IOI syllabus, mainly moving the 'math book 2' content to this book, including new algorithms and including both Python and OCaml as languages as Tezos I believe has sponsored OCaml for the book. CMU's current prof of 15-451 designed their original 15-295 competitive programming seminar, and IIRC most of his code there was in OCaml as well. You could do this book in 2 different languages, 1 language for UVa/onlinejudge problems (ANSI C (C89), C++ (C++98), Pascal, Java, C++11 or Python 3) and Kattis accepts many more languages, like OCaml.
 </p>
 
 <p>
-<i>Algorithm anlaysis in practice</i> concludes with stating none of this is predictive. We use it to get 'potentially useful information' early in the design process that can change after deployment on actual hardware. 
+IOI I believe is presently Python/Java/C++ and ICPC regionals only C/C++, with the world finals now accepting Kotlin, C/C++, Java and Python with no guarantee the problems can be solved in all the languages as judges only solve all the problems in Java and C/C++.  
+</p>
+</div>
+
+<div id="outline-container-Total%20problems" class="outline-4">
+<h4 id="Total%20problems">Total problems</h4>
+<div class="outline-text-4" id="text-Total%20problems">
+<p>
+If we only do the starred problems, how many are we looking at? Chapter 4 has 167, 3 has 195, 2 has 165 and the first chapter has 182 or 709 total problems. If you want to do all the starred problems within 6 months, you must average 3-4 solved problems per day which honestly isn't very hard we aren't doing ICPC/IOI level problems until we get into Chapter 3/4 where the difficulty can get up to 6-8. On average, most problems will be in the 3.2 to 5 difficulty range after chapter 1, so 'very hard' leetcode level (if using free tier leetcode). If you read the above example class writeup of that exchange student, he solved <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">50 problems a day</a> when he started to get to 500 points on Kattis which is the entrance requirements for the course, and he solved 500 more problems on Kattis during his 4 month course in Singapore all averaging about mid 3 difficulty so this isn't impossible to do, and he did his under time constraint while in the course competing against other students and we have all the time we want.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Chapter%201" class="outline-3">
+<h3 id="Chapter%201">Chapter 1</h3>
+<div class="outline-text-3" id="text-Chapter%201">
+<p>
+Most of this hasn't changed since CP3, so casually read it. 1.3.2 problem solving skills are mentioned, many of which were taught in CS19 in the other <a href="./software.html">workshop</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 max, you could still pass the online judge. The book notes that we should already have the skills to judge the runtime complexity of our own algorithms, and the C++ <i>Advanced Data Structures</i> course will teach more of this as we go through the CP4 text. 1.3.4 talks about programming languages, how factorial of 40 is trivial in Python but difficult in C/C++, and requires a special library BigInteger in Java. The point being you should know multiple languages enough to be able to solve any ICPC problem with them. Really if you look at imperative languages at the forest level instead of the trees, they're all just reinvented ALGOL with some kind of dynamic/static dispatch bolted on, this is detailed in Robert Harper's pfpl <a href="http://www.cs.cmu.edu/~rwh/pfpl/">book</a>.
 </p>
 
 <p>
-2.1.7 If the max of I for I<sub>n</sub> in R(A,I) notation isn't clear, in worst case analysis you take the max of an instance I for an algorithm A running it, the notation I<sub>n</sub> means the set of all instances, ie: algorithm insertion sort where the list is half sorted, reversed, already sorted, etc.
+You may want to switch up languages to something more interesting than yet another ALGOL clone considering we are doing 700 problems, half can be done in C/C++ on UVa and other half on Kattis with Haskell, OCaml, even Prolog. You can also use SPOJ online judge and use any language from assembly to AWK.
 </p>
+</div>
+</div>
 
-<p>
-2.2.2 Insertion sort that calls insert(n-1) on every recursive call we already learned in CS19, reminder T(n) means running time: 
-</p>
-
-<p>
-For T<sub>insert</sub> :
-</p>
-<ul class="org-ul">
-<li>T(0) = c<sub>0</sub></li>
-<li>T(1) = T(1-1) + c</li>
-<li>T(2) = T(2-1) + c</li>
-<li>T(3) = T(3-1) + c</li>
-</ul>
-
-<p>
-Where c is constant work. To understand this expand everything out, if T(0) = c<sub>0</sub> and T(1) = c<sub>0</sub> + c then substitute:
-</p>
-<ul class="org-ul">
-<li>T(0) = c<sub>0</sub></li>
-<li>T(1) = (c<sub>0</sub>) + c</li>
-<li>T(2) = (c<sub>0</sub> + c) + c</li>
-<li>T(3) = (c<sub>0</sub> + c + c) + c</li>
-</ul>
-
-<p>
-From this pattern T<sub>insert</sub>(n) = nc + c<sub>0</sub> or T<sub>insert</sub>(n) \(\in\) O(n) since the growth of this function is linear. As isort is calling insert at every recursive call, by product theorem of 2.1.6: O(isort(n) \(\cdot\) insert(n)) or T<sub>isort</sub>(n) \(\in\) O(n<sup>2</sup>). This is also explained in <a href="https://papl.cs.brown.edu/2020/predicting-growth.html">PAPL</a> 17.10 <i>Solving Recurrences</i> where common recurrences are listed and their geometric interpretations. 
-</p>
-
-<p>
-For T<sub>isort</sub> :
-</p>
-<ul class="org-ul">
-<li>T(0) = c<sub>0</sub> (return empty list)</li>
-<li>T(1) = (T(0)) + c + T<sub>insert</sub>(0)</li>
-<li>T(2) = (T(0) + c + T<sub>insert</sub>(0)) + c + T<sub>insert</sub>(1)</li>
-<li>T(3) = (T(0) + 2c + T<sub>insert</sub>(0) + T<sub>insert</sub>(1)) + c + T<sub>insert</sub>(2)</li>
-<li>T(4) = (T(0) + 3c + T<sub>insert</sub>(0) + T<sub>insert</sub>(1) + T<sub>insert</sub>(2)) + c + T<sub>insert</sub>(3)</li>
-</ul>
-
-<p>
-We know insert T(n) = nc + c<sub>0</sub> so isort T(3) = 6c and isort T(4) is 10c, and the closed form solution to this is (k(k + 1))/2 and since k \(\cdot\) k is k<sup>2</sup> then insertion sort growth is bounded by big-O n<sup>2</sup> worst case runing time but we didn't have to do a recurrence relation, we could have just recognized a linear function F was calling another function G at every step so this is O(F X G) or O(n<sup>2</sup>).     
-</p>
-
-<p>
-Exercise 0 recite it outloud to yourself as you look at the algorithm, then you can easily see what the failed logic is. Insertion sort calls insert(n-1) on every single recursion. 
-</p>
-
-
+<div id="outline-container-Input%2FOutput" class="outline-3">
+<h3 id="Input%2FOutput">Input/Output</h3>
+<div class="outline-text-3" id="text-Input%2FOutput">
 <p>
 TODO
 </p>
+
+
+
+
+
+
+
+
+
 
 <hr>
 <p>
 <a href="./index.html">Home</a>
 </p>
+</div>
 </div>
 </div>
 </div>
