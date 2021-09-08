@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-30 Mon 20:12 -->
+<!-- 2021-09-07 Tue 19:17 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn (Modern) Calculus from Scratch in X Days</title>
@@ -275,6 +275,7 @@
 <li><a href="#Day%201%20Functions">Day 1 Functions</a>
 <ul>
 <li><a href="#RStudio">RStudio</a></li>
+<li><a href="#Pyret">Pyret</a></li>
 </ul>
 </li>
 <li><a href="#Day%202%20Exercises">Day 2 Exercises</a></li>
@@ -320,7 +321,14 @@
 <li><a href="#3.5%20Method%20of%20Least%20Squares">3.5 Method of Least Squares</a></li>
 </ul>
 </li>
-<li><a href="#Day%2013%20Derivatives">Day 13 Derivatives</a></li>
+<li><a href="#Day%2013%20Derivatives">Day 13 Derivatives</a>
+<ul>
+<li><a href="#The%20Derivative%20is%20a%20function%20that%20consumes%20other%20functions%20and%20returns%20a%20function">The Derivative is a function that consumes other functions and returns a function</a></li>
+</ul>
+</li>
+<li><a href="#Day%2014%20Derivatives%20of%20modeling%20functions">Day 14 Derivatives of modeling functions</a></li>
+<li><a href="#Day%2015%20%20Chain%20rule%2C%20partial%20derivatives">Day 15  Chain rule, partial derivatives</a></li>
+<li><a href="#Day%2016%20Limits">Day 16 Limits</a></li>
 </ul>
 </div>
 </nav>
@@ -563,7 +571,12 @@ A polynomial recall from highschool looks like p(x) = 5x<sup>2</sup> + 3x - 1 or
 </p>
 
 <p>
-Casually watch the rest of this seminar, this is how you do problems. It's an investigation throwing out very tiny ideas and playing around with these ideas until you know more about the problem and possibly solve it. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused as he flies through that part in the lecture. 
+Casually watch the rest of this seminar, this is how you do problems. It's an investigation throwing out very tiny ideas and playing around with these ideas until you know more about the problem and possibly solve it. I already watched it <a href="https://learnaifromscratch.github.io/math.html#Lecture%201%20Introduction">here</a> and explain how he cleared the fractions if you're confused as he flies through that part in the lecture.
+</p>
+
+<p>
+<b>Future Practice</b>
+Oxford's <a href="https://undergroundmathematics.org/">underground mathematics</a> is a site with a subway theme that gives you practice questions and solutions. There is also a free pdf <a href="https://www.openbookpublishers.com/product/1050">Preparing for University</a> which is to train the reader in 'advanced mathematics' needed for undergrad study later. Every page is a problem with a fully worked out solution. 
 </p>
 </div>
 
@@ -630,7 +643,7 @@ Example 5 is much easier if you include brackets f(x) = \((3)\sqrt{x} - 5\) now 
 Reminder we are just using RStudio as a glorified calculator, you don't need to know how to program and can easily figure this out yourself. The <i>working in R studio</i> aside you can do this <a href="https://rstudio.cloud/">online</a> instead of having to install anything locally if all you have is a phone, meaning work in your browser if you want. The instructions are in the appendix, make a throwaway gmail account, open new project on r studio, first thing you type:
 </p>
 
-<pre class="example" id="org413d88f">
+<pre class="example" id="orgcd13cd4">
 install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 </pre>
 
@@ -638,7 +651,7 @@ install.packages(c("MMAC", "mosaic", "mosaicCalc", "manipulate"))
 The 'c()' is a "vector" meaning multiple inputs to the install.packages() command. This command is actually install.packages(c) where c is filled with entries. Then you have to include all these libraries as written in require statements in the aside on page 12:
 </p>
 
-<pre class="example" id="org61a5d7f">
+<pre class="example" id="org540dce7">
 require(MMAC)
 require(mosaic)
 require(mosaicCalc)
@@ -653,7 +666,7 @@ Which means if you're using the console, where you type in something and it eval
 I rewrote <i>Example 7(d)</i> to make it more clear:
 </p>
 
-<pre class="example" id="orge9762ec">
+<pre class="example" id="org1293574">
 abs( (2^3 / 4^5) - (9^8 / 6^7) )
 </pre>
 
@@ -662,7 +675,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 </p>
 
 
-<pre class="example" id="org127a994">
+<pre class="example" id="org36347c9">
 &gt; f = makeFun( ((8 * x) + 4) ~x)
 &gt; f(3)
 [1] 28
@@ -672,7 +685,7 @@ I'm not sure why they use (2<sup>3</sup>)/(4<sup>5</sup>) style brackets but wha
 And I rewrote the plotFun example, translated this means plot function ((-4 * x) + 8) where the input is x, and limit the visual range to (-5,5) 
 </p>
 
-<pre class="example" id="orgc39d791">
+<pre class="example" id="org4e8955b">
 plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 </pre>
 
@@ -680,7 +693,7 @@ plotFun( ((-4 * x) +8)~x,xlim=range(-5,5) )
 <b>Question 9</b> Graph a line with a specific domain in RStudio:
 </p>
 
-<pre class="example" id="orge184666">
+<pre class="example" id="org3958c67">
 &gt; line = makeFun(((-3.546 * x) - 9.128)~x)
 &gt; plotFun(line(x)~x, xlim=range(-15,15))
 
@@ -690,6 +703,15 @@ Translated: plotFun(function, display-options)
 
 &gt; plotFun(line, xlim=range(-15,15))
 </pre>
+</div>
+</div>
+
+<div id="outline-container-Pyret" class="outline-3">
+<h3 id="Pyret">Pyret</h3>
+<div class="outline-text-3" id="text-Pyret">
+<p>
+You can do this entire book in Pyret as well if you've already done the <a href="./software">software</a> workshop, or read a few chapters from <a href="https://papl.cs.brown.edu/2020/">this</a>, using <a href="https://code.pyret.org/">https://code.pyret.org/</a> web page to write and run code. You can use built-in libraries like num-abs() or rewrite everything yourself. Here's rewriting some of the book's R <a href="https://code.pyret.org/editor#share=1L4taGbGWXFncQVQfgOBe3hgjQzHgGXul&amp;v=1904b2c">examples</a> and you can plot function graphs in <a href="https://code.pyret.org/editor#share=1v5NNyzCUosy_gwbXQR2TYUy23Hfz7W2C&amp;v=1904b2c">Pyret</a> too or use <a href="https://www.desmos.com/calculator/dj57o1hf67">Desmos</a>:
+</p>
 </div>
 </div>
 </div>
@@ -1147,7 +1169,7 @@ To understand the parameters use <a href="https://www.desmos.com/calculator/akvl
 <h3 id="2.7%20Dimensional%20Analysis">2.7 Dimensional Analysis</h3>
 <div class="outline-text-3" id="text-2.7%20Dimensional%20Analysis">
 <p>
-'Dimensionaless' means a scalar, or c<sup>1</sup> like 1, 2, 3. The number line is 1-dimensional, cartesian (x,y) plane is 2-dimensional, 3-dimensions is (x,y,z) etc.  
+'Dimensionaless' means a scalar, or c<sup>1</sup> like 1, 2, 3. The number line is 1-dimensional, cartesian (x,y) plane is 2-dimensional, 3-dimensions is (x,y,z) etc. 
 </p>
 
 <p>
@@ -1169,15 +1191,44 @@ Skim the rest of the chapter noting you may have to come back here later if ever
 <h2 id="Day%2012%20Method%20of%20least%20squares">Day 12 Method of least squares</h2>
 <div class="outline-text-2" id="text-Day%2012%20Method%20of%20least%20squares">
 <p>
-This chapter is optional, you can skip to Chapter 4 <i>Derivatives</i> if you want to get to calculus, but if you've never seen linear algebra may as well learn some projective linear algebra.
+This chapter is optional, you can skip to Chapter 4 <i>Derivatives</i> if you want to get to calculus. From chapter 3.1 to 3.4 is a linear algebra crash course. All the vector operations examples in the book you can write as small toy programs, for example like I did <a href="https://code.pyret.org/editor#share=14JcMt6HDv27NAMXaIo0j0NpCfdeEj_Q4&amp;v=1904b2c">here</a> in Pyret or you can do in rstudio.
 </p>
 
-<p>
-From chapter 3.1 to 3.5 is a linear algebra crash course, there's already a <a href="./linear.html">workshop</a> for this but if you want the fastest possible understanding of these chapters, watch some 3blue1brown <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">videos</a> so you can see what vector projection is or Ax = b (matrix A multiplied by vector x = vector b).
-</p>
+<ul class="org-ul">
+<li><a href="https://youtu.be/fNk_zzaMoSs">Vectors</a> - 3Blue1Brown</li>
+<li><a href="https://youtu.be/k7RM-ot2NWY">Linear combinations</a> - 3Blue1brown
+<ul class="org-ul">
+<li>What a scalar is, what a basis is</li>
+</ul></li>
+<li><a href="https://youtu.be/kYB8IZa5AuE">Linear transformations and matrices</a> - 3Blue1Brown
+<ul class="org-ul">
+<li>Explains what the columns of a 2x2 matrix represent</li>
+</ul></li>
+<li><a href="https://youtu.be/Ip3X9LOh2dk">The determinant</a> - 3Blue1Brown
+<ul class="org-ul">
+<li>ad-bc is the area</li>
+</ul></li>
+</ul>
 
 <p>
-In the book in chapter 3.2 what they call 'solving a 2x2 matrix equation' is fully explained by <a href="https://youtu.be/Bozm0XgzmQo">this</a> lecture on the 2x2 determinant from NJ Wildberger's excellent playlist <a href="https://www.youtube.com/playlist?list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">Linear Algebraic Geometry</a>. Gilbert Strang also has a good intro lecture for Ax = b <a href="https://youtu.be/J7DzL2_Na80">here</a>. I highly recommend the 3blue1brown lectures and Wildberger lecture to understand what's happening. Software exists to do everything the book talks about, though it's nice to be able to verify calculations in real life you will probably be dealing with gigantic vectors and matrices with no hope of calculating inverse matrices by hand, and then it's better to learn the actual algorithm to accomplish such things and that's what we do in the <a href="./ai.html">AI</a> and <a href="./algorithms.html">algorithms</a> workshops, see real life BLAS algorithm optimization.
+The last determinant lecture doesn't really show you how it's actually calculated, though this will:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/6XghF70fqkY">Area and volume</a> - WildLinAlg 4 (12m)</li>
+</ul>
+
+<p>
+We are only watching enough of this lecture to understand the determinant in the book which is kind of given without explanation. Start at the beginning of the lecture.
+</p>
+
+<ul class="org-ul">
+<li>Up to 6:20 he shows how you would think about calculating the area of this special case</li>
+<li>@8:40 this is the determinant ad - bc of a 2x2 matrix</li>
+</ul>
+
+<p>
+You can stop watching at 12:00, though the lecture will go on to define 3D determinants which you can do if you take the linear algebra <a href="./linear.html">workshop</a>
 </p>
 </div>
 
@@ -1185,7 +1236,7 @@ In the book in chapter 3.2 what they call 'solving a 2x2 matrix equation' is ful
 <h3 id="3.5%20Method%20of%20Least%20Squares">3.5 Method of Least Squares</h3>
 <div class="outline-text-3" id="text-3.5%20Method%20of%20Least%20Squares">
 <p>
-If the data is not linear, make a linear approximation y = mx + b. Good chapter if you've never seen this before, page 336 <i>Understanding the Method of Least Squares</i> explains what is happening geometrically which is a projection to make it linear like a shadow from 3D to the 2D cartesian plane. Wildberger has a few reflective and projective linear algebra lectures on his channel like this <a href="https://youtu.be/elDCJmDQBfc">lecture</a> but a good idea of what is going on is <a href="https://youtu.be/NYK0GBQVngs">this</a> lecture on projective geometry where you'll see a projective 3D plane (invented by a 16 year old Pascal in the 1600s). 
+If the data is not linear, make a linear approximation y = mx + b. Good chapter if you've never seen this before, page 336 <i>Understanding the Method of Least Squares</i> explains what is happening geometrically which is a projection to make it linear like mapping a shadow from 3D to the 2D cartesian plane. 
 </p>
 </div>
 </div>
@@ -1203,14 +1254,14 @@ We finally can learn calculus.
 </ul>
 
 <p>
-@ 2:03 s(t) distance function is a sigmoidal function, v(t) velocity function changes based on how s(t) changes, and v(t) looks a lot like a probability <a href="https://www.statisticshowto.com/probability-and-statistics/normal-distributions/">normal distribution</a>. Skimming through chapter 4.1 <i>Rates of Change</i> from the math modeling book, example 3 to find the instantaneous rate of change, you are shrinking that ds/dt triangle in the 3Blue1Brown videos to almost a point instead of an interval, and approximating the value to 5. Tangents are explained as a limiting of secant lines that are drawn with smaller and smalle intervals.
+@2:03 s(t) distance function is a sigmoidal function, v(t) velocity function changes based on how s(t) changes, and v(t) looks a lot like a probability <a href="https://www.statisticshowto.com/probability-and-statistics/normal-distributions/">normal distribution</a>. Skimming through chapter 4.1 <i>Rates of Change</i> from the math modeling book, example 3 to find the instantaneous rate of change, you are shrinking that ds/dt triangle in the 3Blue1Brown videos to almost a point instead of an interval, and approximating the value to 5. Tangents are explained as a limiting of secant lines that are drawn with smaller and smaller intervals.
 </p>
 
 <p>
 The RStudio examples, on page 357 I rewrote the syntax they've been using to more generic R syntax:
 </p>
 
-<pre class="example" id="org061191d">
+<pre class="example" id="org5fb3e74">
 f &lt;- function(x) {
   (6 * x^3) - (3 * x^2)
 }
@@ -1224,8 +1275,9 @@ AROC(2,3)
 </pre>
 
 <p>
-If you are using rstudio cloud, Ctrl-Alt-r runs all your code, and in the bottom console you can enter AROC(2,3). 
+If you are using rstudio cloud, Ctrl-Alt-r runs all your code, and in the bottom console you can enter AROC(2,3).
 </p>
+
 
 <ul class="org-ul">
 <li><a href="https://youtu.be/S0_qX4VJhMQ">Derivative formulas visualized</a> (19m) the derivatives x<sup>n</sup> and sin(x) shown geometrically using area.</li>
@@ -1239,26 +1291,61 @@ The corresponding chapter is 4.3 <i>Derivatives of Modeling Functions</i>.
 <li>linear differentiation: f(x) = mx + b
 <ul class="org-ul">
 <li>f'(x) = m</li>
-<li>the derivative of a line, is it's slope, think of the small triangle 3Blue1Brown drew to represent a 'slight nudge' and a straight linear line is going to have the same 'triangle' or slope</li>
+<li>the derivative of a line, is it's slope, think of the small triangle 3Blue1Brown drew to represent a 'slight nudge' and a straight linear line is going to have the same 'triangle' or rise/run slope</li>
 </ul></li>
 </ul>
 
 <p>
-This chapter provides, without proofs the rest of the modeling functions derivatives like how the derivative of e<sup>x</sup> is e<sup>x</sup>. If you expand the geometric series of e<sup>x</sup> and do a power rule derivative, you end up with e<sup>x</sup> however there were many other functions not covered, which we will cover in depth. I skimmed this chapter and didn't do any exercises, you'll see why soon, when we prove all these things.
+This chapter provides, without proofs the rest of the modeling functions derivatives like how the derivative of e<sup>x</sup> is e<sup>x</sup>. If you expand the geometric series of e<sup>x</sup> and do a power rule derivative on each term, you end up with e<sup>x</sup> however there were many other functions not covered, which we will cover in depth.
+</p>
+</div>
+
+<div id="outline-container-The%20Derivative%20is%20a%20function%20that%20consumes%20other%20functions%20and%20returns%20a%20function" class="outline-3">
+<h3 id="The%20Derivative%20is%20a%20function%20that%20consumes%20other%20functions%20and%20returns%20a%20function">The Derivative is a function that consumes other functions and returns a function</h3>
+<div class="outline-text-3" id="text-The%20Derivative%20is%20a%20function%20that%20consumes%20other%20functions%20and%20returns%20a%20function">
+<p>
+If you did the <a href="./software.html">software</a> workshop, I assume you can understand <a href="https://papl.cs.brown.edu/2019/func-as-data.html#%28part._.A_.Little_.Calculus%29">this</a> writeup that explains derivative math notation. Summarized below:
 </p>
 
+<p>
+\[{\frac{d}{dx}} x^2 = 2x\]
+</p>
+
+<p>
+dy/dx or d/dx consumes functions like p(x) = x<sup>2</sup> + 3x + 5 and returns a new function p'(x) = 2x + 3 even when we only have a constant returned, such as d(2x) = 2 then what that really means is d(2x) returns p'(x) = 2 a function that returns 2 for all inputs x.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Day%2014%20Derivatives%20of%20modeling%20functions" class="outline-2">
+<h2 id="Day%2014%20Derivatives%20of%20modeling%20functions">Day 14 Derivatives of modeling functions</h2>
+<div class="outline-text-2" id="text-Day%2014%20Derivatives%20of%20modeling%20functions">
+<p>
+TODO  
+</p>
+</div>
+</div>
+
+<div id="outline-container-Day%2015%20%20Chain%20rule%2C%20partial%20derivatives" class="outline-2">
+<h2 id="Day%2015%20%20Chain%20rule%2C%20partial%20derivatives">Day 15  Chain rule, partial derivatives</h2>
+<div class="outline-text-2" id="text-Day%2015%20%20Chain%20rule%2C%20partial%20derivatives">
 <ul class="org-ul">
 <li><a href="https://youtu.be/YG15m2VwSjA">Chain and Product Rule</a> visualized (17m) again using area.</li>
 </ul>
 
 <p>
+Chapter 4.4 of the book. TODO
+</p>
+</div>
+</div>
+
+<div id="outline-container-Day%2016%20Limits" class="outline-2">
+<h2 id="Day%2016%20Limits">Day 16 Limits</h2>
+<div class="outline-text-2" id="text-Day%2016%20Limits">
+<p>
 TODO
 </p>
-
-
-
-
-
 
 
 <hr>
