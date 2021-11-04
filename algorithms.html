@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-03 Wed 21:14 -->
+<!-- 2021-11-04 Thu 07:59 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -251,7 +251,6 @@
 </li>
 <li><a href="#Problem%20solving%20walkthrough">Problem solving walkthrough</a></li>
 <li><a href="#CSE101%20Lecture%201">CSE101 Lecture 1</a></li>
-<li><a href="#C%2B%2B%20standard">C++ standard</a></li>
 </ul>
 </div>
 </nav>
@@ -281,7 +280,7 @@ If you do not have experience or some kind of formal accreditation it is unlikel
 <h3 id="What%20does%20a%20SWE%2FSDE%20actually%20do">What does a SWE/SDE actually do</h3>
 <div class="outline-text-3" id="text-What%20does%20a%20SWE%2FSDE%20actually%20do">
 <p>
-In bigtech or other large corporate tech 80% of your work is debugging and 'forensic code analysis' meaning trying to figure out the (gigantic) software that your company bought and a lot of software they use is acquired like Android was by Google or React by Facebook/Meta. This is taught in <a href="./software.html">CS19</a> with property-based testing oracles and example writing. You are a detective writing examples to determine the properties of some undocumented massive software thing and then your testing oracles run to check these properties hold so you can write yet more tests to see if your potential small feature will integrate with the larger systems. You are unlikely to do anything else until you reach some level of trusted experience meaning you achieved multiple promotions, which are very difficult to get because of performance reviews which try and get rid of you yearly or sooner. The work here all depends on which team you land on or are able to request but the reality is you will likely do unchallenging work with little room for advancement, but it's a great place to start and learn directly from people with experience. 
+In bigtech or other large corporate tech 80% of your work is debugging and 'forensic code analysis' meaning trying to figure out the (gigantic) software that your company bought and a lot of software they use is acquired like Android was by Google or React by Facebook/Meta. This is taught in <a href="./software.html">CS19</a> with property-based testing oracles and example writing. You are a detective writing examples to determine the properties of some undocumented massive software thing and then your testing oracles run to check these properties hold so you can write yet more tests to see if your potential small feature will integrate with the larger systems. You are unlikely to do anything else until you reach some level of trusted experience meaning you achieved multiple promotions, which are very difficult to get because of performance reviews which try and get rid of you yearly or sooner. <i>The work here all depends on which team you land on or are able to request</i> but the reality is you will likely do unchallenging work with little room for advancement, but it's a great place to start and learn directly from people with experience. 
 </p>
 
 <p>
@@ -307,7 +306,7 @@ In a research programming environment, which is where I started, you get to desi
 <h3 id="Why%20not%20leetcode">Why not leetcode</h3>
 <div class="outline-text-3" id="text-Why%20not%20leetcode">
 <p>
-Because it costs money to get the good problems, while competitive programming is free and much more interesting. The hardest problems on free tier leetcode are rated about 3.6 of 10 on Kattis, the online judge we will use for problems. As an example: the median of Two Sorted Arrays is rated a hard problem on <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">free-tier</a> leetcode. On Kattis this same problem exists except it is <a href="https://open.kattis.com/problems/continuousmedian">continuous</a>. As the difficulty increases you have to modify/use multiple algorithms and data structures to solve codeforces or kattis problems. Competitive programming online judges will run an enormous amount of tests on your solutions and bound their runtime as well with unlimited submissions. The problems are similar in goal to math olympiad problems, the idea is that you really learn the art of problem solving to apply it to everything in life like theoretical CS research not do it simply get hired somewhere. Universities also have courses that use Kattis for assignments like <a href="https://algo.is/competitive-programming-course/">Reykjavik University</a> or <a href="https://nus.kattis.com/">NUS</a>.
+Because it costs money to get the good problems, while competitive programming is free and much more interesting. The hardest problems on free tier leetcode are rated about 3.6 of 10 on Kattis, the online judge we will use for problems. As an example: the median of Two Sorted Arrays is rated a hard problem on <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">free-tier</a> leetcode. On Kattis this same problem exists except it is <a href="https://open.kattis.com/problems/continuousmedian">continuous</a>. As the difficulty increases you have to modify/use multiple algorithms and data structures to solve codeforces or kattis problems. Competitive programming online judges will run an enormous amount of tests on your solutions and bound their runtime as well with unlimited submissions. The problems are similar in goal to math olympiad problems, the idea is that you really learn the art of problem solving to apply it to everything in life like open problems in theoretical CS research not only for the purposes of getting hired somewhere. Universities also have courses that use Kattis for assignments like <a href="https://algo.is/competitive-programming-course/">Reykjavik University</a> or <a href="https://nus.kattis.com/">NUS</a>.
 </p>
 </div>
 </div>
@@ -317,7 +316,7 @@ Because it costs money to get the good problems, while competitive programming i
 <h2 id="Materials">Materials</h2>
 <div class="outline-text-2" id="text-Materials">
 <ul class="org-ul">
-<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first volume, 4 chapters), which is around 260 pages and was written both for passing those silly FAANG job interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's ICPC team. Everything we learn we practice with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and problem runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>. You can use the free version 3 from library genesis if you want.</li>
+<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first volume, 4 chapters), which is around 260 pages and was written both for passing technical interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's ICPC/IOI team. Everything we learn we practice with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and problem runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>. You don't have to buy this book but it's recommended.</li>
 
 <li>The <a href="https://cseweb.ucsd.edu/~dakane/CSE101/">course</a> CSE101 with open lectures from UCSD taught by IMO gold medalist and four time(!) Putnam fellow <a href="https://en.wikipedia.org/wiki/Daniel_Kane_(mathematician)">Daniel Kane</a> who's algorithms course I stumbled on by accident while looking up his Putnam seminar. This follows the book <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> that most universities still use, and the course has a huge amount of problems and worked solutions so we can practice and learn the art of estimating and proving complexity bounds of programs.</li>
 </ul>
@@ -355,13 +354,21 @@ These are only needed if the public online resources disappear
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages/compiler versions. Pick whatever you personally like from the list of Kattis supported languages though if you're doing this to pass some interview, choose a language hackerrank/codility or coderpad supports as phone screeners and interviewers tend to use those. Some languages like Rust people have reported having problems with the ownership abstraction while using it for competition programming, decide for this yourself of course maybe they don't know what they are doing.
-Whatever you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example.
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages/compiler versions. Pick whatever you personally like from the list of Kattis supported languages though if you're doing this to pass some interview, choose a language hackerrank/codility or coderpad supports as phone screeners and interviewers tend to use those. Some languages like Rust people have reported having problems with the ownership abstraction while using it for competition programming, decide for this yourself of course maybe they don't know what they are doing. Whatever you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example.
 </p>
 
 <p>
 If you're using a phone, there are some offline interpreters/compilers you can install from whatever app store your phone is compatible with of varying quality or try the free version of <a href="https://replit.com/">repl.it</a>. You submit to Kattis for judging by pasting in the source code through a web editor, uploading a source file(s) or write a script to automate this using their API. You get unlimited judging submissions.
 </p>
+</div>
+
+<div id="outline-container-Kotlin" class="outline-4">
+<h4 id="Kotlin">Kotlin</h4>
+<div class="outline-text-4" id="text-Kotlin">
+<p>
+Since ICPC allows for Kotlin submissions now, and it's syntax is very similar to Pyret including <a href="https://kotlinlang.org/docs/functions.html#generic-functions">generic type variabless</a>, if you did any of the CS19 workshop you intuitively already know Kotlin. There is even a Kotlin official doc for <a href="https://kotlinlang.org/docs/competitive-programming.html">competitive programming</a>. This is the language I will use.
+</p>
+</div>
 </div>
 </div>
 
@@ -446,7 +453,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 He has a simple C++ template:
 </p>
-<pre class="example" id="org87d34a7">
+<pre class="example" id="org4b1f108">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -464,7 +471,7 @@ while (TT--) {
 </pre>
 
 <p>
-std::cin is synchronized to std::cout and performs default buffer flushing operations we want to avoid to save runtime. This is all written in online C++ references you can read yourself. We will read about C/C++ streams soon. His compiler flags you can figure out yourself too as you go, most of them are to make compiler messages extra verbose for debugging. 
+std::cin is synchronized to std::cout and performs default buffer flushing operations to save runtime. This is all written in online C++ references you can read yourself if you choose to use C++. His compiler flags he explains in one of these Twitch streams, or you can figure out yourself too as you go, most of them are to make compiler messages extra verbose for debugging. 
 </p>
 
 <p>
@@ -499,14 +506,14 @@ Watching <a href="https://cseweb.ucsd.edu/~dakane/CSE101/Lec1.html">lecture 1</a
 </ul>
 
 <p>
-The first 35 minutes of this lecture are course logistics you may want to watch anyway, he talks about what he expects on the homework (we have all the solutions). For some reason virtually every algorithms book/course beings with Fib(n) and how slow the easy recursive solution is. You fix it with memoization (caching earlier results), or changing the function to be associative like we learned in CS19, or how Robert Harper terms it 'recursion without reentrancy'.
+The first 35 minutes of this lecture are course logistics you may want to watch anyway, he talks about what he expects on the homework (we have all the solutions). This course will use pseudocode that applies to any language. For some reason virtually every algorithms book/course beings with Fib(n) and how slow the easy recursive solution is. You fix it with memoization (caching earlier results), or changing the function to be associative like we learned in CS19, or how Robert Harper terms it 'recursion without reentrancy'.
 </p>
 
 <p>
 Cut and paste this program <a href="https://code.pyret.org/editor">here</a> it finishes immediately:
 </p>
 
-<pre class="example" id="orgc93a7dc">
+<pre class="example" id="orga635b80">
 fun fib(n :: Number) -&gt; Number:
   doc: "Simple Fib(n) without reentry" 
 
@@ -539,20 +546,8 @@ In the lecture he uses an array to store previous results as a caching example, 
 <p>
 TODO day 1 and hw
 </p>
-</div>
-</div>
 
 
-<div id="outline-container-C%2B%2B%20standard" class="outline-2">
-<h2 id="C%2B%2B%20standard">C++ standard</h2>
-<div class="outline-text-2" id="text-C%2B%2B%20standard">
-<p>
-To my surprise you're supposed to actually buy the standard for +$200 USD, which is ridiculous, so we have to go off unofficial sources such as <a href="https://timsong-cpp.github.io/cppwp/n4659/#intro">this</a> or manually build the current draft standard from LaTeX sources. As we are using C++17 I looked up that unofficial standard source instead. Anyway, the standard for me is always the best source for learning a new language as often the libraries are heavily optimized and make no sense at all, and blog posts/books other sites are more confusing than they are helpful leaving out details. If you took CS19 in the other workshop, browsing through a standard to get directly to base types, the memory model and program execution is a morning exercise over a coffee.
-</p>
-
-<p>
-So let's read TODO
-</p>
 
 <hr>
 <p>
