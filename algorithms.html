@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-03 Wed 20:24 -->
+<!-- 2021-11-03 Wed 21:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -240,7 +240,7 @@
 <li><a href="#Backups">Backups</a></li>
 <li><a href="#Languages">Languages</a></li>
 <li><a href="#Real%20contests">Real contests</a></li>
-<li><a href="#Example%20competitive%20programming%20class">Example competitive programming class</a></li>
+<li><a href="#An%20example%20competitive%20programming%20class">An example competitive programming class</a></li>
 </ul>
 </li>
 <li><a href="#Begin">Begin</a>
@@ -272,7 +272,7 @@ This will include system design and is targeted to Palantir and Amazon, since th
 <h3 id="Why%20wagie%20slaving">Why wagie slaving</h3>
 <div class="outline-text-3" id="text-Why%20wagie%20slaving">
 <p>
-If you do not have experience or some kind of formal accreditation it is unlikely you will even be able to bypass the AI resume filter elsewhere whereas at Amazon or Palantir, you just need to pass the (difficult) interviews and you're in, and they have an army of recruiters. The day you are hired you are free to drop Amazon employee on your resume and parachute into something better if you want, or pretend this is school: you are learning directly from people like a personal tutor with actual degrees and experience and getting paid to do so.
+If you do not have experience or some kind of formal accreditation it is unlikely you will even be able to bypass the AI resume filter elsewhere whereas at Amazon or Palantir, you just need to pass the (difficult) interviews and you're in, as they have an army of recruiters always looking for new hires. The day you are hired you are free to drop Amazon employee on your resume and parachute into something better if you want, or pretend this is school: you are learning directly from people like a personal tutor with actual degrees and experience and getting paid to do so.
 </p>
 </div>
 </div>
@@ -281,15 +281,15 @@ If you do not have experience or some kind of formal accreditation it is unlikel
 <h3 id="What%20does%20a%20SWE%2FSDE%20actually%20do">What does a SWE/SDE actually do</h3>
 <div class="outline-text-3" id="text-What%20does%20a%20SWE%2FSDE%20actually%20do">
 <p>
-In bigtech or other large corporate tech 80% of your work is debugging and 'forensic code analysis' meaning trying to figure out the (gigantic) software that your company bought and almost all software they use is acquired like Android was or React. This is taught in <a href="./software.html">CS19</a> with property-based testing oracles and example writing. You are a detective writing examples to determine the property of some undocumented massive software thing and then your testing oracles run to check these properties hold so you can write yet more tests to see if your potential small feature will integrate with the larger systems. You are unlikely to do anything else until you reach some level of trusted experience meaning multiple promotions, which are very difficult to get because of performance reviews which try and get rid of you yearly or sooner. The work here all depends on which team you land on or are able to request but the reality is you will likely do unchallenging work with little room for advancement. 
+In bigtech or other large corporate tech 80% of your work is debugging and 'forensic code analysis' meaning trying to figure out the (gigantic) software that your company bought and a lot of software they use is acquired like Android was by Google or React by Facebook/Meta. This is taught in <a href="./software.html">CS19</a> with property-based testing oracles and example writing. You are a detective writing examples to determine the properties of some undocumented massive software thing and then your testing oracles run to check these properties hold so you can write yet more tests to see if your potential small feature will integrate with the larger systems. You are unlikely to do anything else until you reach some level of trusted experience meaning you achieved multiple promotions, which are very difficult to get because of performance reviews which try and get rid of you yearly or sooner. The work here all depends on which team you land on or are able to request but the reality is you will likely do unchallenging work with little room for advancement, but it's a great place to start and learn directly from people with experience. 
 </p>
 
 <p>
-In a consulting company like Palantir or Algorithmia you are semi-autonomous and can architect everything yourself but of course this will typically involve existing software so once again 80% debugging and forensic code analysis trying to get clients systems to interact with their data analysis tools which are themselves gigantic abstractions like Kubernetes (Rubix) or Apache Spark or <a href="https://www.palantir.com/platforms/foundry/">Foundry</a>. The client seems to always be governments or airlines which all have nightmarish legacy systems but there is opportunity for creativity here trying to squeeze data out of <a href="https://www.sabre.com/insights/tag/airline-solutions/">Sabre</a> or w/e proprietary system they're using, or write optimizations. There's ability here for rapid advancement, if you are competitive this seems a better deal than bigtech as you have more personal control over your destiny than some arbitrary performance review because you didn't write enough commits in one month out of 12 or something equally silly.
+In a consulting company like Palantir or Algorithmia you are semi-autonomous and can architect everything yourself but of course this will typically involve existing software so once again 80% debugging and forensic code analysis trying to get client systems to interact with data analysis tools which are themselves gigantic complexity abstractions like Kubernetes (Rubix) or Apache Spark or <a href="https://www.palantir.com/platforms/foundry/">Foundry</a>. The client seems to always be governments or airlines which all have nightmarish legacy systems but there is opportunity for creativity here trying to squeeze data out of <a href="https://www.sabre.com/insights/tag/airline-solutions/">Sabre</a> or w/e proprietary system they're using, or write optimizations. There's ability here for rapid advancement, if you are competitive this seems a better deal than bigtech as you have more personal control over your destiny than some arbitrary performance review because you didn't write enough commits in one month out of 12 or something equally silly.
 </p>
 
 <p>
-In a specialty Fintech company like Two Sigma or Jane Street advancement is much more likely than bigtech, and your work much more challenging squeezing out all the performance you can while still following regulatory requirements like real time updates to some government trading agency. If your work here has company impact, you get a (huge) bonus and opportunity to put that huge bonus into the company's private fund(s). There is much more personal responsibility than bigtech, if you make a mistake with some portfolio optimizer it could cost millions per second so you are rewarded that much more for quality work. The hours can be very long because often data arrives from some proprietary source after end of trading day, and is dumped in terabytes. Think 100+ firehoses of data that all need to be checked for integrity (trades stamped after market closing) and prepared so Quants can use them for strategy analysis and backtesting. Everything from custom UIs to rewriting an email exchange server from scratch to helping a Quant translate his Python model into an optimized strategy to enter with the next trading day. Getting an interview here is not as hard as you think, as it's getting more difficult, and expensive, to recruit directly from schools as bigtech swoops in and poaches all the grads with their lesser working hours, casual scooter riding campuses and bigger base salaries. Sometimes these Fintech outfits can set up shop on campus and directly recruit and many times they can't, bigtech signs some deal with the university to be the exclusive recruiters beside the usual government agencies or otherwise schemes to lock competition for new grads out. Passing the interviews is of course harder than anything else, that's why this workshop exists.     
+In a specialty Fintech company like Two Sigma or Jane Street advancement is much more likely than bigtech and your work much more challenging squeezing out all the performance you can while still following regulatory requirements like real time updates to some government trading agency. If your work here has company impact, you get a (huge) bonus and opportunity to put that huge bonus into the company's private fund(s). There is much more personal responsibility than bigtech, if you make a mistake with some portfolio optimizer it could cost millions per second so correct and cautious code while still maintaining optimization at NYSE competitive trading speed. The hours can be very long because often data arrives from some proprietary source after end of trading day, and is dumped in terabytes. Think 100+ proprietary (meaning, you have to pay huge money for them) firehoses of data that all need to be checked for integrity (trades stamped after market closing) and prepared so Quants can use them for strategy analysis and backtesting. Everything from custom UIs to rewriting an email exchange server from scratch to helping a Quant translate a Python model into high speed code for market entrancy the next or that trading day. Getting an interview here is not as hard as you think, as it's getting more difficult and expensive to recruit directly from schools as bigtech swoops in and poaches all the grads with their lesser working hours, casual scooter riding campuses and bigger base salaries. Sometimes these Fintech outfits can set up shop on campus and directly recruit and many times they can't, bigtech signs some deal with the university to be the exclusive recruiters beside the usual government agencies, or otherwise schemes to lock competition for new grads out. Passing the interviews is of course harder than anything else, that's why this workshop exists.     
 </p>
 
 <p>
@@ -297,7 +297,7 @@ In a startup you get to architect it all from scratch together but they won't ev
 </p>
 
 <p>
-In a research programming environment, which is where I started, you get to architect from scratch and are attached to a post-doc research group that usually doesn't care at all what you do so long as it works correctly and is done on time/budget. You are basically the CTO. A lot of work here is focused on correctness and reproducibility using archaic libraries like Fortran libraries because some paper in the past used the same library and wrote all their proofs with that library, you want to replicate those proofs for some minor part of the bigger thing they are trying to accomplish so exact replication is key then you get to hack your face off doing whatever you want. Getting into this work usually just requires applying from a university careers page, no students apply because they are off chasing highly paid internships instead. The pay is low but it's enough to live comfortably within means, the work totally fascinating and you may even get a letter of recommendation from a PhD after which means gradschool is that much more easier to get into if that's what you want. You still have to pass a technical interview that may even cover design so again, you will still need this workshop.
+In a research programming environment, which is where I started, you get to design from scratch and are attached to a post-doc research group that usually doesn't care at all what you do so long as it works correctly and is done on time/budget. You are basically the CTO. A lot of work here is focused on reproducibility using archaic libraries like Fortran libraries because some paper in the past used the same library and wrote all their proofs with that library, you want to replicate those proofs for some minor part of the bigger thing they are trying to accomplish so testing for exact replication is key then you get to hack your face off doing whatever you want. Getting into this work usually just requires applying from a university careers page, no students apply because they are off chasing highly paid internships instead. The pay is low but it's enough to live comfortably within means, the work totally fascinating and you may even get a letter of recommendation from a PhD after which means gradschool is that much more easier to get into if that's what you want. You still have to pass a technical interview that may even cover design so again, you will still need this workshop.
 </p>
 </div>
 </div>
@@ -317,9 +317,9 @@ Because it costs money to get the good problems, while competitive programming i
 <h2 id="Materials">Materials</h2>
 <div class="outline-text-2" id="text-Materials">
 <ul class="org-ul">
-<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first volume, 4 chapters), which is around 260 pages and was written both for passing those silly FAANG job interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's national ICPC team. Everything we learn we practice with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and problem runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>.</li>
+<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first volume, 4 chapters), which is around 260 pages and was written both for passing those silly FAANG job interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's ICPC team. Everything we learn we practice with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and problem runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>. You can use the free version 3 from library genesis if you want.</li>
 
-<li>The <a href="https://cseweb.ucsd.edu/~dakane/CSE101/">course</a> CSE101 with open lectures from UCSD taught by IMO gold medalist and four time(!) Putnam fellow <a href="https://en.wikipedia.org/wiki/Daniel_Kane_(mathematician)">Daniel Kane</a> who's algorithms course I stumbled on by accident while looking up his Putnam seminar. This follows the book <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> that most universities still use, and the course has a huge amount of problems and worked solutions so we can practice.</li>
+<li>The <a href="https://cseweb.ucsd.edu/~dakane/CSE101/">course</a> CSE101 with open lectures from UCSD taught by IMO gold medalist and four time(!) Putnam fellow <a href="https://en.wikipedia.org/wiki/Daniel_Kane_(mathematician)">Daniel Kane</a> who's algorithms course I stumbled on by accident while looking up his Putnam seminar. This follows the book <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> that most universities still use, and the course has a huge amount of problems and worked solutions so we can practice and learn the art of estimating and proving complexity bounds of programs.</li>
 </ul>
 
 <p>
@@ -333,7 +333,7 @@ We will also do some of:
 </ul>
 
 <p>
-We will also do system design, if you've done CS19 you're already familiar with this but here we will really study it and also learn how to spot code review flags, so you don't get them. 
+We will also do system design, if you've done CS19 you're already familiar with this but here we will go over examples of other software design and also learn how to spot code review flags, so you don't get them. 
 </p>
 </div>
 
@@ -341,18 +341,12 @@ We will also do system design, if you've done CS19 you're already familiar with 
 <h3 id="Backups">Backups</h3>
 <div class="outline-text-3" id="text-Backups">
 <p>
-These are only needed if the resources disappear
+These are only needed if the public online resources disappear
 </p>
 
 <ul class="org-ul">
-<li>A torrent backup of CSE101 including all the practice exams/solutions and lectures
-<ul class="org-ul">
-<li><a href="http://btcache.me/torrent/D3B621E29F1C4647E37E5111A1B28FDB790BB056">http://btcache.me/torrent/D3B621E29F1C4647E37E5111A1B28FDB790BB056</a></li>
-</ul></li>
-<li>A torrent backup of the 15-451 content, we won't do it all (only computational geometry)
-<ul class="org-ul">
-<li><a href="http://btcache.me/torrent/A898A215DDF9FA5E2BAF3F160EA2E9CC41128A04">http://btcache.me/torrent/A898A215DDF9FA5E2BAF3F160EA2E9CC41128A04</a></li>
-</ul></li>
+<li>A <a href="http://btcache.me/torrent/D3B621E29F1C4647E37E5111A1B28FDB790BB056">torrent</a> backup of CSE101 including all the practice exams/solutions and recorded lectures</li>
+<li>A <a href="http://btcache.me/torrent/A898A215DDF9FA5E2BAF3F160EA2E9CC41128A04">torrent</a> backup of some 15-451 content, we won't do it all (only computational geometry)</li>
 </ul>
 </div>
 </div>
@@ -361,11 +355,12 @@ These are only needed if the resources disappear
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages/compiler versions. Pick whatever you personally like from the list of Kattis supported languages though if you're doing this to pass some interview, choose a language hackerrank/codility or coderpad supports as phone screeners and interviewers tend to use those. The author(s) of CP4 expect you to know multiple languages to solve any problem as Python makes string manipulation tasks simple, and Java has gigantic number manipulation or Gregorian calendar libraries.
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard libraries for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages/compiler versions. Pick whatever you personally like from the list of Kattis supported languages though if you're doing this to pass some interview, choose a language hackerrank/codility or coderpad supports as phone screeners and interviewers tend to use those. Some languages like Rust people have reported having problems with the ownership abstraction while using it for competition programming, decide for this yourself of course maybe they don't know what they are doing.
+Whatever you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example.
 </p>
 
 <p>
-If you're using a phone, there are some offline interpreters/compilers you can install from whatever app store your phone is compatible with of varying quality or try the free version of <a href="https://replit.com/">repl.it</a>, or any free online <a href="https://coliru.stacked-crooked.com/">compiler</a> note at the bottom of coliru after ./a.out you can manually enter an input to test your program. You submit to Kattis for judging by pasting in the source code through a web editor, uploading a source file(s) or write a script to automate this using their API. You get unlimited judging submissions.
+If you're using a phone, there are some offline interpreters/compilers you can install from whatever app store your phone is compatible with of varying quality or try the free version of <a href="https://replit.com/">repl.it</a>. You submit to Kattis for judging by pasting in the source code through a web editor, uploading a source file(s) or write a script to automate this using their API. You get unlimited judging submissions.
 </p>
 </div>
 </div>
@@ -379,11 +374,11 @@ We can compete on CodeForces, <a href="https://icfpcontest2021.github.io/index.h
 </div>
 </div>
 
-<div id="outline-container-Example%20competitive%20programming%20class" class="outline-3">
-<h3 id="Example%20competitive%20programming%20class">Example competitive programming class</h3>
-<div class="outline-text-3" id="text-Example%20competitive%20programming%20class">
+<div id="outline-container-An%20example%20competitive%20programming%20class" class="outline-3">
+<h3 id="An%20example%20competitive%20programming%20class">An example competitive programming class</h3>
+<div class="outline-text-3" id="text-An%20example%20competitive%20programming%20class">
 <p>
-There's a good writeup <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">here</a> of an exchange student from Canada who took the CS 3233 in Singapore and how the author of the book organizes those classes. It's a 4 month course. He recommends learning to modify existing algorithms instead of using fancy data structures.
+There's a good writeup <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">here</a> of an exchange student from Canada who took CS 3233 in Singapore and how the author of the cp4 book organizes those classes. It's a 12 day course expanded to 4 months. He recommends learning to modify existing algorithms instead of using fancy data structures.
 </p>
 </div>
 </div>
@@ -409,11 +404,11 @@ Each chapter topic will have 7 starred 'must try' problems, and all of them are 
 </p>
 
 <p>
-The main changes between this book and CP3 is on the book website, such as rearranging some chapters from book 2 to book 1 for the new IOI syllabus, deleting outdated problem categories and including new ones like NP-hard, NP-complete problems. OCaml added as a language, Tezos I believe has sponsored OCaml for the book. CMU's current prof of 15-451 designed their original 15-295 competitive programming seminar, and IIRC most of his code there was in OCaml as well. You could do this book in 2 different languages, 1 language for UVa/onlinejudge problems (C89, C++98, Pascal, Java, C++11 or Python 3) and Kattis accepts many more languages, like OCaml or Haskell or even Rust (check compiler version). 
+The main changes between this book and CP3 is on the book website, such as rearranging some chapters from book 2 to book 1 for the new IOI syllabus, deleting outdated problem categories and including new ones like NP-hard, NP-complete problems. OCaml added as a language, Tezos I believe has sponsored OCaml for the book. CMU's current prof of 15-451 designed their original 15-295 competitive programming seminar, and IIRC most of his code there was in OCaml as well. You could do this book in 2 different languages, 1 language for UVa/onlinejudge problems (C89, C++98, Pascal, Java, C++11 or Python 3) and Kattis accepts many more languages, like OCaml or Haskell (check compiler version). 
 </p>
 
 <p>
-IOI is presently Python/Java/C++ and ICPC regionals only C/C++, with the ICPC world finals now accepting Kotlin, C/C++, Java and Python with no guarantee the problems can be solved in all the languages as judges only use Java and C/C++ to write solutions. What this means is your solution in Kotlin or Python <i>may</i> exceed the time and resource constraints to get accepted verdict not that it's impossible to solve in those languages.  
+IOI is presently Python/Java/C++ and ICPC regionals only C/C++, with the ICPC world finals now accepting Kotlin, C/C++, Java and Python with no guarantee the problems can be solved in all the languages as judges only use Java and C/C++ to write solutions. What this means is your solution in Kotlin or Python <i>may</i> exceed the time and resource constraints to get accepted verdict as none of the judges have tried, not that it's impossible to solve in those languages.  
 </p>
 </div>
 
@@ -431,7 +426,7 @@ If we only do the starred problems listed on <a href="https://cpbook.net/methods
 <h3 id="Chapter%201">Chapter 1</h3>
 <div class="outline-text-3" id="text-Chapter%201">
 <p>
-Most of this hasn't changed since CP3, this is a casually read. 1.3.2 problem solving skills are mentioned, many of which were taught in CS19 in the other <a href="./software.html">workshop</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 max, you could still pass the online judge. The book notes that we should already have the skills to judge the runtime complexity of our own algorithms, which CSE101 will teach us as we go. 1.3.4 talks about programming languages, how factorial of 40 is trivial in Python but difficult in C/C++, and requires a special library BigInteger in Java. The point being you should know multiple languages enough to be able to solve any problem with them. Really if you look at imperative languages at the forest level instead of the trees, they're all just reinvented ALGOL with some kind of dynamic dispatch, this is detailed in Robert Harper's pfpl <a href="http://www.cs.cmu.edu/~rwh/pfpl/">book</a>.
+Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solving skills are mentioned, many of which were taught in <a href="./software.html">CS19</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 max, you could still pass the online judge tests. The book notes that we should already have the skills to judge the runtime complexity of our own algorithms, which CSE101 will teach us as we go. 1.3.4 talks about programming languages, how factorial of 40 is trivial in Python but difficult in C/C++, and requires a special library BigInteger in Java. The point being you should know multiple languages enough to be able to solve any problem with them. Really if you look at imperative languages at the forest level instead of the trees, they're all just reinvented ALGOL60 with some kind of dynamic dispatch, this is detailed in Robert Harper's pfpl <a href="http://www.cs.cmu.edu/~rwh/pfpl/">book</a>.
 </p>
 </div>
 </div>
@@ -451,7 +446,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 He has a simple C++ template:
 </p>
-<pre class="example" id="orgdcc10a3">
+<pre class="example" id="org87d34a7">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -473,11 +468,11 @@ std::cin is synchronized to std::cout and performs default buffer flushing opera
 </p>
 
 <p>
-You don't have to watch the entire 2hr vid, the last problem seems like the most informative as he gets TLE verdict and has to debug his code, telling the viewer how to do so. He begins most problems by writing himself examples as comments, something we already learned in <a href="./software.html">CS19</a>. He copies the problem input test cases into a text file 'in1' then pipes it into his compiled program "sol.exe &lt; in1" as stdin (standard input). He writes multiple submissions to compare their runtime/memory usage. He looks for some kind of mathematical structure in the formulas given in problem writeup. After he looks up the solutions and compares them to his own.    
+You don't have to watch the entire 2hr vid, the last problem seems like the most informative to watch. He begins most problems by writing himself examples as comments, something we already learned in <a href="./software.html">CS19</a>. He copies the problem input test cases into a text file 'in1' then pipes it into his compiled program "sol.exe &lt; in1" as stdin (standard input). He writes multiple submissions to compare their runtime/memory usage. He looks for some kind of mathematical structure in the formulas given in problem writeup. After he looks up the solutions and compares them to his own.    
 </p>
 
 <p>
-@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. As mentioned above in the last problem he get's time limit exceeded verdict and trolls his live stream that replacing all the variable names with a single letter will make it run faster. His solution had nested initialization of numerous vectors inside for loops, so everytime they loop you init another vector(s), once he removed those out of the loop he achieved accepted verdict. The judging server ran his program faster than his own laptop. 
+@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. In the last problem he get's time limit exceeded verdict and trolls his live stream that replacing all the variable names with a single letter will make it run faster. His solution had nested initialization of numerous vectors inside loops, so everytime they loop you init another vector(s), once he removed those out of the loop he achieved accepted verdict. The judging server ran his program faster than his own laptop, something to remember if debugging and believing your solution still isn't optimized enough. 
 </p>
 </div>
 </div>
@@ -511,7 +506,7 @@ The first 35 minutes of this lecture are course logistics you may want to watch 
 Cut and paste this program <a href="https://code.pyret.org/editor">here</a> it finishes immediately:
 </p>
 
-<pre class="example" id="org34f56f5">
+<pre class="example" id="orgc93a7dc">
 fun fib(n :: Number) -&gt; Number:
   doc: "Simple Fib(n) without reentry" 
 
