@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-10-29 Fri 07:40 -->
+<!-- 2021-11-03 Wed 20:24 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Algorithms for Programming Interviews</title>
+<title>Competitive Programming for Programming Interviews</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="jbh">
 <style type="text/css">
@@ -223,7 +223,7 @@
 <body>
 <div id="content">
 <header>
-<h1 class="title">Algorithms for Programming Interviews</h1>
+<h1 class="title">Competitive Programming for Programming Interviews</h1>
 </header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -231,6 +231,7 @@
 <li><a href="#What%20is%20this">What is this</a>
 <ul>
 <li><a href="#Why%20wagie%20slaving">Why wagie slaving</a></li>
+<li><a href="#What%20does%20a%20SWE%2FSDE%20actually%20do">What does a SWE/SDE actually do</a></li>
 <li><a href="#Why%20not%20leetcode">Why not leetcode</a></li>
 </ul>
 </li>
@@ -249,6 +250,7 @@
 </ul>
 </li>
 <li><a href="#Problem%20solving%20walkthrough">Problem solving walkthrough</a></li>
+<li><a href="#CSE101%20Lecture%201">CSE101 Lecture 1</a></li>
 <li><a href="#C%2B%2B%20standard">C++ standard</a></li>
 </ul>
 </div>
@@ -258,11 +260,11 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-A typical undergraduate design and analysis of algorithms class, but we practice with competitive programming resources to keep it interesting. This will include system design and is targeted to Palantir and Amazon, since they have recruiters everywhere and hire developers for US, Canada, India, Germany, UK, Ireland, Spain, China, Luxembourg, Poland, South Africa, Israel, Taiwan, Romania, Jordan, Australia, Netherlands, Japan, Mexico, Costa Rica, France, New Zealand, Italy, Arab Emirates, Egypt, Sweden, Finland, Chile, Austria, Greece (they pay greeks to relocate to Luxembourg) and probably a few countries I left out as I'm only going off the current vacancies on their websites.
+A typical undergraduate design and analysis of algorithms class, but we practice with competitive programming resources to keep it interesting. I do this in parallel with <a href="./software.html">CS19</a> to learn graphs and dynamic programming.
 </p>
 
 <p>
-Do you live in or can get to one of those countries and want to get paid to write software with no academic background whatsoever? Read on.
+This will include system design and is targeted to Palantir and Amazon, since they have recruiters everywhere and hire developers for US, Canada, India, Germany, UK, Ireland, Spain, China, Luxembourg, Poland, South Africa, Israel, Taiwan, Romania, Jordan, Australia, Netherlands, Japan, Mexico, Costa Rica, France, New Zealand, Italy, Arab Emirates, Egypt, Sweden, Finland, Chile, Austria, Greece (they pay greeks to relocate to Luxembourg) and probably a few countries I left out as I'm only going off the current vacancies on their websites. Do you live in or can get to one of those countries and want to get paid to write software with no academic background whatsoever? Read on.
 </p>
 </div>
 
@@ -275,11 +277,37 @@ If you do not have experience or some kind of formal accreditation it is unlikel
 </div>
 </div>
 
+<div id="outline-container-What%20does%20a%20SWE%2FSDE%20actually%20do" class="outline-3">
+<h3 id="What%20does%20a%20SWE%2FSDE%20actually%20do">What does a SWE/SDE actually do</h3>
+<div class="outline-text-3" id="text-What%20does%20a%20SWE%2FSDE%20actually%20do">
+<p>
+In bigtech or other large corporate tech 80% of your work is debugging and 'forensic code analysis' meaning trying to figure out the (gigantic) software that your company bought and almost all software they use is acquired like Android was or React. This is taught in <a href="./software.html">CS19</a> with property-based testing oracles and example writing. You are a detective writing examples to determine the property of some undocumented massive software thing and then your testing oracles run to check these properties hold so you can write yet more tests to see if your potential small feature will integrate with the larger systems. You are unlikely to do anything else until you reach some level of trusted experience meaning multiple promotions, which are very difficult to get because of performance reviews which try and get rid of you yearly or sooner. The work here all depends on which team you land on or are able to request but the reality is you will likely do unchallenging work with little room for advancement. 
+</p>
+
+<p>
+In a consulting company like Palantir or Algorithmia you are semi-autonomous and can architect everything yourself but of course this will typically involve existing software so once again 80% debugging and forensic code analysis trying to get clients systems to interact with their data analysis tools which are themselves gigantic abstractions like Kubernetes (Rubix) or Apache Spark or <a href="https://www.palantir.com/platforms/foundry/">Foundry</a>. The client seems to always be governments or airlines which all have nightmarish legacy systems but there is opportunity for creativity here trying to squeeze data out of <a href="https://www.sabre.com/insights/tag/airline-solutions/">Sabre</a> or w/e proprietary system they're using, or write optimizations. There's ability here for rapid advancement, if you are competitive this seems a better deal than bigtech as you have more personal control over your destiny than some arbitrary performance review because you didn't write enough commits in one month out of 12 or something equally silly.
+</p>
+
+<p>
+In a specialty Fintech company like Two Sigma or Jane Street advancement is much more likely than bigtech, and your work much more challenging squeezing out all the performance you can while still following regulatory requirements like real time updates to some government trading agency. If your work here has company impact, you get a (huge) bonus and opportunity to put that huge bonus into the company's private fund(s). There is much more personal responsibility than bigtech, if you make a mistake with some portfolio optimizer it could cost millions per second so you are rewarded that much more for quality work. The hours can be very long because often data arrives from some proprietary source after end of trading day, and is dumped in terabytes. Think 100+ firehoses of data that all need to be checked for integrity (trades stamped after market closing) and prepared so Quants can use them for strategy analysis and backtesting. Everything from custom UIs to rewriting an email exchange server from scratch to helping a Quant translate his Python model into an optimized strategy to enter with the next trading day. Getting an interview here is not as hard as you think, as it's getting more difficult, and expensive, to recruit directly from schools as bigtech swoops in and poaches all the grads with their lesser working hours, casual scooter riding campuses and bigger base salaries. Sometimes these Fintech outfits can set up shop on campus and directly recruit and many times they can't, bigtech signs some deal with the university to be the exclusive recruiters beside the usual government agencies or otherwise schemes to lock competition for new grads out. Passing the interviews is of course harder than anything else, that's why this workshop exists.     
+</p>
+
+<p>
+In a startup you get to architect it all from scratch together but they won't even look at you unless you have all of the above on your portfolio or you come recommended, like your coworkers at Amazon take off to make their own product and take you with them otherwise you aren't getting in without experience or credentials from a school unless you know somebody and can be recommended, and usually the way to know somebody is go to a school or work with them before they take off to found a startup.
+</p>
+
+<p>
+In a research programming environment, which is where I started, you get to architect from scratch and are attached to a post-doc research group that usually doesn't care at all what you do so long as it works correctly and is done on time/budget. You are basically the CTO. A lot of work here is focused on correctness and reproducibility using archaic libraries like Fortran libraries because some paper in the past used the same library and wrote all their proofs with that library, you want to replicate those proofs for some minor part of the bigger thing they are trying to accomplish so exact replication is key then you get to hack your face off doing whatever you want. Getting into this work usually just requires applying from a university careers page, no students apply because they are off chasing highly paid internships instead. The pay is low but it's enough to live comfortably within means, the work totally fascinating and you may even get a letter of recommendation from a PhD after which means gradschool is that much more easier to get into if that's what you want. You still have to pass a technical interview that may even cover design so again, you will still need this workshop.
+</p>
+</div>
+</div>
+
+
 <div id="outline-container-Why%20not%20leetcode" class="outline-3">
 <h3 id="Why%20not%20leetcode">Why not leetcode</h3>
 <div class="outline-text-3" id="text-Why%20not%20leetcode">
 <p>
-Because it costs money to get the good problems, while competitive programming is free. The hardest problems on free tier leetcode are rated about 3.6 on Kattis, the online judge we will use for problems.
+Because it costs money to get the good problems, while competitive programming is free and much more interesting. The hardest problems on free tier leetcode are rated about 3.6 of 10 on Kattis, the online judge we will use for problems. As an example: the median of Two Sorted Arrays is rated a hard problem on <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">free-tier</a> leetcode. On Kattis this same problem exists except it is <a href="https://open.kattis.com/problems/continuousmedian">continuous</a>. As the difficulty increases you have to modify/use multiple algorithms and data structures to solve codeforces or kattis problems. Competitive programming online judges will run an enormous amount of tests on your solutions and bound their runtime as well with unlimited submissions. The problems are similar in goal to math olympiad problems, the idea is that you really learn the art of problem solving to apply it to everything in life like theoretical CS research not do it simply get hired somewhere. Universities also have courses that use Kattis for assignments like <a href="https://algo.is/competitive-programming-course/">Reykjavik University</a> or <a href="https://nus.kattis.com/">NUS</a>.
 </p>
 </div>
 </div>
@@ -316,13 +344,16 @@ We will also do system design, if you've done CS19 you're already familiar with 
 These are only needed if the resources disappear
 </p>
 
-<pre class="example" id="orgcd8e526">
-- A torrent backup of CSE101 including all the practice exams/solutions and lectures
-magnet:?xt=urn:btih:2O3CDYU7DRDEPY36KEI2DMUP3N4QXMCW&amp;dn=cseweb.ucsd.edu&amp;tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce
-   
-- A torrent backup of the 15-451 content, we won't do it all (only computational geometry)
-magnet:?xt=urn:btih:VCMKEFO57H5F4K5PH4LA5IXJZRARFCQE&amp;dn=15451&amp;tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce
-</pre>
+<ul class="org-ul">
+<li>A torrent backup of CSE101 including all the practice exams/solutions and lectures
+<ul class="org-ul">
+<li><a href="http://btcache.me/torrent/D3B621E29F1C4647E37E5111A1B28FDB790BB056">http://btcache.me/torrent/D3B621E29F1C4647E37E5111A1B28FDB790BB056</a></li>
+</ul></li>
+<li>A torrent backup of the 15-451 content, we won't do it all (only computational geometry)
+<ul class="org-ul">
+<li><a href="http://btcache.me/torrent/A898A215DDF9FA5E2BAF3F160EA2E9CC41128A04">http://btcache.me/torrent/A898A215DDF9FA5E2BAF3F160EA2E9CC41128A04</a></li>
+</ul></li>
+</ul>
 </div>
 </div>
 
@@ -420,7 +451,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 He has a simple C++ template:
 </p>
-<pre class="example" id="org532f0e8">
+<pre class="example" id="orgdcc10a3">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -442,14 +473,80 @@ std::cin is synchronized to std::cout and performs default buffer flushing opera
 </p>
 
 <p>
-You don't have to watch the entire 2hr vid, the last problem seems like the most informative as he gets TLE verdict and has to debug his code, telling the viewer how to do so. He begins most problems by writing himself examples as comments, something we already learned in <a href="./software.html">CS19</a>. He copies the problem input test cases into a text file 'in1' then pipes it into his compiled program "sol.exe &lt; in1" as stdin (standard input). He writes multiple submissions to compare their runtime/memory usage. He looks for some kind of mathematical structure in the formulas given in problem writeup.    
+You don't have to watch the entire 2hr vid, the last problem seems like the most informative as he gets TLE verdict and has to debug his code, telling the viewer how to do so. He begins most problems by writing himself examples as comments, something we already learned in <a href="./software.html">CS19</a>. He copies the problem input test cases into a text file 'in1' then pipes it into his compiled program "sol.exe &lt; in1" as stdin (standard input). He writes multiple submissions to compare their runtime/memory usage. He looks for some kind of mathematical structure in the formulas given in problem writeup. After he looks up the solutions and compares them to his own.    
 </p>
 
 <p>
-@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. He get's time limit exceeded verdict and trolls his live stream that replacing all the variable names with a single letter will make it run faster. His solution had nested initialization of numerous vectors inside for loops, so everytime they loop you init another vector(s), once he removed those out of the loop he achieved accepted verdict. The judging server ran his program faster than his own laptop. 
+@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. As mentioned above in the last problem he get's time limit exceeded verdict and trolls his live stream that replacing all the variable names with a single letter will make it run faster. His solution had nested initialization of numerous vectors inside for loops, so everytime they loop you init another vector(s), once he removed those out of the loop he achieved accepted verdict. The judging server ran his program faster than his own laptop. 
 </p>
 </div>
 </div>
+
+<div id="outline-container-CSE101%20Lecture%201" class="outline-2">
+<h2 id="CSE101%20Lecture%201">CSE101 Lecture 1</h2>
+<div class="outline-text-2" id="text-CSE101%20Lecture%201">
+<p>
+Watching <a href="https://cseweb.ucsd.edu/~dakane/CSE101/Lec1.html">lecture 1</a>, I'm going to follow this course's topics and match them with the competitive programming book. These topics are presented in CSE101 in this order:
+</p>
+
+<ul class="org-ul">
+<li>Graphs</li>
+<li>Problem solving tools:  
+<ul class="org-ul">
+<li>Divide &amp; Conquer</li>
+<li>Greedy search</li>
+<li>Complete search</li>
+<li>Dynamic programming</li>
+</ul></li>
+<li>NP-Completeness</li>
+<li>Linear programming</li>
+<li>Matrix problems ie: 'determine if there is a vector X in matrix Y' type questions</li>
+</ul>
+
+<p>
+The first 35 minutes of this lecture are course logistics you may want to watch anyway, he talks about what he expects on the homework (we have all the solutions). For some reason virtually every algorithms book/course beings with Fib(n) and how slow the easy recursive solution is. You fix it with memoization (caching earlier results), or changing the function to be associative like we learned in CS19, or how Robert Harper terms it 'recursion without reentrancy'.
+</p>
+
+<p>
+Cut and paste this program <a href="https://code.pyret.org/editor">here</a> it finishes immediately:
+</p>
+
+<pre class="example" id="org34f56f5">
+fun fib(n :: Number) -&gt; Number:
+  doc: "Simple Fib(n) without reentry" 
+
+  fun fib-helper(count, prev-1, prev-2):
+    if count &lt;= 0:
+      prev-1
+    else:
+      fib-helper(count - 1, (prev-1 + prev-2), prev-1)
+    end
+  end
+  
+  fib-helper(n - 2, 1, 1)
+where:
+  fib(300) is 222232244629420445529739893461909967206666939096499764990979600 
+  fib(100) is 354224848179261915075
+  fib(11) is 89 
+  fib(9) is 34
+  fib(5) is 5
+  fib(4) is 3
+  fib(3) is 2
+  fib(2) is 1
+  fib(1) is 1
+end
+</pre>
+
+<p>
+In the lecture he uses an array to store previous results as a caching example, this is just a demo we aren't supposed to memorize what he's doing. It's meant to reinforce 'what exactly is the complexity of initializing an array, how does this work at the machine implementation level' meaning that could be an O(1) constant operation in some languages.
+</p>
+
+<p>
+TODO day 1 and hw
+</p>
+</div>
+</div>
+
 
 <div id="outline-container-C%2B%2B%20standard" class="outline-2">
 <h2 id="C%2B%2B%20standard">C++ standard</h2>
