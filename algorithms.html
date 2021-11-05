@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-05 Fri 07:58 -->
+<!-- 2021-11-05 Fri 16:58 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -254,6 +254,9 @@
 </ul>
 </div>
 </nav>
+<p>
+q#+STARTUP: showall
+</p>
 
 <div id="outline-container-What%20is%20this" class="outline-2">
 <h2 id="What%20is%20this">What is this</h2>
@@ -292,15 +295,23 @@ In a specialty Fintech company like Two Sigma or Jane Street advancement is much
 </p>
 
 <p>
-In a startup you get to architect it all from scratch together but they won't even look at you unless you have all of the above on your portfolio or you come recommended, like your coworkers at Amazon take off to make their own product and take you with them otherwise you aren't getting in without experience or credentials from a school unless you know somebody and can be recommended, and usually the way to know somebody is go to a school or work with them before they take off to found a startup.
+In a startup you get to architect it all from scratch together but they won't risk hiring you unless you have all of the above on your portfolio or you come recommended ie: your coworkers at Amazon take off to make their own product and take you with them. Of course you can make your own startup but how are you going to design your system(s) for scale or be able to judge the people you hire without taking this workshop yourself? 
 </p>
 
 <p>
 In a research programming environment, which is where I started, you get to design from scratch and are attached to a post-doc research group that usually doesn't care at all what you do so long as it works correctly and is done on time/budget. You are basically the CTO. A lot of work here is focused on reproducibility using archaic libraries like Fortran libraries because some paper in the past used the same library and wrote all their proofs with that library, you want to replicate those proofs for some minor part of the bigger thing they are trying to accomplish so testing for exact replication is key then you get to hack your face off doing whatever you want. Getting into this work usually just requires applying from a university careers page, no students apply because they are off chasing highly paid internships instead. The pay is low but it's enough to live comfortably within means, the work totally fascinating and you may even get a letter of recommendation from a PhD after which means gradschool is that much more easier to get into if that's what you want. You still have to pass a technical interview that may even cover design so again, you will still need this workshop.
 </p>
 </div>
-</div>
 
+<div id="outline-container-Part-time" class="outline-4">
+<h4 id="Part-time">Part-time</h4>
+<div class="outline-text-4" id="text-Part-time">
+<p>
+Is possible, send out a firehose of applications and indicate you can only work part-time, some outfits may be fine with it but you will need a wealth of experience. There is also <a href="https://mobilejazz.com/careers/">mobilejazz.com</a> who hires P/T Kotlin and other remote developers. 
+</p>
+</div>
+</div>
+</div>
 
 <div id="outline-container-Why%20not%20leetcode" class="outline-3">
 <h3 id="Why%20not%20leetcode">Why not leetcode</h3>
@@ -459,7 +470,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 He has a simple C++ template:
 </p>
-<pre class="example" id="org934ea2b">
+<pre class="example" id="org4db3e1b">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -519,7 +530,7 @@ The first 35 minutes of this lecture are course logistics you may want to watch 
 Cut and paste this program <a href="https://code.pyret.org/editor">here</a> it finishes immediately:
 </p>
 
-<pre class="example" id="orgf19c850">
+<pre class="example" id="org908447e">
 fun fib(n :: Number) -&gt; Number:
   doc: "Simple Fib(n) without reentry" 
 
@@ -546,12 +557,17 @@ end
 </pre>
 
 <p>
-In the lecture he uses an array to store previous results as a caching example, this is just a demo we aren't supposed to memorize what he's doing. It's meant to reinforce 'what exactly is the complexity of initializing an array, how does this work at the machine implementation level' meaning that could be an O(1) constant operation in some languages.
+There's a typo in the slides @50:48 'A theta(n) algorithm will beat a theta(n x n) algorithm for large enough n' which is confusing as hell, what does 'beat' mean? It grows less or more? However from CS19 we know if one function is growing n<sup>2</sup> and you crank up the inputs, it will grow faster than a function growing linearly. He's using a different notation than big-O, big-theta, which is is exampled <a href="https://i.stack.imgur.com/nLm8w.png">here</a> it bounds a function with an upper and lower bound and is that f(n) function between O(g(n)) and Omega(g(n)). Everything in this lecture is contained in <i>Prologue</i> of the DPV book.  
 </p>
 
 <p>
-TODO day 1 and hw
+We are skipping hw 0 because it stupidly asks a bunch of graph questions before even introducing what they are, it's one of those annoying 'test the class to see where they are' type homeworks. Read through DPV chapter 1 the parts on basic arithmetic using logarithms.
 </p>
+
+<p>
+TODO
+</p>
+
 
 
 
