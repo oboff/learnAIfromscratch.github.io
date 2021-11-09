@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-07-22 Thu 22:06 -->
+<!-- 2021-11-08 Mon 16:48 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software Security</title>
@@ -228,12 +228,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#Intro">Intro</a></li>
+<li><a href="#Intro">Intro</a>
+<ul>
 <li><a href="#CSCI%202951U%20Topics%20in%20Software%20Security">CSCI 2951U Topics in Software Security</a></li>
+</ul>
+</li>
 <li><a href="#Lecture%201">Lecture 1</a>
 <ul>
 <li><a href="#Pwn2Own">Pwn2Own</a></li>
-<li><a href="#C%20crash%20course">C crash course</a></li>
+<li><a href="#Shadiest%20of%20all%20hacking%20competitions">Shadiest of all hacking competitions</a></li>
+<li><a href="#Basic%20machine%20arithmetic%20crash%20course">Basic machine arithmetic crash course</a></li>
+<li><a href="#Basic%20C%20crash%20course">Basic C crash course</a></li>
+<li><a href="#Paper%3A%20Eternal%20War%20in%20Memory">Paper: Eternal War in Memory</a></li>
+<li><a href="#"></a></li>
 </ul>
 </li>
 </ul>
@@ -244,20 +251,19 @@
 <h2 id="Intro">Intro</h2>
 <div class="outline-text-2" id="text-Intro">
 <p>
-What's the current 'state of the art' as way as software security only because I don't want my own software to be broken.
+What's the current 'state of the art' as way as software security only because I don't want my own software to be broken. 
 </p>
 </div>
-</div>
 
-<div id="outline-container-CSCI%202951U%20Topics%20in%20Software%20Security" class="outline-2">
-<h2 id="CSCI%202951U%20Topics%20in%20Software%20Security">CSCI 2951U Topics in Software Security</h2>
-<div class="outline-text-2" id="text-CSCI%202951U%20Topics%20in%20Software%20Security">
+<div id="outline-container-CSCI%202951U%20Topics%20in%20Software%20Security" class="outline-3">
+<h3 id="CSCI%202951U%20Topics%20in%20Software%20Security">CSCI 2951U Topics in Software Security</h3>
+<div class="outline-text-3" id="text-CSCI%202951U%20Topics%20in%20Software%20Security">
 <p>
-From the <a href="https://cs.brown.edu/courses/csci2951-u/">overview</a>:
+From the <a href="https://cs.brown.edu/courses/csci2951-u/">overview</a> of the <a href="https://cs.brown.edu/courses/csci2951-u/lectures.html">course</a>:   
 </p>
 
 <p>
-"CSCI 2951U investigates the state-of-the-art in software/systems exploitation and defense. More specifically, the course is structured as a seminar where students present (along with the instructor) research papers to their peers. We will begin with a summary of prevalent software- and hardware-related defects, which are typically found in applications written in memory unsafe languages, like C/C++, and/or contemporary architectures, such as x86 and ARM, and proceed to surveying what we are up against: traditional and modern exploitation techniques, ranging from classical code injection and code reuse up to the newest goodies, like JIT-ROP, Blind ROP, and software-based microarchitectural attacks. For the bulk part, we will be focusing on the latest advances in protection mechanisms, mitigation techniques, and tools against modern vulnerability classes and exploitation methods." 
+"CSCI 2951U investigates the state-of-the-art in software/systems exploitation and defense. More specifically, the course is structured as a seminar where students present (along with the instructor) research papers to their peers. We will begin with a summary of prevalent software and hardware related defects, which are typically found in applications written in memory unsafe languages, like C/C++, and/or contemporary architectures, such as x86 and ARM, and proceed to surveying what we are up against: traditional and modern exploitation techniques, ranging from classical code injection and code reuse up to the newest goodies, like JIT-ROP, Blind ROP, and software-based microarchitectural attacks. For the bulk part, we will be focusing on the latest advances in protection mechanisms, mitigation techniques, and tools against modern vulnerability classes and exploitation methods." 
 </p>
 
 <p>
@@ -267,18 +273,43 @@ How the course works:
 <p>
 "Every week we will be discussing (a set of) research papers. Students are expected to read the assigned papers and write a short review (critique) before each class&#x2026;..(Your paper review) should discuss the pros and cons of the proposed idea, protection mechanism, or bypass technique"
 </p>
+
+<p>
+Exactly what I am looking for, a survey of modern attacks and mitigations to stop them not a bunch of how-to tutorials, we can figure out the how-to ourselves after reading about their implementation and experiment ourselves. All the prereqs needed we'll just figure out ourselves backtracking and filling in gaps as we go.
+</p>
 </div>
 </div>
+</div>
+
 
 <div id="outline-container-Lecture%201" class="outline-2">
 <h2 id="Lecture%201">Lecture 1</h2>
 <div class="outline-text-2" id="text-Lecture%201">
 <p>
-The only lecture with <a href="https://cs.brown.edu/courses/csci2951-u/slides/l01.pdf">slides</a>. There's prereqs but they're going to review the most important concepts anyway, great. The first paper they want us to read is <a href="https://ieeexplore.ieee.org/document/6547101">this</a> <i>SoK: Eternal War in Memory</i>. Get the DOI number from that page and paste it into <a href="https://en.wikipedia.org/wiki/Sci-Hub">Sci-Hub</a> or click on PDF.
+The lecture <a href="https://cs.brown.edu/courses/csci2951-u/slides/l01.pdf">slides</a>. There's prereqs but they indicate we are going to review the most important concepts anyway in all the papers and assigned reading, great.
 </p>
 
 <p>
-Reading the abstract they setup a general model for memory corruption attacks, pointing out performance is a problem for better memory policies so nobody uses them. We read this with the course advice in mind to 'discuss the pros and cons of the proposed idea, protection mechanism, or bypass technique'. Let's read the paper.
+We just need to know:
+</p>
+
+<ul class="org-ul">
+<li>basic C/x86 asm</li>
+<li>code injection</li>
+<li>code reuse (return oriented programming)</li>
+<li>linking and loading</li>
+<li>virtual memory    
+<ul class="org-ul">
+<li>all are covered by a <a href="https://www.youtube.com/playlist?list=PLcQU3vbfgCc9sVAiHf5761UUApjZ3ZD3x">few lectures</a> from CMUs 15-213 and <a href="https://cs.brown.edu/courses/csci1650/lectures.html">CSCI 1650</a></li>
+</ul></li>
+</ul>
+
+<p>
+The first paper they want us to read is <a href="https://ieeexplore.ieee.org/document/6547101">this</a> <i>SoK: Eternal War in Memory</i>. Get the DOI number from that page and paste it into <a href="https://en.wikipedia.org/wiki/Sci-Hub">Sci-Hub</a> or click on PDF.
+</p>
+
+<p>
+Reading the abstract they setup a general model for memory corruption attacks, pointing out performance is a problem for using better memory policies so nobody uses them. We read this with the course advice in mind to 'discuss the pros and cons of the proposed idea, protection mechanism, or bypass technique'. Let's read the paper.
 </p>
 </div>
 
@@ -286,36 +317,63 @@ Reading the abstract they setup a general model for memory corruption attacks, p
 <h3 id="Pwn2Own">Pwn2Own</h3>
 <div class="outline-text-3" id="text-Pwn2Own">
 <p>
-This paper talks about <a href="https://www.zerodayinitiative.com/blog/2021/4/2/pwn2own-2021-schedule-and-live-results">pwn2own</a> which you can watch day 1 <a href="https://youtu.be/dA3aIMgRFY8">here</a> and around the 6hr mark there's a good interview with an Egyptian hacker who says it takes 3 months to understand how a thing works, then not very long after to find a vuln using IDA Pro to reverse engineer said thing. He says in the beginning he knew nothing and was just persistent to get to his level. There is a moment of cringe when the interviewer implies that web hacking is somehow not as 'hardcore' as blowing up junk VMs or reversing some junk proprietary binary. Egyptian hacker guy seems unimpressed with this question and repeats that you just have to put in the work to understand whatever it is you're trying to exploit. He ends with saying the biggest problem is nobody is looking at solutions which is something Egor Homakov another security researcher has written about many times: actual investment into real security is a waste of time to most software companies when the current market for software is like a slot machine you add as little investment as possible and pull that handle until you cash out meaning somebody bigger buys your software then security is their problem. I'm also amazed anybody wastes their time with these competitions, if you look at their 2021 live results, some team chained together 6 bugs to execute code but because a single bug was declared to be already known (and of course not yet patched) they were screwed and received nothing for their work. 
+This paper talks about <a href="https://www.zerodayinitiative.com/blog/2021/4/2/pwn2own-2021-schedule-and-live-results">pwn2own</a> which you can watch day 1 <a href="https://youtu.be/dA3aIMgRFY8">here</a> and around the 6hr mark there's a good interview with an Egyptian hacker who says it takes 3 months to understand how a thing works, then not very long after to find a vuln using IDA Pro to reverse engineer said thing. He says in the beginning he knew nothing and was just persistent to get to his level. There is a moment of cringe when the interviewer implies that web hacking is somehow not as 'hardcore' as blowing up junk VMs or reversing some junk proprietary binary. Egyptian hacker guy seems unimpressed with this question and repeats that you just have to put in the work to understand whatever it is you're trying to exploit. He ends with saying the biggest problem is <b>nobody is looking at solutions</b> which is something Egor Homakov another security researcher has written about many times: actual investment into real security is a waste of time to most software companies when the current market for software is like a slot machine you add as little investment as possible and pull that handle until you cash out meaning somebody bigger buys your software and now security is their problem. I'm also amazed anybody wastes their time with these competitions, if you look at their 2021 live results, some team chained together 6 bugs to execute code but because a single bug was declared to be already known (and of course not yet patched) they were screwed out of full payment.
 </p>
 </div>
 </div>
 
-<div id="outline-container-C%20crash%20course" class="outline-3">
-<h3 id="C%20crash%20course">C crash course</h3>
-<div class="outline-text-3" id="text-C%20crash%20course">
+<div id="outline-container-Shadiest%20of%20all%20hacking%20competitions" class="outline-3">
+<h3 id="Shadiest%20of%20all%20hacking%20competitions">Shadiest of all hacking competitions</h3>
+<div class="outline-text-3" id="text-Shadiest%20of%20all%20hacking%20competitions">
+<ul class="org-ul">
+<li>Check out these promos going around, got to love the <a href="https://youtu.be/iM_DokBt0rk">imagery</a> they took for this:
+<ul class="org-ul">
+<li><a href="https://youtu.be/0flqRyUU4vU">https://youtu.be/0flqRyUU4vU</a></li>
+<li><a href="https://youtu.be/BNpFPAah3oM">https://youtu.be/BNpFPAah3oM</a></li>
+</ul></li>
+</ul>
+
 <p>
-Watch the second <a href="https://youtu.be/SIHjTvIM1EQ">lecture</a> from CMU's 15-213 <a href="https://www.youtube.com/playlist?list=PL4YtNpAhVHFJVlaD203_8JkUOUT8RYUhY">playlist</a> to understand what a bit is, what a byte is, what two's complement is, TMax and Tmin, hexadecimal encoding, basic shift operations, you don't have to watch the whole lecture where it later goes into type casting.
+<a href="https://cytaka.com">Cytaka</a> is a <a href="https://youtu.be/zCjFz2RvINM">real</a> global competition held at the Burj Khalifa every month engineered by what looks like Israeli-Emirates joint gov actors held in Dubai each month for $1m prize. It's pretty obvious if you attend such a thing you'll likely be <a href="https://news.ycombinator.com/item?id=28541117">recruited</a> even if you don't win for state sponsored hacking, or recruited in the app. I have no moral high ground to say being a mercenary security developer for the Emirates is right or wrong since my own country is doing the exact same thing just has better image marketing. If you get into something this no matter what government it is, <b>realize you're all in</b>, it's like joining a criminal gang there is no half in saying you can't do this or that, or 'oh I'm going to quit today and expose what's going on' naive fantasy. You have to watch where you travel too, you are now a known state actor and can only travel within the political influence of whoever you're working for and their allies.
 </p>
 
 <p>
-Next these <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">notes</a> to learn the C memory model. They are a great resource, getting right to the point and explaining just what we need aimed at a reader who has functional programming experience in Racket, and I assume you've done CS19 in the other <a href="https://learnaifromscratch.github.io/software.html">workshop</a> and Pyret was originally built from Racket so they are similar languages.
+Looking at the Cytaka app, it's gamified so you need to win in app money in order to open later levels. Actually not a bad idea, in fact I was going to gamify the entire learnai site eventually esp the math content. The top 10 each month get sent to Dubai to compete, so everything resets monthly. Playing around it, there's a lot of weird semantic mistakes in the multiple choice answers like 'all of the above' or 'everything above', and one answer is wrong. If you want try the app as you finish this workshop maybe eventually you'll get into the top 10 that month, and can compete for $1m, just be aware anyone hiring you there after is surely from some kind of gov agency. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Basic%20machine%20arithmetic%20crash%20course" class="outline-3">
+<h3 id="Basic%20machine%20arithmetic%20crash%20course">Basic machine arithmetic crash course</h3>
+<div class="outline-text-3" id="text-Basic%20machine%20arithmetic%20crash%20course">
+<p>
+Watch the second <a href="https://youtu.be/SIHjTvIM1EQ">lecture</a> from CMU's 15-213 <a href="https://www.youtube.com/playlist?list=PL4YtNpAhVHFJVlaD203_8JkUOUT8RYUhY">playlist</a> to understand what a bit is, what a byte is, what two's complement is, TMax and Tmin, hexadecimal encoding, basic shift operations, you don't have to watch the whole lecture where it later goes into type casting. You can also get the latest version of <a href="https://csapp.cs.cmu.edu/">CS:APP</a> from library genesis if you don't want to watch a lecture, the lecturers wrote that book. It goes into much more detail than we will ever need here and can be looked at later. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Basic%20C%20crash%20course" class="outline-3">
+<h3 id="Basic%20C%20crash%20course">Basic C crash course</h3>
+<div class="outline-text-3" id="text-Basic%20C%20crash%20course">
+<p>
+Next these brief <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">notes</a> to learn the C memory model. They are a great resource, getting right to the point and explaining just what we need aimed at a reader who has functional programming experience in Racket, and I assume you've done CS19 in the other <a href="https://learnaifromscratch.github.io/software.html">workshop</a> and Pyret was originally built from Racket so you will have no trouble understanding this.
 </p>
 
 <p>
-Start <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">reading</a> at 2.1 <i>Basics</i> look at the C memory model diagram. Each row is 32bits (one word) which the author notes that 32bits is used for the purposes of making it easier to read this guide and it's similar to how a 64bit model works. He goes through a sample C program, these are all sequentially executed statements that return nothing (void) they produce side effects and the return statement is an exit back to whatever program called it and the numbers indicate error codes. Moving on to 2.2 and 2.3 you can see an example of prototypes or external global variables <a href="https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/defs.h">here</a> in MIT's implementation of xv6 which is a V6 unix clone they use to teach their operating systems class. Some of the header files have external globals some don't. At the end of 2.3 there's questions: what happens if we exclude x file? The compiler can't link, if gcd-driver.c forgets to include gcd.h then the global variable being used in gcd-driver will fail, the compiler will also give warnings no prototypes when it compiles gcd-driver.c and doesn't know the types of the parameters of the gcd function inside gcd-func. This will all be covered when we do linking.
+Start <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Introduction_to_C.html">reading</a> at 2.1 <i>Basics</i> looking at the C memory model diagram, each row is 32bits (one word) which the author notes that 32bits is used for the purposes of making it easier to read this guide as it's similar to how a 64bit model works anyway. This is a recurring theme in courses I have taken, for example CMU's operating system course is only taught with 32bit because conceptually the same thing is going on and 64bit is a nightmare to work with for assignments they do like building your own tiny kernel. If you read the course syllabus the prof does not consider fighting with x86-64 complexity to give you any more insight into how a kernel works.  
 </p>
 
 <p>
-2.4 <i>Iteration</i> if you've taken CS19 in the compsci/software workshop then you already know what structural recursion is, it means taking apart the structure as it's built whereas accumulative recursion means you have some kind of variable that holds a value which accumulates and then you return it. 
+Back to 2.1, he goes through a sample C program, these are all sequentially executed statements that return nothing (void) they produce side effects and the return statement is an exit back to whatever program called it, usually a shell, and the return status numbers indicate error codes. Moving on to 2.2 and 2.3 you can see an example of prototypes or external global variables <a href="https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/defs.h">here</a> in MIT's implementation of xv6 which is a V6 unix clone they use to teach their operating systems class. Some of the header files have external globals some don't. At the end of 2.3 there's questions: what happens if we exclude x file? The compiler can't link, if gcd-driver.c forgets to include gcd.h then the global variable being used in gcd-driver will fail, the compiler will also give warnings no prototypes when it compiles gcd-driver.c and doesn't know the types of the parameters of the gcd function inside gcd-func. This will all be covered when we do linking.
 </p>
 
 <p>
-Of course you can translate all the Racket programs in this book to Pyret (if you've done <a href="https://learnaifromscratch.github.io/software.html">this</a>)
+2.4 <i>Iteration</i> if you've taken CS19 in the compsci/software workshop then you already know what structural recursion is, it means taking apart the structure the same way you built it up. Of course you can translate all the Racket programs in this book to Pyret (if you've done <a href="https://learnaifromscratch.github.io/software.html">this workshop</a>)
 </p>
-<pre class="example" id="org90ff446">
+
+<pre class="example" id="org0b2aaa3">
 fun sum1(n :: Number) -&gt; Number:
-  doc: "Structural Recursion, if structure is a natural number n++ then disassemble by n--"
+  doc: "Structural Recursion, if the structure is a natural number n++ then disassemble by n--"
   if n == 0:
     0
   else: n + sum1(n - 1)
@@ -325,7 +383,7 @@ where:
 end
 
 fun sum2(n :: Number) -&gt; Number:
-  doc: "Accumulator recursion, keeps a running tally and returns it"
+  doc: "Accumulator recursion, keeps a running tally in a variable and returns it"
   fun sum2-helper(counter, acc):
     if counter == 0:
       acc
@@ -340,49 +398,82 @@ end
 </pre>
 
 <p>
-In general you prefer a while loop when the range isn't known like user input prompts, and a for loop is preferred where the range is already known. There's a comment that Haskell performed this computation at the same speed as C with far shorter/declarative syntax. 
+2.5 <i>Computational Model</i> the standard I/O library opened with the #include &lt;stdio.h&gt; statement translates to: open the namespace of this library filled with standard input/output programs so you can call them by name and they're all in scope like printf() function. Since we are taking a security course, you'll see later that the more refined scope you can have the better so your programs don't have access to things like the network if they're not supposed to. In other language idioms, you would prefer to only extract from libraries the single functionality you need like 'import printf from (library)', create a let block where that namespace is contained and then you aren't carrying around a gigantic attack space in the entire program.  
 </p>
 
 <p>
-2.5 <i>Computational Model</i> 'FICS' is not ready yet and is a work in progress if you're wondering, it's a functional intro to cs he's still writing but we already took one in the compsci workshop doing CS19 which is equivalent. Here we learn read-only memory, stack and heap. If not clear, #include &lt;stdio.h&gt; means open the namespace of this library filled with standard input/output programs so you can call them by name and they're all in scope.
+The stack frame writeup here is excellent, no silly diagrams just memory examples. You can also watch <a href="https://youtu.be/lthX7JQjlgI">this</a> lecture describing what it is from a x86-64 point of view. If a program main() calls a new function y(), a stack frame is allocated where y() will store all it's local variables in memory. When y() returns that memory is deallocated and can't be relied on anymore. Here is plenty of opportunites for hacks, what if you change the return address of a stack frame to something else, you can jump somewhere different in the program or access memory you shouldn't be able to. What if you return the stack out of order like move the stack pointer to whatever frames you want on the stack? You can then like using lego blocks rearrange the all the returns to do your evil bidding which we'll learn soon. Skim through the next chapter to read about C loop idioms if you've never seen them, I didn't know they were originally to help signal to the compiler where to optimize. 
 </p>
 
 <p>
-<b>15-213 CMU</b>
+Chapter 3 <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Pointers.html">pointers</a>. This is the clearest and most efficient description of pointers I've ever read. 'Word size' means the largest size of memory that machine offers which is typically 64bit.
 </p>
 
 <p>
-We have to detour into assembly language to learn exactly what stack frames/pointers are in the C level abstraction of memory. Luckily for us there are great lectures for this in CMU's 15-213 course, then we will come back to this text. We're just skipping through the lectures, you can get the CS:APP book the course uses later and learn every detail of x86-64 architecture later if you want as we come across it. For now this is just an introduction
+Why do pointers exist? Because if you consider a machine's memory model to be a gigantic flat array of bytes, and you want to be able to create linked lists and queues or trees and whatever with that flat array, you can use a memory address abstraction to merely move around pointers that define the structure and everything you do is in constant time. Example: adding a new value on to the head of a linked list. Instead of having to copy the old list to a new resized memory location including the new head you merely move the list head pointer and leave everything else where it is. It doesn't have to be all side by side in memory, just needs a pointer to the next memory location to find the next linked list element. 
 </p>
 
 <p>
-<b>Lecture 1</b>
-</p>
-
-<p>
-Let's begin <a href="https://youtu.be/-UbRr4gDnyE">here</a> <i>Machine Level Programming| Basics</i>. There is some really good info on history, how to generate object code w/gcc, but the lecture for assembly code starts at @47:54 talking about registers which at a high level is just a storage location in the CPU it can access very quickly. 'Memory' for the purposes of this quick introduction is any storage that's not a CPU register, so cache memories or <a href="https://en.wikipedia.org/wiki/Random-access_memory">RAM</a>. Interesting @ 55:15 in x86 assembly you can't copy from memory to memory, it has to go through a register for the benefit of the companies designing these things he claims. 
-</p>
-
-<p>
-'Dereferencing' a pointer in C, using the * syntax, means retrieve the value stored at that memory address. 'Referencing' or the &amp; syntax means return the memory address, and usually set it to this pointer variable so we can directly access the value later. In the lecture he goes through Swap() completely to understand this. 
+The semantic demo here of pointers requires careful following until you get it, simply remember the rules of lvalue and rvalue:
 </p>
 
 <ul class="org-ul">
-<li>movq (%rdi), %rax
-<ul class="org-ul">
-<li>The brackets in a movq instruction mean the <i>memory address</i> that %rdi points to, move that address to %rax whereas movq %rdi, %rax means move the <i>value</i> in %rdi to %rax.</li>
-</ul></li>
+<li>*p = 5 (lvalue, store 5 in memory location of p or &amp;p)</li>
+<li>x = *p (rvalue, return contents of &amp;p which is 5)</li>
 </ul>
 
 <p>
-The rest of this lecture is things you don't have to know yet, there's no reason to memorize x86 assembly instructions we will come across them many more times later. Let's move on to the next one TODO
+Important quote: <i>C programs can expose enough of the machine they are running on that even perfectly correct programs can exhibit different behaviour when compiled and run on different machines</i>. More opportunites for hacks. 
 </p>
+
+<p>
+3.4 <i>Heap allocation in C</i> another great and brief chapter telling you just what's needed to know in order to understand how malloc works conceptually generating a pointer to a chunk of heap memory. Heap memory has different definitions ie: data structure heap memory, here it solely means the portion of memory that has been dynamically allocated by malloc. For example if main program calls a function, we know that function returns and the stack frame is lost and it's memory contents unreliable. If you want to keep that memory around for whatever reasons, have malloc manually initialze and free it later when not needed. More opportunities for hacks of course, what happens if if you free it <a href="https://owasp.org/www-community/vulnerabilities/Doubly_freeing_memory#">twice</a> accidentally or intentionally? These notes point out the true functionality of sizeof which is an instruction to the compiler for portability substituting the actual machine size.
+</p>
+
+<p>
+Skip to 3.7 and 3.8 about arrays though this entire set of notes is worth working through like seeing the heavy use of mutation for O(1) queue/dequeue running time. Now you know C array indexing. Reallocate or realloc is described here to dynamically resize arrays, briefly skim all this noting where to return if later needed. Finally <a href="https://cs.uwaterloo.ca/~plragde/flaneries/IYMLC/Intermediate_C.html">Intermediate C</a> skim over pointer arithmetic and strings. You're done.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Paper%3A%20Eternal%20War%20in%20Memory" class="outline-3">
+<h3 id="Paper%3A%20Eternal%20War%20in%20Memory">Paper: Eternal War in Memory</h3>
+<div class="outline-text-3" id="text-Paper%3A%20Eternal%20War%20in%20Memory">
+<p>
+Finishing <a href="https://ieeexplore.ieee.org/document/6547101">this</a> paper. Figure 1 was in the lecture slides, now we know what a dangling pointer is: a pointer to freed malloc created heap memory or the other example in the <i>If You Must Learn C</i> flanerie where he showed what happens when you have a dangling pointer to a stack frame, like trying to return the memory address of a variable created in the frame back to the calling program. Amazing how those 2 simple errors can result in 4 categories of disaster. The green part of the diagram is the common mitigations, like data space randomization to prevent information leak. In fact notice how much randomization is being used now in this figure to try and stop these attacks from instruction set randomization to making the memory addresses non deterministic so you can't easily predict where things are on a stack or in memory to jump to, and yet they still don't work. 
+</p>
+
+<p>
+Reading II <i>Attacks</i> everything begins with triggering a memory error. Kernel-space means the protected memory space reserved for your operation system functions as compared to user space which is low privilege run programs. 
+</p>
+
+<p>
+TODO
+</p>
+
+
+
+
 
 <hr>
 <p>
 <a href="./index.html">Home</a>
 </p>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-" class="outline-3">
+<h3 id=""></h3>
 </div>
 </div>
 </div>
