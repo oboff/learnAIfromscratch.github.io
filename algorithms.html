@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-12 Fri 17:20 -->
+<!-- 2021-11-12 Fri 17:33 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -446,7 +446,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="orgf905fbd">
+<pre class="example" id="org90da2a6">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -570,7 +570,7 @@ var is a mutable assignable, val is immutable. You can use type annotations like
 In Pyret you could make your own data types, in Kotlin you can do the same (I took this from <a href="https://www.raywenderlich.com/9527-functional-programming-with-kotlin-and-arrow-getting-started">Massimo Carli</a>):
 </p>
 
-<pre class="example" id="orge591c21">
+<pre class="example" id="orgc59ba70">
 data class Price(val value: Double, val currency: String = "$")
 
 data class Book(
@@ -602,7 +602,7 @@ Now androidBook is type Book.
 <b>Functions</b>
 </p>
 
-<pre class="example" id="org694ae96">
+<pre class="example" id="org37aaae5">
 fun f(i: Int) = i + i
 // no return statement needed
 // parameter type annotations mandatory (why? who knows)
@@ -624,7 +624,7 @@ fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; { stuff here }
 In Pyret a function that takes another function:
 </p>
 
-<pre class="example" id="orgcf59559">
+<pre class="example" id="org8461191">
 fun g&lt;A, B&gt;(f :: (A, B -&gt; B), i :: A)-&gt; B:
 </pre>
 <p>
@@ -642,39 +642,9 @@ Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org
 <p>
 TODO
 </p>
-
-<hr>
-<p>
-<a href="./index.html">Home</a>
-</p>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div id="outline-container-CSE101%20Lecture%201" class="outline-2">
 <h2 id="CSE101%20Lecture%201">CSE101 Lecture 1</h2>
@@ -705,7 +675,7 @@ The first 35 minutes of this lecture are course logistics you may want to watch 
 Cut and paste this program <a href="https://code.pyret.org/editor">here</a> it finishes immediately:
 </p>
 
-<pre class="example" id="orgc294ec1">
+<pre class="example" id="org345449b">
 fun fib(n :: Number) -&gt; Number:
   doc: "Simple Fib(n) without reentry" 
 
@@ -733,6 +703,14 @@ end
 
 <p>
 There's a typo in the slides @50:48 'A theta(n) algorithm will beat a theta(n x n) algorithm for large enough n' which is confusing as hell, what does 'beat' mean? It grows less or more? However from CS19 we know if one function is growing n<sup>2</sup> and you crank up the inputs, it will grow faster than a function growing linearly. He's using a different notation than big-O, big-theta, which is is exampled <a href="https://i.stack.imgur.com/nLm8w.png">here</a> it bounds a function with an upper and lower bound and is that f(n) function between O(g(n)) and Omega(g(n)). Everything in this lecture is contained in <i>Prologue</i> of the DPV book.
+</p>
+
+<p>
+todo
+</p>
+<hr>
+<p>
+<a href="./index.html">Home</a>
 </p>
 </div>
 </div>
