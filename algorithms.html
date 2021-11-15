@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-12 Fri 17:33 -->
+<!-- 2021-11-14 Sun 21:25 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -253,7 +253,12 @@
 <li><a href="#Kotlin">Kotlin</a></li>
 </ul>
 </li>
-<li><a href="#CSE101%20Lecture%201">CSE101 Lecture 1</a></li>
+<li><a href="#CSE101%20Lecture%201">CSE101 Lecture 1</a>
+<ul>
+<li><a href="#Asymptotics">Asymptotics</a></li>
+<li><a href="#DPV%20Chapter%200%20exercises">DPV Chapter 0 exercises</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -262,7 +267,7 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-This is a game, where I study the same material you do then take mass interviews myself to prove the material will work for any other anon anywhere on earth. Anything they have me do, if it's not here I pretend not to know despite <a href="https://functionalcs.github.io/curriculum/">this background</a> and see what happens. The curriculum works or it doesn't.     
+This is a game, where I study the same material you do then take mass interviews myself to prove the material will work for any other anon anywhere on earth..     
 </p>
 
 <p>
@@ -446,7 +451,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org90da2a6">
+<pre class="example" id="orgaedc808">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -570,7 +575,7 @@ var is a mutable assignable, val is immutable. You can use type annotations like
 In Pyret you could make your own data types, in Kotlin you can do the same (I took this from <a href="https://www.raywenderlich.com/9527-functional-programming-with-kotlin-and-arrow-getting-started">Massimo Carli</a>):
 </p>
 
-<pre class="example" id="orgc59ba70">
+<pre class="example" id="org6ec07d7">
 data class Price(val value: Double, val currency: String = "$")
 
 data class Book(
@@ -602,7 +607,7 @@ Now androidBook is type Book.
 <b>Functions</b>
 </p>
 
-<pre class="example" id="org37aaae5">
+<pre class="example" id="org306c8fe">
 fun f(i: Int) = i + i
 // no return statement needed
 // parameter type annotations mandatory (why? who knows)
@@ -624,7 +629,7 @@ fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; { stuff here }
 In Pyret a function that takes another function:
 </p>
 
-<pre class="example" id="org8461191">
+<pre class="example" id="org00ea510">
 fun g&lt;A, B&gt;(f :: (A, B -&gt; B), i :: A)-&gt; B:
 </pre>
 <p>
@@ -636,11 +641,7 @@ Type annotation f :: (A,B -&gt; B) in Pyret means parameter f is a function that
 </p>
 
 <p>
-Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org/docs/collections-overview.html#set">know</a> 'collections' and everything else though they use cringe jargon like 'receiver' or 'callable references' try to never use this jargon anywhere, nobody knows what it means, see Robert Harper's pfpl book. That's it, look at the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/">standard library</a> and try the <i>methods to solve</i> cp4 chapter 1, 97 beginner starred problems. I will also do the non-starred problems in Common Lisp for fun and profit.
-</p>
-
-<p>
-TODO
+Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org/docs/collections-overview.html#set">know</a> 'collections' and everything else though they use cringe jargon like 'receiver' or 'callable references' try to never use this jargon anywhere, nobody knows what it means, see Robert Harper's pfpl book. That's it, look at the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/">standard library</a> and try the <i>methods to solve</i> cp4 chapter 1, 97 beginner starred problems. 
 </p>
 </div>
 </div>
@@ -675,7 +676,7 @@ The first 35 minutes of this lecture are course logistics you may want to watch 
 Cut and paste this program <a href="https://code.pyret.org/editor">here</a> it finishes immediately:
 </p>
 
-<pre class="example" id="org345449b">
+<pre class="example" id="orgeb77796">
 fun fib(n :: Number) -&gt; Number:
   doc: "Simple Fib(n) without reentry" 
 
@@ -704,14 +705,53 @@ end
 <p>
 There's a typo in the slides @50:48 'A theta(n) algorithm will beat a theta(n x n) algorithm for large enough n' which is confusing as hell, what does 'beat' mean? It grows less or more? However from CS19 we know if one function is growing n<sup>2</sup> and you crank up the inputs, it will grow faster than a function growing linearly. He's using a different notation than big-O, big-theta, which is is exampled <a href="https://i.stack.imgur.com/nLm8w.png">here</a> it bounds a function with an upper and lower bound and is that f(n) function between O(g(n)) and Omega(g(n)). Everything in this lecture is contained in <i>Prologue</i> of the DPV book.
 </p>
+</div>
+
+<div id="outline-container-Asymptotics" class="outline-3">
+<h3 id="Asymptotics">Asymptotics</h3>
+<div class="outline-text-3" id="text-Asymptotics">
+<p>
+We are leaving the world of precision math for the rest of this workshop and entering the wild and crazy art of asymptotics where we get to estimate everything with slippery definitions.
+</p>
 
 <p>
-todo
+Chapter 0.3 of <i>Algorithms</i> by DPV read through it once, then skip to page 12 of 1.1 <i>Basic Arithmetic</i> and read the bases and logs aside if you forgot them. It's still not enough though, procure <i>The Art of Computer Programming, Vol. 1</i> either by <a href="http://library.lol/main/3612CEBCEE66E75A23440B97A1B560DB">library genesis</a> or buy a copy it'll be the best book you'll ever own. Skip to 1.2.2 <i>Numbers, Powers, and Logarithms</i>. We are interested in page 22 and 23, the laws of exponents for integer exponents, and rational exponents, and all the logarithm identities. A log is an exponent, so exactly how you combine exponents is how you manipulate logs ie log(xy) what do you do when you multiply two bases together w/exponents? log(x) + log(y) you add them. Why do we use logs? You kind of reduce everything down a level to make it easier to work with and other benefits as we'll see. 
 </p>
+
+<p>
+<b>CS Theory Toolkit</b>
+Now let's watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. @1:58 x<sub>0</sub> or 'x naught' means a particular input to f(x) so x<sub>0</sub> for example can be f(5), so all inputs to f(x) equal or greater than 5 this definition holds. @5:40 his anonymous function, that's the Prof K interpretation from CS19, O(n<sup>2</sup>) by itself without the entire definition is O([n -&gt; n<sup>2</sup>]). @12:00 10n/n<sup>2</sup> and you jack up inputs to approach infinity you will get a limit of 0, and thus 10n is in the little-o family of functions that are not in n<sup>2</sup> which is what that notation sort-of means. 10n is still in the family of functions that are Big-O of n<sup>2</sup> however. If you think of this as being sets it may make more sense. @13:29 the anonymous function again, O(1) means O([n -&gt; c]) for all inputs you're just getting a constant.   
+</p>
+
+<p>
+14:50 we will see this notation in DPV log<sup>3</sup> n means (log(n))<sup>3</sup> it's similar to the notation for squaring/exponents in trig like cos<sup>2</sup>(x) means cos(x) * cos(x). The poly() defs and tilde defs we don't need to know yet but you may run into them in papers after we're done. Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions it just means your family of functions for g(x) should be in 'standard form' as he lays out for example sqrt(n) is standard form but sqrt(n + 1) isn't. He shows how to fix this in part 3. 
+</p>
+
+<p>
+Moving on to <a href="https://youtu.be/Ao6aXSyJ6Gk">part b</a> there's an interesting illustration of harmonic numbers which will surely come up in DPV and how H<sub>n</sub> is in Big-Theta(log n) when you use asymptotics to estimate it. He uses basic integration of 1/x you can see <a href="./calculus.html">here</a> which is log(x) but the point here is manipulating results so you can get that form of something tending towards 1.
+</p>
+
+<p>
+Moving on to <a href="https://youtu.be/flge97Jp6uo">part 3</a> the magic of asymptotics: e<sup>x</sup> is roughly 1 + x for small x. The rest of lecture is showing how you take a complicated expression and simplify it with asymptotics. Now we can do the exercises in DPV
+</p>
+</div>
+</div>
+
+<div id="outline-container-DPV%20Chapter%200%20exercises" class="outline-3">
+<h3 id="DPV%20Chapter%200%20exercises">DPV Chapter 0 exercises</h3>
+<div class="outline-text-3" id="text-DPV%20Chapter%200%20exercises">
+<p>
+TODO
+</p>
+
+
+
+
 <hr>
 <p>
 <a href="./index.html">Home</a>
 </p>
+</div>
 </div>
 </div>
 </div>
