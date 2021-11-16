@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-15 Mon 07:34 -->
+<!-- 2021-11-15 Mon 21:36 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -262,11 +262,7 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-This is a game, where I study the same material you do then take mass interviews myself to prove the material will work for any other anon anywhere on earth..     
-</p>
-
-<p>
-Concretely, this is just a typical undergraduate design and analysis of algorithms class but we practice with competitive programming resources to keep it interesting, also honest because that's what we're doing right, competing in interviews with everyone else for money. By 'keeping it interesting', I mean this is also a regular competitive programming workshop too so we can eventually learn more <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">advanced algorithms</a> to try those <a href="https://icpc.kattis.com/">ICPC archive</a> problems, and <a href="https://icfpcontest2021.github.io/">real competitions</a>. 
+This is a game, where I study the same material you do then take mass interviews myself to prove the material will work for any other anon anywhere on earth. The focus is on understanding asymptotics so you can teach yourself for the most part, then practicing writing software in competitive programming. This is a draft, a first iteration of TA style notes that will be something else later, maybe even an actual game.       
 </p>
 
 <p>
@@ -347,7 +343,7 @@ The first volume was written both for passing technical interviews and for anybo
 </ul>
 
 <p>
-Contains full problem walkthroughs. I preferred this course to others because they actually use a board, instead of zoom slides so you can see problems being fully done. We have access to everything and it's permanent so won't disappear behind logins.
+Contains full problem walkthroughs. I preferred this course to others because they actually use a board, instead of zoom slides so you can see problems being fully worked out. We have access to everything and it's permanent so won't disappear behind logins. You probably won't need to watch/do most of this course.
 </p>
 
 <ul class="org-ul">
@@ -355,7 +351,7 @@ Contains full problem walkthroughs. I preferred this course to others because th
 </ul>
 
 <p>
-Some from: UCSD's CSE101 <a href="https://cseweb.ucsd.edu/~dakane/CSE101/">course</a>, Ryan O'donnell's <a href="https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX">CS Theory Toolkit</a>, CMU's 15-451 <i>Algorithms</i> undergrad <a href="https://www.cs.cmu.edu/~15451-f20/schedule.html">course</a> to learn FFT/Computational Geometry, and 15-295 <i>Competitive Programming</i>. The <a href="https://cs.nyu.edu/~spencer/">book</a> <i>Asymptopia</i> by Spencer and <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> which we'll do parts of each. We will also study software architecture <a href="https://www.worldcat.org/title/system-design-interview-an-insiders-guide-second-edition/oclc/1253363956&amp;referer=brief_results">examples</a>. 
+Some from: UCSD's CSE101 <a href="https://cseweb.ucsd.edu/~dakane/CSE101/">course</a>, Ryan O'donnell's <a href="https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX">CS Theory Toolkit</a>, CMU's 15-451 <i>Algorithms</i> undergrad <a href="https://www.cs.cmu.edu/~15451-f20/schedule.html">course</a> to learn FFT/Computational Geometry, and 15-295 <i>Competitive Programming</i>. The <a href="https://cs.nyu.edu/~spencer/">book</a> <i>Asymptopia</i> by Spencer and <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> which we'll do very few parts of each. CMU's <i>Parallel &amp; Sequential Algorithms</i> <a href="https://www.diderot.one/courses/89">book</a>. We will also study software architecture <a href="https://www.worldcat.org/title/system-design-interview-an-insiders-guide-second-edition/oclc/1253363956&amp;referer=brief_results">examples</a>. 
 </p>
 </div>
 
@@ -438,7 +434,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org858cbbe">
+<pre class="example" id="org9e43515">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -528,7 +524,7 @@ My language of choice will be Kotlin for the starred problems &amp; Common Lisp 
 <li>ICPC <a href="https://docs.icpc.global/worldfinals-programming-environment/">now accepts</a> Kotlin for submissions</li>
 <li>Kotlin syntax is so similar to Pyret if you came from CS19 you already know Kotlin</li>
 <li>Kotlin seems to be the default AndroidStudio development language</li>
-<li>Common Lisp <a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/#s16-lisp-as-a-system">development process</a> is superior to anything else and I want to try it for the ICPC problems</li>
+<li>Common Lisp <a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/#s16-lisp-as-a-system">development process</a> is perfect for this style and I want to try it for the ICPC problems</li>
 </ul>
 
 <p>
@@ -562,7 +558,7 @@ var is a mutable assignable, val is immutable. You can use type annotations like
 In Pyret you could make your own data types, in Kotlin you can do the same (I took this from <a href="https://www.raywenderlich.com/9527-functional-programming-with-kotlin-and-arrow-getting-started">Massimo Carli</a>):
 </p>
 
-<pre class="example" id="org87c059b">
+<pre class="example" id="orge9343ed">
 data class Price(val value: Double, val currency: String = "$")
 
 data class Book(
@@ -594,7 +590,7 @@ Now androidBook is type Book.
 <b>Functions</b>
 </p>
 
-<pre class="example" id="org1eeba09">
+<pre class="example" id="org7d2f51f">
 fun f(i: Int) = i + i
 // no return statement needed
 // parameter type annotations mandatory (why? who knows)
@@ -616,7 +612,7 @@ fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; { stuff here }
 In Pyret a function that takes another function:
 </p>
 
-<pre class="example" id="org6ae826e">
+<pre class="example" id="org659f7f5">
 fun g&lt;A, B&gt;(f :: (A, B -&gt; B), i :: A)-&gt; B:
 </pre>
 <p>
@@ -628,7 +624,7 @@ Type annotation f :: (A,B -&gt; B) in Pyret means parameter f is a function that
 </p>
 
 <p>
-Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org/docs/collections-overview.html#set">know</a> 'collections' and everything else though they use cringe jargon like 'receiver' or 'callable references' try to never use this jargon anywhere, nobody knows what it means, see Robert Harper's pfpl book. That's it, look at the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/">standard library</a> and try the <i>methods to solve</i> cp4 chapter 1, 97 beginner starred problems. 
+Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org/docs/collections-overview.html#set">know</a> 'collections' and everything else will be quickly picked up by looking through the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/">standard library</a> while trying the <i>methods to solve</i> cp4 chapter 1, 97 beginner starred problems. 
 </p>
 </div>
 </div>
@@ -638,7 +634,7 @@ Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org
 <h2 id="Asymptotics">Asymptotics</h2>
 <div class="outline-text-2" id="text-Asymptotics">
 <p>
-We are leaving the world of precision math for the rest of this workshop and entering the wild and crazy art of asymptotics where we get to estimate everything with slippery definitions.
+We are leaving the world of precision math for the rest of this workshop and entering the wild and crazy art of asymptotics where we get to estimate everything with slippery definitions. All your time should be spent here understanding how this approximation works then everything else is trivial like working through any algorithm text on your own. 
 </p>
 
 <p>
@@ -647,23 +643,47 @@ Chapter 0.3 of <i>Algorithms</i> by <a href="https://cseweb.ucsd.edu/~dasgupta/b
 
 <p>
 <b>CS Theory Toolkit</b>
-Now let's watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. @1:58 x<sub>0</sub> or 'x naught' means a particular input to f(x) so x<sub>0</sub> for example can be f(5), so all inputs to f(x) equal or greater than 5 this definition holds. @5:40 his anonymous function, that's the Prof K interpretation from CS19, O(n<sup>2</sup>) by itself without the entire definition is O([n -&gt; n<sup>2</sup>]). @12:00 10n/n<sup>2</sup> and you jack up inputs to approach infinity you will get a limit of 0, and thus 10n is in the little-o family of functions that are not in n<sup>2</sup> which is what that notation sort-of means. 10n is still in the family of functions that are Big-O of n<sup>2</sup> however. If you think of this as being sets it may make more sense. @13:29 the anonymous function again, O(1) means O([n -&gt; c]) for all inputs you're just getting a constant.   
+The first 2 lecture parts of this course are well watching if you're curious how TCS research works, and the <a href="https://youtu.be/qP4XEZ54eSc">lecture</a> for part 3 such as where to ask questions or using oeis.org to figure sequences of coefficients and other patterns. 
 </p>
 
 <p>
-14:50 we will see this notation in DPV log<sup>3</sup> n means (log(n))<sup>3</sup> it's similar to the notation for squaring/exponents in trig like cos<sup>2</sup>(x) means cos(x) * cos(x). The poly() defs and tilde defs we don't need to know yet but you may run into them in papers after we're done. Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions it just means your family of functions for g(x) should be in 'standard form' as he lays out for example sqrt(n) is standard form but sqrt(n + 1) isn't. He shows how to fix this in part 3. 
+Let's watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. @1:58 x<sub>0</sub> or 'x naught' means a particular input to f(x) so x<sub>0</sub> for example can be f(5), so all inputs to f(x) equal or greater than 5 this definition holds. @5:40 his anonymous function, that's the Prof K interpretation from CS19, O(n<sup>2</sup>) by itself without the entire f(x) = definition is O([n -&gt; n<sup>2</sup>]). @12:00 10n/n<sup>2</sup> and you jack up inputs to approach infinity you will get a limit of 0, and thus 10n is in the little-o family of functions that are stricly less than the family of functions in n<sup>2</sup> however 10n is still in the family of functions that are Big-O of n<sup>2</sup> (and anything else bigger than linear). @13:29 the anonymous function again, O(1) means O([n -&gt; c]) for all inputs what we get is bounded by a constant. 14:50 log<sup>3</sup> n means (log(n))<sup>3</sup> and since all logarithms are really exponents it's log(n<sup>3</sup>) since (b^[1})<sup>2</sup> is b<sup>2</sup> this is called a <a href="https://en.wikipedia.org/wiki/Polylogarithmic_function">polylogarithmic</a> function 'a polynomial in the the logarithm of n' and denotes it is growing more slowly than any polynomial exponent, because it's a cubed/squared log. 
 </p>
 
 <p>
-Moving on to <a href="https://youtu.be/Ao6aXSyJ6Gk">part b</a> there's an interesting illustration of harmonic numbers which will surely come up in DPV and how H<sub>n</sub> is in Big-Theta(log n) when you use asymptotics to estimate it. He uses basic integration of 1/x you can see <a href="./calculus.html">here</a> which is log(x) but the point here is manipulating results so you can get that form of something tending towards 1.
+@14:25 let's figure out O-tilde and poly() which you will see in every algorithm paper:
+</p>
+
+<ul class="org-ul">
+<li>poly(g(x)) or f(x) = g(x)<sup>O(1)</sup>
+<ul class="org-ul">
+<li>any growth in the form of big-O with an exponent</li>
+<li>example: O(n)<sup>2</sup> is poly(g(x))</li>
+</ul></li>
+<li>O-tilde(g(x)) or f(x) = g(x) * log(g(x))<sup>O(1)</sup>  
+<ul class="org-ul">
+<li>any growth in the form of g(x) * a logarithmic factor of g(x)</li>
+</ul></li>
+</ul>
+
+<p>
+O-tilde indicates there's some logarithmic growth factors in your bound that you don't care about/couldn't pin down. His second example is also in the form of O-tilde, it's not a log but it allows you logarithmic factors, so if you take the log of 3<sup>n</sup> it's n, and since 3<sup>n</sup> is growing much faster than polynomial powers of n like n<sup>5</sup>, you can ignore 'logarithmic factors' and since that factor is n, toss out all the n's in n<sup>5</sup>3<sup>n</sup>. His check that this isn't 2<sup>n</sup> he uses the first chapter of DPV where they show f(x)/g(x) ratio, testing the ratio of 3<sup>n</sup> over 2<sup>n</sup> = 1.5<sup>n</sup> and making sure it's not smaller than poly(n), which he explained earlier is g(x) to some constant power, like n<sup>5</sup>
 </p>
 
 <p>
-Moving on to <a href="https://youtu.be/flge97Jp6uo">part 3</a> the magic of asymptotics: e<sup>x</sup> is roughly 1 + x for small x. The rest of lecture is showing how you take a complicated expression and simplify it with asymptotics.
+Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions it just means your family of functions for g(x) should be in 'standard form' as he lays out for example sqrt(n) is standard form but sqrt(n + 1) isn't. He shows how to fix this in part 3. 
 </p>
 
 <p>
-TODO  
+Moving on to <a href="https://youtu.be/Ao6aXSyJ6Gk">part b</a> there's an interesting illustration of harmonic numbers which will surely come up in DPV and how H<sub>n</sub> is in Big-Theta(log n) when you use asymptotics to estimate it. He uses basic integration of 1/x you can see <a href="./calculus.html">here</a> which is log(x) but the point here is manipulating results so you can get that form of something tending towards 1.   
+</p>
+
+<p>
+Moving on to <a href="https://youtu.be/flge97Jp6uo">part 3</a> the magic of asymptotics: e<sup>x</sup> is roughly 1 + x for small x. The rest of lecture is showing how you take a complicated expression and simplify it with asymptotics exactly what we will see in every algorithms text or paper.
+</p>
+
+<p>
+TODO
 </p>
 
 
