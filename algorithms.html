@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-15 Mon 23:03 -->
+<!-- 2021-11-16 Tue 19:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -275,7 +275,14 @@
 <li><a href="#Kotlin">Kotlin</a></li>
 </ul>
 </li>
-<li><a href="#Asymptotics">Asymptotics</a></li>
+<li><a href="#Asymptotics">Asymptotics</a>
+<ul>
+<li><a href="#Computational%20model">Computational model</a></li>
+<li><a href="#Logarithms">Logarithms</a></li>
+<li><a href="#CS%20Theory%20Toolkit%20lecture%202">CS Theory Toolkit lecture 2</a></li>
+<li><a href="#CS%20Theory%20toolkit%20lecture%203">CS Theory toolkit lecture 3</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -456,7 +463,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org1ce618e">
+<pre class="example" id="org7ba6608">
 // include every C++ std library and bits library
 #include &lt;bits/stdc++.h&gt;
 
@@ -580,7 +587,7 @@ var is a mutable assignable, val is immutable. You can use type annotations like
 In Pyret you could make your own data types, in Kotlin you can do the same (I took this from <a href="https://www.raywenderlich.com/9527-functional-programming-with-kotlin-and-arrow-getting-started">Massimo Carli</a>):
 </p>
 
-<pre class="example" id="org8f90338">
+<pre class="example" id="org9a89a02">
 data class Price(val value: Double, val currency: String = "$")
 
 data class Book(
@@ -612,7 +619,7 @@ Now androidBook is type Book.
 <b>Functions</b>
 </p>
 
-<pre class="example" id="org69d7cb2">
+<pre class="example" id="orgc0a9097">
 fun f(i: Int) = i + i
 // no return statement needed
 // parameter type annotations mandatory (why? who knows)
@@ -634,7 +641,7 @@ fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; { stuff here }
 In Pyret a function that takes another function:
 </p>
 
-<pre class="example" id="org7d31a76">
+<pre class="example" id="orgb6f78a5">
 fun g&lt;A, B&gt;(f :: (A, B -&gt; B), i :: A)-&gt; B:
 </pre>
 <p>
@@ -646,7 +653,11 @@ Type annotation f :: (A,B -&gt; B) in Pyret means parameter f is a function that
 </p>
 
 <p>
-Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org/docs/collections-overview.html#set">know</a> 'collections' and everything else will be quickly picked up by looking through the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/">standard library</a> while trying the <i>methods to solve</i> cp4 chapter 1, 97 beginner starred problems. 
+Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org/docs/collections-overview.html#set">know</a> 'collections' and everything else will be quickly picked up by looking through the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/">standard library</a> while trying the <i>methods to solve</i> cp4 chapter 1, 97 beginner starred problems.
+</p>
+
+<p>
+Since this will probably take a week to do let's move on to the critical aspect of every algorithm course which is understanding asymptotics. 
 </p>
 </div>
 </div>
@@ -656,24 +667,61 @@ Is exactly the same as Pyret really, you already <a href="https://kotlinlang.org
 <h2 id="Asymptotics">Asymptotics</h2>
 <div class="outline-text-2" id="text-Asymptotics">
 <p>
-We are leaving the world of precision math for the rest of this workshop and entering the wild and crazy art of asymptotics where we get to estimate everything with slippery definitions. All your time should be spent here understanding how this approximation works then everything else is trivial like working through any algorithm text on your own. 
+We are leaving the world of precision math for the rest of this workshop and entering the wild and crazy art of asymptotics where we get to estimate everything with slippery definitions. All your time should be spent here understanding how this approximation works then everything else is trivial like working through any algorithm text on your own.
 </p>
 
 <p>
-Chapter 0.3 of <i>Algorithms</i> by <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> read through it once, then skip to page 12 of 1.1 <i>Basic Arithmetic</i> and read the bases and logs aside if you forgot them. It's still not enough though, procure <i>The Art of Computer Programming, Vol. 1</i> either by <a href="http://library.lol/main/3612CEBCEE66E75A23440B97A1B560DB">library genesis</a> or buy a copy it'll be the best book you'll ever own. Skip to 1.2.2 <i>Numbers, Powers, and Logarithms</i>. We are interested in page 22 and 23, the laws of exponents for integer exponents, and rational exponents, and all the logarithm identities. A log is an exponent, so exactly how you combine exponents is how you manipulate logs ie log(xy) what do you do when you multiply two bases together w/exponents? log(x) + log(y) you add them. 
+To be concrete we are learning how to estimate and approximate, throwing out or suppressing things that are not relevant to our mathematical model. 
+</p>
+</div>
+
+<div id="outline-container-Computational%20model" class="outline-3">
+<h3 id="Computational%20model">Computational model</h3>
+<div class="outline-text-3" id="text-Computational%20model">
+<p>
+First, if you did not do CS19, then watch <a href="https://youtu.be/-dQAGsSrKBA">this</a> which is lecture 4 of CS19 where Prof K explains a computational model. You can, even if you only know Python or another language, probably figure out the simple Pyret cases syntax which you can interpret as an if-statement: if this link is empty then 0, not empty count +1 and then go to the next link until finished and we add up the length. The point is he is arbitrarily just adding constant +1 to everything, but the real work is n the size of the list. If you count every element in a list, even if the list is size 1 or a billion it's still linear work, you have to go through every element one at a time. The little constants around of initializing this variable, or checking to see if it's empty, these don't matter in the grand scheme when inputs approach infinity and that's all we care about now: inputs approach infinity.
 </p>
 
 <p>
-<b>CS Theory Toolkit</b>
-The first 2 lecture parts of this course are worth  watching if you're curious how TCS research works, and the <a href="https://youtu.be/qP4XEZ54eSc">lecture</a> for part 3 such as where to ask questions or using oeis.org to figure sequences of coefficients and other patterns. 
+The MIT 6.006 lectures/notes will explain all this if you've never seen it but generally a RAM model is used, which means there is a flat array of bytes of memory and we can access anywhere in that memory by directly pointing at it, meaning you don't linearly have to start at the beginning and go all the way to the middle to get that memory, you can just specify it's exact location and go there. That's the computational model for algorithms at our level but we'll see it can change to something more interesting like a language based model by the end of this workshop.
 </p>
 
 <p>
-Let's watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. You can type all these definitions into desmos to see their visualization like I did <a href="https://www.desmos.com/calculator/xzqea0wfwc">here</a>, then keep zooming out to see how they change when inputs become gigantic. The constant and logarithm become indistinguishable, n log(n) grows very slowly towards 2<sup>x</sup> because it's linear times some logarithmic factor.  
+These <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">notes</a> on purely functional datastructures have an excellent introduction to the ambiguities of Big-O notation, what a computation model is, what 'running time' means.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Logarithms" class="outline-3">
+<h3 id="Logarithms">Logarithms</h3>
+<div class="outline-text-3" id="text-Logarithms">
+<p>
+Chapter 0.3 of <i>Algorithms</i> by <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> read through it once, then skip to page 12 of 1.1 <i>Basic Arithmetic</i> and read the bases and logs aside if you forgot them. It's still not enough though, procure <i>The Art of Computer Programming, Vol. 1</i> either by <a href="http://library.lol/main/3612CEBCEE66E75A23440B97A1B560DB">library genesis</a> or buy a copy it'll be the best book you'll ever own. Skip to 1.2.2 <i>Numbers, Powers, and Logarithms</i>. We are interested in page 22 and 23, the laws of exponents for integer exponents, and rational exponents, and all the logarithm identities. A log is an exponent, so exactly how you combine exponents is how you manipulate logs ie log(xy) what do you do when you multiply two bases together w/exponents? log(x) + log(y) you add them.
 </p>
 
 <p>
-@1:58 x<sub>0</sub> or 'x naught' means a particular input to f(x) so x<sub>0</sub> for example can be f(5), so all inputs to f(x) equal or greater than 5 this definition holds. @5:40 his anonymous function, that's the Prof K interpretation from CS19, O(n<sup>2</sup>) by itself without the entire f(x) = definition is O([n -&gt; n<sup>2</sup>]). @12:00 10n/n<sup>2</sup> and you jack up inputs to approach infinity you will get a limit of 0, and thus 10n is in the little-o family of functions that are stricly less than the family of functions in n<sup>2</sup> however 10n is still in the family of functions that are Big-O of n<sup>2</sup> (and anything else bigger than linear). @13:29 the anonymous function again, O(1) means O([n -&gt; c]) for all inputs what we get is bounded by a constant. 14:50 log<sup>3</sup> n means (log(n))<sup>3</sup> and since all logarithms are really exponents it's log(n<sup>3</sup>) since (b<sup>1</sup>)<sup>2</sup> is b<sup>2</sup> this is called a <a href="https://en.wikipedia.org/wiki/Polylogarithmic_function">polylogarithmic</a> function 'a polynomial in the the logarithm of n' and denotes it is growing more slowly than any polynomial exponent, because it's a cubed/squared log. 
+In the <a href="file:///home/jbh/cmu/ai_tripos/calculus.html#Day%205%20Logarithm%20fundamentals">calculus</a> workshop there's a great chapter and lectures on ln(x) or the 'natural logarithm' if you've never seen it before, breaking it down into parts like what are the parameters to a log() function and what do they do. You don't really need to know much calculus to do algorithm analysis, algebra manipulation is preferred but we will see the idea of a limit, and e<sup>x</sup> or ln(x) which are both models of exponential ie: 2<sup>n</sup> and logarithmic growth ie: log(n)
+</p>
+</div>
+</div>
+
+<div id="outline-container-CS%20Theory%20Toolkit%20lecture%202" class="outline-3">
+<h3 id="CS%20Theory%20Toolkit%20lecture%202">CS Theory Toolkit lecture 2</h3>
+<div class="outline-text-3" id="text-CS%20Theory%20Toolkit%20lecture%202">
+<p>
+Really what we are studying is computational complexity. Algorithm intro courses attempt to introduce this in a very confusing way but what you really should know, to understand algorithms and their analysis, is basic complexity and the art of asymptoptic analysis. So let's do that. The rest will be trivial.     
+</p>
+
+<p>
+Watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. You can type all these definitions into desmos to see their visualization like I did <a href="https://www.desmos.com/calculator/xzqea0wfwc">here</a>, then keep zooming out to see how they change when inputs become gigantic. The constant and logarithm become indistinguishable, n log(n) grows very slowly towards 2<sup>x</sup> because it's linear times some logarithmic factor. 'Factor' here means you are multiplying two things, so they will like in highschool break into factors and one will be logarithmic because you multiplied n by log(n). 
+</p>
+
+<p>
+@1:58 x<sub>0</sub> or 'x naught' means a particular input to f(x) so x<sub>0</sub> for example can be f(5), so all inputs to f(x) equal or greater than 5 this definition holds. @5:40 his anonymous function, that's the Prof K interpretation from CS19, O(n<sup>2</sup>) by itself without the entire f(x) = definition is O([n -&gt; n<sup>2</sup>]). @12:00 10n/n<sup>2</sup> and you jack up inputs to approach infinity you will get a limit of 0, and thus 10n is in the little-o family of functions that are stricly less than the family of functions in n<sup>2</sup> however 10n is still in the family of functions that are Big-O of n<sup>2</sup> (and anything else bigger than linear). @13:29 the anonymous function again, O(1) means O([n -&gt; c]) for all inputs what we get is bounded by a constant. 14:50 log<sup>3</sup> n means (log(n))<sup>3</sup> and since all logarithms are really exponents it's log(n<sup>3</sup>) since (b<sup>1</sup>)<sup>2</sup> is b<sup>2</sup> this is called a <a href="https://en.wikipedia.org/wiki/Polylogarithmic_function">polylogarithmic</a> function 'a polynomial in the the logarithm of n' and denotes it is growing more slowly than any positive polynomial exponent, because it's a log.
+</p>
+
+<p>
+This is worth expanding on, a polynomial 'in x' means what you learned in <a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/e90604c4b13e7695572308d60f7ecc889484108c">highschool</a>. The first 10 minutes of <a href="https://youtu.be/JpPNzdlXVYw">this</a> lecture explains why we use them. Here we are talking about a polynomial 'in n' so replace all the x's with the function n or polylogarithmic replace all the x's with log(n). To me at my pleb level of mathematics it means there is a vector space in that function or there is an abstract idea of a function space that exists called log(n) and inside this log space is another space that satisfies all the laws of polynomial operations, like a squared log(x) or cubed log(x).  
 </p>
 
 <p>
@@ -683,7 +731,7 @@ Let's watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of
 <ul class="org-ul">
 <li>poly(g(x)) or f(x) = g(x)<sup>O(1)</sup>
 <ul class="org-ul">
-<li>any growth in the form of big-O with an exponent</li>
+<li>any growth in the form of big-O with a constant exponent</li>
 <li>example: O(n)<sup>2</sup> is poly(g(x))</li>
 </ul></li>
 <li>O-tilde(g(x)) or f(x) = g(x) * log(g(x))<sup>O(1)</sup>
@@ -694,43 +742,51 @@ Let's watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of
 </ul>
 
 <p>
-O-tilde indicates there's some logarithmic growth factors in your bound that you don't care about/couldn't pin down. His second example is also in the form of O-tilde, it's not a log but it allows you logarithmic factors, so if you take the log of 3<sup>n</sup> it's n, so by definition of O-tilde you can ignore poly(n) logarithmic factors such as n<sup>5</sup>. His check that this isn't 2<sup>n</sup> he uses the first chapter of DPV where they show testing a f(x)/g(x) ratio so 3<sup>n</sup> over 2<sup>n</sup> = 1.5<sup>n</sup> and making sure it's not smaller than poly(n). 
+If c is a constant, notice that log c = n<sup>O(1)</sup> by definition of a logarithm. This means poly(log c) is poly(n). O(log c) = n<sup>O(1)</sup>  and O(log c)<sup>c</sup> is also n<sup>O(1)</sup> and that's what the notation for \(\widetilde{O}\)(g(x)) means. You suppress the logarithmic factors because they're growing much more slowly than whatever the dominant or significant growth is.
 </p>
 
 <p>
-To recap the confusing at first notation:
+So in his lecture, he took \(n^5 \cdot 3^{n}\) and used O-tilde to model it's bound:
 </p>
-
 <ul class="org-ul">
-<li>\(n^{5}\cdot3^n\) is g(x) the bound you discover for your algorithm f(x)
+<li>n<sup>5</sup> * poly(log(3<sup>n</sup>) or g(x) * poly(log(g(x)))
 <ul class="org-ul">
-<li>it is in the form of g(x) * g(x) so you can use \(\widetilde{O}\)(g(x))</li>
-<li>n<sup>5</sup> is a function g(x), 3<sup>n</sup> is also a function g(x)</li>
+<li>which is n<sup>5</sup> * poly(n * log 3)</li>
+<li>which is n<sup>5</sup> * poly(n<sup>O(1)</sup>)</li>
+<li>which is 3<sup>n</sup> * poly(n) because all those factors of n, they don't matter and are miniscule in comparison to the growth of 3<sup>n</sup></li>
 </ul></li>
-<li>we use the same notation g(x) because this represents a big-O bound on the right side \(O(n^{5}3^n)\) which is also \(O(n^{5}) \cdot\) poly(log(\(3^{n}\))) which is \(\widetilde{O}\)(\(3^{n}\)) because since log(\(3^{n}\)) is n, we have poly(n) which by definition is any n with a constant exponent ie: a polynomial and by definition of \(\widetilde{O}\)(g(x)) we can toss out those logarithmic factors.</li>
 </ul>
 
 <p>
-Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions it just means your family of functions for g(x) should be in 'standard form' as he lays out for example sqrt(n) is standard form but sqrt(n + 1) isn't. He shows how to fix this in part 3. 
+O-tilde indicates there's some logarithmic growth factors in your bound that you don't care about/couldn't pin down. His check that this isn't 2<sup>n</sup> he uses the first chapter of DPV where they show testing a f(x)/g(x) ratio so 3<sup>n</sup> over 2<sup>n</sup> = 1.5<sup>n</sup> and making sure it's not smaller than poly(n). 
 </p>
 
 <p>
-Moving on to <a href="https://youtu.be/Ao6aXSyJ6Gk">part b</a> there's an interesting illustration of harmonic numbers which will surely come up in DPV and how H<sub>n</sub> is in Big-Theta(log n) when you use asymptotics to estimate it. He uses basic integration of 1/x you can see <a href="./calculus.html">here</a> which is log(x) but the point here is manipulating results so you can get that form of something tending towards 1.   
+Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions it just means your family of functions for g(x) should be in 'standard form' as he lays out for example sqrt(n) is standard form but sqrt(n + 1) isn't. He shows how to fix this in part 3. We will read this chapter. 
+</p>
+
+<p>
+Moving on to <a href="https://youtu.be/Ao6aXSyJ6Gk">part b</a> there's an interesting illustration of harmonic numbers which will surely come up in DPV and how H<sub>n</sub> is in Big-Theta(log n) when you use asymptotics to estimate it. He uses basic integration of 1/x you can see <a href="./calculus.html">here</a> which is log(x) but the point here is manipulating results so you can get that form of something tending towards 1.     
 </p>
 
 <p>
 Moving on to <a href="https://youtu.be/flge97Jp6uo">part 3</a> the magic of asymptotics: e<sup>x</sup> is roughly 1 + x for small x. The rest of lecture is showing how you take a complicated expression and simplify it with asymptotics exactly what we will see in every algorithms text or paper.
 </p>
+</div>
+</div>
 
+<div id="outline-container-CS%20Theory%20toolkit%20lecture%203" class="outline-3">
+<h3 id="CS%20Theory%20toolkit%20lecture%203">CS Theory toolkit lecture 3</h3>
+<div class="outline-text-3" id="text-CS%20Theory%20toolkit%20lecture%203">
 <p>
-TODO
+When we're done we'll read about this in <i>Asymptopia</i> by Spencer and guess what, you've just finished 80% of the mathematical preliminaries of <i>The Art of Computer Programming</i>.  
 </p>
-
 
 <hr>
 <p>
 <a href="./index.html">Home</a>
 </p>
+</div>
 </div>
 </div>
 </div>
