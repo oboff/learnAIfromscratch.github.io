@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-30 Tue 14:32 -->
+<!-- 2021-11-30 Tue 14:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -359,7 +359,7 @@ These are only needed if the public online resources disappear
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard library data structures for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. You don't have to use their specific compiler version for your local system, just be aware of any differences in versions when you make a submission so not using some feature that doesn't exist yet in the Kattis version. Whatever language you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example. Here I will use <a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">functional C++</a> essentially programming similar to the style in the <a href="./software.html">CS19</a> workshop. 
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard library data structures for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. You don't have to use their specific compiler version for your local system, just be aware of any differences in versions when you make a submission so not using some feature that doesn't exist yet in the Kattis version. Whatever language you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example. Here I will use <a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">functional C++</a> essentially programming similar to the style in the <a href="./software.html">CS19</a> workshop or you can use Kotlin, which the ICPC now accepts. 
 </p>
 
 <p>
@@ -409,7 +409,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org6ebc6fb">
+<pre class="example" id="org1e88638">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
@@ -495,7 +495,7 @@ A good book is <i>The Design and Evolution of C++</i> by Stroustrup you can find
 </p>
 
 <p>
-Another book I bought was <a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">Functional Programming in C++</a> as we are using C++17 on Kattis so lambdas and transforms are built-in. To begin I do not include every C++ library like in most competitive programming templates, instead I've been manually typing std::vector&lt;thing&gt; until I'm so familiar with the standard library I can graduate to a template opening up all their namespace by default. You can get very fast at <a href="https://play.typeracer.com/">typing</a> the full library names. 
+Another book I bought was <a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">Functional Programming in C++</a> as we are using C++17 on Kattis so lambdas and transforms are built-in. To begin I do not include every C++ library like in most competitive programming templates, instead I've been manually typing the library names to include until I'm so familiar with the standard library I can graduate to a template opening up all their namespace by default. You can get very fast at <a href="https://play.typeracer.com/">typing</a> the full library names. 
 </p>
 
 <p>
@@ -523,7 +523,7 @@ Read 1.4 <i>Ad-Hoc Problems</i> as you do them from the book if using the 3rd ve
 To get the hang of C++ I/O rewatch Gennady's walkthrough how he retrieved input while you have cppreference.com open to view the standard library functions. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
 </p>
 
-<pre class="example" id="org3a8acbd">
+<pre class="example" id="org141dab8">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -557,7 +557,11 @@ int main()
 </pre>
 
 <p>
-I haven't untied cout/cin yet since we are a long way from needing that optimization, also don't care about error handling, we are doing this to gain intuitive expertise in algorithms all the real life error handling and testing for software development we will do later. Right now just hack away until this is second nature.  
+Now use g++ to compile, and at first manually enter tests until you get fast enough to pipe in tests like Gennady did from a text file. I haven't untied cout/cin yet since we are a long way from needing that optimization, also don't care about error handling, we are doing this to gain intuitive expertise in algorithms all the real life error handling and testing for software development we will do later. Right now just hack away until this is second nature.
+</p>
+
+<p>
+Many of these chapter 1 ad-hoc problems are famous interview problems like roman numerals. When input/output and string manipulation using the standard library is too easy graduate to chapter 2, you can come back to the difficult ad-hoc problems when we learn strategies for them like backtracking.  
 </p>
 </div>
 </div>
