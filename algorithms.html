@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-30 Tue 14:55 -->
+<!-- 2021-11-30 Tue 18:54 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -409,7 +409,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org1e88638">
+<pre class="example" id="org6a7b2d1">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
@@ -523,14 +523,13 @@ Read 1.4 <i>Ad-Hoc Problems</i> as you do them from the book if using the 3rd ve
 To get the hang of C++ I/O rewatch Gennady's walkthrough how he retrieved input while you have cppreference.com open to view the standard library functions. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
 </p>
 
-<pre class="example" id="org141dab8">
+<pre class="example" id="org751ed83">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
 using namespace std;
 
-int main()
-{
+int main() {
   int a, b;
   cin &gt;&gt; a &gt;&gt; b;
   cout &lt;&lt; 1 + round(a * (b - 1)) &lt;&lt; endl;
@@ -542,8 +541,7 @@ int main()
 #include &lt;vector&gt;
 using namespace std;
 
-int main()
-{
+int main() {
   int total, answer;
   cin &gt;&gt; total &gt;&gt; answer;
   // first input determines how many throwaway 3rd inputs:
@@ -557,12 +555,20 @@ int main()
 </pre>
 
 <p>
-Now use g++ to compile, and at first manually enter tests until you get fast enough to pipe in tests like Gennady did from a text file. I haven't untied cout/cin yet since we are a long way from needing that optimization, also don't care about error handling, we are doing this to gain intuitive expertise in algorithms all the real life error handling and testing for software development we will do later. Right now just hack away until this is second nature.
+In this example for Roaming <a href="https://open.kattis.com/problems/romans">Romans</a> I couldn't pass the last test case until I abandoned all C++ built-ins like ceil/round and just cast the type to an int to cut off the decimal:
 </p>
 
-<p>
-Many of these chapter 1 ad-hoc problems are famous interview problems like roman numerals. When input/output and string manipulation using the standard library is too easy graduate to chapter 2, you can come back to the difficult ad-hoc problems when we learn strategies for them like backtracking.  
-</p>
+<pre class="example" id="org69be106">
+#include &lt;iostream&gt;
+
+int main() {
+  float a;
+  std::cin &gt;&gt; a;
+  int n =  static_cast&lt;int&gt;(a * 1087.7626 + 0.5);
+  std::cout &lt;&lt; n;
+  return 0;
+}
+</pre>
 </div>
 </div>
 </div>
