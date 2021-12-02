@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-18 Wed 21:01 -->
+<!-- 2021-12-02 Thu 07:59 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -268,7 +268,7 @@
 </li>
 <li><a href="#Lecture%202">Lecture 2</a>
 <ul>
-<li><a href="#10-601%20Decision%20Trees%20Part%201">10-601 Decision Trees Part 1</a></li>
+<li><a href="#10-301%20Decision%20Trees%20Part%201">10-301 Decision Trees Part 1</a></li>
 <li><a href="#10-701%20Probability%2C%20MLE%20and%20MAP">10-701 Probability, MLE and MAP</a></li>
 <li><a href="#CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">CS4780 Lecture 2 Supervised Learning Setup II</a></li>
 <li><a href="#HW1%2010-301">HW1 10-301</a>
@@ -315,7 +315,7 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-A tour through some current university AI courses and how to optimize the algorithms they teach us.
+A tour through some current university AI courses and how to optimize the algorithms they teach us. You can skip to the homework and use it learn the course as you complete the homework instead of linearly watching lectures and reading. 
 </p>
 
 <p>
@@ -340,7 +340,7 @@ I'll do these but you don't have to:
 <p>
 Some backups  
 </p>
-<pre class="example" id="org17b6b51">
+<pre class="example" id="org7d6c4b9">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -390,7 +390,6 @@ Mathematics reference
 </div>
 </div>
 
-
 <div id="outline-container-Papers" class="outline-3">
 <h3 id="Papers">Papers</h3>
 <div class="outline-text-3" id="text-Papers">
@@ -412,10 +411,6 @@ Mathematics reference
 <div class="outline-text-3" id="text-Which%20language%20should%20I%20use">
 <p>
 Since we are building from scratch and not using frameworks, any language really, read the transcript <a href="https://signalsandthreads.com/python-ocaml-and-machine-learning/">here</a>. If you are on a phone (yes, you can do this all on a phone) the homework can be completed in your browser with Google Colab a tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a> or use <a href="https://replit.com">replit</a>, or mybinder or nextjournal if you want a notebook style interface running Julia.
-</p>
-
-<p>
-OpenAI released their own language <a href="https://www.openai.com/blog/triton/">Triton</a> July 28 2021 for GPU neural network parallel programming. We will learn what it does in the optimization course from MIT.
 </p>
 </div>
 </div>
@@ -512,9 +507,9 @@ Some conditional probability introduced here that are in the above Wildberger le
 <h2 id="Lecture%202">Lecture 2</h2>
 <div class="outline-text-2" id="text-Lecture%202">
 </div>
-<div id="outline-container-10-601%20Decision%20Trees%20Part%201" class="outline-3">
-<h3 id="10-601%20Decision%20Trees%20Part%201">10-601 Decision Trees Part 1</h3>
-<div class="outline-text-3" id="text-10-601%20Decision%20Trees%20Part%201">
+<div id="outline-container-10-301%20Decision%20Trees%20Part%201" class="outline-3">
+<h3 id="10-301%20Decision%20Trees%20Part%201">10-301 Decision Trees Part 1</h3>
+<div class="outline-text-3" id="text-10-301%20Decision%20Trees%20Part%201">
 <p>
 Watching 10-601 second lecture <i>Decision Trees (Part 1)</i>. There's secret <a href="https://1drv.ms/o/s!Aqk9RupCw3gqhnEVySsGVwiAwMI6">notes</a> and also a math notation <a href="http://www.cs.cmu.edu/~mgormley/courses/10601-s20/slides/10601-notation.pdf">crib sheet</a> that is extremely helpful. 
 </p>
@@ -565,7 +560,7 @@ Probably this lecture is the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="orgcf0ef39">
+<pre class="example" id="orgdf68e3b">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -667,7 +662,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">first homework</a> or from <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">here</a> or <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">here</a>. All these classifier functions like decision trees already exist in highly optimized libraries so I implemented the decision stump assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is to understand how a decision stump works. You can import the testing and training data as Google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="orgce9b4a1">
+<pre class="example" id="org57a595b">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -870,7 +865,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="org800d00b">
+<pre class="example" id="orgc4d94ad">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -919,7 +914,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a>.
 </p>
 
-<pre class="example" id="org3109041">
+<pre class="example" id="orgdd3ee0a">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -986,37 +981,30 @@ Really good high level talk about k-nearest neighbors to select a label. If it's
 <h3 id="10-301%20Decision%20Trees%202">10-301 Decision Trees 2</h3>
 <div class="outline-text-3" id="text-10-301%20Decision%20Trees%202">
 <p>
-Second <a href="https://youtu.be/MqiC3w7KYF4">lecture</a> on decision trees that predict a single class by a majority vote at the leaf. Reminder again that all these algorithms already <a href="https://github.com/topics/decision-tree">exist</a> we are practicing building them to better understand how the magic works.
+Second <a href="https://youtu.be/MqiC3w7KYF4">lecture</a> on decision trees that predict a single class by a majority vote at the leaf. 
 </p>
 
-<dl class="org-dl">
-<dt>fun h(x</dt><dd>Vector) -&gt; Probability:
-<ul class="org-ul">
-<li>doc "Hypothesis function using decision tree"</li>
-<li>cases x:</li>
-<li>internal node? compare x.attribute and branch</li>
-<li>leaf? return p(y|x)</li>
-</ul></dd>
+<pre class="example" id="orgade8aec">
+fun h(x :: Vector) -&gt; Probability:
+ doc "Hypothesis function using decision tree"
+ cases x:
+ internal node? compare x.attribute and branch
+ leaf? return p(y|x)
 
-<dt>fun train(d</dt><dd>TrainingSet) -&gt; Tree:
-<ul class="org-ul">
-<li>doc "Create decision tree"</li>
-<li>root = create Node(data = d)</li>
-<li>train-tree(root)</li>
-</ul></dd>
+fun train(d :: TrainingSet) -&gt; Tree:
+ doc "Create decision tree"
+ root = create Node(data = d)
+ train-tree(root)
 
-<dt>fun train-tree(node</dt><dd>Tree) -&gt; Tree:
-<ul class="org-ul">
-<li>choose best attribute to split node that maximizes splitting criteria</li>
-<li>create child nodes for split attributes</li>
-<li>train-tree(child-node) for each attribute</li>
-<li>leaf label = majority-vote(child-node) meaning all plus, or all minus (zero error rate)</li>
-</ul></dd>
-</dl>
-
+fun train-tree(node :: Tree) -&gt; Tree:
+ choose best attribute to split node that maximizes splitting criteria
+ create child nodes for split attributes
+ train-tree(child-node) for each attribute
+ leaf label = majority-vote(child-node)
+</pre>
 
 <p>
-The rest of the lecture is about what 'maximizes splitting criteria' means which will be in the reading.
+The rest of the lecture is about what 'maximizes splitting criteria' means using Gini impurity on a data set to decide which node is best to split on, this will be on the homework. 
 </p>
 </div>
 </div>
@@ -1193,7 +1181,7 @@ He reminds us you can do all the 10-301 homework on google colab and the tutoria
 </p>
 
 <p>
-@9:23, splitting criteria GINI gain example, obviously P(A=1) = 8/8 or 1, and P(A=0) = 0, @15:11 he corrects this. 
+@9:23, splitting criteria GINI gain example, obviously P(A=1) = 8/8 or 1, and P(A=0) = 0, @15:11 he corrects this but he doesn't correct the Gini Gain equation itself at the bottom which is wrong, see end of lecture 3 or <a href="#HW2%20Decision%20trees">HW2 Decision trees</a>. Make sure you write down the Gini impurity and Gini gain equations you'll need them later. 
 </p>
 
 <p>
@@ -1252,7 +1240,7 @@ What is \(p(a_{1},b_{2}\))? In the recitation these two random variables were de
 What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we can construct a joint probability table since we know there are only 4 possible states and are told the probability of \(a_1\) is 0.5, and the total probability of \(b_2\) is 0.5 as per recitation definition of \(p(a_{i})\). You can construct these as per the above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a>:
 </p>
 
-<pre class="example" id="orgc234428">
+<pre class="example" id="org7d1c073">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      |   x | x   | ?        |
@@ -1264,7 +1252,7 @@ What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we 
 <p>
 If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and since \(b_2\) sums to 0.5, \(b_2|a_2\) must also be 0.5:
 </p>
-<pre class="example" id="org4f249ba">
+<pre class="example" id="orgd60a623">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      | 0.5 | x   | ?        |
@@ -1276,7 +1264,7 @@ If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and sinc
 <p>
 As the margins must sum to 1, fill in the rest
 </p>
-<pre class="example" id="org5d65131">
+<pre class="example" id="org1c9c77a">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      | 0.5 |   0 |      0.5 |
@@ -1297,7 +1285,7 @@ Because the recitation states the variables are not independent, from the same a
 <b>Question 2</b>
 Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is defined as P(A and B) or P(A)P(B) and as we were given both values in the writeup: 0.5 * 0.5 = 0.25. We can construct another table:
 </p>
-<pre class="example" id="orgdf34419">
+<pre class="example" id="orgeec6d97">
 |          |  a_1 | a_2 | Marginal |
 |----------+------+-----+----------|
 | b_1      |    x | x   |      0.5 |
@@ -1309,7 +1297,7 @@ Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is define
 <p>
 Deduce the rest since margins must add up to 1:
 </p>
-<pre class="example" id="orgca7b938">
+<pre class="example" id="org65b17a3">
 |          |  a_1 |  a_2 | Marginal |
 |----------+------+------+----------|
 | b_1      | 0.25 | 0.25 |      0.5 |
@@ -1326,7 +1314,7 @@ Deduce the rest since margins must add up to 1:
 Again construct a join distribution table:
 </p>
 
-<pre class="example" id="org558fc9a">
+<pre class="example" id="orge705e12">
 |                | Goodsleep = Yes | Goodsleep = No | Marginal |
 |----------------+-----------------+----------------+----------|
 | Exercise = Yes |             0.3 |            0.2 |      0.5 |
@@ -1386,11 +1374,11 @@ Work through all of these using a <a href="https://www.symbolab.com/solver/deriv
 <h3 id="Recitation%202">Recitation 2</h3>
 <div class="outline-text-3" id="text-Recitation%202">
 <p>
-A recitation on decision trees w/<a href="http://www.cs.cmu.edu/~mgormley/courses/10601/handouts/rec2Sol.pdf">solutions</a>.
+A recitation on decision trees w/<a href="http://www.cs.cmu.edu/~mgormley/courses/10601/handouts/hw2_recitation_solutions.pdf">solutions</a>.
 </p>
 
 <p>
-There is some Python code here using class syntax. If you've never seen it before try Cornell's CS1110 slides <a href="https://www.cs.cornell.edu/courses/cs1110/2020fa/materials/lessons/">here</a>, there is recorded lessons for that whole course <a href="https://vod.video.cornell.edu/channel/CS%2B1110%2BFall%2B2020/179890731">here</a> or assuming you've done <a href="./software.html">CS19</a> or equivalent just read the Python documentation, a class is a type and an object is a value in Python. The recitation has a simple tree traversal algorithm. There's some python debugging tasks at the end of the recitation as wel but the best part of this recitation is using mutual information to design your own decision tree based off data. 
+There is some Python code here using class syntax. If you've never seen it before try Cornell's CS1110 slides <a href="https://www.cs.cornell.edu/courses/cs1110/2020fa/materials/lessons/">here</a>, there is recorded lessons for that whole course <a href="https://vod.video.cornell.edu/channel/CS%2B1110%2BFall%2B2020/179890731">here</a> or assuming you've done <a href="./software.html">CS19</a> or equivalent just read the Python documentation, a class is a type and an object is a value in Python. The recitation has a simple tree traversal algorithm which is handing you the homework we will later do on generating decision trees if you choose to do it in Python. There's some python debugging tasks at the end of the recitation as wel but the best part of this recitation is using mutual information to design your own decision tree based off data. Of course every modern ML framework has all this built in, you choose your decision tree algorithm ie: gini, mutual information/entropy, etc., and all you do is hand it data. 
 </p>
 
 <p>
@@ -1402,12 +1390,11 @@ The reasons for why there's a negative \(log_2\) (we're returning an answer in b
 </p>
 
 <p>
-Page 5, make sure you can do these yourself, use <a href="https://www.desmos.com/calculator/jeqonqibik">Desmos</a> for a calculator if you want in your browser. The more of these you do the more you will understand the entropy/mutual information notation, in lecture it was noted gini gain was similar to mutal information in terms of deciding which attributes to split on for a decision tree. 
+Page 5, make sure you can do these yourself, use <a href="https://www.desmos.com/calculator/jeqonqibik">Desmos</a> for a calculator if you want in your browser. In lecture it was noted gini gain was similar to mutal information in terms of deciding which attributes to split on for a decision tree and gini doesn't use logarithms which are expensive to compute.
 </p>
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-Lecture%205" class="outline-2">
 <h2 id="Lecture%205">Lecture 5</h2>
@@ -1427,7 +1414,56 @@ Page 5, make sure you can do these yourself, use <a href="https://www.desmos.com
 <h3 id="HW2%20Decision%20trees">HW2 Decision trees</h3>
 <div class="outline-text-3" id="text-HW2%20Decision%20trees">
 <p>
-The <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">hw2</a> binary contains the datasets (similar to hw1), and an autograder for Python, Java and C++ but of course you can compile many other languages to Java bytecode or C++ so no reason to only use those 3. We build our first end-to-end learning system. TODO
+The <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">hw2</a> binary contains the datasets and writeup. We build our first end-to-end learning system. Use your favorite language to do this, after we will do the same assignment with scikit learn and see how they build their decision trees. 
+</p>
+
+<p>
+<b>1.1 Gini Impurity</b>
+Overview in case you missed the lectures: Gini Gain/Impurity are methods used to generate a decision tree from a dataset. We figure out the impurity of the entire dataset of labels, then take the impurity of each attribute to split on, figure out if there's any gain to using one attribute over another. The idea is to pick the attribute with the lowest impurity because that means highest classification rate/least errors. This is all automated, and a decision tree is generated. We learned there is also an entropy method of doing this called mutual information but since logarithms are slow to compute, and Gini gain works just as well as the mutual information method, the course promotes use Gini gain to generate decision trees. 
+</p>
+
+
+<p>
+The dataset given in 1.1 for experimental hacking around and modeling purposes can be a list and we can map over two of them and do comparisons:
+</p>
+
+<pre class="example" id="org200b6ee">
+A = [list: 1,1,1,1,0,0,0]
+B = [list: 1,1,0,1,0,1,0]
+C = [list: 0,2,0,2,2,1,0]
+Y = [list: 0,1,1,1,0,0,0] &lt;-- labels/classes
+</pre>
+
+<p>
+Gini impurity G(Y;D) was defined at the end of lecture 3, and the 'Gini index' which appears to be the same thing is on the bottom of page 593 in the Kevin Murphy 2021 AI book. Y is the generic variable for whatever our classes/labels are, D is the generic variable for a dataset.   
+</p>
+
+<p>
+\[G(Y;D) = 1 - P(Y=label)^2 - P(Y \ne label)^2\]
+</p>
+
+<ul class="org-ul">
+<li>Example: If Y = [0,1,1,1,0,0,0]</li>
+<li>G(Y;D) = 1 - (3/7*3/7) - (4/7*4/7)
+<ul class="org-ul">
+<li>= 0.49 or 49% chance of a new random entry to our dataset being missclassified as Gini impurity measures the mistakes.</li>
+</ul></li>
+</ul>
+
+<p>
+Gini Gain G(Y;X;D) as defined end of lecture 3:
+</p>
+
+<p>
+\[G(Y|X_{m}) = G(Y;D) - (P(X_{m=0})(G(Y;D_{xm=0})) + P(X_{m=1})(G(Y;D_{xm=1})))\]
+</p>
+
+<p>
+This translates to G(Y|branch) or the weight of overall D Gini Impurity, minus the combined weights of an attribute branch. In lecture 4, the slides at the beginning the gini gain equation is wrong. Never trust slides.   
+</p>
+
+<p>
+TODO finish the hw
 </p>
 
 
