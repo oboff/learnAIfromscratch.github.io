@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-02 Thu 07:59 -->
+<!-- 2021-12-03 Fri 07:25 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Artificial Intelligence</title>
@@ -340,7 +340,7 @@ I'll do these but you don't have to:
 <p>
 Some backups  
 </p>
-<pre class="example" id="org7d6c4b9">
+<pre class="example" id="org988ea24">
 Torrent for 10-701 lectures/assignments
 magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
 
@@ -560,7 +560,7 @@ Probably this lecture is the best at explaining what a vector representation is 
 In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
 </p>
 
-<pre class="example" id="orgdf68e3b">
+<pre class="example" id="org543201d">
 # Hypothesis Functions
 
 fun hypothesis(n :: Number)-&gt; String:
@@ -662,7 +662,7 @@ The end of this lecture covers generalization. In practice he says you partition
 Try the 10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">first homework</a> or from <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">here</a> or <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">here</a>. All these classifier functions like decision trees already exist in highly optimized libraries so I implemented the decision stump assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is to understand how a decision stump works. You can import the testing and training data as Google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
 </p>
 
-<pre class="example" id="org57a595b">
+<pre class="example" id="org7d38c31">
 include gdrive-sheets
 
 ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
@@ -865,7 +865,7 @@ This actually took an unusual amount of time to figure out, probably because I h
 <b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
 </p>
 
-<pre class="example" id="orgc4d94ad">
+<pre class="example" id="orgd1e7b91">
 data BT:
   | leaf
   | node(v :: String, l :: BT, r :: BT)
@@ -914,7 +914,7 @@ is-in("b", tree)
 <b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a>.
 </p>
 
-<pre class="example" id="orgdd3ee0a">
+<pre class="example" id="orgacd3ff8">
 fun lucas(n :: Number)-&gt; Number:
   doc: "Lucas numbers recursive"
   if n == 0:
@@ -984,7 +984,7 @@ Really good high level talk about k-nearest neighbors to select a label. If it's
 Second <a href="https://youtu.be/MqiC3w7KYF4">lecture</a> on decision trees that predict a single class by a majority vote at the leaf. 
 </p>
 
-<pre class="example" id="orgade8aec">
+<pre class="example" id="org76d60e5">
 fun h(x :: Vector) -&gt; Probability:
  doc "Hypothesis function using decision tree"
  cases x:
@@ -1240,7 +1240,7 @@ What is \(p(a_{1},b_{2}\))? In the recitation these two random variables were de
 What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we can construct a joint probability table since we know there are only 4 possible states and are told the probability of \(a_1\) is 0.5, and the total probability of \(b_2\) is 0.5 as per recitation definition of \(p(a_{i})\). You can construct these as per the above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a>:
 </p>
 
-<pre class="example" id="org7d1c073">
+<pre class="example" id="orga1d74b4">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      |   x | x   | ?        |
@@ -1252,7 +1252,7 @@ What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we 
 <p>
 If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and since \(b_2\) sums to 0.5, \(b_2|a_2\) must also be 0.5:
 </p>
-<pre class="example" id="orgd60a623">
+<pre class="example" id="org2ed9917">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      | 0.5 | x   | ?        |
@@ -1264,7 +1264,7 @@ If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and sinc
 <p>
 As the margins must sum to 1, fill in the rest
 </p>
-<pre class="example" id="org1c9c77a">
+<pre class="example" id="org87f52e4">
 |          | a_1 | a_2 | Marginal |
 |----------+-----+-----+----------|
 | b_1      | 0.5 |   0 |      0.5 |
@@ -1285,7 +1285,7 @@ Because the recitation states the variables are not independent, from the same a
 <b>Question 2</b>
 Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is defined as P(A and B) or P(A)P(B) and as we were given both values in the writeup: 0.5 * 0.5 = 0.25. We can construct another table:
 </p>
-<pre class="example" id="orgeec6d97">
+<pre class="example" id="org66a2533">
 |          |  a_1 | a_2 | Marginal |
 |----------+------+-----+----------|
 | b_1      |    x | x   |      0.5 |
@@ -1297,7 +1297,7 @@ Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is define
 <p>
 Deduce the rest since margins must add up to 1:
 </p>
-<pre class="example" id="org65b17a3">
+<pre class="example" id="orgaf38bb3">
 |          |  a_1 |  a_2 | Marginal |
 |----------+------+------+----------|
 | b_1      | 0.25 | 0.25 |      0.5 |
@@ -1314,7 +1314,7 @@ Deduce the rest since margins must add up to 1:
 Again construct a join distribution table:
 </p>
 
-<pre class="example" id="orge705e12">
+<pre class="example" id="org5721eb3">
 |                | Goodsleep = Yes | Goodsleep = No | Marginal |
 |----------------+-----------------+----------------+----------|
 | Exercise = Yes |             0.3 |            0.2 |      0.5 |
@@ -1422,12 +1422,11 @@ The <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">hw2<
 Overview in case you missed the lectures: Gini Gain/Impurity are methods used to generate a decision tree from a dataset. We figure out the impurity of the entire dataset of labels, then take the impurity of each attribute to split on, figure out if there's any gain to using one attribute over another. The idea is to pick the attribute with the lowest impurity because that means highest classification rate/least errors. This is all automated, and a decision tree is generated. We learned there is also an entropy method of doing this called mutual information but since logarithms are slow to compute, and Gini gain works just as well as the mutual information method, the course promotes use Gini gain to generate decision trees. 
 </p>
 
-
 <p>
 The dataset given in 1.1 for experimental hacking around and modeling purposes can be a list and we can map over two of them and do comparisons:
 </p>
 
-<pre class="example" id="org200b6ee">
+<pre class="example" id="orgb3d119f">
 A = [list: 1,1,1,1,0,0,0]
 B = [list: 1,1,0,1,0,1,0]
 C = [list: 0,2,0,2,2,1,0]
@@ -1435,7 +1434,7 @@ Y = [list: 0,1,1,1,0,0,0] &lt;-- labels/classes
 </pre>
 
 <p>
-Gini impurity G(Y;D) was defined at the end of lecture 3, and the 'Gini index' which appears to be the same thing is on the bottom of page 593 in the Kevin Murphy 2021 AI book. Y is the generic variable for whatever our classes/labels are, D is the generic variable for a dataset.   
+Gini impurity G(Y;D) was defined at the end of lecture 3, and the 'Gini index' which appears to be the same thing is on the bottom of page 593 in the Kevin Murphy 2021 AI book. Y is the set of whatever our classes/labels are, D is the set of the entire dataset.   
 </p>
 
 <p>
@@ -1459,11 +1458,105 @@ Gini Gain G(Y;X;D) as defined end of lecture 3:
 </p>
 
 <p>
-This translates to G(Y|branch) or the weight of overall D Gini Impurity, minus the combined weights of an attribute branch. In lecture 4, the slides at the beginning the gini gain equation is wrong. Never trust slides.   
+This translates to G(Y|branch) or the weight of overall D Gini impurity, minus the combined weights of an attribute branch left or right or more. In lecture 4, the slides at the beginning the gini gain equation is wrong. Never trust slides, the above definition is correct. In the homework we have a vector of an attribute, which has 0, 1, and 2. Simply add it on to the weights of 0 and 1.   
 </p>
 
 <p>
-TODO finish the hw
+<b>Write a program</b>
+Anytime this course asks you to calculate something using a toy dataset, write a throwaway draft program in any language because then you can test, and you'll have to write all these functions for our decision tree generator later anyway so may as well do a draft version first so you better understand how to write the real version. I wrote the following in Pyret which you can cut+paste and run <a href="https://code.pyret.org/">here</a>:
+</p>
+
+<pre class="example" id="orgdfa6fc7">
+import lists as L
+
+#10-601 hw2 1.1 Gini Impurity
+
+A = [list: 1,1,1,1,0,0,0]
+B = [list: 1,1,0,1,0,1,0]
+C = [list: 0,2,0,2,2,1,0]
+Y = [list: 0,1,1,1,0,0,0]
+
+fun prob-node(vector :: List&lt;Number&gt;, n :: Number)-&gt;Number:
+  doc: "P(Y=n) or N_y/Ntotal"
+  vector.filter(lam(x): x == n end).length() / vector.length()
+where:
+  prob-node([list: 1, 1, 1, 0, 0, 0], 1) is 3/6
+end
+
+fun gini-impurity-total(vector :: List&lt;Number&gt;)-&gt;Number:
+  doc: "G(Y;D) is 1 - P(Y=1)^2 - not(P(Y=1))^2"
+  y1 = prob-node(vector, 1)
+  1 - num-sqr(y1) - num-sqr(1 - y1)
+where:
+  gini-impurity-total([list: 1, 1, 1, 0, 0, 0]) is 1 - (3/6 * 3/6) - (3/6 * 3/6)
+  gini-impurity-total(Y) is 1 - num-sqr(3/7) - num-sqr(4/7)
+end
+
+fun branch-count(vector :: List&lt;Number&gt;, n :: Number)-&gt;Number:
+  doc: "Count how many n in an attribute vector"
+  vector.filter(lam(x): x == n end).length()
+where:
+  branch-count([list: 1, 1, 0, 1, 0, 0], 1) is 3
+end
+
+fun branch-match-label(vector :: List&lt;Number&gt;, classes :: List&lt;Number&gt;):
+  doc: "Count how many n in an attribute vector match label=1"
+  L.map2(lam(x, y): if y == 1: x else: "notY" end end, vector, classes)
+    .filter(lam(a): not(a == "notY") end)
+where: 
+  branch-match-label(B, Y) is [list: 1, 0, 1]
+end
+
+fun gini-branch(vector :: List&lt;Number&gt;, classes :: List&lt;Number&gt;, n :: Number):
+  doc: "Count the gini impurity of one side of an attribute node split"
+  n-total = branch-count(vector, n)
+  labels = branch-match-label(vector, classes)
+  labels-match = labels.filter(lam(x): x == n end).length()
+  1 - num-sqr(labels-match / n-total) - num-sqr((n-total - labels-match) / n-total)
+where:
+  gini-branch(A, Y, 1) is 1 - num-sqr(3/4) - num-sqr(1/4)
+  gini-branch(A, Y, 0) is 0
+  gini-branch(B, Y, 1) is 1 - num-sqr(2/4) - num-sqr(2/4)
+end
+
+fun gini-gain(vector :: List&lt;Number&gt;, classes :: List&lt;Number&gt;)-&gt;Number:
+  doc: ```G(Y|X_m) is G(Y;D) - (P(X_{m=0})(G(Y;D_{xm=0})) + P(X_{m=n})(G(Y;D_{xm=n})))
+       Consume vector of attributes, calculate gini gain for every n attributes conditioned
+       on Y labels```
+
+  fun gini-helper(n :: Number, p :: Number)-&gt;Number:
+    doc: "Get every attribute n in a vector starting at 0"
+    if p == 1:
+      0
+    else:   
+      new-p = prob-node(vector, n)
+      (new-p * gini-branch(vector, classes, n)) + gini-helper(n + 1, new-p + p)
+    end
+  end
+
+  gini-impurity-total(classes) - gini-helper(0, 0)
+where:
+  gini-gain(B, Y) is gini-impurity-total(Y)
+    - ((4/7 * (1 - num-sqr(2/4) - num-sqr(2/4)))
+      + (3/7 * (1 - num-sqr(1/3) - num-sqr(2/3))))
+  
+  # test 0, 1, 2 attributes in C
+  gini-gain(C, Y) is gini-impurity-total(Y)
+    - ((3/7 * (1 - num-sqr(1/3) - num-sqr(2/3)))
+      + (1/7 * (1 - num-sqr(0/1) - num-sqr(1/1)))
+      + (3/7 * (1 - num-sqr(2/3) - num-sqr(1/3))))
+end
+
+"Gini gain G(Y,C;D)"
+gini-gain(C, Y)
+"Gini gain G(Y,B;D)"
+gini-gain(B, Y)
+"Gini gain G(Y,A;D)"
+gini-gain(A, Y)
+</pre>
+
+<p>
+TODO.. the same thing for Mutual Information, write a throwaway experiment program.  
 </p>
 
 
