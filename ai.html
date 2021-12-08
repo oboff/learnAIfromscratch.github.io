@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-03 Fri 07:25 -->
+<!-- 2021-12-07 Tue 22:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Artificial Intelligence</title>
+<title>Machine Learning From Scratch</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="jbh">
 <style type="text/css">
@@ -219,1351 +219,230 @@
     /*]]>*///-->
 // @license-end
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
 <header>
-<h1 class="title">Artificial Intelligence</h1>
+<h1 class="title">Machine Learning From Scratch</h1>
 </header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#What%20is%20this">What is this</a>
+<li><a href="#Intro">Intro</a>
 <ul>
-<li><a href="#Courses">Courses</a></li>
-<li><a href="#Books">Books</a></li>
-<li><a href="#Papers">Papers</a></li>
-<li><a href="#Which%20language%20should%20I%20use">Which language should I use</a></li>
+<li><a href="#Applied">Applied</a></li>
+<li><a href="#Choose%20your%20own%20theory%2Falgorithm%20course">Choose your own theory/algorithm course</a></li>
+<li><a href="#Theoretic%20Foundations%20of%20Modern%20Machine%20Learning">Theoretic Foundations of Modern Machine Learning</a></li>
 </ul>
 </li>
-<li><a href="#Lecture%201">Lecture 1</a>
+<li><a href="#Begin">Begin</a>
 <ul>
-<li><a href="#Probability">Probability</a></li>
-<li><a href="#Reading">Reading</a></li>
-<li><a href="#Parameters">Parameters</a></li>
-<li><a href="#PML%20book%20chapter%201">PML book chapter 1</a></li>
-</ul>
-</li>
-<li><a href="#Lecture%202">Lecture 2</a>
-<ul>
-<li><a href="#10-301%20Decision%20Trees%20Part%201">10-301 Decision Trees Part 1</a></li>
-<li><a href="#10-701%20Probability%2C%20MLE%20and%20MAP">10-701 Probability, MLE and MAP</a></li>
-<li><a href="#CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">CS4780 Lecture 2 Supervised Learning Setup II</a></li>
-<li><a href="#HW1%2010-301">HW1 10-301</a>
-<ul>
-<li><a href="#2.2%20Probability">2.2 Probability</a></li>
-<li><a href="#2.3%20Calculus">2.3 Calculus</a></li>
-<li><a href="#2.4%20Vectors%20and%20Matrices">2.4 Vectors and Matrices</a></li>
-<li><a href="#2.5%20Geometry">2.5 Geometry</a></li>
-<li><a href="#2.6%20CS%20Foundations">2.6 CS Foundations</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#Lecture%203">Lecture 3</a>
-<ul>
-<li><a href="#10-701%20Classification">10-701 Classification</a></li>
-<li><a href="#10-301%20Decision%20Trees%202">10-301 Decision Trees 2</a></li>
-<li><a href="#CS4780%20K-nearest%20neighbours">CS4780 K-nearest neighbours</a></li>
-<li><a href="#Lecture%203--Reading">Reading</a></li>
-</ul>
-</li>
-<li><a href="#Lecture%204">Lecture 4</a>
-<ul>
-<li><a href="#10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</a></li>
-<li><a href="#10-301%20Decision%20Trees%203">10-301 Decision Trees 3</a></li>
-<li><a href="#CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">CS4780 Curse of Dimensionality / Perception</a></li>
-<li><a href="#Recitation%201">Recitation 1</a></li>
-<li><a href="#Recitation%202">Recitation 2</a></li>
-</ul>
-</li>
-<li><a href="#Lecture%205">Lecture 5</a>
-<ul>
-<li><a href="#10-701%20TODO">10-701 TODO</a></li>
-<li><a href="#CS4780%20TODO">CS4780 TODO</a></li>
-<li><a href="#10-301%20TODO">10-301 TODO</a></li>
-<li><a href="#HW2%20Decision%20trees">HW2 Decision trees</a></li>
+<li><a href="#Get%20a%20math%20crash%20course%20reference">Get a math crash course reference</a></li>
+<li><a href="#Install%20Software">Install Software</a></li>
+<li><a href="#Applied%20ML%20lecture%201">Applied ML lecture 1</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-What%20is%20this" class="outline-2">
-<h2 id="What%20is%20this">What is this</h2>
-<div class="outline-text-2" id="text-What%20is%20this">
+<div id="outline-container-Intro" class="outline-2">
+<h2 id="Intro">Intro</h2>
+<div class="outline-text-2" id="text-Intro">
 <p>
-A tour through some current university AI courses and how to optimize the algorithms they teach us. You can skip to the homework and use it learn the course as you complete the homework instead of linearly watching lectures and reading. 
-</p>
-
-<p>
-Wildberger's <a href="https://www.youtube.com/playlist?list=PLIljB45xT85AMigTyprOuf__daeklnLse">playlist</a> of probability &amp; stats is a geometric explanation and all you need to start, watch it concurrently with the ML lectures. We will pick up all the prereqs as we do the assignments. There is also <a href="https://seeing-theory.brown.edu/basic-probability/index.html">seeing theory</a> from Brown university with interactive examples of basic probability, and all the other workshops <a href="./index.html">here</a> like linear algebra.   
+This is the 2.0 version of this workshop after I audited many AI courses and filtered for the best resources. All the prereqs of probability, linear algebra/vector calculus will be covered as we go. Any books can be found on <a href="http://libgen.is/">library genesis</a>.
 </p>
 </div>
 
-<div id="outline-container-Courses" class="outline-3">
-<h3 id="Courses">Courses</h3>
-<div class="outline-text-3" id="text-Courses">
+<div id="outline-container-Applied" class="outline-3">
+<h3 id="Applied">Applied</h3>
+<div class="outline-text-3" id="text-Applied">
 <p>
-I'll do these but you don't have to:   
+We will do a short-ish course taught by a core-developer of the scikit-learn library, he will also teach us how to <a href="https://www.youtube.com/playlist?list=PLM-1QqX7UksT6tREbR-n9Mhup0OoRBU34">contribute</a>. The slides are annotated with commentary if you press P while viewing (or click the speech bubble icon). This will also cover Keras, AutoML libraries. 
 </p>
 
 <ul class="org-ul">
-<li>10-701 (Fa 2020) <a href="https://www.cs.cmu.edu/~epxing/Class/10701-20/schedule.html">Intro to Machine Learning</a> w/<a href="https://www.youtube.com/playlist?list=PLsWN0V-b507g7dbQTUvFkKZEqdHR5Fh4P">lectures</a></li>
-<li>10-301/601 (Sp 2020) <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">Intro to Machine Learning</a> w/<a href="https://www.youtube.com/playlist?list=PLpqQKYIU-snAPM89YPPwyQ9xdaiAdoouk">lectures</a></li>
-<li>CS4780 (2018) <a href="https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS">ML for Intelligent Systems lectures</a> w/<a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/">notes</a></li>
-<li>MIT 18.337J <a href="https://mitmath.github.io/18337/">Performance Engineering of Scientific Learning</a> w/<a href="https://www.youtube.com/playlist?list=PLCAl7tjCwWyGjdzOOnlbGnVNZk0kB8VSa">lectures</a></li>
-</ul>
-
-<p>
-Some backups  
-</p>
-<pre class="example" id="org988ea24">
-Torrent for 10-701 lectures/assignments
-magnet:?xt=urn:btih:40ea1c0bb1dbbef33e2f7ffb5df0106f03d50a3e&amp;dn=10701
-
-Torrent for 10-301/601 lectures/assignments
-magnet:?xt=urn:btih:2e1005d058b5f4c357d7338c85937aabdd91dcdc&amp;dn=10601
-</pre>
-</div>
-</div>
-
-<div id="outline-container-Books" class="outline-3">
-<h3 id="Books">Books</h3>
-<div class="outline-text-3" id="text-Books">
-<p>
-The courses do not follow a single book and recommend the following as supplementary, many are free or try <a href="https://en.wikipedia.org/wiki/Library_Genesis">libgen</a>:
-</p>
-
+<li>COMS-W4995 <a href="https://www.cs.columbia.edu/~amueller/comsw4995s20/schedule/">Applied Machine Learning</a> Columbia
 <ul class="org-ul">
-<li><i>Machine Learning A Probabilistic Perspective</i> by Kevin Murphy
+<li><b>Course assumes you are taking a theory course in parallel</b></li>
+<li>Can be done entirely in google colab (free) on a tablet/phone if you have to</li>
+<li>21 lectures on <a href="https://www.youtube.com/playlist?list=PL_pVmAaAnxIRnSw6wiCpSvshFyCREZmlM">YouTube</a></li>
+<li>Homework on <a href="https://github.com/amueller/COMS4995-s20/tree/master/homework">GitHub</a></li>
+<li>Books recommended:
 <ul class="org-ul">
-<li>2021 <a href="https://probml.github.io/pml-book/book1.html">draft</a> is free &amp; includes Jupyter <a href="https://github.com/probml/pyprobml/tree/master/book1">notebooks</a> for each chapter</li>
+<li><a href="http://appliedpredictivemodeling.com/">Applied Predictive Modeling</a></li>
+<li><a href="https://amueller.github.io/#book">Intro to Machine Learning w/Python</a></li>
+<li><a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a></li>
 </ul></li>
-<li><i>A Course in Machine Learning</i> by Hal Daume which is <a href="http://ciml.info/dl/v0_99/ciml-v0_99-all.pdf">free</a></li>
-<li><i>Pattern Recognition and Machine Learning</i> by Bishop is free <a href="https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/">here</a></li>
-<li><i>Machine Learning</i> by Tom Mitchell w/ <a href="http://www.cs.cmu.edu/%7Etom/NewChapters.html">new</a> chapters</li>
-<li><i>The Elements of Statistical Learning</i> is <a href="https://web.stanford.edu/~hastie/ElemStatLearn/">free</a></li>
-</ul>
-
-<p>
-General modeling books   
-</p>
-<ul class="org-ul">
-<li><i>Principles of Applied Statistics</i> by Cox/Donnelly reviewed <a href="http://bactra.org/reviews/cox-donnelly.html">here</a></li>
-<li><i>Mathematical Modeling and Applied Calculus</i> reviewed <a href="https://www.maa.org/press/maa-reviews/mathematical-modeling-and-applied-calculus">here</a>
-<ul class="org-ul">
-<li>This will teach you calculus with vectors, e^x paramaters</li>
-</ul></li>
-</ul>
-
-<p>
-Mathematics reference
-</p>
-<ul class="org-ul">
-<li><i>Mathematics for Machine Learning</i> by Deisenroth/Faisal/Ong is <a href="https://mml-book.github.io/">free</a></li>
-<li>Goodfellow's <i>Deep Learning</i> <a href="https://www.deeplearningbook.org/contents/prob.html">book</a> chapters on linear algebra and probability</li>
-<li><i>Probability Theory: The Logic of Science</i> by Edwin Jaynes is a good casual book to read to understand how probability theory works, something no course has really taught that I've seen</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-Papers" class="outline-3">
-<h3 id="Papers">Papers</h3>
-<div class="outline-text-3" id="text-Papers">
-<ul class="org-ul">
-<li>Depth First Learning builds <a href="https://www.depthfirstlearning.com/">curriculums</a> around papers to understand them</li>
-<li>MIT's graduate section for 6.034 on interesting and critical AI <a href="https://ai6034.mit.edu/wiki/index.php?title=6.S966:_A_Graduate_Section_for_6.034">papers</a></li>
-</ul>
-
-<blockquote>
-<p>
-"Recent astonishing progress in "machine learning" has eclipsed much of the traditional work on symbolic thinking. But problems remain: the systems that result from work on machine learning research have no concept of meaning&#x2013;the "words" do not have referents outside of the ways in which they are used. Such systems may perform well on many tasks but they do not smoothly interface with systems that are organized around modeling the world, which is probably essential to solving really deep problems of common sense and science." - <a href="https://ai6034.mit.edu/wiki/index.php?title=6.S966:_A_Graduate_Section_for_6.034">Gerald Sussman</a>
-</p>
-</blockquote>
-</div>
-</div>
-
-<div id="outline-container-Which%20language%20should%20I%20use" class="outline-3">
-<h3 id="Which%20language%20should%20I%20use">Which language should I use</h3>
-<div class="outline-text-3" id="text-Which%20language%20should%20I%20use">
-<p>
-Since we are building from scratch and not using frameworks, any language really, read the transcript <a href="https://signalsandthreads.com/python-ocaml-and-machine-learning/">here</a>. If you are on a phone (yes, you can do this all on a phone) the homework can be completed in your browser with Google Colab a tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a> or use <a href="https://replit.com">replit</a>, or mybinder or nextjournal if you want a notebook style interface running Julia.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Lecture%201" class="outline-2">
-<h2 id="Lecture%201">Lecture 1</h2>
-<div class="outline-text-2" id="text-Lecture%201">
-<p>
-Let's audit the first intro lectures for CS4780, 10-701, and 10-601.
-</p>
-
-
-<p>
-10-601 primarily talked about history of ML like expert systems and why they failed. We learn the brief difference between regression output, probability output and classification. Most of this lecture is course logistics you can skip.
-</p>
-
-<p>
-10-701 when you get past course logistics talks about how machine learning constantly changes, there was a breakthrough in neural networks recently so now it's all about neural networks, we used to heavily use kernel methods and now do not. We could use convex optimization in the past and now things are much more non-convex.  
-</p>
-
-<p>
-CS4780 the <a href="https://youtu.be/MrLPzBxG95I">intro</a> lecture jumps into supervised learning setup, explaining the math notation. His high level explanation of how machine learning works: insert data, insert expected output, generate program. At 32:00 the supervised learning intro begins. Lecture notes are <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/">here</a>. He uses arrows on top of the notation to denote vectors. Look up what <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables">iid</a> is: "all samples stem from the same generative process and that the generative process is assumed to have no memory of past generated samples". \(D = \{ (x_{i}, y_{i})....(x_{n},y_{n}) \}\) is a subset of XY meaning a cartesian product of every single combination of X (features) with Y (labels), like the cartesian coordinates in a x and y graph, you can combine any one of them to form a point: (0,1) or (100,-1), so using his patient data vector example: Y would be binary 0 or 1 to represent yes or no, X is the feature set of a patient and D is the total training data set of all possible combinations of feature set with yes and no.
-</p>
-
-<p>
-You can learn basic set theory by typing it into <a href="https://www.youtube.com/watch?v=59WX2V7Vjgg">YouTube</a> and vectors are covered in the reading, or the book <i>Mathematical Modeling and Applied Calculus</i> from the beginning of these notes.
-</p>
-</div>
-
-<div id="outline-container-Probability" class="outline-3">
-<h3 id="Probability">Probability</h3>
-<div class="outline-text-3" id="text-Probability">
-<p>
-Wildberger's probability lecture <a href="https://youtu.be/siXj4hkUIp8">Random variables</a> will explain notation like \(X^{-1}(x_i)\). A random variable is a function (it's the function itself) over the sample space that returns a real number and he geometrically demonstrates this function. Expected value E(x) is demonstrated as the mean, variance Var(x) is demonstrated as the distance between probabilities which define your distribution, and standard derivation SD(x) turns the variance from quadratic to linear. Probability is covered by all the books the courses recommend but this is a nice lecture to visualize a random variable and all the other Wildberger lectures are similar first presenting a visualization of the theory then examples.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Reading" class="outline-3">
-<h3 id="Reading">Reading</h3>
-<div class="outline-text-3" id="text-Reading">
-<p>
-Let's skim chapter 8.1 <i>When Models Meet Data</i> of the <a href="https://mml-book.github.io/">mml book</a>. We take tabular data, represent it as a vector with N rows (samples) and D columns (features). Once we have a vector representation we can use linear alegbra to manipulate it, and to compare it to another vector by constructing a geometry we can run optimizations on. We read about different ways to construct new features and that increasingly neural networks are used to learn new features which was mentioned in the first lecture of 10-701. There are two schools: machine learning where the predictor is a function or a probability model, we will mainly be covering the probability model in 10-601/701. In 8.1.4 the goal is to construct a model so that it's parameters will perform well on new unseen data.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Parameters" class="outline-3">
-<h3 id="Parameters">Parameters</h3>
-<div class="outline-text-3" id="text-Parameters">
-<p>
-What is a parameter? In the chapter on vector calculus, these are described as 'an optimization problem: find parameters that control how well a model explains the data' and there is a concrete example of a curve model of training data, where at each observation we want to find parameters that explain the observations basically finding a signal in noise. Skimming through chapter 7 of <i>Principles of Applied Statistics</i> on criteria for parameters: "we aim to summarize the aspects of interest by parameters, preferably small in number and formally defined as properties of the probability model". There's some examples here like a pipe with water flowing through it, if you take measurements what is the minimum amount of measurements to include as parameters to your water pipe model that best describes the observations like velocity, the area inside the pipe, the viscosity of the water (feature set). The choice of regression model is explained as the search for a model with as few explanatory variables as necessary to give an adequate empirical fit to the data where overfitting means your model too closely resembles the sample and can't be generalized.
-</p>
-
-<p>
-Summary: parameters are what you specify some object with, like if you were to specify a cat object, what are the minimum amount of cat characteristics you could use to distinguish the object as a cat from other objects, or choosing a criteria to filter the noise.  
-</p>
-</div>
-</div>
-
-<div id="outline-container-PML%20book%20chapter%201" class="outline-3">
-<h3 id="PML%20book%20chapter%201">PML book chapter 1</h3>
-<div class="outline-text-3" id="text-PML%20book%20chapter%201">
-<p>
-Let's also skim the first chapter in the 2021 <a href="https://probml.github.io/pml-book/book1.html">book</a> <i>Probabilistic Machine Learning</i>. Each chapter also has a colab notebook you can run <a href="https://github.com/probml/pyprobml/tree/master/book1">here</a> in Python. This is a terse survey of what we are about to take in detail and much of this is what we just saw in CS4780's first lecture. All of these stats functions exist as libraries in programming language of choice.
-</p>
-
-<p>
-Reading 1.2 <i>Supervised Learning</i>, if you took the compsci <a href="https://learnaifromscratch.github.io/software.html">workshop</a> you know exactly what tabular data and fixed-size feature representation is as it was the first assignment we did turning documents into vectors and <a href="https://www.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-vectors/a/vector-magnitude-normalization">normalizing</a>. The 'design matrix' example in Murphy's book notes that this is what <i>big data</i> means because N (150 rows) is greater than D (4 columns), the number of features. Figure 1.4 we have simple if-else statements represented as a decision tree, value = [0, 49, 5] for versicolor means our decision tree only correctly labelled 49 versicolors and mislabelled 5 virginica. 
-</p>
-
-<p>
-The decision rule function f(x;theta), I read it as x is the input, consuming that entire table of data for the flowers as a vector, and theta (the parameters) are features and their threshold to define the decision function like feature 'petal-length' &lt;= 2.45.
-</p>
-
-<p>
-1.2.1.4 the goal of supervised learning is coming up with a classification model like the decision tree, to reliably predict labels for any new data. The loss function notation is explained in the appendix. Reading from left to right, Loss-Fun(params) is defined as the average of the sum of all outputs from a binary indicator function so summing 0 and 1's then dividing by the total number of indices of input vector x to get the average. The binary indicator function is a boolean comparing the target y (the known label) to the predicted label output of f(x;params) as you iterate the row indices of that table of data. This is explained in <i>Mathematics for Machine Learning</i> in chapter 8.3.1, or search the entire pdf for negative log-likelihood. According to that book the interpretation should be if you vary the parameters on fixed data (our vector input of flower features) this function tells us how likely a particular setting of the parameters is to explain the observations in the input vector. Example 8.5 of that book shows this as a least-squares problem and both log(), exp() and least squares are explained in the <i>Mathematical Modeling and Applied Calculus</i> text. 
-</p>
-
-
-<p>
-In the following function the hat notation on top of the y means estimated/predicted value of y. That entire function is then further reduced to the notation \(l_{01}(y,\hat{y})\) to indicate zero-one loss of true label vs predicted label. The last function empirical risk minimization, argmin is defined <a href="https://math.stackexchange.com/a/2157524">here</a> meaning what x input to f(x) results in the global minimum (lowest y value) so imagine that you are feeding a decision rule function with numerous different thresholds/features as parameters, that argmin function should return the parameters with the least average mislabeling on the training set.
-</p>
-
-<p>
-Some conditional probability introduced here that are in the above Wildberger lectures. Equation 1.7 if you look at the appendix means the 'parametric distributions' or probability that y = label given random variable x and parameters, and it's equated to more terse notation of \(f_{c}(x;\theta)\). That p() function returns a number from 0 to 1, in this example 3 ordered elements of a list that represent the 3 labels, with the probability of them being labelled setosa 0/54 so highly unlikley to happen, and the probability of being labelled versicolor 49/54 or 0.9 so very high probability but there is still uncertainty. This probability function output is then input to NLL() and if you were to plot a negative log() function in R/Python/Julia, you would see that when given a higher number like 1, the graph is very close to the x-axis (minimum loss) whereas if probability is closer to 0, the graph shoots up to infinity on the y-axis meaning a lot of loss. MLE is explained in the <i>Mathematics for ML</i> book in chapter 8.3.1 "MLE gives us the most likely parameter for the set of data" and there's lectures regarding MLE in 10-601/701.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Lecture%202" class="outline-2">
-<h2 id="Lecture%202">Lecture 2</h2>
-<div class="outline-text-2" id="text-Lecture%202">
-</div>
-<div id="outline-container-10-301%20Decision%20Trees%20Part%201" class="outline-3">
-<h3 id="10-301%20Decision%20Trees%20Part%201">10-301 Decision Trees Part 1</h3>
-<div class="outline-text-3" id="text-10-301%20Decision%20Trees%20Part%201">
-<p>
-Watching 10-601 second lecture <i>Decision Trees (Part 1)</i>. There's secret <a href="https://1drv.ms/o/s!Aqk9RupCw3gqhnEVySsGVwiAwMI6">notes</a> and also a math notation <a href="http://www.cs.cmu.edu/~mgormley/courses/10601-s20/slides/10601-notation.pdf">crib sheet</a> that is extremely helpful. 
-</p>
-
-<p>
-So far, if you took CS19 from the compsci workshop then all of this is familiar ie: table of data, function type notation. If it seems unclear, the c*(x) function is whatever generated the training data, so a doctor providing their medical diagnosis history over x months with hundreds of patients and c*(x) is the function in the doctor's brain that generated the decisions in the training data, and h(x) is what we want to build that best approximates c*(x).
-</p>
-
-<p>
-@37:00 or so we get introduced to loss functions we already read about in the first chapter in the 2021 <a href="https://probml.github.io/pml-book/book1.html">book</a> <i>Probabilistic Machine Learning</i> except he's using the compact abstract notation. We have to write a decision stump algorithm in the homework, write down it's spec he gives in lecture since it's not in the assignment writeup for some reason. The website schedule for the course has a link to <a href="http://ciml.info/dl/v0_99/ciml-v0_99-ch01.pdf">this</a> reading which is exactly what we already read though they explain the notation better.
-</p>
-</div>
-</div>
-
-<div id="outline-container-10-701%20Probability%2C%20MLE%20and%20MAP" class="outline-3">
-<h3 id="10-701%20Probability%2C%20MLE%20and%20MAP">10-701 Probability, MLE and MAP</h3>
-<div class="outline-text-3" id="text-10-701%20Probability%2C%20MLE%20and%20MAP">
-<p>
-Watching <a href="https://youtu.be/BqoKDBHtrno">lecture</a> 2 a helpful review of probability, you may want to do the 10-301 hw first before watching. 'In machine learning, random variables are seldom independent'. He adds that in 10-701 we will (incorrectly) assume they are independent anyway as it's easier to work with independent random variables and for the purposes of machine learning the outcome is fine. Recall from the Wildberger lectures, that a probability distribution is defined by it's mean or expected value, which is the <a href="https://youtu.be/SncS82GBOQc">center of the mass</a>, and it's variance which is how far away the rest of the probabilites are from each other, this gives you that normal distribution curve or some other distribution. The prof in this lecture remarks we will often assume the distribution and solely be concerned with estimating the parameters. Throughout he remarks that often in probability definitions the thing dividing the top is a normalization function to get the probabilities to sum to 1. For example conditional probability P(A|B) = P(A and B)/P(B). Make a toy set: A = {1,2,3} and B = {3,2} then we have P({2,3})/P({2,3}) or 1.
-</p>
-
-<p>
-Bayes rule and everything discussed up to 25mins, plus continuous probability is in the Wildberger lectures. There's an anecdote about false positive rates, and @46:00 he talks about the bayesian approach (MAP) for estimating parameters which he says won't be used in the class. This is all in the Murphy and Mitchell texts.
-</p>
-
-<p>
-@1:04 we get our first algorithm MLE. A density estimator learns a mapping from a set of attributes to a probability. The likelihood of the data given the model: P(set of observations|model) = product of each observation conditioned on the parameters. Model is defined as a collection of parameters, since however you decide to parameterize an object to define it that becomes it's model. We will shortly see MLP or maximizing of a function in the 10-301 homework q = (number of observed heads)/total rolls.
-</p>
-
-<p>
-The prof teaching this is the head of CMU's systems bio group and maintains an interesting page on <a href="https://algorithmsinnature.org/">algorithms used by nature</a>. The second half of 10-701 is taught by prof Xing who somehow has 2 PhDs and is the new <a href="https://mbzuai.ac.ae/about">president</a> of MBZUAI the world's first AI only university, which offers fully paid MSc and PhD degrees. I would imagine if you took his CMU course and can understand it, and you already had a bachelors they would likely grant you admission.  
-</p>
-</div>
-</div>
-
-<div id="outline-container-CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II" class="outline-3">
-<h3 id="CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">CS4780 Lecture 2 Supervised Learning Setup II</h3>
-<div class="outline-text-3" id="text-CS4780%20Lecture%202%20Supervised%20Learning%20Setup%20II">
-<p>
-Watching <a href="https://youtu.be/zj-5nkNKAow">this</a> lecture. 
-</p>
-
-<p>
-Probably this lecture is the best at explaining what a vector representation is and an overall explanation of what ML is. Generate vectors from the data (data space), generate labels (label space). Then choose h() a program in the hypothesis class to learn the labels from the data and this class contains programs for a decision tree, a linear classifier, a neural net etc. He uses the loss function(s) as examples of how to choose h(), which we learned from the Murphy AI book already, but he walks through the notation better than the book. 
-</p>
-
-<p>
-In case this is confusing try modeling this lecture as a toy program. Break out your language of choice, here is mine in <a href="https://code.pyret.org/">Pyret</a>. The learn function takes a vector as input represented as a list, and h(x) a hypothesis function that produces labels from the training data. The toy loss function maps over both the h(x) produced labels and the training labels, calling the delta() function at each element to produce 0 or 1. Then this new list that map2 produces is folded over and divided by the number of samples.  
-</p>
-
-<pre class="example" id="org543201d">
-# Hypothesis Functions
-
-fun hypothesis(n :: Number)-&gt; String:
-  doc: "Purposely incorrect h(x) learning function"
-  if n &lt; 8: 
-    "yes"
-  else:
-    "no"
-  end
-end
-
-fun hypothesis2(n :: Number)-&gt; String:
-  doc: "Bad learning function that is supposed to be &lt;= 8.1"
-  if n &lt; 8.1:
-    "yes"
-  else:
-    "no"
-  end
-end
-
-fun hypothesis3(n :: Number)-&gt; Number:
-  doc: "Bad h(x) function that is supposed to be n &lt;= 8"
-  if n &lt; 8: 
-    n + n
-  else:
-    n
-  end
-end
-
-# Main Learning Function
-
-fun learn&lt;A,B&gt;(x-input :: List&lt;A&gt;, h :: (A -&gt; B)) -&gt; List&lt;B&gt;:
-  doc: "Toy representation of his ML box, consumes data and h(x)"
-  map(h, x-input)
-end
-
-# Loss Functions
-
-fun delta(s1 :: String, s2 :: String) -&gt; Number:
-  doc: "Equality comparison of two labels"
-  if not(s1 == s2):
-    1
-  else:
-    0
-  end
-end
-
-fun zero-one-loss(l :: List&lt;String&gt;, y :: List&lt;String&gt;)-&gt; Number:
-  doc: "1/n(sum(delta(x)) where n is number of samples"
-  num-of-samples = l.length()
-  (map2(delta, l, y).foldl(lam(x, acc): x + acc end, 0)) / num-of-samples 
-end
-
-fun square-loss(l :: List&lt;Number&gt;, y :: List&lt;Number&gt;)-&gt; Number:
-  doc:"1/n(sum(num-sqr(h(x_i) - y_i)))"
-  num-of-samples = l.length()
-  (map2(lam(a, b): num-sqr(a - b) end, l, y)
-      .foldl(lam(x, acc): x + acc end, 0)) / num-of-samples
-end
-
-fun abs-loss(l :: List&lt;Number&gt;, y :: List&lt;Number&gt;)-&gt; Number:
-  doc: "1/n(sum(num-abs(hx_i - y_i)))"
-  num-of-samples = l.length()
-  (map2(lam(a, b): num-abs(a - b) end, l, y)
-      .foldl(lam(x, acc): x + acc end, 0)) / num-of-samples
-end
-
-check:
-  # training data w/string labels
-  x-data = [list: 8, 3, 8.1, 0.1]
-  y-labels = [list: "yes", "yes", "yes", "yes"]
-
-  training-test = learn(x-data, hypothesis)
-  zero-one-loss(training-test, y-labels) is 1/2
-
-  training-test2 = learn(x-data, hypothesis2)
-  zero-one-loss(training-test2, y-labels) is 1/4  
-
-  # training data w/number labels
-  x-data2 =   [list: 2, 4, 6, 8] 
-  y-labels2 = [list: 4, 8, 12, 16]
-
-  training-test3 = learn(x-data2, hypothesis3)
-  square-loss(training-test3, y-labels2) is 64/4
-  abs-loss(training-test3, y-labels2) is 8/4
-end
-</pre>
-
-<p>
-The end of this lecture covers generalization. In practice he says you partition a small amount of the data you are using for training input for use as a test set because it's from the same distribution. Your learning algorithm should then have similar results on the test set as the training set and an expectation function is used on the training h(x) results, to later match against the test data run through h(x) their expected value should be the same.     
-</p>
-</div>
-</div>
-
-<div id="outline-container-HW1%2010-301" class="outline-3">
-<h3 id="HW1%2010-301">HW1 10-301</h3>
-<div class="outline-text-3" id="text-HW1%2010-301">
-<p>
-Try the 10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">first homework</a> or from <a href="https://gitlab.com/mathfromtheverybeginning/homework-10301/-/tree/master/hw1">here</a> or <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">here</a>. All these classifier functions like decision trees already exist in highly optimized libraries so I implemented the decision stump assignment using a few filters in <a href="https://code.pyret.org/">Pyret</a> since the assignment goal is to understand how a decision stump works. You can import the testing and training data as Google sheets, convert them to tables then extract and filter columns. Anything in the homework files ending in .labels is the solution which you can literally cut and paste into google sheets, import as a table in Pyret and then extract as a list to run test cases to see if you pass.
-</p>
-
-<pre class="example" id="org7d38c31">
-include gdrive-sheets
-
-ssid = "1w53u8p8eiyQ5efww54yz9b3WHcFgPMQe-Em0oLG5AJ0"
-politicians-train =
-  load-table: Anti_satellite_test_ban, Aid_to_nicaraguan_contras, Mx_missile, Immigration, Superfund_right_to_sue, Duty_free_exports,	Export_south_africa, Party
-    source: load-spreadsheet(ssid).sheet-by-name("politicians_train", true)
-  end
-
-ssid2 = "1baH3PUQ852FSHZJ063v-ozi0wFARXEHIKIPgHCyqVVY"
-politicians-test =
-  load-table: Anti_satellite_test_ban, Aid_to_nicaraguan_contras, Mx_missile, Immigration, Superfund_right_to_sue, Duty_free_exports,	Export_south_africa, Party
-    source: load-spreadsheet(ssid2).sheet-by-name("politicians_test", true)
-  end
-</pre>
-</div>
-
-<div id="outline-container-2.2%20Probability" class="outline-4">
-<h4 id="2.2%20Probability">2.2 Probability</h4>
-<div class="outline-text-4" id="text-2.2%20Probability">
-<p>
-If you find student solutions (some of the hw I post has them) you shouldn't automatically trust the solutions. For example here is a student quietly breaking academic protocol asking the <a href="https://math.stackexchange.com/questions/3814831/maximizing-probability-of-a-sequence-of-coin-tosses-for-a-biased-coin">same</a> question as problem 2. Are they right about question 1 though, that it's 81/1024? It asked what is the probability of observing <i>any combination</i> and the answer to question 1 is <a href="https://youtu.be/fyOdJ34iMpU">here</a> which is: \(\binom{n}k \cdot p^k(1-p)^{n-k}\) or \(\binom{5}4 \cdot 0.75^4(0.25)^1\) = 405/1024. In the response is a link to this <a href="https://www.wolframalpha.com/input/?i=plot+x%5E4%281-x%29%2C+for+x+in+%280..1%29">graph</a> we can see the maximum x input value for that function is 0.8, or 4/5 or <a href="https://math.stackexchange.com/questions/636539/intuitive-way-to-arrive-at-the-maximizing-argument-for-the-binomial-probability">this</a> answer. Global minimum/maximum is covered in the book <i>Mathematical Modelling and Applied Calculus</i> in Chapter 5: Optimization.  
-</p>
-
-<p>
-<b>Question 3, 4 &amp; 5</b> are in the Wildberger lectures, question 5 is this <a href="https://youtu.be/ERC9H-8kBHs?t=1296">tree</a> example he draws for total probability, P(R)P(W|R) + P(NR)P(W|NR) or 0.4*0.8 + 0.6*0.2 = 0.44
-</p>
-
-<p>
-<b>Question 6</b> P(X=1|Y=1) the set of A where X=1 is {(1,0), (1,1)} and B where Y=1 is {(0,1), (1,1)}. We are interested in A intersect B, divided by B (as per Wildberger lectures on Bayes rule). A intersect B is (1,1) and B is {(0,1), (1,1)} so 0.3/0.5 or 0.6. The probability P(Y=0) is 0.1 + 0.4 
-</p>
-
-<p>
-<b>Question 8, 9 &amp; 10</b> is again in the Wildberger <a href="https://youtu.be/pdaNVZQ9974?t=2548">lectures</a> for example at time index 42:30 <i>Transformation Formulas</i>. Since E[x] is defined as a sum, multiplying by some scalar means you can factor it out ie: 6(E[X]) = E[6X]. Var[2x + 3] is fully explained in the same probability lecture you ignore addition and just square the scalar. 
-</p>
-
-<p>
-<b>Question 11 &amp; 14</b> solution is <a href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading7a.pdf">here</a> in MIT OCW lecture notes, for question 14 to determine b_3 conditioned on c_1, you take 0.35 and divide by the total marginal probability of c_1 which is .02 + .03 + .35 or .35/.40
-</p>
-
-<p>
-Goodfellow's <i>Deep Learning</i> <a href="https://www.deeplearningbook.org/contents/prob.html">book</a> (doesn't work on some browsers, try Chrome or use library genesis) gives the answers for the rest of this probability homework, question 15 the expectation of y is the sum of (values * probability) which is 1/n * y or y/n and question 16 is clearly the first or second option, given that expected value(mean) of a Bernoulli random variable p is p. Searching Wikipedia for Bernoulli entropy I find the answer is A, though we will do log(), exp() in the next part of the homework when we learn calculus.
-</p>
-</div>
-</div>
-
-<div id="outline-container-2.3%20Calculus" class="outline-4">
-<h4 id="2.3%20Calculus">2.3 Calculus</h4>
-<div class="outline-text-4" id="text-2.3%20Calculus">
-<p>
-These problem sets, you can use math softare or online symbolic <a href="https://www.symbolab.com/">calculuator</a> then go through the book <i>Mathematical Modeling and Applied Caluclus</i> to verify the results. 
-</p>
-
-<p>
-First a basic <a href="https://youtu.be/zfHEkt-1sqo">crash course</a> you can skip through, this series was designed for foreign students to Australia to learn the terminology of calculus and has mandarin subtitles. He shows how velocity is the integral of the acceleration and the derivative of velocity is the acceleration. There is also this <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">series</a> for a visualization.  
-</p>
-
-<p>
-What is exp() and ln() in both question 1 and 2, plus the gaussian distribution we saw earlier? Obtain the book <i>Mathematical Modeling and Applied Calculus</i> listed in the beginning of this page via library genesis or other means, and skip to chapter 1.4 <i>Exponential Functions</i>. There is a short demonstration <a href="https://youtu.be/m2MIpDrF7Es">here</a> that assumes you have a basic idea what a derivative is from the other above videos. Read chapter 1.5 on inverses, then 1.6 <i>Logarithmic Functions</i>. By read I mean leisurely skim through the material knowing when to go practice or read more in depth later if needed.
-</p>
-
-<p>
-<b>Question 1</b> evaluate some ln(x + x) derivative, type it into the derivatives calculator above and then step by step figure it out yourself going through the book looking up the derivative rules and chain rule. \(ln(x^2)\) is two composite functions, ln() and f(x*x) or ln(f(x)) or further abstracting this is f(g(x)). The derivative of ln(x) is 1/x, however since this is also a composite function, use the chain rule: 1/x * derivative of x
-</p>
-
-<p>
-\(ln(\frac{4}{x^2} - x^3)\) derivative or D(ln(x)) is:
-</p>
-
-<ul class="org-ul">
-<li>\(\frac{1}{\frac{4}{x^2} - x^3}\) \(\cdot\) D(\(\frac{4}{x^2}\)) - D(\(x^3\))</li>
-<li>We can simplify: \(\frac{4}{x^2}\) is \(4 \cdot x^{-2}\) (exponent rules 1/x is \(x^{-1}\))</li>
-<li>D(\(4x^{-2}\)) = 4 \(\cdot\) \((-2)x^{-3}\) (\(x^n\) derivative = \(nx^{n-1}\))</li>
-<li>D(\(x^3\)) = \(3x^2\) (\(x^n\) derivative again)</li>
-<li>Combine 1/x with D(x) - D(x):</li>
-<li>\(\frac{-8x^{-3} - 3x^2}{\frac{4}{x^2} - x^3}\)</li>
-</ul>
-
-<p>
-You can simplify further if you wanted but the assignment only wants us to plug in x = 1, which is \(\frac{-11}{4 - 1}\) or -11/3.    
-</p>
-
-<p>
-<b>Question 2</b> Find a partial derivative of a multivariable function. Go to page 440 of the math modeling book chapter 4.6 <i>Partial Derivatives</i>. Skimming we see on page 450 'compute the derivative of the given function with respect to one variable, while treating all other variables as constants'. So really question 2 is asking us for the derivative of x.
-</p>
-
-<p>
-Use some online derivatives calculator with (free) steps again, enter 3x^2(sin(z))e^-x <a href="https://www.derivative-calculator.net/">here</a> or in symbolab.com then go through each step with the math modeling and applied calc book: 
-</p>
-
-<ul class="org-ul">
-<li>3\(x^2\)(constant)\(e^{-x}\) or commuting (constant)3\(x^2e^{-x}\)</li>
-<li>Product rule for derivatives: f(x) * g(x) is: g(x) * D(f(x)) + f(x) * D(g(x))</li>
-<li>g(x) = \(e^{-x}\) and f(x) = 3\(x^2\)</li>
-<li>(constant)6x\(e^{-x}\) + 3\(x^2e^{-x}\)</li>
-<li>Note: \(e^{-x}\) is D(\(e^x\)) * D(-1(x)) (chain rule)  
-<ul class="org-ul">
-<li>-1D(x) (via distribution and laws of derivatives)</li>
-<li>-1(1) because D(\(x^1\)) is 1\(x^{0}\)</li>
-</ul></li>
-<li>Factor out (constant)6x\(e^{-x}\) + 3\(x^2e^{-x}\)(-1)</li>
-<li>(constant)3x\(e^{-x}\)(2 - x)</li>
-</ul>
-
-<p>
-<b>Question 3</b> is figure 1 of the beginning of chapter 4.2 <i>The Derivative as a Function</i> in the math modeling book, if (x, D(x)) is (1/3, 0) then it is a local minimum looking at that graph.
-</p>
-
-<p>
-<b>Question 4</b> A <a href="https://youtu.be/lSoaMCNKfAg">transpose</a> converts all the columns into rows and vice-versa, so (1, 2, 3) a single row vector with 3 columns becomes a single column vector with R^3 rows. Whatever n-row, and thus n-dimension vector you enter into that R^n function it returns a tranpose of a single dimension consisting of many columns (our feature sets) and squaring it will make no difference. Answer is R^n -&gt; R. Some of this is in the math modeling book in the chapter for least squares, but modern linear algebra we will cover <a href="https://learnaifromscratch.github.io/linear.html">here</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-2.4%20Vectors%20and%20Matrices" class="outline-4">
-<h4 id="2.4%20Vectors%20and%20Matrices">2.4 Vectors and Matrices</h4>
-<div class="outline-text-4" id="text-2.4%20Vectors%20and%20Matrices">
-<p>
-We will finish this assignment with a <a href="https://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf">crash course</a> in linear algebra for intro ML/data science. Even Ian Goodfellow the author of <i>Deep Learning</i> used the same <a href="https://twitter.com/goodfellow_ian/status/969306960263749632?lang=en">notes</a>. You can also take <a href="https://learnaifromscratch.github.io/linear.html">this</a> ongoing workshop which is the 'modernized' version of MIT's 18.06 where we learn the SVD and other numerical algebra techniques that will definitely be needed here later. There is also a set of lectures for the notes <a href="https://www.cs.cmu.edu/~zkolter/course/linalg/outline.html">here</a> but you will have to manually disable 'firefox has blocked parts of this page for your protection' or any chrome 'unsafe scripts' protection. 
-</p>
-
-<p>
-I'll go through a few of the lectures but you can just read the notes if you want. Let's begin the <a href="https://youtu.be/_gqI7OZEPVs">outline</a>. Nothing much here just a setup of the review. Moving on to <a href="https://youtu.be/PxcK7pz1eGc">Linear Equations</a>. If you have no idea what a vector is, watch <a href="https://youtu.be/yAb12PWrhV0">this</a> lecture on multiples of a vector, adding vectors, what a basis vector is and how to change basis, finally he will show the same 'solve two linear equations of two variables' as the Zico Kolter lecture except he will then show the general 1-dimensional case, then the 2-dimensional case.
-</p>
-
-<p>
-<a href="https://youtu.be/AZfgCOKZsYY">Basic Notation</a> for matrices and column vectors. Transpose is covered, and writing matrix in terms of it's columns or rows. Next is <a href="https://youtu.be/q5_b5MpMXEI">Basic Operations I</a> which is addition and multiplication. <b>Question 4</b> in the 10-301 homework is answered by this lecture. The number of columns in A must equal the number of rows in B for AB to make sense. The <a href="https://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf">notes</a> will show you how the new matrices are created from multiplying two together if the lecture notation is unclear. 
-</p>
-
-<p>
-Now we can do <b>question 3</b> on the homework for 10-301.
-</p>
-
-<p>
-u = \(\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\)  v = \(\begin{bmatrix} 0 & 7 \\ 4 & 5 \\ -1 & 0 \end{bmatrix}\)
-</p>
-
-<p>
-First option of question 3: can we multiply \(u^{T}v\)? The dimensions of u transpose or u^T is 1x3 and v is 3x2. As per video we just saw, the inner dimensions are the same so this is a valid operation. What about \(v^{T}u\)? Here v is 2x3 and u is 3x1. Again the amount of columns in the first structure matches the amount of rows in the second structure. What about uv? u is 3x1 and v is 3x2, this is not compatible so non-valid operation. vv is also non-valid operation.
-</p>
-
-<p>
-<b>Question 2</b> from the 10-301 homework, what is the product of Xy? Using his formula from the lecture algebra review 'Basic Operations I' lecture, this is the sum of \(A_{ik}B_{kj}\) or each i-row in A multiplied by each j-column in B. We know the matrix we are producing will be of size A rows by B columns, or in Xy case 2x1. Multiplying Xy this is:
-</p>
-
-<p>
-\(\begin{bmatrix} 1 & 4 \\ 2 & 6 \end{bmatrix}\) \(\begin{bmatrix} 2 \\ 1 \end{bmatrix}\) = \(\begin{bmatrix} (2*1 + 4*1) \\ (2*2 + 6*1) \end{bmatrix}\) or the second answer, 6 and 10.
-</p>
-
-<p>
-Wildberger covers 2x2 matrix multiplication <a href="https://youtu.be/euoDroq6UMI">here</a>.
-</p>
-
-<p>
-<b>Question 1</b> is answered in the next review video <a href="https://youtu.be/QWswOY-yZhw">Basic Operations II</a>. Transpose y and multiply it by z summing to get a 'scalar value' or in other words a single number. (2*2 + 3*1) or 7. <b>Question 5</b> a square matrix nxn has an inverse if it's determinant is not zero. You can calculate this by <a href="https://youtu.be/anBKWgH_2eM">hand</a> aei - ahf + bfg - bdi + cdh - ceg or <a href="https://www.wolframalpha.com/input/?i=%7B%282%2C+1%2C+4%29%2C+%28-3%2C+2%2C+0%29%2C+%281%2C+3%2C+-2%29%7D">answer</a> question 5 with any math software.
-</p>
-
-<p>
-<b>Question 6</b> if x transpose (1x3 row vector) is multiplied by y (3x1 column vector) then we get z = 1x1 output or single number. The partial derivative \(dz/dy_2\) is \(x_2\) is explained <a href="https://youtu.be/iWxY7VdcSH8">here</a> recall that a partial derivative you treat everything else as a constant, and when you take the derivative of a constant it's always 0 since a constant c is really \(cx^0\), and using the \(x^n\) derivative formula that becomes 0c so everything disappears except for \(x_2y_2\). Because we don't consider \(y_2\) a constant it is \(y_2^1\) and taking the derivative \(nx^{n-1}\) is \(1x_2y_2^{1-1}\) or \(x_2\).
-</p>
-
-<p>
-<b>Question 7</b> from the Zico Kolter notes, lambda is an eigenvalue of A if Ax = (lambda)x or in other words, if a matrix times a vector equals a scalar multiplied by the same vector, that scalar is an eigenvalue and that vector x is an eigenvector. Multiplying the assignment matrix by the vector (-6, 1, 1)^T results in (-12, 2, 2)^T which looks like a scalar value of 2. The full way to do this without knowing the x in Ax is <a href="https://youtu.be/PFDu9oVAE-g">here</a> and <a href="https://youtu.be/Y2sHg11wgE8">here</a>.
-</p>
-
-<p>
-<b>Question 8</b> if you watched the Wildbeger <a href="https://youtu.be/Y2sHg11wgE8?t=1944">lecture</a> on eigenvalues, which starts around 32:20 (though the whole lecture is worth watching to see basis changing, reflexive, transitive and symmetric properties of matrices) he as usual sets up the specific case of Ax = (lambda)x, where lambda is just a scalar or single number, then shows the generalized eigenvector and eigenvalue case. We see there can be multiple eigenvectors and eigenvalues. We see that they are not <a href="https://youtu.be/132amJvoLpU?t=1617">linearly dependent</a> since they are not multiples of each other ie: his example of lambda = 4 and -1 on two seperate eigenvectors for the same matrix. The last option of question 8 'eigenvectors should be linearly dependent' is wrong and illustrated by the 3Blue1Brown <a href="https://youtu.be/PFDu9oVAE-g">visualization</a> of multiple eigenvectors. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-2.5%20Geometry" class="outline-4">
-<h4 id="2.5%20Geometry">2.5 Geometry</h4>
-<div class="outline-text-4" id="text-2.5%20Geometry">
-<p>
-This section is covered by the <i>Mathematics for Machine Learning</i> <a href="https://mml-book.github.io/">book</a> in chapter 3 <i>Analytic Geometry</i>.
-</p>
-
-<p>
-<b>Question 1</b> if you watched Wildberger's dot product <a href="https://youtu.be/iUSbqBeaXpk">lectures</a>, the dot product of two vectors equal to zero means they are orthogonal or perpendicular. <b>Question 2</b> the inner product will be 0 if it's orthogonal and <b>Question 3</b> is also from the Wildberger <a href="https://youtu.be/iDIYUw1QcDk">lectures</a> on <i>Applications of the dot product to planar geometry</i> and searching around for 'find the distance of ax + by + c = 0 line to the origin' you will discover the answer is |c|/sqrt(a^2 + b^2) where c in the form y = mx + b is the b since ax + by = c. The vector w holds the coefficients A and B of Ax + By where x and y are the second vector x, and Wildberger shows their dot product as a typical cartesian ax + by, so the answer is |b|/||w||
-</p>
-
-<p>
-This actually took an unusual amount of time to figure out, probably because I haven't done basic analytical geometry in over a decade.
-</p>
-</div>
-</div>
-
-<div id="outline-container-2.6%20CS%20Foundations" class="outline-4">
-<h4 id="2.6%20CS%20Foundations">2.6 CS Foundations</h4>
-<div class="outline-text-4" id="text-2.6%20CS%20Foundations">
-<p>
-<b>Question 1</b> and <b>Question 2</b> Big-O worst case analysis doesn't care about constants, and the difference between the natural log base and log base 3 is a constant factor so it's just log(n) or f(n) is in O(g(n)) and vice versa. Question 2 10^n will not be contained in n^10 a simple example is n = 11. 10^11 is bigger than 11^10.
-</p>
-
-<p>
-<b>Question 3</b> Depth First Search if you did CS19 in the other software workshop, it's strategy is check the root, then start at the left-most branch and start counting there, so the answer is 12. <b>Question 4</b> is basic as well the BFS search node visit order is root, highest left node to highest right node, descend to leafs.
-</p>
-
-<p>
-<b>Question 5</b> this is in every Python blog/book you can easily look up and was an assignment we already did in CS19. In Pyret the same program could look like this for recursive DFS:
-</p>
-
-<pre class="example" id="orgd1e7b91">
-data BT:
-  | leaf
-  | node(v :: String, l :: BT, r :: BT)
-end
-
-# Test tree:
-#     p
-#    / \
-#   q   c
-#  / \
-# a   b
-
-tree = node("p", 
-  node("q", node("a", leaf, leaf), node("b", leaf, leaf)), 
-  node("c", leaf, leaf))
-
-fun is-in(e :: String, s :: BT)-&gt; BT:
-  doc: "Recursive DFS for a Binary Tree"
-  cases (BT) s:
-    | leaf =&gt; leaf
-    | node(v, l, r) =&gt;
-      block:
-        print(v) # print results to confirm DFS
-        if e == v:
-          node(v, l, r)  
-        else:
-          found-node = is-in(e, l)
-          if found-node == leaf:
-            is-in(e, r)
-          else:
-            found-node
-          end
-        end
-      end
-  end
-end
-
-
-"should be p, q, a, b, c"
-is-in("c", tree)
-"should be p, q, a, b"
-is-in("b", tree)
-</pre>
-
-<p>
-<b>Question 6</b> Write another recursive function, a trivial Pyret example you can run <a href="https://code.pyret.org/">here</a>.
-</p>
-
-<pre class="example" id="orgacd3ff8">
-fun lucas(n :: Number)-&gt; Number:
-  doc: "Lucas numbers recursive"
-  if n == 0:
-    2
-  else if n == 1:
-    1
-  else:
-    lucas(n - 1) + lucas(n - 2)
-  end
-where:
-  lucas(0) is 2
-  lucas(1) is 1
-  lucas(3) is lucas(2) + lucas(1)
-  lucas(32) is 4870847
-end
-</pre>
-
-<p>
-<b>Question 7, 8</b> are typical memoization questions. The first function recurrence is exponential, the second one stores results for later use so runs in O(n) which is the time it takes to search that dictionary for the key. I ignored the 'tighest upper bound' part and just gave a good enough upper bound since I have no idea Python's runtime complexity I assume searching a dict for a key is O(n). 
-</p>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Lecture%203" class="outline-2">
-<h2 id="Lecture%203">Lecture 3</h2>
-<div class="outline-text-2" id="text-Lecture%203">
-</div>
-<div id="outline-container-10-701%20Classification" class="outline-3">
-<h3 id="10-701%20Classification">10-701 Classification</h3>
-<div class="outline-text-3" id="text-10-701%20Classification">
-<p>
-This is a good lecture giving an overview of many different classification methods, their pros and cons.   
-</p>
-
-<p>
-In the beginning, where he still covers MLE from last lecture, that log likelihood function if you did any other workshop on this site, you'll recall "logspace" being taken advantage of multiple times in order to manipulate an equation to make it easier to work with like recurrence relations. This is a recurring theme in math if you haven't noticed: transform something to another equivalent form(s) depending on what is easier to work with and here we use it because the probabilities aren't as small thus easier to use in the 0 to 1 logspace.
-</p>
-
-<p>
-There's a quiz handed out in Piazza (we don't have access) and I can barely read it on my screen, this will all come up in the reading eventually so I just watched him talk about the answers, where in the first question almost half of the class guessed incorrectly.
-</p>
-
-<p>
-Around @24:00 classification starts. Do not worry if you don't 100% understand the Bayes classifier because immediately afterwards he tells us it's not used in practice because it requires too many assumptions and we will learn many other classifiers. This is a PhD level class so we are seeing all the theory so instance based classifiers, generative and discriminative. If you wanted to really understand the Bayes generative model you would create a bunch on your own and test them while reading all the relevant ML book chapters at the beginning of this page. The Bayes risk integration is just a sum of that overlap area in the distribution, of the minimum meaning the least likely probablity, you sum this minimum up and it's your 'risk area'. The math modeling w/applied calc book covers integrals in the last chapter and Wildberger has an excellent set of lectures of integration <a href="https://youtu.be/vo-ItaB28f8">here</a> if you casually watch both his lectures on x^n integrals (which covers constants, x^1, x^2 etc., just like the general x^n derivative).
-</p>
-
-<p>
-"The challenge is, it's almost impossible to learn a really good probabilistic model (of classifiers)". We are told that discriminative style classifiers (ie: decision trees) are the most used right now because k-nearest neighbors does not generalize. We are also told there are hundreds of classifiers in these 3 categories we can choose.
-</p>
-
-<p>
-Finally we get the true definition of machine learning: take data you have, assume or select a model, try to infer (learn) from both the values of the parameters. Recall parameters is the thing you use to distinguish an object from another like his cats and dogs example. Given a bunch of data (image pixels) what classifier model do you want to use (k-nearest neighbors, bayes estimation, decision trees) in order to learn the parameters (using a bunch of loss functions, maximum estimation etc) that will be used to distinguish cat images from dog images with the most probability or the least risk. Also recall that statistics modeling book chapter on parameters, the art is to choose the least amount of parameters.
-</p>
-
-<p>
-Really good high level talk about k-nearest neighbors to select a label. If it's not obvious it means 1-nearest neighbor, 2-nearest neighbors. He demonstrates increasing k. Very end of the lecture we discover KNN is an approximation of the Bayes rule. Why does this work? Here we get into Terence Tao tier metric space <a href="https://en.wikipedia.org/wiki/Ball_(mathematics)">topology</a> of a ball and he gives a good illustration. This will all be in the reading but shows how good 10-701 is because none of this was covered in the other courses, the fact that KNN is really Bayes estimation just shrinking the global probability to a local one.
-</p>
-</div>
-</div>
-
-<div id="outline-container-10-301%20Decision%20Trees%202" class="outline-3">
-<h3 id="10-301%20Decision%20Trees%202">10-301 Decision Trees 2</h3>
-<div class="outline-text-3" id="text-10-301%20Decision%20Trees%202">
-<p>
-Second <a href="https://youtu.be/MqiC3w7KYF4">lecture</a> on decision trees that predict a single class by a majority vote at the leaf. 
-</p>
-
-<pre class="example" id="org76d60e5">
-fun h(x :: Vector) -&gt; Probability:
- doc "Hypothesis function using decision tree"
- cases x:
- internal node? compare x.attribute and branch
- leaf? return p(y|x)
-
-fun train(d :: TrainingSet) -&gt; Tree:
- doc "Create decision tree"
- root = create Node(data = d)
- train-tree(root)
-
-fun train-tree(node :: Tree) -&gt; Tree:
- choose best attribute to split node that maximizes splitting criteria
- create child nodes for split attributes
- train-tree(child-node) for each attribute
- leaf label = majority-vote(child-node)
-</pre>
-
-<p>
-The rest of the lecture is about what 'maximizes splitting criteria' means using Gini impurity on a data set to decide which node is best to split on, this will be on the homework. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-CS4780%20K-nearest%20neighbours" class="outline-3">
-<h3 id="CS4780%20K-nearest%20neighbours">CS4780 K-nearest neighbours</h3>
-<div class="outline-text-3" id="text-CS4780%20K-nearest%20neighbours">
-<p>
-There is open assignments and solutions for this class <a href="https://www.dropbox.com/s/tbxnjzk5w67u0sp/Homeworks.zip?dl=0">here</a>. Click the dropdox download icon and you get all the semesters homework. Nothing has really changed, even our most recent 10-701 lectures use the same recommended reading material as this older class.
-</p>
-
-<p>
-Watching <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">lecture</a> k-nearest neighbors, which is only the last 15 minutes of the lecture the rest is practical advice how you should organize your learning, validation and testing data, like seperating temporal (data with a sense of time) data so your learning algorithm 'can't look at future data' to avoid overfitting meaning your model no longer generalizes, you're just fitting it for the test data. He talks about why you can't have a single algorithm to do everything, this is worth watching and not very technical. The distance equation is in the notes, fill in some values to see what they are rational exponents are defined in Tao's <i>Analysis I</i> book Definition 5.6.7 \(x^\frac{a}{b}\) is \((x^\frac{1}{b})^a\) or if \((thing) = x^\frac{1}{n}\) then \((thing)^n = x\), it's just the square root (if n = 2). In the book <i>Mathematics for Machine Learning</i> at the top of this page, in the chapter on <i>Analytical Geometry</i> the first paragraph you will see the difference between manhattan distance and euclidean distance. You can if you want make another model algorithm of the Minkowski distance to understand the notation.
-</p>
-
-<p>
-The point of this algorithm as per the student who asks the question "why are we doing this" is a generalized distance algorithm where you can pick the model you want for k-nearest neighbors. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Lecture%203--Reading" class="outline-3">
-<h3 id="Lecture%203--Reading">Reading</h3>
-<div class="outline-text-3" id="text-Lecture%203--Reading">
-<p>
-Looking at the lecture <a href="https://www.cs.cmu.edu/~aarti/Class/10701_Spring21/lecs.html">schedule</a> for latest 10-701 they want us to read Murphy 1.1-1.3 which we already did, <a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">Bishop</a> 2.1 - 2.3.6, 1.5 and Mitchell <a href="http://www.cs.cmu.edu/~tom/mlbook/Joint_MLE_MAP.pdf">chapter 2</a> covering MLE/MAP. Looking at these books, the Mitchell book clearly simplifies equations in steps and defines exactly how the maximum likelihood estimation algorithm works which is simply: a1/a1+a2 so if D is a record of coin flips H or T: D = {1,0,1,0} is 2/2+2 or MLE = 1/2. Comparing to the Bishop book which is just piles of definitions I would recommend skimming Mitchell chapter 2 and using Bishop as a later reference, or using the <i>Mathematics for Machine Learning</i> book chapter on probability. 
-</p>
-
-<p>
-Reminder there is also <a href="https://seeing-theory.brown.edu/index.html">Seeing Theory</a> from Brown university but the way to understand all these definitions is to actually use them in the assignments later, we can always pick up a 'one thousand exercises in probability and stats' book after these courses to shore up our skills.  
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Lecture%204" class="outline-2">
-<h2 id="Lecture%204">Lecture 4</h2>
-<div class="outline-text-2" id="text-Lecture%204">
-<p>
-Some of the 701 subjects will introduce subjects much earlier than 301 or 4780 because they leave theory to the end of the course. This is great because we go back to these subjects at a new level and see them again which will not only help us remember these things but fill in blanks from the first time around. For example Naive Bayes is lecture 18 in 301 but it's the topic of what we're about to watch now in 701.   
-</p>
-</div>
-
-<div id="outline-container-10-701%20KNN%20Continued%20and%20Naive%20Bayes" class="outline-3">
-<h3 id="10-701%20KNN%20Continued%20and%20Naive%20Bayes">10-701 KNN Continued and Naive Bayes</h3>
-<div class="outline-text-3" id="text-10-701%20KNN%20Continued%20and%20Naive%20Bayes">
-<p>
-This lecture after you watch it go back to the beginning with all the math notation, it will then make much more sense a second time around. Watching <a href="https://youtu.be/X9eiUitrzXY">this</a> lecture.
-</p>
-
-<p>
-@5:44 substitute in all those definitions, you get (K1)/(N1)V * (N1)/N which is (K1)(N1)/(N1)VN or (K1)/VN, then divide by p(z) or p(x) which is K/NV and recall from math workshop Wildberger lectures for rules of division this is (K1)/VN * NV/K and of course both NV and VN cancel and we are left with (K1)/K. He says KNN has numerous downsides like taking forever if you have a large number of samples, which is pretty much every ML problem and the approximation techniques for KNN have no guarantee of accuracy since they are by definition approximations.
-</p>
-
-<p>
-There are three major types of classifiers:
-</p>
-<ul class="org-ul">
-<li>instance based
-<ul class="org-ul">
-<li>no models, use observation directly (KNN)</li>
-</ul></li>
-<li>generative
-<ul class="org-ul">
-<li>building a statistical model (bayesian networks)</li>
-</ul></li>
-<li>discriminative
-<ul class="org-ul">
-<li>manually estimate a boundary (decision trees)</li>
-</ul></li>
-</ul>
-
-
-<p>
-The dataset around 14:50 reminder in p(X|y) X is a vector representing a row in that dataset, y is the label which in this case is a binary class label 'rich or poor'. Each entry in the vector row field represents feature you have selected. Think about how much data prep goes into creating/normalizing sample inputs for machine learning and thank yourself for doing CS19 in the other workshop where this is all you do in every assignment, you will need it in the wild when we come across enormous amounts of noisy data that needs to be encoded as a nice and clean feature set to some machine learning classifier function. 
-</p>
-
-<p>
-@30:00 examples how to encode data as a feature. He's using bag of words encoding which we already know from CS19 in the software workshop, it was the first assignment. In that assignment we played with toy input vectors and here he is telling us that a real bag of words vector has 10k entries. For an explanation see the beginning of this <a href="http://cs.brown.edu/courses/cs019/2020/docdiff.html">assignment</a> writeup, noting how two words are combined together into a single vector of 1 or 0.
-</p>
-
-<p>
-<b>Naive Bayes classification summary</b>
-Let's say you have 1000 sample articles and wish to use Naive Bayes classification to learn the parameters needed to classify new articles. This is your training sample, you manually go through 70-80% of the samples (remember the Cornell lecture, always keep some of your training data to use later as tests) and each one label it either 'Election' or 'Sports'. You then manually calculate the probability of one of these articles, ie: class E (number of E articles/total articles) and the probability of class S is (1 - p(E)). You would then select some features, say 5 words you've chosen and go back over the training samples again. If 100 of the documents in the election class have your selected feature 'football', you calculate (100/num election class articles) = p('Football'|Election). You do this for every feature in the training set. This works because we can assume conditional independence of each feature. 
-</p>
-
-<p>
-Now you learn the classification by determining p(feature=yes|class=E) for all 5 features. Input training sample, multiply each row entry by the probabilities you've already figured out, if feature=no or if using bag of words model and it's entry is a 0: subtract (1 - p(feature=yes|class=E)). Finally you multiply all these values by the probability of it being an E document, so 6 multiplications for 5 features. You then do it all over again for p(feature=yes|class=S). Now we have 12 multiplications in total for a single sample. Your algorithm then selects the arg-max or which one has the greatest probability and labels that sample E or S. Repeat until out of training samples. Now run same classification algorithm on the unseen test data you kept aside from the training samples, and input results to a loss function. Congrats you just wrote a learning algorithm.  
-</p>
-
-<p>
-<b>NB-1</b>
-The in class poll questions are hard to see I had to change the quality to 1080p, and use Firefox's picture-in-picture option to zoom the video to see the questions:
-</p>
-
-<ul class="org-ul">
-<li>Assume we are using a Naive Bayes classifier to classify documents with three possible labels ('Election', 'Sports', 'Health'). Our input vectors are binary (so 0 or 1) and each contains 10 (binary) values. How many total parameter values do we need to set to fully define the NB classifier for this problem?</li>
-</ul>
-
-<p>
-The answer was in the slides for classifying E or S, @41:00 or so. I assume he means each input vector is a single sample, so if the input vector has 10 values it has 10 features. Each row entry must be multiplied by the feature conditioned on the label so since there are 3 labels, they all have to get multiplied 10 times by 3 labels so 30 parameters needed. In addition we already have calculated probabilites or any article being E or S class, so these are 2 more parameters because the 3rd label is (1 - p(E + S)) to get the probability of it being a Health label. Think about how many parameters this is, for just 10 features and 3 classes you need 32 things minimum to distinguish any single sample into 3 labels using Naive Bayes classifer.
-</p>
-
-<p>
-<b>NB-2</b>
-</p>
-<ul class="org-ul">
-<li>For a two label classification problem (Y-label is either 0 or 1), and a binary attribute x_n, let v0= p(x=0|y=0) and v1= p(x=0|y=1) the following holds:
-<ul class="org-ul">
-<li>v0+v1 = 1</li>
-<li>v0+v1 &lt; 1</li>
-<li>v0+v1 &gt; 1</li>
-<li>None of the above is guaranteed to hold</li>
-</ul></li>
-</ul>
-
-<p>
-'Binary attribute x_n' means a vector encoded sample, where each value is either 0 or 1. The answer is none of the above he explains because the same feature compared to two different classes/labels tells you nothing whereas if the same label or class is compared with different features that's meaningful. 
-</p>
-
-
-<p>
-<b>NB-3</b>
-</p>
-<ul class="org-ul">
-<li>Summarized: What if you duplicate a feature? ie: take the first entry of the sample vector value and append it to the end? Will this change KNN or NB classification?</li>
-</ul>
-
-<p>
-The answer is it will change both KNN and NB labels because you've broken the conditional independence of NB by duplicating a feature, we can now no longer assume the features are independent because obviously one is 100% dependent on the other. KNN he explains this duplication changes the weight of that feature which for some samples will screw up the labelling.
-</p>
-
-<p>
-K-nearest neighbors from what I tell so far, for the purposes of intuition, is something you can actually plot in a graph and then run a distance function on. Take the petal length of samples, graph them all, take new sample with new petal length, draw/determine an n-sized 'ball' around it and take majority vote of the 3 or 5 or k-nearest neighbors, that determines the label. In other words you have 1000 flower samples and manually label each one. Graph them by feature, say petal length. Take new sample and add it to the graph. Count the nearest plotted neighbors and take majority vote, that's the new sample's label. This can all be accomplished with algorithms/distance functions too of course instead of staring at a visual plot and you can see how highly abstract this method can become, casting it around dimensions to measure distances on the real line. 
-</p>
-
-<p>
-Anecdote: notice as he goes through the poll results, many students are adding in new correct votes thinking they will be graded. Since the goal of these class polls is to measure how well the students understand the material seems like bad statistics allowing them to keep voting as he covers the answers.
-</p>
-
-<p>
-<b>Continuous NB</b>
-</p>
-
-<p>
-This will be in the 2021 Murphy book we do for reading after, which has supplementary notes as programming notebooks we can run in our browser and see exactly what a covariance matrix is or multivariable probability. 
-</p>
-
-<p>
-The end of the lecture is problems with this classifier:
-</p>
-<ul class="org-ul">
-<li>Assumptions
-<ul class="org-ul">
-<li>'In practice naive bayes cannot handle real life' unless you calculate the full joint probability which is too much work, but this can be estimated with bayes networks/graphical models which we will shortly learn.</li>
-</ul></li>
-<li>Not enough samples available to estimate parameters
-<ul class="org-ul">
-<li>Solution is to add one to everything (pseudocount) to avoid a zero getting in there and nulling out the entire row</li>
 </ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-10-301%20Decision%20Trees%203" class="outline-3">
-<h3 id="10-301%20Decision%20Trees%203">10-301 Decision Trees 3</h3>
-<div class="outline-text-3" id="text-10-301%20Decision%20Trees%203">
+<div id="outline-container-Choose%20your%20own%20theory%2Falgorithm%20course" class="outline-3">
+<h3 id="Choose%20your%20own%20theory%2Falgorithm%20course">Choose your own theory/algorithm course</h3>
+<div class="outline-text-3" id="text-Choose%20your%20own%20theory%2Falgorithm%20course">
 <p>
-Watching <a href="https://youtu.be/amtyGWEMzV8">lecture 4</a>. The YouTube title has nothing to do with the lecture content, this is actually about splitting criteria of decision trees, brief intro to information theory, greedy search, and the last 10 minutes are KNN.    
+I audited most of these courses, mix and match your own curriculum to go with COMS-W4995. If one topic doesn't make sense like AdaBoost or Perceptron in one course, try watching it in another.    
 </p>
 
 <p>
-He reminds us you can do all the 10-301 homework on google colab and the tutorial is <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">here</a>.
-</p>
-
-<p>
-@9:23, splitting criteria GINI gain example, obviously P(A=1) = 8/8 or 1, and P(A=0) = 0, @15:11 he corrects this but he doesn't correct the Gini Gain equation itself at the bottom which is wrong, see end of lecture 3 or <a href="#HW2%20Decision%20trees">HW2 Decision trees</a>. Make sure you write down the Gini impurity and Gini gain equations you'll need them later. 
-</p>
-
-<p>
-The mutual information slide @ 24:00, everything here is in the Kevin Murphy book in the <i>Information Theory</i> chapter and explained better there.
-</p>
-<ul class="org-ul">
-<li>H(X) entropy function on random variable X exists to measure the random variable's information content, more information means lack of predictability or increased uncertainty</li>
-<li>H(Y|X) conditional entropy function is the uncertainty we have in Y after looking at X, averaged over possible values for X. This translates to: conditioning on data on average does not increase uncertainty.</li>
-<li>I(X;Y) mutual information function, basically the intersection of X and Y. The uncertainty of Y is lower once you look at X, and by symmetry, the uncertainty of X is lower once you look at Y.</li>
-</ul>
-
-<p>
-There's an algorithm review on greedy search to set up decision tree learning where you maximize splitting criterea at each step of the decision tree. The last 10 minutes or so we already know, KNN to select labels.
-</p>
-</div>
-</div>
-
-<div id="outline-container-CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception" class="outline-3">
-<h3 id="CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">CS4780 Curse of Dimensionality / Perception</h3>
-<div class="outline-text-3" id="text-CS4780%20Curse%20of%20Dimensionality%20%2F%20Perception">
-<p>
-Here we learn how KNN, so computing distances, does not work for higher dimensional spaces, so methods are used like principal component analysis to estimate if your data is in a subspace of a larger space. The notes for this class is <a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote02_kNN.html">here</a>. The perceptron algorithm for high dimensional spaces, using binary data (only 2 labels) is introduced. He explains the notation fully by the end of the lecture. Vector w is the angle of the hyperplane, and b shifts the plane up or down the y-axis (however he eliminates b and it's now fixed). The parameters of y = mx + b is in the <a href="file:///home/jbh/cmu/ai_tripos/calculus.html#1.3%20Linear%20functions">calculus</a> workshop.
-</p>
-
-<p>
-Overall a good lecture if you've never seen manifolds before and want a geometric overview of how data can exist in subspaces of larger dimensions. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Recitation%201" class="outline-3">
-<h3 id="Recitation%201">Recitation 1</h3>
-<div class="outline-text-3" id="text-Recitation%201">
-<p>
-I completely forgot we have access to the 10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">recitations</a> and the solutions. Let's try the first 2 to catch up to the course. 
-</p>
-
-<p>
-Recitation 1: <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/handouts/rec1Sol.pdf">Background</a>. The solutions are already in the pdf, to understand them we have Goodfellow's <i>Deep Learning</i> book linked in the beginning of this workshop chapter on linear algebra and probability. 
-</p>
-
-<p>
-To ensure we know this let's explain to ourselves the concept of random variables. You have a sample space set of all possible outcomes usually denoted Omega. Any function from that sample space to a real number value is a random variable. The function itself is the random variable. You can of course take a function of the function, and get more random variables. Random variables (functions) have their own subset of the larger sample space, for example a sample space of all possible states of rolling 2 dice, and your function is only concerned with rolling states that add up to 10, now that distribution is solely those dice states. From that subset you can take another function, the states of all dice that add up to 5, further reducing the distribution. 
-</p>
-
-<p>
-<b>Probability &amp; Stats</b>
-</p>
-
-<p>
-<b>Question 1</b>
-What is \(p(a_{1},b_{2}\))? In the recitation these two random variables were declared disjoint/mutually exclusive. As per this <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a> since two mutually exclusive events cannot occur at the same time, their intersection is 0. 
-</p>
-
-<p>
-What is \(p(a_{1},b_{1})\)? We weren't given the probability for \(b_1\) but we can construct a joint probability table since we know there are only 4 possible states and are told the probability of \(a_1\) is 0.5, and the total probability of \(b_2\) is 0.5 as per recitation definition of \(p(a_{i})\). You can construct these as per the above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a>:
-</p>
-
-<pre class="example" id="orga1d74b4">
-|          | a_1 | a_2 | Marginal |
-|----------+-----+-----+----------|
-| b_1      |   x | x   | ?        |
-| b_2      |   0 | x   | 0.5      |
-|----------+-----+-----+----------|
-| Marginal | 0.5 | ?   |          |
-</pre>
-
-<p>
-If \(a_1\) sums to 0.5, then we can conjecture \(b_1|a_1\) is also 0.5, and since \(b_2\) sums to 0.5, \(b_2|a_2\) must also be 0.5:
-</p>
-<pre class="example" id="org2ed9917">
-|          | a_1 | a_2 | Marginal |
-|----------+-----+-----+----------|
-| b_1      | 0.5 | x   | ?        |
-| b_2      |   0 | 0.5 | 0.5      |
-|----------+-----+-----+----------|
-| Marginal | 0.5 | ?   |          |
-</pre>
-
-<p>
-As the margins must sum to 1, fill in the rest
-</p>
-<pre class="example" id="org87f52e4">
-|          | a_1 | a_2 | Marginal |
-|----------+-----+-----+----------|
-| b_1      | 0.5 |   0 |      0.5 |
-| b_2      |   0 | 0.5 |      0.5 |
-|----------+-----+-----+----------|
-| Marginal | 0.5 | 0.5 |        1 |
-</pre>
-
-<p>
-Because the recitation states the variables are not independent, from the same above <a href="https://people.richland.edu/james/lecture/m170/ch05-rul.html">tutorial</a> we have P(A and B) = P(A) * P(B|A). Now insert the definition of P(B|A) from the recitation and we have:
-</p>
-<ul class="org-ul">
-<li>\(p(a_{1}) *(p(b_{1}|a_{1})/p(a_{1}))\) which is 0.5 * (0.5/0.5)</li>
-</ul>
-
-
-<p>
-<b>Question 2</b>
-Recitation states everything is independent now, so \(p(a_{1},b_{2})\) is defined as P(A and B) or P(A)P(B) and as we were given both values in the writeup: 0.5 * 0.5 = 0.25. We can construct another table:
-</p>
-<pre class="example" id="org66a2533">
-|          |  a_1 | a_2 | Marginal |
-|----------+------+-----+----------|
-| b_1      |    x | x   |      0.5 |
-| b_2      | 0.25 | x   |      0.5 |
-|----------+------+-----+----------|
-| Marginal |  0.5 | 0.5 |        1 |
-</pre>
-
-<p>
-Deduce the rest since margins must add up to 1:
-</p>
-<pre class="example" id="orgaf38bb3">
-|          |  a_1 |  a_2 | Marginal |
-|----------+------+------+----------|
-| b_1      | 0.25 | 0.25 |      0.5 |
-| b_2      | 0.25 | 0.25 |      0.5 |
-|----------+------+------+----------|
-| Marginal |  0.5 |  0.5 |        1 |
-</pre>
-<p>
-\(p(a_{1}|b_{2})\) = 0.25/0.50 = 0.5
-</p>
-
-<p>
-<b>Question 3</b>
-Again construct a join distribution table:
-</p>
-
-<pre class="example" id="org5721eb3">
-|                | Goodsleep = Yes | Goodsleep = No | Marginal |
-|----------------+-----------------+----------------+----------|
-| Exercise = Yes |             0.3 |            0.2 |      0.5 |
-|----------------+-----------------+----------------+----------|
-| Exercise = No  |             0.4 |            0.1 |      0.5 |
-|----------------+-----------------+----------------+----------|
-| Marginal       |             0.7 |            0.3 |        1 |
-</pre>
-
-<p>
-P(Goodsleep=Yes|Exercise=Yes) = 0.3/P(Total Exercise=Yes) = 0.3/0.5 = 0.6
-</p>
-
-<p>
-The last question asks us what is p(a b,c)?  In Goodfellow's <i>Deep Learning</i> page 60:
+<b>CS4780</b>   
+This is the best of all the intro theory/algorithm style ML courses as the prof will actually explain the math notation and motivation behind the theory. A small picture on a board in chaulk of a hyperplane vector will be much easier to understand than an entire hour of somebody talking about it in a zoom lecture with static slides filled with notation. It doesn't matter if the lectures are from 2018 because it's almost the <a href="https://www.cs.cornell.edu/courses/cs4780/2021fa/#Schedule">same</a> as the 2021 version, and all these topics come back into fashion again such as the recent <a href="https://www.youtube.com/watch?v=ahRPdiCop3E">paper</a> <i>Every Model Learned by Gradient Descent Is Approximately a Kernel Machine</i>.   
 </p>
 
 <ul class="org-ul">
-<li>P(a,b,c) = P(a|b,c)P(b,c)</li>
-<li>Eatwell = a, Goodsleep = b, and Exercise = c
+<li>CS4780 <a href="https://www.cs.cornell.edu/courses/cs4780/2018fa/">Machine Learning for Intelligent Systems</a> Cornell 
 <ul class="org-ul">
-<li>P(a|b,c) was given to us: 0.25</li>
-<li>P(b,c) was also given to us 0.3</li>
-<li>0.25*0.3 = 0.075</li>
+<li>37 lectures on <a href="https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS">YouTube</a> w/<a href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/index.html">notes</a></li>
+<li>Homework w/solutions on <a href="https://www.dropbox.com/s/tbxnjzk5w67u0sp/Homeworks.zip?dl=0">dropbox</a></li>
+<li>Books recommended:
+<ul class="org-ul">
+<li><a href="https://probml.github.io/pml-book/book1.html">Probabilistic Machine Learning</a> (2021 draft) includes Jupyter <a href="https://github.com/probml/pyprobml/tree/master/book1">notebooks</a> for each chapter</li>
+<li><a href="https://web.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
 <p>
-You can try the equivalent definitions too and arrive at same value:
-</p>
-<ul class="org-ul">
-<li>P(a|b,c)P(b|c)P(c) = 0.25*0.6*0.5 = 0.075</li>
-</ul>
-
-<p>
-<b>Question 4</b>
-We already know this from the Wildberger lectures on expectation and variance, such as the last question where Var[X + a] is Var[X] since if you scale it doesn't change the variance. 
-</p>
-
-<p>
-<b>Calculus</b>
-Work through all of these using a <a href="https://www.symbolab.com/solver/derivative-calculator/%5Cfrac%7B%5Cpartial%7D%7B%5Cpartial%20x%7D%5Cleft(y%5Ccdot%20ln%5Cleft(1-x%5Cright)%5Cright)">symbolic calculator</a>. They use chain rule, exponent rule, <a href="https://youtu.be/AXqhWeUEtQU">partial derivatives</a>, where you hold y constant but have to do chain rule for ln(1-x) explained in the symbolic calculator link. Question 4 is written up <a href="https://www.cs.huji.ac.il/~csip/tirgul3_derivatives.pdf">here</a>. To understand what a Jacobian matrix is, see <a href="https://youtu.be/VmfTXVG9S0U">this</a> preliminary of transforming the basis if you don't know already, how you retain <a href="https://youtu.be/Vnga_psnCAo">local linearity</a>, and the <a href="https://youtu.be/bohL918kXQk">Jacobian matrix</a> lecture. In our recitation you are taking the dot product of a row vector and a column vector \(x_{i}w_{i}\) and want to take the partial derivative of \(w_j\) in w or \(x_{j}D(w_{j})\). Since w is a column vector filled with real number values, not a function you have: \(x_{j}\cdot(1w_{j}^{0})\) or \(x_{j}\) is how I understand it.
-</p>
-
-
-<p>
-<b>Vectors, Matrices, and Geometry</b>
-</p>
-
-<p>
-'Inner product' aka Dot Product, what is it's <a href="https://youtu.be/LyGKycYT2v0">geometric interpretation</a>? Everything else is in the Goodfellow chapter on linear algebra, things we've already done or you can take a linear algebra <a href="./linear.html">course</a>. Kevin Murphy 2021 book has an extensive chapter 7 on linear algebra too written by Zico Kolter.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Recitation%202" class="outline-3">
-<h3 id="Recitation%202">Recitation 2</h3>
-<div class="outline-text-3" id="text-Recitation%202">
-<p>
-A recitation on decision trees w/<a href="http://www.cs.cmu.edu/~mgormley/courses/10601/handouts/hw2_recitation_solutions.pdf">solutions</a>.
-</p>
-
-<p>
-There is some Python code here using class syntax. If you've never seen it before try Cornell's CS1110 slides <a href="https://www.cs.cornell.edu/courses/cs1110/2020fa/materials/lessons/">here</a>, there is recorded lessons for that whole course <a href="https://vod.video.cornell.edu/channel/CS%2B1110%2BFall%2B2020/179890731">here</a> or assuming you've done <a href="./software.html">CS19</a> or equivalent just read the Python documentation, a class is a type and an object is a value in Python. The recitation has a simple tree traversal algorithm which is handing you the homework we will later do on generating decision trees if you choose to do it in Python. There's some python debugging tasks at the end of the recitation as wel but the best part of this recitation is using mutual information to design your own decision tree based off data. Of course every modern ML framework has all this built in, you choose your decision tree algorithm ie: gini, mutual information/entropy, etc., and all you do is hand it data. 
-</p>
-
-<p>
-<b>Mutual Information</b>
-</p>
-
-<p>
-The reasons for why there's a negative \(log_2\) (we're returning an answer in bits) is answered in this <a href="https://stats.stackexchange.com/questions/87182/what-is-the-role-of-the-logarithm-in-shannons-entropy/87210">post</a>, all the answers are worth reading particularily Kraft's inequality answer for the reasons there's a negative log. One of the answers recommends to read Cozma Shalizi's <a href="http://bactra.org/notebooks/information-theory.html">information theory</a> notes. To hand calculate this look up the usual logarithm rules: -0.5(\(log_{2}\)(0.5)) which is 0.5, and the first recitation exercise is 0.5 + 0.5 = 1. 
-</p>
-
-<p>
-Page 5, make sure you can do these yourself, use <a href="https://www.desmos.com/calculator/jeqonqibik">Desmos</a> for a calculator if you want in your browser. In lecture it was noted gini gain was similar to mutal information in terms of deciding which attributes to split on for a decision tree and gini doesn't use logarithms which are expensive to compute.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Lecture%205" class="outline-2">
-<h2 id="Lecture%205">Lecture 5</h2>
-<div class="outline-text-2" id="text-Lecture%205">
-</div>
-<div id="outline-container-10-701%20TODO" class="outline-3">
-<h3 id="10-701%20TODO">10-701 TODO</h3>
-</div>
-<div id="outline-container-CS4780%20TODO" class="outline-3">
-<h3 id="CS4780%20TODO">CS4780 TODO</h3>
-</div>
-<div id="outline-container-10-301%20TODO" class="outline-3">
-<h3 id="10-301%20TODO">10-301 TODO</h3>
-</div>
-
-<div id="outline-container-HW2%20Decision%20trees" class="outline-3">
-<h3 id="HW2%20Decision%20trees">HW2 Decision trees</h3>
-<div class="outline-text-3" id="text-HW2%20Decision%20trees">
-<p>
-The <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/coursework.html">hw2</a> binary contains the datasets and writeup. We build our first end-to-end learning system. Use your favorite language to do this, after we will do the same assignment with scikit learn and see how they build their decision trees. 
-</p>
-
-<p>
-<b>1.1 Gini Impurity</b>
-Overview in case you missed the lectures: Gini Gain/Impurity are methods used to generate a decision tree from a dataset. We figure out the impurity of the entire dataset of labels, then take the impurity of each attribute to split on, figure out if there's any gain to using one attribute over another. The idea is to pick the attribute with the lowest impurity because that means highest classification rate/least errors. This is all automated, and a decision tree is generated. We learned there is also an entropy method of doing this called mutual information but since logarithms are slow to compute, and Gini gain works just as well as the mutual information method, the course promotes use Gini gain to generate decision trees. 
-</p>
-
-<p>
-The dataset given in 1.1 for experimental hacking around and modeling purposes can be a list and we can map over two of them and do comparisons:
-</p>
-
-<pre class="example" id="orgb3d119f">
-A = [list: 1,1,1,1,0,0,0]
-B = [list: 1,1,0,1,0,1,0]
-C = [list: 0,2,0,2,2,1,0]
-Y = [list: 0,1,1,1,0,0,0] &lt;-- labels/classes
-</pre>
-
-<p>
-Gini impurity G(Y;D) was defined at the end of lecture 3, and the 'Gini index' which appears to be the same thing is on the bottom of page 593 in the Kevin Murphy 2021 AI book. Y is the set of whatever our classes/labels are, D is the set of the entire dataset.   
-</p>
-
-<p>
-\[G(Y;D) = 1 - P(Y=label)^2 - P(Y \ne label)^2\]
+<b>CS480</b>
+This course focuses on neural network models as they are the most hyped right now though see the above paper on neural network kernel machine approximation, some of the NN models have mind boggling amounts of parameters requiring large scale distributed machine learning. CS4780 will also cover much of the material here like AdaBoost, Perceptron, SVM etc so if they don't make sense, watch them again in CS4780.     
 </p>
 
 <ul class="org-ul">
-<li>Example: If Y = [0,1,1,1,0,0,0]</li>
-<li>G(Y;D) = 1 - (3/7*3/7) - (4/7*4/7)
+<li>CS480 <a href="https://cs.uwaterloo.ca/~y328yu/mycourses/480/lecture.html">Introduction to Machine Learning</a> Waterloo
 <ul class="org-ul">
-<li>= 0.49 or 49% chance of a new random entry to our dataset being missclassified as Gini impurity measures the mistakes.</li>
+<li>All the lectures .mp4 on the same site (noticed Privacy lecture missing)</li>
+<li>Homework is open using public datasets to use with Pytorch</li>
+<li>Covers causality models, adversarial models, the most recent neural network models</li>
+<li>Books recommended:
+<ul class="org-ul">
+<li><a href="https://en.d2l.ai/">Dive into Deep Learning</a></li>
+<li><a href="https://mml-book.github.io/">Mathematics for Machine Learning</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
 <p>
-Gini Gain G(Y;X;D) as defined end of lecture 3:
+<b>10-701</b>
+General graduate intro for students who aren't specializing in machine learning and want to use it for other fields like systems biology. Taught by a <a href="http://www.cs.cmu.edu/~zivbj/">researcher</a> in <a href="https://algorithmsinnature.org/">algorithms used by nature</a> and Prof Xing the now president of <a href="https://mbzuai.ac.ae/">MBZUAI</a> (yes, you can get into MBZUAI). The lectures are worth watching as they will talk about what works now and what doesn't anymore, why there is a ton of classifiers, however it's a grad course so math sophistication is assumed. Very good lectures on computational learning theory and probabilistic graph models. 
+</p>
+
+<ul class="org-ul">
+<li>10-701 <a href="https://www.cs.cmu.edu/~epxing/Class/10701-20/schedule.html">Intro to Machine Learning</a> CMU 
+<ul class="org-ul">
+<li>Lectures on <a href="https://www.youtube.com/playlist?list=PLsWN0V-b507g7dbQTUvFkKZEqdHR5Fh4P">YouTube</a></li>
+<li>Homework is <a href="https://www.cs.cmu.edu/~epxing/Class/10701-20/">avail</a> also <a href="https://github.com/jiaqigeng/CMU-10701-Machine-Learning">2021 hw solutions</a></li>
+</ul></li>
+</ul>
+
+<p>
+<b>10-301</b>
+Undergrad/MSc version of 10-701, errors in the slides and you have to watch the lectures as he handwrites all the algorithms on a tablet. If you don't understand a topic watch it again here for more clarity like the PAC learning theory lectures. 
+</p>
+
+<ul class="org-ul">
+<li>10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">Intro to Machine Learning</a> CMU
+<ul class="org-ul">
+<li>Lectures on <a href="https://www.youtube.com/playlist?list=PLpqQKYIU-snAPM89YPPwyQ9xdaiAdoouk">YouTube</a></li>
+<li>Hw is all open, uses same books as CS4780</li>
+<li>Can also be done entirely in google colab</li>
+<li>Recitations w/<a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">solutions</a> on the 2021 schedule</li>
+</ul></li>
+</ul>
+
+
+<p>
+<b>CS-433</b>
+Being taught right now (Dec 2021) is EPFL's machine learning course. Has more learning theory than most other intro courses which is good, I didn't try any assignments but the labs come with full solutions. 
+</p>
+
+<ul class="org-ul">
+<li>CS-433 <a href="https://www.epfl.ch/labs/mlo/machine-learning-cs-433/">Machine Learning</a> EPFL
+<ul class="org-ul">
+<li>Lectures on <a href="https://www.youtube.com/playlist?list=PL4O4bXkI-fAd4nB7YYR5F8WitmPxjPeAa">YouTube</a></li>
+<li>A lot of labs on <a href="https://github.com/epfml/ML_course/tree/master/labs">GitHub</a> w/solutions</li>
+<li>Projects are <a href="https://www.aicrowd.com/challenges/epfl-machine-learning-higgs">competitions</a> I don't think you can audit without school login (I didn't try)</li>
+</ul></li>
+</ul>
+
+<p>
+<b>18.337J</b>
+Try a research exploration into the crazy world of <a href="https://www.stochasticlifestyle.com/the-essential-tools-of-scientific-machine-learning-scientific-ml/">scientific ML</a> such as physics-informed neural networks where you can drop in partial differential equations which are the math models describing the rules of any system with spatial as well as time dependence such as diffusion (heat transfer, population dynamics), finance, biology systems, sound waves, fluid dynamics, electrodynamics, conservation laws, relativity and who knows how many more. These PDEs act as prior information which encode the physical laws of that system then 'data efficient' noisy samples can be learned from instead of requiring millions+ of carefully prepared samples like in typical supervised learning.
 </p>
 
 <p>
-\[G(Y|X_{m}) = G(Y;D) - (P(X_{m=0})(G(Y;D_{xm=0})) + P(X_{m=1})(G(Y;D_{xm=1})))\]
+This course also covers large scale ML high performance computing   
+</p>
+
+<ul class="org-ul">
+<li>18.337J <a href="https://github.com/mitmath/18337">Scientific Machine Learning</a> MIT
+<ul class="org-ul">
+<li>Lectures on <a href="https://www.youtube.com/playlist?list=PLCAl7tjCwWyGjdzOOnlbGnVNZk0kB8VSa">YouTube</a></li>
+<li>Homework available on GitHub</li>
+</ul></li>
+</ul>
+
+<p>
+<b>Many More</b>
+MIT now offers it's 2020 Machine Learning <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-036-introduction-to-machine-learning-fall-2020/">course</a> on open library with class recorded blackboard lectures, even the classic Andrew NG machine learning course on Coursera is still worth doing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Theoretic%20Foundations%20of%20Modern%20Machine%20Learning" class="outline-3">
+<h3 id="Theoretic%20Foundations%20of%20Modern%20Machine%20Learning">Theoretic Foundations of Modern Machine Learning</h3>
+<div class="outline-text-3" id="text-Theoretic%20Foundations%20of%20Modern%20Machine%20Learning">
+<p>
+My choice of curriculum is to understand the core theory, so here I will go through the first 20 chapters of the (free) <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> <i>Understanding Machine Learning: From Theory to Algorithms</i> w/<a href="https://www.youtube.com/playlist?list=PLPW2keNyw-usgvmR7FTQ3ZRjfLs5jT4BO">lectures</a>. It's still taught by the author at <a href="https://student.cs.uwaterloo.ca/~cs485/">Waterloo</a> in 2021 and CMU's PhD track intro course <a href="http://www.cs.cmu.edu/~nihars/teaching/10715-Fa21/index.html">10-715</a>, and 10-701 covers some of it's chapters like Rademacher complexities. There's a <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/MLbookSol.pdf">solutions manual</a> for the few exercises in the book which will be an exercise in itself to try and understand.
 </p>
 
 <p>
-This translates to G(Y|branch) or the weight of overall D Gini impurity, minus the combined weights of an attribute branch left or right or more. In lecture 4, the slides at the beginning the gini gain equation is wrong. Never trust slides, the above definition is correct. In the homework we have a vector of an attribute, which has 0, 1, and 2. Simply add it on to the weights of 0 and 1.   
+Every chapter in the book has a corresponding lecture in the above courses so I'll probably end up doing all of CS4780 and some of 10-701.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Begin" class="outline-2">
+<h2 id="Begin">Begin</h2>
+<div class="outline-text-2" id="text-Begin">
+</div>
+<div id="outline-container-Get%20a%20math%20crash%20course%20reference" class="outline-3">
+<h3 id="Get%20a%20math%20crash%20course%20reference">Get a math crash course reference</h3>
+<div class="outline-text-3" id="text-Get%20a%20math%20crash%20course%20reference">
+<p>
+Obtain the <a href="http://libgen.is/book/index.php?md5=B228D58AB79295A264DBE0BFE4C9D06E">book</a> <i>All the Math You Missed But Need to Know for Graduate School</i> and the <a href="https://mml-book.github.io/">book</a> <i>Mathematics for Machine Learning</i> to use as a reference though we will still build up prereqs from scratch as we go.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Install%20Software" class="outline-3">
+<h3 id="Install%20Software">Install Software</h3>
+<div class="outline-text-3" id="text-Install%20Software">
+<p>
+For COMS-4995 either install conda <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">locally</a> or use google colab (free). See <a href="https://docs.google.com/document/d/1RSGvlBG8dDfs62_0jJEHnQFN-Au6yFbp8M6QTNs3EIY/edit">this</a> brief tutorial for setting up google drive or how to <a href="https://www.kaggle.com/general/156610">directly</a> import kaggle datasets to colab. You can do all the intro ML courses entirely on a phone or tablet using colab if you had to.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Applied%20ML%20lecture%201" class="outline-3">
+<h3 id="Applied%20ML%20lecture%201">Applied ML lecture 1</h3>
+<div class="outline-text-3" id="text-Applied%20ML%20lecture%201">
+<p>
+The coreqs for this course is the <a href="https://github.com/jakevdp/PythonDataScienceHandbook">Python Data Science Handbook</a> which you can quickly audit going through the <a href="https://github.com/jakevdp/PythonDataScienceHandbook/tree/master/notebooks">notebooks</a> on GitHub or just read the NumPy and Pandas <a href="https://numpy.org/doc/stable/user/basics.html">documentation</a> as those libraries comes up, if you did the <a href="./software.html">software</a> workshop this will be trivial. 
 </p>
 
 <p>
-<b>Write a program</b>
-Anytime this course asks you to calculate something using a toy dataset, write a throwaway draft program in any language because then you can test, and you'll have to write all these functions for our decision tree generator later anyway so may as well do a draft version first so you better understand how to write the real version. I wrote the following in Pyret which you can cut+paste and run <a href="https://code.pyret.org/">here</a>:
+<a href="https://youtu.be/rbvpiPJuK64">Watch</a> or <a href="https://amueller.github.io/COMS4995-s20/slides/aml-01-introduction/#p1">read</a> the slides with notes though what he says in lecture is often different as the notes are from a previous semester and act as an outline. @50m he notes how ML is different that statistics as they're drawing up a hypothesis to ask a question about the data whereas we are making predictions on unseen data with models filled with assumptions. This course doesn't cover <a href="https://www.cs.cornell.edu/courses/cs4787/2021sp/">large scale machine learning</a> tooling as the prof will use AWS as his personal computer loading up an instance with 512GB ram to work on a large data subset instead of messing around with the massive complexity of distributed ML frameworks.
 </p>
 
-<pre class="example" id="orgdfa6fc7">
-import lists as L
-
-#10-601 hw2 1.1 Gini Impurity
-
-A = [list: 1,1,1,1,0,0,0]
-B = [list: 1,1,0,1,0,1,0]
-C = [list: 0,2,0,2,2,1,0]
-Y = [list: 0,1,1,1,0,0,0]
-
-fun prob-node(vector :: List&lt;Number&gt;, n :: Number)-&gt;Number:
-  doc: "P(Y=n) or N_y/Ntotal"
-  vector.filter(lam(x): x == n end).length() / vector.length()
-where:
-  prob-node([list: 1, 1, 1, 0, 0, 0], 1) is 3/6
-end
-
-fun gini-impurity-total(vector :: List&lt;Number&gt;)-&gt;Number:
-  doc: "G(Y;D) is 1 - P(Y=1)^2 - not(P(Y=1))^2"
-  y1 = prob-node(vector, 1)
-  1 - num-sqr(y1) - num-sqr(1 - y1)
-where:
-  gini-impurity-total([list: 1, 1, 1, 0, 0, 0]) is 1 - (3/6 * 3/6) - (3/6 * 3/6)
-  gini-impurity-total(Y) is 1 - num-sqr(3/7) - num-sqr(4/7)
-end
-
-fun branch-count(vector :: List&lt;Number&gt;, n :: Number)-&gt;Number:
-  doc: "Count how many n in an attribute vector"
-  vector.filter(lam(x): x == n end).length()
-where:
-  branch-count([list: 1, 1, 0, 1, 0, 0], 1) is 3
-end
-
-fun branch-match-label(vector :: List&lt;Number&gt;, classes :: List&lt;Number&gt;):
-  doc: "Count how many n in an attribute vector match label=1"
-  L.map2(lam(x, y): if y == 1: x else: "notY" end end, vector, classes)
-    .filter(lam(a): not(a == "notY") end)
-where: 
-  branch-match-label(B, Y) is [list: 1, 0, 1]
-end
-
-fun gini-branch(vector :: List&lt;Number&gt;, classes :: List&lt;Number&gt;, n :: Number):
-  doc: "Count the gini impurity of one side of an attribute node split"
-  n-total = branch-count(vector, n)
-  labels = branch-match-label(vector, classes)
-  labels-match = labels.filter(lam(x): x == n end).length()
-  1 - num-sqr(labels-match / n-total) - num-sqr((n-total - labels-match) / n-total)
-where:
-  gini-branch(A, Y, 1) is 1 - num-sqr(3/4) - num-sqr(1/4)
-  gini-branch(A, Y, 0) is 0
-  gini-branch(B, Y, 1) is 1 - num-sqr(2/4) - num-sqr(2/4)
-end
-
-fun gini-gain(vector :: List&lt;Number&gt;, classes :: List&lt;Number&gt;)-&gt;Number:
-  doc: ```G(Y|X_m) is G(Y;D) - (P(X_{m=0})(G(Y;D_{xm=0})) + P(X_{m=n})(G(Y;D_{xm=n})))
-       Consume vector of attributes, calculate gini gain for every n attributes conditioned
-       on Y labels```
-
-  fun gini-helper(n :: Number, p :: Number)-&gt;Number:
-    doc: "Get every attribute n in a vector starting at 0"
-    if p == 1:
-      0
-    else:   
-      new-p = prob-node(vector, n)
-      (new-p * gini-branch(vector, classes, n)) + gini-helper(n + 1, new-p + p)
-    end
-  end
-
-  gini-impurity-total(classes) - gini-helper(0, 0)
-where:
-  gini-gain(B, Y) is gini-impurity-total(Y)
-    - ((4/7 * (1 - num-sqr(2/4) - num-sqr(2/4)))
-      + (3/7 * (1 - num-sqr(1/3) - num-sqr(2/3))))
-  
-  # test 0, 1, 2 attributes in C
-  gini-gain(C, Y) is gini-impurity-total(Y)
-    - ((3/7 * (1 - num-sqr(1/3) - num-sqr(2/3)))
-      + (1/7 * (1 - num-sqr(0/1) - num-sqr(1/1)))
-      + (3/7 * (1 - num-sqr(2/3) - num-sqr(1/3))))
-end
-
-"Gini gain G(Y,C;D)"
-gini-gain(C, Y)
-"Gini gain G(Y,B;D)"
-gini-gain(B, Y)
-"Gini gain G(Y,A;D)"
-gini-gain(A, Y)
-</pre>
-
 <p>
-TODO.. the same thing for Mutual Information, write a throwaway experiment program.  
+Reading: IMLP Ch 1, APM Ch 1-2
 </p>
 
-
-
-<hr>
 <p>
-<a href="./index.html">Home</a>
+TODO
 </p>
 </div>
 </div>
