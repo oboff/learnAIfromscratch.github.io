@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-08 Wed 22:13 -->
+<!-- 2021-12-09 Thu 20:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Machine Learning From Scratch</title>
@@ -232,7 +232,7 @@
 <ul>
 <li><a href="#Applied">Applied</a></li>
 <li><a href="#Choose%20your%20own%20theory%2Falgorithm%20course">Choose your own theory/algorithm course</a></li>
-<li><a href="#Theoretic%20Foundations%20of%20Modern%20ML">Theoretic Foundations of Modern ML</a></li>
+<li><a href="#Theoretic%20foundations%20of%20modern%20ML">Theoretic foundations of modern ML</a></li>
 </ul>
 </li>
 <li><a href="#Begin">Begin</a>
@@ -241,6 +241,13 @@
 <li><a href="#Install%20Software">Install Software</a></li>
 <li><a href="#Applied%20ML%20lecture%201">Applied ML lecture 1</a></li>
 <li><a href="#Theory%201">Theory 1</a></li>
+<li><a href="#CS4780%201">CS4780 1</a></li>
+</ul>
+</li>
+<li><a href="#Math%20review">Math review</a>
+<ul>
+<li><a href="#Sets%20%26%20functions">Sets &amp; functions</a></li>
+<li><a href="#Ultimate%20linear%20algebra%20crash%20course">Ultimate linear algebra crash course</a></li>
 </ul>
 </li>
 </ul>
@@ -345,7 +352,7 @@ General graduate intro for students who aren't PhD track in machine learning and
 </ul>
 
 <p>
-<b>10-301</b>
+<b>10-301/601</b>
 Undergrad/MSc version of 10-701, errors in the slides and you have to watch the lectures as he handwrites all the algorithms on a tablet. If you don't understand a topic watch it again here for more clarity like the PAC/learning theory lectures.     
 </p>
 
@@ -353,12 +360,15 @@ Undergrad/MSc version of 10-701, errors in the slides and you have to watch the 
 <li>10-301 <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">Intro to Machine Learning</a> CMU
 <ul class="org-ul">
 <li>Lectures on <a href="https://www.youtube.com/playlist?list=PLpqQKYIU-snAPM89YPPwyQ9xdaiAdoouk">YouTube</a></li>
-<li>Hw is all open, uses same books as CS4780</li>
+<li>Hw is all open</li>
 <li>Can also be done entirely in google colab</li>
 <li>Recitations w/<a href="http://www.cs.cmu.edu/~mgormley/courses/10601/schedule.html">solutions</a> on the 2021 schedule</li>
+<li>Books recommended:
+<ul class="org-ul">
+<li><a href="http://ciml.info/">A Course in Machine Learning</a> [CIML]</li>
+</ul></li>
 </ul></li>
 </ul>
-
 <p>
 <b>CS-433</b>
 Being taught right now (Dec 2021) is EPFL's machine learning course. Has more learning theory than most other intro courses which is good, I didn't try any assignments but the labs come with full solutions. 
@@ -393,15 +403,15 @@ MIT now offers it's 2020 Machine Learning <a href="https://ocw.mit.edu/courses/e
 </div>
 </div>
 
-<div id="outline-container-Theoretic%20Foundations%20of%20Modern%20ML" class="outline-3">
-<h3 id="Theoretic%20Foundations%20of%20Modern%20ML">Theoretic Foundations of Modern ML</h3>
-<div class="outline-text-3" id="text-Theoretic%20Foundations%20of%20Modern%20ML">
+<div id="outline-container-Theoretic%20foundations%20of%20modern%20ML" class="outline-3">
+<h3 id="Theoretic%20foundations%20of%20modern%20ML">Theoretic foundations of modern ML</h3>
+<div class="outline-text-3" id="text-Theoretic%20foundations%20of%20modern%20ML">
 <p>
-My choice of curriculum is to understand the core theory, so in this workshop I will go through the first 20 chapters of the (free) <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> <i>Understanding Machine Learning: From Theory to Algorithms</i> w/<a href="https://www.youtube.com/playlist?list=PLPW2keNyw-usgvmR7FTQ3ZRjfLs5jT4BO">lectures</a>. It's still taught by the author at <a href="https://student.cs.uwaterloo.ca/~cs485/">Waterloo</a> in 2021 and CMU's PhD track intro course <a href="http://www.cs.cmu.edu/~nihars/teaching/10715-Fa21/index.html">10-715</a>, and 10-701 covers some of it's chapters like Rademacher complexities. There's a <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/MLbookSol.pdf">solutions manual</a> for the few exercises in the book which will be an exercise in itself to try and understand.
+My choice is to understand the core theory so in this workshop, in parallel with COMS-W4995 I will go through the first 20 chapters of the (free) <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> <i>Understanding Machine Learning: From Theory to Algorithms</i> w/<a href="https://www.youtube.com/playlist?list=PLPW2keNyw-usgvmR7FTQ3ZRjfLs5jT4BO">lectures</a>. It's still taught by the author at <a href="https://student.cs.uwaterloo.ca/~cs485/">Waterloo</a> in 2021 and CMU's PhD track intro course <a href="http://www.cs.cmu.edu/~nihars/teaching/10715-Fa21/index.html">10-715</a>, and 10-701 covers some of it's chapters like Rademacher complexities in it's learning theory lectures. There's a <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/MLbookSol.pdf">solutions manual</a> for the few exercises in the book which will be an exercise in itself to try and understand.
 </p>
 
 <p>
-Every chapter in the book has a corresponding lecture in the above courses so I'll probably end up doing most of CS4780 and some of 10-701.
+Every chapter in the book has a corresponding lecture in the above courses so I'll probably end up doing most of CS4780 and some of 10-701 but if you understand the book, you don't need the other courses.
 </p>
 </div>
 </div>
@@ -415,7 +425,7 @@ Every chapter in the book has a corresponding lecture in the above courses so I'
 <h3 id="Get%20a%20math%20crash%20course%20reference">Get a math crash course reference</h3>
 <div class="outline-text-3" id="text-Get%20a%20math%20crash%20course%20reference">
 <p>
-Obtain the <a href="http://libgen.is/book/index.php?md5=B228D58AB79295A264DBE0BFE4C9D06E">book</a> <i>All the Math You Missed: But Need to Know for Graduate School</i> [ATMYM] and the <a href="http://libgen.is/book/index.php?md5=61EF813C0341A8D443912B0777CC59FD">book</a> <i>Mathematical Modeling and Applied Calculus</i> [MMAC] to use as reference to look up topics as we come across them. 
+Obtain the <a href="http://libgen.is/book/index.php?md5=B228D58AB79295A264DBE0BFE4C9D06E">book</a> <i>All the Math You Missed: But Need to Know for Graduate School</i> [ATMYM] and the <a href="http://libgen.is/book/index.php?md5=61EF813C0341A8D443912B0777CC59FD">book</a> <i>Mathematical Modeling and Applied Calculus</i> [MMAC] to use as reference to look up topics as we come across them. 10-601 has a <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/slides/10601-math-resources.pdf">math resources</a> pdf 
 </p>
 </div>
 </div>
@@ -459,16 +469,53 @@ The first application (page 20) is very similar to the petal length k-nearest ne
 <h3 id="Theory%201">Theory 1</h3>
 <div class="outline-text-3" id="text-Theory%201">
 <p>
-Watching <a href="https://youtu.be/b5NlRg8SjZg">ML Theory</a> lecture 1 the track I selected. Skip to 8m, so far this is a pretty excellent intro, finally somebody supplied me with a concrete definition of inductive reasoning. @56:30 computational complexity plays a major role in ML. The only prereqs are some basic <a href="./algorithms.html#CS Theory Toolkit lecture 2">asymptotics</a> for algorithm analysis, and familiarity with linear algebra/basic stats like what is a distribution, he claims he will teach us the rest of the math in the lectures.
+Watching <a href="https://youtu.be/b5NlRg8SjZg">ML Theory</a> lecture 1. Skip to 8m, so far this is a pretty excellent intro, finally somebody supplied me with a concrete definition of inductive reasoning. @56:30 computational complexity plays a major role in ML ie: runtimes of these prediction algorithms. The only prereqs are some basic <a href="./algorithms.html#CS Theory Toolkit lecture 2">asymptotics</a> for algorithm analysis, and familiarity with linear algebra/basic stats like what is a distribution, he claims he will teach us the rest of the math in the lectures. Important to note: the training data is 'randomly generated' meaning knowing one sample can't help us to find out what another sample is if we knew the distribution. We don't care at all about the probability distribution (which we haven't even covered yet here) from where the random data comes from.  
 </p>
 
 <p>
-There was nothing to unravel in this lecture, we got a basic mathematical model of machine learning which was largely statistics free, and everything he did was intuitive enough anyone could follow. The introduction of the <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> [UML] covers what we just saw in the lecture.
+We get a very intuitive mathematical model of machine learning which was largely statistics free anyone could follow. The introduction of the <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> [UML] covers what we just saw in the lecture ie: bait shyness.
+</p>
+</div>
+</div>
+
+<div id="outline-container-CS4780%201" class="outline-3">
+<h3 id="CS4780%201">CS4780 1</h3>
+<div class="outline-text-3" id="text-CS4780%201">
+<p>
+Watching <a href="https://youtu.be/MrLPzBxG95I">Supervised Learning Setup</a> which covers what we just learned with some more explanation, you can of course watch any of the other courses you want. @36:10 'curly X cartesian product curly Y' means every possible ordered pair combination of x from set X and y from set Y in a tuple for example if A = {1, 2} and Y = {3} then A x Y = {(1, 3), (2, 3)} so in other words all his features x matched with a label y for each training sample. A feature vector is defined @44:50. End of lecture we did the bag of words vector representation as the first assignment in the <a href="./software.html">CS19</a> workshop. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Math%20review" class="outline-2">
+<h2 id="Math%20review">Math review</h2>
+<div class="outline-text-2" id="text-Math%20review">
+</div>
+<div id="outline-container-Sets%20%26%20functions" class="outline-3">
+<h3 id="Sets%20%26%20functions">Sets &amp; functions</h3>
+<div class="outline-text-3" id="text-Sets%20%26%20functions">
+<p>
+Watch <a href="https://youtu.be/59WX2V7Vjgg">Review of sets and functions</a>. It is the best visual explanation I can find with the exact amount of information we need for these courses. You can skip parts of the lecture where the class works out exercises. For example @18:49 - 27:20 is an exercise. A set is a data structure in math, that's all.
+</p>
+
+<p>
+For future reference the [MMAC] book covers single and <a href="./calculus.html#Day 3 Multivariable functions">multivariable</a> functions in the first two chapters that anybody can understand, and Terence Tao's <a href="http://libgen.is/book/index.php?md5=850AF3CC9B1C5DCB7DCF1FE82691A69B">Analysis I</a> chapter 3 <i>Set Theory</i> will teach you anything you want to know about the definition of functions, their images/inverses and the operations of set data structures though you don't have to do it all now wait until we come across it in lectures. There's a lot of similarity to programming in Tao's book Example 3.4.2 for images of sets, that is exactly what map() in programming is: consume a data structure and apply a function to each one of it's elements, returning a new data structure.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Ultimate%20linear%20algebra%20crash%20course" class="outline-3">
+<h3 id="Ultimate%20linear%20algebra%20crash%20course">Ultimate linear algebra crash course</h3>
+<div class="outline-text-3" id="text-Ultimate%20linear%20algebra%20crash%20course">
+<p>
+We will attempt to use <i>All The Math You Missed: But Need to Know For Graduate School</i> section on linear algebra combined with as few as possible other resources to teach ourselves the minimum linear algebra needed for intro ML theory and nothing more.
 </p>
 
 <p>
 TODO
 </p>
+
 <hr>
 <p>
 <a href="./index.html">Home</a>
