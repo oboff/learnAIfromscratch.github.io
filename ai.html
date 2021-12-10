@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-09 Thu 20:22 -->
+<!-- 2021-12-09 Thu 20:38 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Machine Learning From Scratch</title>
@@ -407,11 +407,11 @@ MIT now offers it's 2020 Machine Learning <a href="https://ocw.mit.edu/courses/e
 <h3 id="Theoretic%20foundations%20of%20modern%20ML">Theoretic foundations of modern ML</h3>
 <div class="outline-text-3" id="text-Theoretic%20foundations%20of%20modern%20ML">
 <p>
-My choice is to understand the core theory so in this workshop, in parallel with COMS-W4995 I will go through the first 20 chapters of the (free) <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> <i>Understanding Machine Learning: From Theory to Algorithms</i> w/<a href="https://www.youtube.com/playlist?list=PLPW2keNyw-usgvmR7FTQ3ZRjfLs5jT4BO">lectures</a>. It's still taught by the author at <a href="https://student.cs.uwaterloo.ca/~cs485/">Waterloo</a> in 2021 and CMU's PhD track intro course <a href="http://www.cs.cmu.edu/~nihars/teaching/10715-Fa21/index.html">10-715</a>, and 10-701 covers some of it's chapters like Rademacher complexities in it's learning theory lectures. There's a <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/MLbookSol.pdf">solutions manual</a> for the few exercises in the book which will be an exercise in itself to try and understand.
+My choice is to understand the core theory so in this workshop in parallel with COMS-W4995 I will go through the first 20 chapters of the (free) <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> <i>Understanding Machine Learning: From Theory to Algorithms</i> w/<a href="https://www.youtube.com/playlist?list=PLPW2keNyw-usgvmR7FTQ3ZRjfLs5jT4BO">lectures</a>. It's still taught by the author at <a href="https://student.cs.uwaterloo.ca/~cs485/">Waterloo</a> in 2021 and CMU's PhD track intro course <a href="http://www.cs.cmu.edu/~nihars/teaching/10715-Fa21/index.html">10-715</a>, and 10-701 covers some of it's chapters like Rademacher complexities in it's learning theory lectures. There's a <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/MLbookSol.pdf">solutions manual</a> for the few exercises in the book which will be an exercise in itself to try and understand.
 </p>
 
 <p>
-Every chapter in the book has a corresponding lecture in the above courses so I'll probably end up doing most of CS4780 and some of 10-701 but if you understand the book, you don't need the other courses.
+Every chapter in the book has a corresponding lecture in the above courses so I'll probably end up doing most of CS4780 and some of 10-701 too but if you understand the book, you don't need the other courses.
 </p>
 </div>
 </div>
@@ -425,7 +425,7 @@ Every chapter in the book has a corresponding lecture in the above courses so I'
 <h3 id="Get%20a%20math%20crash%20course%20reference">Get a math crash course reference</h3>
 <div class="outline-text-3" id="text-Get%20a%20math%20crash%20course%20reference">
 <p>
-Obtain the <a href="http://libgen.is/book/index.php?md5=B228D58AB79295A264DBE0BFE4C9D06E">book</a> <i>All the Math You Missed: But Need to Know for Graduate School</i> [ATMYM] and the <a href="http://libgen.is/book/index.php?md5=61EF813C0341A8D443912B0777CC59FD">book</a> <i>Mathematical Modeling and Applied Calculus</i> [MMAC] to use as reference to look up topics as we come across them. 10-601 has a <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/slides/10601-math-resources.pdf">math resources</a> pdf 
+Obtain the <a href="http://libgen.is/book/index.php?md5=B228D58AB79295A264DBE0BFE4C9D06E">book</a> <i>All the Math You Missed: But Need to Know for Graduate School</i> [ATMYM] and the <a href="http://libgen.is/book/index.php?md5=61EF813C0341A8D443912B0777CC59FD">book</a> <i>Mathematical Modeling and Applied Calculus</i> [MMAC] to use as reference to look up topics as we come across them. 10-601 has a <a href="http://www.cs.cmu.edu/~mgormley/courses/10601/slides/10601-math-resources.pdf">math resources</a> pdf with links to other pdfs for more reference.
 </p>
 </div>
 </div>
@@ -452,11 +452,11 @@ The coreqs for this course is the <a href="https://github.com/jakevdp/PythonData
 
 
 <p>
-<b>Reading: IMLP Ch 1, APM Ch 1-2</b> Both books can be found on libgen, reading APM 1.3 <i>Terminology</i> is helpful for understanding 'class' or 'predictors'. Chapter 2 (and the first lecture) introduces a linear and quadratic (power) model. These are both covered in <a href="#Get%20a%20math%20crash%20course%20reference">MMAC</a> in the first chapter. The first is a linear function f(x) = mx + b who's parameters are m the slope (rise/run) and b the vertical y-intercept. Now you know what 'parameters' means in the context of modeling, in this case it is the 2 things that define what a linear line is. The second is a quadratic f(x) = ax^2 + bx + c which is really a power function model y = Cx^k where C and k are nonzero constants: f(x) = Cx^2 + Cx^1 + Cx^0. The parameters C and k define what it means to be a power function. Note setting parameter k to k - 1 in f(x) = ax^2 + bx + c gives you a linear function f(x) = ax + (b + c) or mx + b so a linear function is a special case of a quadratic function and a quadratic function is really just 3 power functions.
+<b>Reading: IMLP Ch 1, APM Ch 1-2</b> Both books can be found on libgen, reading APM 1.3 <i>Terminology</i> is helpful for understanding 'class' or 'predictors'. Chapter 2 (and the first lecture) introduces a linear and quadratic (power) model. These are both covered in <a href="#Get%20a%20math%20crash%20course%20reference">MMAC</a> in the first chapter. The first is a linear function f(x) = mx + b who's parameters are m the slope (rise/run) and b the vertical y-intercept. Now you know what 'parameters' means in the context of modeling, in this case it is the 2 things that define what a linear line is. The second is a quadratic f(x) = ax^2 + bx + c which is really a power function model y = Cx^k where C and k are nonzero constants: f(x) = Cx^2 + Cx^1 + c. The parameters C and k define what it means to be a power function. Note setting parameter k to k - 1 in f(x) = ax^2 + bx + c gives you a linear function f(x) = ax + (b + c) or mx + b so a linear function is a special case of a quadratic function which itself is just a power function model for our purposes of machine learning. 
 </p>
 
 <p>
-Let's read his book, IMLP. In the lecture he also said <i>What question(s) am I trying to answer? Do I think the data collected can answer that question?</i> as being fundamental. We are taught the fundamental NumPy data structure the NumPy array and the comma denotes a second dimension in np.array([1,2,3],[4,5,6]). In a matrix/vector it's dimensions is it's vertical length. There's a mention here about efficient sparse matrices handling with SciPy which is explained <a href="https://machinelearningmastery.com/sparse-matrices-for-machine-learning/">here</a> basically they come up all the time and multiplying matrices together is an inefficient problem unless of course they are sparse then you can speed this up with SciPy built-ins. We will learn this probably the first theory ML class. The matplotlib section is the subject of the entire next lecture. 
+Let's read his book, IMLP. In the lecture he also said <i>What question(s) am I trying to answer? Do I think the data collected can answer that question?</i> as being fundamental. We are taught the fundamental NumPy data structure the NumPy array and the comma denotes a second dimension in np.array([1,2,3],[4,5,6]). In a matrix/vector it's dimensions is it's length. There's a mention here about efficient sparse matrices handling with SciPy which is explained <a href="https://machinelearningmastery.com/sparse-matrices-for-machine-learning/">here</a> basically they come up all the time and multiplying matrices together is an inefficient problem unless of course they are sparse then you can speed this up with SciPy built-ins. We will learn what a matrix is in the linear algebra crash course we do. The matplotlib section is the subject of the entire next lecture. 
 </p>
 
 <p>
@@ -469,7 +469,7 @@ The first application (page 20) is very similar to the petal length k-nearest ne
 <h3 id="Theory%201">Theory 1</h3>
 <div class="outline-text-3" id="text-Theory%201">
 <p>
-Watching <a href="https://youtu.be/b5NlRg8SjZg">ML Theory</a> lecture 1. Skip to 8m, so far this is a pretty excellent intro, finally somebody supplied me with a concrete definition of inductive reasoning. @56:30 computational complexity plays a major role in ML ie: runtimes of these prediction algorithms. The only prereqs are some basic <a href="./algorithms.html#CS Theory Toolkit lecture 2">asymptotics</a> for algorithm analysis, and familiarity with linear algebra/basic stats like what is a distribution, he claims he will teach us the rest of the math in the lectures. Important to note: the training data is 'randomly generated' meaning knowing one sample can't help us to find out what another sample is if we knew the distribution. We don't care at all about the probability distribution (which we haven't even covered yet here) from where the random data comes from.  
+Watching <a href="https://youtu.be/b5NlRg8SjZg">ML Theory</a> lecture 1. Skip to 8m, so far this is a pretty excellent intro, finally somebody supplied me with a concrete definition of inductive reasoning. @56:30 computational complexity plays a major role in ML ie: runtimes of these training/prediction algorithms. The only prereqs are some basic <a href="./algorithms.html#CS Theory Toolkit lecture 2">asymptotics</a> for algorithm analysis, and familiarity with linear algebra/basic stats like what is a distribution, he claims he will teach us the rest of the math in the lectures. Important to note: the training data is 'randomly generated' meaning knowing one sample can't help us to find out what another sample is if we knew the distribution, and we don't care at all about the probability distribution (which we haven't even covered yet here) from where the random data comes from because as you'll see in CS4780 lecture it's impossible to know.  
 </p>
 
 <p>
@@ -482,7 +482,7 @@ We get a very intuitive mathematical model of machine learning which was largely
 <h3 id="CS4780%201">CS4780 1</h3>
 <div class="outline-text-3" id="text-CS4780%201">
 <p>
-Watching <a href="https://youtu.be/MrLPzBxG95I">Supervised Learning Setup</a> which covers what we just learned with some more explanation, you can of course watch any of the other courses you want. @36:10 'curly X cartesian product curly Y' means every possible ordered pair combination of x from set X and y from set Y in a tuple for example if A = {1, 2} and Y = {3} then A x Y = {(1, 3), (2, 3)} so in other words all his features x matched with a label y for each training sample. A feature vector is defined @44:50. End of lecture we did the bag of words vector representation as the first assignment in the <a href="./software.html">CS19</a> workshop. 
+Watching <a href="https://youtu.be/MrLPzBxG95I">Supervised Learning Setup</a> which covers what we just learned with some more explanation, you can of course watch any of the other courses you want. @36:10 'curly X cartesian product curly Y' means every possible ordered pair combination of x from set X and y from set Y in a tuple for example if A = {1, 2} and Y = {3} then A x Y = {(1, 3), (2, 3)} so all his features x matched with a label y for each training sample. A feature vector is defined @44:50. End of lecture we did the bag of words vector representation as the first assignment in the <a href="./software.html">CS19</a> workshop. 
 </p>
 </div>
 </div>
@@ -500,7 +500,7 @@ Watch <a href="https://youtu.be/59WX2V7Vjgg">Review of sets and functions</a>. I
 </p>
 
 <p>
-For future reference the [MMAC] book covers single and <a href="./calculus.html#Day 3 Multivariable functions">multivariable</a> functions in the first two chapters that anybody can understand, and Terence Tao's <a href="http://libgen.is/book/index.php?md5=850AF3CC9B1C5DCB7DCF1FE82691A69B">Analysis I</a> chapter 3 <i>Set Theory</i> will teach you anything you want to know about the definition of functions, their images/inverses and the operations of set data structures though you don't have to do it all now wait until we come across it in lectures. There's a lot of similarity to programming in Tao's book Example 3.4.2 for images of sets, that is exactly what map() in programming is: consume a data structure and apply a function to each one of it's elements, returning a new data structure.
+For future reference the MMAC book covers single and <a href="./calculus.html#Day 3 Multivariable functions">multivariable</a> functions in the first two chapters that anybody can understand, and Terence Tao's <a href="http://libgen.is/book/index.php?md5=850AF3CC9B1C5DCB7DCF1FE82691A69B">Analysis I</a> chapter 3 <i>Set Theory</i> will teach you anything you want to know about the definition of functions, their images/inverses and the operations of set data structures though you don't have to do it all now wait until we come across it in lectures. There's a lot of similarity to programming in Tao's book Example 3.4.2 for images of sets, that is exactly what map() in programming is: consume a data structure and apply a function to each one of it's elements, returning a new data structure.
 </p>
 </div>
 </div>
