@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-09 Thu 20:38 -->
+<!-- 2021-12-11 Sat 15:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Machine Learning From Scratch</title>
@@ -248,6 +248,7 @@
 <ul>
 <li><a href="#Sets%20%26%20functions">Sets &amp; functions</a></li>
 <li><a href="#Ultimate%20linear%20algebra%20crash%20course">Ultimate linear algebra crash course</a></li>
+<li><a href="#Vectors">Vectors</a></li>
 </ul>
 </li>
 </ul>
@@ -509,7 +510,24 @@ For future reference the MMAC book covers single and <a href="./calculus.html#Da
 <h3 id="Ultimate%20linear%20algebra%20crash%20course">Ultimate linear algebra crash course</h3>
 <div class="outline-text-3" id="text-Ultimate%20linear%20algebra%20crash%20course">
 <p>
-We will attempt to use <i>All The Math You Missed: But Need to Know For Graduate School</i> section on linear algebra combined with as few as possible other resources to teach ourselves the minimum linear algebra needed for intro ML theory and nothing more.
+This is a summary of what linear algebra really is and why you'd want to use it:
+</p>
+
+<p>
+A matrix encodes a function, you input a vector and it outputs a vector. This means a matrix can be abstracted to more than just a table of numbers it means you can use linear algebra wherever there is a vector space and that includes all kinds of different mathematics, it's like the underlying theory of it all. You can factor functions encoded as a matrix using a technique called the SVD which allows you to do analysis of each component that makes up a matrix (which is a function). A matrix has four fundamental components/spaces some of which are: a column space (every possible linear combination of all columns), a row space (every possible linear combination of all rows), a nullspace, and a transposed nullspace. Since a matrix is a function, a nullspace is every solution to f(vector-input) = 0. A transpose operation is when you take a row and make it a column, so the big idea/theory is: Take all the rows in the row space and transpose them to find all the column space. Take all the zeros of columns meaning f(vector-input) = 0 to find the nullspace of all rows. Take the transpose of the nullspace of all rows, and find out the nullspace of all columns. This now tells you everything about a matrix which means you know everything about a function. 
+</p>
+
+<p>
+With these tools you can also do projection to find the best approximation, you can do calculus, you can do statistics, you can do probability (markov matrix), you can do optimization, you can do combinatorics/permutations. Best of all you can do all this with a programming language and these tools extend into other subjects like quantum computing when you learn about a discrete Fourier transform matrix, rotating it, inputting a vector of data and getting out the patterns and freq of that data. If you know linear algebra you know an enormous space of mathematics because as we will learn it seems to be the underlying theory to a lot of it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Vectors" class="outline-3">
+<h3 id="Vectors">Vectors</h3>
+<div class="outline-text-3" id="text-Vectors">
+<p>
+Watch <a href="https://youtu.be/vVspolIKPgc">vector notation</a> (20m) if you have no linear algebra background. These are new lectures from the <a href="https://web.stanford.edu/~boyd/vmls/">free book</a> <i>Introduction to Applied Linear Algebra</i> taught by the same authors of <i>Convex Optimization</i>.  
 </p>
 
 <p>
