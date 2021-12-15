@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-11-30 Tue 18:54 -->
+<!-- 2021-12-14 Tue 17:05 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -283,6 +283,8 @@
 </li>
 <li><a href="#6.006%20Lecture%202">6.006 Lecture 2</a>
 <ul>
+<li><a href="#CS%20Theory%20Toolkit%203b">CS Theory Toolkit 3b</a></li>
+<li><a href="#CS%20Theory%20Tookit%203c">CS Theory Tookit 3c</a></li>
 <li><a href="#Problem%20session%201">Problem session 1</a></li>
 </ul>
 </li>
@@ -409,7 +411,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org6a7b2d1">
+<pre class="example" id="org418bd8d">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
@@ -523,7 +525,7 @@ Read 1.4 <i>Ad-Hoc Problems</i> as you do them from the book if using the 3rd ve
 To get the hang of C++ I/O rewatch Gennady's walkthrough how he retrieved input while you have cppreference.com open to view the standard library functions. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
 </p>
 
-<pre class="example" id="org751ed83">
+<pre class="example" id="org3058a7a">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -558,7 +560,7 @@ int main() {
 In this example for Roaming <a href="https://open.kattis.com/problems/romans">Romans</a> I couldn't pass the last test case until I abandoned all C++ built-ins like ceil/round and just cast the type to an int to cut off the decimal:
 </p>
 
-<pre class="example" id="org69be106">
+<pre class="example" id="org34278c0">
 #include &lt;iostream&gt;
 
 int main() {
@@ -756,13 +758,59 @@ Dynamic arrays in C++ are called vectors in the standard library, and are implem
 </p>
 </div>
 
+<div id="outline-container-CS%20Theory%20Toolkit%203b" class="outline-3">
+<h3 id="CS%20Theory%20Toolkit%203b">CS Theory Toolkit 3b</h3>
+<div class="outline-text-3" id="text-CS%20Theory%20Toolkit%203b">
+<p>
+These lectures are so good we may as well do more of them, then we can do less MIT problem solving seminars and figure out the answers ourselves. If you forgot binomial coefficients Wildberger has an entire lecture on the <a href="https://youtu.be/V2mk24udsMw">binomial theorem</a> where the n!/(k!(n-k)!) formula is fully derived from scratch or read <i>The Art of Computer Programming</i> chapter on binomial coefficients since as Knuth writes and we'll later see in the CS Theory Toolkit lecture they come up all time in algorithm analysis. 
+</p>
+
+<p>
+Watching <a href="https://youtu.be/TbazAJbw6RE">Factorial Asymptotics</a> which will come up in the first MIT 6.006 problem session. @2:05 recall the harmonic number examples from earlier lecture where he grouped them together and divided by two. @4:03 this expression is \(\frac{n \cdot ln(n/2)}{2}\) and he factors out 1/2 leaving 1/2*n*ln(n/2) which if you remember logarithm identities log(a/b) is log(a) - log(b) or in this case: 1/2*n*(ln(n) - ln(2)) or distributed: 1/2 (n*ln(n) - n*ln(2)) so he leaves it as 1/2*nln(n) - O(n). This is the lower bound, which if you ignore the 1/2 constant is n ln n, and the upper bound on the board to the right of all the inequalities is n ln(n). Since ln(n!) is by definition an exponent (2 to the power of what gives you n!), he rewrites it as n! = \(2^{\Theta(n \cdot log(n))}\) shifting from base e to base 2. 
+</p>
+
+<p>
+@12:43 he's doing exactly what we did in the first chapter of DPV which is take a ratio of two functions to find if a constant seperates them. He's using substitution here plugging in (n+1) to n<sup>n</sup>/n!
+</p>
+
+<p>
+@15:20 another well known trick, take the log of both sides, this is in the MIT problem solving lectures. The 'integral trick' is interesting but you don't have to know it, or the antiderivative he talks about unless you already did a <a href="./calculus.html">calculus</a> course. You can still probably figure out what he's doing though, the takeaway here is n! is \(\Theta(\frac{n^n}{e^n}\cdot\sqrt n)\) He tells us that root n is a constant power of n log n so if you were to use O-Tilde notation you could hide the root n as a polylog.
+</p>
+</div>
+</div>
+
+<div id="outline-container-CS%20Theory%20Tookit%203c" class="outline-3">
+<h3 id="CS%20Theory%20Tookit%203c">CS Theory Tookit 3c</h3>
+<div class="outline-text-3" id="text-CS%20Theory%20Tookit%203c">
+<p>
+Moving on to second lecture <a href="https://youtu.be/_DgUgKOkPxo">Binomial Coefficients Asymptotics</a> so we can do those MIT problems ourselves. We have our first solution to the MIT psets, for 'small' k, n choose k is upper bound n<sup>k</sup>/k! ie k = 3 then n<sup>3</sup>/6. He defines smaller as k being smaller than sqrt(n) in n choose k.  He goes through a very rapid fire manipulation of the lower bounds, none of this we haven't already learned, to deduce ln(n choose k) is Theta(n). @17:23 more advice, if k is bigger than n then n choose k is n/(n - k).
+</p>
+
+<p>
+The rest of this lecture is for interest, he fully derives Stirling's formula which you can also read in the Asymptopia book or Knuth's book, and we don't need it for our limited purposes but it's definitely something you can follow along and understand exactly what he's doing. He tells us every binomial coefficient bound is at most 2<sup>n</sup>
+</p>
+</div>
+</div>
+
 <div id="outline-container-Problem%20session%201" class="outline-3">
 <h3 id="Problem%20session%201">Problem session 1</h3>
 <div class="outline-text-3" id="text-Problem%20session%201">
 <p>
-Watching <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/lecture-videos/problem-session-1/">this</a>. The problem session pdfs are <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/practice-problems/">here</a>.
+The problem session pdfs are <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/practice-problems/">here</a>.
 </p>
 
+<p>
+<b>Problem 1-1</b>
+Order a): (f1, f5, f2, f3, f4) is easy f1 is a polylog, f2 is n<sup>2</sup> and f4 is 2<sup>n</sup> clearly the largest growing function. 
+</p>
+
+<p>
+Order b): ({f2, f5}, f3, f1, f4) We know from CS Theory Toolkit 3c that n choose 3 = n<sup>3</sup>/3 so f2 and f5 are in the same set. We also know n! bound is n<sup>n</sup> over e<sup>n</sup> or just n<sup>n</sup> which is the largest bound here so f4 is clearly last. We know no binomial coefficient is bigger than 2<sup>n</sup> so as a guess, I'd place f3 before f1.
+</p>
+
+<p>
+The rest of the problem session is explained in lecture <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/lecture-videos/problem-session-1/">here</a> which you may want to watch for the first session then figure it out yourself for the rest of the sessions.
+</p>
 
 <p>
 TODO
