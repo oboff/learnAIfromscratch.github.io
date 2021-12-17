@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-14 Tue 17:05 -->
+<!-- 2021-12-16 Thu 19:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -268,7 +268,7 @@
 <li><a href="#Begin">Begin</a>
 <ul>
 <li><a href="#Preface%20-%20How%20many%20problems">Preface - How many problems</a></li>
-<li><a href="#Chapter%201">Chapter 1</a></li>
+<li><a href="#CP4%20chapter%201">CP4 chapter 1</a></li>
 <li><a href="#C%2B%2B%20crash%20course">C++ crash course</a></li>
 <li><a href="#Problems">Problems</a></li>
 </ul>
@@ -281,11 +281,16 @@
 <li><a href="#Asymptopia">Asymptopia</a></li>
 </ul>
 </li>
-<li><a href="#6.006%20Lecture%202">6.006 Lecture 2</a>
+<li><a href="#MIT%206.006%20Lecture%202">MIT 6.006 Lecture 2</a>
 <ul>
 <li><a href="#CS%20Theory%20Toolkit%203b">CS Theory Toolkit 3b</a></li>
 <li><a href="#CS%20Theory%20Tookit%203c">CS Theory Tookit 3c</a></li>
-<li><a href="#Problem%20session%201">Problem session 1</a></li>
+<li><a href="#MIT%20problem%20session%201">MIT problem session 1</a></li>
+</ul>
+</li>
+<li><a href="#CP4%20chapter%202">CP4 chapter 2</a>
+<ul>
+<li><a href="#How%20hardware%20works">How hardware works</a></li>
 </ul>
 </li>
 </ul>
@@ -411,7 +416,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org418bd8d">
+<pre class="example" id="orga902ba2">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
@@ -472,9 +477,9 @@ If we only do the starred problems listed on <a href="https://cpbook.net/methods
 </div>
 </div>
 
-<div id="outline-container-Chapter%201" class="outline-3">
-<h3 id="Chapter%201">Chapter 1</h3>
-<div class="outline-text-3" id="text-Chapter%201">
+<div id="outline-container-CP4%20chapter%201" class="outline-3">
+<h3 id="CP4%20chapter%201">CP4 chapter 1</h3>
+<div class="outline-text-3" id="text-CP4%20chapter%201">
 <p>
 Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solving skills are mentioned, many of which were taught in <a href="./software.html">CS19</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 inputs max, you could still pass the online judge. The book notes that we should already have the skills to judge the runtime complexity of our own algorithms, which we will learn as we go.
 </p>
@@ -525,7 +530,7 @@ Read 1.4 <i>Ad-Hoc Problems</i> as you do them from the book if using the 3rd ve
 To get the hang of C++ I/O rewatch Gennady's walkthrough how he retrieved input while you have cppreference.com open to view the standard library functions. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
 </p>
 
-<pre class="example" id="org3058a7a">
+<pre class="example" id="orgfbef0b0">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -560,7 +565,7 @@ int main() {
 In this example for Roaming <a href="https://open.kattis.com/problems/romans">Romans</a> I couldn't pass the last test case until I abandoned all C++ built-ins like ceil/round and just cast the type to an int to cut off the decimal:
 </p>
 
-<pre class="example" id="org34278c0">
+<pre class="example" id="org0f168c4">
 #include &lt;iostream&gt;
 
 int main() {
@@ -738,9 +743,9 @@ Theorem 2.13 proof, in 2.20 he first uses basic algebra to reduce (n + 1)<sup>k<
 </div>
 </div>
 
-<div id="outline-container-6.006%20Lecture%202" class="outline-2">
-<h2 id="6.006%20Lecture%202">6.006 Lecture 2</h2>
-<div class="outline-text-2" id="text-6.006%20Lecture%202">
+<div id="outline-container-MIT%206.006%20Lecture%202" class="outline-2">
+<h2 id="MIT%206.006%20Lecture%202">MIT 6.006 Lecture 2</h2>
+<div class="outline-text-2" id="text-MIT%206.006%20Lecture%202">
 <p>
 I skipped lecture 1 because it's just course logistics and brief introductions which are fully covered in this lecture. 
 </p>
@@ -792,9 +797,9 @@ The rest of this lecture is for interest, he fully derives Stirling's formula wh
 </div>
 </div>
 
-<div id="outline-container-Problem%20session%201" class="outline-3">
-<h3 id="Problem%20session%201">Problem session 1</h3>
-<div class="outline-text-3" id="text-Problem%20session%201">
+<div id="outline-container-MIT%20problem%20session%201" class="outline-3">
+<h3 id="MIT%20problem%20session%201">MIT problem session 1</h3>
+<div class="outline-text-3" id="text-MIT%20problem%20session%201">
 <p>
 The problem session pdfs are <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/practice-problems/">here</a>.
 </p>
@@ -805,15 +810,42 @@ Order a): (f1, f5, f2, f3, f4) is easy f1 is a polylog, f2 is n<sup>2</sup> and 
 </p>
 
 <p>
-Order b): ({f2, f5}, f3, f1, f4) We know from CS Theory Toolkit 3c that n choose 3 = n<sup>3</sup>/3 so f2 and f5 are in the same set. We also know n! bound is n<sup>n</sup> over e<sup>n</sup> or just n<sup>n</sup> which is the largest bound here so f4 is clearly last. We know no binomial coefficient is bigger than 2<sup>n</sup> so as a guess, I'd place f3 before f1.
+Order b): ({f2, f5}, f3, f1, f4) We know from CS Theory Toolkit 3c that n choose 3 = n<sup>3</sup>/3 so f2 and f5 are in the same set. We also know n! bound is roughly (n/e)<sup>n</sup> which is the largest bound here so f4 is clearly last. We know no binomial coefficient is bigger than 2<sup>n</sup> so as a guess, I'd place f3 before f1 but it's exact bound is in the book <i>Asymptopia</i>. In the MIT problem session <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/lecture-videos/problem-session-1/">lecture</a> he goes through what we just did in the CS Theory Toolkit lectures but almost none of this would make sense if you didn't watch Ryan O'Donnell break it down from scratch.
 </p>
 
 <p>
-The rest of the problem session is explained in lecture <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/lecture-videos/problem-session-1/">here</a> which you may want to watch for the first session then figure it out yourself for the rest of the sessions.
+The programming problems, are too easy if you already did <a href="./software.html">CS19</a> try examples for shift-left(D, k):
 </p>
+<ul class="org-ul">
+<li>shift-left([1, 2, 3, 4], 3) is
+<ul class="org-ul">
+<li>shift-left([2, 3, 4, 1], 1) is</li>
+<li>shift-left([3, 4, 1, 2], 2) is</li>
+<li>shift-left([4, 1, 2, 3], 3)</li>
+</ul></li>
+<li>what is changing each step? Delete head and append to tail.</li>
+</ul>
 
 <p>
-TODO
+It's worth watching their problem session once to see how they reason about correctness, and read the solution writeup because that is exactly how you would describe an algorithm in an interview setting, it is all sentences walking through reasoning and not just code.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-CP4%20chapter%202" class="outline-2">
+<h2 id="CP4%20chapter%202">CP4 chapter 2</h2>
+<div class="outline-text-2" id="text-CP4%20chapter%202">
+<p>
+Now we take the advice of every competitive programmer and learn the algorithm while implementing it via problems. We have all the above reference materials to help us as we go and some of CMU's 15-295 lectures from their competitive programming course. Because this is competitive programming we are using built-in libraries and often modifying them not doing everything from scratch. One thing we will learn from scratch, is how loops work, they are a dynamical system that updates state. 
+</p>
+</div>
+
+<div id="outline-container-How%20hardware%20works" class="outline-3">
+<h3 id="How%20hardware%20works">How hardware works</h3>
+<div class="outline-text-3" id="text-How%20hardware%20works">
+<p>
+Watching <a href="https://youtu.be/M2i7sSRcSIw">Optimizing Serial Code 1</a>. This is from MIT's 18.337J and the slides are all on <a href="https://github.com/mitmath/18337">github</a>. You don't have to watch the whole lecture just the memory model TODO
 </p>
 
 
