@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-16 Thu 19:15 -->
+<!-- 2021-12-17 Fri 18:18 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -290,7 +290,7 @@
 </li>
 <li><a href="#CP4%20chapter%202">CP4 chapter 2</a>
 <ul>
-<li><a href="#How%20hardware%20works">How hardware works</a></li>
+<li><a href="#How%20memory%20works">How memory works</a></li>
 </ul>
 </li>
 </ul>
@@ -416,7 +416,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="orga902ba2">
+<pre class="example" id="org9e1b7bb">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
@@ -530,7 +530,7 @@ Read 1.4 <i>Ad-Hoc Problems</i> as you do them from the book if using the 3rd ve
 To get the hang of C++ I/O rewatch Gennady's walkthrough how he retrieved input while you have cppreference.com open to view the standard library functions. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
 </p>
 
-<pre class="example" id="orgfbef0b0">
+<pre class="example" id="org7ea4fa1">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -565,7 +565,7 @@ int main() {
 In this example for Roaming <a href="https://open.kattis.com/problems/romans">Romans</a> I couldn't pass the last test case until I abandoned all C++ built-ins like ceil/round and just cast the type to an int to cut off the decimal:
 </p>
 
-<pre class="example" id="org0f168c4">
+<pre class="example" id="orgc907af1">
 #include &lt;iostream&gt;
 
 int main() {
@@ -837,15 +837,31 @@ It's worth watching their problem session once to see how they reason about corr
 <h2 id="CP4%20chapter%202">CP4 chapter 2</h2>
 <div class="outline-text-2" id="text-CP4%20chapter%202">
 <p>
-Now we take the advice of every competitive programmer and learn the algorithm while implementing it via problems. We have all the above reference materials to help us as we go and some of CMU's 15-295 lectures from their competitive programming course. Because this is competitive programming we are using built-in libraries and often modifying them not doing everything from scratch. One thing we will learn from scratch, is how loops work, they are a dynamical system that updates state. 
+Now we take the advice of every competitive programmer and learn the algorithm while implementing it via problems. We have all the above reference materials to help us as we go and some of CMU's 15-295 lectures from their competitive programming course. Because this is competitive programming we are using built-in libraries and often modifying them not doing everything from scratch. One thing we will learn from scratch, is how loops work using a math model for optimization purposes. 
 </p>
 </div>
 
-<div id="outline-container-How%20hardware%20works" class="outline-3">
-<h3 id="How%20hardware%20works">How hardware works</h3>
-<div class="outline-text-3" id="text-How%20hardware%20works">
+<div id="outline-container-How%20memory%20works" class="outline-3">
+<h3 id="How%20memory%20works">How memory works</h3>
+<div class="outline-text-3" id="text-How%20memory%20works">
 <p>
-Watching <a href="https://youtu.be/M2i7sSRcSIw">Optimizing Serial Code 1</a>. This is from MIT's 18.337J and the slides are all on <a href="https://github.com/mitmath/18337">github</a>. You don't have to watch the whole lecture just the memory model TODO
+Watching <a href="https://youtu.be/M2i7sSRcSIw">Optimizing Serial Code 1</a>. This is from MIT's 18.337J and the lecture notes on his screen are <a href="https://mitmath.github.io/18337/lecture2/optimizing">here</a>. This course is all about optimization and he uses Julia for examples but will often talk about Python, Matlab, C, Fortran, Java and R how they are implemented.
+</p>
+
+<p>
+First we learn never use a linked list, despite them being theoretically O(1) operation they are in fact awful on real hardware. Every matrix is stored in an array either row major or column major order, and knowing which one your library is using is critical to knowing where the next cache hit will be by the CPU. Note you should never use arrays either, ie: C style arrays. In C++ you would use std::array if you had to or std::vector both in the standard library.  
+</p>
+
+<p>
+Arrays and objects are heap allocated instead of on the stack (in Python/R/Matlab/Julia) because they can be dynamic, and because the compiler does not have enough type information at compile time to determine the length. He shows a library in Julia where the compiler does have this information and so can allocate it into the stack instead of the heap. If you use C++ containers like std::vector from the standard library they have this size information built in too as they are <a href="https://en.cppreference.com/w/cpp/container/vector">objects</a>. When this lecture is done we'll figure out exactly how C++ allocates memory. 
+</p>
+
+<p>
+Most interesting part of this lecture, and the reason I made you watch it (despite the memory hierarchy intro) is the broadcasting mechanism part of the lecture about what "vectorization" means in most high-level languages. We discover somebody in languages like Python (NumPy library), Matlab, R and others simply compiled the loop for the C function that does the broadcasted form, so in effect all you're doing in those languages/libraries is calling a single C function because loops are costly in those languages. C++ doesn't have this problem.
+</p>
+
+<p>
+I won't go through the rest of this course here, but I highly recommend all of it. We will however later go through 2 more lectures how he models loops using discrete dynamics and how these can be optimized in any language. 
 </p>
 
 
