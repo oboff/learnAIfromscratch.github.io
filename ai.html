@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-11 Sat 16:56 -->
+<!-- 2021-12-20 Mon 21:18 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Machine Learning From Scratch</title>
@@ -247,8 +247,10 @@
 <li><a href="#Math%20review">Math review</a>
 <ul>
 <li><a href="#Sets%20%26%20functions">Sets &amp; functions</a></li>
+<li><a href="#Linear%20algebra%20summary">Linear algebra summary</a></li>
 <li><a href="#Ultimate%20linear%20algebra%20crash%20course">Ultimate linear algebra crash course</a></li>
 <li><a href="#Vectors">Vectors</a></li>
+<li><a href="#The%20linear%20algebra%20reference%20we%20will%20use">The linear algebra reference we will use</a></li>
 </ul>
 </li>
 </ul>
@@ -453,7 +455,7 @@ The coreqs for this course is the <a href="https://github.com/jakevdp/PythonData
 
 
 <p>
-<b>Reading: IMLP Ch 1, APM Ch 1-2</b> Both books can be found on libgen, reading APM 1.3 <i>Terminology</i> is helpful for understanding 'class' or 'predictors'. Chapter 2 (and the first lecture) introduces a linear and quadratic (power) model. These are both covered in <a href="#Get%20a%20math%20crash%20course%20reference">MMAC</a> in the first chapter. The first is a linear function f(x) = mx + b who's parameters are m the slope (rise/run) and b the vertical y-intercept. Now you know what 'parameters' means in the context of modeling, in this case it is the 2 things that define what a linear line is. The second is a quadratic f(x) = ax^2 + bx + c which is really a power function model y = Cx^k where C and k are nonzero constants: f(x) = Cx^2 + Cx^1 + c. The parameters C and k define what it means to be a power function. Note setting parameter k to k - 1 in f(x) = ax^2 + bx + c gives you a linear function f(x) = ax + (b + c) or mx + b so a linear function is a special case of a quadratic function which itself is just a power function model for our purposes of machine learning. 
+<b>Reading: IMLP Ch 1, APM Ch 1-2</b> Both books can be found on libgen, reading APM 1.3 <i>Terminology</i> is helpful for understanding 'class' or 'predictors'. Chapter 2 (and the first lecture) introduces a linear and quadratic (power) model. These are both covered in <a href="#Get%20a%20math%20crash%20course%20reference">MMAC</a> in the first chapter. The first is a linear function f(x) = mx + b (well, technically affine function) who's parameters are m the slope (rise/run) and b the vertical y-intercept. Now you know what 'parameters' means in the context of modeling, in this case it is the 2 things that define what a linear line is. The second is a quadratic f(x) = ax^2 + bx + c which is really a power function model y = Cx^k where C and k are nonzero constants: f(x) = Cx^2 + Cx^1 + c. The parameters C and k define what it means to be a power function. Note setting parameter k to k - 1 in f(x) = ax^2 + bx + c gives you a linear function f(x) = ax + (b + c) or mx + b so a linear function is a special case of a quadratic function which itself is just a power function model for our purposes of machine learning. 
 </p>
 
 <p>
@@ -474,7 +476,7 @@ Watching <a href="https://youtu.be/b5NlRg8SjZg">ML Theory</a> lecture 1. Skip to
 </p>
 
 <p>
-We get a very intuitive mathematical model of machine learning which was largely statistics free anyone could follow. The introduction of the <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> [UML] covers what we just saw in the lecture ie: bait shyness.
+We get a very intuitive mathematical model of machine learning which was largely statistics free anyone could follow. The introduction of the <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/">book</a> [UML] covers what we just saw in the lecture ie: bait shyness. Of course there is already a problem with his papaya learning example, in Thailand they will thinly shave a green unripe papaya to make it into a salad that is quite tasty but our example learning function would label that as not tasty.  
 </p>
 </div>
 </div>
@@ -506,19 +508,28 @@ For future reference the MMAC book covers single and <a href="./calculus.html#Da
 </div>
 </div>
 
+<div id="outline-container-Linear%20algebra%20summary" class="outline-3">
+<h3 id="Linear%20algebra%20summary">Linear algebra summary</h3>
+<div class="outline-text-3" id="text-Linear%20algebra%20summary">
+<p>
+Recall polynomials from highschool, they are a specification of a function. You have this notion of something that it dependent: y = f(x) meaning the output y depends on the input x. Polynomials are a way to understand the properties that function has such as for which x is f(x) = 0, what is the maximum or minimum values of f(x), what is it's graph if we use polynomials to specify it?. Knowing these things tells you all you want to know about a function f(x).
+</p>
+
+<p>
+In linear algebra a matrix also encodes a function, you input a vector and it outputs a vector. This means a matrix can be abstracted to more than just a table of numbers you can use linear algebra wherever there is a vector space and that includes all kinds of different mathematics, it's almost like the underlying theory of it all. You can factor functions encoded as a matrix using a technique called the SVD which allows you to do analysis of each matrix component. A matrix has four fundamental components/spaces: a column space (every possible linear combination of all columns times a vector), a row space (every possible linear combination of all rows), a nullspace, and a transposed nullspace. Since a matrix is a function, a nullspace is every solution to f(vector-input) = 0. A transpose operation is when you take a row and make it a column, or turn a column into a row, so the big idea is: Take all the rows in the row space and transpose them to find all the column space. Take all the zeros of columns meaning f(vector-input) = 0 to find the nullspace of all rows. Take the transpose of the nullspace of all rows, and find out the nullspace of all columns. This now tells you everything about a matrix which means you know everything about a function. 
+</p>
+
+<p>
+With these tools you can also do projection to find the best approximation, you can do calculus, you can do statistics, you can do probability, you can do optimization, you can do combinatorics/permutations, find linear maps between all these spaces and do linear transformations between dimensions like reducing R^3 to R^2. Best of all you can do all this with a programming language and these tools extend into other subjects like quantum computing when you learn about a discrete Fourier transform matrix, rotating it, giving it a vector of data for input and getting out the patterns and freq of that data. If you know linear algebra you know an enormous space of mathematics so it is the most critical subject for us in machine learning and where we should spend most of our time.
+</p>
+</div>
+</div>
+
 <div id="outline-container-Ultimate%20linear%20algebra%20crash%20course" class="outline-3">
 <h3 id="Ultimate%20linear%20algebra%20crash%20course">Ultimate linear algebra crash course</h3>
 <div class="outline-text-3" id="text-Ultimate%20linear%20algebra%20crash%20course">
 <p>
-This is a summary of what linear algebra really is and why you'd want to use it:
-</p>
-
-<p>
-A matrix encodes a function, you input a vector and it outputs a vector. This means a matrix can be abstracted to more than just a table of numbers you can use linear algebra wherever there is a vector space and that includes all kinds of different mathematics, it's like the underlying theory of it all. You can factor functions encoded as a matrix using a technique called the SVD which allows you to do analysis of each matrix component. A matrix has four fundamental components/spaces: a column space (every possible linear combination of all columns), a row space (every possible linear combination of all rows), a nullspace, and a transposed nullspace. Since a matrix is a function, a nullspace is every solution to f(vector-input) = 0. A transpose operation is when you take a row and make it a column, or turn a column into a row, so the big idea is: Take all the rows in the row space and transpose them to find all the column space. Take all the zeros of columns meaning f(vector-input) = 0 to find the nullspace of all rows. Take the transpose of the nullspace of all rows, and find out the nullspace of all columns. This now tells you everything about a matrix which means you know everything about a function. 
-</p>
-
-<p>
-With these tools you can also do projection to find the best approximation, you can do calculus, you can do statistics, you can do probability (markov matrix), you can do optimization, you can do combinatorics/permutations. Best of all you can do all this with a programming language and these tools extend into other subjects like quantum computing when you learn about a discrete Fourier transform matrix, rotating it, giving it a vector of data for input and getting out the patterns and freq of that data. If you know linear algebra you know an enormous space of mathematics so it is the most critical subject for us in machine learning and where we should spend most of our time.
+These short <a href="https://www.cs.cmu.edu/~zkolter/course/linalg/introduction.html">lectures</a> (disable https or 'blocked content' to see the YouTube embeddings, or view page source) and <a href="https://www.cs.cmu.edu/~zkolter/course/linalg/course_notes.html">notes</a> by Zico Kolter at CMU are fine to watch if you have some exposure to linear algebra already and want to remember the basics as we go through the courses. You can view them as we come across these concepts.
 </p>
 </div>
 </div>
@@ -527,12 +538,35 @@ With these tools you can also do projection to find the best approximation, you 
 <h3 id="Vectors">Vectors</h3>
 <div class="outline-text-3" id="text-Vectors">
 <p>
-Watch <a href="https://youtu.be/vVspolIKPgc">vector notation</a> (20m) if you have no linear algebra background. These are new lectures from the <a href="https://web.stanford.edu/~boyd/vmls/">free book</a> <i>Introduction to Applied Linear Algebra</i> taught by the same authors of <i>Convex Optimization</i>.  
+Watch <a href="https://youtu.be/vVspolIKPgc">vector notation</a> (20m) if you have no linear algebra background. These are new <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rMz-WbFQtNUsUElIh2cPmN9">lectures</a> from the <a href="https://web.stanford.edu/~boyd/vmls/">free book</a> <i>Introduction to Applied Linear Algebra</i> taught by the same authors of <i>Convex Optimization</i>. Since it's an applied math course that uses a lot of finance examples it's very good at unravelling the notation and there's some interesting math in here like time series and matrix calculus.  
 </p>
+
+<p>
+Also skim through <a href="https://youtu.be/wlPiJZ1DQjs">vector examples</a> (18m) in the same playlist to get an idea of the different kinds of data you can encode in a vector and what a sparse encoding would mean for that data. Our interest for machine learning is a vector filled with features or attributes like the papaya example where a 3 vector has color and hardness attributes, plus a label 'tasty or not tasty', to enter into our machine learning function from the first theory lecture. If you did <a href="./software.html">CS19</a> you can skip the last 5 minutes or so about converting words to vectors as it was the first assignment we did there.
+</p>
+
+<p>
+Watch the rest as topics come up or see the Zico Kolter tutorials above. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-The%20linear%20algebra%20reference%20we%20will%20use" class="outline-3">
+<h3 id="The%20linear%20algebra%20reference%20we%20will%20use">The linear algebra reference we will use</h3>
+<div class="outline-text-3" id="text-The%20linear%20algebra%20reference%20we%20will%20use">
+<p>
+As we go through machine learning/neural networks, we will do some of Strang's new course <a href="https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/">Matrix Methods</a> 18.065 which is linear algebra w/SVD for deep learning. It's supposed to be a second course in linear algebra but we'll just fill in the blanks when needed. Instead of a forced linear progression through the whole course we'll use it for reference to look up things as they come up. 
+</p>
+
+<p>
+I do a different linear algebra course <a href="./linear.html">here</a> which can be described as linear algebra from scratch, where we go through an a visual geometric affine geometry course and Terence Tao's linear algebra notes at the same time (and eventually many Poh-Shen Loh linear algebra seminars), but that is only out of interest in the subject and isn't needed here where linear algebra is merely a tool we are using.
+</p>
+
 
 <p>
 TODO
 </p>
+
 
 <hr>
 <p>
