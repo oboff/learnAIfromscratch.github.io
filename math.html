@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-08-03 Tue 21:59 -->
+<!-- 2021-12-30 Thu 17:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Math Foundations from Scratch</title>
@@ -252,10 +252,26 @@
 <ul>
 <li><a href="#Intro">Intro</a>
 <ul>
-<li><a href="#What%20is%20math">What is math</a></li>
+<li><a href="#Curriculum">Curriculum</a></li>
+<li><a href="#Why%20Geometry">Why Geometry</a>
+<ul>
+<li><a href="#Geometry%20%26%20Isaac%20Newton">Geometry &amp; Isaac Newton</a></li>
 </ul>
 </li>
-<li><a href="#Start%20here">Start here</a>
+</ul>
+</li>
+<li><a href="#Logic">Logic</a>
+<ul>
+<li><a href="#Mathematical%20reasoning">Mathematical reasoning</a>
+<ul>
+<li><a href="#Substitution">Substitution</a></li>
+</ul>
+</li>
+<li><a href="#Classical%20logic">Classical logic</a></li>
+<li><a href="#Proof%20assistants">Proof assistants</a></li>
+</ul>
+</li>
+<li><a href="#%28Optional%29%20Arithmetic%20review">(Optional) Arithmetic review</a>
 <ul>
 <li><a href="#The%20natural%20numbers">The natural numbers</a></li>
 <li><a href="#Arithmetic%20with%20natural%20numbers">Arithmetic with natural numbers</a></li>
@@ -267,167 +283,296 @@
 <li><a href="#Fractions">Fractions</a></li>
 <li><a href="#Arithmetic%20with%20fractions">Arithmetic with fractions</a></li>
 <li><a href="#Laws%20of%20arithmetic%20for%20fractions">Laws of arithmetic for fractions</a></li>
-</ul>
-</li>
-<li><a href="#Proofs">Proofs</a>
-<ul>
-<li><a href="#Nature%20of%20mathematical%20logic">Nature of mathematical logic</a>
-<ul>
-<li><a href="#Lectures%20on%20logic">Lectures on logic</a></li>
-</ul>
-</li>
-<li><a href="#Materials%20needed">Materials needed</a></li>
-<li><a href="#2.1%20The%20Peano%20Axioms">2.1 The Peano Axioms</a></li>
-<li><a href="#2.2%20Addition">2.2 Addition</a>
-<ul>
-<li><a href="#First%20proof">First proof</a></li>
-<li><a href="#Second%20proof">Second proof</a></li>
-<li><a href="#Third%20proof">Third proof</a></li>
-<li><a href="#Fourth%20proof%20%26%20Implication">Fourth proof &amp; Implication</a></li>
-<li><a href="#Exercise%202.2.1">Exercise 2.2.1</a></li>
-</ul>
-</li>
-<li><a href="#2.2.%20cont.">2.2. cont.</a>
-<ul>
-<li><a href="#Exercises">Exercises</a></li>
-</ul>
-</li>
-<li><a href="#2.3%20Multiplication">2.3 Multiplication</a>
-<ul>
-<li><a href="#2.3%20Multiplication--Exercises">Exercises</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#Set%20Theory">Set Theory</a>
-<ul>
-<li><a href="#History%20of%20set%20theory">History of set theory</a></li>
-<li><a href="#Appendix%20A%3A%20the%20basics%20of%20mathematical%20logic">Appendix A: the basics of mathematical logic</a></li>
-<li><a href="#Lectures%20on%20deduction">Lectures on deduction</a>
-<ul>
-<li><a href="#Quiz%3A%20Logic">Quiz: Logic</a></li>
-</ul>
-</li>
-<li><a href="#3.1%20Fundamentals%20%28Set%20Theory%29">3.1 Fundamentals (Set Theory)</a>
-<ul>
-<li><a href="#Quiz%20Sets">Quiz Sets</a></li>
-<li><a href="#3.1%20Fundamentals%20%28Set%20Theory%29--Exercises">Exercises</a></li>
-</ul>
-</li>
-<li><a href="#3.2%20Russell%27s%20Paradox">3.2 Russell's Paradox</a></li>
-<li><a href="#3.3%20Functions">3.3 Functions</a>
-<ul>
-<li><a href="#Quiz%20Functions">Quiz Functions</a></li>
-<li><a href="#3.3%20Functions--Exercises">Exercises</a></li>
-</ul>
-</li>
-<li><a href="#Proof%20strategies">Proof strategies</a></li>
-<li><a href="#3.4%20Images%20and%20inverse%20images">3.4 Images and inverse images</a></li>
-<li><a href="#3.5%20Cartesian%20products">3.5 Cartesian products</a></li>
-<li><a href="#3.6%20Cardinality%20of%20sets">3.6 Cardinality of sets</a></li>
-</ul>
-</li>
-<li><a href="#Integers%20and%20rational%20numbers">Integers and rational numbers</a>
-<ul>
 <li><a href="#Introducing%20the%20integers">Introducing the integers</a></li>
-<li><a href="#4.1%20The%20integers">4.1 The integers</a>
-<ul>
-<li><a href="#4.1%20The%20integers--Exercises">Exercises</a></li>
-</ul>
-</li>
 <li><a href="#Rational%20numbers">Rational numbers</a></li>
 <li><a href="#Visualizing%20the%20rational%20numbers">Visualizing the rational numbers</a></li>
 <li><a href="#The%20deep%20structure%20of%20the%20rational%20numbers">The deep structure of the rational numbers</a></li>
-<li><a href="#4.2%20The%20rationals">4.2 The rationals</a>
-<ul>
-<li><a href="#4.2%20The%20rationals--Exercises">Exercises</a></li>
-</ul>
-</li>
-<li><a href="#Decimal%20numbers">Decimal numbers</a>
-<ul>
-<li><a href="#Appendix%20B%3A%20the%20decimal%20system">Appendix B: the decimal system</a></li>
-</ul>
-</li>
-<li><a href="#4.3%20Absolute%20value%20and%20exponentiation">4.3 Absolute value and exponentiation</a>
-<ul>
-<li><a href="#4.3%20Absolute%20value%20and%20exponentiation--Exercises">Exercises</a></li>
-</ul>
-</li>
-<li><a href="#4.4%20Gaps%20in%20the%20rational%20numbers">4.4 Gaps in the rational numbers</a></li>
-</ul>
-</li>
-<li><a href="#Real%20Numbers">Real Numbers</a>
-<ul>
+<li><a href="#Decimal%20numbers">Decimal numbers</a></li>
 <li><a href="#What%20exactly%20is%20a%20limit">What exactly is a limit</a></li>
 <li><a href="#2D%20geometric%20interpretation%20of%20Cauchy%20sequences">2D geometric interpretation of Cauchy sequences</a></li>
 <li><a href="#Real%20numbers%20and%20Cauchy%20sequences%20I">Real numbers and Cauchy sequences I</a></li>
 <li><a href="#Real%20numbers%20and%20Cauchy%20sequences%20II">Real numbers and Cauchy sequences II</a></li>
-<li><a href="#5.1%20Cauchy%20sequences">5.1 Cauchy sequences</a></li>
-<li><a href="#5.2%20Equivalent%20Cauchy%20sequences">5.2 Equivalent Cauchy sequences</a></li>
-<li><a href="#5.3%20The%20construction%20of%20the%20real%20numbers">5.3 The construction of the real numbers</a></li>
-<li><a href="#5.4%20Ordering%20the%20reals">5.4 Ordering the reals</a></li>
-<li><a href="#5.5%20The%20least%20upper%20bound%20property">5.5 The least upper bound property</a></li>
-<li><a href="#5.6%20Real%20number%20exponents%20I">5.6 Real number exponents I</a></li>
 </ul>
 </li>
-<li><a href="#Series">Series</a>
+<li><a href="#Begin">Begin</a>
 <ul>
-<li><a href="#7.1%20Finite%20series">7.1 Finite series</a></li>
-<li><a href="#7.3%20Sums%20of%20non-negative%20numbers">7.3 Sums of non-negative numbers</a></li>
-</ul>
-</li>
-<li><a href="#Trigonometry%20crash%20course">Trigonometry crash course</a></li>
-<li><a href="#Math%20circle">Math circle</a>
-<ul>
-<li><a href="#Discrete%20math%20lecture%201">Discrete math lecture 1</a></li>
-<li><a href="#Algebra%20chapter%201">Algebra chapter 1</a></li>
-<li><a href="#Discrete%20Math%20Lecture%202">Discrete Math Lecture 2</a></li>
-</ul>
-</li>
-<li><a href="#CMU%20Putnam%20Seminar">CMU Putnam Seminar</a>
-<ul>
-<li><a href="#Lecture%201%20Introduction">Lecture 1 Introduction</a></li>
-<li><a href="#Lecture%202%20Polynomials">Lecture 2 Polynomials</a></li>
-<li><a href="#Algebra%202%20Polynomials">Algebra 2 Polynomials</a></li>
+<li><a href="#How%20to%20solve%20a%20math%20problem">How to solve a math problem</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-
+<hr>
 
 <div id="outline-container-Intro" class="outline-2">
 <h2 id="Intro">Intro</h2>
 <div class="outline-text-2" id="text-Intro">
 <p>
-This is part IB of the <a href="https://learnaifromscratch.github.io">AI Tripos</a> to learn the basics of mathematical reasoning so deduction and strategies for writing proofs. No background is required. We start with some typical linear progression then it turns into a game learning through solving problems. There is a seperate linear algebra workshop <a href="https://learnaifromscratch.github.io/linear.html">here</a>.
+Here we relearn algebra, geometry, and combinatorics as efficiently as possible by solving olympiad style problems, or as the Russian author calls them 'research level highschool mathematics'. 
 </p>
 
 <p>
-<i>Do 1% effort for 100 days</i> - Prof <a href="https://youtu.be/YFUIPg8P2sY?t=278">Ryan O'Donnell</a>.
+<i>Do 1% effort for 100 days</i> - Prof <a href="https://youtu.be/YFUIPg8P2sY?t=278">Ryan O'Donnell</a>
 </p>
 </div>
 
-<div id="outline-container-What%20is%20math" class="outline-3">
-<h3 id="What%20is%20math">What is math</h3>
-<div class="outline-text-3" id="text-What%20is%20math">
+<div id="outline-container-Curriculum" class="outline-3">
+<h3 id="Curriculum">Curriculum</h3>
+<div class="outline-text-3" id="text-Curriculum">
 <p>
-As per <a href="https://youtu.be/WKeITf83wBo">Poh-Shen Loh</a> it is one of the easiest subject you will ever take because there is little to memorize, you can deduce whatever it is you don't know using mathematical reasoning. The closest analogy would be lawyers, they deduce from statutes and case law new arguments. We will be doing the same thing using <a href="https://en.wikipedia.org/wiki/Reason#Logical_reasoning_methods_and_argumentation">methods of reasoning</a>. Once you start to get familiar with this logic then you can use it not only to manipulate models you build in math of real life things but in everyday life your thinking will change to become more rigorous. In math the model studies you while you study the model.  
+We will do all at the same time:
+</p>
+<ul class="org-ul">
+<li><a href="https://bookstore.ams.org/mcl-25">Mathematics via Problems: Algebra</a></li>
+<li><a href="https://bookstore.ams.org/mcl-26/">Mathematics via Problems: Geometry</a></li>
+<li>Mathematics via Problems: Combinatorics (released soon)</li>
+<li>CMU's <a href="https://youtu.be/0K540qqyJJU">Discrete Mathematics</a> problem solving seminars to see strategies</li>
+</ul>
+
+<p>
+<a href="http://libgen.is/">Library genesis</a> exists to get the books if you can't buy them. These books aren't linear the algorithm for completing them is you work through the one star problems the first iteration, then go back at a new level of sophistication to try the harder problems and repeat. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Why%20Geometry" class="outline-3">
+<h3 id="Why%20Geometry">Why Geometry</h3>
+<div class="outline-text-3" id="text-Why%20Geometry">
+
+<figure id="orgdfb9ad6">
+<img src="./geometry.jpg" alt="geometry.jpg">   
+
+<figcaption><span class="figure-number">Figure 1: </span>Geometry of mathematical finance <a href="https://wwwen.uni.lu/index.php/research/fstm/dmath/research_areas/probability_theory_and_its_applications_mathematical_finance">uni.lu</a></figcaption>
+</figure>
+
+<p>
+Geometry was used for thousands of years to teach and demonstrate mathematical reasoning. Think of it as a tool for doing math like a framework you can manipulate visually. 
+</p>
+</div>
+
+<div id="outline-container-Geometry%20%26%20Isaac%20Newton" class="outline-4">
+<h4 id="Geometry%20%26%20Isaac%20Newton">Geometry &amp; Isaac Newton</h4>
+<div class="outline-text-4" id="text-Geometry%20%26%20Isaac%20Newton">
+<p>
+For geometry themed entertainment try reading <a href="http://libgen.is/book/index.php?md5=B290F008ACE9DE45827692ED7A4CB944">Isaac Newton on Mathematical Certainty and Method</a> by Niccolo Guicciardini as you go through the geometry problems here, as Newton claimed geometric synthesis helped him make mathematical discoveries when writing <i>Principia</i> by performing geometric synthesis on the cause to prove the effects he observed through analysis..
 </p>
 
 <p>
-Terence Tao <a href="https://arxiv.org/abs/math/0702396">believes</a> mathematics is complex, high-dimensional (as in moving in any direction, like the depiction of an ancient deity with <a href="https://vedicsources.com/wp-content/uploads/2019/08/hindu-god-with-many-arms--e1565854453593.jpg">many arms</a>) and evolving in unexpected and adaptive ways. 
+Isaac Newton entered Trinity College in 1661 as a <a href="https://cudl.lib.cam.ac.uk/view/MS-ADD-03996/1">sub-sizar</a> meaning subsidised tuition in exchange for being an unpaid servant on campus. Cambridge then was just a diploma mill, there were seldom any lectures and fellows (graduate students) acted as P/T tutors to supplement their income. Undergrad degrees consisted of one of these tutors giving you a list of books to read. According to his Trinity College notebook which Cambridge still has, this was a large reading list of Greek and Roman classics in Latin: Aristotle's <i>Organon</i> and <i>Metaphysics</i>, Porphyry's <i>Isagoge</i>, Plato and manuscripts of commentary on Aristotle usually written by other fellows to sell to undergrads. This was because of the <a href="https://en.wikipedia.org/wiki/Recovery_of_Aristotle">recovery of Aristotle</a> in the middle ages which shaped logic courses for the next few centuries. Newton didn't read much of Aristotle or any of the books assigned to him, but he later claimed he read enough to have learned how to properly categorize a problem, how to think logically, and later when he wrote the <i>Principia</i> how to use a cause to prove the effect. His algebra lectures that later became the book <i>Arithmetica Universalis</i> described different 'species' ie: Aristotelian categories of math objects that can be combined together, essentially he was describing types. 
+</p>
+
+<p>
+According to Newton's notebooks and the writings of his close friend DeMoivre, here is how Newton learned mathematics. Wandering the town fair in 1663 he comes across a book on astrology, and out of curiosity buys a copy as Newton was always into alchemy and other occult topics. It features trigonometry he doesn't understand so he goes to the mathematics department of Cambridge to find books on trig only to discover everyone there is deeply immersed in the work of Descartes. They give him Euclid and Oughtred's <a href="https://www.maa.org/press/periodicals/convergence/mathematical-treasure-oughtreds-clavis-mathematicae">Clavis</a>. He retries Euclid's <i>Elements</i> after having given up reading it before, and sees the proof of the Pythagorean theorem which makes him want to read the rest of the text. Newton's college notebooks show he was influenced by books II (geometrical algebra), V (proportions), VII (number theory) and X (irrationals) and that Euclid taught him how to write a proof while Aristotle's system of logic he studied gave him the rigorous thought to be able to follow the proofs.
+</p>
+
+<p>
+Since his Cambridge degree is essentially a joke, with the school so lax nobody cares what you're doing, he abandons the official curriculum for the rest of his undergrad to hang around the math department. He pursues Kepler and Oughtred's book, writing he understands it except for the quadratic and cubic equations however his takeaway in his notes is that algebra can used for exploration, which he starts doing writing out himself hundreds of examples. He gets a B.A. in 1665 despite never finishing any of the official curriculum and is offered to be elected as a minor fellow pursing a masters but the school is closed because of the plague in the summer of 1665.
+</p>
+
+
+<figure id="org2e85948">
+<img src="./geometrie.jpg" alt="geometrie.jpg">   
+
+<figcaption><span class="figure-number">Figure 2: </span>Cartesian Geometry by Van Schooten <a href="https://www.manhattanrarebooks.com/pages/books/2043/rene-descartes/geometria?soldItem=true">rarebooks</a></figcaption>
+</figure>
+
+<p>
+He goes home to his family farm and takes with him a 1659 two volume Latin translation of Descartes <a href="https://en.wikipedia.org/wiki/La_G%C3%A9om%C3%A9trie">La Geometrie</a> by van Schooten with appendices and commentary by other Cartesian research mathematicians. Newton later writes in his school notebook how a proof by Hudde to estimate the slope with a tangent in the appendix taught him how to transform one type of problem into another to study it in a different way. This book was considered a very hard text and the state of the art of 17th century analysis which uses almost the same notation we use today. He read 10 pages or so, couldn't understand the text, and reread from the beginning. Went a little further then stopped again going back to the beginning. He repeats this algorithm for all summer and autumn until he finally finishes the whole text. He misunderstands a technique of Descartes to his own benefit where he thinks Descartes is hinting the reader can figure out any properties of a curve and while trying to do so as an exercise develops his own sophisticated analysis well beyond the book or any other book of that time. During this period is when he started working 18 hours a day, 7 days a week. He didn't stop this work ethic until he died, even after becoming extremely wealthy and living in London with teenage neice's who wrote he would be up until four in the morning working on something. 
+</p>
+
+<p>
+In the winter of 1665 he reads <i>Arithmetica Infinitorum</i> by Wallis which is the arithmetic of infintesimals and Viete's <i>Opera Mathematica</i> another very large book. In less than a full year Newton managed to bring himself completely up to date with the entire achievement of mid 17th century mathematics by himself. At this point he discovers the generalized binomial theorem and infinite series analysis which he invented to find short cuts to calculations. He returns briefly in 1666 to Cambridge before it's shut down by the plague again, his notes revealing he finished his differential and integral calculus during these few months back at school.  
+</p>
+
+<p>
+Describing his activities during the second plague year: "I am ashamed to tell to how many places I carried these computations, having no other business at the time, for then I took really too much delight in these inventions". There is notes he kept of calculating a logarithm to it's 52nd decimal point. He returns to Cambridge in 1667 and sometime during this period he becomes obsessed with uncovering the ancient analysis used in classical geometry. Pappus' book 7 contains a commentary about a lost group of tools and propositions that Euclid, Apollonius, Eratosthenes and other geometers of the day used which Pappus referred to as the 'treasury of analysis'. These lost Porisms (corollaries) are theorized by Newton to be <a href="https://cudl.lib.cam.ac.uk/view/MS-ADD-03963/1">projective geometry</a>.
+</p>
+
+<p>
+Newton in his Lucasian chair lectures said that the ancients would never bother to introduce the algebra of curves with geometry because you lose the simplicity of working within geoemtry, it's whole point was to escape the tediousness of calculations by simply drawing lines and circles. He also claims books like Pappus's <i>Collectio</i> deliberately hid the analysis, as it was considered an inelegant tool and that ancient synthesis where they deduced a consequence from a given premise (a corollary) using visual means was a superior method as the analysis could not be reversed in steps like geometric synthesis could. He went further and claimed if you wanted to discover seemingly unrelated corollaries you had to use synthesis, describing the analysis of his day as a 'tedious pile of probabilities used by bunglers'.
+</p>
+
+<p>
+In <i>Arithmetica Universalis</i> which is an unauthorized book released by his successor at Cambridge who discovered Newton's Lucasian lectures in the library and published them as is, Newton writes how Descartes' attempts to include into standard plane geometry various curves like parabolas more than just a waste of time, they are 'ruining the simplicty of geometry'. In figure 108 he shows how he would solve this problem, by reinterpreting an ellipse, arguing the Cartesian methods fail to understand the point of doing everything with just a ruler and compass. 
+</p>
+
+<p>
+He later wrote in a manuscript on geometry that mechanics of motion was what generated all geometry, and that the ancients had understood this as well conceiving geometrical objects as generated by moving along a straight edge, circles via the movement of a compass, or translation like in Proposition 4 of Book 1 of Euclid's <i>Elements</i> where one triangle form is moved to compare to another. He then demonstrated that mechanical rotation of rulers were in fact transformations of the plane something that wasn't formally developed by other mathematicians for another 200 years. 
+</p>
+
+<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/qFo7xZFdBdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<p>
+Newton invented limits when writing the <i>Principia</i> during the geometric synthesis stage of his infintesimal analysis. He decided limits demonstrated as geometric vanishing augments to be 'more in harmony with the geometry of the ancients in that there should be no need to introduce infinitely small figures into geometry'. Since infintesimal analysis was merely a heuristic tool to him, he downgraded infinitesimals (which had no established theory with proofs anyway) to prefer his new limit proof method he derived from geometry synthesis, and is very similar to what everyone today is using in modern calculus courses.  
+</p>
+
+<blockquote>
+<p>
+"Comparing today the texts of Newton with the comments of his successors, it is striking how Newton’s original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibnitz" -<a href="https://en.wikipedia.org/wiki/Vladimir_Arnold">Vladimir Arnold</a> 1990
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-Logic" class="outline-2">
+<h2 id="Logic">Logic</h2>
+<div class="outline-text-2" id="text-Logic">
+<p>
+After you start solving some problems, you  will want to read more about logic since really math is just a <a href="https://youtu.be/WKeITf83wBo">long chain of deductions</a>. 
+</p>
+</div>
+
+<div id="outline-container-Mathematical%20reasoning" class="outline-3">
+<h3 id="Mathematical%20reasoning">Mathematical reasoning</h3>
+<div class="outline-text-3" id="text-Mathematical%20reasoning">
+
+<figure id="org49ad4b9">
+<img src="./proofs.png" alt="proofs.png">
+
+<figcaption><span class="figure-number">Figure 3: </span>What is a proof from <a href="http://www.cs.cmu.edu/~arielpro/15251f15/schedule.html">15-251</a></figcaption>
+</figure>
+
+<p>
+The model for basically all mathematical reasoning:
+</p>
+
+<ul class="org-ul">
+<li>AND \(\land\) (conjunction)</li>
+<li>OR \(\lor\) (disjunction)</li>
+<li>NOT \(\neg\)</li>
+<li>Implies \(\implies\) is only false when A is true and B is false</li>
+<li>Iff (if and only if) \(\iff\)</li>
+</ul>
+
+<p>
+These connectives can of course be used to define each other:
+</p>
+<ul class="org-ul">
+<li>A \(\implies\) B is \(\neg\) A \(\lor\) B
+<ul class="org-ul">
+<li>implication is only true when either A is false OR B is true</li>
+</ul></li>
+<li>Iff is (A \(\implies\) B) \(\land\) (B \(\implies\) A)</li>
+</ul>
+</div>
+
+<div id="outline-container-Substitution" class="outline-4">
+<h4 id="Substitution">Substitution</h4>
+<div class="outline-text-4" id="text-Substitution">
+<p>
+If a = b then you can substitute a for b, here's an example of using substitution to transform a hard problem into something more familiar: 
+</p>
+
+<p>
+Solve two systems of equations:
+</p>
+<ul class="org-ul">
+<li>\((3x + y)(x + 3y)\sqrt{xy} = 14\)</li>
+<li>\((x + y)(x^2 + 14xy + y^2 ) = 36\)</li>
+</ul>
+
+<p>
+Substitute \(\sqrt x\) = u, \(\sqrt y\) = v:
+</p>
+<ul class="org-ul">
+<li>uv(3u<sup>4</sup> + 10u<sup>2</sup>v<sup>2</sup> + 3v<sup>4</sup>) = 14</li>
+<li>u<sup>6</sup> + 15u<sup>4</sup>v<sup>2</sup> + 15u<sup>2</sup>v<sup>4</sup> + v<sup>6</sup> = 36</li>
+</ul>
+
+<p>
+Multiply the first by 2 and add both together
+</p>
+<ul class="org-ul">
+<li>36 + 2 · 14 = u<sup>6</sup> + 6u<sup>5</sup>v + 15u<sup>4</sup>v<sup>2</sup> + 20u<sup>3</sup>v<sup>3</sup> + 15u<sup>2</sup>v<sup>4</sup> + 6uv<sup>5</sup> + v<sup>6</sup></li>
+</ul>
+
+<p>
+That's the binomial expansion of (u + v)<sup>6</sup>
+</p>
+<ul class="org-ul">
+<li>64 = (u + v)<sup>6</sup></li>
+</ul>
+
+<p>
+And you can keep going, these are the kinds of techniques we'll learn  
 </p>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-Start%20here" class="outline-2">
-<h2 id="Start%20here">Start here</h2>
-<div class="outline-text-2" id="text-Start%20here">
+<div id="outline-container-Classical%20logic" class="outline-3">
+<h3 id="Classical%20logic">Classical logic</h3>
+<div class="outline-text-3" id="text-Classical%20logic">
 <p>
-We start from the very beginning counting sticks and work our way up to the CMU <a href="https://youtu.be/vGQZjITDft4">Putnam Seminar</a>. 
+Really we should just do what every student of math in history did before us which was to get a classical introduction to categories, logic, causality, and rhetoric, all which teach you how to break down a problem and formulate correct arguments ie: proofs.
+</p>
+
+<p>
+You can decide for yourself which ancient civilization's authors are worth reading but be aware of translation quality as some are unreadable without extensive attached commentary.
+</p>
+
+<div style ="text-align: center;"><iframe width="560" height="315"src="https://www.youtube.com/embed/E6FdfJOj7CY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<p>
+The <a href="https://youtu.be/E6FdfJOj7CY">Aristoteles Latinus</a> project probably has the best <a href="https://stories.kuleuven.be/en/stories/aristoteles-latinus-jigsaw-puzzling-for-experts">translations</a> they collect all ancient manuscripts like the Boethius translations and then compare them to others, presenting the original Latin, and sometimes ancient Greek with the English translation beside it containing the best estimate of modern language, and a full codex in the index so you can <a href="https://www.cambridge.org/highereducation/books/learn-latin-from-the-romans/C745F49A9DAB318C5DC3BED3731C2D19#overview">read the Latin yourself</a>.
+</p>
+
+<p>
+The same project also translates the ancient Syrian and Islamic empire manuscripts as these civilizations had direct access to many of the original Greek texts, again including the original Syriac or Arabic beside the translation with a codex in the index. Some of these you can find on <a href="http://libgen.is/book/index.php?md5=A54F3F106902565FF464864A208B5662">library genesis</a> otherwise a real library is your only hope, as they are extremely expensive books and exist behind an academic paywall where you need a school login to access the databse.      
+</p>
+
+<p>
+Some optional lectures on the history of logic from Aristotle to the present state:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://youtu.be/UcjKKcvv7Rw">Aristotle and deduction</a> - Brief history of logic MF 251
+<ul class="org-ul">
+<li>Origins of modern logic</li>
+</ul></li>
+<li><a href="https://youtu.be/-8IVhNrwNdg">Stoics and other thinkers</a> - Brief history of logic MF 252
+<ul class="org-ul">
+<li>Implication, disjunction and conjunction is discussed here</li>
+</ul></li>
+<li><a href="https://youtu.be/q-o3qB2i80U">Islamic/Medieval logic</a> - Brief history of logic MF 253
+<ul class="org-ul">
+<li>Modal logic origins</li>
+</ul></li>
+<li><a href="https://youtu.be/70PzhlfAUi4">Leibniz to Boole</a> - Brief history of logic MF 254
+<ul class="org-ul">
+<li>From deduction to induction</li>
+<li>Notation for relations</li>
+<li>Boole's book <i>Analysis of Logic</i></li>
+<li>De Morgan's laws</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-Proof%20assistants" class="outline-3">
+<h3 id="Proof%20assistants">Proof assistants</h3>
+<div class="outline-text-3" id="text-Proof%20assistants">
+<p>
+To teach yourself logic, you could also try <a href="https://cs.uwaterloo.ca/~plragde/flaneries/LACI/">Logic and Computation Intertwined</a>. Described as a short stroll through proof assistants by building one yourself, Prof Ragde explains dependent types, propositional logic, predicate logic, and the constructive style logic used to model a proof and then run eliminations on it to verify it is correct. It uses Racket (Scheme/Lisp) anybody can follow. Fully demystifies how Coq and Agda work. He will also teach you how to <a href="https://cs.uwaterloo.ca/~plragde/747/notes/index.html">prove facts in Agda</a> about programming languages if you want to learn proofs by induction. These notes are filled with ascii casts of him working out the problems in Emacs. The notes follow the Agda <a href="https://plfa.github.io/">book</a>.  
+</p>
+
+<p>
+If you like this style of logic try a <a href="https://youtu.be/JRG_TsNXFi8">proof theory seminar</a> by Frank Pfenning w/<a href="http://www.cs.cmu.edu/~fp/courses/15816-s10/lectures/01-judgments.pdf">notes</a> to learn more about natural deduction. The Per Martin-Lof <a href="https://www.hf.uio.no/ifikk/english/research/publications/journals/njpl/files/vol1no1/meaning.pdf">lectures</a> nicely accompany the seminar and are probably the best explanations you will ever read with precise clarity of the rules of inference, connectives, judgements and how eliminations work. In this theory a proof is a concrete object you construct and can test like a program. If you can't construct it, it's not a proof. 
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-%28Optional%29%20Arithmetic%20review" class="outline-2">
+<h2 id="%28Optional%29%20Arithmetic%20review">(Optional) Arithmetic review</h2>
+<div class="outline-text-2" id="text-%28Optional%29%20Arithmetic%20review">
+<p>
+Most of these videos are less than 10m in length and you can choose to watch them later as we go through the algebra problem book. The Hindu-Arabic number encoding is one of the first problems in the book. These are not Khan academy, they are foundational lectures to teach you different 'species' as Isaac Newton put it in <i>Arithmetica Universalis</i> or using modern lingo the different types of math objects. You almost certainly never learned math this way and I recommend you watch them. 
 </p>
 </div>
 
@@ -711,1014 +856,11 @@ We're still in the natural numbers, which he defined as beginning with 1 so we a
 </ul>
 
 <p>
-Wildberger proves the distributive and commutative laws using fractions while still in the natural numbers. 
+Wildberger proves the distributive and commutative laws using fractions while still in the natural numbers.
 </p>
 </div>
 </div>
-</div>
-
-
-<div id="outline-container-Proofs" class="outline-2">
-<h2 id="Proofs">Proofs</h2>
-<div class="outline-text-2" id="text-Proofs">
-<p>
-Now we will redo what we just learned rigorously in Terence Tao's <i>Analysis I</i>. The author explains <a href="https://terrytao.wordpress.com/career-advice/theres-more-to-mathematics-than-rigour-and-proofs/">here</a> why we need this rigorous stage. This book was originally supplementary notes for an honors analysis <a href="https://www.math.ucla.edu/~tao/resource/general/131ah.1.03w/">class</a>, and in the preface he mentions we will need some lectures to go with the material to help us understand it. We will read only some of this text at first, then return to it later when we're doing problem challenges, by that time you will be much more sophisticated through practice.
-</p>
-</div>
-
-<div id="outline-container-Nature%20of%20mathematical%20logic" class="outline-3">
-<h3 id="Nature%20of%20mathematical%20logic">Nature of mathematical logic</h3>
-<div class="outline-text-3" id="text-Nature%20of%20mathematical%20logic">
-
-<figure id="orgc994128">
-<img src="./proofs.png" alt="proofs.png">
-
-<figcaption><span class="figure-number">Figure 1: </span>What is a proof from <a href="http://www.cs.cmu.edu/~arielpro/15251f15/schedule.html">15-251</a></figcaption>
-</figure>
-
-
-<p>
-Axioms are laws without a proof, as there are no earlier laws from which we can deduce their proofs from and they should be self-evident and simple enough that they can be fully understood such as Euclid's <a href="https://en.wikipedia.org/wiki/Parallel_postulate">parallel postulate</a> that it is obvious there exists a concept of parallelism. 
-</p>
-
-<p>
-Deduction can be described as if P then Q, assume P and prove Q which is part of the <i>rules of inference</i>. There is a series of <a href="https://www.hf.uio.no/ifikk/forskning/publikasjoner/tidsskrifter/njpl/vol1no1/meaning.pdf">lectures</a> given by Per Martin-Lof in 1983, which in clear language anybody can understand, explains the meaning of logical constants and the justifications of the rules of inference, and their history such as hypothesis a Greek word translated into Latin as supposition, meaning an assumption. In math the contrapositive of statements is often used for proofs such as 'if P then Q so not Q then not P' as these are logically equivalent statements. 
-</p>
-
-<p>
-Variables are used to express general laws, for example how do you express that every natural number is equal to itself ie: 2 = 2 and 3 = 3. You introduce a free variable x = x and it's meaning remains fixed inside this context. Often the prime symbol is used to denote two different variables with the same letter such as b and b' called b and b prime.
-</p>
-
-<p>
-The operation of replacing all occurences of one variable for a value is known as substitution such as a + 0 = a and if a = 1, then substitute 1 + 0 = 1. There is also a substitution rule, where equivalent terms or formulas can be substituted for one another and this becomes highly abstract interchanging entire complex expressions. In books you will often see a succession of equal signs: (thing) = (bigger thing) = (even more complex thing) meaning all 3 can be substituted for each other.   
-</p>
-
-<p>
-Math has data structures just like programming languages, and you can create new ones if you want. There are sets like {3, 1, 5} in which order does not matter, and lists like (a<sub>1</sub>, a<sub>2</sub>, &#x2026;., a<sub>n</sub>) which are ordered data. These are often interpreted as vectors or n-tuples like (x, y) coordinates. A list (a, a, b) is different from (a, b) as order matters but set {a, a, b} is the same as {a, b}. Math is <a href="https://youtu.be/k5t4yV_vxA8">object-oriented</a> so theories describe classes of structures and the instance of those structures models the theory/axioms.
-</p>
-
-<p>
-That's it really: rules of inference, logical deduction, building models and manipulation of data structures. Much of the above was taken from texts you can find on library genesis about mathematical logic like <i>Introduction to Metamathematics</i> by Kleene if you want to see how reduction is used to collect a bunch of theories and reduce them to axioms, and how similar it all is to computer science with relational models, decidability, complexity theory and determining semantics of a natural language.
-</p>
-</div>
-
-<div id="outline-container-Lectures%20on%20logic" class="outline-4">
-<h4 id="Lectures%20on%20logic">Lectures on logic</h4>
-<div class="outline-text-4" id="text-Lectures%20on%20logic">
-<ul class="org-ul">
-<li><a href="https://youtu.be/61bWR8ACNts">Deductive systems</a> - Lecture from 15-251</li>
-</ul>
-
-<p>
-This lecture gives examples of an initial object, and deduction rules. You really just need to watch up to 5:30, then skip to 13:35 to see his ATM example of deduction and how he deduces the proof that the ATM can provide any postitive natural number denomination except for 1 and 3. The rest of the lecture is optional where he models deduction using a boolean circuit: given input X, Y or Z these are passed through gates such as NOT, AND, OR to arrive at an output which is your deduced formula.    
-</p>
-
-<ul class="org-ul">
-<li><a href="https://youtu.be/1KPdNm_5Fkk">Logic</a> - Lecture from 15-251 CMU</li>
-</ul>
-
-<p>
-Around 32:00 is the model for 'pretty much all mathematical reasoning' and logical quantifiers like 'for all' or 'there exists' and propositional connectives such as 'implies' or 'iff' are introduced. Most of this is in Tao's appendix.
-</p>
-
-<p>
-You only need to know these connectives:
-</p>
-<ul class="org-ul">
-<li>AND \(\land\) (conjunction)</li>
-<li>OR \(\lor\) (disjunction)</li>
-<li>NOT \(\neg\)</li>
-<li>Implies \(\implies\) is only false when A is true and B is false</li>
-<li>If and only if \(\iff\)</li>
-</ul>
-
-<p>
-These connectives can of course be used to define each other:
-</p>
-<ul class="org-ul">
-<li>A \(\implies\) B is \(\neg\) A \(\lor\) B
-<ul class="org-ul">
-<li>implication is only true when either A is false OR B is true</li>
-</ul></li>
-<li>Iff is (A \(\implies\) B) \(\land\) (B \(\implies\) A)</li>
-</ul>
-
-<p>
-Implication seems confusing at first, it's modern language use relating to casuality is different from the logician's use which is explained <a href="http://www.math.niu.edu/~richard/Math101/implies.pdf">here</a> and those Per Martin-Lof <a href="https://www.hf.uio.no/ifikk/forskning/publikasjoner/tidsskrifter/njpl/vol1no1/meaning.pdf">lectures</a> above gives a complete justification of the logical rules of implication.
-</p>
-
-<p>
-Some more optional lectures on the history of logic from Aristotle to the present state:
-</p>
-
-<ul class="org-ul">
-<li><a href="https://youtu.be/UcjKKcvv7Rw">Aristotle and deduction</a> - Brief history of logic MF 251
-<ul class="org-ul">
-<li>Origins of modern logic</li>
-</ul></li>
-<li><a href="https://youtu.be/-8IVhNrwNdg">Stoics and other thinkers</a> - Brief history of logic MF 252
-<ul class="org-ul">
-<li>Implication, disjunction and conjunction is discussed here and highly relevant to all further chapters</li>
-</ul></li>
-<li><a href="https://youtu.be/q-o3qB2i80U">Islamic/Medieval logic</a> - Brief history of logic MF 253
-<ul class="org-ul">
-<li>Modal logic origins</li>
-</ul></li>
-<li><a href="https://youtu.be/70PzhlfAUi4">Leibniz to Boole</a> - Brief history of logic MF 254
-<ul class="org-ul">
-<li>From deduction to induction</li>
-<li>Notation for relations</li>
-<li>Boole's book Analysis of Logic</li>
-<li>De Morgan's laws</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-Materials%20needed" class="outline-3">
-<h3 id="Materials%20needed">Materials needed</h3>
-<div class="outline-text-3" id="text-Materials%20needed">
-<ul class="org-ul">
-<li>The <a href="https://terrytao.wordpress.com/books/analysis-i/">3rd edition</a> of <i>Analysis I</i> by Terence Tao  Buy it cheap from Amazon India/Abebooks, or use <a href="https://en.wikipedia.org/wiki/Library_Genesis">library genesis</a> (see Wikipedia page for their latest domain) or <a href="https://www.worldcat.org/">WorldCat</a> to get it.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-2.1%20The%20Peano%20Axioms" class="outline-3">
-<h3 id="2.1%20The%20Peano%20Axioms">2.1 The Peano Axioms</h3>
-<div class="outline-text-3" id="text-2.1%20The%20Peano%20Axioms">
-<p>
-Start with <i>Analysis I</i> chapter 2. We begin again with basic counting but rigorously defined. 
-</p>
-
-<ul class="org-ul">
-<li>The five Axioms
-<ul class="org-ul">
-<li>Axiom 2.1: 0 is a natural number</li>
-<li>Axiom 2.2: If n is a natural number, then n++ is also a natural number</li>
-<li>Axiom 2.3: 0 is not the successor of any natural number</li>
-<li>Axiom 2.4: Different natural numbers must have different successors</li>
-<li>Axiom 2.5: Let P(n) be any property pertaining to a natural number n. Suppose that P(0) is true, and suppose that whenever P(n) is true, P(n++) is also true. Then P(n) is true for every natural number n. 
-<ul class="org-ul">
-<li>We make an assumption about a property P(n) being true meaning you do not prove P(n) it is already assumed to be true, you prove P(0) and P(n++) are true, and all three form the logical chain that also proves n+2, n+3, etc.</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p>
-You can think of n++ being a unary successor operation to generate the natural numbers, while n + 1 will be defined later as a binary operation. The idea is no matter how many natural numbers you have generated, n++ will generate one more. 
-</p>
-
-<p>
-Remark 2.1.10 the example where no natural number can be 'a half number', because of the increment step n++. The base case of 0 (as per Axiom 2.5, and Axiom 2.1) fails if we are using 'half numbers' instead of natural numbers because if zero is a natural number, and any n++ is another natural number, the only next successive number is 1 it can't be 0.5 or -3 or 3/4. The way you should view these axioms about the natural numbers is:
-</p>
-
-<ul class="org-ul">
-<li>1. 0 is an element of N</li>
-<li>2. If x is an element of N, then so is x++</li>
-<li>3. Nothing else is an element of N</li>
-</ul>
-
-<p>
-This is called an inductive definition: clause 1 is an application, clause 2 a succession of applications, clause 3 is the extremal clause stating only steps 1 and 2 are instances of what N is.  
-</p>
-
-<p>
-P(n) is not a function it represents "n has the property P". Think about how the natural numbers are generated with successors, those generated natural numbers all inherit properties of previous generated numbers such as P(n): "any natural number n + 0 = n". If you prove that for 0, n and the next successor n+1 that these all have property P(n), any new successor will inherit this property too since they are derived in a chain from P(0) as per Axiom 2.1. You have already encountered mathematical induction in elementary school when presented with a summing progression such as '1+2+3+4&#x2026;' the inductive step is 'and so on'.        
-</p>
-</div>
-</div>
-
-<div id="outline-container-2.2%20Addition" class="outline-3">
-<h3 id="2.2%20Addition">2.2 Addition</h3>
-<div class="outline-text-3" id="text-2.2%20Addition">
-<p>
-The example for addition: 3 + 5 should be the same as (((5++)++)++) and adding 0 to 5 should result in 5.  
-</p>
-
-<p>
-Definition 2.2.1 we can add n++ to m by defining (n++) + m to be (n + m)++. You can read this as (thing)++ and anything in brackets is just a value to be determined, so you can consider it as a single value to be incremented. Example (1 + 2 + 3)++ + 5 is (n++) + 5.  
-</p>
-
-<p>
-Try writing your own examples:
-</p>
-
-<ul class="org-ul">
-<li>0 + m = m</li>
-<li>1 + m = ((0++) + m) or m++</li>
-<li>2 + m = ((1++) + m) or ((m++)++)</li>
-<li>3 + m = ((2++) + m) or (((m++)++)++)</li>
-<li>4 + m = ((3++) + m) or ((((m++)++)++)++)</li>
-<li>2 + 3 = ((3++)++) or (4++) or 5.</li>
-<li>3 + 2 = (((2++)++)++) or ((3++)++) or (4++) or 5.</li>
-</ul>
-</div>
-
-<div id="outline-container-First%20proof" class="outline-4">
-<h4 id="First%20proof">First proof</h4>
-<div class="outline-text-4" id="text-First%20proof">
-<p>
-Let's go through his proof in Lemma 2.2.2. Notice first it is a written essay, and that's how all your proofs should look. Second, he is using the exact same induction template from 2.1.11. Third he's using a different variable to not confuse it with the already established definition of 0 + m = m reminder these variables are just placeholders for value and if you see m twice or n twice it means the same value.
-</p>
-
-<p>
-Induction proofs are a logical chain:
-</p>
-<ul class="org-ul">
-<li><i>P(basis</i> First link contains the property and is true, you prove this</li>
-<li><i>P(n)</i> Assume this second link contains the property, you do not prove this because you assumed it's already true</li>
-<li><i>P(n++)</i> Prove successor is true, with ability to use the previous 2 like they are already established definitions</li>
-</ul>
-
-<p>
-How does the base case for n + 0 = n become 0 + 0 = 0, from the previous definition of 0 + m = m?  We are inducting on n so once we substitute in 0 for n we now have 0 + (value) = (value) which is from the definition of addition: 0 + m = m. Since (value) is 0 it is 0 + 0 = 0. 
-</p>
-
-<p>
-Suppose that n + 0 = n (assumption). Then the successor (n++) + 0 = n++. Pointing to the definition of addition where it defines (n++) + m = (n + m)++ we see it is in the same form as (n++) + 0, so if we say something is equal to something else, we can replace them for each other: (n++) + 0 becomes (n + 0)++ as they are equal so interchangable.
-</p>
-
-<p>
-Finally we are left with (n + 0)++ = n++. The value in the brackets (n + 0) is in the form of P(n) the inductive hypothesis or assumption, since we have assumed n + 0 = n is true, we can again replace n + 0 for n and arrive at the proof: (n)++ = n++. Remember to consider your assumption 'already true' and a definition you can just point to while in the inductive proof. Why is induction used? Because we are building up a structure. He defined natural numbers as being the successor of another, which means an incremental layer upon layer that you can recursively take apart back to the base case just like you can in computer programming. Property P(n) exists in base case 0, plus 1, plus another, so this property holds for all natural numbers derived from the Peano axioms. 
-</p>
-
-<p>
-The most important takeaway: <i>no arithmetic was done here at all</i>. We pointed at definitions, and reasoned about them using replacement to exchange their forms until they were the same on both sides of the equal sign. You are a logician now pattern matching forms and moving them around. If thing = thing2, then thing2 = thing. At this early stage you could literally cut out the definitions and assemble proofs by swapping out definitions for each other.
-</p>
-
-<p>
-How can you check this is correct? Reverse the logic, if n + 0 does not equal n, then 0 + 0 does not equal 0. 
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-Second%20proof" class="outline-4">
-<h4 id="Second%20proof">Second proof</h4>
-<div class="outline-text-4" id="text-Second%20proof">
-<p>
-Lemma 2.2.3 Here we are proving n + (m++) = (n + m)++, inducting on n. Since we are building a logical chain of deductions we start at the first link, which is 0 and induct on variable n meaning we replace n with 0 to get the form: 0 + (m++) = (0 + m)++. Looking at the right side, get out your scissors and cut apart the definition of addition and replace (0 + m)++ with (m)++. So now we have 0 + (m++) = m++.  Since we know from the definition of addition that 0 + (value) = (value), you can replace 0 + (m++) with m++ and now the base case is equal on both sides: m++ = m++ 
-</p>
-
-<p>
-Next, we assume  n + (m++) = (n + m)++.
-</p>
-
-<p>
-We prove the successor: n++ + (m++) = ((n++) + m)++. Looking at the left side, refer to the definition of addition and notice (n++) + m = (n + m)++ or (successor value) + (something) = (value + something)successor, the left hand side is now (n + (m++))++. This form is similar to the hypothesis of n + (m++) = (n + m)++ so replace the left side and now we have ((n + m)++)++.  The right side follows the same logic as the left. ((n++) + m)++ can be seen abstractly as (value)++ or (successor + value)++, and the second is the definition of addition again so ((value + value)successor)++
-</p>
-
-<p>
-You can always insert concrete examples to see what is going on, ie for n+(m++) = (n+m)++ let n=2, m=0 then 2+(0+1) = (2+0)+1. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Third%20proof" class="outline-4">
-<h4 id="Third%20proof">Third proof</h4>
-<div class="outline-text-4" id="text-Third%20proof">
-<p>
-Proposition 2.2.4 (Addition is commutative) the base case is point-to definition of addition and Lemma 2.2.2. We use the definition of addition, and lemma 2.2.2 to rewrite the successor of n to be (n + m)++ = (m + n)++ and now it is in the form of the inductive hypothesis: (hypothesis form)successor = (hypothesis form)successor so we can use our assumption that n + m = m + n to commute m and n around.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Fourth%20proof%20%26%20Implication" class="outline-4">
-<h4 id="Fourth%20proof%20%26%20Implication">Fourth proof &amp; Implication</h4>
-<div class="outline-text-4" id="text-Fourth%20proof%20%26%20Implication">
-<p>
-Proposition 2.2.6 we want to prove b = c. In the inductive step, he uses Axiom 2.4 to drop down from the successor to the form: a + b = a + c which is the form of the inductive hypothesis, where we claimed 'a + b = a + c implies b = c' so we can now imply b = c and have 'virtual cancellation without subtraction'. Tao writes about implication in the appendix which you should read then return to many times over as it comes up in later chapters.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Exercise%202.2.1" class="outline-4">
-<h4 id="Exercise%202.2.1">Exercise 2.2.1</h4>
-<div class="outline-text-4" id="text-Exercise%202.2.1">
-<p>
-Prove 2.2.5 (Addition is associative) that (a + b) + c = a + (b + c)
-</p>
-
-<p>
-We want to show that if a natural number is inside or outside brackets, it will have the same result when added together. Induct on any variable (a, b or c) you want. Starting our logical chain at the first link 0:
-</p>
-
-<ul class="org-ul">
-<li>Base case:</li>
-<li>(a + b) + 0 = a + (b + 0) (substitute 0 for c)</li>
-<li>looking at left side: (a + b) + 0
-<ul class="org-ul">
-<li>since b + 0 = b (lemma 2.2.2) then (value) + 0 = value</li>
-<li>(a + b) + 0 = a + b (lemma 2.2.2)</li>
-</ul></li>
-<li>looking at right side: a + (b + 0)
-<ul class="org-ul">
-<li>a + (b + 0) is a + (b) for the same lemma 2.2.2 reasons</li>
-</ul></li>
-<li>now we have a + b = a + b and base case is done.</li>
-</ul>
-
-<p>
-We selected c for the base case, but what if you choose a or b? Try it while looking at the definition of addition. The next step in our logical chain is our inductive hypothesis(IH) that addition is associative, and that (a + b) + c = a + (b + c). The last part of the logical chain is prove the next link, the successor of our hypothesis, is true. There's a few ways to show this, I'll move stuff around randomly and you can see where the proof is:
-</p>
-
-<p>
-Inducting on c: (a + b) + (c++) = a + (b + (c++))
-</p>
-<ul class="org-ul">
-<li>right side: a + (b + (c++)) 
-<ul class="org-ul">
-<li>a + (b + c)++ (lemma 2.2.3)</li>
-<li>((a + b) + c)++ (by the IH)</li>
-<li>((a + b)++) + c (def of addition)</li>
-<li>((b + a)++) + c (commutative)</li>
-<li>((b++)+ a) + c (def of addition)</li>
-<li>c + ((b++) + a) (commutative)</li>
-<li>c + (a + (b++)) (commutative)</li>
-</ul></li>
-<li>left side: (a + b) + (c++)
-<ul class="org-ul">
-<li>(c++) + (a + b) (commutative)</li>
-<li>(c + (a + b))++ (def of addition.. consider (a + b) to be (value)): <b>Recall (n++) + m = (n + m)++ so this means (c++) + (a + b) is (c + (a + b))++ because (n++) + (value) = (n + value)++</b></li>
-<li>(c + (a + b))++ is the same as ((a + b) + c)++ (commutative around the (a + b) bracket)</li>
-<li>(a + (b + c))++ (by the IH)</li>
-<li>((b + c) + a)++ (commutative)</li>
-<li>etc., can keep moving these around</li>
-</ul></li>
-</ul>
-
-<p>
-Try moving everything around until you understand exactly how commutativity and associativity work. See if you can get it to a form where you can use the inductive hypothesis, replace and permute them around some more until this starts to make sense. 
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-2.2.%20cont." class="outline-3">
-<h3 id="2.2.%20cont.">2.2. cont.</h3>
-<div class="outline-text-3" id="text-2.2.%20cont.">
-<p>
-Lemma 2.2.10 has an exercise where induction is suggested. Always read the <a href="https://terrytao.wordpress.com/books/analysis-i/#comment-447019">comments</a> on Tao's blog if you're stuck but this is the Peano Axiom 2.4 so not sure why it's even here, it's just restating Axiom 2.4 and 2.3. Assume for contradiction that b++ = a and c++ = a so a positive number is the successor of two different natural numbers. But by the Peano axioms this is not possible so c++ must equal b++. That is my good enough proof so we can later use this lemma to replace 'a positive number' for b++. 
-</p>
-
-<p>
-Definition 2.2.11 n is greater or equal to m if n = m + some other natural number. If that number is 0, then the equality holds, if that number is 0++ then the inequality holds.
-</p>
-
-<p>
-Another way to think about order of the natural numbers, is because they are inductively defined and generated, they already have an order. You can think of m &lt; n if m is generated before n.
-</p>
-</div>
-
-
-<div id="outline-container-Exercises" class="outline-4">
-<h4 id="Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-Exercises">
-<p>
-Try a few yourself, write a convincing argument to yourself like how Tao writes proofs. Click on details button to see my scratchwork you do not have to do all the exercises.
-</p>
-
-<details id="org7782be7">
-<p>
-
-</p>
-
-<p>
-Proposition 2.2.12 / Exercise 2.2.3: Prove the basic properties of order for natural numbers. None of this is a properly written proof only notes on moving through steps to understand the problem then after write a proof in the style Tao has been teaching us. See the appendix what reflexive, transitive and anti-symmetric properties are. 
-</p>
-
-<ul class="org-ul">
-<li><b>Order is reflexive</b></li>
-<li>Reflexive property is that any natural number is equal to itself.</li>
-<li>We want to show order is reflexive: a \(\ge\) a</li>
-<li>a = a + n (def 2.2.11 of ordering of natural numbers)</li>
-<li>From lemma 2.2.2 we know that  a + 0 = a and so a = a and is reflexive</li>
-<li>By definition 2.2.11 we also have a \(\ge\) a</li>
-<li><b>Transitive order property</b></li>
-<li>a \(\ge\) b and b \(\ge\) c, then a \(\ge\) c</li>
-<li>If a = b + 0, b = c + 0, and a = c + 0, then we have lemma 2.2.2 and transitivity (equality) holds with a = b, b = c and a = c.</li>
-</ul>
-
-<p>
-Try some more equivalency replacement to prove a \(\ge\) b and b \(\ge\) c, then a \(\ge\) c   
-</p>
-<ul class="org-ul">
-<li>a = b + n</li>
-<li>b = c + n
-<ul class="org-ul">
-<li>b is equal to (c + n) so replace for b in a = b + n:</li>
-</ul></li>
-<li>a = (c + n) + n</li>
-<li>a = c + (n++)
-<ul class="org-ul">
-<li>By lemma 2.2.10 we have a = c + (value) since n++ will always equal some nonzero natural number.</li>
-</ul></li>
-<li>By definition 2.2.11 a = c + (value) is a \(\ge\) c + (value)</li>
-</ul>
-
-<p>
-Possible proof strategy: By the definition of ordering of the natural numbers, if a = (b) + m and b = c + n, then a = (c + n) + m. By associativity a = c + (m + n) and since if a = b when m or n are 0, then a = c when m and n are 0. By replacement d = m + n, and since m and n are natural numbers, d is a natural number by the Peano axioms and 2.1.3 (m + n)++ = d++, and by Axiom 2.4 (m + n) = d so we have a = c + d as desired by the definition of ordering of the natural numbers. 
-</p>
-
-<ul class="org-ul">
-<li><b>Anti-symmetric order</b></li>
-<li>If a \(\ge\) b and b \(\ge\) a then a = b</li>
-<li>See the entry for Antisymmetric <a href="https://en.wikipedia.org/wiki/Antisymmetric_relation">relation</a></li>
-<li>If these two inequalites hold then they must be equal</li>
-<li>We need to show a = b:
-<ul class="org-ul">
-<li>a = b + m by 2.2.11</li>
-<li>b = a + n by 2.2.11</li>
-</ul></li>
-<li>Replace b for (a + n):
-<ul class="org-ul">
-<li>a = (a + n) + m</li>
-<li>a = a + (n + m)</li>
-<li>a + 0 = a + (n + m) (lemma 2.2.2, if a = a + 0 then if you see a single variable, adding 0 to it is fine)</li>
-<li>0 = n + m (cancel a by cancellation law)</li>
-<li>0 = 0 + 0 (corollary 2.2.9)</li>
-</ul></li>
-<li>If n = 0, and m = 0 by above, then a = b + 0 which is a = b</li>
-</ul>
-
-<p>
-Scratchwork for (d) preserving order exercise:
-</p>
-
-<ul class="org-ul">
-<li><b>d) Addition preserves order</b></li>
-<li>a \(\ge\) b iff a + c \(\ge\) b + c
-<ul class="org-ul">
-<li>Use def 2.2.11 to convert a \(\ge\) b to the form a = b + d, add c to both sides:</li>
-<li>a + c = b + d + c by 2.2.11</li>
-<li>a = b + d by cancellation law and a \(\ge\) b by 2.2.11</li>
-</ul></li>
-<li>Another method: if  a + c \(\ge\) b + c then:
-<ul class="org-ul">
-<li>a + c = b + n + c by 2.2.11</li>
-<li>a + c = b + c + n (commutative law)</li>
-<li>(a + c) = (b + c) + n (associative law)</li>
-<li>This is (nat number) = (nat number) + n or by 2.2.11 a \(\ge\) b
-<ul class="org-ul">
-<li>Again don't get hung up on what is inside the brackets, think of larger picture of def 2.2.11 that (value) = (value) + number</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p>
-Scratchwork for exercise (e):
-</p>
-
-<ul class="org-ul">
-<li><b>e) a &lt; b iff a++ \(\le\) b</b>
-<ul class="org-ul">
-<li>if a is less than b, then b = a + n and n does not equal zero (2.2.11)</li>
-<li>Since n must be a positive natural number by 2.2.7 and 2.2.11 then b = a + (n++) by 2.2.10</li>
-<li>b = a + (n + 1) (corollary from 2.2.2/2.2.3)</li>
-<li>b = a + (1 + n ) (commutative law)</li>
-<li>b = (a + 1) + n (associative law)</li>
-<li>b = (a++) + n by previous corollary of n++ is n + 1</li>
-</ul></li>
-<li>We have a++ \(\le\) b by 2.2.11</li>
-</ul>
-
-<p>
-Scratchwork for exercise (f):
-</p>
-
-<ul class="org-ul">
-<li><b>f) a &lt; b iff b = a + d for some positive number d</b></li>
-<li>For the sake of contradiction, assume a \(\le\) b in the a = b case for some positive number d. Then a + 0 = a + d by lemma 2.2.2, and 0 = d by cancellation law. This is a contradiction that d must be a positive number so a cannot equal b and a \(\lt\) b</li>
-</ul>
-
-<p>
-Proposition 2.2.13 fill in the gaps:.
-</p>
-<ul class="org-ul">
-<li>When a = 0, we have 0 \(\le\) b for all b (why?)
-<ul class="org-ul">
-<li>2.2.1 Addition of natural numbers, 0 + m = m so 0 + b = b and by 2.2.11 0 \(\le\) b</li>
-</ul></li>
-<li>If a &gt; b then a++ &gt; b (why?) 
-<ul class="org-ul">
-<li>a = b + d (as per 2.2.12, d must be positive)</li>
-<li>c++ = d (lemma 2.2.10)</li>
-<li>a++ = b + (c++) (Replacing c++ for d)</li>
-<li>a++ &gt; b by def of ordering</li>
-</ul></li>
-<li>Or another way:
-<ul class="org-ul">
-<li>a++ = (b + c)++ (def of addition, (b + c)++ must be positive</li>
-<li>a = b + c (Axiom 2.4)</li>
-<li>a &gt; b (2.2.12 d is positive)</li>
-</ul></li>
-<li>If a = b, then a++ &gt; b (why?) 
-<ul class="org-ul">
-<li>If a = b, then a++ = b++ by Axiom 2.4</li>
-<li>a++ = b + 1 (corollary 2.2.2/2.2.3)</li>
-<li>this is a++ &gt; b by 2.2.11</li>
-</ul></li>
-</ul>
-
-<p>
-Proposition 2.2.14 (Strong induction) Intuitively, if the natural numbers are generated by an inductive definition, then you can assume all numbers generated up to m that are less than n, meaning n is no longer just the next step after the base case, it can be anywhere in the chain of generation and you assume an entire sequence of generated naturals up to n have property P(n).    
-</p>
-
-<p>
-First look up <a href="https://en.wikipedia.org/wiki/Vacuous_truth">vacuous truth</a> or see the appendix on mathematical reasoning where Tao defines it. 
-</p>
-
-<ul class="org-ul">
-<li>Let Q(n) be the property that P(m) is true for all m\(_0\) \(\le\) m &lt; n for n \(\ge\) m\(_0\).</li>
-<li>Q(0) is true since: 
-<ul class="org-ul">
-<li>m\(_0\) \(\le\) m &lt; 0 is vacuously true as stated by Tao in the exercise hint</li>
-<li>2.2.14 proposition of for all n \(\ge\) m\(_0\) is true 0 \(\ge\) 0\(_0\)</li>
-</ul></li>
-<li>Show that Q(n++) is true:</li>
-<li>P(m) m\(_0\) \(\le\) m \(\lt\) n \(\lt\) n++ is true (2.2.11)</li>
-<li>P(m) m\(_0\) \(\le\) m \(\lt\) n++ is true for all n \(\ge\) m\(_0\)</li>
-</ul>
-<p>
-Try an example. 
-</p>
-
-<ul class="org-ul">
-<li>P(n) is the property that n + 0 = n</li>
-<li>Q(0) is 0 + 0 = 0 and P(0)</li>
-<li>Q(1) is 1 + 0 = 1 and P(1), P(0)</li>
-<li>Q(2) is 2 + 0 = 2 and P(2), P(1), P(0)</li>
-</ul>
-</details>
-</div>
-</div>
-</div>
-
-<div id="outline-container-2.3%20Multiplication" class="outline-3">
-<h3 id="2.3%20Multiplication">2.3 Multiplication</h3>
-<div class="outline-text-3" id="text-2.3%20Multiplication">
-<p>
-Proposition 2.3.4 follow along with definition 2.3.1 of multiplication where (n++) x m = (n x m) + m also recall that n++ is n + 1: (n + 1)m so nm + m   
-</p>
-
-<ul class="org-ul">
-<li>left side:
-<ul class="org-ul">
-<li>a(b + (c++)) is a(b + c) + a because (m(n++)) = m(n) + m from def 2.3.1</li>
-<li>a(b + (c++)) is a(value)++ or a(value) + a</li>
-</ul></li>
-<li>right side:
-<ul class="org-ul">
-<li>ab + a(c++) is ab + ac + a</li>
-<li>ab + ac + a is in the form of the inductive hypothesis so change it for a(b + c) + a</li>
-</ul></li>
-</ul>
-
-<p>
-Remark 2.3.8 the contradiction is that ac = bc by corollary 2.3.7 when fed into the trichotomy of order can only result in a = b. This is a scheme to produce a temporary notion of division/cancellation. 
-</p>
-</div>
-
-<div id="outline-container-2.3%20Multiplication--Exercises" class="outline-4">
-<h4 id="2.3%20Multiplication--Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-2.3%20Multiplication--Exercises">
-<p>
-Scratchwork and notes
-</p>
-
-<details id="orgeed25a5">
-<p>
-
-</p>
-
-<p>
-<b>Exercise 2.3.1</b> 
-From def 2.3.1 we have 0m = 0. So we need m0 = 0. Tao states to mimic 2.2.2 but for multiplication:
-</p>
-
-<p>
-Lemma X: For any natural number n, n0 = 0.
-</p>
-<ul class="org-ul">
-<li>base case: 0(0) is 0 x 0 = 0 by 2.3.1 so 0 = 0</li>
-<li>IH: n0 = 0</li>
-<li>Inductive step: (n++)0 = 0
-<ul class="org-ul">
-<li>(n++) x m = (n x m) + m by def 2.3.1 so (n0) + 0 = 0</li>
-<li>Remove the + 0 (lemma 2.2.2)</li>
-<li>Now it is in the form of the IH: n0 = 0 so we can replace 0 for n0</li>
-<li>0 = 0 and induction is closed.</li>
-</ul></li>
-</ul>
-
-<p>
-From 2.3.1 we have (n++) x m = (n x m) + m but not n x (m++). We need a Lemma Y: n x (m++) is (n x m) + n rewriting Lemma 2.2.3 but for multiplication. Plug in values to make sure it's correct: 1 x (2++) = (1 x 2) + 1 or 2 x (2++) = (2 x 2) + 2.
-</p>
-
-<p>
-Lemma Y: n(m++) is (nm) + m:
-</p>
-
-<ul class="org-ul">
-<li>base case: Our lemma X and def 2.3.1</li>
-<li>IH: n x (m++) = (n x m) + n</li>
-<li>Inductive step on n: (n++ x m++) = (n++ x m) + n++</li>
-<li>Left: (n++ x m++)
-<ul class="org-ul">
-<li>(n++) x (thing) is (n x thing) + thing by def 2.3.1</li>
-<li>(n x m++) + m++</li>
-<li>It's in the form of IH now, we can replace (n x (m++)) for (n x m) + n</li>
-<li>((n x m) + n)) + m++ 
-<ul class="org-ul">
-<li>(n x m) + n + m + 1 since m++ is m + 1</li>
-</ul></li>
-</ul></li>
-<li>Right: (n++ x m) + n++
-<ul class="org-ul">
-<li>(n++ x m) can be rewritten to (n x m) + m as per def 2.3.1</li>
-<li>((n x m) + m)) + n++ 
-<ul class="org-ul">
-<li>(n x m) + m + n + 1 since n++ is n + 1</li>
-</ul></li>
-</ul></li>
-</ul>
-
-
-<p>
-Now we have to prove mn = nm 
-</p>
-
-<ul class="org-ul">
-<li>Base case: def 2.3.1 and lemma X</li>
-<li>Hypothesis: mn = nm</li>
-<li>Inductive step: m(n++) = (n++)m 
-<ul class="org-ul">
-<li>Lemma Y = def 2.3.1</li>
-</ul></li>
-</ul>
-
-<p>
-<b>Exercise 2.3.2</b>
-</p>
-
-<p>
-The hint is to prove the second statement first, if n and m are both positive, then nm is also positive. You could use Proposition 2.3.6 as a template for this:
-</p>
-
-<ul class="org-ul">
-<li>If n &gt; 0, and m &gt; 0, then nm &gt; 0 
-<ul class="org-ul">
-<li>We have nm = 0 + d for some positive d</li>
-<li>Since d is positive, n and m must be positive (or else 0 = 0 + d, a contradiction)</li>
-</ul></li>
-</ul>
-
-<p>
-Or you could use Lemma 2.2.10, n x m = (b++) x m and then mimic 2.3.6 to determine n x m is positive if n and m are positive. Note that (b++) x m expands to the form (b x m) + b, and since you know a x b + a is the successor form of multiplication it can't be zero. 
-</p>
-
-<p>
-Lemma 2.3.3: n x m = 0 iff n = 0 or m = 0. You could try a contradiction using the nm &gt; 0 proof we already wrote, so it must be n = 0 or m = 0 if nm = 0 or a contrapositive of Tao's statement: see the appendix on mathematical reasoning. If Tao states something, and then proves it, then there is a contrapositive statement we can use.
-</p>
-
-<p>
-<b>Exercise 2.3.3</b>
-For any natural numbers a, b c, we have (ab)c = a(bc). Tao suggests using the distributive law:
-</p>
-
-<ul class="org-ul">
-<li>Inductive Step: (a(b++))c = a((b++)c)
-<ul class="org-ul">
-<li>(a(b + 1))c by corollary n++ = n + 1</li>
-<li>(ab + a)c by distributive law</li>
-<li>(ab + a) is also a(b++)</li>
-<li>a(b++)c is also ac(b++) by commutative law   
-<ul class="org-ul">
-<li>you can see where this is going, keep distributing and moving things around like we did before to prove associativity for addition</li>
-</ul></li>
-</ul></li>
-</ul>
-
-
-<p>
-<b>Exercise 2.3.4</b> 
-</p>
-
-<p>
-Prove the <a href="https://youtu.be/7eZUzceFFJw">identity</a>.  
-</p>
-
-<ul class="org-ul">
-<li>(a + b)(a + b) = (a + b)a + (a + b)b by distributive law/exponentiation
-<ul class="org-ul">
-<li>aa + ba + ab + bb by distributive law</li>
-<li>a\(^2\) + ba + ab + b\(^2\) by def 2.3.11/Examples 2.3.12</li>
-<li>ba + ab is ba + ba by commutative law</li>
-<li>ba + ba is 2ba by def 2.3.1 where 2 x m = 0 + m + m 
-<ul class="org-ul">
-<li>(a + b)\(^2\) = a\(^2\) + 2ab + b\(^2\)</li>
-</ul></li>
-</ul></li>
-</ul>
-</details>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-Set%20Theory" class="outline-2">
-<h2 id="Set%20Theory">Set Theory</h2>
-<div class="outline-text-2" id="text-Set%20Theory">
-</div>
-<div id="outline-container-History%20of%20set%20theory" class="outline-3">
-<h3 id="History%20of%20set%20theory">History of set theory</h3>
-<div class="outline-text-3" id="text-History%20of%20set%20theory">
-<p>
-There is a <a href="https://youtu.be/5LsdsnjXT_Y">lecture</a> on the history of sets/functions, explaining ordinals, cardinals, various schools of logic, and a second <a href="https://youtu.be/Bo2w25fDLwY">lecture</a> about the history of set theory with Godel and Turing. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Appendix%20A%3A%20the%20basics%20of%20mathematical%20logic" class="outline-3">
-<h3 id="Appendix%20A%3A%20the%20basics%20of%20mathematical%20logic">Appendix A: the basics of mathematical logic</h3>
-<div class="outline-text-3" id="text-Appendix%20A%3A%20the%20basics%20of%20mathematical%20logic">
-<p>
-This chapter on set theory in <i>Analysis I</i> relies on the fact that you've already read the appendix on logic. Tao makes a point that this chapter is meant to be read and understood not studied and memorized. Proposition A.2.6, proof by contradiction, we will learn later that when pi/2 (90deg) the sine function is 1. 
-</p>
-
-<p>
-Exercise A.5.1
-</p>
-<ul class="org-ul">
-<li>a) For every x++, and every y++, y*y = x or x is the square root of y. Is this true? Square root of two is the obvious candidate for claiming this is a false statement since what y * y = sqrt(2).</li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-Lectures%20on%20deduction" class="outline-3">
-<h3 id="Lectures%20on%20deduction">Lectures on deduction</h3>
-<div class="outline-text-3" id="text-Lectures%20on%20deduction">
-<ul class="org-ul">
-<li><a href="https://youtu.be/61bWR8ACNts">Deduction</a> - Lecture from 15/251 CMU</li>
-</ul>
-
-<p>
-Optional lecture, you've already done some deduction from writing proofs, however this lecture shows what is and what isn't deducible. The end of the lecture has overlap with the appendix and the first logic lecture in this workshop.
-</p>
-</div>
-
-<div id="outline-container-Quiz%3A%20Logic" class="outline-4">
-<h4 id="Quiz%3A%20Logic">Quiz: Logic</h4>
-<div class="outline-text-4" id="text-Quiz%3A%20Logic">
-<p>
-These multiple choice <a href="http://scherk.pbworks.com/w/page/14864181/FrontPage">quizzes</a> are from Tao's Analysis <a href="https://www.math.ucla.edu/~tao/resource/general/131ah.1.03w/">class</a>, try the <a href="http://scherk.pbworks.com/w/page/14864234/Quiz%3A%20Logic">logic</a> quiz. If you struggle search YouTube for proofs by implication, or search 'discrete math inference rules' there are dozens of tutorials. 
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-3.1%20Fundamentals%20%28Set%20Theory%29" class="outline-3">
-<h3 id="3.1%20Fundamentals%20%28Set%20Theory%29">3.1 Fundamentals (Set Theory)</h3>
-<div class="outline-text-3" id="text-3.1%20Fundamentals%20%28Set%20Theory%29">
-<p>
-You may want to watch this <a href="https://youtu.be/59WX2V7Vjgg">lecture</a> by Wildberger he visualizes sets.
-</p>
-
-<p>
-Example 3.1.2 is similar to a nested list such as [list: 1, [list: 1, 2], 100] is length 3, even though there is a nested list overall it still only contains 3 elements. Remark 3.1.3 is in the above historical lectures on set theory. We are referred to Appendix A.7 Equality to read about the substitution axiom which you should have already read.
-</p>
-
-<p>
-Lemma 3.1.6 if set A is equal to set (empty), then if x is in A it must also be in set empty, a contradiction, so A must be a non-empty set is how I interpret the lemma, which is a way to say that if an empty set exists, there must also be a possibility of a non-empty set. Remark 3.1.8 Cardinality if you watched the Wildberger <i>History of Mathematics</i> <a href="#History%20of%20set%20theory">lecture</a> linked above assigns a value.
-</p>
-
-<p>
-Note the errata for Definition 3.1.4 from Tao's site: "Definition 3.1.4 has to be given the status of an axiom (the axiom of extensionality) rather than a definition, changing all references to this definition accordingly.  This requires some changes to the text discussing this definition. In the preceding paragraph, “define the notion of equality” will now be “seek to capture the notion of equality”, and “formalize this as a definition” should be “formalize this as an axiom”.  For the paragraph after Example 3.1.5, delete the first two sentences, and remove the word “Thus” from the third sentence. Exercise 3.1.1 is now trivial and can be deleted." So this is now Axiom 3.1.4, but the definition remains the same. 
-</p>
-
-<p>
-Exercise 3.1.2 prove emptyset, {emptyset}, {{emptyset}}, and {emptyset{emptyset}} are all not equal.
-</p>
-
-<ul class="org-ul">
-<li>If \(\emptyset\) = {\(\emptyset\)} then by Def 3.1.4 \(\emptyset\) \(\in \emptyset\) a contradiction to Axiom 3.2</li>
-<li>Same reasoning as above for \(\emptyset\) is not equal to {{\(\emptyset\)}} or {\(\emptyset\){\(\emptyset\)}}</li>
-<li>{\(\emptyset\)} is not equal to {{\(\emptyset\)}} because [list: 1] is not equal to [list: [list: 1]]. The first has element 1 in it, the second has element [list: 1].</li>
-</ul>
-
-<p>
-Remark 3.1.21 clarifies the above exercise how {2} and 2 are distinct objects. is not in {1,2,3} but 2 is in {1,2,3}. The rest of this chapter is straight forward definitions of set operations. 
-</p>
-
-<p>
-Example 3.1.32 looks a lot like programming syntax. There seems to be an order of evaluation, applying the axiom of specification first to create a new set, then applying the axiom of replacement so working right to left in {n++ : n \(\in\) {3,5,9); n&lt;6}
-</p>
-</div>
-
-<div id="outline-container-Quiz%20Sets" class="outline-4">
-<h4 id="Quiz%20Sets">Quiz Sets</h4>
-<div class="outline-text-4" id="text-Quiz%20Sets">
-<p>
-Try Tao's <a href="http://scherk.pbworks.com/w/page/14864241/Quiz%3A%20Sets">quiz</a>. There are many Youtube <a href="https://www.youtube.com/playlist?list=PLg8ZEeSiXsjgoQJzRcq60GjK0UrkMsA3-">lectures</a> on basic theory. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-3.1%20Fundamentals%20%28Set%20Theory%29--Exercises" class="outline-4">
-<h4 id="3.1%20Fundamentals%20%28Set%20Theory%29--Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-3.1%20Fundamentals%20%28Set%20Theory%29--Exercises">
-<p>
-You can skip these, even in the preface of this book Tao advocates to just read this chapter so I've only done a few. 
-</p>
-
-<details id="org7b90872">
-<p>
-
-</p>
-
-<ul class="org-ul">
-<li>3.1.3 prove the remaining claims in 3.1.13:</li>
-</ul>
-<p>
-If a and b are objects, then {a, b} = {a} U {b}: By (new axiom) 3.1.4 we need to show every element x in {a, b} is in {a} U {b}. Suppose that x is an element of {a, b} then by axiom 3.3 x = a or x = b. By Axiom 3.4 this means at least one of the following statements is true: x \(\in\) {a} or x \(\in\) {b}. We divide into cases. If x is in a, then by axiom 3.4 x \(\in\) {a} U {b}, similarly if x is in b, it is also in {a} U {b}. Thus in both cases we see every element of {a, b} is in {a} U {b}. Note the proof works by showing x is in both a AND b which is the definition of union.
-</p>
-
-<ul class="org-ul">
-<li>The next claim, prove the union operation is commutative so A \(\cup\) B = B \(\cup\) A</li>
-</ul>
-<p>
-Follows the same proof he did for the union operation is associative. Suppose x is an element of A \(\cup\) B. By def 3.1.4 and axiom 3.4 pairwise union then x \(\in\) A or x \(\in\) B. By disjuntion this is also x \(\in\) B or x \(\in\) A. So x is in B \(\cup\) A and x is in A \(\cup\) B.
-</p>
-
-<ul class="org-ul">
-<li>3.1.4 prove claims in Proposition 3.1.18</li>
-</ul>
-<p>
-You can write both these proofs exactly like his 3.1.18 proof for transitivity. Suppose A \(\subset\) B and B \(\subset\) A. To prove that A = B we have to prove that every element A is an element of B, and every element B is an element of A by def 3.1.4. Let us pick an arbitrary element x \(\in\) A. Then, since A \(\subset\) B, x must also be an element of B. But since B \(\subset\) A, then every element of A is an element of B and every element B is an element of A. By 3.1.4 they are equal. 
-</p>
-
-
-<ul class="org-ul">
-<li>3.1.15 Show how union, intersection and subset are logically equivalent:</li>
-</ul>
-<p>
-Show that any two set operations implies another. If x is in A \(\cup\) B, then by definition of union x \(\in\) A or B, so by disjunction x is in B because logically we can pick either one. If x is in A, since A is a subset of B then x is again \(\in\) B. Thus x \(\in\) A \(\cup\) B if and only if x \(\in\) B and by definition of union, and axiom of equality 3.1.4, A \(\cup\) B = B. Since x is in B, if x is in A \(\cap\) B it must also be in A, so x is in A and B, which is the definition of intersection, and if A \(\cap\) B = A, and if A \(\cup\) B = B, then every element of A is in B so A \(\subset\) B.  
-</p>
-</details>
-</div>
-</div>
-</div>
-
-<div id="outline-container-3.2%20Russell%27s%20Paradox" class="outline-3">
-<h3 id="3.2%20Russell%27s%20Paradox">3.2 Russell's Paradox</h3>
-<div class="outline-text-3" id="text-3.2%20Russell%27s%20Paradox">
-<p>
-Wildberger has a lecture in his history of math series about this if you watch the lecture on set theory. 3.9 Axiom of Regularity is worth reading to see some more examples of what is and what isn't an element of a set otherwise you can skip this chapter. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-3.3%20Functions" class="outline-3">
-<h3 id="3.3%20Functions">3.3 Functions</h3>
-<div class="outline-text-3" id="text-3.3%20Functions">
-<p>
-Example 3.3.3 if you forgot range <a href="https://stackoverflow.com/questions/4396290/what-does-this-square-bracket-and-parenthesis-bracket-notation-mean-first1-last">notation</a> which Tao will teach us in later chapters. Remark 3.3.5 clears up some notation for functions notably a sequence subscript also denotes a function. Example 3.3.9 asks why 3.3.7 asserts that all functions from {empty} set to X are equal, because they have the same domain (nothing) and range. 
-</p>
-
-<p>
-Our first proof in this chapter is in Lemma 3.3.12, and if we can go by all the previous chapters, this will be our template for the exercises. It also doesn't make sense, so I checked the errata page and sure enough there is <a href="https://terrytao.wordpress.com/books/analysis-i/">errata</a> for this lemma depending what version of the book you're using.
-</p>
-
-<p>
-Def 3.3.10 composition, you can think of that composition symbol as being a binary operator (function) that accepts two functions as input and outputs a single function. 
-</p>
-
-<p>
-3.3.14 See this <a href="https://youtu.be/DP1ND5-w7fg">tutorial</a> and notice Tao has defined this function by it's contrapositive, which you can do as it is logically equivalent. Write your own examples for this definition. If two distinct elements of A map to the same element of B, this is not injective. However if those two A elements are equal to each other then it is injective: 
-</p>
-
-<ul class="org-ul">
-<li>A = {a, b, a} (function input)</li>
-<li>B = {1, 2} (output)
-<ul class="org-ul">
-<li>f(a) = 1</li>
-<li>f(b) = 2</li>
-<li>f(a) = 1 
-<ul class="org-ul">
-<li>but {a} = {a}, so f(a) = f(a) and this function is injective.</li>
-</ul></li>
-</ul></li>
-<li>A = {b, c}</li>
-<li>B = {2}
-<ul class="org-ul">
-<li>f(c) = 2</li>
-<li>f(b) = 2
-<ul class="org-ul">
-<li>but {c} doesn't equal {b} so this not injective</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p>
-3.3.17 Onto functions, another <a href="https://youtu.be/c5shCGRMpcQ">tutorial</a> and for Remark 3.3.24 <a href="https://youtu.be/P9A4IrD_uBQ">here</a> is a tutorial for bijective inverse functions
-</p>
-</div>
-
-
-<div id="outline-container-Quiz%20Functions" class="outline-4">
-<h4 id="Quiz%20Functions">Quiz Functions</h4>
-<div class="outline-text-4" id="text-Quiz%20Functions">
-<p>
-Another multiple choice <a href="http://scherk.pbworks.com/w/page/14864227/Quiz%3A%20Functions">quiz</a> from Tao's analysis class. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-3.3%20Functions--Exercises" class="outline-4">
-<h4 id="3.3%20Functions--Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-3.3%20Functions--Exercises">
-<p>
-All optional, do you get what a bijective/surjective/injective function is? Then you're good we will do all these definitions again in a calculus course.
-</p>
-
-<details id="org5952c92">
-<p>
-All of these proofs have a youtube tutorial or stackexchange answer, these are common proofs first year students do.
-</p>
-
-<ul class="org-ul">
-<li>Ex 3.3.1 was deleted in errata (See Tao's site)</li>
-<li>Ex 3.3.2 The proof for this is in the book <a href="https://infinitedescent.xyz/">https://infinitedescent.xyz/</a>.</li>
-<li>Ex 3.3.3 The empty function is always injective since it's 'vacuously true' that f(x) = f(x'). It is never surjective since there are no elements in the empty set that fit the surjective definition of every element in Y is a value of f(x) or y = f(x), and thus never bijective, since a function must be both injective and surjective to be bijective.</li>
-<li>Ex 3.3.4 The tilde hat thinghy is just notation for two different fuctions, like f and f'. Cancellation law means we're trying to prove two different functions are the same so g = g' and f = f'. If f and g are injective, then g(f(x)) = g(f'(x)) and f(x) = f'(x), and by one-to-one definition of injective functions f = f' (since f is g's input).  Surjective is similar, g(y) = g'f(x)) = g(f(x)) = g'(y) so g = g'. Does g need to be injective for this proof to always hold? Try corner case examples from the text, like if g = n<sup>2</sup>, then g(f(-1)) and g(f'(1)) have the same output, so two different inputs to g with same output means f(x) can't equal f(x') as per definition of one-to-one functions so we can't always derive f = f'.</li>
-<li>Ex 3.3.5 If f is injective in g(f(x)), then g doesn't need to be injective. Consider an example A = {1}, B = {2, 3}, and C = {4}. f(1) = g(2) = 4 so f is still injective. The difference in 3.3.4 is the wording 'show that these two input functions are always equal if g in injective' and the second question 'Is this still true if g is not injective?' which means a single case where if g is not injective, and we get two non distinct inputs that equal the same outputg, the whole proof is false whereas here we are asked 'must g always be injective' so just needa single case of not needing to be injective.</li>
-<li>Ex 3.3.6 Is described <a href="https://math.stackexchange.com/a/2865322">here</a> see Remark 3.3.24 if you forgot what an inverse function is. Note how the inverse of f and f cancel each other out.</li>
-<li>Ex 3.3.7 Similar to above and his association proof</li>
-</ul>
-</details>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Proof%20strategies" class="outline-3">
-<h3 id="Proof%20strategies">Proof strategies</h3>
-<div class="outline-text-3" id="text-Proof%20strategies">
-<p>
-Watch <a href="https://youtu.be/K0CoGGcLc1M?t=2161">this</a> starting @ 36:00, from 41:00+ he shows how he solves problems step by step, trying small cases to understand the problem better and poking at the problem enough to finally figure out a proof.  
-</p>
-</div>
-</div>
-
 
-<div id="outline-container-3.4%20Images%20and%20inverse%20images" class="outline-3">
-<h3 id="3.4%20Images%20and%20inverse%20images">3.4 Images and inverse images</h3>
-<div class="outline-text-3" id="text-3.4%20Images%20and%20inverse%20images">
-<p>
-This is only casual reading, skip the exercises and return to do them when these topics come up again. 
-</p>
-
-<p>
-Chapter 3.4 of Tao's <i>Analysis I</i>. Example 3.4.5 makes more sense if you read Example 3.4.6 too, f<sup>-1</sup>({0,1,4}) is the set of everything that could result in {0,1,4} if f(x) = x<sup>2</sup>, so {-2,-1,0,1,2}. The rest of this chapter, if it doesn't make sense on first read search youtube ie: <a href="https://youtu.be/TDpQSa3hJRw">indexed sets</a>. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-3.5%20Cartesian%20products" class="outline-3">
-<h3 id="3.5%20Cartesian%20products">3.5 Cartesian products</h3>
-<div class="outline-text-3" id="text-3.5%20Cartesian%20products">
-<p>
-Again more casual reading, come back to do the exercises as needed.
-</p>
-
-<p>
-Another topic with plenty of youtube <a href="https://youtu.be/NnEkVooAsxk">tutorials</a>. Definition 3.5.7 notation for product is introduced, it looks complicated but all it's doing is specifying an index (i is greater or equal to 1, and less than or equal to n) and repeated cross product. The exercises some of the solutions are <a href="https://youtu.be/XmkGxHZDer8">walked through</a> on youtube. The cartesian plane itself is a cartesian product of R x R, you have tuples (x, y) or (x, y, z) so R x R x R. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-3.6%20Cardinality%20of%20sets" class="outline-3">
-<h3 id="3.6%20Cardinality%20of%20sets">3.6 Cardinality of sets</h3>
-<div class="outline-text-3" id="text-3.6%20Cardinality%20of%20sets">
-<p>
-Skip the exercises like the last two chapters, we just want to be familiar with the material. Reminder in the preface of this book, Tao himself advocates to skip the exercises as 'set theory is not essential for analysis' but it will be essential for us to understand numerous other math topics, at which time we can come back here. 
-</p>
-
-<p>
-A good <a href="https://youtu.be/JkOKMwRe4BE">tutorial</a>. Tao is using #(A) notation which means finite set cardinality, while |A| cardinality notation means infinite. There exists errata for the exercises specifically 3.6.8. The last exercise the <a href="https://www.youtube.com/watch?v=2-mxYrCNX60">pigeonhole principle</a> if set A has greater cardinality than B, then f(x) A -&gt; B can't be injective, since there would be two elements in A that point to a single element in B.  
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Integers%20and%20rational%20numbers" class="outline-2">
-<h2 id="Integers%20and%20rational%20numbers">Integers and rational numbers</h2>
-<div class="outline-text-2" id="text-Integers%20and%20rational%20numbers">
-</div>
 <div id="outline-container-Introducing%20the%20integers" class="outline-3">
 <h3 id="Introducing%20the%20integers">Introducing the integers</h3>
 <div class="outline-text-3" id="text-Introducing%20the%20integers">
@@ -1727,63 +869,10 @@ A good <a href="https://youtu.be/JkOKMwRe4BE">tutorial</a>. Tao is using #(A) no
 </ul>
 
 <p>
-Wildberger's definition is similar to Tao's, he walks through a proof of a-(b-c)=(a-b)+c
+He walks through a proof of a-(b-c)=(a-b)+c
 </p>
 </div>
 </div>
-
-<div id="outline-container-4.1%20The%20integers" class="outline-3">
-<h3 id="4.1%20The%20integers">4.1 The integers</h3>
-<div class="outline-text-3" id="text-4.1%20The%20integers">
-<p>
-Chapter 4 of <i>Analysis I</i> by Tao. Definition 4.1.1 is exactly the definition from the above Wildberger foundations video. Lemma 4.1.3 proof you can finish most of it yourself without reading the whole proof. Lemma 4.1.5 Tao notes the same concerns Wildberger expressed why they both used the 'a less b' style of definition instead of just using Lemma 4.1.5 as the definition of integers, because of the many different cases that would be needed. Tao mentions this definition of the integers forms a commutative ring because xy = yx. 
-</p>
-</div>
-
-<div id="outline-container-4.1%20The%20integers--Exercises" class="outline-4">
-<h4 id="4.1%20The%20integers--Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-4.1%20The%20integers--Exercises">
-<p>
-You don't have to do the exercises, though proving equality as per A.7 for every object he creates is worth trying. This is the poor scratchwork I did
-</p>
-
-<details id="org99a32e8">
-<p>
-4.1.1 Proving A.7 Equality again. From Def 4.1.1 equality is defined as: a&#x2013;b = c&#x2013;d iff a + d = c + b and the variables are natural numbers. Does a&#x2013;b = a&#x2013;b? In this defition: a + b = a + b so yes, since we already proved natural numbers obey the reflexive axiom. Does x&#x2013;y = y&#x2013;x or x + x = y + y and yes, x and y are natural number objects. If a&#x2013;b = c&#x2013;d, and c&#x2013;d = x&#x2013;y, does a&#x2013;b = x&#x2013;y? Converting everything to their respective natural number definition, and arranging on each side: a + d + c + y + a + y = c + b + x + d + x + b cancel and you're left with 2a + 2y = 2b + 2x, divide each by 2: a + y = x + b, converting this back into an integer this is a&#x2013;b = x&#x2013;y similar to Tao's proof in 4.1.1 of transitivity. 
-</p>
-
-<p>
-4.1.2 If -(a&#x2013;b) = -(a'&#x2013;b') are defined as b&#x2013;a = b'&#x2013;a' then b + a' = b' + a. This is the integer b&#x2013;a = b'&#x2013;a'. Now convert a&#x2013;b = a'&#x2013;b' to a + b' = a' + b and notice they are the same, and since natural number construction -(a&#x2013;b) = -(a'&#x2013;b') if a&#x2013;b = a'&#x2013;b'.  
-</p>
-
-<p>
-4.1.3 (-1) x a = -a to solve use Tao's advice in remark 4.1.7 to assign a = (a&#x2013;b) or some other integer notation. In lemma 4.1.3 Tao writes 1 is equal to 1&#x2013;0, so if want to negate 1, this is 0&#x2013;1, and in full integer notation: (0&#x2013;1)(a&#x2013;b) = ((0a + 1b)&#x2013;(0b + 1a)) which is (b&#x2013;a), which is what (a&#x2013;b) would be if -(a&#x2013;b).
-</p>
-
-<p>
-4.1.4 Prove the rest of 4.1.6, we already did x1 = 1x = x kind of in exercise 4.1.3, convert 1 to (1&#x2013;0) and pick any arbitrary variables to represent x as (a&#x2013;b) and this is easy to prove. Same with 0, use lemma 4.1.3 to convert to (0&#x2013;0) so (x&#x2013;y) + (0&#x2013;0) = (x + 0)&#x2013;(y + 0) or (x&#x2013;y).  
-</p>
-
-<p>
-4.1.5 ab = 0 is (x&#x2013;y)(r&#x2013;s) = (0&#x2013;0) or xr + ys = 0 which is true only if xr = 0 and ys = 0. So (0&#x2013;0)(r&#x2013;s) or (x&#x2013;y)(0&#x2013;0) or both are 0 since we are dealing with natural number constructions as per lemma 2.3.3 nm = 0 only if n=0 or m=0.
-</p>
-
-<p>
-4.1.6 if a, b, c, are integers such that ac = bc and c is non-zero, then a = b. (a&#x2013;a')(c&#x2013;c') = (b&#x2013;b')(c&#x2013;c') and c is non-zero, then (a&#x2013;a') = (b&#x2013;b') or a + b' = b + a'. (ac + a'c')&#x2013;(ac' + a'c) = (bc + b'c')&#x2013;(bc'+b'c). This is ac + a'c' + bc' + b'c = b'c' + bc + a'c + ac' or factored to c(a + b') + c'(a' + b) = c(b + a') + c'(b' + a). Now we are the exact same place as Tao's proof in Lemma 4.1.3 where he wrote since a + b' = b + a' two sides are equal. If (c&#x2013;c') was (0&#x2013;0') then this would be 0 = 0 not (a&#x2013;a') = (b&#x2013;b'). Not a proof, but explains why the cancellation law works. If a + b' = b + a' we can also replace, so c(b + a') + c'(b + a') = c(b + a') + c'(b + a'). Subtract one of the c(value) or c'(value) from both sides so c'(b + a') = c'(b + a') and now we can divide by c' to get b + a' = b + a', and since a + b' = b + a' then replace back b + a' = a + b' which won't work if c' = 0. Not really the proof Tao wanted but it kind of works.
-</p>
-
-<p>
-4.1.7 You can also do these in integer notation. If a,b,c are integers, then a &gt; b iff a - b is a positive natural number. Ordering is defined as a = b + n and a does not equal b in strictly greater than a &gt; b. Taking a = b + n subtract b from both sides, we get a - b = n. If n = 0, then that means a - b = 0 which is a contradiction to Tao's definition that a and b are not equal and thus a - b = some positive n iff a &gt; b is how I read that exercise, the rest are similar. 
-</p>
-
-<p>
-4.1.8 find an example property, where Axiom 2.5 as stated in the book doesn't work for <a href="https://math.stackexchange.com/a/811972">integers</a>. The axiom relies on the fact that P(n++) is true so negative n can break many properties since n++ will be another negative number unless you state like Tao does 'for all positive integers'. 
-</p>
-</details>
-</div>
-</div>
-</div>
-
 
 <div id="outline-container-Rational%20numbers" class="outline-3">
 <h3 id="Rational%20numbers">Rational numbers</h3>
@@ -1793,7 +882,7 @@ You don't have to do the exercises, though proving equality as per A.7 for every
 </ul>
 
 <p>
-This definition is similar to Tao's in <i>Analysis I</i>. The inverse law, write your own example, the rational number 4/1 inverse is 1/4 and 4/1 x 1/4 is 4/4 or 1. A rational number is (a-b)/(c-d) according to it's definition but we write them as p/q and in some cases just p if q = 1. 
+A rational number is (a-b)/(c-d) according to it's definition but we write them as p/q and in some cases just p if q = 1. 
 </p>
 </div>
 </div>
@@ -1819,124 +908,12 @@ The rational number line sits on [0, 1], so you don't end up with a zero denomin
 </ul>
 
 <p>
-This is about 35m long but worth the watch if you want to see what a convex combination is, learn about rational intervals, and a more complete description of Ford Circles set up with Farey sequences. This will help us understand what a sequence is later in Tao's book. The overall takeaway of this lecture is that the smaller the interval you take on the rational line, the more complex the numbers become with enormous denominators meaning it has a very deep structure. 
+This is about 35m long but worth the watch if you want to see what a convex combination is, learn about rational intervals, and a more complete description of Ford Circles set up with Farey sequences. The overall takeaway of this lecture is that the smaller the interval you take on the rational line, the more complex the numbers become with enormous denominators meaning it has a very deep structure. 
 </p>
 
 <p>
-The next videos, #96 and #97 about Stern-Brocot trees and wedges are highly recommended and can also be found in the book <i>Concrete Mathematics</i>. In Lecture #97, he takes a visualization on the plane of the Stern-Brocot tree and shows it also can be used as a geometric interpretation for the rational numbers, it's kind of crazy when you see it. The 'fraction' 1/0 is also explained.   
+The next videos, #96 and #97 about Stern-Brocot trees and wedges are highly recommended and can also be found in the book <i>Concrete Mathematics</i> by Knuth. In Lecture #97, he takes a visualization on the plane of the Stern-Brocot tree and shows it also can be used as a geometric interpretation for the rational numbers, it's totally crazy when you see it. The 'fraction' 1/0 is also explained.   
 </p>
-</div>
-</div>
-
-
-<div id="outline-container-4.2%20The%20rationals" class="outline-3">
-<h3 id="4.2%20The%20rationals">4.2 The rationals</h3>
-<div class="outline-text-3" id="text-4.2%20The%20rationals">
-<p>
-Tao's <i>Analysis I</i> chapter 4.2, definition 4.2.1: 3//4 = 6//8 = -3//-4 we know from Wildberger's visualization of the rational numbers, these numbers all lay on the same line. Lemma 4.2.3, in the proof of addition getting rid of +bb'cd is a simple case of subtracting it from both sides, cancelling it out leaving ab'd<sup>2</sup> = a'bd<sup>2</sup> and he can divide both sides by d because d is known to be non-zero, since it's in the denominator of a/b + c/d.
-</p>
-
-<p>
-To recap we defined the natural number object, embedded them in the integers (a - b) to define integers, then embedded integers inside the rational numbers (another constructed object) where the arithmetic of the integers is consistent with the arithmetic of the rationals. The rationals are a field because of the last identity in 4.2.4 the inverse algebra law. Tao's example proof is similar to the proofs we've seen Wildberger do, convert the letters into integer // integer form, apply law, commute the results together so that they are the same. 
-</p>
-</div>
-
-
-<div id="outline-container-4.2%20The%20rationals--Exercises" class="outline-4">
-<h4 id="4.2%20The%20rationals--Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-4.2%20The%20rationals--Exercises">
-<p>
-These are pretty easy, try them. 4.2.6 in my copy must be a mistake 'show that if x, y, z are real numbers&#x2026;' that must be 'rational numbers' and sure enough checking Tao's errata page it is a mistake. There's a mistake in exercise 4.2.1 as well depending which version you're using. 
-</p>
-
-<details id="org48a9e3a">
-<p>
-
-</p>
-
-<ul class="org-ul">
-<li>Ex 4.2.1</li>
-</ul>
-
-<p>
-We have the usual exercise, show that the definition of equality for rationals is reflexive, symmetric and transitive. We go into the Appendix A.7 Equality and see that the Reflexive axiom is given any object x, we have x = x. In Definition 4.2.1 equality of two rational numbers is defined as a/b = c/d iff ad = cb. If a/b = a/b then ab = ab thus reflexive. Symmetry axiom, if x = y then y = x. If a/b = c/d, symmetric equality is c/d = a/b. By definition 4.2.1 a/b = c/d is ad = cb, and c/d = a/b is cb = ad so Symmetry axiom satisfied.
-</p>
-
-<p>
-The hint for proving transitivity is to see Corollary 4.1.9 the cancellation law for integers: If ac = bc, and c is non-zero, then a = b. In A.7 the Transitive axiom states if x = y and y = z then x = z. If a/b = c/d, and c/d = e/f, then a/b = e/f or if ad = cb, cf = ed, then af = eb. We can also rewrite this as adcf = cbed and simplify to af = eb. Staring at this we isolate af(cd) = eb(cd) so the rest of the proof involves logical deducation to determine that c and d aren't zero so we can cancel them from both sides, or through this deduction infer another equality of ab = ef, there is a few ways you could prove transitivity. For example we know that d can't be zero since c/d wouldn't be a rational number. If ad = 0 since we know d is positive, a must be 0. If c is zero, then cf = ed is 0 = ed and again d must be positive so e = 0. So now we have a and e as possible 0, so af = eb is 0 = 0 or: 0/b = 0/f and transitivity is proven though in a convoluted sort of way using deduction and making a lot of implications. 
-</p>
-
-<p>
-The transitivity proof is a great example of just naively writing your proofs until you get better eventually. We used Tao's hint of finding numbers than can or can't be zeros and are getting better using mathematical logic to deduce answers.
-</p>
-
-<ul class="org-ul">
-<li>Ex. 4.2.2</li>
-</ul>
-<p>
-Prove whatever remains to be proved in Lemma 4.2.3, let's try the negation since the multiplication is simple. If a/b = a'/b' then ab' = a'b is the setup Tao gives us. If -(a/b) = (-a')/b' then by def 4.2.1 we get (-a)/b = (-a')/b' which is -ab' = -a'b and multiplying each side by -1: ab' = a'b holds. Lemma 4.2.3 multiplication: If (a/b * c/d) = ac/bd and (a'/b' * c/d) = a'c/b'd we need to prove ac(b'd) = a'c(bd) by manipulating it into the form ab' = a'b since a/b = a'/b'. We can just do what Tao did, cancel c and d from both sides, leaving ab' = a'b however we should make sure they aren't zero, using the same kind of deduction we used to prove transitivity. We know d can't be zero since c/d would mean it's not a rational number if zero. Another strategy of course is to just add a scalar to the original ab' = a'b of (cd) on each side, which is fine, and solves the proof, providing you point to the definition in the book where a = a is the same as ab = ab.    
-</p>
-
-<ul class="org-ul">
-<li>Ex. 4.2.3</li>
-</ul>
-<p>
-Prove the rest of Proposition 4.2.4. The first is the same as Tao's demo proof. Scratch work, you should try all these yourself they are simple:
-</p>
-
-<ul class="org-ul">
-<li>x + 0 = 0 + x = x
-<ul class="org-ul">
-<li>a/b + 0/1 is (a*1) + (0*b)/b*1 or a/b</li>
-<li>0/1 + a/b is (0*b) + (a*1)/b*1 or a/b</li>
-</ul></li>
-<li>x + (-x) = (-x) + x = 0
-<ul class="org-ul">
-<li>a/b + (-a)/b is (ab + -ab)/bb = 0/bb or 0</li>
-<li>(-a)/b + a/b is (-ab + ab)/bb = 0/bb or 0</li>
-</ul></li>
-<li>xy = yx
-<ul class="org-ul">
-<li>a/b*c/d is ac/bd</li>
-<li>c/d*a/b is ac/bd</li>
-</ul></li>
-<li>(xy)z = x(yz)
-<ul class="org-ul">
-<li>(a/b*c/d)e/f is ac/bd*e/f or ace/bdf</li>
-<li>e/f(a/b*c/d) is e/f*ac/bd or ace/bdf</li>
-</ul></li>
-<li>x1 = 1x = x 
-<ul class="org-ul">
-<li>a/b*1/1 is a/b and also 1x as per xy = yx which we just proved</li>
-</ul></li>
-<li>x(y + z) = xy + xz 
-<ul class="org-ul">
-<li>simple task to do on paper a/b(c/d + e/f) = (cfa + aed)/bdf</li>
-<li>a/b*c/d + a/b*e/f = ac/bd + ae/bf or (acbf + aebd)/bbdf and cancel one of the b's which we know can't be negative since it's in the denominator</li>
-</ul></li>
-<li>rest same as above</li>
-
-<li>Ex 4.2.4</li>
-</ul>
-<p>
-Prove Lemma 4.2.7 is exactly the same as Tao's proof for Lemma 4.1.5 of the integers just replacing rational numbers and their definitions. 
-</p>
-
-<ul class="org-ul">
-<li>Ex 4.2.5</li>
-</ul>
-<p>
-We've already proven propositions of order in naturals and integers, this is similar but with a/b &lt; c/d
-</p>
-
-<ul class="org-ul">
-<li>Ex 4.2.6</li>
-</ul>
-<p>
-If you multiply -1 to both sides negating them, then 1 &lt; 2 will end up -1 &gt; -2 which is what should happen since -1 is not as small a qty as -2 if our interpretation is a number line. Proof is somewhere in Def 4.2.8, if x &lt; y then x - y is a negative rational number so a/b - c/d = (-e)/f. Then come along with negative rational z: (-g)/f and multiply both sides, we get a positive number so x &gt; y, at least in scratch work I did until I ran out of time.
-</p>
-</details>
-</div>
 </div>
 </div>
 
@@ -1944,11 +921,7 @@ If you multiply -1 to both sides negating them, then 1 &lt; 2 will end up -1 &gt
 <h3 id="Decimal%20numbers">Decimal numbers</h3>
 <div class="outline-text-3" id="text-Decimal%20numbers">
 <p>
-The next chapter in <i>Tao's Analysis I</i> uses decimals to represent tiny positive quantities (epsilon) so we should probably know what decimals are.
-</p>
-
-<p>
-Wildberger has a basic introduction <a href="https://youtu.be/UsQsV8VsCxw">lecture</a> using natural numbers that assumes you know nothing about exponents and reviews the hindu-arabic notation, shows how to convert a decimal to a fraction. The second <a href="https://youtu.be/Sid7ocFsIF0">lecture</a> introduces rational number decimals and their visualization. 
+Wildberger has a basic introduction <a href="https://youtu.be/UsQsV8VsCxw">lecture</a> using natural numbers that assumes you know nothing about exponents and reviews the hindu-arabic notation, showing how to convert a decimal to a fraction. The second <a href="https://youtu.be/Sid7ocFsIF0">lecture</a> introduces rational number decimals and their visualization. 
 </p>
 
 <p>
@@ -1959,121 +932,6 @@ His definition is a decimal number is a rational number a/b, where b is a power 
 At 36:00 arithmetic w/decimals is covered, showing how the rational number and decimal number arithmetic methods are the same so you can just stay w/rational numbers if you want converting back to decimals at anytime. 
 </p>
 </div>
-
-
-<div id="outline-container-Appendix%20B%3A%20the%20decimal%20system" class="outline-4">
-<h4 id="Appendix%20B%3A%20the%20decimal%20system">Appendix B: the decimal system</h4>
-<div class="outline-text-4" id="text-Appendix%20B%3A%20the%20decimal%20system">
-<p>
-From Tao's book Appendix B.1 <i>The decimal representation of natural numbers</i> his opinion is that the decimal system is not essential to mathematics, computers have replaced it with binary/floating point and 'we rarely use any numbers other than one-digit fractions in modern mathematical work'. Of course to understand scientific notation we still need to know how decimals work and we just did with those Wilberger lectures so this chapter is optional (we can't do it anyway before learning the the real numbers). The single exercise in B.1 is interesting, 'the purpose is to demonstrate that the procedure of long addition taught to you in elementary school is actually valid'.  
-</p>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-4.3%20Absolute%20value%20and%20exponentiation" class="outline-3">
-<h3 id="4.3%20Absolute%20value%20and%20exponentiation">4.3 Absolute value and exponentiation</h3>
-<div class="outline-text-3" id="text-4.3%20Absolute%20value%20and%20exponentiation">
-<p>
-Def 4.3.1 you apply that def to the rational number, so if x = -3, the absolute value is -x so -(-3) which of course makes it a positive rational number, as seen in the example of 4.3.2 where the absolute value of 3 - 5 = 2. 
-</p>
-
-<p>
-Def 4.3.4 that symbol is epsilon, meant to be a tiny quantity he defines as greater than 0. The example 4.3.6 if two numbers are equal, and their difference is zero, then they are 'epsilon close' for every epsilon since their difference is not bigger than any positive epsilon. 
-</p>
-
-<p>
-Proposition 4.3.7 recall that all these definitions are for d(x, y) or d(z, w) so x - y or z - w. His proof he moves xz to one side, so it becomes negated (subtract from both sides). He then manipulates |az + bx + ab| according to previous definitions to get |a||z| etc., and then uses the various propositions in 4.3.7 to rewrite them as eps|z| + delta|x| + eps(delta). This will make sense after we attempt to prove the rest of the propositions. 
-</p>
-
-<p>
-Rest of this chapter covers exponents and their properties. 
-</p>
-</div>
-
-<div id="outline-container-4.3%20Absolute%20value%20and%20exponentiation--Exercises" class="outline-4">
-<h4 id="4.3%20Absolute%20value%20and%20exponentiation--Exercises">Exercises</h4>
-<div class="outline-text-4" id="text-4.3%20Absolute%20value%20and%20exponentiation--Exercises">
-<p>
-Exercise 4.3.5 Prove that \(2^n \ge n\) for all positive integers n using induction. 
-</p>
-
-<ul class="org-ul">
-<li>base case: n = 0
-<ul class="org-ul">
-<li>2<sup>0</sup> = 1 and since n = 0, 1 &gt; 0. 
-<ul class="org-ul">
-<li>but Tao specifically wrote 'positive integers' so base case must be 1</li>
-</ul></li>
-<li>2<sup>1</sup> = 2 and since n = 1, 2 &gt; 1</li>
-</ul></li>
-<li>assumption:  \(2^n \ge n\) for all positive integers n</li>
-<li>successor: \(2^{n + 1} \ge n + 1\)
-<ul class="org-ul">
-<li>left side:</li>
-<li>\(2^{n + 1}\) is 2<sup>n</sup>*2 by def 4.3.9</li>
-<li>2*2<sup>n</sup> is also 2<sup>n</sup> + 2<sup>n</sup> by prop 4.3.10 (a)</li>
-<li>now we have 2<sup>n</sup> + 2<sup>n</sup> \(\ge\) n + 1</li>
-</ul></li>
-<li>since 2<sup>n</sup> \(\ge\) n (pointing to our assumption), then 2<sup>n</sup> + 2<sup>n</sup> \(\ge\) n + n  
-<ul class="org-ul">
-<li>n is only positive, so n + n is \(\ge\) n + 1</li>
-<li>2<sup>n</sup> + 2<sup>n</sup> \(\ge\) n + n \(\ge\) n + 1
-<ul class="org-ul">
-<li>here we have standard transitivity proving \(2^{n + 1} \ge n + 1\)</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p>
-This of course falls apart if Tao changed it to 'for all integers' instead of positive integers, or if we allowed our assumption 2<sup>n</sup> &gt; n to have n = 0, then we could not assume n + n is \(\ge\) n + 1. Search around for proving inequalities on YouTube there are dozens of demonstrations of various strategies.  
-</p>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-4.4%20Gaps%20in%20the%20rational%20numbers" class="outline-3">
-<h3 id="4.4%20Gaps%20in%20the%20rational%20numbers">4.4 Gaps in the rational numbers</h3>
-<div class="outline-text-3" id="text-4.4%20Gaps%20in%20the%20rational%20numbers">
-<p>
-The idea here is that certain things don't exist in the rational numbers object like the square root of 2, so there are 'gaps' where the square root of 2 should be. 
-</p>
-
-<p>
-Proposition 4.4.1 there is an integer n, and a rational number x, such that n &lt;= x &lt; n + 1 so sandwiched between integers 2 and 3 are rational numbers such as 25/10 or 100/40 etc. 
-</p>
-
-<p>
-Proposition 4.4.3 there is always some rational you can squeeze in between two other rationals as we've already seen in Wildberger lectures. 1/800 &lt; 1/500 &lt; 1/100 etc. If you want put in examples for his generalized proof to better understand it like x = 2, y = 3 and z = (2 + 3)/2.
-</p>
-
-<p>
-Proposition 4.4.4 famous proof by contradiction there does not exist a rational number x for which x<sup>2</sup> = 2 though Tao's is significantly longer than most and as per the preface this is for the reader's benefit. He rewrites (p/q)<sup>2</sup> = 2 into p<sup>2</sup> = 2q<sup>2</sup> by multiplying each side by the denominator, which is q<sup>2</sup> as p/q squared is p/q * p/q or p*p/q*q.  
-</p>
-
-<p>
-Proposition 4.4.5 is basically saying for any epsilon bigger than 0, there exists a rational number that when squared it's less than two, and less than x + epsilon. Remember there is an infinite amount of rational numbers between 0 and 2 like trillion/1000 billion = 1. 1<sup>2</sup> is 1, if epsilon is 1 so that x + epsilon = 2, then (x + eps)<sup>2</sup> is (1 + 1)(1 + 1) and bigger than 2. He asks why ne (e = epsilon) is non-negative for every natural number n in (ne)<sup>2</sup> and the parens grouping ne and squaring it obviously make it positive ie (-2)<sup>2</sup>. 
-</p>
-
-<p>
-Tao mentions Dedekind cuts will be avoided, and the theory of infinite decimals has problems so also will be avoided. Wildberger has numerous <a href="https://youtu.be/jlnBo3APRlU">lectures</a> on both theories if you're interested the most detailed ones are in his <i>Famous Math Problems</i> playlist. Wildberger makes the point that you will only ever find the cherry picked <a href="https://www.math.brown.edu/~res/INF/handout3.pdf">example</a> of the square root of 2 for Dedekind cuts in any undergrad material because of the mind boggling complexity involved trying to partition a set for pi<sup>2</sup>/6 and other irrational numbers. 
-</p>
-
-<p>
-The <a href="https://en.wikibooks.org/wiki/Undergraduate_Mathematics/Proof_by_infinite_descent">infinite descent</a> exercise Tao has basically handed the solution to us, if you fix any sequence of natural numbers then by their definition there are finitely many numbers from 0 to your fixed point, so you can't choose infinitely many distinct natural numbers less than your fixed point so infinite descent does not exist for the naturals because you'll run out of them. Integers you can infinitely descend to negative infinity and of course rationals we know you can infinitely descend with bigger denominators until you approach zero or descend to negative infinity. 
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Real%20Numbers" class="outline-2">
-<h2 id="Real%20Numbers">Real Numbers</h2>
-<div class="outline-text-2" id="text-Real%20Numbers">
-<p>
-Real numbers are basically a convenient abstraction for doing pure math analysis that every popular math text uses however our computers all use floating point arithmetic which is basically a stream of data we grab from to take finer approximations. You could view the following chapters as Cauchy sequences are just proving the real numbers exists instead of actually proving the real number system. 
-</p>
 </div>
 
 <div id="outline-container-What%20exactly%20is%20a%20limit" class="outline-3">
@@ -2084,7 +942,15 @@ Real numbers are basically a convenient abstraction for doing pure math analysis
 </ul>
 
 <p>
-Watch the first 20 minutes of this lecture and you'll see what the notion of an epsilon displacement is. Note that Tao will define all these things for us later, but at least you'll have an idea of what epsilon of a sequence is. The rest of the lecture is excellent covering a different definition of limits but optional. 3Blue1Brown has an epsilon-delta definition of a limit <a href="https://youtu.be/kfF40MiS7zA">here</a>.
+Watch the first 20 minutes of this lecture and you'll see what the notion of an epsilon displacement is. The rest of the lecture is excellent covering a different definition of limits but optional edutainment if you're interested.
+</p>
+
+<p>
+We are now starting to learn what 'real numbers' are. They will come up in everything you read without a definition. For now just think of them as a convenient abstraction so you can do magical things in continuous mathematics. Terence Tao's <i>Analysis I</i> has a very good and thorough treatement of them which you should read but I won't include it here.  
+</p>
+
+<p>
+Wildberger is a skeptic of many aspects of modern mathematics. This doesn't mean your education is totally obliterated by hearing from a skeptic, and it also doesn't mean I agree with him either. It just means here is some non-standard analysis of these types of math objects and concepts presented in a totally different way that the status quo, maybe it will be more helpful because if you're like me, the standard curriculum is not helpful.
 </p>
 </div>
 </div>
@@ -2110,7 +976,7 @@ Watch from 2:20 to 16:00, he shows the 2D geometric interpretation of Cauchy seq
 </ul>
 
 <p>
-He explains the <a href="https://en.wikipedia.org/wiki/Triangle_inequality">triangle inequality</a> around 8mins, we just read about this in chapter 4.3 of <i>Analysis I</i> (and is one of the exercises).  
+He explains the <a href="https://en.wikipedia.org/wiki/Triangle_inequality">triangle inequality</a> around 8mins, if you ever take an analysis course they will use this inequality for many proofs.   
 </p>
 </div>
 </div>
@@ -2123,544 +989,29 @@ He explains the <a href="https://en.wikipedia.org/wiki/Triangle_inequality">tria
 </ul>
 
 <p>
-An excellent lecture why we even need these complex limit and real definitions in the first place, showing how limits make many subjects in analysis much easier. Archimedes bracketed measurement is covered when he tried to figure out the approximation of pi. We also get an introduction to transcendental functions as a geometric series, something we will see in <i>Analysis II</i> by Tao in detail. The next lecture in the series is optional but Wildberger presents an alternative definition of real numbers, using Archimedean style of nested intervals where equality, algebra laws, order etc are all trivial to prove. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-5.1%20Cauchy%20sequences" class="outline-3">
-<h3 id="5.1%20Cauchy%20sequences">5.1 Cauchy sequences</h3>
-<div class="outline-text-3" id="text-5.1%20Cauchy%20sequences">
-<p>
-Wildberger has good lecture introducing what a sequence is <a href="https://youtu.be/J-Gow6SfG2c">here</a> and more precisely <a href="https://youtu.be/CEgP12Ijl_A">here</a> with index notation.  
-</p>
-
-<p>
-Def 5.1.1 the notation outside the bracket is n = starting index, and the infinity symbol is how far the index should go which is forever because we're now doing continuous mathematics. 
-</p>
-
-<p>
-Example 5.1.2 reminds us of Def 4.3.4 d(x,y) = |x - y| \(\le \epsilon\) so if x and y are 2, then 2 - 2 = 0 and every single epsilon is valid since x - y will always be less than epsilon.
-</p>
-
-<p>
-The definition 5.1.3 of epsilon-closeness means two adjacent indexes like 1 and 2 in our above array when subtracted are less than or equal to the epsilon we declare as being epsilon-close. 1.4 - 1.41 (absolute value). The next set of adjacent sequence indexes is 2 and 3, so 1.41 - 1.414. Everytime we subtract two of the indexes their displacement or 'absolute value distance' should be closer and closer meaning a smaller epsilon.
-</p>
-
-<p>
-Let's do an example:
-</p>
-<ul class="org-ul">
-<li>a<sub>4</sub> = 1.4<sub>1</sub> 1.41<sub>2</sub> 1.414<sub>3</sub> 1.4142<sub>4</sub>
-<ul class="org-ul">
-<li>index 1 - index 2 = 0.1 (absolute value)</li>
-<li>index 2 - index 3 = .004</li>
-<li>index 3 - index 4 = .0002</li>
-</ul></li>
-</ul>
-
-<p>
-This sequence is 0.1-close, after index 2 it's 0.004-close, after index 4 it's 0.0002-close. 
-</p>
-
-<p>
-Def 5.1.6 if you watched the Wildberger lectures on <i>What Exactly is a Limit</i> then you can see what Tao is setting up here with epsilon-steadiness, there is some index in the sequence where the entries past that index are epsilon-steady. Example 5.1.7 the sequence 10,0,0,0.. d(10,0) is 10, so this sequence is not eps-steady for any epsilon less than 10, but if we choose N past 10, then all the remaining sequence is 0,0,0.. and d(0,0) is 0 - 0 so as per Def 4.3.4 will always be less than any epsilon so 'eventually eps-steady for every eps &gt; 0'.
-</p>
-
-<p>
-Def 5.1.8 if you saw the above Wildberger lectures on Cauchy sequences this is defining a convergence so any sequence that eventually becomes epsilon-steady, is a Cauchy sequence. Example 5.1.10 depending on your edition there's <a href="https://terrytao.wordpress.com/books/analysis-i/">errata</a>, in mine (3rd edition Springer from libgen) the example makes no sense.  
-</p>
-
-<p>
-Prop 5.1.11 proof he cites the fact that there always exists some rational number you can squeeze in between numbers and chooses 1/N noting that no beginner would come up with this proof and it is merely staging in preparation of learning what a limit is. Later in Example 5.1.13 he notes Prop 4.4.1 can again be used to prove the infinite sequence 1, -2, 3, -4.. has no bound, I would guess because of the 4.4.1 statement 'there exists a natural number N and rational x such that N &gt; x ie: no such thing as a rational that bounds all the natural numbers so an infinitely increasing and decreasing sequence can't be bounded. 
-</p>
-
-<p>
-Exercise 5.1.1 since we declared it a Cauchy sequence, you can point to the definition of Cauchy sequences being an object that eventually becomes epsilon-steady, so Lemma 5.1.14 proves the finite part of Cauchy sequences up to epsilon-steady are bounded, and obviously epsilon-steady means it's bounded since you can subtract two indices and they will always be less than epsilon if this is a Cauchy sequence and epsilon-steady, or 1-steady, 2-steady, 1billion-steady. So both are bounded are ergo all Cauchy sequences are bounded using his definition of episilon-steadiness.
-</p>
-
-<p>
-There is a lecture <a href="https://youtu.be/QNecfhHa_qY">here</a> if you're interested more about the proofs used in this chapter.
-</p>
-</div>
-</div>
-
-<div id="outline-container-5.2%20Equivalent%20Cauchy%20sequences" class="outline-3">
-<h3 id="5.2%20Equivalent%20Cauchy%20sequences">5.2 Equivalent Cauchy sequences</h3>
-<div class="outline-text-3" id="text-5.2%20Equivalent%20Cauchy%20sequences">
-<p>
-Prop 5.2.8 is the proof that 0.9999&#x2026; = 1, and again prop 4.4.1 is brought out to claim we can always choose any rational number we want to make 2/N &lt;= epsilon. If you follow this proof:
-</p>
-
-<ul class="org-ul">
-<li>(1 + 10<sup>-n</sup> ) - (1 - 10<sup>-n</sup> )</li>
-<li>10<sup>-n</sup> + 10<sup>-n</sup> = 2 x 10<sup>-n</sup></li>
-<li>10<sup>-N</sup> is \(\le\) 1/N because of the chapter on exponents, if N = 3 then 10<sup>-3</sup> is 1/3x3x3 which is smaller than 1/3</li>
-<li>Now choose an N that satisfies the requirement that 2/N \(\le\) \(\epsilon\) and it will automatically be true that it also satisfies 2 x 10<sup>-N</sup> \(\le\) \(\epsilon\) 
-<ul class="org-ul">
-<li>Prop 4.4.1: you can always choose some rational to shove in there that will satsify the req</li>
-</ul></li>
-</ul>
-
-<p>
-Only two exercises here, simple point to definition pretend you are a lawyer writing an argument and convince an invisible jury through explanation why it's true an equivalent sequence of rationals is a Cauchy sequence if and only if one of them is a Cauchy sequence.
-</p>
-</div>
-</div>
-
-<div id="outline-container-5.3%20The%20construction%20of%20the%20real%20numbers" class="outline-3">
-<h3 id="5.3%20The%20construction%20of%20the%20real%20numbers">5.3 The construction of the real numbers</h3>
-<div class="outline-text-3" id="text-5.3%20The%20construction%20of%20the%20real%20numbers">
-<p>
-Tao has one of the few books anywhere that actually <a href="https://youtu.be/fXdFGbuAoF0">defines</a> the real numbers. Just like understanding the constructions of rationals and integers helped us understand their operations better, understanding the construction of the reals should help us better understand things like x<sup>e</sup> or square roots.  
-</p>
-
-<p>
-Def 5.3.1 the formal limit of a Cauchy sequence, meaning the number a sequence is converging towards, is a real number. Every rational number is also a real number, for example if we choose 5, then a Cauchy sequence converging to 5 like 4.99999&#x2026; is bounded by 5 and is a real number. The notation is: x is a real number if x = the limit of a Cauchy sequence a<sub>n</sub>, as the sequence goes from index n to infinity so a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub> &#x2026;  
-</p>
-
-<p>
-The rest of the chapter covers the same definitions we've already seen except now we are working with a different object, but since it's construction is entirely made up of rational numbers in a sequence almost all the laws are the same. Division by zero not being allowed for real numbers is explained using the sequence 0.1, 0.01, 0.001.. is actually converging towards 0, and it's inverse 1/0.1, 1/0.01, 1/0.001 is 10, 100, 1000&#x2026; an infinite unbounded sequence therefore not a Cauchy sequence, therefore not a real number, so division by zero is undefined.
-</p>
-
-<p>
-The #1 takeaway for this chapter is the real numbers are all a limit. I am just casually reading the proofs in this chapter, Tao has simplified it for us with his epsilon-close 4.3.7 propositions and his definition of equivalent Cauchy sequences. The proof of Lemma 5.3.6 was already explained by Wildberger <a href="https://www.youtube.com/watch?v=6JjPA3msnbo">here</a> if you're wondering what epsilon/2 means.
-</p>
-
-<p>
-Looking at the exercises, I'm guessing to prove 5.3.5 we show the reciprocal of 1/n is unbounded so we must be working with a sequence not bounded away from zero. In prop 5.1.11 Tao proved the 1/n sequence is a Cauchy sequence, and since all Cauchy sequences are bounded you can also show it's bound is 0. There is worked out solutions for this chapter <a href="https://taoanalysis.wordpress.com/analysis-i-exercises/">here</a> but you will never need to know how to prove any of these definitions. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-5.4%20Ordering%20the%20reals" class="outline-3">
-<h3 id="5.4%20Ordering%20the%20reals">5.4 Ordering the reals</h3>
-<div class="outline-text-3" id="text-5.4%20Ordering%20the%20reals">
-<p>
-For me it was interesting to go back to prior definitions and see how they work when cast into this Cauchy series abstraction. Prop 5.4.8 if 5 &gt; 4 then 1/5 &lt; 1/4.
-</p>
-
-<p>
-Prop 5.4.9 'non-negative reals' means 0 or positive, while positive reals do not include 0. Closed I take to mean a set is closed iff the operation on any two elements of that set produces another element of the same set, in other words adding two non-negative real numbers produces another non-negative real. The explanation of the proof is in the comments <a href="https://math.stackexchange.com/questions/3362807/the-set-of-non-negative-reals-is-closed">here</a> but Tao tells us we'll see this more clearly in future chapters on closures. 
-</p>
-
-<p>
-Prop 5.4.14 we already know from previous proofs and Wildberger lectures that there is an infinite amount of rational numbers you can squeeze in between two other numbers.  
-</p>
-</div>
-</div>
-
-<div id="outline-container-5.5%20The%20least%20upper%20bound%20property" class="outline-3">
-<h3 id="5.5%20The%20least%20upper%20bound%20property">5.5 The least upper bound property</h3>
-<div class="outline-text-3" id="text-5.5%20The%20least%20upper%20bound%20property">
-<p>
-Example 5.5.7 the empty set doesn't have a least upper bound because of prior definitions where you can always find a rational number (which are also contained in the real numbers) to act as an upper bound to nothing like 1/trillion, 1/septillion, etc. 
-</p>
-
-<p>
-The proof for Theorem 5.5.9 is huge requiring going back to look at the Archimedean property again and some exercises. Wildberger has broken down this <a href="https://youtu.be/ncIgoIBLPqQ?t=960">proof</a> showing the gist of what is going on but the last part of the proof that the upper bound S is less than or equal to every upper bound of E is easy to follow.  
-</p>
-
-<p>
-Remark 5.5.11 we get the answer to 'can you add negative infinity with positive infinity and get zero' which is no.   
-</p>
-
-<p>
-The proof of prop 5.5.12 makes sense until you get to that inequality, wondering where he got x<sup>2</sup> + 5e, which is the Archemedian property. This is basically saying x is the least upper bound, x plus some tiny displacement (epsilon) squared is less than or equal to the Archimedian property of x<sup>2</sup> + 5(displacement) since if epsilon is really small, squaring it means it will be even smaller. He derives a double contradiction that x<sup>2</sup> is bigger than 2, and x<sup>2</sup> is less than 2, so x<sup>2</sup> must equal 2 and we have a number that solves x<sup>2</sup> = 2 which is not rational. 
-</p>
-
-<p>
-Exercise 5.5.1 you can type into youtube 'proof of infinum' and get a dozen tutorials or you can go through Prop 5.5.8 and Theorem 5.5.9 to change everything to prove a least lower bound which gives some more experience with the Archmedian property which all these proofs seem to rely on. The rest of the exercises 'draw a picture' think of Wildberger with his within epsilon/2 picture in earlier lectures.
-</p>
-</div>
-</div>
-
-<div id="outline-container-5.6%20Real%20number%20exponents%20I" class="outline-3">
-<h3 id="5.6%20Real%20number%20exponents%20I">5.6 Real number exponents I</h3>
-<div class="outline-text-3" id="text-5.6%20Real%20number%20exponents%20I">
-<p>
-Finally we learn square roots. Depending on your copy of Tao's book there's some minor errata here to look up. Note in the proof of Lemma 5.6.8 he's using equivalency replacement, if \(y^a = x^{1/b'}\) then we can replace them both for any occurences, such as \((y^{a})^{a'}\) = \((x^{1/b'})^{a'}\). Anytime in the future when you see some complicated nested square roots you can go back to this chapter and understand them. 
-</p>
-
-<p>
-Exercises 5.6.2 and 5.6.3 are simple and worth doing, using replacement to manipulate exponent laws. Exercise 5.6.3 that's the square root of x<sup>2</sup>, so x or using Lemma 5.6.6(g) or Lemma 5.6.9(b): \((x^{2/1})^{1/2}\) is \(x^{2/1 \cdot 1/2}\) which is x<sup>1</sup> or x. 
+An excellent lecture why we even need these complex limit and real definitions in the first place, showing how limits make many subjects in analysis much easier. Archimedes bracketed measurement is covered when he tried to figure out the approximation of pi. We also get an introduction to transcendental functions as a geometric series in other words standard trigonometry functions. The next lecture in the series is optional but Wildberger presents an alternative definition of real numbers, using Archimedean style of nested intervals where equality, algebra laws, order etc are all trivial to prove. 
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-Series" class="outline-2">
-<h2 id="Series">Series</h2>
-<div class="outline-text-2" id="text-Series">
-</div>
-<div id="outline-container-7.1%20Finite%20series" class="outline-3">
-<h3 id="7.1%20Finite%20series">7.1 Finite series</h3>
-<div class="outline-text-3" id="text-7.1%20Finite%20series">
+<div id="outline-container-Begin" class="outline-2">
+<h2 id="Begin">Begin</h2>
+<div class="outline-text-2" id="text-Begin">
 <p>
-Wildberger has a lecture on <a href="https://youtu.be/rQzfHbkltkY">summation</a> of arithmetic and geometric series to go with this chapter.    
-</p>
-
-<p>
-We are just manipulating indices here. Make an example series for yourself: a<sub>i</sub> = 1<sub>1</sub>, 3<sub>2</sub>, 5<sub>3</sub>. \(\sum_{i=2}^3 a_i\) means a<sub>2</sub> + a<sub>3</sub> or 3<sub>2</sub> + 5<sub>3</sub> as per Definition 7.1.1. 
-</p>
-
-<p>
-In Lemma 7.1.4 the triangle inequality proof is <a href="https://proofwiki.org/wiki/Triangle_Inequality_for_Indexed_Summations">here</a> note how they get the base case of 0 by setting the variable on top of the sigma less than the initial starting variable so all indexed summations are zero (let b &lt; a) like Tao's beginning of chapter examples with m - 2, m - 1. 
-</p>
-
-<p>
-Check the errata for this chapter, in my version (third edition (hardback)) there's a few problems. Remark 7.1.9 the proof is straight forward when you flip back to Lemma 7.1.4 and note that because he already assumed x to be g(n + 1) he could not also assign x to h(n + 1), which is why he needed to introduce h(j).   
-</p>
-
-<p>
-7.1.13 why is P(0) true? Because the assertion P(n) is true for any set X with n elements, so if it has P(0) elements, it's sum is 0. Reminder to also re-read what a cartesian product is, the cartesian plane itself is a cartesian product of every value of x with every value of y.
-</p>
-
-<p>
-Proving all these finite sum identities are easy once you get one of them, all you need is 7.1.1 and the recursive definition he uses to pull out values, manipulate and reindex the sum. 
-</p>
-
-<ul class="org-ul">
-<li>Try 7.1.4(d) without induction, expand the series, factor out the c, done:
-<ul class="org-ul">
-<li>\(\sum_{i=1}^n (ca_i)\) = ca<sub>1</sub> + ca<sub>2</sub> + &#x2026; + ca<sub>n</sub></li>
-<li>c(a<sub>1</sub> + a<sub>2</sub> &#x2026; + a<sub>n</sub>) by distributive law</li>
-<li>rewrite as c(summation notation)</li>
-</ul></li>
-
-<li>7.1.4(c) expand a<sub>i</sub> + b<sub>i</sub>, group them together:
-<ul class="org-ul">
-<li>(a<sub>1</sub> + b<sub>1</sub> +.. a<sub>n</sub> + b<sub>n</sub>) = (a<sub>1</sub> +.. a<sub>n</sub>) + (b<sub>1</sub> +.. b<sub>n</sub>)</li>
-<li>rewrite in summation notation</li>
-</ul></li>
-<li>7.1.4(a) let m = 1: 
-<ul class="org-ul">
-<li>(a<sub>1</sub> +.. a<sub>n</sub>) + (a<sub>n+1</sub> +.. a<sub>p</sub>) = (a<sub>1</sub> +.. a<sub>p</sub>)</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-7.3%20Sums%20of%20non-negative%20numbers" class="outline-3">
-<h3 id="7.3%20Sums%20of%20non-negative%20numbers">7.3 Sums of non-negative numbers</h3>
-<div class="outline-text-3" id="text-7.3%20Sums%20of%20non-negative%20numbers">
-<p>
-7.3.7, do you get how he rewrote that sum to the geometric series?:
-</p>
-<ul class="org-ul">
-<li>\(2^{k}\frac{1}{(2^{k})^q}\)</li>
-<li>\(2^k(2^{-kq})\) by Lemma 5.6.9(d)</li>
-<li>\((2^{k +(-kq)})\) by exp laws x<sup>k</sup> * x<sup>k</sup> = x<sup>k+k</sup></li>
-<li>\((2^{1 - q})^k\)  which is \(2^{k - qk}\) by Lemma 5.6.9(b) (x<sup>q</sup>)<sup>r</sup> = x<sup>qr</sup> 
-<ul class="org-ul">
-<li>the geometric series is the sum x<sup>n</sup></li>
-<li>\((2^{1 - q})^k\) is (thing)<sup>k</sup> or x<sup>n</sup></li>
-</ul></li>
-</ul>
-
-<p>
-Just flip through the remainder of this chapter noting things you can always come back to if needed to understand better, such as rearranging infinite sums.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Trigonometry%20crash%20course" class="outline-2">
-<h2 id="Trigonometry%20crash%20course">Trigonometry crash course</h2>
-<div class="outline-text-2" id="text-Trigonometry%20crash%20course">
-<p>
-Let's take a very short crash course to remember trig:
-</p>
-
-<ul class="org-ul">
-<li><a href="http://www.math.brown.edu/dkatz/trigbootcamp/">Trigonometry Bootcamp</a> - Brown University
-<ul class="org-ul">
-<li>Contains a review <a href="https://www.youtube.com/watch?v=8qvZ8-9IxiI">video</a> and a solutions video</li>
-<li>(Optional) <a href="https://youtu.be/yBw67Fb31Cs">Trig fundamentals</a> by 3Blue1Brown that won't make sense unless you do the Brown bootcamp</li>
-</ul></li>
-</ul>
-
-<p>
-In case you forgot what \(\pi\) (pi) is (for us just an applied constant of 3.14&#x2026; or 22/7 or 355/113) Wildberger <a href="https://youtu.be/lcIbCZR0HbU">talks</a> about the history of pi such as Archimedes interval for pi, Newton's formula, a hexadecimal version of pi, his own formula.
-</p>
-
-<p>
-Let's start with the crash course <a href="https://www.youtube.com/watch?v=8qvZ8-9IxiI">lecture</a>.   
-</p>
-
-<ul class="org-ul">
-<li>If you forgot highschool <a href="https://youtu.be/by0Gy1ZJ_hU">this video</a> @ time index 6:00 shows how sine(x) is the y-axis, and cosine(x) is the x-axis, the whole thing is worth watching</li>
-<li>Radians you could even make up your own notation and define it as DoublePI = 6.283… and then 360deg is DouplePI, 90deg is 1/4DoublePI, 180deg is DoublePI/2, etc.</li>
-<li>We really only need to know how sine/cosine functions work, all others are derived from them</li>
-</ul>
-
-<p>
-In the scaling of triangles example where \(\frac{1}{\sqrt 2}\) becomes \(\frac{\sqrt 2}{2}\) they are rationalizing the denominator:
-</p>
-<ul class="org-ul">
-<li>\(\frac{1}{\sqrt 2}\cdot\frac{\sqrt 2}{\sqrt 2}\) is \(\frac{\sqrt 2}{\sqrt 2 \cdot \sqrt 2}\) which is \(\frac{\sqrt 2}{\sqrt 4}\) or \(\frac{\sqrt 2}{2}\)</li>
-</ul>
-
-
-<p>
-Summary: There exists 3 triangles, which we should know their measurements, we scale them down since this is a unit circle with maximum x and y values of 1. Then we superimpose the triangles in the pi/2 (90deg) angle space on the unit circle in such a way that we have known values of cos()/sin() and other trig functions, because we can derive those other functions from cosine and sine. 
-</p>
-
-<p>
-Try the <a href="http://www.math.brown.edu/~dkatz/trigbootcamp/trigbootcamp-practiceworksheet.pdf">worksheet</a> you can actually draw these out and count rotations if you want or use this radian to angle <a href="https://en.wikipedia.org/wiki/Degree_(angle)#/media/File:Degree-Radian_Conversion.svg">picture</a> from Wikipedia. The equations if one side is squared, then you need to take the square root of both sides so it's (not-squared = value) instead of (squared thing = value-when-squared). If you're stuck watch the video that walks through all the <a href="https://www.youtube.com/watch?v=EQo2SXbasC4">solutions</a>. How I solved these: subtract 1 pi if it's bigger than 2pi, or a 1/2pi if smaller and see what you get, look at the 3 triangles if they have a corresponding value for sin/cos. If not subtract pi/3, pi/6 etc.
-</p>
-
-<p>
-If you hate this trigonomentry this guy reinvented it <a href="https://www.youtube.com/playlist?list=PL3C58498718451C47">here</a> with rational trigonometry and has a book on library genesis where angles are removed and replaced with vectors, he even respecified hyperbolic geometry to be completely rational it's crazy when you see it. If you want/need to practice Trigonometry, we will do so as this workshop progresses or search library genesis for Titu Andreescu's <i>103 Trigonometry Problem</i> a book for training the USA IMO team. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Math%20circle" class="outline-2">
-<h2 id="Math%20circle">Math circle</h2>
-<div class="outline-text-2" id="text-Math%20circle">
-<p>
-Now we completely change from linear progression through textbooks to a solving olympiad style problems. This is similar to a <a href="https://youtu.be/z_75zzqXVnM">math circle</a> essentially an informal group of all ages from professors to student TAs to middle school students get together to group solve a problem and repeat. 
-</p>
-
-<p>
-Let's start with <a href="https://www.math.cmu.edu/~ploh/cmu.shtml">Poh-Shen Loh's</a> combinatorics problem solving seminars and a Russian olympiad-style book on basic algebra skills because you don't need a background more than what we've already done for either.
-</p>
-
-<p>
-<b>Materials</b>
-</p>
-<ul class="org-ul">
-<li><i>Mathematics via problems: Part 1: Algebra</i> by Arkadiy Skopenkov.
-<ul class="org-ul">
-<li>A masterclass in basic algebra everybody should know</li>
-<li>"This <a href="http://libgen.is/book/index.php?md5=B45D7552DC5CDC4E1EC1A323039B9AF9">book</a> attempts to build a bridge (by showing there is no gap) between ordinary high school exercises and the more sophisticated, intricate, and abstract concepts in mathematics"</li>
-<li>The <a href="https://www.mccme.ru/~skopenko/">author</a> is a professor at <a href="https://mipt.ru/english/">MIPT</a> and uses this book for an olympiad circle</li>
-</ul></li>
-<li>21-228 Discrete Mathematics <a href="https://www.math.cmu.edu/~ploh/2021-228.shtml">course</a> (Sp 2021)
-<ul class="org-ul">
-<li>Lectures on his YouTube <a href="https://www.youtube.com/c/DailyChallengewithPoShenLoh/search?query=Discrete%20Mathematics">channel</a></li>
-<li>Prof Loh is the current national coach of the US olympiad team who has won gold 4x (and even <a href="https://twitter.com/PoShenLoh/status/1232835942387535872">wins</a> the math competitions for former medalists) so surely his content will be worth viewing.</li>
-</ul></li>
-</ul>
-</div>
-
-<div id="outline-container-Discrete%20math%20lecture%201" class="outline-3">
-<h3 id="Discrete%20math%20lecture%201">Discrete math lecture 1</h3>
-<div class="outline-text-3" id="text-Discrete%20math%20lecture%201">
-<p>
-The <a href="https://youtu.be/0K540qqyJJU">first</a> lecture begins ~14:30 mins. We start here so you can see how to investigate problems in math. He's breaking down some elementary combinatorics problems to show the logic of solving them. @37:40 why does the last digit have to be even? Because it's supposed to be an even 4-digit number so ending in 0, 2, 4, 5, 8. The general form is crazy but he did it by writing down a table of one digit numbers, two digits .. n + 1 digits to find the general pattern.
-</p>
-
-<p>
-<b>Assignment 1</b>
-</p>
-
-<p>
-Let's try the <a href="https://www.math.cmu.edu/~ploh/docs/math/2021-228/hw1.pdf">assignment</a>. This discrete math course is unusual in that there is no hundreds of drill problems to do in the book, just the challenges he hands out. I will attempt to work through them like he does, writing down little examples and ideas and seeing what happens:
-</p>
-
-<p>
-1.) The first is a symmetric difference assignment which is defined <a href="https://en.wikipedia.org/wiki/Symmetric_difference">here</a>. Look under properties, the answer is there 'from the property of the inverses in a Boolean group, it follows…'. We can eliminate B and are left with:
-</p>
-
-<p>
-(A △ C) △ (C △ A) and from that same article, we can eliminate C so are left with A △ A which is just the empty set. 
-</p>
-
-<p>
-2.) We have a set bigger or equal to 3, and we need to know how many subsets contain <i>exactly 2</i> permutations of 1, 2, 3 so {1, 2, 3, 5} or {1, 2, 3} does not count as it contains 3 permutations of 1, 2, 3 and the assignment wants only 2. This seems like a powerset problem, generating all possible subsets. Google any free powerset online calculator and try the base case, set {1, 2, 3} it contains 3 sets with exactly 2 numbers from 1, 2, 3. Try the next bigger set {1, 2, 3, 4}, I count 6 occurences. The set {1, 2, 3, 4, 5} has 12 occurences. I'm going to guess {1, 2, 3, 4, 5, 6} is 24 occurences, and that {1, 2, 3, 4, 5, 6, 7} will have 48 occurences.  The pattern is 3x2x2x2.. now how to figure out what the n set is? If n = 4, it's 3x2, if n = 5, it's 3x2x2, if n = 6, it's 3x2x2x2. Writing out more examples I see it's: Length 4 choose 1 of the 2's, length 5 choose 2, length 6 choose 3, 7 choose 4, the choose n is the amount of 2's in 3x2x2x2.. and they differ by 3 each time. The solution seems to be any set with length n, subtract 3 and that's how many 2s to multiply to get the answer. A set {1, 2, 3&#x2026;. n} where n = 10, it's 3 times seven 2's or 3x2x2x2x2x2x2x2 or 384 subsets.
-</p>
-
-<p>
-3.) This is exampled by Wildberger <a href="https://youtu.be/h0Woqc_5qUE">here</a> where he shows how to count the number of paths on a grid, it's Pascal's array or n choose k as detailed in his <a href="https://youtu.be/V2mk24udsMw">Famous Math Problems 5</a> lecture. There is also a writeup <a href="https://researchideas.ca/wmt/c6b3.html">here</a> how to avoid paths on a grid and is the answer to this problem. First we can <a href="https://www.desmos.com/calculator/fbaikxgmyr">visualize</a> this with free online graphing software, either plotting y = 59 streets and x = 8 avenues or reduce the scope, since we're only interested in the (59 - 34) and (8 - 5) avenues. Zoom to see all the streets. If King Kong goes (59 - 34) streets and (8 - 5) avenues he has 25 streets + 3 avenues or 28 total moves in any direct path to the Empire state building then we have to figure out how to subtract the paths that involve 42nd and 7th ave.  
-</p>
-</div>
-</div>
-
-<div id="outline-container-Algebra%20chapter%201" class="outline-3">
-<h3 id="Algebra%20chapter%201">Algebra chapter 1</h3>
-<div class="outline-text-3" id="text-Algebra%20chapter%201">
-<p>
-Reading <i>Mathematics via problems</i> <a href="http://libgen.is/book/index.php?md5=B45D7552DC5CDC4E1EC1A323039B9AF9">book</a> by Skopenkov. The contents of this book are similar to undergrad courses like <a href="https://cs.uwaterloo.ca/~cbruni/pdfs/Math135Notes/M135Notes_S2018.pdf">Math 135: Algebra for Honours Mathematics</a> and if you search for the course description they removed the <i>sage on the stage</i> approach of lecturing and students solely do problems together in class, like a math circle. In the preface of Skopenkov's book we are informed that you don't read this book linearly, you take sections that interest you solving the level 1 to 2 problems, then going back later and trying the level 3 and 4 problems as you will be 'at a new level'. Prof K in the software workshop recommends the same method that you iterate over material you've already done multiple times each time returning to it at a higher level so you can see how concepts there transfer over to concepts you're currently learning. The preface also says we are doing this to learn both how a mathematician reasons their way through problems, and because 'the lack of skill (manipulating algebraic expressions) amoung olypians often leads to ridiculous and annoying mistakes'.
-</p>
-
-<p>
-1.1.1(a) What are the rules of divisibility by 2, 4, 5, 10, 3, 9 and 11. This is an example of a great problem you could figure out yourself during spare time using just a phone calculator. Investigate first seeing if you can discover the rule, then look at author's proofs.
-</p>
-
-<p>
-Page 2 are the proofs, he's using generalized hindu-arabic notation we already learned. First proof, subtract from n the last digit, ie: 112 - 2 = 110. What does he mean by 'divides each term of the sum' he means in hindu-arabic notation form, so 112 = 100 + 10 + 2 or 336 = 300 + 30 + 6 and 2 divides each term and the sum. The proof of divisibility by 4, any number n if you subtract the 10's and the last digit, it will be divisible by 4 like 177 is 177 - 70 - 7 or 100. The 4|n notation is in the preface, it means 4 divides n.
-</p>
-
-<ul class="org-ul">
-<li>Exercise, prove divisibility of 5: The number n - a<sub>0</sub> is divisible by 5. Suppose a<sub>0</sub> is 5, then rewrite his other example proofs.</li>
-
-<li>Exercise, prove divisibility of 10: The number 10<sub>a1</sub> is divisible by 10, could use the fact that anything divides zero: 'suppose a<sub>0</sub> is 0, or by definition a<sub>0</sub> is &lt; 10 so must be zero, then if a number divides every term of the sum, it divides the sum'.</li>
-</ul>
-
-<p>
-The rest of the proofs put in concrete values if you don't understand them like the proof of divisibility by 3: 234 is (200 - 2) + (30 - 3) + (4 - 4) or 225 which is divisible by 3. 1224 is (1000 - 1) + (200 - 2) + (20 - 2) + (4 - 4) or 1215 which is also divisible by 3, and by 9. He inserts a function f(n) to represent the algorithm of summing even/odd indexes of numbers divisible by 11. 
-</p>
-
-<p>
-1.1.1(b) Trying some examples, 111,111|(10<sup>6m</sup> - 1). It will also divide repeating number of 1's that are 10<sup>6m</sup> digits long, so it's digit sum needs to be divisible by 6 ie 10<sup>12</sup>, 10<sup>18</sup> etc. A huge number consisting of all 1's who's digits sum to 1993 (a prime number, so sum of digits not divisible by anything except itself) is not divisible by 111,111. 
-</p>
-
-<p>
-1.1.1(c) prove that a number consisting of 2001 1's is divisible by 37. We are only asked to prove for 11111&#x2026; not a general number or rule of division by 37. Trying examples, any repeating number (111, 222, 333) who's digit sum is divisible by 3 is divisible by 37. Since 3|2001, it should be divisible by 37. Further investigation reveals that 37|1110 and 37|11,100 and 37|111,000 etc. 3|2001 is 667 so there are 667 'groups of 3' of the digits 111. If n = 111,111 then 37|n - (10<sub>a2</sub> + 10<sub>a1</sub> + a<sub>0</sub>) and 37|(10<sub>a2</sub> + 10<sub>a1</sub> + a<sub>0</sub>).
-</p>
-
-<p>
-Finish the rest of chapter 1, so 1.1.3, 1.1.4 and 1.1.5. We will return again later to the same concepts over and over so you don't have to memorize anything.
-</p>
-
-<ul class="org-ul">
-<li>1.1.3(a): 2|(a<sup>2</sup> - a) input small examples, like 3<sup>2</sup> - 3 is 6, whatever you substitute for a ends up even and is divisible by 2. A lot of Tao's rules are here, like not being able to cancel each side if the cancelled number is 0.</li>
-<li>1.1.3(f) if a = kb then ac = k(bc) which is still in the definition of division form: (thing) = k(thing).</li>
-<li>1.1.4 if a is divisible by 2 and 3, then a is obviously even, and since it is divisible by 3 as well, 3 x (even) will be divisible by 6. He uses an interesting proof for these but if 17|a and 19|a then 17x19 = 323 and 323|a because 17|323 and 19|323 is how I read it.</li>
-</ul>
-
-<p>
-A good first chapter covering division which Wildberger in his beginning math foundations lecture claims is the one thing most students don't understand. Poh-Shen Loh also claims students usually don't understand ratios/fractions/division, that's why we are doing this. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Discrete%20Math%20Lecture%202" class="outline-3">
-<h3 id="Discrete%20Math%20Lecture%202">Discrete Math Lecture 2</h3>
-<div class="outline-text-3" id="text-Discrete%20Math%20Lecture%202">
-<p>
-CMU Discrete Mathematics <a href="https://youtu.be/8N5xIdzCsU8">lecture</a> 2/3. This class covers some linear algebra, which I do in the first assignment of 10-301 in the <a href="./ai.html">AI workshop</a> and also <a href="./linear.html">here</a> which also covers Eigenvalues/vectors. You can also watch Wildberger's lectures on linear algebra to see how a 2x2 matrix is <a href="https://www.youtube.com/playlist?list=PLIljB45xT85BhzJ-oWNug1YtUjfWp1qAp">multiplied</a>. Around 43m if you're curious how to invert a matrix you can either type it into wolfram alpha and see instant results or watch this other Wildberger <a href="https://youtu.be/anBKWgH_2eM">lecture</a> you take the determinant, factor it out and multiply it by the 'adjoint' which is a matrix where every entry is it's determinant. Since this is all 1's we simply invert the minus/plus signs. This was a crazy lecture.
-</p>
-
-<p>
-Last 10 minutes are about paths, which is the first homework we already did. Around 53mins notice LRRLLRRL no matter how you permute those instructions, you get to the destination. If you did LLLLRRRR you walk the edges of the square. If you did RRRLLLLR you end up in destination again. End of lecture is the homework, total amount of paths minus top path multiplied by bottom path. We figured this out ourselves. We will learn more linear algebra in the Putnam seminar, which is next up.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-CMU%20Putnam%20Seminar" class="outline-2">
-<h2 id="CMU%20Putnam%20Seminar">CMU Putnam Seminar</h2>
-<div class="outline-text-2" id="text-CMU%20Putnam%20Seminar">
-<p>
-Another Prof Loh seminar we can do at the same time as the algebra and combinatorics problems, this one follows the book <i>Putnam and Beyond</i> second edition you can find on <a href="http://libgen.rs/search.php?req=putnam+and+beyond">library genesis</a> what has completely worked out solutions for all problems. Lectures are <a href="https://www.youtube.com/c/DailyChallengewithPoShenLoh/search?query=CMU%20Putnam%20Seminar">archived</a> on YouTube and the class page is <a href="https://www.math.cmu.edu/~ploh/2020-putnam.shtml">here</a>.
-</p>
-
-<p>
-According to <a href="https://canvas.stanford.edu/courses/46752/pages/the-william-lowell-putnam-competition-and-the-polya-problem-solving-seminar">Stanford</a> "The competition emphasizes ingenuity rather than knowledge, so freshmen are not at much of a disadvantage compared to seniors".
+What is a <a href="https://youtu.be/z_75zzqXVnM">math circle</a>? It's how they have taught math in eastern Europe for over a <a href="https://bookstore.ams.org/prb-23">century</a> essentially an informal group of all ages from professors to grad student TAs, to elementary school kids all get together to group solve a problem and repeat. Read the preface of <i>Mathematics via Problems: Algebra</i> for a full description. 
 </p>
 </div>
 
-
-<div id="outline-container-Lecture%201%20Introduction" class="outline-3">
-<h3 id="Lecture%201%20Introduction">Lecture 1 Introduction</h3>
-<div class="outline-text-3" id="text-Lecture%201%20Introduction">
+<div id="outline-container-How%20to%20solve%20a%20math%20problem" class="outline-3">
+<h3 id="How%20to%20solve%20a%20math%20problem">How to solve a math problem</h3>
+<div class="outline-text-3" id="text-How%20to%20solve%20a%20math%20problem">
 <p>
-Let's watch the Putnam Seminar 9/4 <a href="https://youtu.be/vGQZjITDft4">introduction</a>.
+Let's start with <a href="https://www.math.cmu.edu/~ploh/cmu.shtml">Poh-Shen Loh's</a> CMU course on discrete mathematics. This is conceptually easy to understand, beginner combinatorics demonstrations so you see for yourself how you solve a problem. 
 </p>
 
 <p>
-At 13:31: the top 500 scores are only ~23 points out of 120 max possible points, the exam is that hard, meaning you solved the 2 easiest problems and maybe had insight into a third but didn't solve it. He explains having just 2 insights to a problem requires a mental search tree of 100 x 100 options repeatedly claiming this not an exaggeration, the Putnam is actually this hard since no 3rd party materials are allowed during the exam though in 2021 it's not proctored and entirely online, so all results will be unofficial. 
-</p>
-
-<p>
-@30:00 the first seminar starts, the pdf he pulls up is <a href="https://www.math.cmu.edu/~ploh/2020-putnam.shtml">here</a>. The very first problem, the 8x8 block pattern he already has a talk about this that gives away the answer, you need <a href="https://youtu.be/mD8bo7a3zF4">6 bits of memory</a>. Third problem @31:45 'integral coefficients' means they are integers. If you forgot what a polynomial is Wildberger has a brief crash course describing their properties and graphing in <a href="https://youtu.be/JpPNzdlXVYw">this</a> linear algebra lecture. A root means an input to the polynomial so it evaluates to 0. We will of course learn polynomials doing problems about polynomials as we go. 
-</p>
-
-<p>
-Now we go through ideas, poking at the problem to solve it like p(1) to sum all the coefficients, a strategy to show all the integers are neither even nor odd so can't be rational. Notice how he's just abstracting away using boxes ignoring all the values. If you forgot what modular arithmetic is Wildberger also has a <a href="https://youtu.be/Sq_BmcmrQkk">lecture</a> for this in typical Wildberger style where he introduces the problem it's trying to solve, the history and then at around 11:43 the rules of k congruent to l mod m. A conceptual crash course is: consider an abstract system of the type (D, 0, successor) where D has two distinct objects 0 and 1, and let 0++ = 1 and 1++ = 0. This is called residues modulo 2. The natural numbers become this mod2 system when each natural number is replaced by it's remainder after division by 2:
-</p>
-
-<ul class="org-ul">
-<li>0/2 is remainder 0</li>
-<li>1/2 is remainder 1</li>
-<li>2/2 is remainder 0</li>
-<li>3/2 is remainder 1</li>
-<li>4/2 is remainder 0</li>
-</ul>
-
-<p>
-He cleared the fractions by multiplying the polynomial by c<sup>n</sup> which you can see <a href="https://en.wikipedia.org/wiki/Rational_root_theorem#Proofs">here</a> (rational root theorem), which makes sense if (b/c)<sup>n</sup> then it's (b<sup>n</sup>/c<sup>n</sup>) ie (3/4)<sup>2</sup> then 3/4 x 3/4 or 9/16. This introduction is worth rewatching a few times to learn how this style of problem solving works.
-</p>
-
-<p>
-His other site Expii Solve has similar kinds of <a href="https://www.expii.com/solve/70/1">challenges</a> they start easy and get harder with links at the bottom of each question where to find background material, you may want to try those too they help you learn all kinds of topics such as spherical geometry, probability and even calculus. It's a community written site so kind of like math overflow where anybody can write a tutorial for a subject and these are upvoted if other people find them useful, which could be good or bad, a well written Tao-like fundamentals post would likely not be upvoted compared to some bag of tricks with a clickbait youtube embed. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-Lecture%202%20Polynomials" class="outline-3">
-<h3 id="Lecture%202%20Polynomials">Lecture 2 Polynomials</h3>
-<div class="outline-text-3" id="text-Lecture%202%20Polynomials">
-<p>
-The only prereq for this lecture is Wildberger's crash course in calculus <a href="https://www.youtube.com/watch?v=zfHEkt-1sqo">here</a>. Note how one function tells you how the other is changing and you can switch from velocity to acceleration to position. You now know basic calculus.
-</p>
-
-<p>
-Watching the second <a href="https://youtu.be/y59fzI4UrRo">lecture</a> on Polynomials. If you don't know what the constant e is, watch <a href="https://youtu.be/m2MIpDrF7Es">this</a>. The problem we are doing, try expanding the left hand side n = 3: $a<sub>1</sub>x<sup>1</sup> + a<sub>2</sub>x<sup>2</sup> + a<sub>3</sub>x<sup>3</sup> is equal to 0 (has a real root, meaning not a complex number root) if the sum or the constants divided by the exponents + 1, equals 0. Recall from Wildberger's calc crash course that a polynomial constant like 1 in: 3x<sup>2</sup> + 1, the 1 is really 1x<sup>0</sup> so our problem could have constant/0+1 as well. Once again notice how he is brainstorming ideas and writing them all down. 
-</p>
-
-<p>
-What is an 'antiderivative'? First let's learn what an integral is.
-</p>
-
-<ul class="org-ul">
-<li><a href="https://youtu.be/vo-ItaB28f8">Integral of X<sup>n</sup> (a)</a> - FMP 10</li>
-</ul>
-
-<p>
-An optional lecture, Wildberger breaks down exactly what an integral for a polynomial is. The derivative for x<sup>n</sup> is \(nx^{n-1}\) and the integral for x<sup>n</sup> is \(a^{n+1}/n + 1\) or x<sup>4</sup> = x<sup>5</sup>/5. @6:48 he begins concrete examples starting at n = 0. If you watch part 2 he'll show different interpretations of the integral like Lebesgue integrals. 
-</p>
-
-<ul class="org-ul">
-<li><a href="https://youtu.be/rfG8ce4nNh0">Fundamental theorem of calculus</a> - Essence of Calculus</li>
-</ul>
-
-<p>
-More integration and what an antiderivative is, which is f' = f meaning a function who's derivative is equal to the original function f. If f = 3x<sup>2</sup> then the antiderivative is x<sup>3</sup>.
-</p>
-
-<p>
-Back to the Poh-Shen Loh polynomial seminar. Do you now get why the antiderivative of a generic polynomial is how he wrote it? Take the antiderivative's derivative and the n+1 both cancel, you're left with \(a_{n}x^n + ... + a_{0}\). Idea #4, if you watch 3Blue1Brown's lecture on epsilon-delta definition of Limits, then this <a href="https://math.berkeley.edu/~kmill/math1afa2014/poly.pdf">proof</a> that all polynomials are continuous functions will make sense. A continuous function just means it has no abrupt changes to it's output/input ratio, ie: it it's geometric form is a continuous line with no breaks in the graph. MVT solution you can google, MIT's 18.01 has lectures and slides showing the geometric interpretation but Poh-Shen Loh gives a clear enough explanation. He explains he tried to get advanced placement when he was a student by just guessing his way through a differential calc class by using polynomials/power series to solve everything which actually worked.
-</p>
-
-<p>
-He moves on to another question, a classic result for derivatives. <b>"We're doing these problems to do a very fast review of all concepts in math"</b> which is exactly what we want. Here we even see the fundamental theorem of algebra. He mentions complex number derivatives, Wildberger has a whole series on this with his dihedron algebra <a href="https://youtu.be/D8_BBoolMm8">infinitesimal theory</a>.
-</p>
-
-<p>
-Very end of this lecture&#x2026; it's the Russian algebra book chapter on divisibility we did! 'If I have a 'not multiple of 5', plus a multiple of 5, it's still not a multiple of 5'.
-</p>
-</div>
-</div>
-
-<div id="outline-container-Algebra%202%20Polynomials" class="outline-3">
-<h3 id="Algebra%202%20Polynomials">Algebra 2 Polynomials</h3>
-<div class="outline-text-3" id="text-Algebra%202%20Polynomials">
-<p>
-I was shaky on the Putnam polynomial roots seminar, so let's see what the Russian olympiad book can teach us about finding roots for polynomials. Reading Chapter 3 <i>Polynomials and complex numbers</i> of the book <i>Mathematics via Problems</i> by Skopenkov.
-</p>
-
-<p>
-3.1.1 and 3.1.2 we already know, since a rational number is two integers that produce a quotient. 3.1.3 is interesting in that I've never seen it before, that if a(p) = 0 then p divides a<sub>0</sub>. Example: A(x) = 2x + 4 and A(-2) = 0, since it divides a<sub>0</sub> which is 4. This was taught to me a different, more confusing way. Make an example for (c): A(x) = 2x - 1 then A(1/2) = 1 - 1 = 0. Pick arbitrary k: 13. A(13) = 2(13) - 1 = 25 and this should be divisible by (1 - 13(2)) or -25, which it is. 
-</p>
-
-<p>
-3.1.4 because this is a Russian text, we are saved from cringe pi memes being used here. You don't have to hand calculate these, search for a trig unit circle diagram on google images. Remember cos() is the x value, sin() is the y value. 3.1.4(a) is 1/2 so rational, b) is square root of 3 over 2 so obviously not rational, the rest you can type into some <a href="https://www.mathway.com/Trigonometry">online</a> trig calculator and see they are infinite decimals, or see their <a href="http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/simpleTrig.html#section3.2">phi definitions</a> and phi if you search contains the square root of 5, an irrational number.
-</p>
-
-<p>
-3.1.5 you can enter all of these into desmos and compare the graphs. Many of these were covered in the 3blue1brown lockdown math lectures on trig which I already went through in the <a href="https://learnaifromscratch.github.io/calculus.html#Trig%20fundamentals%20%26%20chapter%201.7">calculus</a> workshop. Just enter them and think about how you would prove this, that's good enough.
-</p>
-
-<p>
-3.1.6 these are <a href="http://www2.edc.org/makingmath/mathprojects/patternsPoly/links/Loo.pdf">Chebyshev Polynomials</a> and looking at section 3 <i>Some properties of the polynomials T<sub>n</sub></i>, and the identities in 3.1.5, you can guess the answer for example b), if you input cos(x), and get back cos(nx) then the polynomial is one of the Chebyshev polynomials but what is it for any n? The hint is 'use induction' or n + 1, and of course there is a helpful tutorial from on YouTube completely <a href="https://youtu.be/JpBb-muc2N0">solving</a> this problem if you're interested it's typical 'this is now in the form of an identity, so we will swap it out' type substitution we are already used to, and solving recurrence relations. The whole video is worth watching, seeing him substitute recurrence relations if you didn't get it from the compsci workshop. This guy is pretty good, if you search for his name Prof Sankaran Viswanath you get a lot of good lectures in other topics. Prof Viswanath runs an abstract algebra <a href="https://onlinecourses.nptel.ac.in/noc21_ma71/preview">course</a> using Artin/Dummit &amp; Foote texts, and the Algebra II course is full of category theory like functors.
-</p>
-
-<p>
-3.1.7 we didn't do the section on mod yet, but you can also guess and check using an online trig calculator. None of this is what we want though, we wanted to solve polynomials which is in chapter 3.2. TODO
+The <a href="https://youtu.be/0K540qqyJJU">first</a> lecture begins ~14:30 mins. Carefully note what's going on, you are just throwing out little ideas for strategies and writing them all down investigating as you go. TODO
 </p>
 
 
