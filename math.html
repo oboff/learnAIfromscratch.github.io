@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-16 Sun 14:09 -->
+<!-- 2022-01-16 Sun 14:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Math Foundations from Scratch</title>
@@ -335,7 +335,7 @@ The author has a free version of <a href="https://www.mccme.ru/circles/oim/algeb
 <h3 id="Why%20Geometry">Why Geometry</h3>
 <div class="outline-text-3" id="text-Why%20Geometry">
 
-<figure id="org2dc5fd6">
+<figure id="org433b95b">
 <img src="./geometry.jpg" alt="geometry.jpg">   
 
 <figcaption><span class="figure-number">Figure 1: </span>Geometry of mathematical finance <a href="https://wwwen.uni.lu/index.php/research/fstm/dmath/research_areas/probability_theory_and_its_applications_mathematical_finance">uni.lu</a></figcaption>
@@ -366,7 +366,7 @@ Since his Cambridge degree is essentially a joke, with the school so lax nobody 
 </p>
 
 
-<figure id="orgd05f2dd">
+<figure id="orgf136b02">
 <img src="./geometrie.jpg" alt="geometrie.jpg">   
 
 <figcaption><span class="figure-number">Figure 2: </span>Cartesian Geometry by Van Schooten <a href="https://www.manhattanrarebooks.com/pages/books/2043/rene-descartes/geometria?soldItem=true">rarebooks</a></figcaption>
@@ -425,7 +425,7 @@ After you start solving some problems, you  will want to read more about logic s
 <h3 id="Mathematical%20reasoning">Mathematical reasoning</h3>
 <div class="outline-text-3" id="text-Mathematical%20reasoning">
 
-<figure id="org4effb2c">
+<figure id="org4cfb838">
 <img src="./proofs.png" alt="proofs.png">
 
 <figcaption><span class="figure-number">Figure 3: </span>What is a proof from <a href="http://www.cs.cmu.edu/~arielpro/15251f15/schedule.html">15-251</a></figcaption>
@@ -927,7 +927,7 @@ What is a <a href="https://youtu.be/z_75zzqXVnM">math circle</a>? It's how they 
 <h3 id="How%20to%20solve%20a%20math%20problem">How to solve a math problem</h3>
 <div class="outline-text-3" id="text-How%20to%20solve%20a%20math%20problem">
 <p>
-Let's start with <a href="https://www.math.cmu.edu/~ploh/cmu.shtml">Poh-Shen Loh's</a> problem seminars. We aren't going to watch a lot of lectures, this is a problem solving workshop not linear school. It's combinatorics so no background needed.
+Let's start with <a href="https://www.math.cmu.edu/~ploh/cmu.shtml">Poh-Shen Loh's</a> problem seminars. It's discrete combinatorics so no background needed.
 </p>
 
 <p>
@@ -944,7 +944,7 @@ If you forgot or have never seen factorials/binomial coefficients, he has a midd
 <h3 id="Algebra%201">Algebra 1</h3>
 <div class="outline-text-3" id="text-Algebra%201">
 <p>
-These problem books are designed for grade 9 - 11 Russian national math competition training if you read the author's <a href="https://users.mccme.ru/skopenko/">page</a>. They are given a few sheets from the book to try and solve by themselves at home, then once a week meet either at the <i>Moscow Center for Continuous Mathematical Education</i> or in the woods <a href="https://vk.com/photo8967168_117185248">outside</a>, what he calls 'math walks'. Afterwards they work on unsolved research problems accessible to highschool students. Keep in mind the target audience would have already had middleschool competition training so don't be surprised if you can't solve the problems at first, these are not going to be like any highschool math you remember. 
+These problem books are designed for grade 9 - 11 Russian national math competition training if you read the author's <a href="https://users.mccme.ru/skopenko/">page</a>. They are given a few sheets from the book to try and solve by themselves at home, then once a week meet either at the <i>Moscow Center for Continuous Mathematical Education</i> or in the woods <a href="https://vk.com/photo8967168_117185248">outside</a>, what he calls 'math walks' where they hike to a local lake and do math outdoors, a good idea. Afterwards they work on unsolved research problems accessible to highschool students. Keep in mind the target audience would have already had middleschool competition training so don't be surprised if you can't solve the problems at first, these are not going to be like any highschool math you remember. I will have a lot of text in the beginning walking through everything then can assume a background so this workshop gets more terse and precise over time. 
 </p>
 
 <p>
@@ -972,7 +972,7 @@ The proof of divisibility by 11 f(n) is the function or algorithm where you alte
 </p>
 
 <p>
-Another example: f(999) = (9-9) + (9-9) and 0 is divisible by 11, or 999 mod 11 = 0. f(451) = (4-5) + 1 = 0 and again divisible by 11. So for <b>1.1.1(b)</b> is that number consisting of 1993 ones divisible by 11 (since 111111 is divisible by 11)? Try 111111 x 37 = 4111107 or f(4111107) = (4-1) + (1-1) + (1-0) + 7 = 11 so any number divisible by 111111 follows the same f(n) algorithm rule.  
+Another example: f(9999) = (9-9) + (9-9) and 0 is divisible by 11, or 9999 mod 11 = 0. f(451) = (4-5) + 1 = 0 and again divisible by 11. So for <b>1.1.1(b)</b> is that number consisting of 1993 ones divisible by 11 (since 111111 is divisible by 11)? Try 111111 x 37 = 4111107 or f(4111107) = (4-1) + (1-1) + (1-0) + 7 = 11 so any number divisible by 111111 follows the same f(n) algorithm rule.  
 </p>
 
 <p>
@@ -982,8 +982,8 @@ Because f(number-with-1993-1's) has odd number of digits, if we cancel all even 
 <p>
 You can even write a program to verify 1.1.1(b):
 </p>
-<details id="orgcbc0cf3">
-<pre class="example" id="orga6d6b5f">
+<details id="org8407c10">
+<pre class="example" id="org70dd6c9">
 # run this program at https://code.pyret.org/
 fun link-ones(n :: Number, l :: List&lt;Number&gt;) -&gt; List&lt;Number&gt;:
   doc: "Make a gigantic list of 1993 1's"
