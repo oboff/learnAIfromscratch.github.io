@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-17 Fri 18:18 -->
+<!-- 2022-01-19 Wed 18:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -270,12 +270,12 @@
 <li><a href="#Preface%20-%20How%20many%20problems">Preface - How many problems</a></li>
 <li><a href="#CP4%20chapter%201">CP4 chapter 1</a></li>
 <li><a href="#C%2B%2B%20crash%20course">C++ crash course</a></li>
-<li><a href="#Problems">Problems</a></li>
+<li><a href="#Try%20some%20problems">Try some problems</a></li>
 </ul>
 </li>
 <li><a href="#Asymptotics">Asymptotics</a>
 <ul>
-<li><a href="#Computational%20model">Computational model</a></li>
+<li><a href="#Complexity%20analysis">Complexity analysis</a></li>
 <li><a href="#Logarithms">Logarithms</a></li>
 <li><a href="#CS%20Theory%20Toolkit%20lecture%202">CS Theory Toolkit lecture 2</a></li>
 <li><a href="#Asymptopia">Asymptopia</a></li>
@@ -286,11 +286,12 @@
 <li><a href="#CS%20Theory%20Toolkit%203b">CS Theory Toolkit 3b</a></li>
 <li><a href="#CS%20Theory%20Tookit%203c">CS Theory Tookit 3c</a></li>
 <li><a href="#MIT%20problem%20session%201">MIT problem session 1</a></li>
+<li><a href="#How%20memory%20works">How memory works</a></li>
 </ul>
 </li>
-<li><a href="#CP4%20chapter%202">CP4 chapter 2</a>
+<li><a href="#CP4%20Chapter%202">CP4 Chapter 2</a>
 <ul>
-<li><a href="#How%20memory%20works">How memory works</a></li>
+<li><a href="#Baloni">Baloni</a></li>
 </ul>
 </li>
 </ul>
@@ -301,7 +302,7 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-How to game the current technical interview system for fun and profit. We need to be able to do <a href="https://news.ycombinator.com/item?id=25302104">this</a>: "it's not enough to be able to solve the problems, you need to be able to solve them on the spot, without much thinking, in an interview context". This is exactly what competitive programming teaches: a toolkit of problem solving strategies followed by a lot of practice so you become faster. Even if you don't want to be a wagie you can use this as free education, get in and stay long enough so you can learn to become a freelance contractor.
+How to game the current technical interview system for fun and profit. We need to be able to do <a href="https://news.ycombinator.com/item?id=25302104">this</a>: "it's not enough to be able to solve the problems, you need to be able to solve them on the spot, without much thinking, in an interview context". 
 </p>
 </div>
 
@@ -309,7 +310,7 @@ How to game the current technical interview system for fun and profit. We need t
 <h3 id="Why%20not%20leetcode">Why not leetcode</h3>
 <div class="outline-text-3" id="text-Why%20not%20leetcode">
 <p>
-Leetcode costs money to get the good problems, while competitive programming is free. The hardest problems on free tier leetcode are rated about 3.6 of 10 on Kattis, the online judge we will use. The problems we will work up to are similar in goal to math olympiad problems, the idea is that you really learn the art of problem solving to apply it to everything in life like open problems in theoretical CS research not just for passing some interview test. Since Kattis is non-commercial universities have their assignments there such as <a href="https://algo.is/competitive-programming-course/">Reykjavik</a> or <a href="https://nus.kattis.com/">NUS</a> or <a href="https://kth.kattis.com/courses/DD2458">KTH</a> Stockholm 'programming under pressure' course.  
+Leetcode costs money to get the good problems, while competitive programming is free. The hardest problems on free tier leetcode are rated about 3.6 of 10 on Kattis, the online judge we will use. Since Kattis is non-commercial universities have their assignments there such as <a href="https://algo.is/competitive-programming-course/">Reykjavik</a> or <a href="https://nus.kattis.com/">NUS</a> or <a href="https://kth.kattis.com/courses/DD2458">KTH</a> Stockholm 'programming under pressure' course.  
 </p>
 </div>
 </div>
@@ -327,7 +328,7 @@ Every book listed here is free from <a href="https://en.wikipedia.org/wiki/Libra
 </ul>
 
 <p>
-The first volume was written both for passing technical interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's ICPC/IOI team. Practice is done with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and problem runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>. All the algorithms have visualizations on the author's site <a href="https://visualgo.net/en">VisuAlgo</a>.
+The first volume was written both for passing technical interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's ICPC/IOI team. Practice is done with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>. All the algorithms have visualizations on the author's site <a href="https://visualgo.net/en">VisuAlgo</a>.
 </p>
 
 <ul class="org-ul">
@@ -335,7 +336,7 @@ The first volume was written both for passing technical interviews and for anybo
 </ul>
 
 <p>
-Contains full problem walkthroughs. I preferred this course to others because they actually use a board, instead of zoom slides so you can see problems being fully worked out. We have access to everything and it's permanent so won't disappear behind logins. As a bonus this course tells you how Python standard libraries are implemented, should you wish to use it for interviews. 
+Contains full problem walkthroughs. I preferred this course to others because they actually use a board, instead of zoom slides so you can see problems being fully worked out. We have access to everything and it's permanent so won't disappear behind campus logins. 
 </p>
 
 <ul class="org-ul">
@@ -366,7 +367,7 @@ These are only needed if the public online resources disappear
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard library data structures for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. You don't have to use their specific compiler version for your local system, just be aware of any differences in versions when you make a submission so not using some feature that doesn't exist yet in the Kattis version. Whatever language you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example. Here I will use <a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">functional C++</a> essentially programming similar to the style in the <a href="./software.html">CS19</a> workshop or you can use Kotlin, which the ICPC now accepts. 
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard library data structures for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. You don't have to use their specific compiler version for your local system, just be aware of any differences in versions when you make a submission so not using some feature that doesn't exist yet in the online judge. Whatever language you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example.
 </p>
 
 <p>
@@ -379,7 +380,7 @@ Here are the rules of the ICPC world finals and the <a href="https://docs.icpc.g
 <h3 id="Using%20a%20phone%2Ftablet">Using a phone/tablet</h3>
 <div class="outline-text-3" id="text-Using%20a%20phone%2Ftablet">
 <p>
-Looking around the Android store, the only decent offline app seems to be a <a href="https://youtu.be/FeWBu9Gf-Rs">Pascal</a> compiler made by a highschool kid in Vietnam. Both Kattis and onlinejudge.org accept Pascal submissions (I think the IOI still accepts it) and Pascal syntax is almost simple pseudocode. If you want an online compiler there are many options like <a href="https://replit.com/">Repl.it</a>.
+Looking around the Android store, the only decent offline app seems to be a <a href="https://youtu.be/FeWBu9Gf-Rs">Pascal</a> compiler made by a highschool kid in Vietnam. Both Kattis and onlinejudge.org accept Pascal submissions (I think the IOI still accepts it) and Pascal syntax is simple pseudocode. If you want an online compiler there are many options like <a href="https://replit.com/">Repl.it</a>.
 </p>
 </div>
 </div>
@@ -388,7 +389,7 @@ Looking around the Android store, the only decent offline app seems to be a <a h
 <h3 id="Real%20contests">Real contests</h3>
 <div class="outline-text-3" id="text-Real%20contests">
 <p>
-We can compete on CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Topcoder, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> type challenges, most of which we have <i>no hope of winning</i> of course but it's practice to pick up more speed and experience. 
+We can compete on CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Topcoder, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> type challenges, most of which we have <i>no hope of winning</i> of course.
 </p>
 </div>
 </div>
@@ -416,7 +417,7 @@ The first thing to notice is he's using a generic text editor and unusual shell 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="org9e1b7bb">
+<pre class="example" id="org3af1e3b">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
@@ -442,11 +443,11 @@ std::cin is synchronized to std::cout and performs default buffer flushing opera
 </p>
 
 <p>
-You don't have to watch the entire 2hr vid, the last problem seems like the most informative. He begins most problems by writing himself examples as comments, something we already learned in <a href="./software.html">CS19</a>. He copies the problem input test cases into a text file 'in1' then pipes it into his compiled program "sol.exe &lt; in1" as stdin (standard input). He writes multiple submissions to compare their runtime/memory usage. He looks for some kind of mathematical structure in the formulas given in the problem writeup. After submission he looks up the solutions by the problem writers and compares them to his own.    
+You don't have to watch the entire 2hr vid, the last problem seems like the most informative. He begins most problems by writing himself examples as comments, something we already learned in <a href="./software.html">CS19</a>. He copies the problem input test cases into a text file 'in1' then pipes it into his compiled program "sol.exe &lt; in1" from the shell as stdin (standard input). He writes multiple submissions to compare their runtime/memory usage. He looks for some kind of mathematical structure in the formulas given in the problem writeup. After submission he looks up the solutions by the problem writers and compares them to his own.    
 </p>
 
 <p>
-@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. In the last problem he get's time limit exceeded verdict and trolls his live stream that replacing all the variable names with a single letter will make it run faster. His solution had nested initialization of numerous vectors inside loops, so everytime they loop you init another vector(s), once he removed those out of the loop he achieved accepted verdict. The judging server ran his program faster than his own laptop, something to remember if debugging and believing your solution still isn't optimized enough. 
+@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. In the last problem a time limit exceeded verdict shows how he would optimize a solution. The judging server ran his program faster than his own laptop, something to remember if debugging and believing your solution still isn't optimized enough. 
 </p>
 </div>
 </div>
@@ -456,11 +457,11 @@ You don't have to watch the entire 2hr vid, the last problem seems like the most
 <h2 id="Begin">Begin</h2>
 <div class="outline-text-2" id="text-Begin">
 <p>
-I assume you either downloaded the book <i>Competitive Programming 3</i> from library genesis or bought the 4th edition for $20, it's handbook sized and worth the money as it has a ton of solved exercises just in the book itself, not including the huge amount of UVa/Kattis problems it recommends doing. 
+I assume you either downloaded the book <i>Competitive Programming</i> from library genesis (any version) or bought the 4th edition for $20, it's handbook sized and worth the money as it has a ton of solved exercises just in the book itself, not including the huge amount of UVa/Kattis problems it recommends doing. 
 </p>
 
 <p>
-This book is designed to be read several times, you work through it once then go back and solve the exercises in each chapter, as they won't make sense the first time around. The author(s) are very blunt in saying if you want to compete, you should know everything in this book and be able to solve many of these problems in under 30 minutes, if very competitive under 10 minutes. You get to that level through practice and always trying to work just above your skill level so you are always advancing. 
+This book is designed to be read several times, you work through it once then go back and solve the exercises in each chapter, as they won't make sense the first time around. The author(s) are very blunt in saying if you want to compete, you should know everything in this book and be able to solve many of these problems in under 30 minutes, if very competitive under 10 minutes. 
 </p>
 </div>
 
@@ -468,11 +469,11 @@ This book is designed to be read several times, you work through it once then go
 <h3 id="Preface%20-%20How%20many%20problems">Preface - How many problems</h3>
 <div class="outline-text-3" id="text-Preface%20-%20How%20many%20problems">
 <p>
-Each chapter topic will have 7 starred 'must try' problems, and all of them are on the site <a href="https://cpbook.net/methodstosolve">methods to solve</a> and that site is more up to date than the book, it's the site we will use so if you don't buy the 4th edition, you're fine. It contains a mix of onlinejudge.com (formerly called UVa online judge) and Kattis problem sets, the bold problem titles are the recommended problems. Hints how to solve them are on the right-hand side if you haven't figured it out but the book explains that's how the authors solved them, but there could be other ways. The CP4 book 1 satisfies the majority of the 2020 IOI syllabus (and also 2021 syllabus since 2020 was virtual/cancelled, even ICPC 2021 changed to March 2022) and it was also designed for passing tech interviews.  
+Each chapter topic will have 7 starred 'must try' problems, and all of them are on the site <a href="https://cpbook.net/methodstosolve">methods to solve</a> and that site is more up to date than the book, it's the site we will use so if you don't buy the 4th edition, you're fine. It contains a mix of onlinejudge.com (formerly called UVa online judge) and Kattis problem sets, the bold problem titles are the starredecommended problems. Hints how to solve them are on the right-hand side of page if you haven't figured it out but the book explains that's how the authors solved them, but there could be other ways. 
 </p>
 
 <p>
-If we only do the starred problems listed on <a href="https://cpbook.net/methodstosolve">methods to solve</a> how many are we looking at? Chapter 4 has 167, 3 has 195, 2 has 165 and the first chapter has 182 or <b>709 total problems</b> if you're using both UVa and Kattis. If you read the above example class writeup of that exchange student, he solved <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">50 problems a day</a> when first started and gained 500 points on Kattis in 2 months, which is the entrance requirement for the course, then he gained 1000 more points on Kattis during his 4 month course in Singapore (noting another student gained 3500 points in 4 months) so this isn't impossible to do.
+If we only do the starred problems listed on <a href="https://cpbook.net/methodstosolve">methods to solve</a>: Chapter 4 has 167, 3 has 195, 2 has 165 and the first chapter has 182 or <b>709 total problems</b> if you're using both UVa and Kattis. If you read the above example class writeup of that exchange student, he solved <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">50 easy problems a day</a> at first and gained 500 points on Kattis in 2 months, which is the entrance requirement for the course, then he gained 1000 more points on Kattis during his 4 month course in Singapore (noting another student gained 3500 points in 4 months) so this isn't impossible to do.
 </p>
 </div>
 </div>
@@ -481,11 +482,11 @@ If we only do the starred problems listed on <a href="https://cpbook.net/methods
 <h3 id="CP4%20chapter%201">CP4 chapter 1</h3>
 <div class="outline-text-3" id="text-CP4%20chapter%201">
 <p>
-Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solving skills are mentioned, many of which were taught in <a href="./software.html">CS19</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 inputs max, you could still pass the online judge. The book notes that we should already have the skills to judge the runtime complexity of our own algorithms, which we will learn as we go.
+Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solving skills are mentioned, many of which were taught in <a href="./software.html">CS19</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 inputs max, you could still pass the online judge. 
 </p>
 
 <p>
-1.3.4 talks about programming languages, how factorials like 40! are trivial in Python but difficult in C/C++, and requires a special library BigInteger in Java. The point being you should know multiple languages enough to be able to solve any problem with them (or know the Stirling numbers asymptotic trick to get a sum of factorials). The rest of this chapter will show you how to get your first AC verdict on Kattis, and has multiple examples of how to get and manipulate input which of course are also on the book github repository. 
+1.3.4 talks about programming languages, how factorials are trivial in Python but difficult in C/C++, and requires a special library BigInteger in Java. The point being you should know multiple languages enough to be able to solve any problem with them (or know the Stirling numbers asymptotic trick to get a sum of factorials). The rest of this chapter will show you how to get your first AC verdict on Kattis, and has multiple examples of how to get and manipulate input which of course are also on the book github repository. 
 </p>
 </div>
 </div>
@@ -494,43 +495,33 @@ Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solv
 <h3 id="C%2B%2B%20crash%20course">C++ crash course</h3>
 <div class="outline-text-3" id="text-C%2B%2B%20crash%20course">
 <p>
-The cp4 book and <a href="https://kth.instructure.com/courses/20699/files/3296468/download?verifier=xTIE4fipNDoRb4BXNI7TiLOAtpuekegxbZZ5XO4M&amp;wrap=1">Algorithmic Problem Solving</a> 2020 draft by Johan Sannemo explain all you need to know about C++ to begin with the chapter 1 <i>Methods to Solve</i> problems. The Sannemo written draft covers some basics of the STL like I/O or how to nest vectors and the cp4 book will tell you how vectors are implemented. If you want to do the problems in the Sannemo book type their name into Kattis search. Both books will explain the time complexity of the standard library data structures, and the Sannemo book will show you the C++ computational model for manually adding up costs, creating a T(n) expression you can then simplify as we will soon learn.
+C++ is a <a href="https://en.wikipedia.org/wiki/Generic_programming">generic programming language</a> with statically checked, compile-time type polymorphism similar to abstract types in the ML language so you can write a generically typed function, and supply the desired type as a parameter which the compiler will optimize for you. The C++ standard library includes the STL or <a href="https://en.wikipedia.org/wiki/Generic_programming#Templates_in_C++">standard template library</a> and you can alter all the built-ins by supplying custom functions without needing to manipulate function pointers. C++ can pass functions as arguments to another function and return new functions so functional programming is possible. You can make immutable vectors and lists, use filter/fold/map(std::transform)/reduce from the STL, hack a template together to do lazy eval, partial function application and currying, and write your own algebraic data types, meaning many types can be combined and pattern matched as a scheme to make illegal states impossible to represent.    
 </p>
 
-<p>
-A good book is <i>The Design and Evolution of C++</i> by Stroustrup you can find on library genesis, explaining the reasoning for why C++ is the way it is, such as why are structs and classes the same thing. The book is very outdated but I still find it helpful.
-</p>
 
 <p>
-Another book I bought was <a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">Functional Programming in C++</a> as we are using C++17 on Kattis so lambdas and transforms are built-in. To begin I do not include every C++ library like in most competitive programming templates, instead I've been manually typing the library names to include until I'm so familiar with the standard library I can graduate to a template opening up all their namespace by default. You can get very fast at <a href="https://play.typeracer.com/">typing</a> the full library names. 
+I will use these books for C++ reference as I go:
 </p>
+<ul class="org-ul">
+<li><a href="https://kth.instructure.com/courses/20699/files/3296468/download?verifier=xTIE4fipNDoRb4BXNI7TiLOAtpuekegxbZZ5XO4M&amp;wrap=1">Algorithmic Problem Solving</a> (2020 draft) by Johan Sannemo</li>
+<li><a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">Functional Programming in C++</a> (2019) by Ivan Cukic</li>
+<li>The <a href="https://stepik.org/lesson/26053/step/1?unit=8085">Stepik</a> online book written for the course <a href="https://ucsd-cse100-s20.github.io/">Advanced Data Structures</a></li>
+</ul>
 
 <p>
-Keep in mind C++ <a href="https://youtu.be/YnWhqhNdYyk">is not C</a>. 
+Kattis online judge uses g++ -std=gnu++17 so std::ranges aren't available as they were a 3rd party library until c++20. 
 </p>
 </div>
 </div>
 
-<div id="outline-container-Problems" class="outline-3">
-<h3 id="Problems">Problems</h3>
-<div class="outline-text-3" id="text-Problems">
+<div id="outline-container-Try%20some%20problems" class="outline-3">
+<h3 id="Try%20some%20problems">Try some problems</h3>
+<div class="outline-text-3" id="text-Try%20some%20problems">
 <p>
-Here are <a href="https://cpbook.net/methodstosolve?oj=kattis&amp;topic=ch1&amp;quality=starred">97 starred problems</a> from the cp4 book chapter 1, if you are only using Kattis online judge. Basic I/O like input parsing and output formatting for language of choice is <a href="https://open.kattis.com/help">here</a> or see the book github repository for chapter 1. If you want even more practice, do both the regular and starred Kattis problems of which there are <a href="https://cpbook.net/methodstosolve?oj=kattis&amp;topic=ch1&amp;quality=all">211</a> on the methods to solve website. If you want to use both Kattis and onlinejudge.org there is <a href="https://cpbook.net/methodstosolve?oj=both&amp;topic=ch1&amp;quality=all">479</a> chapter 1 problems in total for both sites.
+Start on Kattis with the easiest problems just to get used to I/O and the STL. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
 </p>
 
-<p>
-If you click on the problem name on the furthest left column, a hint is revealed or install the Kattis Hint Giver chrome addon as suggested. 
-</p>
-
-<p>
-Read 1.4 <i>Ad-Hoc Problems</i> as you do them from the book if using the 3rd version. In cp4, they moved chapter 6.2 <i>Basic String Processing Skills</i> from 3rd version to the first chapter, read that too. The author claims this is all we will need for most of the problems they selected on <i>Methods to solve</i> though some of these ad-hoc problems have difficulty reaching into 5+ meaning they may require some kind of future skill like backtracking to solve, try them with your current skill anyway.
-</p>
-
-<p>
-To get the hang of C++ I/O rewatch Gennady's walkthrough how he retrieved input while you have cppreference.com open to view the standard library functions. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
-</p>
-
-<pre class="example" id="org7ea4fa1">
+<pre class="example" id="org5b2f39a">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -565,7 +556,7 @@ int main() {
 In this example for Roaming <a href="https://open.kattis.com/problems/romans">Romans</a> I couldn't pass the last test case until I abandoned all C++ built-ins like ceil/round and just cast the type to an int to cut off the decimal:
 </p>
 
-<pre class="example" id="orgc907af1">
+<pre class="example" id="org681bbf0">
 #include &lt;iostream&gt;
 
 int main() {
@@ -576,6 +567,10 @@ int main() {
   return 0;
 }
 </pre>
+
+<p>
+I did just enough so I could figure out the basic container library and I/O, move on to chapter 2 and come back here later as many of the ad-hoc problems will require skills in chapter 2 and later.  
+</p>
 </div>
 </div>
 </div>
@@ -588,15 +583,15 @@ While you drill some chapter 1 Kattis problems for practice, we are leaving the 
 </p>
 </div>
 
-<div id="outline-container-Computational%20model" class="outline-3">
-<h3 id="Computational%20model">Computational model</h3>
-<div class="outline-text-3" id="text-Computational%20model">
+<div id="outline-container-Complexity%20analysis" class="outline-3">
+<h3 id="Complexity%20analysis">Complexity analysis</h3>
+<div class="outline-text-3" id="text-Complexity%20analysis">
 <p>
-First, if you did not do CS19, then watch <a href="https://youtu.be/-dQAGsSrKBA">this</a> which is lecture 4 of CS19 where Prof K explains a computational model. You can, even if you only know Python or another language, probably figure out the simple Pyret cases syntax which you can interpret as an if-statement: if this link is empty then return 0, if not empty +1 and then call the function again with one less element in the list until we add up the length. There's also a writeup <a href="https://papl.cs.brown.edu/2020/predicting-growth.html#%28part._math-anon-functions%29">here</a> and these <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">notes</a> have an excellent introduction to the ambiguities of Big-O notation, what a computation model is, what 'running time' means.
+See chapter 1.2 of the <a href="https://stepik.org/lesson/26053/step/1?unit=8085">Stepik</a> online book for the basics of code analysis. These <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">notes</a> have an excellent introduction to the ambiguities of Big-O notation, what a computation model is, what 'running time' means. There is other kinds of complexity, exampled in <a href="https://kth.instructure.com/courses/20699/files/3296468/download?verifier=xTIE4fipNDoRb4BXNI7TiLOAtpuekegxbZZ5XO4M&amp;wrap=1">Algorithmic Problem Solving</a> with all the summation notation explained in the appendix.  
 </p>
 
 <p>
-The MIT 6.006 course we do will explain all this as well.  
+The MIT 6.006 course we do will cover this too  
 </p>
 </div>
 </div>
@@ -831,15 +826,6 @@ It's worth watching their problem session once to see how they reason about corr
 </p>
 </div>
 </div>
-</div>
-
-<div id="outline-container-CP4%20chapter%202" class="outline-2">
-<h2 id="CP4%20chapter%202">CP4 chapter 2</h2>
-<div class="outline-text-2" id="text-CP4%20chapter%202">
-<p>
-Now we take the advice of every competitive programmer and learn the algorithm while implementing it via problems. We have all the above reference materials to help us as we go and some of CMU's 15-295 lectures from their competitive programming course. Because this is competitive programming we are using built-in libraries and often modifying them not doing everything from scratch. One thing we will learn from scratch, is how loops work using a math model for optimization purposes. 
-</p>
-</div>
 
 <div id="outline-container-How%20memory%20works" class="outline-3">
 <h3 id="How%20memory%20works">How memory works</h3>
@@ -849,21 +835,79 @@ Watching <a href="https://youtu.be/M2i7sSRcSIw">Optimizing Serial Code 1</a>. Th
 </p>
 
 <p>
-First we learn never use a linked list, despite them being theoretically O(1) operation they are in fact awful on real hardware. Every matrix is stored in an array either row major or column major order, and knowing which one your library is using is critical to knowing where the next cache hit will be by the CPU. Note you should never use arrays either, ie: C style arrays. In C++ you would use std::array if you had to or std::vector both in the standard library.  
+First we learn never use a linked list, despite them being theoretically O(1) operation they are in fact awful on real hardware. Every matrix is stored in an array either row major or column major order, and knowing which one your library is using is critical to knowing where the next cache hit will be by the CPU. Note you should never use arrays either, ie: C style arrays. 
 </p>
 
 <p>
-Arrays and objects are heap allocated instead of on the stack (in Python/R/Matlab/Julia) because they can be dynamic, and because the compiler does not have enough type information at compile time to determine the length. He shows a library in Julia where the compiler does have this information and so can allocate it into the stack instead of the heap. If you use C++ containers like std::vector from the standard library they have this size information built in too as they are <a href="https://en.cppreference.com/w/cpp/container/vector">objects</a>. When this lecture is done we'll figure out exactly how C++ allocates memory. 
+Arrays and objects are heap allocated instead of on the stack (in Python/R/Matlab/Julia) because they can be dynamic, and because the compiler does not have enough type information at compile time to determine the length. He shows a library in Julia where the compiler does have this information and so can allocate it into the stack instead of the heap. If you use C++ containers like std::vector from the standard library they have this size information built in too as they are <a href="https://en.cppreference.com/w/cpp/container/vector">objects</a>.
 </p>
 
 <p>
-Most interesting part of this lecture, and the reason I made you watch it (despite the memory hierarchy intro) is the broadcasting mechanism part of the lecture about what "vectorization" means in most high-level languages. We discover somebody in languages like Python (NumPy library), Matlab, R and others simply compiled the loop for the C function that does the broadcasted form, so in effect all you're doing in those languages/libraries is calling a single C function because loops are costly in those languages. C++ doesn't have this problem.
+Most interesting part of this lecture, and the reason I made you watch it besides the memory hierarchy intro you had to know, is the broadcasting mechanism part of the lecture about what "vectorization" means in most high-level languages. We discover somebody in languages like Python (NumPy library), Matlab, R and others simply compiled the loop for the C function that does the broadcasted form, so in effect all you're doing in those languages/libraries is calling a single C function because loops are costly in those languages. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-CP4%20Chapter%202" class="outline-2">
+<h2 id="CP4%20Chapter%202">CP4 Chapter 2</h2>
+<div class="outline-text-2" id="text-CP4%20Chapter%202">
+<p>
+Go to <a href="https://cpbook.net/methodstosolve?oj=both&amp;topic=ch2&amp;quality=all">methods to solve</a> and try all the 2.2a, 1D Array, Medium problems on Kattis and/or onlinejudge.org since we just learned arrays and dynamic arrays. The CP4 book describes std::array for static arrays and std::vector for dynamic arrays. 
+</p>
+</div>
+
+<div id="outline-container-Baloni" class="outline-3">
+<h3 id="Baloni">Baloni</h3>
+<div class="outline-text-3" id="text-Baloni">
+<p>
+The first of the Kattis problems, rated a 4.1 (up from it's earlier 3.6 rating due to less people being able to solve it). Start by writing examples, like tourist did in his problem solving streams. In this problem the height is decreased by 1 after every hit of the arrow, so one shot can take out multiple targets with 1 iteration of the entire array.
 </p>
 
 <p>
-I won't go through the rest of this course here, but I highly recommend all of it. We will however later go through 2 more lectures how he models loops using discrete dynamics and how these can be optimized in any language. 
+What if we loop n times over the array and change the value or delete the value whenever the arrow makes a hit? Then whatever is left over we can filter out the changed values and take it's size and add that as additional shots to the running total of shots. This was my first naive solution.
 </p>
 
+<p>
+Sketch what this function would look like:
+</p>
+
+<pre class="example" id="orgb7a5875">
+// get the first input
+int n; cin &lt;&lt; n
+// optimize this
+// does it have to be an array?
+loop through input of 'balloons' and store them in some data structure
+
+f(std::vector&lt;int&gt; v, int n, int accumulator)
+while single iteration of v, and n &gt; 0:
+ is v[i] == n?
+ remove or change v[i]
+ accumulator +1
+ n = n-1
+ continue linear search
+ is v[i] == n?
+ remove or change v[i]
+ n = n-1
+ // do not update accumulator because it was still 1 shot
+call f(v, n, accumulator) with n equal to whatever the last target reset it to
+</pre>
+
+<p>
+After staring at my draft, and the examples I wrote, I kept looking at the input storage because this is the top O(n) linear thorn in my algorithm where you have to get that huge input into a data structure. Can we manipulate the data structure as we take the inputs at the same time? This chapter is about arrays, but do we have to use an array/vector? Let's look at the C++ <a href="https://en.cppreference.com/w/cpp/container">containers library</a>. After we go through the input and remove inputs that are in n-1 sequence, does it matter what order they are in when we take their size? So what containers in the library should we use, how about an <a href="https://en.cppreference.com/w/cpp/container/unordered_multiset">unordered multiset</a>. 
+</p>
+
+<p>
+Something else that bothered me was the acculumator, first because I hate using accumulators they screw up parallel/multithreaded computations and I always try to avoid them after watching this <a href="https://dl.acm.org/doi/10.1145/1631687.1596551">talk</a> at the bottom of the page by Guy L Steele who recommends abandoning that paradigm for modern software. Staring at my draft text I realized we can do this backwards, when you analyze the input as it comes in, search the data structure for n+1 and if so, erase that entry, then you have the original shot. For example if it's 5 4 3 2 1 and we're at 4, there exists 5, the first shot, which is stored, delete it. Store 4 then continue to 3, which will delete 4. Finish the whole iteration and 1 is left over, which is the original shot. Take the size of 1 which is 1, and that's the solution. Try it with example 3: 45214. First iteration, if you use n, searches and deletes 5, leaving 4. Next iteration searches and deletes 2, leaving 1. We're left with 414, or 3 shots, the solution.
+</p>
+
+<p>
+Writing up this solution it works, I passed all tests. Congrats anons you're now on difficulty 4.1 on Kattis.
+</p>
+
+<p>
+TODO
+</p>
 
 <hr>
 <p>
