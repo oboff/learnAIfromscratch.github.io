@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-07 Mon 19:34 -->
+<!-- 2022-03-08 Tue 17:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Math Foundations from Scratch</title>
@@ -304,7 +304,7 @@
 <h2 id="Intro">Intro</h2>
 <div class="outline-text-2" id="text-Intro">
 <p>
-Here we learn math from scratch: algebra, geometry, linear algebra, combinatorics and calculus as efficiently as possible by solving olympiad style problems, or as the Russian author calls them 'research level highschool mathematics'. This will be faster than doing a linear course, and the payoff greater as you many of these problems will teach you several topics all at once.
+Here we learn the math needed for university style courses: algebra, geometry, linear algebra, combinatorics and calculus. We'll do it as efficiently as possible by solving olympiad style problems. This will be faster than doing a linear course, and the payoff greater as many of these problems will teach you several topics all at once.
 </p>
 
 <p>
@@ -339,7 +339,7 @@ The author has a free version of <a href="https://www.mccme.ru/circles/oim/algeb
 <h3 id="Why%20Geometry">Why Geometry</h3>
 <div class="outline-text-3" id="text-Why%20Geometry">
 
-<figure id="org6e86b8c">
+<figure id="orge435aa0">
 <img src="./geometry.jpg" alt="geometry.jpg">   
 
 <figcaption><span class="figure-number">Figure 1: </span>Geometry of mathematical finance <a href="https://wwwen.uni.lu/index.php/research/fstm/dmath/research_areas/probability_theory_and_its_applications_mathematical_finance">uni.lu</a></figcaption>
@@ -370,7 +370,7 @@ Since his Cambridge degree is essentially a joke, with the school so lax nobody 
 </p>
 
 
-<figure id="org9b29b1c">
+<figure id="orgcc201ef">
 <img src="./geometrie.jpg" alt="geometrie.jpg">   
 
 <figcaption><span class="figure-number">Figure 2: </span>Cartesian Geometry by Van Schooten <a href="https://www.manhattanrarebooks.com/pages/books/2043/rene-descartes/geometria?soldItem=true">rarebooks</a></figcaption>
@@ -429,7 +429,7 @@ After you start solving some problems, you  will want to read more about logic s
 <h3 id="Mathematical%20reasoning">Mathematical reasoning</h3>
 <div class="outline-text-3" id="text-Mathematical%20reasoning">
 
-<figure id="orgd71d320">
+<figure id="org36fde06">
 <img src="./proofs.png" alt="proofs.png">
 
 <figcaption><span class="figure-number">Figure 3: </span>What is a proof from <a href="http://www.cs.cmu.edu/~arielpro/15251f15/schedule.html">15-251</a></figcaption>
@@ -986,8 +986,8 @@ Because f(number-with-1993-1's) has odd number of digits, if we cancel all even 
 <p>
 You can even write a program to verify 1.1.1(b):
 </p>
-<details id="org42b95e2">
-<pre class="example" id="orga5d4be1">
+<details id="org16ebfae">
+<pre class="example" id="org697c7d4">
 # run this program at https://code.pyret.org/
 fun link-ones(n :: Number, l :: List&lt;Number&gt;) -&gt; List&lt;Number&gt;:
   doc: "Make a gigantic list of 1993 1's"
@@ -1030,15 +1030,7 @@ end
 </details>
 
 <p>
-<b>1.1.2 [MPA]</b> A number is divisible by 2, iff (if and only if) the last digit is divisible by 2. A number is only divisible by 4 iff the number formed by it's last two digits are divisible by 4 so we are dealing with (n - 10<sub>a1</sub> - a<sub>0</sub>) where 10<sub>a1</sub> + a<sub>0</sub> is not divisible by 4, using the expanded hindu-arabic number notation. Simply google <a href="https://www.hackmath.net/en/calculator/divisors">divisors calculator</a> or write your own algorithm and start testing numbers, any number you can think of with this constraint of being even but not divisible by 4 has the same even/odd divisors. Now why is this true?
-</p>
-
-<p>
-This is an example of one of the problems in the book you can just toss around your mind all day if you looked at it in the morning. Recall Wildberger's definition of division m = n * k or some integer n and k. Look at the positive divisors for 18: 1, 2, 3, 6, 9, 18 and pair the odds with even: (2,9) (2,3) (18,1). If you're like me you wrote an algorithm for this problem and 30 is deconstructed into primes 2 x 3 x 5. 18 is 2 x 3 x 3. Somewhere here is the proof, how he proved divisibility earlier using hindu-arabic number notation. Something about if a<sub>0</sub> is odd, then 2(a<sub>0</sub>) will be split into even factors unless divisible by 4. Number theory is crazy and these are the kinds of problems Ramanujan sat around thinking about for days on end trying to figure out. 
-</p>
-
-<p>
-If you can't figure out the answer after a day, either <a href="https://math.stackexchange.com/a/48887">research</a> it on math stackexchange for hints or write it down somewhere in a notepad called 'things I don't know' and revisit it later, reminder these books are meant to be done in stages a first read, then a more advanced read after you finish the first. For now we are just exercising our minds to focus on a single problem for longer than a few minutes. It will take a lot of practice.
+<b>1.1.2 [MPA]</b> A number is divisible by 2, iff (if and only if) the last digit is divisible by 2. A number is only divisible by 4 iff the number formed by it's last two digits are divisible by 4 so we are dealing with (n - 10<sub>a1</sub> - a<sub>0</sub>) where 10<sub>a1</sub> + a<sub>0</sub> is not divisible by 4, using the expanded hindu-arabic number notation. Simply google <a href="https://www.hackmath.net/en/calculator/divisors">divisors calculator</a> or write your own algorithm and start testing numbers, any number you can think of with this constraint of being even but not divisible by 4 has the same even/odd divisors. Now why is this true? This is an example of one of the problems in the book you can just toss around your mind all day if you looked at it in the morning. If 4|n then we get an even number k as output, and 2|k so there will always be an imbalance in the number of divisors being odd or even. If 2|n and n is not divisible by 4, we always get an odd number as output so the number of divisors are always in pairs (even, odd). This will make more sense when when we learn primes.     
 </p>
 
 <p>
