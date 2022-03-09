@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-08 Tue 07:43 -->
+<!-- 2022-03-09 Wed 07:21 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Hacker's Guide to Hustling Money w/Software</title>
@@ -246,6 +246,14 @@
 <ul>
 <li><a href="#User%20interface%20design--Lecture%201">Lecture 1</a></li>
 <li><a href="#User%20interface%20design--Lecture%202">Lecture 2</a></li>
+<li><a href="#Wireframing">Wireframing</a></li>
+<li><a href="#HTML%2C%20DOM%20%26%20CSS%20crash%20course">HTML, DOM &amp; CSS crash course</a></li>
+<li><a href="#Review">Review</a></li>
+</ul>
+</li>
+<li><a href="#Data%20Design">Data Design</a>
+<ul>
+<li><a href="#Data%20Design--Lecture%201">Lecture 1</a></li>
 </ul>
 </li>
 </ul>
@@ -256,7 +264,7 @@
 <h2 id="Intro">Intro</h2>
 <div class="outline-text-2" id="text-Intro">
 <p>
-If you search there is lot's of answers to 'how do I learn to program' but not many practical answers to 'how do I make money programming' that don't include trying to do interviews and be an employee. Here we will actually freelance it up for fame and fortune starting with no background, and presumably working a F/T job already in some industry totally different than writing software. This is an active draft I do everyday. 
+If you search there is lot's of answers to 'how do I learn to program' but not many practical answers to 'how do I make money programming' that don't include trying to do interviews and be an employee. Here we will actually freelance it up for fame and fortune starting with no background, and presumably working a F/T job already in some industry totally different than writing software.  
 </p>
 
 <p>
@@ -277,11 +285,11 @@ See <a href="https://youtu.be/3Fx5Q8xGU8k">this talk</a> by Peter Thiel at Stanf
 <h3 id="Strategy">Strategy</h3>
 <div class="outline-text-3" id="text-Strategy">
 <p>
-<a href="https://fly.io/docs/about/pricing/">Fly.io</a> free tier gives you 3GB persistent storage, 160GB/month outbound bandwidth, and <a href="https://letsencrypt.org/">Let's Encrypt</a> certs. It's a 'serverless' hosting scheme where you write an app and deploy it as is, or shove your app into a <a href="https://www.docker.com/">docker</a> container, and they run it on their global content delivery network. This can be completely automated too. Translated this means we can write customized software for businesses (people who will pay us) and it's turn-key, we can extract out the generic parts of software, make it into our own template to customize to punters for cash or sell it as is. This isn't Heroku or Vercel or others that restrict your free tier, both which I used in the past then had to give up on. If you look at team who built fly.io tptacek the guy who wrote microcorruption is involved who also used to run Matasano security consulting so it's likely not a pile of hacks either. This is important when you're a one dev operation like we are now, we can't afford to patch continuous software problems in dependencies or have to screw around with our deployment. 
+<a href="https://fly.io/docs/about/pricing/">Fly.io</a> free tier gives you 3GB persistent storage, 160GB/month outbound bandwidth, and <a href="https://letsencrypt.org/">Let's Encrypt</a> certs. It's a 'serverless' hosting scheme where you write an app and deploy it as is, or shove your app into a <a href="https://www.docker.com/">docker</a> container, and they run it on their global content delivery network. This can be completely automated too. Translated this means we can write customized software for businesses (people who will pay us) and it's turn-key, we can extract out the generic parts of software, make it into our own template to customize to punters for cash or sell it as is. 
 </p>
 
 <p>
-Web or distributed computing software is now so vast that I decided to target the most abstract frameworks possible which presently is <a href="https://www.phoenixframework.org/">Phoenix</a> (Elixir language) and launch our software for free on fly.io which runs like fire as they managed to get the Phoenix creator to do it for them. We can build and launch a typical https web application, a crazy real-time web application with thousands of concurrent users interacting like an auction site or a whatsapp clone, a server for a phone app, a server for a multiplayer game that runs on desktops, bots, sell plugins in software stores like Shopify or GSuite, some kind of personal firewall, anything. Look at <a href="https://www.dealdash.com/">dealdash</a> that's a Phoenix site, yes you can build this yourself. 
+Web or distributed computing software is now so vast that I decided to target the most abstract frameworks possible which presently is <a href="https://www.phoenixframework.org/">Phoenix</a> (Elixir language) and launch our software for free on fly.io which runs like fire as they managed to get the Phoenix creator to set it up. We can build and launch a crazy real-time web application with thousands of concurrent users interacting like an auction site or a whatsapp clone, a server for a phone app, a server for a multiplayer game that runs on desktops, bots, sell plugins in software stores like Shopify or GSuite, some kind of personal firewall, anything. Look at <a href="https://www.dealdash.com/">dealdash</a> that's a Phoenix site, yes you can build this yourself. 
 </p>
 </div>
 </div>
@@ -426,11 +434,114 @@ His complete design process @55:38
 <h3 id="User%20interface%20design--Lecture%202">Lecture 2</h3>
 <div class="outline-text-3" id="text-User%20interface%20design--Lecture%202">
 <p>
-Watching <a href="https://drive.google.com/file/d/1Cvco6r8a6oV3Sy89RKdIfrZCrGim7CzH/view">UX Design &amp; Heuristics II</a> for more application design advice. @17:50 if only all software had this feature where if you undo an action it tells you what it's undoing.
+Watching <a href="https://drive.google.com/file/d/1Cvco6r8a6oV3Sy89RKdIfrZCrGim7CzH/view">UX Design &amp; Heuristics II</a> for more application design advice. @17:50 if only all software had this feature where if you undo an action it tells you what it's undoing. Most of this is in the above <a href="https://canvas.mit.edu/courses/4415/files/804925?module_item_id=195040">usability cheat sheet</a> the idea being that whatever your service design you go through the heuristics and prove to yourself they are satisfied. 
 </p>
 
 <p>
-Now we learn some wireframing basics we can do on pieces of paper, data design and we're done. The rest is technical and easy, the hard part was conceptual design. TODO
+The <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic5/lectureNotes/R9__Wireframing___Heuristic_Evaluation/R9__Wireframing___Heuristic_Evaluation.pdf">recitation pdf</a> has some more examples of what we just learned analyzing a site using the heuristics.
+</p>
+</div>
+</div>
+
+<div id="outline-container-Wireframing" class="outline-3">
+<h3 id="Wireframing">Wireframing</h3>
+<div class="outline-text-3" id="text-Wireframing">
+<p>
+There is many, many tools for this some even let you import hand drawings and turn them into wireframes and most of them let you export the CSS in the free tier version
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.justinmind.com/free-wireframe-tool">JustinMind</a> 'free forever'</li>
+<li><a href="https://moqups.com/wireframe-tool/">Moqups</a> or AdobeXD</li>
+<li><a href="https://www.figma.com/">Figma</a></li>
+<li><a href="https://balsamiq.com/">Balsamiq</a></li>
+<li><a href="https://www.invisionapp.com/">Invision</a></li>
+<li><a href="https://pencil.evolus.vn/">Pencil Project</a> (open source/free)</li>
+<li>Piece of paper or any drawing software</li>
+</ul>
+
+<p>
+You're creating a storyboard for your application so you can more easily plan what you want or show a prototype before they pay you to make it. All these tools type their product name into YouTube and receive tutorials in many languages how to use them. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-HTML%2C%20DOM%20%26%20CSS%20crash%20course" class="outline-3">
+<h3 id="HTML%2C%20DOM%20%26%20CSS%20crash%20course">HTML, DOM &amp; CSS crash course</h3>
+<div class="outline-text-3" id="text-HTML%2C%20DOM%20%26%20CSS%20crash%20course">
+<p>
+These <a href="https://stellar.mit.edu/S/course/6/fa19/6.170/courseMaterial/topics/topic3/lectureNotes/10_-_html:css:dom/10_-_html:css:dom.pdf">slides</a> are well designed, explaining the basics. If you right-click on any website and inspect the content, you'll see piles of nested div elements so the CSS style sheets can select them and give style rules for that div box. This is considered bad style since anyone using a screen reader will have no idea what's going on without the new HTML tags like &lt;article&gt; but of course you can design it however you want. Our HTML will be generated if you use Phoenix webserver, and we'll use some CSS framework like Tailwind or something.  
+</p>
+
+<p>
+CSS try <a href="https://flukeout.github.io/">https://flukeout.github.io/</a> to crash course yourself on selectors. There's also <a href="https://flexboxfroggy.com/">flexbox</a> training and <a href="https://cssgridgarden.com/">grid</a> training, you're placing a mapping over the page and flexbox allows you to group them in a single line to fit every screen size (like a menu bar at top of page with multiple items) or grid which allows you to group them on multiple lines. Then your website is 'responsive' reacting to changes in screen size. 
+</p>
+
+<p>
+If you really want to dig deep into CSS and learn it, then see HW Lie's <a href="https://www.wiumlie.no/2006/phd/">thesis</a> understanding all the concepts there, then move up to CSS standards. Learn it in stages from the first spec to the most recent. If you read the thesis you'll see the original plan for CSS was that everyone would have their own style sheets to overrides the website default. In practice no user makes their own CSS because it's way too complicated and sites change too much but that is where the idea of 'the cascade' came from this priority of which CSS sheet to use.    
+</p>
+
+<p>
+To make it even more confusing you have to refer to sites such as <a href="https://caniuse.com/css-grid">can I use</a> to see what browser versions support what CSS or HTML features. For example Internet Explorer still doesn't support CSS Grid fully. 
+</p>
+
+<p>
+The Document-Object-Model (DOM) is what you think it is, a tree that models the html elements and you can manipulate it to only change certain things instead of reloading the html. For example you are entering info in a form and after each line a green checkmark appears beside that field, you could manipulate the dom to wait for that event and then trigger an action to change the tree and show the checkmark. The DOM has a standard you can look up to find all the edge cases like how error messages bubble up the tree much like exceptions in programming do that we will shortly learn. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Review" class="outline-3">
+<h3 id="Review">Review</h3>
+<div class="outline-text-3" id="text-Review">
+<p>
+This course so far has given us specific things to do that make the design of software much easier, and you already know a lot about application building without writing a single line of code.  
+</p>
+
+<ul class="org-ul">
+<li>Conceptual Design</li>
+</ul>
+
+<p>
+Come up with a purpose, for example AirBnB, you want to show pictures of the property. There are already existing concepts for this, look at the similarity between Vrbo property pictures and AirBnB. A large picture with 4 smaller ones, depending on screen size, and a 'show all photos' button. Look at Expedia listings for private vacation homes, exact same concept a large picture with 4 smaller ones and a 'show more' icon but their icon has more <i>information scent</i> telling you the total number of pictures. All 3 of these sites when you click on a picture give you all the photos on a single page. You would probably want to reuse this concept if you were making a generic site for landlords that want to buy your generic booking software instead of coming up with a new concept because users already know how to use it, and where to look for more pictures. You would break down this concept into show more photos, expand picture, all the functionality needed. You would then create a data model for this which we will soon learn. 
+</p>
+
+<ul class="org-ul">
+<li>Interface Heuristics</li>
+</ul>
+
+<p>
+Going with the AirBnB example of creating a private site to book properties, while doing the wireframing you go through the usability cheat sheet we were given, making sure your design conforms. Things in context to each other should be nearby, recall the example of that Google app where upon selecting messages there is no indications what to do next, you have to move too far away from that context to select 'Actions'. You at all times want to present the user's current state to them, in the form of breadcrumbs or other information so they know where they are in your application. You absolutely want undo methods for everything.
+</p>
+
+<ul class="org-ul">
+<li>API and Data Design</li>
+</ul>
+
+<p>
+Once we learn these, we are officially application developers and the easy part begins where all we have to do is implement it in code. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Data%20Design" class="outline-2">
+<h2 id="Data%20Design">Data Design</h2>
+<div class="outline-text-2" id="text-Data%20Design">
+<p>
+Abstract data design modeling is something I haven't seen anywhere else, it's a nice way to plan out exactly what data needs to be stored and the best way to make them into database tables without knowing any sql. It uses sets a datastructure in math we will pickup as we go.
+</p>
+</div>
+
+<div id="outline-container-Data%20Design--Lecture%201" class="outline-3">
+<h3 id="Data%20Design--Lecture%201">Lecture 1</h3>
+<div class="outline-text-3" id="text-Data%20Design--Lecture%201">
+<p>
+Watching <a href="https://drive.google.com/file/d/1axvYX7kSWAmxDU451hyCcG-wt880uVoe/view">Abstract Data Design I</a>. This lecture starts at 31:50 with seperation of concerns, if you're interested there's a security lecture before it about cross site req forgery attacks but we will learn all this in the context of Phoenix framework security which mitigates many common webapp attacks (and exposes new ones we have to learn).
+</p>
+
+<p>
+TODO
 </p>
 
 
