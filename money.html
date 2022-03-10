@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-09 Wed 07:21 -->
+<!-- 2022-03-09 Wed 18:59 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Hacker's Guide to Hustling Money w/Software</title>
@@ -298,7 +298,7 @@ Web or distributed computing software is now so vast that I decided to target th
 <h3 id="What%20we%20need%20to%20know">What we need to know</h3>
 <div class="outline-text-3" id="text-What%20we%20need%20to%20know">
 <p>
-We have to learn Elixir, a functional language which compiles bytecode to run in the Erlang BEAM virtual machine, and understand it's run-time system. Pattern matching is a common idiom in Elixir programming so we need to learn it, and Elixir's dynamics how expressions are evaluated and run, plus it's type system. Elixir simplifies complexity by breaking up programs into modules, so we need to know modules. We need to know all the developer tooling like generating tests and documentation automatically and common editor plugins like Dialyzer a code analysis tool. We have to learn all the weird abstractions of the OTP behavior modules like actor models and supervision trees which means we need to also learn trees in general. Finally we have to learn software and data design, how do we know our ideas will work and how do we translate it into software that isn't trash. Finally we have to learn how to sell our software or ourselves as contractors.. and of course we have to know what we don't know which will come as we go, but no problem. 
+We have to learn Elixir, a functional language which compiles bytecode to run in the Erlang BEAM virtual machine, and understand it's run-time system. Pattern matching is a common idiom in Elixir programming so we need to learn it, and Elixir's dynamics how expressions are evaluated and run, plus it's type system. Elixir simplifies complexity by breaking up programs into modules, so we need to know modules. We need to know all the developer tooling like generating tests and documentation automatically and common editor plugins like Dialyzer a code analysis tool. We have to learn all the weird abstractions of the OTP behavior modules like actor models and supervision trees which means we need to also learn trees in general. We have to learn software and data design, how do we know our ideas will work and how do we translate it into software that isn't trash. Finally we have to learn how to sell our software or sell ourselves as contractors.. and of course we have to know what we don't know which will come as we go, but no problem. 
 </p>
 </div>
 </div>
@@ -541,8 +541,29 @@ Watching <a href="https://drive.google.com/file/d/1axvYX7kSWAmxDU451hyCcG-wt880u
 </p>
 
 <p>
+When he claims this is 'highly abstract' he's not kidding, it will take some time to figure out this style of modeling. @36:29 the cheat sheet is <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic1/studyMaterial/object-models-cheatsheet/data-models-cribsheet.pdf">here</a>. This is merely helpful notation to get you to think about how to represent the data model in a dbms. He absolutely blasted through some conjuction (union) and disjunction (intersection) notation, if you've never seen this kind of notation watch <a href="https://youtu.be/59WX2V7Vjgg">this</a>.
+</p>
+
+<p>
+Let's walk through his solution for the URL shortner software @53:54 with the data model cheat sheet open. If you didn't see it already, their in class URL shortner program you can either log in and get a permanent shortner or you generate a temporary one that expires with no login.
+</p>
+
+<p>
+There is a set of all Shortcuts which maps each 'atom' (the shortner code) to the set of atoms in URL (the actual link), because he has taken every URL possible and put it in a set. This happens exactly once because you wouldn't have two URLS for the same shortner code. The set of all Shortcuts has subsets Permanent and Expiring, and Expiring will map to the set of all Dates exactly once since you wouldn't have 2 expiry dates. Every Date also has a membership to Expiry as it's a subset. An account maps to Permanent and a subset of accounts is the User which means every User also has an account, because it's a subset.
+</p>
+
+<p>
+Reminder this data model is done when you architect the concepts, like the purpose of having a user, which means you need a concept of an account. Then you data design that small part. We'll see in the next lecture how it all fits together, and how you can make a schema for this which translated means how you architect all the database tables.
+</p>
+
+<p>
+Of all the topics we've done so far, this is one of the most important because it absolutely sucks when you realize you've screwed up your data representation and need to redo things requiring all kinds of sql joins. It's also the hardest thing we will learn, even he screwed up his own model in the lecture so this is something that is learned over time.
+</p>
+
+<p>
 TODO
 </p>
+
 
 
 <hr>
