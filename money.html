@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-03-09 Wed 18:59 -->
+<!-- 2022-03-28 Mon 21:23 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Hacker's Guide to Hustling Money w/Software</title>
@@ -254,8 +254,19 @@
 <li><a href="#Data%20Design">Data Design</a>
 <ul>
 <li><a href="#Data%20Design--Lecture%201">Lecture 1</a></li>
+<li><a href="#Data%20Design--Lecture%202">Lecture 2</a>
+<ul>
+<li><a href="#DBMSs">DBMSs</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#Plan%20your%20software">Plan your software</a>
+<ul>
+<li><a href="#Example%20planning">Example planning</a></li>
+</ul>
+</li>
+<li><a href="#Elixir%20TODO">Elixir TODO</a></li>
 </ul>
 </div>
 </nav>
@@ -541,36 +552,197 @@ Watching <a href="https://drive.google.com/file/d/1axvYX7kSWAmxDU451hyCcG-wt880u
 </p>
 
 <p>
-When he claims this is 'highly abstract' he's not kidding, it will take some time to figure out this style of modeling. @36:29 the cheat sheet is <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic1/studyMaterial/object-models-cheatsheet/data-models-cribsheet.pdf">here</a>. This is merely helpful notation to get you to think about how to represent the data model in a dbms. He absolutely blasted through some conjuction (union) and disjunction (intersection) notation, if you've never seen this kind of notation watch <a href="https://youtu.be/59WX2V7Vjgg">this</a>.
+@36:29 the cheat sheet is <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic1/studyMaterial/object-models-cheatsheet/data-models-cribsheet.pdf">here</a>. This is merely helpful notation to get you to think about how to represent the data model in a dbms. He absolutely blasted through some conjuction (union) and disjunction (intersection) notation, if you've never seen this kind of notation watch <a href="https://youtu.be/59WX2V7Vjgg">this</a>.
 </p>
 
 <p>
-Let's walk through his solution for the URL shortner software @53:54 with the data model cheat sheet open. If you didn't see it already, their in class URL shortner program you can either log in and get a permanent shortner or you generate a temporary one that expires with no login.
+He walks through how to do this. Classify everything into sets. Try and break those sets into subsets. If you totally exhaust the parent set into subsets, italicize it's name. Identify what is immutable and what is dynamic, meaning if a set consists of several subsets, and you mark it immutable, it can only exist in one of those subsets not many at the same time. Relate atoms to the sets, such as indivisible addresses are related to messages, assign multiplicities such as how many from addresses can their be in a single message, the answer of course being one.
 </p>
 
 <p>
-There is a set of all Shortcuts which maps each 'atom' (the shortner code) to the set of atoms in URL (the actual link), because he has taken every URL possible and put it in a set. This happens exactly once because you wouldn't have two URLS for the same shortner code. The set of all Shortcuts has subsets Permanent and Expiring, and Expiring will map to the set of all Dates exactly once since you wouldn't have 2 expiry dates. Every Date also has a membership to Expiry as it's a subset. An account maps to Permanent and a subset of accounts is the User which means every User also has an account, because it's a subset.
+@46:21 the ? multiplicity means an object can only be in one folder so you can't have a distinct folder in two different folders at the same time, you could copy it but it would generate a new copy not have two different locations that when changed update a single location, that's all that ? means. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Data%20Design--Lecture%202" class="outline-3">
+<h3 id="Data%20Design--Lecture%202">Lecture 2</h3>
+<div class="outline-text-3" id="text-Data%20Design--Lecture%202">
+<p>
+Get both the data model <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic1/studyMaterial/object-models-cheatsheet/data-models-cribsheet.pdf">cheat sheet</a> and the <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic1/studyMaterial/data-translation-rules/data-translation-rules.pdf">translation to schema</a> (a schema is your dbms model, basically all the tables and fields you intend to make in it) then watch at your leisure the last lecture on <a href="https://drive.google.com/file/d/1ET9UkOCE-l0c-FR_2w0TFudCAn8DaqpV/view">Abstract Data Design</a> and the <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/materials.html">course</a> slides have plenty more information you can look up if you want. There is even some slides for <a href="https://stellar.mit.edu/S/course/6/fa18/6.170/courseMaterial/topics/topic4/lectureNotes/data_modeling_errors/data_modeling_errors.pdf">bad data modeling</a>. We will come back here when we design our first model, you don't have to fully understand everything yet. Of course we will using <a href="https://hexdocs.pm/ecto/Ecto.html">Ecto</a> to set up the dbms, create the schema and handle all queries, and we don't even have to set up Postgres or SQLite that's done for us as well.
 </p>
 
 <p>
-Reminder this data model is done when you architect the concepts, like the purpose of having a user, which means you need a concept of an account. Then you data design that small part. We'll see in the next lecture how it all fits together, and how you can make a schema for this which translated means how you architect all the database tables.
+Reminder atomic values means indivisible or scalar values, for example if taking addresses for an application and you want to store them, the street number is an atomic value, the street name an atomic value, first name, last name would be split into two fields of atomic string values, everything should be indivisible or map to a foreign key, which we will shortly learn.
+</p>
+</div>
+
+<div id="outline-container-DBMSs" class="outline-4">
+<h4 id="DBMSs">DBMSs</h4>
+<div class="outline-text-4" id="text-DBMSs">
+<p>
+Anything you want to know about a dbms can be learned <a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi">here</a> from Andy Pavlo's Intro to Database Systems course like how obsessing about normal-forms is really a waste of time 'most people just wing it and end up in 3rd normal form'. We aren't doing this course, but some of it is helpful so you can understand foreign keys and the basic architecture. 
 </p>
 
 <p>
-Of all the topics we've done so far, this is one of the most important because it absolutely sucks when you realize you've screwed up your data representation and need to redo things requiring all kinds of sql joins. It's also the hardest thing we will learn, even he screwed up his own model in the lecture so this is something that is learned over time.
+Watching the first <a href="https://youtu.be/oeYBdghaIjc?t=2209">lecture</a> skipping to ~36:49, starting with data models. @44:30 primary keys and examples of creating them. @45:00 foreign keys. His crash course on relational algebra, that's all you need to know about SQL. Select is a filter, Projection is show the data however you want like mapping over the attributes and adding 2 to each numerical entry and displaying the results in different order (this doesn't alter the original stored data). Intersection and 'Natural Join' are almost the same thing except you can have different table sizes for join whereas Union/Intersection operator must be done over two tables of exact same size. He goes through what exactly a join algorithm is <a href="https://youtu.be/nUwT7PEQ49o">here</a> if you're interested.
 </p>
 
 <p>
-TODO
+The observations @1:00:40 the database does all these optimizations for you so long as you have generic queries then when your data grows you don't have to go back and alter queries you wrote that were too specific like 'search this row for X, then join these two tables' instead you want 'join these two tables for X' and the dbms will figure out the most optimized way. If you watch the <i>Advanced SQL</i> lecture he talks about how common table expressions are the best optimization for the most use cases since you use a single SQL expression to tell the database what you want and it can then run it's global optimization schemes automatically on the whole query. 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-Plan%20your%20software" class="outline-2">
+<h2 id="Plan%20your%20software">Plan your software</h2>
+<div class="outline-text-2" id="text-Plan%20your%20software">
+<p>
+Your idea doesn't have to be web software, it can be a native binary running on a desktop and everything we just learned fully applies to that kind of software as well. Start with a minimal-viable product, can always add more features later.
 </p>
 
+<p>
+Break everything into concepts:
+</p>
 
+<ul class="org-ul">
+<li>Purpose
+<ul class="org-ul">
+<li>Why would anybody want this functionality</li>
+</ul></li>
+<li>Operational Principal
+<ul class="org-ul">
+<li>What are the typical ways this is used</li>
+</ul></li>
+<li>Concept
+<ul class="org-ul">
+<li>The way we plan on implementing the purpose</li>
+<li>Pref stolen from existing software unless a good reason to invent a new concept</li>
+</ul></li>
+<li>Structure
+<ul class="org-ul">
+<li>The localized data model for just this concept</li>
+</ul></li>
+<li>Actions
+<ul class="org-ul">
+<li>Function stubs of actions we intend to create</li>
+</ul></li>
+</ul>
 
+<p>
+Create a localized data model for just that concept:    
+</p>
+
+<ul class="org-ul">
+<li>Classify sets of similar things</li>
+<li>Divide into smaller subsets if possible
+<ul class="org-ul">
+<li>Does this now exhaust the set</li>
+<li>Is classification immutable</li>
+</ul></li>
+<li>Draw relations between sets and the atoms they contain
+<ul class="org-ul">
+<li>Are the relations immutable</li>
+</ul></li>
+<li>Multiplicities: how many relations there are between a set and atoms</li>
+</ul>
+
+<p>
+Combine all the concepts together, make a wireframe sketch:
+</p>
+
+<ul class="org-ul">
+<li>Review the <a href="https://canvas.mit.edu/courses/4415/files/804925?module_item_id=195040">usability cheat sheet</a> to make sure design adheres to usability</li>
+</ul>
+
+<p>
+Code the site, create an API for other software to use your software:
+</p>
+
+<ul class="org-ul">
+<li>The rest of this workshop is how to do this, and how to price and sell the software as is or get paid to modify it</li>
+</ul>
+</div>
+
+<div id="outline-container-Example%20planning" class="outline-3">
+<h3 id="Example%20planning">Example planning</h3>
+<div class="outline-text-3" id="text-Example%20planning">
+<p>
+I searched on some freelancer sites such as UpWork to find the most requested software: a direct booking site for a short-term property rental. I will make a special case of one of these Vrbo/AirBnB style booking sites, and extract out the generic functionality to be able to use as any kind of booking software such as barbershops, nail salons, condo strata booking the guest rooms, hiring cleaners, tattoo artist, anything where the purpose is to book a time block.
+</p>
+
+<p>
+My plan is to just glue all the software people normally use/prefer together with my app in an automated magic way. If everyone is using iCalendar don't reinvent a calendar and force all your buyers to use it, export/import cleanly to iCalendar instead. If everyone is using NetSuite or Excel or SalesForce then make it simple to export directly. We don't want to spend forever designing accounting analytics when nobody will ever use it and instead want it imported to whatever they're already using. My software simply exists as a Swiss army knife there is already all the tools in the knife out there just nobody else is putting it together into a turnkey solution, and we're using Phoenix framework which gives us all kinds of live update abilities to do visual magic if we want.    
+</p>
+
+<p>
+Let's research around to look at our competitors. The ads I've found so far on typical freelancer sites offering to build a booking site list all the frameworks they intend to use which the buyer probably doesn't care about, and they sell tiers of paid plugins for features. The software is priced for number of listings, probably because those paid plugins are priced like that too. They all hype search-engine optimization and the truth is Google and others will lower your rank the more SEO-junkified your page is now. The cleaner your site, the more text so not a single page app, the more likely you are going to get better search results in my experience right now but of course they change this criteria all the time so who knows what it will be next month. 
+</p>
+
+<p>
+There exists numerous platforms called channel managers which sell the ability to sync all your ads on Booking, AirBnB, Vrbo, Expedia and all the other relevant sites. We don't have access to the APIs for AirBnB and other sites, meaning we can't directly sync availabilities or changes in price you have to pay for access through some partner they use, however we don't need access all we have to do is enable our software to be updated automatically by these channel managers. Most have an open API and we can copy some of the features, like rule based pricing.
+</p>
+
+<p>
+There are hundreds of these small AirBnB sites run by realty companies, search for 'north carolina vacation rental' as an example. Many are violating all the usability tests we just learned. This <a href="https://www.carolinaretreats.com">site</a> has probably the best 'get my quote' checkout page of what I've found so far, a single page where all information is entered, forms and fees are clear and easy to read though I found some errors, like still asking for 'Zip' if you change country to UK. What's interesting is they can offer travel insurance directly at booking time through <a href="https://www.redskyinsurance.com/">this outfit</a>. These sites all seem to use the same common method of book online and pay nothing, then real payment and signatures are all done over email where an ESign doc is sent and then a Stripe gateway link or other for payment. The payment is rule based, taking a percentage during booking then only charging the card on the first day you stay there. 
+</p>
+
+<p>
+Start by writing down purposes, here's mine for automated pricing:
+</p>
+
+<ul class="org-ul">
+<li>Purpose
+<ul class="org-ul">
+<li>Be able to increase/decrease pricing over a range of dates</li>
+</ul></li>
+<li>Concept
+<ul class="org-ul">
+<li>Two components: first is the amount to change the price (percentage or specific) second is the date/hour range it will change the price</li>
+</ul></li>
+<li>OP
+<ul class="org-ul">
+<li>Select dates like holidays and weekends to increase or decrease the price automatically</li>
+</ul></li>
+</ul>
+
+<p>
+We know from the MIT lecture that one purpose should map to a concept, so let's create a new concept   
+</p>
+
+<ul class="org-ul">
+<li>Purpose
+<ul class="org-ul">
+<li>Be able to set pricing based on the state of the booking calendar</li>
+</ul></li>
+<li>Concept
+<ul class="org-ul">
+<li>Two components: first is the amount to change the price, second is the booking state to trigger the price change</li>
+</ul></li>
+<li>OP
+<ul class="org-ul">
+<li>If there is an orphan period under X days in the calendar, offer a discount</li>
+<li>Decrease prices by x amount per day for unfilled bookings y days before deadline</li>
+</ul></li>
+</ul>
+
+<p>
+Before I write the function stubs and a data model, recall the MIT lectures we watched this kind of small rule based policy is perfectly suited for modeling in Alloy and then running an instance to see what happens when many price rules collide with each other in ways we didn't anticipate. To complete the 'actions' part of our conceptual design we now have to learn the technical details to build our concepts and string them together into complete software.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Elixir%20TODO" class="outline-2">
+<h2 id="Elixir%20TODO">Elixir TODO</h2>
+<div class="outline-text-2" id="text-Elixir%20TODO">
 <hr>
 <p>
 <a href="./index.html">home</a>
 </p>
-</div>
 </div>
 </div>
 </div>
