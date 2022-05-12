@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-01-24 Mon 23:04 -->
+<!-- 2022-05-11 Wed 22:51 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competitive Programming for Programming Interviews</title>
@@ -252,49 +252,38 @@
 <ul>
 <li><a href="#What%20is%20this">What is this</a>
 <ul>
-<li><a href="#Why%20not%20leetcode">Why not leetcode</a></li>
-</ul>
-</li>
-<li><a href="#Materials">Materials</a>
-<ul>
-<li><a href="#Backups">Backups</a></li>
+<li><a href="#Gonzo%20journalism">Gonzo journalism</a></li>
+<li><a href="#Materials">Materials</a></li>
+<li><a href="#Practice">Practice</a></li>
+<li><a href="#Strategy">Strategy</a></li>
 <li><a href="#Languages">Languages</a></li>
 <li><a href="#Using%20a%20phone%2Ftablet">Using a phone/tablet</a></li>
-<li><a href="#Real%20contests">Real contests</a></li>
-<li><a href="#An%20example%20competitive%20programming%20class">An example competitive programming class</a></li>
-<li><a href="#An%20example%20competition%20practice">An example competition practice</a></li>
 </ul>
 </li>
-<li><a href="#Begin">Begin</a>
+<li><a href="#Examples">Examples</a>
 <ul>
-<li><a href="#Preface%20-%20How%20many%20problems">Preface - How many problems</a></li>
-<li><a href="#CP4%20chapter%201">CP4 chapter 1</a></li>
+<li><a href="#Competitive%20programming%20class">Competitive programming class</a></li>
+<li><a href="#Competition%20practice">Competition practice</a></li>
 <li><a href="#C%2B%2B%20crash%20course">C++ crash course</a></li>
-<li><a href="#Try%20some%20problems">Try some problems</a></li>
+<li><a href="#OCaml%20crash%20course">OCaml crash course</a></li>
 </ul>
 </li>
-<li><a href="#Asymptotics">Asymptotics</a>
+<li><a href="#Math%20functions">Math functions</a>
 <ul>
-<li><a href="#Complexity%20analysis">Complexity analysis</a></li>
-<li><a href="#Logarithms">Logarithms</a></li>
-<li><a href="#CS%20Theory%20Toolkit%20lecture%202">CS Theory Toolkit lecture 2</a></li>
-<li><a href="#Asymptopia">Asymptopia</a></li>
+<li><a href="#Exponential%20functions">Exponential functions</a></li>
+<li><a href="#Logarithmic%20functions">Logarithmic functions</a></li>
+<li><a href="#Polynomial%20functions">Polynomial functions</a></li>
 </ul>
 </li>
-<li><a href="#MIT%206.006%20Lecture%202">MIT 6.006 Lecture 2</a>
+<li><a href="#Big-O">Big-O</a>
 <ul>
-<li><a href="#CS%20Theory%20Toolkit%203b">CS Theory Toolkit 3b</a></li>
-<li><a href="#CS%20Theory%20Tookit%203c">CS Theory Tookit 3c</a></li>
-<li><a href="#MIT%20problem%20session%201">MIT problem session 1</a></li>
-<li><a href="#How%20memory%20works">How memory works</a></li>
+<li><a href="#RAM%20computational%20model">RAM computational model</a></li>
+<li><a href="#Big-O--Big-O">Big-O</a></li>
+<li><a href="#More%20clarity%20on%20notation">More clarity on notation</a></li>
+<li><a href="#Asymptotics">Asymptotics</a></li>
 </ul>
 </li>
-<li><a href="#CP4%20Chapter%202">CP4 Chapter 2</a>
-<ul>
-<li><a href="#baloni">baloni</a></li>
-<li><a href="#downtime">downtime</a></li>
-</ul>
-</li>
+<li><a href="#MIT%206.006%20Lecture%201">MIT 6.006 Lecture 1</a></li>
 </ul>
 </div>
 </nav>
@@ -303,64 +292,83 @@
 <h2 id="What%20is%20this">What is this</h2>
 <div class="outline-text-2" id="text-What%20is%20this">
 <p>
-How to game the current technical interview system for fun and profit. We need to be able to do <a href="https://news.ycombinator.com/item?id=25302104">this</a>: "it's not enough to be able to solve the problems, you need to be able to solve them on the spot, without much thinking, in an interview context". <a href="https://ioinformatics.org/journal/INFOL075.pdf">Codility</a> a popular filtering site for testing applicants based it's service on the IOI competition, where all problems usually have an easy but 'suboptimal' solution, and the optimal solution requires algorithmic skill. 
+How to game the current technical interview system for fun and profit. We need to be able to do <a href="https://news.ycombinator.com/item?id=25302104">this</a>: "it's not enough to be able to solve the problems, you need to be able to solve them on the spot, without much thinking, in an interview context". <a href="https://ioinformatics.org/journal/INFOL075.pdf">Codility</a> a popular filtering site for testing applicants based it's service on the IOI competition, where all problems usually have an easy but suboptimal solution, and the optimal solution requires algorithmic skill, so let's get that skill.
 </p>
-</div>
 
-<div id="outline-container-Why%20not%20leetcode" class="outline-3">
-<h3 id="Why%20not%20leetcode">Why not leetcode</h3>
-<div class="outline-text-3" id="text-Why%20not%20leetcode">
 <p>
-Leetcode costs money to get the good problems, while competitive programming is free. The hardest problems on free tier leetcode are rated about 3.6 of 10 on Kattis, the online judge we will use. Since Kattis is non-commercial universities have their assignments there such as <a href="https://algo.is/competitive-programming-course/">Reykjavik</a> or <a href="https://nus.kattis.com/">NUS</a> or <a href="https://kth.kattis.com/courses/DD2458">KTH</a> Stockholm 'programming under pressure' course.  
+Every book listed here if it's not already free can be sourced from <a href="https://en.wikipedia.org/wiki/Library_Genesis">Library Genesis</a> or search WorldCat library.
 </p>
 </div>
-</div>
-</div>
 
-<div id="outline-container-Materials" class="outline-2">
-<h2 id="Materials">Materials</h2>
-<div class="outline-text-2" id="text-Materials">
+<div id="outline-container-Gonzo%20journalism" class="outline-3">
+<h3 id="Gonzo%20journalism">Gonzo journalism</h3>
+<div class="outline-text-3" id="text-Gonzo%20journalism">
 <p>
-Every book listed here is free from <a href="https://en.wikipedia.org/wiki/Library_Genesis">Library Genesis</a> or search WorldCat library if you can't buy them:
+I actually mass apply to various tech outfits and practice this in person doing interviews for fun just to see their process, maybe get in and walk around and see what goes there. Translated this means I'm a professional interviewer I'll do any interview anywhere. It's a compulsion ever since I used to read <a href="http://www.infiltration.org/">infiltration</a> back in the day. I have dozens of 2600 articles as well over the years, all under different names, I've always done this kind of gonzo type journo work and can't help myself. Right now I have many concurrent jobs just out of curiosity to see what they do there so if their offer is good I'll take it and I've taken some. This isn't a scam on my part because I also follow the Rick Ross advice in <i>A Hustler's Guide to Building Your Empire</i> about 'what have you done for me' where everybody has their hand out wanting to get paid but what have they offered? So I'm always contributing for free to their open source projects usually a weekend or two of free 8hr+ labor, I'm not just wasting time if anything they owe me money. If I get hired I have no problems staying up until 2am going through every open issue squashing bugs or writing features from scratch as this is my hobby, but it's very difficult to find a place that actually has work for you to do. tl;dr I don't actually work, all my time is just doing some ritual like a meeting or answering emails. 
 </p>
 
+<p>
+Often in interviews you will get 'ranked', which is completely suspect, I take it to mean they have a candidate they want but are waiting for that candidate to lowball salary themselves in negotiations so they can get hired. If they ask for too much they go down the ranking list and maybe you're next and if they don't like your demands it's the next ranking. They should do all this <i>before</i> making you jump through multiple interviews only to get ranked but that's the game, we can't change it.
+</p>
+
+<p>
+Recently the most interesting interviews I've had were due to the material taught <a href="https://youtu.be/GhBARuHEydM">here</a> by MIT's Chris Rackauckas who will teach you the full math model like loops as discrete dynamical systems, absolutely amazing content if this kind of thing is your bag. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Materials" class="outline-3">
+<h3 id="Materials">Materials</h3>
+<div class="outline-text-3" id="text-Materials">
 <ul class="org-ul">
-<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (the first volume, 4 chapters)</li>
+<li>MIT's <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/">6.006</a> sp2020 course on OCW</li>
 </ul>
 
 <p>
-The first volume was written both for passing technical interviews and for anybody interested in beginning competitive programming as the author is the coach of Singapore's ICPC/IOI team. Practice is done with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> and some other online judges, so producing working code for hundreds of problems and submitting them for tests of correctness and runtime constraints. Kattis also hosts the ICPC <a href="https://icpc.kattis.com/problems">archive</a> problems which when we're done if you're interested we'll try and <a href="http://www.cs.cmu.edu/~15850/notes/cmu850-f20.pdf">do those too</a>. Kattis even hosts the NSA <a href="https://nsachallenge20.kattis.com/problems">challenges</a>. All the algorithms have visualizations on the author's site <a href="https://visualgo.net/en">VisuAlgo</a>.
+Contains recorded full problem walkthroughs. I preferred this course to others because they actually use a board, instead of zoom slides so you can see problems being fully worked out, and it's permanently archived on MIT OCW so won't disappear behind campus logins. The course uses <a href="https://book.huihoo.com/pdf/algorithms/">DPV</a> an an optional text but you should pick whatever algorithms text interests you, I will use <i>The Art of Computer Programming</i> by Don Knuth.  
 </p>
 
 <ul class="org-ul">
-<li>MIT's <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/">6.006</a> sp2020 course on OCW w/open lectures</li>
+<li>A short <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/">workshop</a> <i>Functional Data Structures</i> in OCaml</li>
 </ul>
 
 <p>
-Contains full problem walkthroughs. I preferred this course to others because they actually use a board, instead of zoom slides so you can see problems being fully worked out. We have access to everything and it's permanent so won't disappear behind campus logins. 
+This is a high level computer scientist giving you a stroll through the subject like if you had a personal PhD tutor. Prof Ragde mostly follows the MIT syllabus and is a different view of the same material but much more mind opening. Should you use the 'Master Theorem' or Akra-Bazzi method? Is best-case analysis just marketing? The author has <a href="https://cs.uwaterloo.ca/~plragde/flaneries/">many</a> of these style of subject strolls and has <a href="https://cs.uwaterloo.ca/~plragde/747/notes/index.html">notes</a> on <i>Programming Language Foundations in Agda</i> complete with ascii screencasts if you want to learn some PL theory.
 </p>
 
 <ul class="org-ul">
-<li>Other materials to fill in gaps</li>
+<li>Interview specific like software architecture <a href="https://www.worldcat.org/title/system-design-interview-an-insiders-guide-second-edition/oclc/1253363956&amp;referer=brief_results">examples</a> and how to write a <a href="https://thetechresume.com/">tech resume</a>.</li>
 </ul>
-
-<p>
-Some from: UCSD's CSE101 <a href="https://cseweb.ucsd.edu/~dakane/CSE101/">course</a>, Ryan O'donnell's <a href="https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX">CS Theory Toolkit</a>, CMU's 15-451 <i>Algorithms</i> undergrad <a href="https://www.cs.cmu.edu/~15451-f20/schedule.html">course</a> to learn FFT/Computational Geometry, and 15-295 <i>Competitive Programming</i>. The <a href="https://cs.nyu.edu/~spencer/">book</a> <i>Asymptopia</i> by Spencer and <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> which we'll do very few parts of each. CMU's <i>Parallel &amp; Sequential Algorithms</i> <a href="https://www.diderot.one/courses/89">book</a>. We will also study software architecture <a href="https://www.worldcat.org/title/system-design-interview-an-insiders-guide-second-edition/oclc/1253363956&amp;referer=brief_results">examples</a>. 
-</p>
+</div>
 </div>
 
-<div id="outline-container-Backups" class="outline-3">
-<h3 id="Backups">Backups</h3>
-<div class="outline-text-3" id="text-Backups">
+<div id="outline-container-Practice" class="outline-3">
+<h3 id="Practice">Practice</h3>
+<div class="outline-text-3" id="text-Practice">
+<ul class="org-ul">
+<li>The <a href="https://cpbook.net/details?cp=4">book</a> <i>Competitive Programming 4</i> (first volume, 4 chapters)</li>
+</ul>
+
 <p>
-These are only needed if the public online resources disappear
+The book uses <a href="https://cpbook.net/methodstosolve">methods to solve</a> as a curated list of problems for each chapter, practice is done with the <a href="https://open.kattis.com/">Kattis Problem Archive</a> so producing working code for hundreds of problems and submitting them for tests of correctness and runtime constraints. All the algorithms have visualizations on the author's site <a href="https://visualgo.net/en">VisuAlgo</a>. Any practice site will work like leetcode or codeforces but competitive programming online judges have the best test suites and can be solved creatively there isn't just one solution.
 </p>
 
-<ul class="org-ul">
-<li>CSE101 <a href="https://btcache.me/torrent/D3B621E29F1C4647E37E5111A1B28FDB790BB056">torrent file</a> contains recorded lectures, all assignments/solutions and past exams/solutions, didn't add the exam review lectures.</li>
+<p>
+I like this book as a reference, it's handbook sized, cost $20 and anytime some problem pattern comes up I can flip through it and always find advice not found anywhere else.  
+</p>
+</div>
+</div>
 
-<li>15-451 <a href="https://btcache.me/torrent/A898A215DDF9FA5E2BAF3F160EA2E9CC41128A04">torrent file</a> some recorded lectures &amp; recitations</li>
-</ul>
+<div id="outline-container-Strategy" class="outline-3">
+<h3 id="Strategy">Strategy</h3>
+<div class="outline-text-3" id="text-Strategy">
+<p>
+The MIT course is all you really need in fact just the <a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/">recitations</a> and the recorded problem solving seminars though Erik Demaine always gives a good a lecture and they're worth watching. He didn't <a href="https://www.homeschoolingheroes.com/how-to-teach-at-home/homeschooling-hero-erik-demaine">read any textbooks</a> in undergrad and instead practiced what he was taught in class by trying to construct objects like tetris, puzzles and folding algorithms for origami using the course materials. You can do the same, make your own <a href="https://youtu.be/GTtzB17SKwQ">music</a> using <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FIMS/">this workshop</a> or whatever it is you want to do.
+</p>
+
+<p>
+<a href="https://jp.linkedin.com/in/hiroyuki-ikezoe-4619ab2b">This guy</a> made <a href="https://en.wikipedia.org/wiki/Kazehakase">Kazehakase</a> browser as a project and now works for Mozilla, practice what you want to do and you will conjure it into existence. 
+</p>
 </div>
 </div>
 
@@ -368,11 +376,11 @@ These are only needed if the public online resources disappear
 <h3 id="Languages">Languages</h3>
 <div class="outline-text-3" id="text-Languages">
 <p>
-The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard library data structures for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. You don't have to use their specific compiler version for your local system, just be aware of any differences in versions when you make a submission so not using some feature that doesn't exist yet in the online judge. Whatever language you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example.
+Do this in the language you enjoy, not what you think is 'employable' because it won't matter. 
 </p>
 
 <p>
-Here are the rules of the ICPC world finals and the <a href="https://docs.icpc.global/worldfinals-programming-environment/">languages</a> they allow, though judges only guarantee solutions with passing tests in C++ and Java, but it doesn't mean you can't have AC verdict with other languages.
+The book has a public code <a href="https://github.com/stevenhalim/cpbook-code">repository</a> of all the algorithms contained in it, and explains the complexity of the standard library data structures for OCaml, Python 3, Java 11 and C++17 but you can use any of <a href="https://open.kattis.com/help">these</a> languages. Whatever language you choose guaranteed there is a tutorial for using it for competitive programming like this <a href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/">Haskell</a> example. Do you not see the language you want then go on <a href="https://www.spoj.com/">Spoj</a> you can use assembly, sed, scheme anything you want. 
 </p>
 </div>
 </div>
@@ -381,66 +389,67 @@ Here are the rules of the ICPC world finals and the <a href="https://docs.icpc.g
 <h3 id="Using%20a%20phone%2Ftablet">Using a phone/tablet</h3>
 <div class="outline-text-3" id="text-Using%20a%20phone%2Ftablet">
 <p>
-Looking around the Android store, the only decent offline app seems to be a <a href="https://youtu.be/FeWBu9Gf-Rs">Pascal</a> compiler made by a highschool kid in Vietnam. Both Kattis and onlinejudge.org accept Pascal submissions (I think the IOI still accepts it) and Pascal syntax is simple pseudocode. If you want an online compiler there are many options like <a href="https://replit.com/">Repl.it</a>.
+If you must, you can use any basic text editor and cut+paste your solutions, in fact we'll watch a CMU competitive programming <a href="https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=11d43362-4993-448e-9f38-ac4100cb80b8">lecture</a> (now that I've linked it, it will prob disappear) on dynamic programming where that's exactly what the prof is doing. Looking around the Android store, the only decent offline app seems to be a <a href="https://youtu.be/FeWBu9Gf-Rs">Pascal</a> compiler made by a highschool kid in Vietnam. Both Kattis and onlinejudge.org accept Pascal submissions (I think the IOI still accepts it) and Pascal syntax is simple pseudocode you can write on a white board. If you want an online compiler try <a href="https://replit.com/">Repl.it</a>.
 </p>
 </div>
 </div>
+</div>
 
-<div id="outline-container-Real%20contests" class="outline-3">
-<h3 id="Real%20contests">Real contests</h3>
-<div class="outline-text-3" id="text-Real%20contests">
+<div id="outline-container-Examples" class="outline-2">
+<h2 id="Examples">Examples</h2>
+<div class="outline-text-2" id="text-Examples">
 <p>
-We can compete on CodeForces, <a href="https://icfpcontest2021.github.io/index.html">ICFP</a>, Topcoder, Google Kickstart, Facebook Hacker Cup, <a href="https://code.golf/">Code Golf</a>, <a href="https://microcorruption.com/login">microcorruption</a> or <a href="https://cryptopals.com/">cryptopals</a> type challenges, most of which we have <i>no hope of winning</i> of course.
+Let's see what competitive programming practice looks like  
 </p>
 </div>
-</div>
 
-<div id="outline-container-An%20example%20competitive%20programming%20class" class="outline-3">
-<h3 id="An%20example%20competitive%20programming%20class">An example competitive programming class</h3>
-<div class="outline-text-3" id="text-An%20example%20competitive%20programming%20class">
+<div id="outline-container-Competitive%20programming%20class" class="outline-3">
+<h3 id="Competitive%20programming%20class">Competitive programming class</h3>
+<div class="outline-text-3" id="text-Competitive%20programming%20class">
 <p>
-A great writeup <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">here</a> of an exchange student from Canada who took CS 3233 in Singapore and how the author of the cp4 book organizes those classes. It's a 12 day course expanded to 4 months as most of the work is the class competing against each other. He recommends learning to modify existing algorithms instead of using fancy data structures.
+A great writeup <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">here</a> of an exchange student from Canada who took CS 3233 in Singapore and how the author of the cp4 book organizes those classes. It's a 12 day course expanded to 4 months as most of the work is the class competing against each other.
 </p>
 </div>
 </div>
 
-<div id="outline-container-An%20example%20competition%20practice" class="outline-3">
-<h3 id="An%20example%20competition%20practice">An example competition practice</h3>
-<div class="outline-text-3" id="text-An%20example%20competition%20practice">
+<div id="outline-container-Competition%20practice" class="outline-3">
+<h3 id="Competition%20practice">Competition practice</h3>
+<div class="outline-text-3" id="text-Competition%20practice">
 <p>
 Here is Gennady Korotkevich aka tourist <a href="https://youtu.be/97tieEKfvBs">practicing</a> on codeforces and explaining what he's doing, though he didn't start with C++ he used to win the IOI with Pascal. A good article about him is <a href="http://is.ifmo.ru/articles_en/2017/4-17_eng.pdf">here</a> which explains the spartan background, he chooses to live in a student dorm. At school he gives lectures on discrete math/combinatorics and complexity theory which makes sense, if you are a master problem solver you are likely interested in trying to figure out unsolved problems in theoretical cs. 
 </p>
 
 <p>
-The first thing to notice is he's using a generic text editor and unusual shell that looks like minimalist GNU for Windows(<a href="https://mingw.osdn.io/">MinGW</a>) and a text mode <a href="https://www.farmanager.com/screenshots.php?l=en">file manager</a> and manually submitting through the codeforces website UI. He prepares individual directories named after the problem, then always makes a sol.cpp file in that directory so he doesn't have to change a macro he's written to compile the solution from the shell. 
+The first thing to notice is he's using a basic text editor and unusual shell that looks like minimalist GNU for Windows(<a href="https://mingw.osdn.io/">MinGW</a>) and a text mode <a href="https://www.farmanager.com/screenshots.php?l=en">file manager</a> where he manually submits through the codeforces website UI. He prepares individual directories named after the problem, then always makes a sol.cpp file in that directory so he doesn't have to change a macro he's written to compile the solution from the shell. 
 </p>
 
 <p>
 His C++ template:
 </p>
-<pre class="example" id="orgc43d777">
+<pre class="example" id="orgb5380e7">
 // include every C++ std library and bits library
 // doesn't work on all platforms
 #include &lt;bits/stdc++.h&gt;
 
 // use std namespace to avoid having to write std::cin or std::cout
+// in other words bringing into scope all C++ std libraries 
 using namespace std;
 
 int main() {
-// turn off default cout flush
+// turn off default cout flush 
  ios::synch_with_stdio(false);
  cin.tie(0)
 
 int tt;
 cin &gt;&gt; tt;
-// store first input tt as int
+// declare variable tt as an integer, store the first input in tt
 while (tt--) {
 // while (true) do following..
 // way to decrement through the input stream to zero
 </pre>
 
 <p>
-std::cin is synchronized to std::cout and performs default buffer flushing operations, so to save runtime he disables this sync. This is all written in online C++ references you can read yourself if you choose to use C++. His compiler flags he explains in one of these Twitch streams, or you can figure out yourself too as you go, most of them are to make compiler messages extra verbose for debugging. 
+std::cin is synchronized to std::cout and performs default buffer flushing operations, so to save runtime he disables this sync. This is all written in online C++ references you can read yourself if you choose to use C++. His compiler flags he explains in one of these Twitch streams, or you can figure out yourself too as you go, most of them are to make compiler messages extra verbose for debugging. Note, you would never, ever write software outside of competitive programming like this because he has opened a gigantic scope.  
 </p>
 
 <p>
@@ -448,46 +457,7 @@ You don't have to watch the entire 2hr vid, the last problem seems like the most
 </p>
 
 <p>
-@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book we do <a href="./calculus.html">here</a> if you're interested. In the last problem a time limit exceeded verdict shows how he would optimize a solution. The judging server ran his program faster than his own laptop, something to remember if debugging and believing your solution still isn't optimized enough. 
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-Begin" class="outline-2">
-<h2 id="Begin">Begin</h2>
-<div class="outline-text-2" id="text-Begin">
-<p>
-I assume you either downloaded the book <i>Competitive Programming</i> from library genesis (any version) or bought the 4th edition for $20, it's handbook sized and worth the money as it has a ton of solved exercises just in the book itself, not including the huge amount of UVa/Kattis problems it recommends doing. 
-</p>
-
-<p>
-This book is designed to be read several times, you work through it once then go back and solve the exercises in each chapter, as they won't make sense the first time around. The author(s) are very blunt in saying if you want to compete, you should know everything in this book and be able to solve many of these problems in under 30 minutes, if very competitive under 10 minutes. 
-</p>
-</div>
-
-<div id="outline-container-Preface%20-%20How%20many%20problems" class="outline-3">
-<h3 id="Preface%20-%20How%20many%20problems">Preface - How many problems</h3>
-<div class="outline-text-3" id="text-Preface%20-%20How%20many%20problems">
-<p>
-Each chapter topic will have 7 starred 'must try' problems, and all of them are on the site <a href="https://cpbook.net/methodstosolve">methods to solve</a> and that site is more up to date than the book, it's the site we will use so if you don't buy the 4th edition, you're fine. It contains a mix of onlinejudge.com (formerly called UVa online judge) and Kattis problem sets, the bold problem titles are the starredecommended problems. Hints how to solve them are on the right-hand side of page if you haven't figured it out but the book explains that's how the authors solved them, but there could be other ways. 
-</p>
-
-<p>
-If we only do the starred problems listed on <a href="https://cpbook.net/methodstosolve">methods to solve</a>: Chapter 4 has 167, 3 has 195, 2 has 165 and the first chapter has 182 or <b>709 total problems</b> if you're using both UVa and Kattis. If you read the above example class writeup of that exchange student, he solved <a href="https://imjching.com/writings/2019/06/21/getting-into-competitive-programming/">50 easy problems a day</a> at first and gained 500 points on Kattis in 2 months, which is the entrance requirement for the course, then he gained 1000 more points on Kattis during his 4 month course in Singapore (noting another student gained 3500 points in 4 months) so this isn't impossible to do.
-</p>
-</div>
-</div>
-
-<div id="outline-container-CP4%20chapter%201" class="outline-3">
-<h3 id="CP4%20chapter%201">CP4 chapter 1</h3>
-<div class="outline-text-3" id="text-CP4%20chapter%201">
-<p>
-Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solving skills are mentioned, many of which were taught in <a href="./software.html">CS19</a>. 1.3.3 modern (2020) CPUs can process 10<sup>8</sup> or 100M operations in a second for our solutions, on average, so they recommend to pay attention to bounds if your algorithm is n<sup>4</sup> in complexity but the input is only 50 inputs max, you could still pass the online judge. 
-</p>
-
-<p>
-1.3.4 talks about programming languages, how factorials are trivial in Python but difficult in C/C++, and requires a special library BigInteger in Java. The point being you should know multiple languages enough to be able to solve any problem with them (or know the Stirling numbers asymptotic trick to get a sum of factorials). The rest of this chapter will show you how to get your first AC verdict on Kattis, and has multiple examples of how to get and manipulate input which of course are also on the book github repository. 
+@1:43:48 or so he reads the writeup for a problem describing local maximum and minimum, which is the chapter on optimization in the calculus book <a href="./calculus.html">here</a> if you're interested. A time limit exceeded verdict shows how he would optimize to get accepted verdict, also trolling the stream by shortening all the variable names to single letters claiming it will speed up the program. The judging server ran his program faster than his own laptop, something to remember if debugging and believing your solution still isn't optimized enough, resubmit anyway as you get unlimited submissions. 
 </p>
 </div>
 </div>
@@ -496,33 +466,50 @@ Most of this hasn't changed since CP3, this is a casual read. 1.3.2 problem solv
 <h3 id="C%2B%2B%20crash%20course">C++ crash course</h3>
 <div class="outline-text-3" id="text-C%2B%2B%20crash%20course">
 <p>
-C++ is a <a href="https://en.wikipedia.org/wiki/Generic_programming">generic programming language</a> with statically checked, compile-time type polymorphism similar to abstract types in the ML language so you can write a generically typed function, and supply the desired type as a parameter which the compiler will optimize for you. The C++ standard library includes the STL or <a href="https://en.wikipedia.org/wiki/Generic_programming#Templates_in_C++">standard template library</a> and you can alter all the built-ins by supplying custom functions without needing to manipulate function pointers. C++ can pass functions as arguments to another function and return new functions so functional programming is possible. You can make immutable vectors and lists, use filter/fold/map(std::transform)/reduce from the STL, hack a template together to do lazy eval, partial function application and currying, and write your own algebraic data types, meaning many types can be combined and pattern matched as a scheme to make illegal states impossible to represent.    
+C++ is a <a href="https://en.wikipedia.org/wiki/Generic_programming">generic programming language</a> not really an object oriented language if you look at the STL or <a href="https://en.wikipedia.org/wiki/Generic_programming#Templates_in_C++">standard template library</a>. You can alter all the built-ins by supplying custom functions without needing to manipulate function pointers. 
 </p>
-
 
 <p>
-I will use these books for C++ reference as I go:
+Some materials for C++ I found useful:
 </p>
 <ul class="org-ul">
-<li><a href="https://kth.instructure.com/courses/20699/files/3296468/download?verifier=xTIE4fipNDoRb4BXNI7TiLOAtpuekegxbZZ5XO4M&amp;wrap=1">Algorithmic Problem Solving</a> (2020 draft) by Johan Sannemo</li>
-<li><a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">Functional Programming in C++</a> (2019) by Ivan Cukic</li>
-<li>The <a href="https://stepik.org/lesson/26053/step/1?unit=8085">Stepik</a> online book written for the course <a href="https://ucsd-cse100-s20.github.io/">Advanced Data Structures</a></li>
+<li>The <a href="https://stepik.org/lesson/26053/step/1?unit=8085">Stepik</a> online course written for <a href="https://ucsd-cse100-s20.github.io/">Advanced Data Structures</a></li>
+<li><a href="https://kth.instructure.com/courses/20699/files/3296468/download?verifier=xTIE4fipNDoRb4BXNI7TiLOAtpuekegxbZZ5XO4M&amp;wrap=1">Algorithmic Problem Solving</a> (2020 draft) by Johan Sannemo a good crash course</li>
+<li><a href="http://libgen.is/book/index.php?md5=595216785D9250951566D4D33E8A14BF">Functional Programming in C++</a> (2019) by Ivan Cukic is interesting</li>
+<li><a href="https://www.stroustrup.com/dne.html">The Design &amp; Evolution of C++</a> (2013) by Stroustrup is of course outdated but will answer all questions like why does the keyword 'this' exist instead of being named 'self' and other seemingly strange design decisions everyone complains about because they probably didn't read this book.</li>
 </ul>
 
 <p>
-Kattis online judge uses g++ -std=gnu++17 so std::ranges aren't available as they were a 3rd party library until c++20. 
+There's countless C++ data structure and algorithms books on Amazon. The Stepik online course I found some problems like <a href="https://stepik.org/lesson/31402/step/7?unit=11707">this one</a> only have a 18% completion rate by students, meaning they are obviously too hard for the targeted audience, and it will not show you solutions until you enter a passing solution. If you get stumped early on the same problem:
 </p>
-</div>
-</div>
 
-<div id="outline-container-Try%20some%20problems" class="outline-3">
-<h3 id="Try%20some%20problems">Try some problems</h3>
-<div class="outline-text-3" id="text-Try%20some%20problems">
+<details id="org1281ae7">
 <p>
-Start on Kattis with the easiest problems just to get used to I/O and the STL. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
+
 </p>
 
-<pre class="example" id="org35324e6">
+<p>
+For this problem I searched around to find out that C++ true or false booleans in a return statement like 'return x &lt; y' can be cast to an integer to represent 1 or 0, though later in the solutions guide after I solved this problem I discovered you don't even need to cast to integer it will automatically cast.
+</p>
+<pre class="example">
+return rand() &lt; RAND_MAX * p
+</pre>
+
+
+<p>
+I only know this from the AI workshop because the distribution of a biased coin the expected value is p, whatever the probability is. If you flip that biased coin 100 times the expected value is 100p. Not sure how a beginner student who hasn't done probability courses would know that at all and likely why it has a 18% completetion rate
+</p>
+</details>
+</div>
+
+<div id="outline-container-Try%20some%20problems" class="outline-4">
+<h4 id="Try%20some%20problems">Try some problems</h4>
+<div class="outline-text-4" id="text-Try%20some%20problems">
+<p>
+Start on Kattis with the <a href="https://cpbook.net/methodstosolve?oj=kattis&amp;topic=ch1&amp;quality=all">easiest problems</a> from the book, just to get used to I/O and the STL containers. You will learn by doing, here's an example of some of the first few <i>Methods to Solve</i> problems:
+</p>
+
+<pre class="example" id="orga984060">
 // problem Faktor
 #include &lt;iostream&gt;
 #include &lt;cmath&gt;
@@ -557,7 +544,7 @@ int main() {
 In this example for Roaming <a href="https://open.kattis.com/problems/romans">Romans</a> I couldn't pass the last test case until I abandoned all C++ built-ins like ceil/round and just cast the type to an int to cut off the decimal:
 </p>
 
-<pre class="example" id="org4284591">
+<pre class="example" id="org620a881">
 #include &lt;iostream&gt;
 
 int main() {
@@ -570,356 +557,459 @@ int main() {
 </pre>
 
 <p>
-I did just enough so I could figure out the basic container library and I/O, move on to chapter 2 and come back here later as many of the ad-hoc problems will require skills in chapter 2 and later.  
+To start I didn't import every library and untie cin/cout, so I could remember what library had those functions.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-Asymptotics" class="outline-2">
-<h2 id="Asymptotics">Asymptotics</h2>
-<div class="outline-text-2" id="text-Asymptotics">
+<div id="outline-container-OCaml%20crash%20course" class="outline-3">
+<h3 id="OCaml%20crash%20course">OCaml crash course</h3>
+<div class="outline-text-3" id="text-OCaml%20crash%20course">
 <p>
-While you drill some chapter 1 Kattis problems for practice, we are leaving the world of precision math for the rest of this workshop and entering the wild and crazy art of asymptotics where we get to estimate everything with slippery definitions. For the most part we will disregard constants except in competitive programming since the bounds are so restricted. 
+Here's a quick rundown on OCaml and how abstract it can get should you wish to try it to solve Kattis problems. I'm using the interactive OCaml top-level where code is compiled and executed on the fly.  
+</p>
+
+<pre class="example" id="orgd43c0cc">
+# let compose f g = fun x -&gt; f(g x);;
+val compose : ('a -&gt; 'b) -&gt; ('c -&gt; 'a) -&gt; 'c -&gt; 'b = &lt;fun&gt;
+
+# compose (fun x -&gt; x + x) (fun y -&gt; y + y) 2;;
+- : int = 8
+</pre>
+
+<p>
+Above is a function composition f(g(input)) where a function g is applied first to an input and the result is the input for function f. Compose takes two functions and something to apply the second function to. Lambda syntax (a function without a name) in OCaml is fun x -&gt; x and you can bind that anonymous function to a name with let. There are many ways to declare a function in OCaml you can look up yourself in the documentation, in fact this composition is already in the standard library and called the application operator and there's always another way to do something in OCaml.
+</p>
+
+<pre class="example" id="org58ddcdf">
+val compose : ('a -&gt; 'b) -&gt; ('c -&gt; 'a) -&gt; 'c -&gt; 'b = &lt;fun&gt;
+</pre>
+
+<p>
+These arrows are the type of a function typ -&gt; typ' where typ is the domain type (the type of the inputs) and typ' is its range type (the type of the result). The last -&gt; 'b on the right is the result, and everything else to the left denotes the parameters that function takes. Arrows with brackets around them (typ -&gt; typ') denote a function is expected as a parameter.
+</p>
+
+<p>
+These are abstract type variables meaning they become whatever data you give it, if you give it strings it's now type string. They are called alpha 'a, beta 'b and gamma 'c. Think of them like math variables: a + b = 2 where a and b can be the same value 1 or different like -2 and 4. Type variables 'a -&gt; 'b can be int -&gt; int or int -&gt; string but should be consistent or you will get a type error. The = &lt;fun&gt; notation is a placeholder for the bytecode generated by the top-level since it would make no sense to display it to you in the top-level/UTop.
+</p>
+
+<pre class="example" id="orga58e5f2">
+let g x =
+  let f = fun y -&gt; y + x in
+  let x = 1 in
+  f x 
+</pre>
+
+<p>
+A popular OCaml idiom using nested evaluation sometimes called 'inlining' which is a way to both limit scope of internal bindings you create like libraries you open, and for compiler optimization as you give it all it needs at once similar to Common Table Expressions in SQL 'here's everything I want to do, you figure out how best optimize'. At the top g is the function you call from the outside, and f is an internal function not accessible outside that let scope. All this is doing is naming components before combining them all into one final expression. 
+</p>
+
+<pre class="example" id="org5822b09">
+# let g x =
+ let f = fun y -&gt; y + x in
+ let x = 3 in
+ f x
+val g : int -&gt; int = &lt;fun&gt;
+
+(* Eval is by substitution: *)
+# g 10
+--&gt;
+let f = fun y -&gt; y + 10 in
+ let x = 3 in
+ f x
+--&gt;
+let x = 3 in
+(fun y -&gt; y + 10) x
+--&gt;
+(fun y -&gt; y + 10) 3
+--&gt;
+(3 + 10)
+--&gt;
+13
+</pre>
+
+<p>
+The step (fun y -&gt; y + 10) 3 is similar to the lambda calculus syntax: function on the left applied to value on the right and evaluated via substitution until you reach a value. In ML-family languages functions can be a value. 
+</p>
+
+<pre class="example" id="org7bbfcee">
+# let rec power f n = if n &lt;= 0 then (fun x -&gt; x) else compose f (power f (n-1));;
+val power : ('a -&gt; 'a) -&gt; int -&gt; 'a -&gt; 'a = &lt;fun&gt;
+
+# let sqr = power (fun x -&gt; x * x) 2;;
+val sqr : int -&gt; int = &lt;fun&gt;
+# sqr 2;;
+- : int = 16
+</pre>
+
+<p>
+A power function that consumes a function and the number of times you want to square <i>that function</i>. The rec keyword is to get around the problem of declaring a function that references itself before it is defined. If you didn't include it you'd get an error along the lines of 'power is used but not defined'. 
+</p>
+
+<pre class="example" id="org256c5c0">
+Hand stepping power:
+# let sqr = power (fun y -&gt; y * y) 2;;
+--&gt;
+(compose (fun y -&gt; y * y) (power (fun y -&gt; y * y) 1))
+--&gt;
+(compose (fun y -&gt; y * y) (compose (fun y -&gt; y * y) (power (fun y-&gt; y * y) 0))) //if 0 return x -&gt; x
+--&gt;
+(compose (fun y -&gt; y * y) (compose (fun y -&gt; y * y) (fun x -&gt; x)) //compose f g so return fun x -&gt; f(g x)
+--&gt;
+(compose (fun y -&gt; y * y) (fun x -&gt; (fun y -&gt; y * y) ((fun y -&gt; y) x)) //compose f g so return fun x -&gt; f(g x)
+--&gt;
+fun x -&gt; (fun y -&gt; y * y) (fun y -&gt; (fun y -&gt; y * y) y)) x) 
+val sqr : int -&gt; int = &lt;fun&gt;
+  
+Hand stepping sqr:
+# sqr 2;;
+--&gt;
+(fun 2 -&gt; (fun y -&gt; y * y) (fun y -&gt; ((fun y -&gt; y * y) y)) 2)
+--&gt;
+(fun 2 -&gt; (fun y -&gt; y * y) (fun 2 -&gt; (fun y -&gt; y * y) 2))  
+--&gt;
+(fun 2 -&gt; (fun y -&gt; y * y) (fun 2 -&gt; (fun 2 -&gt; 2 * 2))  
+--&gt;
+(fun 2 -&gt; (fun y -&gt; y * y) (fun 2 -&gt; (fun 2 -&gt; 4))
+--&gt;
+(fun 2 -&gt; (fun y -&gt; y * y) (fun 2 -&gt; 4)
+--&gt;
+(fun 2 -&gt; (fun y -&gt; y * y) 4)
+(* (fun y -&gt; y * y) 4 is the same as f 4 or f(4) or function application to the value 4 *)  
+--&gt;
+(fun 2 -&gt; (fun 4 -&gt; 4 * 4)
+--&gt;
+(fun 2 -&gt; 16
+- : int = 16
+</pre>
+
+<p>
+The nested parens and confusing variables I probably screwed up but recursion pretend every call to power() from power() is to a new clone of power() and you're waiting for results to return just like you would any other program that calls an outside function. Recursion is solving the problem one step at a time and repeating until you reach a base case and you stop the recursion by returning a value, then all the delayed computations can begin to compute from right to left.
+</p>
+
+<pre class="example" id="org3447312">
+# let fib n =
+   let rec f prev next count =
+    if count &lt; 2 then next
+    else
+     f next (prev + next) (count - 1) in
+      f 0 1 n;;
+val fib : int -&gt; int = &lt;fun&gt;
+
+# fib 50;;
+- : int = 12586269025
+</pre>
+
+<p>
+Virtually every programming book since SICP uses a version of the fibonacci recursive algorithm to show how inefficient recursion is growing a stack but you can rewrite it as a simple loop that still refers to itself without re-entrancy meaning a stack to keep track of delayed computations is not needed.  
+</p>
+
+<pre class="example" id="org44b7509">
+# let derivative dx f = function x -&gt; (f(x +. dx) -. f(x)) /. dx;;
+val derivative : float -&gt; (float -&gt; float) -&gt; float -&gt; float = &lt;fun&gt;
+</pre>
+
+<p>
+The dot notation +. or /. means a type float is expected. This function consumes a tiny float dx, and an arbitrary function f then returns the derivative (which is a new function) of f which in math notation is f'. For example a power function f(x) = x<sup>2</sup> the formula for it's derivative is f'(x) = nx<sup>n-1</sup> or f'(x) = 2x<sup>1</sup> where the exponent is moved down to multiply the base, and 1 is subtracted from the original exponent. The formula in the OCaml code above is a generalized version for the derivative. If you took the second derivative of f'(x) = 2x you would get another function returned f''(x) = 2x<sup>0</sup> which is just a constant x -&gt; 2 for every input x but still a function.  
+</p>
+
+<pre class="example" id="org86b0cd6">
+# let squared = derivative 1e-5 (fun x -&gt; x *. x);;
+val squared : float -&gt; float = &lt;fun&gt;
+# squared 4.;;
+- : float = 8.00000999952033
+
+# let three = derivative 1e-5 (fun x -&gt; x *. x *. x);;
+val three : float -&gt; float = &lt;fun&gt;
+# three 2.;;
+- : float = 12.0000600002612128
+</pre>
+
+<p>
+Squared is fun x -&gt; x<sup>2</sup> and it's derivative should be fun x -&gt; 2x which checks out. The derivative of three should be fun x -&gt; 3x<sup>2</sup> which also checks out.   
+</p>
+
+<pre class="example" id="org6b845c2">
+(* atan is a built-in *)
+# let pi = 4.0 *. atan 1.0;;
+val pi : float = 3.14159265358979312
+
+(* sin is a built-in *)
+# let sin''' = (power (derivative 1e-5) 3) sin;;
+val sin''' : float -&gt; float = &lt;fun&gt;
+
+# sin''' pi;;
+- : float = 0.999998972517346263
+
+Idiomatic OCaml version
+
+# let sin''' =
+   (power (derivative 1e-5) 3) sin in
+     sin''' pi;;
+- : float = 0.999998972517346263
+</pre>
+
+<p>
+Partially apply the derivative function with a tiny 1e-5 for parameter dx. The returned function is then fed into power which returns the the cubic power of the derivative function. Apply that cubic derivative function to sin like how it was applied to squared x -&gt; x * x earlier, and now derivative is complete and can be used to apply to pi a float that will return the third derivative of sin. This calculus example was lifted directly from the book <a href="https://caml.inria.fr/pub/docs/u3-ocaml/">Using, Understanding, and Unraveling the OCaml Language</a> and exists here to explain the example if you choose to read that paper (sci-hub has a better version than the above link) and showcase the kind of crazy abstract passing around of functions and partial application you can do in OCaml.
+</p>
+
+<p>
+Helpful materials
+</p>
+<ul class="org-ul">
+<li><a href="https://cs3110.github.io/textbook/cover.html">CS 3110</a> Cornell's Data Structures and Functional Programming course w/200 YouTube demonstrations</li>
+<li><a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/">Functional Data Structures</a> which I will go through below</li>
+</ul>
+
+<p>
+Of course the CP4 book also has OCaml code on the book's public github for every algorithm in the text. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Math%20functions" class="outline-2">
+<h2 id="Math%20functions">Math functions</h2>
+<div class="outline-text-2" id="text-Math%20functions">
+</div>
+<div id="outline-container-Exponential%20functions" class="outline-3">
+<h3 id="Exponential%20functions">Exponential functions</h3>
+<div class="outline-text-3" id="text-Exponential%20functions">
+<p>
+Watch <a href="https://youtu.be/m2MIpDrF7Es">this</a> to learn exponential functions. You can skip the chain rule and derivative content and still understand that video he shows how e<sup>x</sup> is preferred to regular exponentials since it has nicer properties, so that's what we use.  
+</p>
+
+<p>
+Parameters for C\(e^{kx}\) or C\(e^{k(x-h)}\)
+</p>
+<ul class="org-ul">
+<li>C is the y-intercept (shift along y-axis)</li>
+<li>k affects the steepness (slope)</li>
+<li>x is the function input</li>
+<li>h is a horizontal shift on the x-axis
+<ul class="org-ul">
+<li>never crosses the x-axis as y is never equal to zero</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-Statistics%20example" class="outline-4">
+<h4 id="Statistics%20example">Statistics example</h4>
+<div class="outline-text-4" id="text-Statistics%20example">
+<p>
+Statistics functions will now make sense when you break them apart by parameters. Look up 'bell curve' or 'normal distribution'. A picture is <a href="https://miro.medium.com/max/1200/1*IdGgdrY_n_9_YfkaCh-dag.png">here</a>. The formula is:
+</p>
+
+<p>
+\(f(x) = \frac{1}{\sigma\sqrt{2\pi}} 
+  \exp\left( -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{\!2}\,\right)\)
+</p>
+
+<p>
+or equivalent e<sup>x</sup> notation:
+</p>
+
+<p>
+\(f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\)
+</p>
+
+<p>
+C = \(\frac{1}{\sigma\sqrt{2\pi}}\), k = -1/2, and x is being shifted by h = \(\mu\)
+</p>
+
+<p>
+Type this into <a href="https://www.desmos.com/calculator/kvnznnnrnw">desmos</a> and make the symbol for the standard deviation and mu into variables you can adjust with a slider. Playing around with this you now know the standard deviation is how far apart everything is in the distribution from the mean. Parameter k, when h is negative, k is positive, so all x inputs that are negative are concave up or climbing, and all positive x inputs are negative concaving down. This function gives the probability that x lies in some given interval and pi is used here as a trick to normalize the distribution so when you integrate it sums to 1 which all probability distros do.  
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Logarithmic%20functions" class="outline-3">
+<h3 id="Logarithmic%20functions">Logarithmic functions</h3>
+<div class="outline-text-3" id="text-Logarithmic%20functions">
+<p>
+Watch <a href="https://www.youtube.com/watch?v=cEvgcoyZvB4">this</a> to learn logarithms. 
+</p>
+
+<p>
+Parameters for f(x) = C(ln(x - h)) + v
+</p>
+<ul class="org-ul">
+<li>v is a vertical shift</li>
+<li>h is the horizontal shift</li>
+<li>C is the magnitude/rate of increase</li>
+</ul>
+
+<p>
+A log is an <a href="https://brownmath.com/alge/loglaws.htm#WhatIs">exponent</a> so exactly how you combine exponents is how you manipulate logs for example log(xy) when you multiply two bases b<sup>y</sup> * b<sup>x</sup> you add exponents so log(xy) is log(x) + log(y).
+</p>
+</div>
+</div>
+
+<div id="outline-container-Polynomial%20functions" class="outline-3">
+<h3 id="Polynomial%20functions">Polynomial functions</h3>
+<div class="outline-text-3" id="text-Polynomial%20functions">
+<p>
+Polynomials can be used as a specification for another function, such as functions in <a href="https://en.wikipedia.org/wiki/Power_law">nature</a> to see what inputs drive what responses (outputs). If you watch <a href="https://youtu.be/JpPNzdlXVYw">this</a> lecture up to 12 mins, you will find out how they are used for approximating other functions so all the statistics of that function can be learned like what is it's max/min, what is it's derivative. Since they can be evaluated with only addition and multiplication they can be encoded as bitwise operations or as vectors therefore if you have a chance to use a polynomial function model you take it.. 
+</p>
+
+<p>
+<b>Definition</b>
+</p>
+
+<p>
+A function in which the output is the sum of terms that are the products of constant values and the input raised to some positive number power. The polynomial of a polynomial is another polynomial it is closed under addition and multiplication. 
+</p>
+
+<p>
+The general form of a single variable polynomial:   
+</p>
+
+<p>
+\[f(x)=a_nx^n+a_{n-1}x^{n-1}...+a_2x^2+a_1x+a_0\]
+</p>
+
+<p>
+f(x) = 1/x is not a polynomial, negative exponents like f(x) = x<sup>-3</sup> is not a polynomial, f(x) = \(\sqrt{x}\) is not a polynomial but a constant like f(x) = 0 is a polynomial since f(x) =  0x<sup>0</sup> = 0. Often we will see in these courses and books they will just refer to a single variable as a function, such as 'a function n' which is n<sup>1</sup> a polynomial.
+</p>
+
+<p>
+<b>Polynomial time</b>
+</p>
+
+<p>
+Polynomial functions are used as models of the running times of programs so we can see what kinds of inputs drive what responses either in a single worse case scenario of near infinite input, or an average cost over multiple runs and different sized inputs and this is called polynomial time meaning a polynomial exists that can bound our algorithm's running time or a polynomial can be given on the size of the input like size n inputs. What we don't want is exhaustive search, exponential running time.  
+</p>
+
+<p>
+Polynomial functions n<sup>c</sup> where c is some constant is in P the class of problems for which an algorithm exists that can solve instances of problems size n<sup>c</sup> and it's a flexible definition meaning if we alter the details of our computational model or add computational power then P doesn't change, you just move either up or down to a smaller polynomial. If you are using a parallel computer as long as it only has a polynomial number of processors you are saving at most polynomial time. Let's say you can solve problems of size n = 1 in one microsecond then a problem with instance of size n = 100 being solved by an algorithm of running time n<sup>3</sup> can complete in under a minute. A problem of size n = 100 with 2<sup>n</sup> running time will take longer than the estimated age of the universe.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Big-O" class="outline-2">
+<h2 id="Big-O">Big-O</h2>
+<div class="outline-text-2" id="text-Big-O">
+<p>
+The MIT lectures just jump into this with no explanation so let's figure it out first.  
 </p>
 </div>
 
-<div id="outline-container-Complexity%20analysis" class="outline-3">
-<h3 id="Complexity%20analysis">Complexity analysis</h3>
-<div class="outline-text-3" id="text-Complexity%20analysis">
+<div id="outline-container-RAM%20computational%20model" class="outline-3">
+<h3 id="RAM%20computational%20model">RAM computational model</h3>
+<div class="outline-text-3" id="text-RAM%20computational%20model">
 <p>
-See chapter 1.2 of the <a href="https://stepik.org/lesson/26053/step/1?unit=8085">Stepik</a> online book for the basics of code analysis. These <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">notes</a> have an excellent introduction to the ambiguities of Big-O notation, what a computation model is, what 'running time' means. There is other kinds of complexity, exampled in <a href="https://kth.instructure.com/courses/20699/files/3296468/download?verifier=xTIE4fipNDoRb4BXNI7TiLOAtpuekegxbZZ5XO4M&amp;wrap=1">Algorithmic Problem Solving</a> with all the summation notation explained in the appendix.  
+The Random-Access Machine model is one big array. You can access or write any memory/storage in constant time.
 </p>
 
 <p>
-The MIT 6.006 course we do will cover this too  
-</p>
-</div>
-</div>
-
-<div id="outline-container-Logarithms" class="outline-3">
-<h3 id="Logarithms">Logarithms</h3>
-<div class="outline-text-3" id="text-Logarithms">
-<p>
-Chapter 0.3 of <i>Algorithms</i> by <a href="https://cseweb.ucsd.edu/~dasgupta/book/index.html">DPV</a> read through it once, then skip to page 12 of 1.1 <i>Basic Arithmetic</i> and read the bases and logs aside if you forgot them. It's still not enough though, procure <i>The Art of Computer Programming, Vol. 1</i> either by <a href="http://library.lol/main/3612CEBCEE66E75A23440B97A1B560DB">library genesis</a> or buy a copy it'll be the best book you'll ever own. Skip to 1.2.2 <i>Numbers, Powers, and Logarithms</i>. We are interested in page 22 and 23, the laws of exponents for integer exponents, and rational exponents, and all the logarithm identities. A log is an exponent, so exactly how you combine exponents is how you manipulate logs for example log(xy) when you multiply two bases b<sup>y</sup> * b<sup>x</sup> you add exponents, so log(xy) is log(x) + log(y).
+To use it you go through a program, applying +1 cost to essentially everything such as assignments or writes, every memory fetch, if-else statements (take the highest cost branch if doing worst case analysis), and all operations like multiplication. If it isn't a loop over n-sized inputs it only has +1 cost. If your program calls another function you count all it's instructions in the same way and just add it to the total cost. 
 </p>
 
 <p>
-Find everything you can YouTube about logarithms such as <a href="https://youtu.be/AAW7WRFBKdw">this</a>. @3:29 in that video be aware you can take any number like 3, and make it into a log ie: log<sub>10</sub> 1000 = 3 this is why it will often seem in algorithm/complexity books they take logs out of thin air and substitute them in to make something easier to simplify, this is what they are doing.  
+A loop is size-n * whatever cost its body has for example a counter:
+</p>
+<pre class="example">
+ctr := ctr + 1
+</pre>
+
+
+<p>
++1 operation for assignment, +1 for addition for total 2n cost. If it's nested loops meaning on every iteration you call another loop, it's n * n cost assuming that nested loop only does constant work and doesn't call another loop. 
 </p>
 
 <p>
-Prof K in CS19 also has a nice intuition for logarithmic growth, which is how many zeros a number has. If an algorithm is logarithmic in the number of steps and inputs increase by 1 million, then work increased by a factor of only 6. An algorithm doing logarithmic steps means at every iteration of your algorithm you throw away half the input.  
-</p>
-
-<p>
-In the <a href="./calculus.html">calculus</a> workshop there's a great chapter and lectures on ln(x) or the 'natural logarithm' if you've never seen it before, breaking it down into parts like what are the parameters to a log() function and what do they do. 
+Simple model oblivious to the language you are using, the MIT lectures will have more details look at the first recitation. 
 </p>
 </div>
 </div>
 
-<div id="outline-container-CS%20Theory%20Toolkit%20lecture%202" class="outline-3">
-<h3 id="CS%20Theory%20Toolkit%20lecture%202">CS Theory Toolkit lecture 2</h3>
-<div class="outline-text-3" id="text-CS%20Theory%20Toolkit%20lecture%202">
+<div id="outline-container-Big-O--Big-O" class="outline-3">
+<h3 id="Big-O--Big-O">Big-O</h3>
+<div class="outline-text-3" id="text-Big-O--Big-O">
 <p>
-Let's starts with asymptotics, this is the most confusing part of any algorithms course mainly because it's always presented poorly or hand waved that you will learn it in some future advanced course. If you forgot this notation, f(x) is your algorithm modeled as a function of running time, ie: if you discover your algorithm is T(n) = 10n + 20, then f(x) is 10x + 20 and g(x) is a function you wish to use as a bound for your f(x) modeled algorithm. All the inputs to each 'approach infinity' in this model. 
+Let's say your program on every call does 50 constant operations before calling three other functions that run n-sized loops sequentially so one finishes and another begins each doing 20 operations per loop. Your program's running time is f(n) = 50 + 20n + 20n + 20n enter this function into <a href="https://www.desmos.com/calculator/hchkckgl9s">desmos</a> zooming out for millions of inputs.
 </p>
 
 <p>
-Watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. You can type all these definitions into desmos to see their visualization like I did <a href="https://www.desmos.com/calculator/xzqea0wfwc">here</a>, then keep zooming out to see how they change when inputs become gigantic. The constant and logarithm (log n) become indistinguishable, n log(n) grows very slowly towards 2<sup>x</sup> because it's linear times some logarithmic factor. 'Factor' here means you are multiplying two things, so they will like in highschool break into factors and one will be logarithmic because you multiplied n by log(n). 
+Try and bound your running time with another function, I chose g(x) = 62x. Keep zooming out until you're at a ridiculous amount of inputs and notice your running time f(x) never outgrows g(x) = 62x. Reset the graph back to default zoom, hey your function is no longer bounded by g(x) = 62x, it is only when inputs are greater than a certain input that your function becomes bounded by g(x). This is the definition of big-O f(x) \(\le\) g(x) multiplied by a constant for some x input threshold denoted as x<sub>0</sub> 
+</p>
+</div>
+</div>
+
+<div id="outline-container-More%20clarity%20on%20notation" class="outline-3">
+<h3 id="More%20clarity%20on%20notation">More clarity on notation</h3>
+<div class="outline-text-3" id="text-More%20clarity%20on%20notation">
+<p>
+I highly recommend <a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">this</a> chapter. The author calls these <a href="https://en.wikipedia.org/wiki/Fl%C3%A2neur">flaneries</a> and describes them as a 'short stroll through a subject'.
 </p>
 
 <p>
-@1:58 x<sub>0</sub> or 'x naught' means a particular input to f(x) so x<sub>0</sub> for example can be f(5), so all inputs to f(x) equal or greater than 5 this definition holds. @5:40 his anonymous function, that's the Prof K interpretation from CS19, O(n<sup>2</sup>) by itself without the entire f(x) = definition is O([n -&gt; n<sup>2</sup>]). @12:00 10n/n<sup>2</sup> and you jack up inputs to approach infinity you will get a limit of 0, and thus 10n is in the little-o family of functions that are stricly less than the family of functions in n<sup>2</sup> however 10n is still in the family of functions that are Big-O of n<sup>2</sup> (and anything else bigger than linear). @13:29 the anonymous function again, O(1) means O([n -&gt; c]) for all inputs what we get is bounded by a constant. 14:50 log<sup>3</sup> n means (log(n))<sup>3</sup> and since all logarithms are really exponents it's log(n<sup>3</sup>) since (b<sup>1</sup>)<sup>2</sup> is b<sup>2</sup> and this is called a <a href="https://en.wikipedia.org/wiki/Polylogarithmic_function">polylogarithmic</a> function 'a polynomial in the logarithm of n' and denotes it is growing more slowly than any positive polynomial exponent, because it's a log. 
+<a href="https://cs.uwaterloo.ca/~plragde/flaneries/FDS/Tools_and_Techniques.html">Reading</a> up to section 2.2, in 2.1.1 <i>Ambiguities in mathematics</i> he clarifies what n<sup>2</sup> means in big-O notation like O(n<sup>2</sup>) which is given an input n it will grow to order n<sup>2</sup> or O([n -&gt; n<sup>2</sup>]) using lambda or anonymous function notation.
 </p>
 
 <p>
-This is worth expanding on, a polynomial 'in x' means what you learned <a href="https://math.stackexchange.com/a/2185613">highschool</a> The first 10 minutes or so of <a href="https://youtu.be/JpPNzdlXVYw">this</a> lecture explains why we use them. Here we are talking about a polynomial 'in n' so replace all the x's with the function n or polylogarithmic replace all the x's with log(n). To me at my pleb level of mathematics it means there is a vector space in that function since multiplying/adding a polynomial gives you another one, or it's a object of type Integer <a href="https://youtu.be/H8xBlLWdzBE">ring</a>. 
+2.1.3 <i>Abuse of Notation</i> the 'small stuff theorem' demonstrates how you tell if one function is in another's bound. Taking a ratio: n<sup>2</sup>/n is n/1 and has no limit, it just grows forever so n<sup>2</sup> is not in O(g(n)) whereas n/n<sup>2</sup> is 1/n and converges to 0, so n is bounded by O(g(n<sup>2</sup>)). This f(n)/g(n) ratio is explained in the first chapter of <a href="https://book.huihoo.com/pdf/algorithms/">DPV</a> but the MIT lectures will also teach us this. Note that constants are included directly into the definition of big-O so we can ignore them.  
 </p>
 
 <p>
-@14:25 let's figure out O-tilde and poly() which you will see in every algorithm paper:
+2.1.6 <i>Algorithm analysis in practice</i> \(\max_{I \in I_n} R(A,I)\) if you didn't understand: R() outputs running time, and consumes inputs algorithm A, and an instance I of the problem. Example: A=insertion sort and I=inserting an element to an already sorted list then R(A,I) will return O(1) constant time because all insertion sort did was constant work to paste the element on to the head of the list, assuming your programming language does this in constant time and does not copy over the entire list to new memory just to attach a new head which some do. The max statement means the longest running time instance in the set I, which for this problem would be inserting an element to a list in reverse order where R(A,I) would return O(n<sup>2</sup>). And that's it, you know what worst case running time is now. 
+</p>
+
+<p>
+The sequential and product theorem are all you ever need to know to analyze sequential (imperative) code for worst case running time assuming there aren't hidden costs in the language implementation. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-Asymptotics" class="outline-3">
+<h3 id="Asymptotics">Asymptotics</h3>
+<div class="outline-text-3" id="text-Asymptotics">
+<p>
+Watch <a href="https://youtu.be/_gKb855_3bk">Big O and friends</a> part of a lecture from CMU's CS Theory Toolkit. You can type all these definitions into desmos to see their visualization like I did <a href="https://www.desmos.com/calculator/xzqea0wfwc">here</a>, then keep zooming out to see how they change when inputs become gigantic. The constant and logarithm (log n) become indistinguishable, n log(n) grows very slowly towards 2<sup>x</sup> because it's linear times some logarithmic factor. 'Factor' here means you are multiplying two things, so they will like in highschool break into factors and one will be logarithmic because you multiplied n by log(n).
+</p>
+
+<p>
+@14:50 log<sup>3</sup> n means (log(n))<sup>3</sup> and let's figure out O-tilde and poly() which you will see in every algorithm paper:
 </p>
 
 <ul class="org-ul">
 <li>poly(g(x)) or f(x) = g(x)<sup>O(1)</sup>
 <ul class="org-ul">
-<li>any growth in the form of big-O with a constant exponent</li>
-<li>example: O(n)<sup>2</sup> is poly(g(x))</li>
+<li>O(g(x))<sup>c</sup> but with a constant exponent (a polynomial)</li>
+<li>ex: O(n)<sup>2</sup> is rewritten poly(n)</li>
 </ul></li>
-<li>O-tilde(g(x)) or f(x) = g(x) * log(g(x))<sup>O(1)</sup>
+<li>O-tilde(g(x)) or f(x) = g(x) * poly(log(g(x)))
 <ul class="org-ul">
-<li>fx = g(x) * poly(log(gx))</li>
-<li>any growth in the form of g(x) * a logarithmic factor of g(x)</li>
-</ul></li>
-</ul>
-
-<p>
-Let's figure out his \(\widetilde{O}\)(g(x)) definition. You suppress the polylogarithmic factors because they're growing much more slowly than whatever the dominant or significant growth is. He took \(n^5 \cdot 3^{n}\) and used O-tilde to model it's bound:
-</p>
-
-<ul class="org-ul">
-<li>n<sup>5</sup> * poly(log(3<sup>n</sup>) or g(x) * poly(log(g(x)))
-<ul class="org-ul">
-<li>which is n<sup>5</sup> * poly(n * log 3)</li>
-<li>which is n<sup>5</sup> * poly(n<sup>O(1)</sup> * discarded constant)</li>
-<li>which is 3<sup>n</sup> * poly(n) because all those factors of n<sup>5</sup> they don't matter and are miniscule in comparison to the growth of 3<sup>n</sup> and this asymptotic notation allows us to suppress poly(log c, n) factors and n<sup>5</sup> is n<sup>O(1)</sup></li>
+<li>multiple logarithm factors in g(x) or 'polylogarithmic' factors</li>
+<li>ex: n<sup>2</sup> * log<sup>3</sup> n is O(n<sup>2</sup> * poly(log n)) or \(\widetilde{O}\)(n<sup>2</sup>)</li>
 </ul></li>
 </ul>
 
 <p>
-He remarks O-tilde indicates there's some logarithmic growth factors in your bound that you don't care about/couldn't pin down. His check that this isn't 2<sup>n</sup> he uses the first chapter of DPV where they show testing a f(x)/g(x) ratio so 3<sup>n</sup> over 2<sup>n</sup> = 1.5<sup>n</sup> and making sure it's not smaller than poly(n), which it's not since any n<sup>O(1)</sup> will never outgrow 1.5<sup>n</sup> exponential function. 
+His \(\widetilde{O}\)(g(x)) example: \(n^5 \cdot 3^{n}\) the log of 3<sup>n</sup> is n, so now all the n's are polylogarithmic factors, and can be suppressed with this notation (3<sup>n</sup> exponential bounds any polynomial anyway). He remarks O-tilde indicates there's some logarithmic growth factors in your bound that you don't care about/couldn't pin down. His check that this isn't 2<sup>n</sup> involved taking the ratio f(x)/g(x) so \(\frac{3^{n}}{2^n} = 1.5^n\) and making sure it's not smaller than poly(n), which it's not since any n<sup>O(1)</sup> will never outgrow 1.5<sup>n</sup> exponential function. 
 </p>
 
 <p>
-Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions you want to use for g(x) which is the function you use to compare/bound your algorithm f(x) to, for example sqrt(n) is standard form but sqrt(n + 1) isn't. He shows how to fix this in part 3. 
-</p>
-
-<p>
-Moving on to <a href="https://youtu.be/Ao6aXSyJ6Gk">part b</a> there's an interesting illustration of harmonic numbers which will surely come up in DPV and how H<sub>n</sub> is in Big-Theta(log n) when you use asymptotics to estimate it. He uses basic integration of 1/x you can see <a href="./calculus.html">here</a> which is log(x) but the point here is manipulating results so you can get that form of something tending towards 1. He points out why you will sometimes see totally crazy looking bounds, it's from factoring things out and trying to show a final result of bound multiplied by something tending to 1, like n(1 -/+ O(1/n))    
-</p>
-
-<p>
-Moving on to <a href="https://youtu.be/flge97Jp6uo">part 3</a> the magic of asymptotics: e<sup>x</sup> is roughly 1 + x for small x. The rest of lecture is showing how you take a complicated expression and simplify it with asymptotics exactly what we will see in every algorithms text or paper.  
-</p>
-</div>
-</div>
-
-<div id="outline-container-Asymptopia" class="outline-3">
-<h3 id="Asymptopia">Asymptopia</h3>
-<div class="outline-text-3" id="text-Asymptopia">
-<p>
-Obtain the book (either by library genesis, wordcat or buy) <i>Asymptopia</i> by Joel Spencer and skip to chapter 2 <i>Big Oh, Little Oh, and All That</i> we won't do the whole book but if you wanted to, all the Ryan O'Donnell TCS Toolkit lectures cover material from the book which you can practice with using <i>Concrete Math</i> or <i>The Art of Computer Programming vol 1</i> by Knuth. 
-</p>
-
-<p>
-Watch <a href="https://youtu.be/TUwMuTf_fiA">this</a> and <a href="https://youtu.be/ADVZOhMDmQI">this</a> to see an example of LimInf/LimSup using desmos, basically you have a sequence like your algorithm producing values and as it approaches infinity somewhere in that sequence you can take a smaller subsequence and show there exists an symptotic ceiling or floor. Limit superior/inferior always exist so are used in asymptotic definitions for sequences that may not converge. He uses a periodic sine function for this where eventually 1 is the limsup and -1 is liminf. You could also read Tao's <i>Analysis</i> book chater 6, which we already did <a href="./math.html">here</a>. 
-</p>
-
-<p>
-When you're done recall how to use L'Hopital's rule for limits at infinity <a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-7/v/l-hopital-s-rule-example-2">here</a> though we are not taking classical limits, it gives you an idea how you would end up with a ratio x/y that is negative. Basically you are repeatedy taking derivatives or solving with basic algebra. 
-</p>
-
-<p>
-Def 2.3 of <i>Asymptopia</i> the asymptotic ceiling of f(n)/g(n) is less than infinity for f(n) = O(g(n)) meaning f(n) is bounded by g(n), and the top of the ratio isn't larger than the bottom. Ex: f(n) = n and g(n) = cn<sup>2</sup> or n/cn<sup>2</sup> which is 1/cn and converges towards zero, so not to infinity and now f(n) is in O(g(n)). 
-</p>
-
-<p>
-Def 2.4 the asymptotic floor of f(n)/g(n) is greater than 0, then f(n) = Omega(g(n)) so the opposite of definition 2.3 f(n) = n<sup>2</sup> and g(n) = cn or n<sup>2</sup>/cn or n/c and with positive inputs, since we're modeling algorithms, this will never be 0 or less. 
-</p>
-
-<p>
-Def 2.5 Greek letter epsilon is a variable meaning an arbitrarily small constant, like 0.1 or 0.001. If f(n) = 2n + 20 and g(n) = cn then defintion 2.5 is satisfied, you can always pick a smaller (epsilon) constant for g(n) or bigger constant c for g(n) to bound f(n) from below and above. If you pick g(n) = 0.01*n then f(n) &gt; g(n) or f(n) = big-Omega(g(n)), if you pick g(n) = 100n then f(n) &lt; g(n) and f(n) = O(g(n)) the point being f(n) is bounded below and above only by a constant, so f(n) = big-Theta(g(n)).      
-</p>
-
-<p>
-Def 2.6 we already saw an example where the limit was 0, f(n) = n and g(n) = cn<sup>2</sup> or 1/cn which converges to zero, so f(n) = o(g(n)) or n is strictly less than n<sup>2</sup> and def 2.7 the opposite: f(n) = n<sup>2</sup> and g(n) = cn or n/c which grows to infinity.
-</p>
-
-<p>
-Def 2.8 Similar to the O-tilde definition, where logarithmic factors exist (log n)<sup>c</sup> though here the author uses big theta to represent polylog bounds, I will use the Prof O'donnell O-tilde def of f(n) = g(n) * poly(log(g(n)))
-</p>
-
-<p>
-Prop 2.9 we saw in the prof O'donnell lecture: g(n) * something approaching 1 which is what (1 + o(1)) is, remember that notation o(1) means strictly less than 1 and covered in 2.3 <i>Little Oh One</i>.
-</p>
-
-<p>
-Theorem 2.10 this means O(n + n) is just O(n).
-</p>
-
-<p>
-We don't have to understand the proofs, but since we're reading them anyway:
-</p>
-
-<p>
-Theorem 2.13 proof, in 2.20 he first uses basic algebra to reduce (n + 1)<sup>k</sup>/n<sup>k</sup> by rewriting using laws of exponents: (n + 1/n)<sup>k</sup> then we have (n/n + 1/n)<sup>k</sup> and since this is a limit, 1/n goes to zero so we're left with (1 + 0)<sup>k</sup> or 1. Why this ratio was done is explained <a href="https://math.stackexchange.com/a/4319825">here</a>. The proof of 2.17 involves substitution to get it to resemble 2.18. The examples from 2.22 - 2.27 are important, the bigger function is whatever has the bigger c in n<sup>c</sup> or c<sup>n</sup> even negative values. 2.23 is from the Ryan O'donnell examples of polylogs. 
+Everything past 22:00 or so is in the book <i>Asymptopia</i> by Spencer talking about standard form of functions you want to use for g(x) which is the function you use to compare/bound your algorithm f(x) to. Now the 'g(x)' in big-O notation is demystified you know it's an arbitrary function from a family of functions, that has to be in a specific form to represent a bound on f(x). The rest of these lectures I'll mix in as they come up.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-MIT%206.006%20Lecture%202" class="outline-2">
-<h2 id="MIT%206.006%20Lecture%202">MIT 6.006 Lecture 2</h2>
-<div class="outline-text-2" id="text-MIT%206.006%20Lecture%202">
+<div id="outline-container-MIT%206.006%20Lecture%201" class="outline-2">
+<h2 id="MIT%206.006%20Lecture%201">MIT 6.006 Lecture 1</h2>
+<div class="outline-text-2" id="text-MIT%206.006%20Lecture%201">
 <p>
-I skipped lecture 1 because it's just course logistics and brief introductions which are fully covered in this lecture. 
-</p>
-
-<p>
-His example of binary arithmetic, if you don't know what it is watch <a href="https://youtu.be/f8xfVVVWXNU">this</a> lecture from 6.004 which will explain bit addition and encoding or consider doing lecture 2 and 3 (or all the lectures) of CMU's <a href="https://www.youtube.com/playlist?list=PLQ5cMeVTtiJkUilq92Cw9D6RhAJhPJ_JX">15-213</a>. I'll probably end up doing most of <a href="./theabsolutestateofsoftware.html">here</a> if interested.
-</p>
-
-<p>
-Dynamic arrays in C++ are called vectors in the standard library, and are implemented exactly like this lecture where when full are copied over to a new array double it's original size. 
-</p>
-
-<p>
-@45:49, there is a geometric series 2<sup>0</sup> + 2<sup>1</sup> + 2<sup>2</sup> &#x2026; he wants the last n digit of the series n = 2<sup>y</sup> which is the same as y = log<sub>2</sub> n or the other notation for base 2 which is y = lg n. Using <a href="https://brownmath.com/alge/loglaws.htm#def2">substitution</a> to get rid of the y, we get n = 2<sup>lg n</sup> or O(n) (he uses big-Theta).
-</p>
-</div>
-
-<div id="outline-container-CS%20Theory%20Toolkit%203b" class="outline-3">
-<h3 id="CS%20Theory%20Toolkit%203b">CS Theory Toolkit 3b</h3>
-<div class="outline-text-3" id="text-CS%20Theory%20Toolkit%203b">
-<p>
-These lectures are so good we may as well do more of them, then we can do less MIT problem solving seminars and figure out the answers ourselves. If you forgot binomial coefficients Wildberger has an entire lecture on the <a href="https://youtu.be/V2mk24udsMw">binomial theorem</a> where the n!/(k!(n-k)!) formula is fully derived from scratch or read <i>The Art of Computer Programming</i> chapter on binomial coefficients since as Knuth writes and we'll later see in the CS Theory Toolkit lecture they come up all time in algorithm analysis. 
-</p>
-
-<p>
-Watching <a href="https://youtu.be/TbazAJbw6RE">Factorial Asymptotics</a> which will come up in the first MIT 6.006 problem session. @2:05 recall the harmonic number examples from earlier lecture where he grouped them together and divided by two. @4:03 this expression is \(\frac{n \cdot ln(n/2)}{2}\) and he factors out 1/2 leaving 1/2*n*ln(n/2) which if you remember logarithm identities log(a/b) is log(a) - log(b) or in this case: 1/2*n*(ln(n) - ln(2)) or distributed: 1/2 (n*ln(n) - n*ln(2)) so he leaves it as 1/2*nln(n) - O(n). This is the lower bound, which if you ignore the 1/2 constant is n ln n, and the upper bound on the board to the right of all the inequalities is n ln(n). Since ln(n!) is by definition an exponent (2 to the power of what gives you n!), he rewrites it as n! = \(2^{\Theta(n \cdot log(n))}\) shifting from base e to base 2. 
-</p>
-
-<p>
-@12:43 he's doing exactly what we did in the first chapter of DPV which is take a ratio of two functions to find if a constant seperates them. He's using substitution here plugging in (n+1) to n<sup>n</sup>/n!
-</p>
-
-<p>
-@15:20 another well known trick, take the log of both sides, this is in the MIT problem solving lectures. The 'integral trick' is interesting but you don't have to know it, or the antiderivative he talks about unless you already did a <a href="./calculus.html">calculus</a> course. You can still probably figure out what he's doing though, the takeaway here is n! is \(\Theta(\frac{n^n}{e^n}\cdot\sqrt n)\) He tells us that root n is a constant power of n log n so if you were to use O-Tilde notation you could hide the root n as a polylog.
-</p>
-</div>
-</div>
-
-<div id="outline-container-CS%20Theory%20Tookit%203c" class="outline-3">
-<h3 id="CS%20Theory%20Tookit%203c">CS Theory Tookit 3c</h3>
-<div class="outline-text-3" id="text-CS%20Theory%20Tookit%203c">
-<p>
-Moving on to second lecture <a href="https://youtu.be/_DgUgKOkPxo">Binomial Coefficients Asymptotics</a> so we can do those MIT problems ourselves. We have our first solution to the MIT psets, for 'small' k, n choose k is upper bound n<sup>k</sup>/k! ie k = 3 then n<sup>3</sup>/6. He defines smaller as k being smaller than sqrt(n) in n choose k.  He goes through a very rapid fire manipulation of the lower bounds, none of this we haven't already learned, to deduce ln(n choose k) is Theta(n). @17:23 more advice, if k is bigger than n then n choose k is n/(n - k).
-</p>
-
-<p>
-The rest of this lecture is for interest, he fully derives Stirling's formula which you can also read in the Asymptopia book or Knuth's book, and we don't need it for our limited purposes but it's definitely something you can follow along and understand exactly what he's doing. He tells us every binomial coefficient bound is at most 2<sup>n</sup>
-</p>
-</div>
-</div>
-
-<div id="outline-container-MIT%20problem%20session%201" class="outline-3">
-<h3 id="MIT%20problem%20session%201">MIT problem session 1</h3>
-<div class="outline-text-3" id="text-MIT%20problem%20session%201">
-<p>
-The problem session pdfs are <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/practice-problems/">here</a>.
-</p>
-
-<p>
-<b>Problem 1-1</b>
-Order a): (f1, f5, f2, f3, f4) is easy f1 is a polylog, f2 is n<sup>2</sup> and f4 is 2<sup>n</sup> clearly the largest growing function. 
-</p>
-
-<p>
-Order b): ({f2, f5}, f3, f1, f4) We know from CS Theory Toolkit 3c that n choose 3 = n<sup>3</sup>/3 so f2 and f5 are in the same set. We also know n! bound is roughly (n/e)<sup>n</sup> which is the largest bound here so f4 is clearly last. We know no binomial coefficient is bigger than 2<sup>n</sup> so as a guess, I'd place f3 before f1 but it's exact bound is in the book <i>Asymptopia</i>. In the MIT problem session <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/lecture-videos/problem-session-1/">lecture</a> he goes through what we just did in the CS Theory Toolkit lectures but almost none of this would make sense if you didn't watch Ryan O'Donnell break it down from scratch.
-</p>
-
-<p>
-The programming problems, are too easy if you already did <a href="./software.html">CS19</a> try examples for shift-left(D, k):
-</p>
-<ul class="org-ul">
-<li>shift-left([1, 2, 3, 4], 3) is
-<ul class="org-ul">
-<li>shift-left([2, 3, 4, 1], 1) is</li>
-<li>shift-left([3, 4, 1, 2], 2) is</li>
-<li>shift-left([4, 1, 2, 3], 3)</li>
-</ul></li>
-<li>what is changing each step? Delete head and append to tail.</li>
-</ul>
-
-<p>
-It's worth watching their problem session once to see how they reason about correctness, and read the solution writeup because that is exactly how you would describe an algorithm in an interview setting, it is all sentences walking through reasoning and not just code.
-</p>
-</div>
-</div>
-
-<div id="outline-container-How%20memory%20works" class="outline-3">
-<h3 id="How%20memory%20works">How memory works</h3>
-<div class="outline-text-3" id="text-How%20memory%20works">
-<p>
-Watching <a href="https://youtu.be/M2i7sSRcSIw">Optimizing Serial Code 1</a>. This is from MIT's 18.337J and the lecture notes on his screen are <a href="https://mitmath.github.io/18337/lecture2/optimizing">here</a>. This course is all about optimization and he uses Julia for examples but will often talk about Python, Matlab, C, Fortran, Java and R how they are implemented.
-</p>
-
-<p>
-First we learn never use a linked list, despite them being theoretically O(1) operation they are in fact awful on real hardware. Every matrix is stored in an array either row major or column major order, and knowing which one your library is using is critical to knowing where the next cache hit will be by the CPU. Note you should never use arrays either, ie: C style arrays. 
-</p>
-
-<p>
-Arrays and objects are heap allocated instead of on the stack (in Python/R/Matlab/Julia) because they can be dynamic, and because the compiler does not have enough type information at compile time to determine the length. He shows a library in Julia where the compiler does have this information and so can allocate it into the stack instead of the heap. If you use C++ containers like std::vector from the standard library they have this size information built in too as they are <a href="https://en.cppreference.com/w/cpp/container/vector">objects</a>.
-</p>
-
-<p>
-Most interesting part of this lecture, and the reason I made you watch it besides the memory hierarchy intro you had to know, is the broadcasting mechanism part of the lecture about what "vectorization" means in most high-level languages. We discover somebody in languages like Python (NumPy library), Matlab, R and others simply compiled the loop for the C function that does the broadcasted form, so in effect all you're doing in those languages/libraries is calling a single C function because loops are costly in those languages. 
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-CP4%20Chapter%202" class="outline-2">
-<h2 id="CP4%20Chapter%202">CP4 Chapter 2</h2>
-<div class="outline-text-2" id="text-CP4%20Chapter%202">
-<p>
-Go to <a href="https://cpbook.net/methodstosolve?oj=both&amp;topic=ch2&amp;quality=all">methods to solve</a> and try all the 2.2a, 1D Array, Medium problems on Kattis and/or onlinejudge.org since we just learned arrays and dynamic arrays. The CP4 book describes std::array for static arrays and std::vector for dynamic arrays. 
-</p>
-</div>
-
-<div id="outline-container-baloni" class="outline-3">
-<h3 id="baloni">baloni</h3>
-<div class="outline-text-3" id="text-baloni">
-<p>
-The first of the Kattis problems, rated a 4.1 (up from it's earlier 3.6 rating due to less people being able to solve it). Start by writing examples, like tourist did in his problem solving streams. In this problem the height is decreased by 1 after every hit of the arrow, so one shot can take out multiple targets with 1 iteration of the entire array.
-</p>
-
-<p>
-What if we loop n times over the array and change the value or delete the value whenever the arrow makes a hit? Then whatever is left over we can filter out the changed values and take it's size and add that as additional shots to the running total of shots. This was my first naive solution.
-</p>
-
-<p>
-Sketch what this function would look like:
-</p>
-
-<pre class="example" id="org53f41d6">
-// get the first input
-int n; cin &lt;&lt; n
-// optimize this
-// does it have to be an array?
-loop through input of 'balloons' and store them in some data structure
-
-f(std::vector&lt;int&gt; v, int n, int accumulator)
-while single iteration of v, and n &gt; 0:
- is v[i] == n?
- remove or change v[i]
- accumulator +1
- n = n-1
- continue linear search
- is v[i] == n?
- remove or change v[i]
- n = n-1
- // do not update accumulator because it was still 1 shot
-call f(v, n, accumulator) with n equal to whatever the last target reset it to
-</pre>
-
-<p>
-After staring at my draft, and the examples I wrote, I kept looking at the input storage because this is the top O(n) linear thorn in my algorithm where you have to get that huge input into a data structure. Can we manipulate the data structure as we take the inputs at the same time? This chapter is about arrays, but do we have to use an array/vector? Let's look at the C++ <a href="https://en.cppreference.com/w/cpp/container">containers library</a>. After we go through the input and remove inputs that are in n-1 sequence, does it matter what order they are in when we take their size? So what containers in the library should we use, how about an <a href="https://en.cppreference.com/w/cpp/container/unordered_multiset">unordered multiset</a>. 
-</p>
-
-<p>
-Something else that bothered me was the acculumator, first because I hate using accumulators they screw up parallel/multithreaded computations and I always try to avoid them after watching this <a href="https://dl.acm.org/doi/10.1145/1631687.1596551">talk</a> at the bottom of the page by Guy L Steele who recommends abandoning that paradigm for modern software. Staring at my draft text I realized we can do this backwards, when you analyze the input as it comes in, search the data structure for n+1 and if so, erase that entry, then you have the original shot. For example if the input is 5 4 3 2 1 and we're at 4, search previous inputs for n+1 and erase. Store 4 then continue to 3, which will delete 4. Finish the whole iteration and 1 is left over, which is the original shot. Take the size of 1 which is 1, and that's the solution. Try it with example 3: 45214. Using n searches and deletes 2, leaving 1. The end of the input searches and deletes 5. We're left with 414, or 3 shots, the solution.
-</p>
-
-<p>
-Writing up this solution it works, I passed all tests. Congrats you're now on difficulty 4.1 on Kattis.
-</p>
-</div>
-</div>
-
-<div id="outline-container-downtime" class="outline-3">
-<h3 id="downtime">downtime</h3>
-<div class="outline-text-3" id="text-downtime">
-<p>
-The second starred chapter 2 Kattis problem in <a href="https://cpbook.net/methodstosolve?oj=both&amp;topic=ch2&amp;quality=all">methods to solve</a>. TODO
+TODO with <i>The Art of Computer Programming</i> because anybody can do it. 
 </p>
 
 <hr>
 <p>
 <a href="./index.html">Home</a>
 </p>
-</div>
 </div>
 </div>
 </div>
